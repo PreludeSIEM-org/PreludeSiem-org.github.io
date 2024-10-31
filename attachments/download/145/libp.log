@@ -1,0 +1,349 @@
+[skipped]
+Making all in include
+source='idmef-tree-wrap.c' object='idmef-tree-wrap.lo' libtool=yes  DEPDIR=.deps depmode=gcc /usr/local/bin/bash ../depcomp  /usr/local/bin/bash ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H  -I. -I. -I..  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -Wformat -Wformat-security -I./include -I.. -I../src/include -I./libprelude-error  -I../libmissing -I../libmissing -I../libltdl  -I/usr/local/include -I/usr/local/include -I/usr/local/include -D_THREAD_SAFE   -g -O2 -c -o idmef-tree-wrap.lo idmef-tree-wrap.c
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -Wformat -Wformat-security -I./include -I.. -I../src/include -I./libprelude-error -I../libmissing -I../libmissing -I../libltdl -I/usr/local/include -I/usr/local/include -I/usr/local/include -D_THREAD_SAFE -g -O2 -c idmef-tree-wrap.c -Wp,-MD,.deps/idmef-tree-wrap.TPlo  -fPIC -DPIC -o .libs/idmef-tree-wrap.o
+In file included from idmef-tree-wrap.c:30:
+../libmissing/stdio.h:20: warning: ignoring pragma: system_header
+In file included from idmef-tree-wrap.c:31:
+../libmissing/stdlib.h:19: warning: ignoring pragma: system_header
+In file included from idmef-tree-wrap.c:32:
+../libmissing/string.h:22: warning: ignoring pragma: system_header
+In file included from idmef-tree-wrap.c:33:
+../libmissing/strings.h:22: warning: ignoring pragma: system_header
+In file included from include/prelude-io.h:35,
+                 from include/prelude-msg.h:27,
+                 from idmef-tree-wrap.c:38:
+../libmissing/stdio.h:20: warning: ignoring pragma: system_header
+In file included from include/prelude-io.h:36,
+                 from include/prelude-msg.h:27,
+                 from idmef-tree-wrap.c:38:
+../libmissing/unistd.h:21: warning: ignoring pragma: system_header
+In file included from ../libmissing/unistd.h:37,
+                 from include/prelude-io.h:36,
+                 from include/prelude-msg.h:27,
+                 from idmef-tree-wrap.c:38:
+../libmissing/stdlib.h:19: warning: ignoring pragma: system_header
+In file included from libprelude-error/prelude-error.h:33,
+                 from idmef-tree-wrap.c:42:
+../libmissing/stdio.h:20: warning: ignoring pragma: system_header
+In file included from libprelude-error/prelude-error.h:36,
+                 from idmef-tree-wrap.c:42:
+../libmissing/errno.h:22: warning: ignoring pragma: system_header
+In file included from /usr/include/sys/time.h:291,
+                 from include/idmef-time.h:34,
+                 from idmef-tree-wrap.c:44:
+../libmissing/time.h:20: warning: ignoring pragma: system_header
+In file included from include/idmef-time.h:35,
+                 from idmef-tree-wrap.c:44:
+../libmissing/time.h:20: warning: ignoring pragma: system_header
+In file included from ../libmissing/arpa/inet.h:24,
+                 from include/libmissing.h:34,
+                 from idmef-tree-wrap.c:50:
+../libmissing/sys/socket.h:31: warning: ignoring pragma: system_header
+In file included from include/libmissing.h:34,
+                 from idmef-tree-wrap.c:50:
+../libmissing/arpa/inet.h:28: warning: ignoring pragma: system_header
+In file included from ../libmissing/arpa/inet.h:31,
+                 from include/libmissing.h:34,
+                 from idmef-tree-wrap.c:50:
+/usr/include/arpa/inet.h:89: warning: parameter has incomplete type
+/usr/include/arpa/inet.h:92: warning: parameter has incomplete type
+/usr/include/arpa/inet.h:96: warning: parameter has incomplete type
+In file included from include/libmissing.h:36,
+                 from idmef-tree-wrap.c:50:
+../libmissing/stdio.h:20: warning: ignoring pragma: system_header
+In file included from include/libmissing.h:41,
+                 from idmef-tree-wrap.c:50:
+../libmissing/time.h:20: warning: ignoring pragma: system_header
+In file included from ../libmissing/ftw_.h:21,
+                 from include/libmissing.h:42,
+                 from idmef-tree-wrap.c:50:
+../libmissing/sys/stat.h:27: warning: ignoring pragma: system_header
+In file included from include/common.h:41,
+                 from idmef-tree-wrap.c:51:
+../libmissing/netinet/in.h:23: warning: ignoring pragma: system_header
+In file included from include/common.h:44,
+                 from idmef-tree-wrap.c:51:
+../libmissing/time.h:20: warning: ignoring pragma: system_header
+idmef-tree-wrap.c: In function `idmef_additional_data_new_meaning':
+idmef-tree-wrap.c:2104: syntax error before `int'
+idmef-tree-wrap.c:2107: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c:2107: (Each undeclared identifier is reported only once
+idmef-tree-wrap.c:2107: for each function it appears in.)
+idmef-tree-wrap.c: In function `idmef_additional_data_new_data':
+idmef-tree-wrap.c:2166: syntax error before `int'
+idmef-tree-wrap.c:2169: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_reference_new_name':
+idmef-tree-wrap.c:2560: syntax error before `int'
+idmef-tree-wrap.c:2563: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_reference_new_url':
+idmef-tree-wrap.c:2622: syntax error before `int'
+idmef-tree-wrap.c:2625: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_reference_new_meaning':
+idmef-tree-wrap.c:2684: syntax error before `int'
+idmef-tree-wrap.c:2687: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_classification_new_ident':
+idmef-tree-wrap.c:3075: syntax error before `int'
+idmef-tree-wrap.c:3078: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_classification_new_text':
+idmef-tree-wrap.c:3137: syntax error before `int'
+idmef-tree-wrap.c:3140: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_user_id_new_ident':
+idmef-tree-wrap.c:3580: syntax error before `int'
+idmef-tree-wrap.c:3583: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_user_id_new_tty':
+idmef-tree-wrap.c:3692: syntax error before `int'
+idmef-tree-wrap.c:3695: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_user_id_new_name':
+idmef-tree-wrap.c:3754: syntax error before `int'
+idmef-tree-wrap.c:3757: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_user_new_ident':
+idmef-tree-wrap.c:4203: syntax error before `int'
+idmef-tree-wrap.c:4206: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_address_new_ident':
+idmef-tree-wrap.c:4721: syntax error before `int'
+idmef-tree-wrap.c:4724: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_address_new_vlan_name':
+idmef-tree-wrap.c:4833: syntax error before `int'
+idmef-tree-wrap.c:4836: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_address_new_address':
+idmef-tree-wrap.c:4956: syntax error before `int'
+idmef-tree-wrap.c:4959: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_address_new_netmask':
+idmef-tree-wrap.c:5018: syntax error before `int'
+idmef-tree-wrap.c:5021: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_process_new_ident':
+idmef-tree-wrap.c:5542: syntax error before `int'
+idmef-tree-wrap.c:5545: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_process_new_name':
+idmef-tree-wrap.c:5604: syntax error before `int'
+idmef-tree-wrap.c:5607: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_process_new_path':
+idmef-tree-wrap.c:5727: syntax error before `int'
+idmef-tree-wrap.c:5730: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_web_service_new_url':
+idmef-tree-wrap.c:6371: syntax error before `int'
+idmef-tree-wrap.c:6374: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_web_service_new_cgi':
+idmef-tree-wrap.c:6433: syntax error before `int'
+idmef-tree-wrap.c:6436: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_web_service_new_http_method':
+idmef-tree-wrap.c:6495: syntax error before `int'
+idmef-tree-wrap.c:6498: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_snmp_service_new_oid':
+idmef-tree-wrap.c:7006: syntax error before `int'
+idmef-tree-wrap.c:7009: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_snmp_service_new_security_name':
+idmef-tree-wrap.c:7190: syntax error before `int'
+idmef-tree-wrap.c:7193: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_snmp_service_new_context_name':
+idmef-tree-wrap.c:7313: syntax error before `int'
+idmef-tree-wrap.c:7316: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_snmp_service_new_context_engine_id':
+idmef-tree-wrap.c:7375: syntax error before `int'
+idmef-tree-wrap.c:7378: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_snmp_service_new_command':
+idmef-tree-wrap.c:7437: syntax error before `int'
+idmef-tree-wrap.c:7440: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_snmp_service_new_community':
+idmef-tree-wrap.c:7499: syntax error before `int'
+idmef-tree-wrap.c:7502: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_service_new_ident':
+idmef-tree-wrap.c:7990: syntax error before `int'
+idmef-tree-wrap.c:7993: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_service_new_iana_protocol_name':
+idmef-tree-wrap.c:8174: syntax error before `int'
+idmef-tree-wrap.c:8177: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_service_new_name':
+idmef-tree-wrap.c:8236: syntax error before `int'
+idmef-tree-wrap.c:8239: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_service_new_portlist':
+idmef-tree-wrap.c:8359: syntax error before `int'
+idmef-tree-wrap.c:8362: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_service_new_protocol':
+idmef-tree-wrap.c:8421: syntax error before `int'
+idmef-tree-wrap.c:8424: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_node_new_ident':
+idmef-tree-wrap.c:9100: syntax error before `int'
+idmef-tree-wrap.c:9103: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_node_new_location':
+idmef-tree-wrap.c:9212: syntax error before `int'
+idmef-tree-wrap.c:9215: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_node_new_name':
+idmef-tree-wrap.c:9274: syntax error before `int'
+idmef-tree-wrap.c:9277: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_source_new_ident':
+idmef-tree-wrap.c:9786: syntax error before `int'
+idmef-tree-wrap.c:9789: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_source_new_interface':
+idmef-tree-wrap.c:9898: syntax error before `int'
+idmef-tree-wrap.c:9901: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_source_new_node':
+idmef-tree-wrap.c:9960: syntax error before `int'
+idmef-tree-wrap.c:9963: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_source_new_user':
+idmef-tree-wrap.c:10022: syntax error before `int'
+idmef-tree-wrap.c:10025: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_source_new_process':
+idmef-tree-wrap.c:10084: syntax error before `int'
+idmef-tree-wrap.c:10087: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_source_new_service':
+idmef-tree-wrap.c:10146: syntax error before `int'
+idmef-tree-wrap.c:10149: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_access_new_user_id':
+idmef-tree-wrap.c:10560: syntax error before `int'
+idmef-tree-wrap.c:10563: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_inode_new_change_time':
+idmef-tree-wrap.c:10981: syntax error before `int'
+idmef-tree-wrap.c:10984: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_checksum_new_value':
+idmef-tree-wrap.c:11639: syntax error before `int'
+idmef-tree-wrap.c:11642: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_checksum_new_key':
+idmef-tree-wrap.c:11701: syntax error before `int'
+idmef-tree-wrap.c:11704: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_new_ident':
+idmef-tree-wrap.c:12469: syntax error before `int'
+idmef-tree-wrap.c:12472: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_new_name':
+idmef-tree-wrap.c:12531: syntax error before `int'
+idmef-tree-wrap.c:12534: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_new_path':
+idmef-tree-wrap.c:12593: syntax error before `int'
+idmef-tree-wrap.c:12596: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_new_create_time':
+idmef-tree-wrap.c:12655: syntax error before `int'
+idmef-tree-wrap.c:12658: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_new_modify_time':
+idmef-tree-wrap.c:12717: syntax error before `int'
+idmef-tree-wrap.c:12720: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_new_access_time':
+idmef-tree-wrap.c:12779: syntax error before `int'
+idmef-tree-wrap.c:12782: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_new_inode':
+idmef-tree-wrap.c:13119: syntax error before `int'
+idmef-tree-wrap.c:13122: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_file_new_file_type':
+idmef-tree-wrap.c:13370: syntax error before `int'
+idmef-tree-wrap.c:13373: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_linkage_new_name':
+idmef-tree-wrap.c:13972: syntax error before `int'
+idmef-tree-wrap.c:13975: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_linkage_new_path':
+idmef-tree-wrap.c:14034: syntax error before `int'
+idmef-tree-wrap.c:14037: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_linkage_new_file':
+idmef-tree-wrap.c:14096: syntax error before `int'
+idmef-tree-wrap.c:14099: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_target_new_ident':
+idmef-tree-wrap.c:14571: syntax error before `int'
+idmef-tree-wrap.c:14574: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_target_new_interface':
+idmef-tree-wrap.c:14683: syntax error before `int'
+idmef-tree-wrap.c:14686: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_target_new_node':
+idmef-tree-wrap.c:14745: syntax error before `int'
+idmef-tree-wrap.c:14748: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_target_new_user':
+idmef-tree-wrap.c:14807: syntax error before `int'
+idmef-tree-wrap.c:14810: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_target_new_process':
+idmef-tree-wrap.c:14869: syntax error before `int'
+idmef-tree-wrap.c:14872: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_target_new_service':
+idmef-tree-wrap.c:14931: syntax error before `int'
+idmef-tree-wrap.c:14934: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_analyzerid':
+idmef-tree-wrap.c:15530: syntax error before `int'
+idmef-tree-wrap.c:15533: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_name':
+idmef-tree-wrap.c:15592: syntax error before `int'
+idmef-tree-wrap.c:15595: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_manufacturer':
+idmef-tree-wrap.c:15654: syntax error before `int'
+idmef-tree-wrap.c:15657: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_model':
+idmef-tree-wrap.c:15716: syntax error before `int'
+idmef-tree-wrap.c:15719: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_version':
+idmef-tree-wrap.c:15778: syntax error before `int'
+idmef-tree-wrap.c:15781: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_class':
+idmef-tree-wrap.c:15840: syntax error before `int'
+idmef-tree-wrap.c:15843: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_ostype':
+idmef-tree-wrap.c:15902: syntax error before `int'
+idmef-tree-wrap.c:15905: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_osversion':
+idmef-tree-wrap.c:15964: syntax error before `int'
+idmef-tree-wrap.c:15967: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_node':
+idmef-tree-wrap.c:16026: syntax error before `int'
+idmef-tree-wrap.c:16029: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_analyzer_new_process':
+idmef-tree-wrap.c:16088: syntax error before `int'
+idmef-tree-wrap.c:16091: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_alertident_new_alertident':
+idmef-tree-wrap.c:16470: syntax error before `int'
+idmef-tree-wrap.c:16473: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_alertident_new_analyzerid':
+idmef-tree-wrap.c:16532: syntax error before `int'
+idmef-tree-wrap.c:16535: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_impact_new_description':
+idmef-tree-wrap.c:17008: syntax error before `int'
+idmef-tree-wrap.c:17011: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_action_new_description':
+idmef-tree-wrap.c:17358: syntax error before `int'
+idmef-tree-wrap.c:17361: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_assessment_new_impact':
+idmef-tree-wrap.c:18022: syntax error before `int'
+idmef-tree-wrap.c:18025: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_assessment_new_confidence':
+idmef-tree-wrap.c:18162: syntax error before `int'
+idmef-tree-wrap.c:18165: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_tool_alert_new_name':
+idmef-tree-wrap.c:18578: syntax error before `int'
+idmef-tree-wrap.c:18581: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_tool_alert_new_command':
+idmef-tree-wrap.c:18640: syntax error before `int'
+idmef-tree-wrap.c:18643: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_correlation_alert_new_name':
+idmef-tree-wrap.c:19114: syntax error before `int'
+idmef-tree-wrap.c:19117: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_overflow_alert_new_program':
+idmef-tree-wrap.c:19523: syntax error before `int'
+idmef-tree-wrap.c:19526: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_overflow_alert_new_buffer':
+idmef-tree-wrap.c:19646: syntax error before `int'
+idmef-tree-wrap.c:19649: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_alert_new_messageid':
+idmef-tree-wrap.c:20443: syntax error before `int'
+idmef-tree-wrap.c:20446: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_alert_new_create_time':
+idmef-tree-wrap.c:20583: syntax error before `int'
+idmef-tree-wrap.c:20586: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_alert_new_classification':
+idmef-tree-wrap.c:20645: syntax error before `int'
+idmef-tree-wrap.c:20648: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_alert_new_detect_time':
+idmef-tree-wrap.c:20707: syntax error before `int'
+idmef-tree-wrap.c:20710: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_alert_new_analyzer_time':
+idmef-tree-wrap.c:20769: syntax error before `int'
+idmef-tree-wrap.c:20772: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_alert_new_assessment':
+idmef-tree-wrap.c:20987: syntax error before `int'
+idmef-tree-wrap.c:20990: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_heartbeat_new_messageid':
+idmef-tree-wrap.c:22075: syntax error before `int'
+idmef-tree-wrap.c:22078: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_heartbeat_new_create_time':
+idmef-tree-wrap.c:22215: syntax error before `int'
+idmef-tree-wrap.c:22218: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_heartbeat_new_analyzer_time':
+idmef-tree-wrap.c:22277: syntax error before `int'
+idmef-tree-wrap.c:22280: `retval' undeclared (first use in this function)
+idmef-tree-wrap.c: In function `idmef_message_new_version':
+idmef-tree-wrap.c:22816: syntax error before `int'
+idmef-tree-wrap.c:22819: `retval' undeclared (first use in this function)
+*** Error code 1

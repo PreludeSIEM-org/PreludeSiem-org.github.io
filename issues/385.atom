@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/385.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2010-08-02T15:15:21Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=1412</id>
+    <updated>2010-08-02T15:15:21Z</updated>
+    <author>
+      <name>Friedrich Delgado</name>
+      <email>delgado@pre-sense.de</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Some additional info:&lt;/p&gt;
+
+
+	&lt;p&gt;It appears that it's quite directly dependant on the amount of events coming in, if the manager will go into the loop. After it hasn't been accepting data for a few days and I restart it, it starts receiving lots of messages (at least 288 messages per day per sensor, from about 5 sensors) and then stops pretty quickly. After restarting it once or twice again, it will keep running for a few days.&lt;/p&gt;
+
+
+	&lt;p&gt;I've tried to put&lt;br /&gt;&lt;pre&gt;
+sched-buffer-size = 101M
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;into the prelude-manager.conf as a temporary workaround. This might lead to high memory consumption (101MB of main memory) but if I understand the logic correctly, the loop should not be entered at all.&lt;/p&gt;
+
+
+	&lt;p&gt;I'm aware that you might need additional information to be able to reproduce this, but I have no idea which information that might be, so please just feel free to ask!&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=1413</id>
+    <updated>2010-08-02T18:36:34Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;i&gt;0001-Prevent-infinite-loop.patch&lt;/i&gt; added&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Yoann VANDOORSELAERE&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Priority&lt;/strong&gt; changed from &lt;i&gt;Normal&lt;/i&gt; to &lt;i&gt;High&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;1.0.1&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Thank you for the detailed report! Could you please try the attached patch, and let us know whether this solve your problem?&lt;/p&gt;
+
+
+	&lt;p&gt;Regards,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=1414</id>
+    <updated>2010-08-02T18:38:20Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;0001-Prevent-infinite-loop.patch&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=1415</id>
+    <updated>2010-08-02T18:38:32Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/200/0001-Prevent-infinite-loop.patch"&gt;0001-Prevent-infinite-loop.patch&lt;/a&gt; &lt;a class="icon-only icon-magnifier" title="View" href="/attachments/200/0001-Prevent-infinite-loop.patch"&gt;View&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=1419</id>
+    <updated>2010-08-03T11:58:44Z</updated>
+    <author>
+      <name>Friedrich Delgado</name>
+      <email>delgado@pre-sense.de</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Thanks for the quick response.&lt;/p&gt;
+
+
+	&lt;p&gt;I've applied the patch, recompiled and reinstalled and disabled the workaround.&lt;/p&gt;
+
+
+	&lt;p&gt;I'm quite sure that there will be no infinite loop any more, but I'll get back to you in a few days, if I see any further problems.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=1420</id>
+    <updated>2010-08-06T10:56:13Z</updated>
+    <author>
+      <name>Friedrich Delgado</name>
+      <email>delgado@pre-sense.de</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Patched prelude manager 1.0.0 has been running smoothly for 3 days now, no problems in sight. Thanks! &lt;img src="/plugin_assets/redmine_wiki_extensions/images/wink.png" alt=";)"&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=1421</id>
+    <updated>2010-08-06T11:59:02Z</updated>
+    <author>
+      <name>Anonymous</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a class="changeset" title="Prevent infinite loop An infinite loop was possible on insertion of an event in the processing q..." href="http://www.prelude-siem.org/projects/prelude-manager/repository/revisions/f13f3cf321abf762e589877ac1601de4e89da4b7"&gt;f13f3cf321abf762e589877ac1601de4e89da4b7&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=2414</id>
+    <updated>2015-11-08T11:56:31Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;1.0.1&lt;/i&gt; to &lt;i&gt;Prelude OSS 1.0.1&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #385: Infinite loop in bufpool_add_message</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/385"/>
+    <id>http://www.prelude-siem.org/issues/385?journal_id=2415</id>
+    <updated>2015-11-08T11:56:44Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

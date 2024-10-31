@@ -1,0 +1,2022 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Prelude SIEM &mdash; Prelude Documentation 5.2</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Prelude Documentation 5.2" href="../index.html"/>
+        <link rel="next" title="Prelude SIEM" href="../preludesiem-configuration/preludesiem-configuration.html"/>
+        <link rel="prev" title="Prelude OSS" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Prelude Documentation
+          
+
+          
+            
+            <img src="../_static/Logo-prelude-oss-blanc.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Utilisation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objet">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#domaine-d-application-de-ce-document">Scope of this document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#audience-pour-ce-document">Audience for this document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#prelude-siem-la-supervision-de-securite">Prelude SIEM: The security monitoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#les-modules-prelude-siem">The Prelude SIEM modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#l-interface-graphique-de-prelude-siem">The Prelude SIEM graphical interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#authentification">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#menus-de-navigation">Navigation menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description-du-menu-alert">Description of the ALERT menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#alertes">Alerts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#description-du-menu-analyse">Description of the ANALYSE menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#statistiques">Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#description-du-menu-archive">Description of the ARCHIVE menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#evenements">Events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#description-du-menu-admin">Description of the ADMIN menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#controle-d-acces">Access control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preferences">Preferences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supervision">Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#description-du-menu">Description of the “?” menu</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aide">Help</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#apps">Apps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#a-propos">About</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deconnexion">Logout</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#synthese-des-risques">Risk overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#menu-de-controle">Control menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#onglets">Tabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contenu-de-la-page">Page contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tableaux-de-traitements-et-d-analyse">Tables for processing and analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#onglet-de-recherche">Search tab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#onglet-d-agregation">Aggregation tab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#description-des-menus-de-prelude-gui">Prelude GUI menus description</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#menu-alert">ALERT menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#section-alertes">Alerts section</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#menu-analyse">ANALYSE menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#section-statistiques">Statistics section</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#onglet-alertes">Alerts tab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#menu-archive">ARCHIVE menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#section-evenements">Events section</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sous-section-journaux">Logs subsection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#menu-admin">ADMIN menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#section-controle-d-acces">Access control section</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#onglet-utilisateurs">Users tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onglet-groupes">Groups tab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#section-configuration">Configuration section</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#onglet-planification">Scheduling tab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#section-preferences">Preferences section</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#onglet-mon-compte">My account tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onglet-filtres">Filters tab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#section-supervision">Monitoring section</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#onglet-agents">Agents Tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#onglet-pulsations">Heartbeats tab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#menu">? menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#section-aide">Help section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#section-apps">Apps section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#section-a-propos">The About section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#section-deconnexion">Logout section</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#glossaire-et-abreviations">Glossary and abbreviations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#glossaire">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#abreviations">Abbreviations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#annexe-criteres-et-chemins">Annex: Criteria and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#criteres-idmef">IDMEF criteria</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creation-de-filtre-a-l-aide-de-criteres-idmef">Filter creation with IDMEF criteria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#syntaxe-des-criteres-idmef">IDMEF criteria syntax</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#chemins-idmef">IDMEF paths</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#correspondance-des-classes-idmef-et-des-chemins-idmef">Mapping an IDMEF class to an IDMEF path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elements-indexes">Indexed elements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#operateurs-idmef">IDMEF operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chemins-par-defaut">Default paths</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Alerts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#journaux">Logs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#introduction">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#prelude-siem-la-supervision-de-securite">Prelude SIEM: The security monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#configuration-du-bus-prelude-siem">Prelude SIEM bus configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#configuration-des-modules-prelude-siem">Prelude SIEM modules configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#glossaire-et-abreviations">Glossary &amp; abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#annexe-criteres-et-chemins-idmef">Annex: IDMEF criteria and paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#annexe-fichiers-de-configuration">Annex: Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#annexe-aide-de-prelude-siem">Annex: Prelude SIEM help</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-installation/preludesiem-installation.html#introduction">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-installation/preludesiem-installation.html#prelude-siem-la-supervision-de-securite">Prelude SIEM: The security monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-installation/preludesiem-installation.html#presentation-generale">Quick Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-installation/preludesiem-installation.html#installation-de-la-base-de-donnees-prelude-siem">Initialize the Prelude SIEM database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-installation/preludesiem-installation.html#installation-de-prelude-siem">Prelude SIEM installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-installation/preludesiem-installation.html#installation-du-serveur-web">Web server installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-installation/preludesiem-installation.html#glossaire-et-abreviations">Glossary &amp; abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-installation/preludesiem-installation.html#sauvegarde">Backup</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Prelude Documentation</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Prelude SIEM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>PUBLICATION HISTORY</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Version</th>
+<th class="head">Date</th>
+<th class="head">Modification</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>V 5.1</td>
+<td>13/09/2019</td>
+<td>Updates to take changes in Prelude 5.1 into account</td>
+</tr>
+<tr class="row-odd"><td>V 5.0</td>
+<td>07/09/2018</td>
+<td>Updates to take changes in Prelude 5.0 into account</td>
+</tr>
+<tr class="row-even"><td>V 4.1</td>
+<td>21/07/2017</td>
+<td>Updates to take changes in Prelude 4.1 into account</td>
+</tr>
+<tr class="row-odd"><td>V 4.0</td>
+<td>27/02/2017</td>
+<td>Updates to take changes in Prelude 4.0 into account</td>
+</tr>
+<tr class="row-even"><td>V 3.1</td>
+<td>14/09/2016</td>
+<td>Updates to take changes in Prelude 3.1 into account</td>
+</tr>
+<tr class="row-odd"><td>V 3.0</td>
+<td>20/05/2016</td>
+<td>Updates to take changes in Prelude 3.0 into account</td>
+</tr>
+<tr class="row-even"><td>V 2.1</td>
+<td>21/08/2015</td>
+<td>Updates to take changes in Prelude 2.1 into account</td>
+</tr>
+<tr class="row-odd"><td>V 2.0</td>
+<td>20/10/2014</td>
+<td>Initial version</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objet">
+<h2>Object<a class="headerlink" href="#objet" title="Permalink to this headline">¶</a></h2>
+<p>This guide presents:</p>
+<ul class="simple">
+<li>The Prelude SIEM graphical interface.</li>
+</ul>
+</div>
+<div class="section" id="domaine-d-application-de-ce-document">
+<h2>Scope of this document<a class="headerlink" href="#domaine-d-application-de-ce-document" title="Permalink to this headline">¶</a></h2>
+<p>This document is applicable to:</p>
+<ul class="simple">
+<li>Prelude SIEM version 5.2;</li>
+<li>Operating systems:<ul>
+<li>CentOS/Redhat version 7 (64 bits).</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="audience-pour-ce-document">
+<h2>Audience for this document<a class="headerlink" href="#audience-pour-ce-document" title="Permalink to this headline">¶</a></h2>
+<p>This document is mainly dedicated to the following teams:</p>
+<ul class="simple">
+<li>The Prelude SIEM integration team;</li>
+<li>The Prelude SIEM support and deployment team;</li>
+<li>The Prelude SIEM administration team;</li>
+<li>Prelude SIEM users.</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Reference documents are:</p>
+<ul class="simple">
+<li>Prelude SIEM: <a class="reference external" href="https://www.prelude-siem.com">https://www.prelude-siem.com</a></li>
+<li>Operating systems:<ul>
+<li>CentOS/Redhat: <a class="reference external" href="https://www.centos.org">https://www.centos.org</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="prelude-siem-la-supervision-de-securite">
+<h1>Prelude SIEM: The security monitoring<a class="headerlink" href="#prelude-siem-la-supervision-de-securite" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prelude SIEM</strong> is an open-source security monitoring solution. Its objective is to centralize all security events of an information system and to offer a homogeneous vision to the operators. <strong>Prelude SIEM</strong> collects, normalizes, sorts, aggregates, correlates and reports all security-related events independently of the product brand or license giving rise to such events.</p>
+<a class="reference internal image-reference" href="../_images/prelude_presentation3.png"><img alt="../_images/prelude_presentation3.png" class="align-center" src="../_images/prelude_presentation3.png" style="width: 15.4472cm; height: 12.7608cm;" /></a>
+<p class="centered">
+<strong>Figure: Features of Prelude SIEM</strong></p><p><strong>Prelude SIEM</strong> presents a specificity almost unique in the SIEM community: it implements the IDMEF format. This format is defined in an RFC since 2007 at the IETF and allows homogenizing the way a security alert is presented. Through the use of this format and its interconnection library, it is easy to make other tools communicate with <strong>Prelude SIEM</strong>. Beyond its capacity to analyze any type of log (system logs, log streams, flat files, etc.), <strong>Prelude SIEM</strong> also benefits from a native support with a number of HIDS and NIDS sensors; with the best known being Snort, Samhain, OSSEC and Suricata.</p>
+<p><strong>Prelude SIEM</strong> is available in three versions:</p>
+<ul class="simple">
+<li><strong>Prelude OSS</strong>: Free, public and open-source version, released under GPL V2 license. Prelude OSS implements the event management part of Prelude (SEM). Since version 5.2, Prelude OSS also makes it possible to store, display and analyze raw security information (SIM). This version is intended for small parks of limited size (&lt;10 machines), students, research organizations, as well as for testing by users interested in acquiring Prelude SIEM. The performance of Prelude OSS is highly limited by the volume of data analyzed.</li>
+<li><strong>Prelude SIEM</strong>: Professional version based on the open-source version <strong>Prelude OSS</strong> and that greatly enhances its performance. Prelude SIEM offers many additional features (ticket management, dynamic statistics, geolocation, archiving, etc.) and capabilities to be deployed and operated easily and efficiently on complex and large-scaled parks of machines.</li>
+<li><strong>Prelude SOC</strong>: Fully scaled version, mainly for Security Operational Center (SOC) usage. Necessary modules for an operational security center, in addition to Prelude SIEM, are: Prelude MAP (network topological representation), Prelude CTI (Cyber Threat Intelligence) and Prelude NOC (performance and availability monitoring).</li>
+</ul>
+<div class="section" id="les-modules-prelude-siem">
+<h2>The Prelude SIEM modules<a class="headerlink" href="#les-modules-prelude-siem" title="Permalink to this headline">¶</a></h2>
+<p>The following figure shows how Prelude SIEM’s modules communicate together:</p>
+<a class="reference internal image-reference" href="../_images/prelude_modules3.png"><img alt="../_images/prelude_modules3.png" class="align-center" src="../_images/prelude_modules3.png" style="width: 12.1768cm; height: 11.704cm;" /></a>
+<p class="centered">
+<strong>Figure: Event tracking between Prelude SIEM modules</strong></p><p>The path of an event between the different Prelude SIEM modules is as follows:</p>
+<ol class="arabic simple">
+<li>The application generates a log and sends it to Prelude LML (either under file form or through a Syslog connection);</li>
+<li>The log is analyzed by Prelude LML (thanks to its set of rules). If this log is considered suspicious, Prelude LML creates an IDMEF alert and sends it to its manager (Prelude Manager that can be chained to another Prelude Manager instance);</li>
+<li>Prelude Manager performs the filters and treatments that are configured and then inserts the event into the database;</li>
+<li>Prelude Correlator receives the alerts from Prelude Manager;</li>
+<li>If several raw alerts match a correlation scenario, a correlation alert is generated and sent to Prelude Manager;</li>
+<li>Prelude Manager also writes correlation alerts into the database;</li>
+<li>Prelude GUI connects to the database via LibPreludeDB in order to read information and sends it to a browser.</li>
+</ol>
+<p>In parallel, Prelude Manager can receive alerts from other sources:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>A third-party intrusion detection sensor sends its alerts to Prelude Manager (e.g. OSSEC, Samhain, Suricata, etc).</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="l-interface-graphique-de-prelude-siem">
+<h1>The Prelude SIEM graphical interface<a class="headerlink" href="#l-interface-graphique-de-prelude-siem" title="Permalink to this headline">¶</a></h1>
+<p>The graphical interface of Prelude SIEM is called <strong>Prelude GUI</strong> in all documents.</p>
+<p>The GUI architecture has been reworked in Prelude SIEM to offer a flexible application. Prelude SIEM is completely modular and uses the latest Web technologies. The current interface is composed of a core module and many additional plugins that can be managed from this same interface.</p>
+<p>Commercial plugins are available in the SIEM version. They provide a lot of additional features like:</p>
+<ul class="simple">
+<li>Entity management;</li>
+<li>Advanced ticket system;</li>
+<li>Graphical fully interactive statistics;</li>
+<li>Reporting and compliance;</li>
+<li>Forensic / Behavioral charts;</li>
+<li>Rules creation through wizard (log analysis rules and correlation rules);</li>
+<li>Ability to create virtual views;</li>
+<li>Secured authentication using an LDAP server or SSO.</li>
+</ul>
+<p>When Prelude SIEM receives information, it executes two actions: storage into the NoSQL database for raw data and forensic, normalization and storage using the IDMEF format into the real-time database. <strong>Prelude GUI</strong> connects to these databases and retrieves alerts and logs details in order to display them. These details are available instantly or updated periodically and automatically. The refresh period is configurable.</p>
+<p>The interface interacts with the following databases:</p>
+<ul class="simple">
+<li>The GUI database used to save configuration options, created rules etc.</li>
+<li>The IDMEF database from where alerts and agents details are retrieved;</li>
+<li>NoSQL database where raw datas (logs, etc.) are stored.</li>
+</ul>
+<div class="section" id="authentification">
+<h2>Authentication<a class="headerlink" href="#authentification" title="Permalink to this headline">¶</a></h2>
+<p><strong>Prelude GUI</strong> is a lightweight application accessible using a Web browser. Refer to the Prelude SIEM installation guide for the access procedure according to the HTTP server used. The first step to access the GUI is authenticating to <em>https://IP-of-your-Prelude-SIEM/</em>.</p>
+<p>You must enter the login and password depending on options specified in the Prelude GUI configuration file (<code class="file docutils literal notranslate"><span class="pre">/etc/prewikka/conf.d/auth.conf</span></code>).</p>
+<p>By default, the local authentication mode is selected.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Default administrator login and password are specified using the <em>initial_admin_user</em> and <em>initial_admin_pass</em> options. These options can be changed in the [auth] section of the <code class="file docutils literal notranslate"><span class="pre">/etc/prewikka/conf.d/auth.conf</span></code> configuration file.</p>
+</div>
+<p>The default administrator credentials are the following:</p>
+<ul class="simple">
+<li>Login: admin;</li>
+<li>Password: admin.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is possible to skip this authentication phase in the configuration file. To do this, refer to the Configuration Guide.</p>
+</div>
+<p>Once authenticated, a listing of detected threats appears.</p>
+<p>This interface presents several sections:</p>
+<ul class="simple">
+<li>Navigation menu;</li>
+<li>Risk overview;</li>
+<li>Control menu;</li>
+<li>Tabs;</li>
+<li>Page content.</li>
+</ul>
+<p>The rest of the documentation describes these interfaces more precisely.</p>
+</div>
+<div class="section" id="menus-de-navigation">
+<h2>Navigation menu<a class="headerlink" href="#menus-de-navigation" title="Permalink to this headline">¶</a></h2>
+<p>The navigation menu is displayed on the upper left part of the GUI. The order in which sections are displayed can be specified in the configuration file (<code class="file docutils literal notranslate"><span class="pre">/etc/prewikka/menu.yml</span></code>).</p>
+<p>Navigation menu sections are grouped in five entries by default (<span class="guilabel">ALERT</span>, <span class="guilabel">ANALYSE</span>, <span class="guilabel">ARCHIVE</span>, <span class="guilabel">ADMIN</span> and <span class="guilabel">?</span>). Clicking on one of these menus shows the associated sections.</p>
+<ul>
+<li><p class="first"><span class="guilabel">ALERT</span></p>
+<table border="1" class="docutils" id="entries-in-the-alert-menu">
+<caption><span class="caption-text">Entries in the <span class="guilabel">ALERT</span> menu</span><a class="headerlink" href="#entries-in-the-alert-menu" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Entry</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="guilabel">Alerts</span></td>
+<td>Shows the detected alerts with an emphasis on exploitability.</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><span class="guilabel">ANALYSE</span></p>
+<table border="1" class="docutils" id="entries-in-the-analyse-menu">
+<caption><span class="caption-text">Entries in the <span class="guilabel">ANALYSE</span> menu</span><a class="headerlink" href="#entries-in-the-analyse-menu" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Entry</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="guilabel">Statistics</span></td>
+<td>Statistics and trends.</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><span class="guilabel">ARCHIVE</span></p>
+<table border="1" class="docutils" id="entries-in-the-archive-menu">
+<caption><span class="caption-text">Entries in the <span class="guilabel">ARCHIVE</span> menu</span><a class="headerlink" href="#entries-in-the-archive-menu" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Entry</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="guilabel">Events</span></td>
+<td>Advanced search in raw collected data.</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><span class="guilabel">ADMIN</span></p>
+<table border="1" class="docutils" id="entries-in-the-admin-menu">
+<caption><span class="caption-text">Entries in the <span class="guilabel">ADMIN</span> menu</span><a class="headerlink" href="#entries-in-the-admin-menu" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Entry</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="guilabel">Access control</span></td>
+<td>Users and groups management.</td>
+</tr>
+<tr class="row-odd"><td><span class="guilabel">Configuration</span>.</td>
+<td>Periodic tasks management.</td>
+</tr>
+<tr class="row-even"><td><span class="guilabel">Preferences</span></td>
+<td>User preferences and customizations management</td>
+</tr>
+<tr class="row-odd"><td><span class="guilabel">Monitoring</span></td>
+<td>Prelude SIEM agents monitoring.</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><span class="guilabel">?</span></p>
+<table border="1" class="docutils" id="entries-in-the-menu">
+<caption><span class="caption-text">Entries in the <span class="guilabel">?</span> menu</span><a class="headerlink" href="#entries-in-the-menu" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Entry</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><span class="guilabel">Apps</span></td>
+<td>Prelude SIEM plugins management.</td>
+</tr>
+<tr class="row-odd"><td><span class="guilabel">Aide</span></td>
+<td>Access to Prelude SIEM help.</td>
+</tr>
+<tr class="row-even"><td><span class="guilabel">About</span></td>
+<td>Display of Prelude SIEM information.</td>
+</tr>
+<tr class="row-odd"><td><span class="guilabel">Logout</span></td>
+<td>Logout of the current user.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<div class="section" id="description-du-menu-alert">
+<h3>Description of the ALERT menu<a class="headerlink" href="#description-du-menu-alert" title="Permalink to this headline">¶</a></h3>
+<p>The <span class="guilabel">ALERT</span> menu contains the following sections.</p>
+<div class="section" id="alertes">
+<h4>Alerts<a class="headerlink" href="#alertes" title="Permalink to this headline">¶</a></h4>
+<p>This section presents the alerts table. Only high-level information necessary to the operator is presented in order to simplify the interface for level 1 operators. It is possible to enable an advanced mode to display more information in the alerts table.</p>
+<ul class="simple">
+<li><span class="guilabel">Alerts</span>: this tab shows the alerts table;</li>
+<li><span class="guilabel">Aggregated alerts</span>: this tab shows alerts in an aggregated way. The default aggregation is done on the source IP address but it is possible to modify this parameter.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="description-du-menu-analyse">
+<h3>Description of the ANALYSE menu<a class="headerlink" href="#description-du-menu-analyse" title="Permalink to this headline">¶</a></h3>
+<p>The <span class="guilabel">ANALYSE</span> menu contains the following sections.</p>
+<div class="section" id="statistiques">
+<h4>Statistics<a class="headerlink" href="#statistiques" title="Permalink to this headline">¶</a></h4>
+<p>This section regroups different statistics on each type of data managed by Prelude SIEM. It contains the following tabs:</p>
+<ul class="simple">
+<li><span class="guilabel">Alerts</span>: Charts focusing on the main IDMEF fields: the classification, sources, targets, analyzers and the metrology.</li>
+<li><span class="guilabel">Events</span>: Charts focusing on the evolution of raw data.</li>
+<li><span class="guilabel">Timeline</span>: Charts focusing on the evolution of the amount of alerts, logs and flows over time.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="description-du-menu-archive">
+<h3>Description of the ARCHIVE menu<a class="headerlink" href="#description-du-menu-archive" title="Permalink to this headline">¶</a></h3>
+<p>This menu contains the following sections.</p>
+<div class="section" id="evenements">
+<h4>Events<a class="headerlink" href="#evenements" title="Permalink to this headline">¶</a></h4>
+<p>This section regroups the access to raw data:</p>
+<ul class="simple">
+<li><span class="guilabel">Logs</span>: This subsection contains two tabs. The first one named <span class="guilabel">Logs</span> can be used to search into logs. The other one named <span class="guilabel">Aggregated logs</span> indicates the number of logs per host (default configuration).</li>
+</ul>
+</div>
+</div>
+<div class="section" id="description-du-menu-admin">
+<h3>Description of the ADMIN menu<a class="headerlink" href="#description-du-menu-admin" title="Permalink to this headline">¶</a></h3>
+<p>This menu contains the following sections:</p>
+<div class="section" id="controle-d-acces">
+<h4>Access control<a class="headerlink" href="#controle-d-acces" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Access control</span> section is used to manage the following object types:</p>
+<ul class="simple">
+<li><span class="guilabel">Users</span>: this tab allows operators to manage users;</li>
+<li><span class="guilabel">Groups</span>: this tab allows operators to manage groups;</li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h4>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Configuration</span> section provides a GUI to manage task scheduling.</p>
+<p>It contains the following tabs:</p>
+<ul class="simple">
+<li><span class="guilabel">Scheduling</span>: gives the option to visualize and configure the different scheduled tasks of Prelude SIEM.</li>
+</ul>
+</div>
+<div class="section" id="preferences">
+<h4>Preferences<a class="headerlink" href="#preferences" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Preferences</span> section contains the following tabs:</p>
+<ul class="simple">
+<li>My account: allows operators to manage their own account information;</li>
+<li><span class="guilabel">Filters</span>: allows operators to create a new filter. Filters can be applied using the control menu.</li>
+</ul>
+</div>
+<div class="section" id="supervision">
+<h4>Monitoring<a class="headerlink" href="#supervision" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Monitoring</span> section contains the following tabs:</p>
+<ul class="simple">
+<li><span class="guilabel">Agents</span>: This table lists all agents registered to Prelude SIEM and shows their connection statuses;</li>
+<li><span class="guilabel">Heartbeats</span>: gives access to the board showing heartbeats from agents. Heartbeats are messages of life and statistics sent by the agents.</li>
+<li><span class="guilabel">Aggregated heartbeats</span>: gives the option to perform aggregation actions and statistics on heartbeats.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="description-du-menu">
+<h3>Description of the “?” menu<a class="headerlink" href="#description-du-menu" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="aide">
+<h4>Help<a class="headerlink" href="#aide" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Help</span> section gives access to help about the IDMEF schema.</p>
+</div>
+<div class="section" id="apps">
+<h4>Apps<a class="headerlink" href="#apps" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Apps</span> section gives the option to manage the available plugins in Prelude SIEM.</p>
+</div>
+<div class="section" id="a-propos">
+<h4>About<a class="headerlink" href="#a-propos" title="Permalink to this headline">¶</a></h4>
+<p>Opens a window to show information regarding the software.</p>
+</div>
+<div class="section" id="deconnexion">
+<h4>Logout<a class="headerlink" href="#deconnexion" title="Permalink to this headline">¶</a></h4>
+<p>Disconnects the user from Prelude GUI.</p>
+</div>
+</div>
+</div>
+<div class="section" id="synthese-des-risques">
+<h2>Risk overview<a class="headerlink" href="#synthese-des-risques" title="Permalink to this headline">¶</a></h2>
+<p>The risk overview presents indicators allowing operators to have a first idea of their information system security state. Those indicators are refreshed every 30 seconds. The values can vary depending on the control menu.</p>
+<p>The following indicators are available:</p>
+<ul class="simple">
+<li>Agents: Number of online agents and monitoring status of agents (green / red);</li>
+<li>Archive: Number of logs;</li>
+<li>Alerts: Number of alerts for each severity level.</li>
+</ul>
+<p>The displaying of indicators depends on active <strong>Apps</strong>. For instance, log indicators can’t be shown if the <strong>Logs</strong> app is not installed or up-to-date.</p>
+</div>
+<div class="section" id="menu-de-controle">
+<h2>Control menu<a class="headerlink" href="#menu-de-controle" title="Permalink to this headline">¶</a></h2>
+<p>The control menu is used to change view parameters and to apply or save configurations.</p>
+<p>Each control menu field is detailed in the following table.</p>
+<table border="1" class="docutils" id="control-menu-actions">
+<caption><span class="caption-text">Control menu actions</span><a class="headerlink" href="#control-menu-actions" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Action</strong></th>
+<th class="head"><strong>Features</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Filter</td>
+<td>Allows you to select an IDMEF filter that was previously defined, or to create a new filter. The selected filter can be applied to data present in the current view by clicking on the Apply button (magnifying glass). Filter creation is described in <span class="xref std std-ref">Filters tab</span> section.</td>
+</tr>
+<tr class="row-odd"><td>Refresh</td>
+<td>Allows you to configure the refresh interval for every page where this menu is visible: select the interval, then click on the Apply button (magnifying glass).</td>
+</tr>
+<tr class="row-even"><td>Period</td>
+<td>Allows you to select a period to show only information on data that were collected or generated during the corresponding time interval. The time interval can be defined by minutes, hours, days, months or years. Example: if you select “1” month, data from the last 30 days will be displayed.</td>
+</tr>
+<tr class="row-odd"><td>Time information (start and end)</td>
+<td>Allows you to visualize the temporal representation of the period. It can also be used to force a particular time period.</td>
+</tr>
+<tr class="row-even"><td>Apply (magnifying glass button)</td>
+<td>Allows you to apply your configuration.</td>
+</tr>
+<tr class="row-odd"><td>Configure (cog button)</td>
+<td>Allows you to access the configuration parameters of the current page. This button is not clickable when the page has no specific options.</td>
+</tr>
+<tr class="row-even"><td>Help (? button)</td>
+<td>Allows you to access the online help, directly on the chapter associated with the current page.</td>
+</tr>
+</tbody>
+</table>
+<p>By clicking on the Apply button, the new parameters are automatically saved for the current user, so that they can be retrieved when accessing the same page later.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The time parameters are saved globally, allowing to browse between pages while keeping the same time period.</p>
+</div>
+</div>
+<div class="section" id="onglets">
+<h2>Tabs<a class="headerlink" href="#onglets" title="Permalink to this headline">¶</a></h2>
+<p>Below the navigation menu are the tabs. These tabs are menu sub-elements.</p>
+<p>The operator can customize tabs by reordering them inside the <code class="file docutils literal notranslate"><span class="pre">/etc/prewikka/menu.yml</span></code> configuration file.</p>
+</div>
+<div class="section" id="contenu-de-la-page">
+<h2>Page contents<a class="headerlink" href="#contenu-de-la-page" title="Permalink to this headline">¶</a></h2>
+<p>The page contents is the rest of the available space in the interface. It is used to display the contents of the currently viewed page. It is also here that floating windows appear if necessary.</p>
+</div>
+</div>
+<div class="section" id="tableaux-de-traitements-et-d-analyse">
+<h1>Tables for processing and analysis<a class="headerlink" href="#tableaux-de-traitements-et-d-analyse" title="Permalink to this headline">¶</a></h1>
+<p>In Prelude GUI, when searching through different data types, the software always presents the same type of table. This table is generic and adaptable. It is presented under two forms: the first one allows for data search and analysis, the other is used for aggregated searches on this data in order to offer a synthetic view.</p>
+<div class="section" id="onglet-de-recherche">
+<h2>Search tab<a class="headerlink" href="#onglet-de-recherche" title="Permalink to this headline">¶</a></h2>
+<p>The search tab allows operators to find particular data by making specific searches.</p>
+<p><strong>View parameters</strong></p>
+<p>The parameters of this page are the following:</p>
+<ul class="simple">
+<li><strong>Graph type</strong>: Allows to select the type of graph used when aggregation is enabled. By default, this option is <em>Bar</em>.</li>
+<li><strong>Action mode</strong>: If this box is checked, checkboxes are added to the table in order to select one or more data rows and execute a specific action at .the bottom right of the table.</li>
+<li><strong>Condensed mode</strong>: If this box is checked, data are displayed on one line (can be simpler in some use cases). If data are longer than the cell, they are truncated.</li>
+<li><strong>Expert mode</strong> (only in <span class="guilabel">Alerts</span> and <span class="guilabel">Heartbeats</span>): If the option is checked, additional information are available in each of the columns. The interface is a bit less readable due to the amount of data but more efficient for an advanced user.</li>
+</ul>
+<p><strong>Search bar</strong></p>
+<p>The search bar can operate according to two syntaxes:</p>
+<ul class="simple">
+<li>Lucene search: <em>key:value</em> based syntax used by most search engines.</li>
+<li>Criterion search: Prelude SIEM specific and boolean-oriented syntax.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The control menu is taken into account when searching.</p>
+</div>
+<p>Typing in the search bar will open a completion menu. It displays the searchable fields as well as the user’s search history.</p>
+<p>Search examples in Lucene mode:</p>
+<ul class="simple">
+<li>“login” searches data containing the “login” keyword;</li>
+<li>“login failed” searches data containing the “login” keyword and the “failed” keyword;</li>
+<li>“login OR failed” searches data containing the “login” keyword or the “failed” keyword;</li>
+<li>“host:localhost” searches data whose host field is “localhost”;</li>
+<li>“-program:sudo” searches data whose program field is not “sudo”.</li>
+</ul>
+<p><strong>Search results</strong></p>
+<p>The search results are represented as a chart followed by a table. These elements contain all data matching the query typed in the search bar. The chart is configurable in the view parameters.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On the page dedicated to logs, and when the Lucene mode is selected, the elements searched by the user and found in the data are highlighted in the table.</p>
+</div>
+<p>The columns of the table can be removed/added/ordered by clicking on the cog button in the bottom left corner of the table.</p>
+<p>The columns can be sorted, by clicking on the column header. After a first click, data are sorted by ascending order. Successive clicks are used to alternate between the following states:</p>
+<ul class="simple">
+<li>Sort by ascending order;</li>
+<li>Sort by descending order;</li>
+<li>No sort.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It is also possible to sort on several columns simultaneously.</p>
+</div>
+<p>Actions can be performed from the table. By clicking on data in the different columns, a contextual menu appears with the following sections:</p>
+<ul class="simple">
+<li><span class="guilabel">Search</span>: allows simple manipulations on the search bar with the following possibilities:<ul>
+<li><span class="guilabel">Add to search</span>: add the selected value in the search bar and perform the query automatically. The current page is updated with the new results;</li>
+<li><span class="guilabel">Exclude from search</span>: add the selected value in the search bar and force the absence of the value in the results;</li>
+<li><span class="guilabel">New search</span>: create a new query with only the selected value as filter;</li>
+<li><span class="guilabel">Group by …</span>: allows grouping data automatically by the selected field and displays the data repartition as a chart;</li>
+</ul>
+</li>
+<li><span class="guilabel">Actions</span>: allows to execute actions from the selected data. For instance the execution of a system command with an IP address as argument. The available actions are specific to each data type.</li>
+<li><span class="guilabel">Informations</span>: allows to get more detailed information about the selected column without the need to access the full data.</li>
+</ul>
+<p>By clicking on the <span class="guilabel">+</span> symbol at the left of each table row, the whole metadata of the row appear. Buttons give a quick access to the following actions:</p>
+<ul class="simple">
+<li>Click on the metadata name: triggers the grouping by this field;</li>
+<li>Click on the magnifying glass with “+”: triggers the addition of the data to the search;</li>
+<li>Click on the magnifying glass with “-“: triggers the exclusion of the data in the search;</li>
+</ul>
+<p>A pagination mechanism is available at the bottom of the table. It allows users to navigate through the different pages:</p>
+<ul class="simple">
+<li><span class="guilabel">&lt;&lt;</span>: Access to the first page;</li>
+<li><span class="guilabel">&lt;</span>: Access to the previous page;</li>
+<li><span class="guilabel">Page … of …</span>: Direct access to the given page;</li>
+<li><span class="guilabel">&gt;</span>: Access to the next page;</li>
+<li><span class="guilabel">&gt;&gt;</span>: Access to the last page;</li>
+<li><strong>dropdown list</strong>: Choose the number of entries displayed per page.</li>
+</ul>
+<p>The number of results and the position of the displayed entries among these results are displayed at the bottom right of the table.</p>
+</div>
+<div class="section" id="onglet-d-agregation">
+<h2>Aggregation tab<a class="headerlink" href="#onglet-d-agregation" title="Permalink to this headline">¶</a></h2>
+<p>The aggregation tab allows operators to regroup data according to certain metadata determined by the user.</p>
+<p>The page contains:</p>
+<ul class="simple">
+<li>A search bar to apply filters on displayed data.</li>
+<li>An aggregation bar to group by the wished metadata. It is possible to aggregate by several metadata:<ul>
+<li>A time unit: minute, hour, day, month or year;</li>
+<li>Every field associated to the data type.</li>
+</ul>
+</li>
+<li>A table presenting the results of the aggregation with as many columns as grouping fields, as well as a column indicating the number of corresponding data.</li>
+<li>A chart representing the same results as the table.</li>
+</ul>
+<p>It is possible to click on a table value or a chart entry to visualize the corresponding data unitarily.</p>
+<p>It is possible to change the chart type and the maximal number of hosts to display by using the view parameters:</p>
+<ul class="simple">
+<li><strong>Chart type</strong>: The type of representation to use (line, bar, radar, pie, …)</li>
+<li><strong>Limit</strong>: Number of hosts to display.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="description-des-menus-de-prelude-gui">
+<h1>Prelude GUI menus description<a class="headerlink" href="#description-des-menus-de-prelude-gui" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="menu-alert">
+<h2>ALERT menu<a class="headerlink" href="#menu-alert" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="guilabel">ALERT</span> menu is composed of several sections. Each section will be detailed in this chapter.</p>
+<div class="section" id="section-alertes">
+<span id="alertdashboard-link"></span><span id="alertforensic-link"></span><h3>Alerts section<a class="headerlink" href="#section-alertes" title="Permalink to this headline">¶</a></h3>
+<p>The <span class="guilabel">Alerts</span> section provides a visualization level for alerts focused on forensic / analysis. A lot of information is available in this page to optimize the operator’s search.</p>
+<p>This subsection uses the templating of the general data search presented in chapter <span class="xref std std-ref">Search tab</span> and data aggregation presented in chapter <span class="xref std std-ref">Aggregation tab</span>.</p>
+<p><strong>Type of handled data</strong></p>
+<p>The handled data are IDMEF alerts:</p>
+<ul class="simple">
+<li>Simple alerts: a unitary alert sent by a Prelude SIEM agent (Prelude LML, Snort, OSSEC, etc), it concerns a single security event;</li>
+<li>Correlation alerts: a correlation alert is generated by the correlation engine after analyzing one or more alerts (unitary or correlation). These alerts allow operators to see attack scenarios or to have an additional information about a simple alert (blacklist, target, etc).</li>
+</ul>
+<p>Most of filtering tools are based on IDMEF criteria and require to know the IDMEF criteria syntax. Refer to <span class="xref std std-ref">IDMEF operators</span> to learn more about IDMEF criteria.</p>
+<p><strong>Columns of the table</strong></p>
+<p>The table has the following default columns:</p>
+<ul class="simple">
+<li><strong>Date</strong>: creation date of the alert;</li>
+<li><strong>Classification</strong>: The <em>name</em> of the alert, or other information allowing the operator to determine its nature. It is a first indication about the alert (example: <em>Remote Login</em>, <em>Brute force attack</em>). Also, when hovering over the alert, a tooltip appears. The contents of the tooltip corresponds to the description of the alert.</li>
+<li><strong>Source</strong>: information available about the source. This can be the IP address or the domain name, as well as the user name in expert mode. If the IP address is an <em>Internet</em> address, a flag will be added to indicate the origin of this address;</li>
+<li><strong>Target</strong>: the information available about the target. This can be the IP address or the domain name, as well as the user name in expert mode. If the IP address is an <em>Internet</em> address, a flag will be added to indicate the origin of this address;</li>
+<li><strong>Analyzer</strong>: the technical element having generated the alert;</li>
+</ul>
+<p><strong>Specific actions</strong></p>
+<p>The specific actions are the following:</p>
+<ul class="simple">
+<li>On the <strong>Date</strong> column:<ul>
+<li>The date actually is a link opening the alert detail in a widget.</li>
+</ul>
+</li>
+<li>On the <strong>Source</strong> and <strong>Target</strong> columns:<ul>
+<li>For an IP address or a DNS name: search the address in logs or see logs of this host.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Additional actions</strong></p>
+<p>The available actions in “action” mode are the following:</p>
+<ul class="simple">
+<li><span class="guilabel">Delete</span>: Allows to delete an alert;</li>
+<li><span class="guilabel">CSV export</span>: export selected alerts into a CSV file. The columns are those of the table;</li>
+</ul>
+<p><strong>Color code</strong></p>
+<p>Alerts are displayed with four different colors in order to facilitate their identification by severity and to have a first idea of the danger that each of them represents. The color code is the following:</p>
+<table border="1" class="docutils" id="color-code-in-the-alerts-table">
+<caption><span class="caption-text">Color code in the alerts table</span><a class="headerlink" href="#color-code-in-the-alerts-table" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Color</strong></th>
+<th class="head"><strong>Severity</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Blue</td>
+<td>Informational</td>
+</tr>
+<tr class="row-odd"><td>Green</td>
+<td>Low</td>
+</tr>
+<tr class="row-even"><td>Orange</td>
+<td>Medium</td>
+</tr>
+<tr class="row-odd"><td>Red</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="menu-analyse">
+<h2>ANALYSE menu<a class="headerlink" href="#menu-analyse" title="Permalink to this headline">¶</a></h2>
+<p>The ANALYSE menu regroups graphical indicators and analysis tools, it contains several sections detailed below.</p>
+<div class="section" id="section-statistiques">
+<h3>Statistics section<a class="headerlink" href="#section-statistiques" title="Permalink to this headline">¶</a></h3>
+<p>The <span class="guilabel">Statistics</span> section provides a set of indicators about security alerts. These indicators are presented using different types of charts.</p>
+<p>Prelude GUI statistics charts are fully interactive. Clicking on a chart allows to display the related data.</p>
+<p>This section contains the following tabs:</p>
+<ul class="simple">
+<li><span class="guilabel">Alerts</span>;</li>
+</ul>
+<div class="section" id="onglet-alertes">
+<span id="alertstats-link"></span><h4>Alerts tab<a class="headerlink" href="#onglet-alertes" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Alerts</span> tab regroups graphs showing the different categories of alerts generated by Prelude SIEM. That allows operators to see which categories of alerts are the most generated.</p>
+<p>This page contains five graph categories detailed in the tables below.</p>
+<table border="1" class="docutils" id="statistics-alerts-categorizations">
+<caption><span class="caption-text">Statistics - Alerts - Categorizations</span><a class="headerlink" href="#statistics-alerts-categorizations" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Graph</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Top 5 classifications trend</td>
+<td>This graph shows the evolution of the number of alerts for each of the 5 most frequent classifications. This information is represented by a timeline.</td>
+</tr>
+<tr class="row-odd"><td>Top 5 classifications</td>
+<td>This graph shows the 5 most frequent alerts classification. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-even"><td>Top 5 alerts references</td>
+<td>This graph shows the 5 most frequent alert references. This information is represented by a pie chart. A reference is a complement of external information about the alert. It can be a CVE, a vendor-specific URL, etc. (See <span class="target" id="index-6"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4765.html"><strong>RFC 4765</strong></a> (IDMEF) for more details).</td>
+</tr>
+<tr class="row-odd"><td>Alert: Severity</td>
+<td>This graph shows the distribution of alerts by severity. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-even"><td>Top 5 alerts impact types</td>
+<td>This graph shows the 5 most frequent impact types of the generated alerts. This information is represented by a pie chart. The impact type provides the assessment by the analyzer of the event impact on the target, for instance: denial of service, reconnaissance, privilege escalation, etc. (See <span class="target" id="index-7"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4765.html"><strong>RFC 4765</strong></a> (IDMEF) for more details).</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="statistics-alerts-sources">
+<caption><span class="caption-text">Statistics - Alerts - Sources</span><a class="headerlink" href="#statistics-alerts-sources" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Graph</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Top 5 sources trend</td>
+<td>This graph shows the evolution of the number of alerts for each of the 5 most frequent sources. This information is represented by a timeline.</td>
+</tr>
+<tr class="row-odd"><td>Top 5 source addresses</td>
+<td>This graph shows the 5 most frequent source addresses. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-even"><td>Top 5 source users</td>
+<td>This graph shows the 5 most frequent source users (local user making the action described in the alert). This information is represented by a pie chart.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="statistics-alerts-targets">
+<caption><span class="caption-text">Statistics - Alerts - Targets</span><a class="headerlink" href="#statistics-alerts-targets" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Graph</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Top 5 targeted addresses</td>
+<td>This graph shows the 5 most frequently targeted addresses. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-odd"><td>Top 5 targeted ports</td>
+<td>This graph shows the 5 most frequently targeted ports. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-even"><td>Top 5 targeted users</td>
+<td>This graph shows the 5 most frequently targeted users (user targeted by the action described in the alert). This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-odd"><td>Top 5 targeted processes</td>
+<td>This graph shows the 5 most frequently targeted processes. This information is represented by a pie chart.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="statistics-alerts-analyzers">
+<caption><span class="caption-text">Statistics - Alerts - Analyzers</span><a class="headerlink" href="#statistics-alerts-analyzers" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Graph</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Top 5 analyzer classes trend</td>
+<td>This graph shows the evolution of the number of alerts by the most frequent analyzer classes. This information is represented by a timeline.</td>
+</tr>
+<tr class="row-odd"><td>Top 5 analyzers</td>
+<td>This graph shows the 5 analyzers which are generating the most alerts. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-even"><td>Top 5 analyzer models</td>
+<td>This graph shows the 5 analyzer models which are generating the most alerts. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-odd"><td>Top 5 analyzer classes</td>
+<td>This graph shows the 5 analyzers classes which are generating the most alerts. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-even"><td>Top 5 analyzer node addresses</td>
+<td>This graph shows the IP addresses of the 5 analyzers which are generating the most alerts. This information is represented by a pie chart.</td>
+</tr>
+<tr class="row-odd"><td>Top 5 analyzer locations</td>
+<td>This graph shows the alerts distribution according to the location of the analyzer which generates them. Only the five most frequent locations are considered. This information is represented by a pie chart.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="statistics-alerts-metrology">
+<caption><span class="caption-text">Statistics - Alerts - Metrology</span><a class="headerlink" href="#statistics-alerts-metrology" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Graph</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Number of source addresses</td>
+<td>This graph shows the evolution of the number of source addresses.</td>
+</tr>
+<tr class="row-odd"><td>Number of target addresses</td>
+<td>This graph shows the evolution of the number of target addresses.</td>
+</tr>
+<tr class="row-even"><td>Number of simple alerts</td>
+<td>This graph shows the evolution of the number of simple alerts.</td>
+</tr>
+<tr class="row-odd"><td>Number of alerts per analyzer type</td>
+<td>This graph shows the evolution of the number of alerts per analyzer type.</td>
+</tr>
+<tr class="row-even"><td>Number of alerts</td>
+<td>This graph shows the evolution of the number of alerts.</td>
+</tr>
+<tr class="row-odd"><td>Number of correlation alerts</td>
+<td>This graph shows the evolution of the number of correlation alerts.</td>
+</tr>
+<tr class="row-even"><td>Number of machines / devices</td>
+<td>This graph shows the evolution of the number of machines / devices.</td>
+</tr>
+<tr class="row-odd"><td>Number of machines / devices per analyzer type (HIDS, NIDS)</td>
+<td>This graph shows the evolution of the number of machines / devices per analyzer type (HIDS, NIDS).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="menu-archive">
+<h2>ARCHIVE menu<a class="headerlink" href="#menu-archive" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="guilabel">ARCHIVE</span> menu corresponds to the SIM (System Information Management) part of Prelude SIEM. This menu contains the following sections:</p>
+<div class="section" id="section-evenements">
+<h3>Events section<a class="headerlink" href="#section-evenements" title="Permalink to this headline">¶</a></h3>
+<p>This section regroups the exploitation of raw data in terms of events. As of now, two types of events are supported here: logs and flows (netflows).</p>
+<div class="section" id="sous-section-journaux">
+<span id="logdashboard-link"></span><span id="logforensic-link"></span><h4>Logs subsection<a class="headerlink" href="#sous-section-journaux" title="Permalink to this headline">¶</a></h4>
+<p>This subsection uses the templating of the general data search presented in chapter <span class="xref std std-ref">Search tab</span> and data aggregation presented in chapter <span class="xref std std-ref">Aggregation tab</span>.</p>
+<p><strong>Type of handled data</strong></p>
+<p>The handled data are logs.</p>
+<p><strong>Columns of the table</strong></p>
+<p>The table has the following default columns:</p>
+<ul class="simple">
+<li><strong>Timestamp</strong>: the date at which the log was generated;</li>
+<li><strong>Host</strong>: the host which sent the log;</li>
+<li><strong>Program</strong>: the program which generated the log;</li>
+<li><strong>Message</strong>: the original message from the log.</li>
+</ul>
+<p><strong>Specific actions</strong></p>
+<p>The specific actions are the following:</p>
+<ul class="simple">
+<li>On the <strong>Host</strong> column: Access to statistics about this host;</li>
+<li>On the <strong>Message</strong> column: The access to the creation of a detection rule from the selected log.</li>
+</ul>
+<p><strong>Additional actions</strong></p>
+<p>The available actions in “action” mode are the following:</p>
+<ul class="simple">
+<li><span class="guilabel">CSV export</span>: export selected logs into a CSV file. The columns are those of the table;</li>
+<li><span class="guilabel">Syslog export</span>: export selected logs into a flat text file. The lines are formatted according to the Syslog format.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="menu-admin">
+<h2>ADMIN menu<a class="headerlink" href="#menu-admin" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="guilabel">ADMIN</span> menu regroups Prelude SIEM administration and configuration features. It contains the following sections:</p>
+<div class="section" id="section-controle-d-acces">
+<h3>Access control section<a class="headerlink" href="#section-controle-d-acces" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="onglet-utilisateurs">
+<span id="users-link"></span><h4>Users tab<a class="headerlink" href="#onglet-utilisateurs" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Users</span> tab allows operators to manage Prelude GUI users and their authorizations.</p>
+<p>The users list is displayed on the page. From this list, operators having sufficient permissions can access users’ profiles, modify their permissions, delete users or create a new user.</p>
+<p>To create a new user, click on the <span class="guilabel">Create</span> button. To modify an existing user’s profile, click on the user’s ID in the table. In both cases, the same form appears.</p>
+<p>The following list details authorizations by category:</p>
+<ul>
+<li><p class="first">Alerts and Heartbeats</p>
+<table border="1" class="docutils" id="authorizations-alerts-and-heartbeats">
+<caption><span class="caption-text">Authorizations - Alerts and Heartbeats</span><a class="headerlink" href="#authorizations-alerts-and-heartbeats" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Authorization name</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>IDMEF VIEW</td>
+<td>Access to <em>Alerts</em>, <em>Agents</em> sections and allows display of IDMEF graphs</td>
+</tr>
+<tr class="row-odd"><td>IDMEF ALTER</td>
+<td>Alerts and heartbeats deletion</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">Access control</p>
+<table border="1" class="docutils" id="authorizations-access-control">
+<caption><span class="caption-text">Authorizations - Access control</span><a class="headerlink" href="#authorizations-access-control" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Authorization name</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>USER MANAGEMENT</td>
+<td>Creation / Modification / Deletion of user accounts</td>
+</tr>
+<tr class="row-odd"><td>GROUP MANAGEMENT</td>
+<td>Creation / Modification / Deletion of groups</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first">Archive</p>
+<table border="1" class="docutils" id="authorizations-archive">
+<caption><span class="caption-text">Authorizations - Archive</span><a class="headerlink" href="#authorizations-archive" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Authorization name</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>LOG VIEW</td>
+<td>Access to logs</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<div class="section" id="onglet-groupes">
+<span id="groups-link"></span><h4>Groups tab<a class="headerlink" href="#onglet-groupes" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Groups</span> tab allows operators to manage Prelude GUI user groups.</p>
+<p>The groups list is displayed on the page. From this list, operators having sufficient permissions can modify and delete groups, as well as create new groups.</p>
+<p>To create a new group, click on the <span class="guilabel">Create</span> button. To modify an existing group, click on the group’s name in the table. In both cases, the same form appears.</p>
+<ul class="simple">
+<li>Enter the group name;</li>
+<li>Specify the group members. The <span class="guilabel">-</span> and <span class="guilabel">+</span> buttons allow you to delete or add members;</li>
+<li>Define the group permissions. All members of this group have at least the permissions defined here;</li>
+<li>Click on the <span class="guilabel">Save</span> button to save the changes made.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="section-configuration">
+<h3>Configuration section<a class="headerlink" href="#section-configuration" title="Permalink to this headline">¶</a></h3>
+<p>The <span class="guilabel">Configuration</span> section allows operators to schedule periodic tasks.</p>
+<p>This sections contains several tabs:</p>
+<ul class="simple">
+<li><span class="guilabel">Scheduling</span>.</li>
+</ul>
+<div class="section" id="onglet-planification">
+<span id="scheduling-link"></span><h4>Scheduling tab<a class="headerlink" href="#onglet-planification" title="Permalink to this headline">¶</a></h4>
+<p>This page lists all tasks that can be scheduled for a periodic execution. These tasks include in particular:</p>
+<ul class="simple">
+<li>The deletion of old heartbeats of Prelude agents;</li>
+<li>The deletion of old alerts;</li>
+<li>The deletion of the search history.</li>
+</ul>
+<p>The table has the following columns:</p>
+<ul class="simple">
+<li><span class="guilabel">Name</span>: Name of the periodic task;</li>
+<li><span class="guilabel">Schedule</span>: Schedule type (daily, monthly, etc.);</li>
+<li><span class="guilabel">User</span>: The user responsible for the task, or “SYSTEM” if it is a system task;</li>
+<li><span class="guilabel">Last execution</span>: the time since the task’s last execution, or the error message if need be;</li>
+<li><span class="guilabel">Next execution</span>: The time until the task’s next execution.</li>
+</ul>
+<p>Each of these tasks can be enabled or disabled thanks to the buttons located below the table.</p>
+<p>Furthermore, the execution interval of each task can be configured by clicking on the task’s name. This configuration relies on the cron table syntax (<a class="reference external" href="https://fr.wikipedia.org/wiki/Cron">Wikipedia - Cron</a>), namely the definition of the five following values:</p>
+<ul class="simple">
+<li>The minutes;</li>
+<li>The hours;</li>
+<li>The day of the month;</li>
+<li>The number (or the english abbreviation) of the month;</li>
+<li>The number (or the english abbreviation) of the week’s day.</li>
+</ul>
+<p>For each value, possible notations are:</p>
+<ul class="simple">
+<li>*: corresponds to every unit (0, 1, 2, 3, …);</li>
+<li>5,8: corresponds to units 5 and 8;</li>
+<li>2-5: corresponds to units from 2 to 5 (2, 3, 4, 5);</li>
+<li>*/3: corresponds to every 3 units (0, 3, 6, 9…);</li>
+<li>10-20/3: correspond to every 3 units, between the tenth and the twentieth (10, 13, 16, 19).</li>
+</ul>
+<p>If the “day of the month” and the “day of the week” are both given, the task will be executed when one of the fields matches.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some of the tasks need to be configured in the Prelude GUI configuration file, besides their activation in the web interface. See the <a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html"><span class="doc">Prelude SIEM - Configuration</span></a> documentation for more information.</p>
+</div>
+</div>
+</div>
+<div class="section" id="section-preferences">
+<h3>Preferences section<a class="headerlink" href="#section-preferences" title="Permalink to this headline">¶</a></h3>
+<p>This section allows to configure user preferences.</p>
+<p>This includes language, timezone, and filters configuration.</p>
+<div class="section" id="onglet-mon-compte">
+<span id="myaccount-link"></span><h4>My account tab<a class="headerlink" href="#onglet-mon-compte" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">My account</span> tab allows operators to edit parameters of their own account. All elements are configurable except the login and settings are user-specific. See <span class="xref std std-ref">Users tab</span> section for more details.</p>
+<ul class="simple">
+<li><span class="guilabel">Login</span>: ID of the operator. It is the login used by the user when authenticating.</li>
+<li><span class="guilabel">Name</span>: full name of the operator.</li>
+<li><span class="guilabel">Email</span>: email of the operator.</li>
+<li><span class="guilabel">Language</span>: language of the GUI.</li>
+<li><span class="guilabel">Theme</span>: theme of the GUI.</li>
+<li><span class="guilabel">Timezone</span>: timezone of the operator. All dates and times will be displayed using this timezone.</li>
+<li><span class="guilabel">Groups</span>: groups the operator belongs to.</li>
+<li><span class="guilabel">Permissions</span>: list of available permissions. It is possible to select a subset of permissions.</li>
+<li><span class="guilabel">Current password</span> / <span class="guilabel">New password</span> / <span class="guilabel">Confirm new password</span>: allow to change the operator’s password.</li>
+</ul>
+</div>
+<div class="section" id="onglet-filtres">
+<span id="filters-link"></span><h4>Filters tab<a class="headerlink" href="#onglet-filtres" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Filters</span> tab allows operators to create their own advanced filters based on the different data available.</p>
+<p>The interface is organized as a table. The creation or the edition of a filter occurs through a form.</p>
+<p><strong>Filters list</strong></p>
+<p>Filters of the operator are presented as a table. The columns are the following:</p>
+<ul class="simple">
+<li><span class="guilabel">Name</span>: Name of the filter. A click on the name opens the filter’s edition form;</li>
+<li><span class="guilabel">Category</span>: Category of the filter.</li>
+<li><span class="guilabel">Alerts</span>: Indicates whether the filter concerns alerts or not;</li>
+<li><span class="guilabel">Heartbeats</span>: Indicates whether the filter concerns heartbeats or not;</li>
+<li><span class="guilabel">Logs</span>: Indicates whether the filter concerns logs or not;</li>
+<li><span class="guilabel">Description</span>: Description of the filter.</li>
+</ul>
+<p>Available actions:</p>
+<ul class="simple">
+<li><span class="guilabel">Create</span>: Opens the creation form of a new filter;</li>
+<li><span class="guilabel">Duplicate</span>: the filter form opens with the same content as the selected filter, but without a name for duplicating it;</li>
+<li><span class="guilabel">Delete</span>: Delete the selected filters.</li>
+</ul>
+<p id="filteredition-link"><strong>Filter creation or edition</strong></p>
+<p>The filter creation or edition form is organized like this:</p>
+<ul class="simple">
+<li><span class="guilabel">Name</span>: Name of the filter;</li>
+<li><span class="guilabel">Category</span>: Category of the filter;</li>
+<li><span class="guilabel">Description</span>: Description of the filter;</li>
+<li><span class="guilabel">Alerts</span>: Sub-form for defining a filter on alerts;</li>
+<li><span class="guilabel">Heartbeats</span>: Sub-form for defining a filter on heartbeats;</li>
+<li><span class="guilabel">Logs</span>: Sub-form for defining a filter on logs;</li>
+</ul>
+<p><strong>Filter definition form on a data type</strong></p>
+<p>The form represents a logical expression. At every imbrication level, you can choose between an <span class="guilabel">AND</span> and an <span class="guilabel">OR</span> operator. This corresponds to the blue button with the dropdown list displayed at each level.</p>
+<p>Inside each imbrication level, it is possible to:</p>
+<ul class="simple">
+<li>List the logical expressions to match. A logical expression is organized into three blocks: the path on which to validate a value, an operator (equality, regular expression, etc.) and the searched value. The trash icon can be used to delete the unitary logical expression.</li>
+<li><span class="guilabel">+</span> button: Add a new unitary logical expression at the current imbrication level.</li>
+<li><span class="guilabel">&amp;</span> button: Add a new logical imbrication level.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For each data type, there are some <strong>Default paths</strong> that make the typing easier. These default paths are described in chapter <span class="xref std std-ref">Default paths</span>.</p>
+</div>
+<p>Click on the <span class="guilabel">Save</span> button to save the changes made.</p>
+</div>
+</div>
+<div class="section" id="section-supervision">
+<h3>Monitoring section<a class="headerlink" href="#section-supervision" title="Permalink to this headline">¶</a></h3>
+<p>This sections contains several tabs:</p>
+<ul class="simple">
+<li><span class="guilabel">Agents</span>;</li>
+<li><span class="guilabel">Heartbeats</span>;</li>
+<li><span class="guilabel">Aggregated heartbeats</span>.</li>
+</ul>
+<div class="section" id="onglet-agents">
+<span id="agents-link"></span><h4>Agents Tab<a class="headerlink" href="#onglet-agents" title="Permalink to this headline">¶</a></h4>
+<p>The <span class="guilabel">Agents</span> section regroups available information on all registered Prelude SIEM agents. It provides operators a centralized agents monitoring view.</p>
+<p>Agents are grouped by location based on their own configurations. Each location is composed of one or more nodes and one or more agents are listed for each node.</p>
+<ul class="simple">
+<li>For each location, the number of nodes, agents and agents per status are displayed;</li>
+<li>For each node, its name or IP address and OS information are displayed.</li>
+</ul>
+<p>Agents are listed in a table composed of the following columns:</p>
+<table border="1" class="docutils" id="list-of-agents-columns">
+<caption><span class="caption-text">List of Agents columns</span><a class="headerlink" href="#list-of-agents-columns" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Field</strong></th>
+<th class="head"><strong>Functionalities</strong></th>
+<th class="head"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Delete</td>
+<td>Checkbox used to select an agent in order to delete its alerts or heartbeats.</td>
+<td>.</td>
+</tr>
+<tr class="row-odd"><td>Name</td>
+<td>The agent name</td>
+<td>prelude-lml</td>
+</tr>
+<tr class="row-even"><td>Model</td>
+<td>The agent model</td>
+<td>Prelude LML</td>
+</tr>
+<tr class="row-odd"><td>Version</td>
+<td>The agent version</td>
+<td>3.1.0</td>
+</tr>
+<tr class="row-even"><td>Class</td>
+<td>The agent class</td>
+<td>Analyseur de journaux</td>
+</tr>
+<tr class="row-odd"><td>Latest heartbeat</td>
+<td>The elapsed time since the last heartbeat was received</td>
+<td>2 minutes ago</td>
+</tr>
+<tr class="row-even"><td>Status</td>
+<td>The agent status</td>
+<td>Online</td>
+</tr>
+</tbody>
+</table>
+<p>The following color code is used for representing agents statuses:</p>
+<table border="1" class="docutils" id="agent-statuses">
+<caption><span class="caption-text">Agent statuses</span><a class="headerlink" href="#agent-statuses" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Agent status</strong></th>
+<th class="head"><strong>Color</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Online</td>
+<td>Green</td>
+<td>The agent sent a heartbeat to the manager according to the specified time interval. The agent is working.</td>
+</tr>
+<tr class="row-odd"><td>Missing</td>
+<td>Red</td>
+<td>The agent didn’t send a heartbeat to the manager in the specified time interval. The sensor is no longer in working condition.</td>
+</tr>
+<tr class="row-even"><td>Offline</td>
+<td>Grey</td>
+<td>The agent sent a heartbeat and indicated it was the last. The agent is no longer in working condition.</td>
+</tr>
+<tr class="row-odd"><td>Unknown</td>
+<td>Light salmon</td>
+<td>The agent is probably not connected to Prelude SIEM. The time interval of heartbeats hasn’t been defined.</td>
+</tr>
+</tbody>
+</table>
+<p>There are two manners to interact with the agents list:</p>
+<ul class="simple">
+<li>Either by clicking on the <span class="guilabel">Name</span> column information;</li>
+<li>Or by selecting one or more agents and applying one of the available actions.</li>
+</ul>
+<p><strong>Interaction with the Name column</strong></p>
+<p>By clicking on an agent name, a pop-up menu is displayed and allows operators to choose one of the following actions:</p>
+<ul class="simple">
+<li><span class="guilabel">Alert listing</span>: clicking on this link displays alerts generated by this agent;</li>
+<li><span class="guilabel">Heartbeat listing</span>: clicking on this link displays this agent’s heartbeats;</li>
+<li><span class="guilabel">Heartbeat analysis</span>: clicking on this link displays more details about the agent and its historic.</li>
+</ul>
+<p>Go to the previous explanations about the agent status and the heartbeats in section <span class="xref std std-ref">Heartbeats tab</span>.</p>
+<p id="heartbeatanalyze-link">The agent heartbeat analysis contains the following information:</p>
+<table border="1" class="docutils" id="heartbeats-analysis-historic-table">
+<caption><span class="caption-text">Heartbeats analysis historic table</span><a class="headerlink" href="#heartbeats-analysis-historic-table" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Column</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+<th class="head"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>The agent name</td>
+<td>Ajaccio-LML</td>
+</tr>
+<tr class="row-odd"><td>Model</td>
+<td>The agent model and version</td>
+<td>Prelude LML 4.0.0</td>
+</tr>
+<tr class="row-even"><td>OS</td>
+<td>The operating system kernel</td>
+<td>Linux 2.6.32-573.12.1.el6.x86_64</td>
+</tr>
+<tr class="row-odd"><td>Node name</td>
+<td>Where the host or the sensor is installed</td>
+<td>prelude-va.localdomain</td>
+</tr>
+<tr class="row-even"><td>Node location</td>
+<td>The host location</td>
+<td>France - France</td>
+</tr>
+<tr class="row-odd"><td>Node address</td>
+<td>The host IP address</td>
+<td>172.25.35.21</td>
+</tr>
+<tr class="row-even"><td>Latest heartbeat</td>
+<td>The elapsed time since the last heartbeat was received</td>
+<td>8 minutes ago</td>
+</tr>
+<tr class="row-odd"><td>Current status</td>
+<td>The current status of the agent</td>
+<td>Online</td>
+</tr>
+<tr class="row-even"><td>Events</td>
+<td>Heartbeats historic analysis</td>
+<td>No anomaly in the last 30 heartbeats (one heartbeat every 9 minutes average)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Agents deletion</strong></p>
+<p>From the <span class="guilabel">Agents</span> tab, it is possible to select one or more agents by clicking on the checkboxes on the left of each row and delete associated alerts and/or heartbeats information. To do that, you have to select the concerned agents, then select the type of information to delete by checking the corresponding checkbox in the bottom right of the page, then click on the <em>Delete</em> button.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When an agent is disconnected, if the heartbeats are deleted, the agent will no more be displayed in the agents list.</p>
+</div>
+</div>
+<div class="section" id="onglet-pulsations">
+<span id="heartbeatdashboard-link"></span><span id="heartbeatforensic-link"></span><h4>Heartbeats tab<a class="headerlink" href="#onglet-pulsations" title="Permalink to this headline">¶</a></h4>
+<p>A heartbeat is a signal sent periodically by an agent to indicate its status (connected, terminating the connection, etc). The agent monitoring occurs through heartbeats.</p>
+<p>The <span class="guilabel">Heartbeats</span> tab displays heartbeats of all known agents (agents which were registered and which connected at least one time).</p>
+<p>This tab uses the templating of the general data search presented in chapter <span class="xref std std-ref">Search tab</span>.</p>
+<p>Heartbeats information are displayed in a table composed of the following columns:</p>
+<table border="1" class="docutils" id="heartbeats-listing">
+<caption><span class="caption-text">Heartbeats listing</span><a class="headerlink" href="#heartbeats-listing" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Column</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+<th class="head"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Date</td>
+<td>Date and time of the heartbeat</td>
+<td>August 12, 2020 14:54:09</td>
+</tr>
+<tr class="row-odd"><td>Agent</td>
+<td>The agent name</td>
+<td>prelude-lml</td>
+</tr>
+<tr class="row-even"><td>Node address</td>
+<td>The agent node IP address</td>
+<td>192.168.1.30</td>
+</tr>
+<tr class="row-odd"><td>Node name</td>
+<td>The agent node name</td>
+<td>Lyon</td>
+</tr>
+<tr class="row-even"><td>Model</td>
+<td>The agent model</td>
+<td>Prelude LML</td>
+</tr>
+<tr class="row-odd"><td>IR</td>
+<td>Link for declaring an incident regarding the agent</td>
+<td>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>View parameters</strong></p>
+<p>The parameters of this page are the following:</p>
+<ul class="simple">
+<li><span class="guilabel">Chart type</span>: Allows to select the type of chart used for displaying the heartbeat timeline. The default type is <em>Timebar</em>.</li>
+<li><span class="guilabel">Action mode</span>: If this box is checked, checkboxes are added to the table in order to select one or more data rows and execute a specific action.</li>
+<li><span class="guilabel">Condensed mode</span>: if this box is checked, data are displayed on one line (can be simpler in some use cases). If data are longer than the cell, they are truncated.</li>
+</ul>
+<p><strong>Interaction with the Date column</strong></p>
+<p>Clicking on the date displays details about the selected heartbeat. This includes details about the agent and its status.</p>
+<p><strong>Interaction with the Agent column</strong></p>
+<p>When clicking on the agent’s name, a contextual menu appears for adjusting the heartbeat search by using the agent’s name. It can also be used to obtain the number of heartbeats received from this agent on the selected time period.</p>
+<p><strong>Interaction with the node address column</strong></p>
+<p>when clicking on the node address of an agent in the heartbeats list, a contextual menu providing the possibility to filter on this address is displayed. It can also be used to obtain the number of heartbeats received from this IP address on the selected time period.</p>
+<p><strong>Interaction with the Node address column</strong></p>
+<p>when clicking on the node name in the heartbeats list, a contextual menu providing the possibility to filter on this node name is displayed. It can also be used to obtain the number of heartbeats received from this node name on the selected time period.</p>
+<p><strong>Interaction with the Model column</strong></p>
+<p>When clicking on a model in the heartbeats list, a contextual menu providing the possibility to filter on this agent model is displayed (for instance, heartbeats from all Prelude LML agents). It can also be used to obtain the number of heartbeats received from agents with this model on the selected time period.</p>
+<p><strong>Heartbeats deletion</strong></p>
+<p>It is possible to delete heartbeats from the heartbeats listing. To do that, check all heartbeats to be deleted then click on the <span class="guilabel">Apply</span> button in the bottom right of the page.</p>
+<p>The <span class="guilabel">Aggregated heartbeats</span> tab gives access to the result of aggregating heartbeats by agent name (default configuration).</p>
+<p>This tab uses the templating of the data aggregation presented in chapter <span class="xref std std-ref">Aggregation tab</span>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="menu">
+<h2>? menu<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h2>
+<p>This menu gives access to:</p>
+<ul class="simple">
+<li>The <span class="guilabel">Help</span> pages;</li>
+<li>The <span class="guilabel">Apps</span>;</li>
+<li>The <span class="guilabel">About</span> page.</li>
+</ul>
+<p>It is also used for the operator to log out.</p>
+<div class="section" id="section-aide">
+<h3>Help section<a class="headerlink" href="#section-aide" title="Permalink to this headline">¶</a></h3>
+<p>Several tabs are available for obtaining help on the software, or help related to SIEM operations:</p>
+<ul class="simple">
+<li>The <span class="guilabel">IDMEF</span> tab provides an interactive view of the IDMEF format;</li>
+<li>The other tabs give access to the Prelude SIEM software documentation.</li>
+</ul>
+<p>If you don’t know where to find information, it is possible to do a search in the <span class="guilabel">Help</span> and <span class="guilabel">Documentation</span> tabs. This will help you to find pages that might contain the information you are searching for.</p>
+</div>
+<div class="section" id="section-apps">
+<span id="apps-link"></span><h3>Apps section<a class="headerlink" href="#section-apps" title="Permalink to this headline">¶</a></h3>
+<p>The <span class="guilabel">Apps</span> tab allows operators to manage Prelude GUI plugins. The following actions can be done from this page:</p>
+<ul class="simple">
+<li>Enable a plugin;</li>
+<li>Disable a plugin;</li>
+<li>Update a plugin.</li>
+</ul>
+<p>When all Prelude GUI plugins are installed and up-to-date, this page shows the list of those plugins and offers the possibility to enable or disable them.</p>
+<p>When one or more plugins are not installed or not up-to-date, a notification is displayed at the top of this page. Concerned plugins are grouped and it is possible to update or install them from the GUI.</p>
+</div>
+<div class="section" id="section-a-propos">
+<span id="about-link"></span><h3>The About section<a class="headerlink" href="#section-a-propos" title="Permalink to this headline">¶</a></h3>
+<p>The <span class="guilabel">About</span> section provides different information about the Prelude SIEM software. That includes the software version, a description of the services provided by the CS GROUP company, the company contact details and copyright details.</p>
+</div>
+<div class="section" id="section-deconnexion">
+<h3>Logout section<a class="headerlink" href="#section-deconnexion" title="Permalink to this headline">¶</a></h3>
+<p>When clicking on this link, a logout window appears.</p>
+</div>
+</div>
+</div>
+<div class="section" id="glossaire-et-abreviations">
+<h1>Glossary and abbreviations<a class="headerlink" href="#glossaire-et-abreviations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="glossaire">
+<h2>Glossary<a class="headerlink" href="#glossaire" title="Permalink to this headline">¶</a></h2>
+<p>List of terms used by <strong>Prelude SIEM</strong>. Several terms derive from the <strong>IDMEF</strong> standard.</p>
+<dl class="glossary docutils">
+<dt id="term-agent">Agent</dt>
+<dd>A software or equipment using the Libprelude able to directly generate IDMEF alerts and heartbeats. It can be an analyzer or a manager.</dd>
+<dt id="term-alerte">Alert</dt>
+<dd><p class="first">A data structure describing a security incident technically. It contains information about:</p>
+<ul class="simple">
+<li>Its classification;</li>
+<li>The sensor from which it originates;</li>
+<li>The time of detection/creation;</li>
+<li>Its source and its target;</li>
+<li>Its assessment (impact of the event).</li>
+</ul>
+<p class="last">It can be a simple alert or the grouping of related alerts into a “correlated alert”.</p>
+</dd>
+<dt id="term-analyseur-sonde">Analyzer / Sensor</dt>
+<dd><p class="first">The emission source of an alert message.</p>
+<p class="last">This definition can be extended to cover not only Prelude agents (Prelude LML, Prelude Correlator, Snort, Samhain, etc.) but also services (web server, PAM, ssh, antivirus, etc.) that write in logs instead of emitting alerts.</p>
+</dd>
+<dt id="term-chemin">Path</dt>
+<dd><p class="first">In Prelude SIEM, the paths correspond to a simple syntax that can be used to reference the value of a field in a data structure (IDMEF alert, log entry, incident ticket, etc.). With this mechanism you can update or retrieve the value the path points to.</p>
+<p class="last">In particular, all classes and attributes defined in the <span class="target" id="index-8"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4765.html"><strong>IDMEF</strong></a> can be converted to paths usable by Prelude SIEM. For instance, the path <code class="docutils literal notranslate"><span class="pre">alert.classification.text</span></code> can be used to reference the <code class="docutils literal notranslate"><span class="pre">text</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">Classification</span></code> IDMEF class, the latter being an aggregated class of the <code class="docutils literal notranslate"><span class="pre">Alert</span></code> IDMEF class.</p>
+</dd>
+<dt id="term-jeu-de-regles">Ruleset</dt>
+<dd>A ruleset is a file containing a set of rules related to the same functional field (software, equipment, etc.).</dd>
+<dt id="term-libprelude">Libprelude</dt>
+<dd>Libprelude is a programming library that guarantees secure connections between Prelude analyzers (Prelude LML, Prelude Correlator, Snort, etc.) and the Prelude Manager. Libprelude provides an API for communication with Prelude sub-systems. It supplies the necessary functionality for generating and emitting IDMEF alerts and automates the saving and re-transmission of data in times of temporary interruption of one of the system’s components.</dd>
+<dt id="term-libpreludedb">LibpreludeDB</dt>
+<dd>The libpreludeDB programming library provides an abstraction layer upon the type and the format of the database used to store IDMEF alerts. It allows developers to use the Prelude SIEM database easily and efficiently without worrying about its type or storage format.</dd>
+<dt id="term-localisation">Location</dt>
+<dd><p class="first">The physical site of one or several nodes.</p>
+<p class="last">Example: Paris</p>
+</dd>
+<dt id="term-noeud">Node</dt>
+<dd><p class="first">An equipment that hosts one or several analyzers/managers, identified by a network address or a name.</p>
+<p class="last">Example: 192.168.2.1</p>
+</dd>
+<dt id="term-prelude-correlator">Prelude Correlator</dt>
+<dd>Prelude Correlator allows conducting multi-stream correlation thanks to a powerful programming language for writing correlation rules. It has the ability to connect and fetch alerts from a remote Prelude Manager, and correlate incoming alerts based on the provided ruleset. Upon successful correlation, IDMEF correlation alerts are raised.</dd>
+<dt id="term-prelude-gui">Prelude GUI</dt>
+<dd>Prelude GUI is the official graphical user interface for Prelude SIEM exploitation. Providing numerous features, it facilitates the work of operators and analysts, and also provides access to external tools.</dd>
+<dt id="term-prelude-lml">Prelude LML</dt>
+<dd>Prelude LML is a log analyzer allowing Prelude SIEM to collect and analyze information from all kinds of sources (applications or appliances) emitting logs or syslog messages, in order to detect suspicious activities and normalize them to IDMEF format.</dd>
+<dt id="term-prelude-manager">Prelude Manager</dt>
+<dd><p class="first">Prelude Manager is the heart of Prelude SIEM and is generally called <em>manager</em>. It concentrates all IDMEF messages from agents, be it alerts or heartbeats.</p>
+<p class="last">The manager processes the received data in real time by inserting them for example into a database. It can also act as a relay, i.e. forward the messages to another manager. It is also responsible of transmitting alerts to the correlator.</p>
+</dd>
+<dt id="term-pulsation">Heartbeat</dt>
+<dd><p class="first">A message sent in at regular intervals by agents to their attributed managers, in order to indicate their status (starting, running, stopping, etc).</p>
+<p class="last">The lack of some number of consecutive heartbeats indicates a failure of either the agent or its network connection.</p>
+</dd>
+<dt id="term-syslog">Syslog</dt>
+<dd>In computing, Syslog is a standard for message logging. It allows separation of the software that generates messages, the system that stores them, and the software that reports and analyzes them.</dd>
+</dl>
+</div>
+<div class="section" id="abreviations">
+<h2>Abbreviations<a class="headerlink" href="#abreviations" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils" id="definitions-of-abbreviations">
+<caption><span class="caption-text">Definitions of Abbreviations</span><a class="headerlink" href="#definitions-of-abbreviations" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Abbreviations</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>API</td>
+<td>pplication Programming Interface</td>
+</tr>
+<tr class="row-odd"><td>HIDS</td>
+<td>Host Intrusion Detection System</td>
+</tr>
+<tr class="row-even"><td>IDMEF</td>
+<td>Intrusion Detection Message Exchange Format</td>
+</tr>
+<tr class="row-odd"><td>IDS</td>
+<td>Intrusion Detection System</td>
+</tr>
+<tr class="row-even"><td>IHM</td>
+<td>Interface Human to Machin</td>
+</tr>
+<tr class="row-odd"><td>LML</td>
+<td>Log Monitoring Lackey</td>
+</tr>
+<tr class="row-even"><td>N/A</td>
+<td>Not applicable</td>
+</tr>
+<tr class="row-odd"><td>NIDS</td>
+<td>Network Intrusion Detection System</td>
+</tr>
+<tr class="row-even"><td>PCRE</td>
+<td>Perl Compatible Regular Expression</td>
+</tr>
+<tr class="row-odd"><td>SIEM</td>
+<td>Security Information &amp; Event Management</td>
+</tr>
+<tr class="row-even"><td>SOC</td>
+<td>Security Operations Center</td>
+</tr>
+<tr class="row-odd"><td>TLS</td>
+<td>Transport Layer Security</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="annexe-criteres-et-chemins">
+<h1>Annex: Criteria and paths<a class="headerlink" href="#annexe-criteres-et-chemins" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="criteres-idmef">
+<h2>IDMEF criteria<a class="headerlink" href="#criteres-idmef" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creation-de-filtre-a-l-aide-de-criteres-idmef">
+<h3>Filter creation with IDMEF criteria<a class="headerlink" href="#creation-de-filtre-a-l-aide-de-criteres-idmef" title="Permalink to this headline">¶</a></h3>
+<p>IDMEF criteria are filters on IDMEF fields. Several Prelude SIEM components use IDMEF criteria:</p>
+<ul class="simple">
+<li>Prelude Manager is distributed with the <code class="docutils literal notranslate"><span class="pre">idmef-criteria</span></code> plugin, which can be installed and used with IDMEF criteria. It is possible to define specific actions to be executed based on an incoming event (relaying, storage in a specific database, etc.).</li>
+<li>Prelude GUI allows the user to define criteria in order to filter the results of a search or an analysis.</li>
+</ul>
+</div>
+<div class="section" id="syntaxe-des-criteres-idmef">
+<h3>IDMEF criteria syntax<a class="headerlink" href="#syntaxe-des-criteres-idmef" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">IDMEF</span> <span class="n">Path</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">operator</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Simple example:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">alert.analyzer(-1).name</span> <span class="o">=</span> <span class="s">&#39;MySensor&#39;</span>
+</pre></div>
+</div>
+<p><em>AND</em> and <em>OR</em> operators can be used:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">alert.analyzer(-1).name</span> <span class="o">=</span> <span class="s">&#39;My Sensor&#39; &amp;&amp; (&#39;alert.assessment.impact.severity</span>
+<span class="o">=</span> <span class="s">&#39;high&#39; || alert.assessment.impact.completion = &#39;succeeded&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="chemins-idmef">
+<h2>IDMEF paths<a class="headerlink" href="#chemins-idmef" title="Permalink to this headline">¶</a></h2>
+<p>In Prelude SIEM, an IDMEF path is a pointer to a specific value in an IDMEF message.</p>
+<p>Using this pointer, you can update or retrieve the value pointed by that path.</p>
+<p>Any class specified in the <a class="reference external" href="https://www.ietf.org/rfc/rfc4765.txt">IDMEF RFC</a> can be converted to an IDMEF path.</p>
+<div class="section" id="correspondance-des-classes-idmef-et-des-chemins-idmef">
+<h3>Mapping an IDMEF class to an IDMEF path<a class="headerlink" href="#correspondance-des-classes-idmef-et-des-chemins-idmef" title="Permalink to this headline">¶</a></h3>
+<p>When mapping an IDMEF class to a IDMEF path, you should obey the following rules:</p>
+<ul class="simple">
+<li>IDMEF paths must be written in lowercase;</li>
+<li>Subsequent elements of an access path must be separated using dots <code class="docutils literal notranslate"><span class="pre">.</span></code>;</li>
+<li>Wherever the IDMEF class uses uppercase letters for word separation, Prelude SIEM uses an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>;</li>
+<li>In case a path element is a list, you can use a specific index between brackets to access the element, for example: <code class="docutils literal notranslate"><span class="pre">alert.source(0).node.name</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="elements-indexes">
+<h3>Indexed elements<a class="headerlink" href="#elements-indexes" title="Permalink to this headline">¶</a></h3>
+<p>When accessing a list (e.g.: <code class="docutils literal notranslate"><span class="pre">alert.source</span></code>, <code class="docutils literal notranslate"><span class="pre">alert.additional_data</span></code>, etc.), the index must be specified as a number. When retrieving a value, the specified index must exist in the list.</p>
+<p>In the context of an assignment, the first unassigned index of the list can also be used. For example, if <code class="docutils literal notranslate"><span class="pre">alert.source(0)</span></code> and <code class="docutils literal notranslate"><span class="pre">alert.source(1)</span></code> are defined, you may use either 0, 1, or 2 as the index to assign data, but not 3.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You may also use negative indexes (-1, -2, -n, …) to access elements starting from the end of the list.</p>
+<p class="last">In this case, -1 points to the last element of the list, -2 to the penultimate, etc.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Additionally, in the context of an assignment, you might use the <strong>&gt;&gt;</strong> (append) or <strong>&lt;&lt;</strong> (prepend) operators.</p>
+</div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">alert.source(&gt;&gt;).interface</span> <span class="o">=</span> <span class="s">eth1</span>
+<span class="na">alert.source(-1).node.name</span> <span class="o">=</span> <span class="s">myNode</span>
+</pre></div>
+</div>
+<p>The example above appends a new source object to the <em>alert.source</em> list, by setting the value of the <em>interface</em> attribute to <em>eth1</em>. It then sets the <em>node.name</em> attribute of this new entry to <em>myNode</em>.</p>
+</div>
+</div>
+<div class="section" id="operateurs-idmef">
+<h2>IDMEF operators<a class="headerlink" href="#operateurs-idmef" title="Permalink to this headline">¶</a></h2>
+<p>The following table presents the list of operators used in IDMEF criteria:</p>
+<table border="1" class="docutils" id="definitions-of-idmef-operators">
+<caption><span class="caption-text">Definitions of IDMEF operators</span><a class="headerlink" href="#definitions-of-idmef-operators" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Operator</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>=</td>
+<td>Equal</td>
+</tr>
+<tr class="row-odd"><td>=*</td>
+<td>Case-insensitive equal</td>
+</tr>
+<tr class="row-even"><td>!=</td>
+<td>Not equal</td>
+</tr>
+<tr class="row-odd"><td>!=*</td>
+<td>Case-insensitive not equal</td>
+</tr>
+<tr class="row-even"><td>~</td>
+<td>Regular expression</td>
+</tr>
+<tr class="row-odd"><td>~*</td>
+<td>Case-insensitive regular expression</td>
+</tr>
+<tr class="row-even"><td>!~</td>
+<td>Non-matching regular expression</td>
+</tr>
+<tr class="row-odd"><td>!~*</td>
+<td>Case-insensitive non-matching regular expression</td>
+</tr>
+<tr class="row-even"><td>&lt;</td>
+<td>Lesser than</td>
+</tr>
+<tr class="row-odd"><td>&lt;=</td>
+<td>Lesser or equal than</td>
+</tr>
+<tr class="row-even"><td>&gt;</td>
+<td>Greater than</td>
+</tr>
+<tr class="row-odd"><td>&gt;=</td>
+<td>Greater or equal than</td>
+</tr>
+<tr class="row-even"><td>&lt;&gt;</td>
+<td>Substring</td>
+</tr>
+<tr class="row-odd"><td>&lt;&gt;*</td>
+<td>Case-insensitive substring</td>
+</tr>
+<tr class="row-even"><td>!&lt;&gt;</td>
+<td>Non-present substring</td>
+</tr>
+<tr class="row-odd"><td>!&lt;&gt;*</td>
+<td>Case-insensitive non-present substring</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="chemins-par-defaut">
+<h2>Default paths<a class="headerlink" href="#chemins-par-defaut" title="Permalink to this headline">¶</a></h2>
+<p>Each type of data handled by Prelude SIEM uses default fields. These fields help simplifying access to metadata for the operator.</p>
+<div class="section" id="id1">
+<h3>Alerts<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils" id="alerts-default-fields">
+<caption><span class="caption-text">Alerts: Default fields</span><a class="headerlink" href="#alerts-default-fields" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Simplified field</strong></th>
+<th class="head"><strong>Actual path</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Classification</td>
+<td>alert.classification.text</td>
+</tr>
+<tr class="row-odd"><td>Source IP address</td>
+<td>alert.source.node.address.address</td>
+</tr>
+<tr class="row-even"><td>Source port</td>
+<td>alert.source.service.port</td>
+</tr>
+<tr class="row-odd"><td>Target IP address</td>
+<td>alert.target.node.address.address</td>
+</tr>
+<tr class="row-even"><td>Target port</td>
+<td>alert.target.service.port</td>
+</tr>
+<tr class="row-odd"><td>Analyzer name</td>
+<td>alert.analyzer.name</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="journaux">
+<h3>Logs<a class="headerlink" href="#journaux" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils" id="logs-default-fields">
+<caption><span class="caption-text">Logs: Default fields</span><a class="headerlink" href="#logs-default-fields" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Simplified field</strong></th>
+<th class="head"><strong>Actual path</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Message</td>
+<td>log.message</td>
+</tr>
+<tr class="row-odd"><td>Host</td>
+<td>log.host</td>
+</tr>
+<tr class="row-even"><td>Program</td>
+<td>log.program</td>
+</tr>
+<tr class="row-odd"><td>Timestamp</td>
+<td>log.timestamp</td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-center">
+<img alt="../_images/cs-logo3.png" src="../_images/cs-logo3.png" />
+<div class="legend">
+<p><strong>CS GROUP - France</strong></p>
+<p>22, Avenue Galilée</p>
+<p>92350 Le Plessis-Robinson - France</p>
+<p>Tel: +33 (0)1 41 28 40 00</p>
+<p>Fax: +33 (0)1 41 28 40 40</p>
+<p><strong>www.csgroup.eu</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../preludesiem-configuration/preludesiem-configuration.html" class="btn btn-neutral float-right" title="Prelude SIEM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Prelude OSS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Prelude Team.
+      Last updated on 16 Sep 2020.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'5.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

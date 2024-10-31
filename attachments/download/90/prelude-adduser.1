@@ -1,0 +1,151 @@
+.TH "prelude-adduser" 1 "19 June 2007"
+.SH NAME
+prelude-adduser \- Manage sensors accounts
+
+.SH SYNOPSIS
+.B prelude-adduser add <profile name> [--uid UID] [--gid GID]
+
+.B prelude-adduser chown <profile name> [--uid UID] [--gid GID]
+
+.B prelude-adduser del <profile name>
+
+.B prelude-adduser rename <profile name> <profile name>
+
+.B prelude-adduser register <profile name> <wanted permission> <registration-server address> [--uid UID] [--gid GID] [--passwd=PASSWD>] [--passwd-file=<FILE>]
+
+.B prelude-adduser registration-server <profile name> [--uid UID] [--gid GID] [--prompt] [--passwd=PASSWD>] [--passwd-file=<FILE>] [--keepalive] [--no-confirm] [--listen]
+
+.B prelude-adduser 
+
+.SH DESCRIPTION
+In order for a sensor to communicate with a 'prelude-manager', it needs to be registered. Registration involves several steps:
+ - Allocating an unique identity for the sensor
+ - Creating directory to be used by the sensor (example: failover purpose)
+ - Registering to a remote 'prelude-manager': get a signed X509 certificate that will allows communication between sensor and manager using the specified permissions. 
+
+All these informations are stored in a sensor 'profile'. 
+
+A sensor profile is identified by its name. When a sensor is started, it will try to load a profile of the same name as the program itself, that is, if your sensor is named "prelude-lml", the sensor will try to load a profile named "prelude-lml". 
+
+The name of the profile can be overriden using the '--prelude --profile name_of_my_profile' command line option. We provide the ability of defining the profile name so that you can have several instances of one sensor running with different permissions, which require different profiles. 
+
+Note that profile are not specific to sensor, but are used in all programs of the Prelude suite (sensors, managers, etc).
+
+If you are not sure which permission your sensor should get, just start the sensor, which should then provide you with the prelude-adduser options to use for registering it.
+
+.SH OPTIONS
+
+.B <profile name>
+is the default name of the sensor you are installing or your own defined name.
+
+If you start your sensor without it being registered, it should show you a warning including the default profile name on how to register the sensor. 
+
+.B <requested permission>
+is the permission your sensor needs. It is composed of the kind of permission (idmef or admin) and read and/or write (r and/or w). Usually, a sensor will need permission for writing IDMEF to a manager, and reading administrative command sent to it. That is : "idmef:w admin:r".
+
+.B <manager address>
+is the address of the prelude-manager you wish to register. this can either be its IP address or its hostname name. If you made a local installation, you can write localhost there to connect threw unix socket.
+
+Remember to use the correct uid/gid when registering your sensor. For instance, if you want to register snort (running with snort euid / egid), use --uid snort --gid snort. 
+
+.TP 5
+.B add <analyzer profile>
+Setup a new sensor user.
+
+.B --uid=UID
+UID or user to use to setup sensor files
+
+.B --gid=GID
+GID or group to use to setup sensor files
+.TP
+
+
+.B chown <analyzer profile>
+Change analyzer owner.
+
+.B --uid=UID
+UID or user to use to setup sensor files.
+
+.B --gid=GID
+GID or group to use to setup sensor files.
+.TP
+
+
+.B del <analyzer profile>
+The delete command will remove the sensor files created through "add" command. Once this is done, the analyzer can't be used unless "register" or "add" is called again.
+.TP
+
+
+.B rename <analyzer profile> <analyzer profile>
+Rename an existing analyzer.
+.TP
+
+
+.B register <profile name> <wanted permission> <registration-server address>
+Register an analyzer.
+
+Register both "add" the analyzer basic setup if needed
+and will also configure communication of this analyzer with a
+receiving analyzer (like a Manager) through the specified registration-server.
+
+.B --uid=UID
+UID or user to use to setup analyzer files.
+
+.B --gid=GID
+GID or group to use to setup analyzer files.
+
+.B --passwd=PASSWD
+Use provided password instead of prompting it.
+
+.B --passwd-file=-|FILE
+Read password from file instead of prompting it (- for stdin).
+.TP
+
+
+.B registration-server <profile name>
+
+Start a registration server that will be used to register sensors.
+This is used in order to register 'sending' analyzer to 'receiving'
+analyzer. <profile name> should be set to the profile name of the
+'receiving' analyzer, the one where 'sending' analyzer will register to.
+
+.B --uid=UID
+UID or user to use to setup 'receiving' analyzer files.
+
+.B --gid=GID
+GID or group to use to setup 'receiving' analyzer files.
+
+.B --prompt
+Prompt for a password instead of auto generating it.
+
+.B --passwd=PASSWD
+Use provided password instead of auto generating it.
+
+.B --passwd-file=-|FILE
+Read password from file instead of auto generating it (- for stdin).
+
+.B --keepalive
+Register analyzer in an infinite loop.
+
+.B --no-confirm
+Do not ask for confirmation on sensor registration.
+
+.B --listen
+Address to listen on for registration request (default is any:5553).
+.TP
+
+.B revoke <profile name>
+Revoke access to <profile> for the given analyzerID.
+
+.B --uid=UID
+UID or user to use to setup analyzer files.
+
+.B --gid=GID
+GID to group to use to setup analyzer files.
+.TP
+
+.B --help
+Print help
+
+.SH BUGS
+This man page hadn't been proof-read yet.

@@ -1,0 +1,281 @@
+From af09d5b155ee66f680c343cd664e781e52d673c8 Mon Sep 17 00:00:00 2001
+From: Wes Young <wes@barely3am.comt>
+Date: Mon, 14 Sep 2009 14:22:19 +0000
+Subject: [PATCH] imported initial files for java bindings
+
+---
+ bindings/Makefile.am               |    5 ++-
+ bindings/c++/include/prelude.hxx   |    1 +
+ bindings/java/Makefile.am          |   42 ++++++++++++++++++++++++++++++++++++
+ bindings/java/build.xml            |   23 +++++++++++++++++++
+ bindings/java/libpreludecpp-java.i |   42 ++++++++++++++++++++++++++++++++++++
+ bindings/java/testapp/build.sh     |    2 +
+ bindings/java/testapp/run.sh       |    2 +
+ bindings/java/testapp/test.java    |   34 +++++++++++++++++++++++++++++
+ configure.in                       |   21 +++++++++++++++++-
+ 9 files changed, 169 insertions(+), 3 deletions(-)
+ create mode 100644 bindings/java/Makefile.am
+ create mode 100644 bindings/java/build.xml
+ create mode 100644 bindings/java/libpreludecpp-java.i
+ create mode 100644 bindings/java/testapp/build.sh
+ create mode 100644 bindings/java/testapp/run.sh
+ create mode 100644 bindings/java/testapp/test.java
+
+diff --git a/bindings/Makefile.am b/bindings/Makefile.am
+index 9ecd368..6a73d7f 100644
+--- a/bindings/Makefile.am
++++ b/bindings/Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = c++ low-level lua python ruby
++SUBDIRS = c++ low-level lua python ruby java
+ 
+ EXTRA_DIST = libpreludecpp.i libpreludecpp-perl.i perl/Makefile.PL.in
+ 
+@@ -12,7 +12,8 @@ MAINTAINERCLEANFILES =   \
+ 			perl/PreludeEasy.bs 	     \
+                         python/_PreludeEasy.cxx	     \
+ 			python/PreludeEasy.py	     \
+-			ruby/PreludeEasy.cxx
++			ruby/PreludeEasy.cxx    \
++            java/PreludeEasy.cxx
+ 
+ all-am: perl
+ 
+diff --git a/bindings/c++/include/prelude.hxx b/bindings/c++/include/prelude.hxx
+index 5674c05..5b83c73 100644
+--- a/bindings/c++/include/prelude.hxx
++++ b/bindings/c++/include/prelude.hxx
+@@ -37,5 +37,6 @@
+ #include "idmef-criteria.hxx"
+ 
+ const char *CheckVersion(const char *version = NULL);
++int prelude_init(int *argc = NULL, char **argv = NULL);
+ 
+ #endif
+diff --git a/bindings/java/Makefile.am b/bindings/java/Makefile.am
+new file mode 100644
+index 0000000..6fb53af
+--- /dev/null
++++ b/bindings/java/Makefile.am
+@@ -0,0 +1,42 @@
++if HAVE_EASY_BINDINGS
++if HAVE_JAVA
++
++EXTRA_DIST = libpreludecpp-java.i PreludeEasy.cxx
++
++all-am: java-build
++
++java-build: PreludeEasy.cxx  PreludeEasy.o
++    $(JAVAC) com/prelude/easy/*.java
++    ant compile && ant jar
++
++install-exec-hook:
++    cp libpreludejava.so /usr/local/lib
++    ldconfig
++    cp build/jar/PreludeEasy.jar /usr/share/java
++
++uninstall-hook:
++    rm -f /usr/local/lib/libpreludejava.so
++    ldconfig
++    rm -f /usr/share/java/PreludeEasy.jar
++
++
++PreludeEasy.o: PreludeEasy.cxx
++    $(CXX) -I $(top_srcdir)/bindings/c++/include -c -I $(top_srcdir)/src/include/ -I $(top_srcdir)/src/libprelude-error/ -I$(top_srcdir) -I $(top_srcdir)/libmissing/ -fPIC PreludeEasy.cxx
++    $(CXX) -shared PreludeEasy.o $(top_srcdir)/bindings/c++/.libs/libpreludecpp.so -o libpreludejava.so
++
++PreludeEasy.cxx: $(top_srcdir)/bindings/c++/include/*.hxx $(top_srcdir)/bindings/libpreludecpp.i libpreludecpp-java.i
++if HAVE_SWIG
++    $(SWIG) -c++ -I$(top_srcdir)/bindings -I$(top_srcdir)/bindings/c++/include -I$(top_srcdir)/src/include -I$(top_srcdir)/src/libprelude-error -java -package com.prelude.easy -outdir com/prelude/easy -o $@ ../libpreludecpp.i
++endif
++
++
++clean-local:
++    rm -f com/prelude/easy/*.class com/prelude/easy/*.java
++    rm -f PreludeEasy.o libpreludejava.so PreludeEasy.cxx
++    rm -f Makefile.old
++    ant clean
++    rm -f testapp/*.class
++endif
++endif
++
++-include $(top_srcdir)/git.mk
+diff --git a/bindings/java/build.xml b/bindings/java/build.xml
+new file mode 100644
+index 0000000..2067063
+--- /dev/null
++++ b/bindings/java/build.xml
+@@ -0,0 +1,23 @@
++<project>
++    <target name="clean">
++        <delete dir="build"/>
++    </target>
++
++    <target name="compile">
++        <mkdir dir="build/classes"/>
++        <javac srcdir="./com" destdir="build/classes" debug="on" debuglevel="lines,vars,source" />
++    </target>
++
++    <target name="jar">
++        <mkdir dir="build/jar"/>
++        <jar destfile="build/jar/PreludeEasy.jar" basedir="build/classes">
++            <manifest>
++            </manifest>
++        </jar>
++    </target>
++
++    <target name="run">
++        <java jar="build/jar/PreludeEasy.jar" fork="true"/>
++    </target>
++
++</project>
+diff --git a/bindings/java/libpreludecpp-java.i b/bindings/java/libpreludecpp-java.i
+new file mode 100644
+index 0000000..3b86a83
+--- /dev/null
++++ b/bindings/java/libpreludecpp-java.i
+@@ -0,0 +1,42 @@
++%module preludejava
++
++%rename (String) *::operator const std::string() const;
++%rename (String) *::operator const char*;
++
++%ignore *::operator int() const;
++%ignore *::operator double() const;
++%ignore *::operator long() const;
++%ignore *::operator >> const;
++%ignore *::operator <;
++%ignore *::operator >;
++%ignore *::operator ==;
++%ignore *::operator <=;
++%ignore *::operator >=;
++%ignore *::operator !=;
++%ignore *::operator =;
++
++%typemap(throws, throws="java.io.IOException") Prelude::PreludeError {
++  jclass excep = jenv->FindClass("java/io/IOException");
++  if (excep)
++    jenv->ThrowNew(excep, $1.what());
++  return $null;
++}
++
++%fragment("TransitionFunc", "header") {
++
++static ssize_t _cb_java_read(prelude_io_t *fd, void *buf, size_t size)
++{
++        ssize_t ret;
++        FILE *f = (FILE *) prelude_io_get_fdptr(fd);
++
++        ret = fread(buf, 1, size, f);
++        if ( ret < 0 )
++                ret = prelude_error_from_errno(errno);
++
++        else if ( ret == 0 )
++                ret = prelude_error(PRELUDE_ERROR_EOF);
++
++        return ret;
++}
++
++}
+diff --git a/bindings/java/testapp/build.sh b/bindings/java/testapp/build.sh
+new file mode 100644
+index 0000000..3013d97
+--- /dev/null
++++ b/bindings/java/testapp/build.sh
+@@ -0,0 +1,2 @@
++#!/bin/sh -x
++javac -cp /usr/share/java/PreludeEasy.jar test.java
+diff --git a/bindings/java/testapp/run.sh b/bindings/java/testapp/run.sh
+new file mode 100644
+index 0000000..bb9bc32
+--- /dev/null
++++ b/bindings/java/testapp/run.sh
+@@ -0,0 +1,2 @@
++#!/bin/bash
++java -cp /usr/share/java/PreludeEasy.jar:. test
+diff --git a/bindings/java/testapp/test.java b/bindings/java/testapp/test.java
+new file mode 100644
+index 0000000..bcfe777
+--- /dev/null
++++ b/bindings/java/testapp/test.java
+@@ -0,0 +1,34 @@
++import com.prelude.easy.ClientEasy;
++import com.prelude.easy.IDMEF;
++
++public class test {
++
++  static {
++    try {
++      System.loadLibrary("preludejava");
++    } catch (UnsatisfiedLinkError e) {
++      System.err.println("Native code library failed to load. " + e);
++      System.exit(1);
++    }
++  }
++
++    private static ClientEasy c;
++
++    public static void main(String argv[]){
++        com.prelude.easy.PreludeEasy.prelude_init();
++        c= new ClientEasy("prelude-java-agent");
++        try {
++            c.Start();
++            System.out.println("Creating IDMEF msg");
++            IDMEF msg = new IDMEF();
++            System.out.println("Setting attribs...");
++            msg.Set("alert.source(0).node.address(0).address","192.168.1.1");
++            msg.Set("alert.target(0).node.address(0).address","192.168.1.2");
++            System.out.println("Sending msg...");
++            c.SendIDMEF(msg);
++        } catch (Exception exception){
++            System.out.println(exception.toString());
++            exception.printStackTrace();
++        }
++    }
++}
+diff --git a/configure.in b/configure.in
+index c2f591a..dd1e1b4 100644
+--- a/configure.in
++++ b/configure.in
+@@ -434,6 +434,24 @@ fi
+ PERL_EXTRA_PARAMS="INSTALLDIRS=$PERL_INSTALLDIRS"
+ AC_SUBST(PERL_EXTRA_PARAMS)
+ 
++dnl **************************************************
++dnl * Java support                                   *
++dnl **************************************************
++
++AC_ARG_WITH(java, AC_HELP_STRING(--with-java@<:@=PATH@:>@, Enable support for java binding @<:@default=auto@:>@),
++            [java_required=true; if test x$withval = xyes; then with_java="javac"; fi], with_java="javac")
++
++if test x$with_java != xno; then
++
++    AC_PATH_PROG(JAVAC, `basename $with_java`, no, `dirname $with_java`:$PATH)
++    if test x$JAVAC = xno; then
++        with_java=no
++    else
++        with_java=yes
++    fi
++fi
++
++AM_CONDITIONAL(HAVE_JAVA, test x$with_java = xyes)
+ 
+ dnl **************************************************
+ dnl * Python support                                 *
+@@ -761,6 +779,7 @@ bindings/perl/Makefile.PL
+ bindings/python/Makefile
+ bindings/python/setup.py
+ bindings/ruby/Makefile
++bindings/java/Makefile
+ tests/Makefile
+ 
+ ])
+@@ -776,4 +795,4 @@ echo "    - Perl binding             : $with_perl"
+ echo "    - Python binding           : $with_python"
+ echo "    - Ruby binding             : $with_ruby"
+ echo "    - Easy bindings            : $enable_easy_bindings"
+-
++echo "    - Java bindings            : $with_java"
+-- 
+1.5.6.5
+

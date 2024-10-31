@@ -1,0 +1,670 @@
+diff --git a/prewikka/IDMEFDatabase.py b/prewikka/IDMEFDatabase.py
+index 83be2c2..9724f89 100644
+--- a/prewikka/IDMEFDatabase.py
++++ b/prewikka/IDMEFDatabase.py
+@@ -36,7 +36,7 @@ def escape_value(value):
+ class IDMEFTime(object):
+     def __init__(self, res):
+         self._res = res
+-        
++
+     def __del__(self):
+         idmef_time_destroy(self._res)
+ 
+@@ -45,13 +45,13 @@ class IDMEFTime(object):
+ 
+     def __int__(self):
+         return idmef_time_get_sec(self._res)
+-                
++
+     def __float__(self):
+         return float(idmef_time_get_sec(self._res)) + float(idmef_time_get_usec(self._res)) / 10 ** 6
+-        
++
+     def toYMDHMS(self):
+         return time_to_ymdhms(time.localtime(idmef_time_get_sec(self._res)))
+-        
++
+     def __getattribute__(self, name):
+         if name is "sec":
+             return idmef_time_get_sec(self._res)
+@@ -98,14 +98,14 @@ def convert_idmef_value(value):
+     except KeyError:
+         return None
+ 
+-    
+-        
++
++
+ class Message:
+     def __init__(self, res, htmlsafe):
+         self._res = res
+         self._value_list = None
+         self._htmlsafe = htmlsafe
+-        
++
+     def __del__(self):
+         idmef_message_destroy(self._res)
+ 
+@@ -115,7 +115,7 @@ class Message:
+     def __iter__(self):
+         if not self._value_list:
+             raise TypeError, "iteration over a non-sequence"
+-        
++
+         self._list_iterator = 0
+         return self
+ 
+@@ -124,7 +124,7 @@ class Message:
+             return idmef_value_get_count(self._value_list)
+ 
+         return 1
+-    
++
+     def next(self):
+         next = idmef_value_get_nth(self._value_list, self._list_iterate)
+         if not next:
+@@ -132,7 +132,7 @@ class Message:
+ 
+         value = self._convert_value(next, self._root + "(%d)" % self._list_iterate)
+         self._list_iterate += 1
+-        
++
+         return value
+ 
+     def _convert_value(self, idmef_value, key):
+@@ -143,33 +143,33 @@ class Message:
+             value._value_list = idmef_value
+             if self._value_list:
+                 idmef_value_ref(idmef_value)
+-                
++
+         elif idmef_value_get_type(idmef_value) != IDMEF_VALUE_TYPE_CLASS:
+             value = convert_idmef_value(idmef_value)
+             if not self._value_list:
+                 idmef_value_destroy(idmef_value)
+-            
++
+         else:
+             if not self._value_list:
+                 idmef_value_destroy(idmef_value)
+-                
++
+             value = Message(idmef_message_ref(self._res), self._htmlsafe)
+             value._root = key
+ 
+         return value
+-    
++
+     def _get_raw_value(self, key):
+         path = idmef_path_new_fast(key)
+         idmef_value = idmef_path_get(path, self._res)
+-        
++
+         if idmef_value:
+             ret = self._convert_value(idmef_value, key)
+         else:
+-            if idmef_path_is_list(path, -1):
++            if idmef_path_is_ambiguous(path):
+                 ret = []
+             else:
+                 ret = None
+-            
++
+         idmef_path_destroy(path)
+         return ret
+ 
+@@ -181,7 +181,7 @@ class Message:
+             return escape_value(self._get_raw_value(key))
+         else:
+             return self._get_raw_value(key)
+-             
++
+     def match(self, criteria):
+         if type(criteria) is list:
+             criteria = " && ".join(criteria)
+@@ -192,18 +192,18 @@ class Message:
+ 
+         return ret
+ 
+-    def get(self, key, default=None, htmlsafe=None):     
++    def get(self, key, default=None, htmlsafe=None):
+         if htmlsafe != None:
+             htmlsafe_bkp = self._htmlsafe
+             self._htmlsafe = htmlsafe
+-            
+-        val = self[key] 
++
++        val = self[key]
+         if val == None:
+                 val = default
+-        
++
+         if htmlsafe != None:
+             self._htmlsafe = htmlsafe_bkp
+-        
++
+         return val
+ 
+     def getAdditionalData(self, searched, many_values=False):
+@@ -213,13 +213,13 @@ class Message:
+             meaning = self["%s.additional_data(%d).meaning" % (self._root, i)]
+             if meaning is None:
+                 break
+-            
++
+             if meaning == searched:
+                 value = self["%s.additional_data(%d).data" % (self._root, i)]
+-                
++
+                 if not many_values:
+                     return value
+-                
++
+                 values.append(value)
+ 
+             i += 1
+@@ -252,35 +252,35 @@ class DbResult:
+         self._rows = [ ]
+         self._has_cache = False
+         self._res, self._len = results
+-        
++
+     def __iter__(self):
+         if self._has_cache:
+             return iter(self._rows)
+         else:
+             return self
+-        
++
+     def __len__(self):
+         return self._len
+-       
++
+     def __del__(self):
+         if self._res:
+             self._db_delete(self._res)
+-        
++
+     def __getitem__(self, key):
+         if isinstance(key, types.SliceType):
+             start, stop, step = key.start, key.stop, key.step
+             index = start + stop
+         else:
+             index = key
+-        
++
+         if not self._has_cache:
+             for r in self:
+                 if len(self._rows) >= index:
+                     break
+-                
++
+         return self._rows[key]
+-        
+-    def next(self):        
++
++    def next(self):
+         if self._res == None:
+             raise StopIteration
+ 
+@@ -292,26 +292,26 @@ class DbResult:
+             raise StopIteration
+ 
+         row = self._db_convert_row(values)
+-       
++
+         self._rows.append(row)
+         return row
+-            
++
+ 
+ class DbResultValues(DbResult):
+     def __init__(self, selection, results):
+         self._selection = selection
+         DbResult.__init__(self, results)
+-                
++
+     def _db_get_next(self):
+         return preludedb_result_values_get_next(self._res)
+-        
++
+     def _db_delete(self, result):
+         if self._selection:
+             preludedb_path_selection_destroy(self._selection)
+-            
++
+         if result:
+             preludedb_result_values_destroy(result)
+-            
++
+     def _db_convert_row(self, values):
+         row = []
+         for value in values:
+@@ -319,25 +319,25 @@ class DbResultValues(DbResult):
+                row.append(None)
+            else:
+                row.append(convert_idmef_value(value))
+-               idmef_value_destroy(value)      
+-               
++               idmef_value_destroy(value)
++
+         return row
+-        
++
+ class DbResultIdents(DbResult):
+     def _db_get_next(self):
+         return preludedb_result_idents_get_next(self._res)
+-        
++
+     def _db_delete(self, result):
+         if result:
+             preludedb_result_idents_destroy(result)
+-                    
++
+     def _db_convert_row(self, value):
+         return value
+ 
+ class IDMEFDatabase:
+     _db_destroy = preludedb_destroy
+     _db = None
+-    
++
+     def __init__(self, config):
+         settings = preludedb_sql_settings_new()
+         for param in "file", "host", "port", "name", "user", "pass":
+@@ -360,44 +360,44 @@ class IDMEFDatabase:
+                 raise "libpreludedb %s or higher is required (%s found)." % (wanted_version, cur)
+             else:
+                 raise "libpreludedb %s or higher is required." % wanted_version
+-        
++
+         self._db = preludedb_new(sql, None)
+ 
+     def __del__(self):
+         if self._db:
+             self._db_destroy(self._db)
+-            
++
+     def _getMessageIdents(self, get_message_idents, criteria, limit, offset, order_by):
+         if type(criteria) is list:
+             if len(criteria) == 0:
+                 criteria = None
+             else:
+                 criteria = " && ".join(criteria)
+-                
++
+         if criteria:
+             criteria = idmef_criteria_new_from_string(criteria)
+ 
+         idents = [ ]
+-    
++
+         if order_by == "time_asc":
+             order_by = PRELUDEDB_RESULT_IDENTS_ORDER_BY_CREATE_TIME_ASC
+         else:
+             order_by = PRELUDEDB_RESULT_IDENTS_ORDER_BY_CREATE_TIME_DESC
+-            
+-        try:    
++
++        try:
+             result = get_message_idents(self._db, criteria, limit, offset, order_by)
+         except:
+             self._freeDbParams(criteria=criteria)
+             raise
+-                    
++
+         if criteria:
+             idmef_criteria_destroy(criteria)
+-        
++
+         if not result:
+-            return [ ]            
+-        
++            return [ ]
++
+         return DbResultIdents(result)
+-        
++
+     def getAlertIdents(self, criteria=None, limit=-1, offset=-1, order_by="time_desc"):
+         return self._getMessageIdents(preludedb_get_alert_idents2, criteria, limit, offset, order_by)
+ 
+@@ -406,17 +406,20 @@ class IDMEFDatabase:
+ 
+     def _getLastMessageIdent(self, type, get_message_idents, analyzerid):
+         criteria = None
+-        if analyzerid != None:
+-            criteria = "%s.analyzer(-1).analyzerid == '%s'" % (type, str(analyzerid))
++        if analyzerid is not False:
++            if analyzerid is None:
++                criteria = "! %s.analyzer(-1).analyzerid" % (type)
++            else:
++                criteria = "%s.analyzer(-1).analyzerid == '%s'" % (type, str(analyzerid))
+ 
+         idents = get_message_idents(criteria, limit=1)
+ 
+         return idents[0]
+ 
+-    def getLastAlertIdent(self, analyzer=None):
++    def getLastAlertIdent(self, analyzer=False):
+         return self._getLastMessageIdent("alert", self.getAlertIdents, analyzer)
+ 
+-    def getLastHeartbeatIdent(self, analyzer=None):
++    def getLastHeartbeatIdent(self, analyzer=False):
+         return self._getLastMessageIdent("heartbeat", self.getHeartbeatIdents, analyzer)
+ 
+     def getAlert(self, ident, htmlsafe=False):
+@@ -442,20 +445,20 @@ class IDMEFDatabase:
+     def _freeDbParams(self, selection=None, criteria=None):
+         if selection:
+             preludedb_path_selection_destroy(selection)
+-        
++
+         if criteria:
+             idmef_criteria_destroy(criteria)
+-            
++
+     def getValues(self, selection, criteria=None, distinct=0, limit=-1, offset=-1):
+         if type(criteria) is list:
+             if len(criteria) == 0:
+                 criteria = None
+             else:
+                 criteria = " && ".join([ "(" + c + ")" for c in criteria ])
+-                            
++
+         if criteria:
+             criteria = idmef_criteria_new_from_string(criteria)
+-            
++
+         my_selection = preludedb_path_selection_new()
+         for selected in selection:
+             my_selected = preludedb_selected_path_new_string(selected)
+@@ -466,19 +469,19 @@ class IDMEFDatabase:
+         except:
+             self._freeDbParams(my_selection, criteria)
+             raise
+-            
++
+         if criteria:
+-            idmef_criteria_destroy(criteria)       
+-        
++            idmef_criteria_destroy(criteria)
++
+         if not result:
+             preludedb_path_selection_destroy(my_selection)
+             return [ ]
+-            
++
+         return DbResultValues(my_selection, result)
+-        
++
+     def _countMessages(self, root, criteria):
+         return self.getValues(["count(%s.create_time)" % root], criteria)[0][0]
+-        
++
+     def countAlerts(self, criteria=None):
+         return self._countMessages("alert", criteria)
+ 
+@@ -511,40 +514,35 @@ class IDMEFDatabase:
+                 index += 1
+             analyzer_paths.append(path)
+ 
+-        return analyzer_paths            
++        return analyzer_paths
+ 
+     def getAnalyzer(self, analyzerid):
+         ident = self.getLastHeartbeatIdent(analyzerid)
+         heartbeat = self.getHeartbeat(ident)
+ 
+-        index = 0
+-        while True:
+-            if not heartbeat["heartbeat.analyzer(%d).name" % (index + 1)]:
+-                break
+-            index += 1
+-
+-        analyzer = { }
+-        analyzer["analyzerid"] = analyzerid
+-        analyzer["name"] = heartbeat.get("heartbeat.analyzer(%d).name" % index)
+-        analyzer["model"] = heartbeat.get("heartbeat.analyzer(%d).model" % index) 
+-        analyzer["version"] = heartbeat.get("heartbeat.analyzer(%d).version" % index)
+-        analyzer["class"] = heartbeat.get("heartbeat.analyzer(%d).class" % index)
+-        analyzer["ostype"] = heartbeat.get("heartbeat.analyzer(%d).ostype" % index)
+-        analyzer["osversion"] = heartbeat.get("heartbeat.analyzer(%d).osversion" % index)
+-        analyzer["node_name"] = heartbeat.get("heartbeat.analyzer(%d).node.name" % index)
+-        analyzer["node_location"] = heartbeat.get("heartbeat.analyzer(%d).node.location" % index)
+-                
+-        i = 0
+-        analyzer["node_addresses"] = [ ]
+-        while True:
+-            address = heartbeat.get("heartbeat.analyzer(%d).node.address(%d).address" % (index, i))
+-            if not address:
++        path = []
++        prev = None
++
++        for analyzer in heartbeat["analyzer"]:
++            if analyzer["analyzerid"]:
++                path.append(analyzer["analyzerid"])
++
++            if not analyzer["name"]:
+                 break
+-            analyzer["node_addresses"].append(address)
+-            i += 1
+-        
+-        analyzer["last_heartbeat_time"] = heartbeat.get("heartbeat.create_time")
+-        analyzer["last_heartbeat_interval"] = heartbeat["heartbeat.heartbeat_interval"]
+-        analyzer["last_heartbeat_status"] = heartbeat.getAdditionalData("Analyzer status")
+-        
+-        return analyzer
++
++            prev = analyzer
++
++        analyzer = prev
++        analyzerd = { "analyzerid": analyzerid, "path": path, "node_addresses": [] }
++
++        for column in "name", "model", "version", "class", "ostype", "osversion", "node.name", "node.location":
++            analyzerd[column] = analyzer[column]
++
++        for addr in analyzer["node.address.address"]:
++            analyzerd["node_addresses"].append(addr)
++
++        analyzerd["last_heartbeat_time"] = heartbeat.get("heartbeat.create_time")
++        analyzerd["last_heartbeat_interval"] = heartbeat.get("heartbeat.heartbeat_interval")
++        analyzerd["last_heartbeat_status"] = heartbeat.getAdditionalData("Analyzer status")
++
++        return analyzerd
+diff --git a/prewikka/views/sensor.py b/prewikka/views/sensor.py
+index 1fa1378..123c6f0 100644
+--- a/prewikka/views/sensor.py
++++ b/prewikka/views/sensor.py
+@@ -55,29 +55,29 @@ def get_analyzer_status_from_latest_heartbeat(heartbeat_status, heartbeat_time,
+ 
+     if time.time() - int(heartbeat_time) > int(heartbeat_interval) + error_margin:
+         return "missing", _("Missing")
+-    
++
+     return "online", _("Online")
+ 
+ 
+ def analyzer_cmp(x, y):
+     xmiss = x["status"] == "missing"
+     ymiss = y["status"] == "missing"
+-    
++
+     if xmiss and ymiss:
+         return cmp(x["name"], y["name"])
+-        
++
+     elif xmiss or ymiss:
+         return ymiss - xmiss
+-        
++
+     else:
+         return cmp(x["name"], y["name"])
+-        
++
+ def node_cmp(x, y):
+     xmiss = x["missing"]
+     ymiss = y["missing"]
+-    
++
+     if xmiss or ymiss:
+-        return ymiss - xmiss        
++        return ymiss - xmiss
+     else:
+         return cmp(x["node_name"], y["node_name"])
+ 
+@@ -98,8 +98,7 @@ class SensorListing(view.View):
+     def init(self, env):
+         self._heartbeat_count = int(env.config.general.getOptionValue("heartbeat_count", 30))
+         self._heartbeat_error_margin = int(env.config.general.getOptionValue("heartbeat_error_margin", 3))
+-    
+-        
++
+     def render(self):
+         analyzers = { }
+ 
+@@ -110,31 +109,30 @@ class SensorListing(view.View):
+ 
+         locations = { }
+         nodes = { }
+-        
+-        for analyzer_path in self.env.idmef_db.getAnalyzerPaths():
+-            analyzerid = analyzer_path[-1]          
++
++        for analyzerid in self.env.idmef_db.getAnalyzerids():
+             analyzer = self.env.idmef_db.getAnalyzer(analyzerid)
+-            
++
+             parameters = { "analyzerid": analyzer["analyzerid"] }
+             analyzer["alert_listing"] = utils.create_link("sensor_alert_listing", parameters)
+             analyzer["heartbeat_listing"] = utils.create_link("sensor_heartbeat_listing", parameters)
+             analyzer["heartbeat_analyze"] = utils.create_link("heartbeat_analyze", parameters)
+ 
+-            if analyzer["node_name"]:
++            if analyzer["node.name"]:
+                 analyzer["node_name_link"] = utils.create_link(self.view_name,
+                                                                { "filter_path": "heartbeat.analyzer(-1).node.name",
+-                                                                 "filter_value": analyzer["node_name"] })
+-                 
+-            if analyzer["node_location"]:
++                                                                 "filter_value": analyzer["node.name"] })
++
++            if analyzer["node.location"]:
+                 analyzer["node_location_link"] = utils.create_link(self.view_name,
+                                                                    { "filter_path": "heartbeat.analyzer(-1).node.location",
+-                                                                     "filter_value": analyzer["node_location"] })
+-                
++                                                                     "filter_value": analyzer["node.location"] })
++
+             node_key = ""
+             for i in range(len(analyzer["node_addresses"])):
+                 addr = analyzer["node_addresses"][i]
+                 node_key += addr
+-                
++
+                 analyzer["node_addresses"][i] = {}
+                 analyzer["node_addresses"][i]["value"] = addr
+                 analyzer["node_addresses"][i]["inline_filter"] = utils.create_link(self.view_name,
+@@ -147,7 +145,7 @@ class SensorListing(view.View):
+                                                                            utils.create_link("Command",
+                                                                                              { "origin": self.view_name,
+                                                                                                "command": command, "host": addr })))
+-            
++
+             analyzer["status"], analyzer["status_meaning"] = \
+                                 get_analyzer_status_from_latest_heartbeat(analyzer["last_heartbeat_status"],
+                                                                           analyzer["last_heartbeat_time"],
+@@ -156,15 +154,15 @@ class SensorListing(view.View):
+ 
+             analyzer["last_heartbeat_time"] = utils.time_to_ymdhms(time.localtime(int(analyzer["last_heartbeat_time"]))) + \
+                                               " %+.2d:%.2d" % utils.get_gmt_offset()
+-       
+-            node_location = analyzer["node_location"] or _("Node location n/a")
+-            node_name = analyzer.get("node_name") or _("Node name n/a")
++
++            node_location = analyzer["node.location"] or _("Node location n/a")
++            node_name = analyzer.get("node.name") or _("Node name n/a")
+             osversion = analyzer["osversion"] or _("OS version n/a")
+             ostype = analyzer["ostype"] or _("OS type n/a")
+             addresses = analyzer["node_addresses"]
+-            
++
+             node_key = node_name + osversion + ostype
+-            
++
+             if not locations.has_key(node_location):
+                 locations[node_location] = { "total": 1, "missing": 0, "unknown": 0, "offline": 0, "online": 0, "nodes": { } }
+             else:
+@@ -174,11 +172,11 @@ class SensorListing(view.View):
+                 locations[node_location]["nodes"][node_key] = { "total": 1, "missing": 0, "unknown": 0, "offline": 0, "online": 0,
+                                                                 "analyzers": [ ],
+                                                                 "node_name": node_name, "node_location": node_location,
+-                                                                "ostype": ostype, "osversion": osversion, 
++                                                                "ostype": ostype, "osversion": osversion,
+                                                                 "node_addresses": addresses, "node_key": node_key }
+             else:
+                 locations[node_location]["nodes"][node_key]["total"] += 1
+-                  
++
+             status = analyzer["status"]
+             locations[node_location][status] += 1
+             locations[node_location]["nodes"][node_key][status] += 1
+@@ -187,9 +185,9 @@ class SensorListing(view.View):
+                 locations[node_location]["nodes"][node_key]["analyzers"].insert(0, analyzer)
+             else:
+                 locations[node_location]["nodes"][node_key]["analyzers"].append(analyzer)
+-                
++
+         self.dataset["locations"] = locations
+-        
++
+ 
+ class SensorMessagesDelete(SensorListing):
+     view_name = "sensor_messages_delete"
+@@ -205,7 +203,7 @@ class SensorMessagesDelete(SensorListing):
+             if self.parameters.has_key("heartbeats"):
+                 criteria = "heartbeat.analyzer(-1).analyzerid == %d" % long(analyzerid)
+                 self.env.idmef_db.deleteHeartbeat(self.env.idmef_db.getHeartbeatIdents(criteria))
+-            
++
+         SensorListing.render(self)
+ 
+ 
+@@ -219,16 +217,16 @@ class HeartbeatAnalyze(view.View):
+     def init(self, env):
+         self._heartbeat_count = int(env.config.general.getOptionValue("heartbeat_count", 30))
+         self._heartbeat_error_margin = int(env.config.general.getOptionValue("heartbeat_error_margin", 3))
+-    
++
+     def render(self):
+         analyzerid = self.parameters["analyzerid"]
+-        
++
+         analyzer = self.env.idmef_db.getAnalyzer(analyzerid)
+         analyzer["last_heartbeat_time"] = str(analyzer["last_heartbeat_time"])
+         analyzer["events"] = [ ]
+         analyzer["status"] = "abnormal_offline"
+         analyzer["status_meaning"] = "abnormal offline"
+-        
++
+         start = time.time()
+         idents = self.env.idmef_db.getHeartbeatIdents(criteria="heartbeat.analyzer(-1).analyzerid == %d" % analyzerid,
+                                                       limit=self._heartbeat_count)
+@@ -254,7 +252,7 @@ class HeartbeatAnalyze(view.View):
+                     analyzer["events"].append({ "value": "sensor is down since %s" % older_time, "type": "down"})
+             if newer:
+                 event = None
+-                
++
+                 if newer_status == "starting":
+                     if older_status == "exiting":
+                         event = { "value": "normal sensor start at %s" % str(newer_time),
+@@ -267,7 +265,7 @@ class HeartbeatAnalyze(view.View):
+                     if abs(int(newer_time) - int(older_time) - int(older_interval)) > self._heartbeat_error_margin:
+                         event = { "value": "abnormal heartbeat interval between %s and %s" % (str(older_time), str(newer_time)),
+                                   "type": "abnormal_heartbeat_interval" }
+-                                  
++
+ 
+                 if newer_status == "exiting":
+                     event = { "value": "normal sensor stop at %s" % str(newer_time),

@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>preludedb-sql-settings</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libpreludedb Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libpreludedb-preludedb-plugin-sql.html" title="preludedb-plugin-sql">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libpreludedb-preludedb-plugin-sql.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libpreludedb Reference Manual</th>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libpreludedb-preludedb-sql-settings.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libpreludedb-preludedb-sql-settings.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="preludedb-sql-settings">
+<a name="libpreludedb-preludedb-sql-settings"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libpreludedb-preludedb-sql-settings.top_of_page"></a>preludedb-sql-settings</span></h2>
+<p>preludedb-sql-settings</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libpreludedb-preludedb-sql-settings.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             PRELUDEDB_SQL_SETTING_TYPE
+#define             PRELUDEDB_SQL_SETTING_HOST
+#define             PRELUDEDB_SQL_SETTING_PORT
+#define             PRELUDEDB_SQL_SETTING_NAME
+#define             PRELUDEDB_SQL_SETTING_USER
+#define             PRELUDEDB_SQL_SETTING_PASS
+#define             PRELUDEDB_SQL_SETTING_FILE
+#define             PRELUDEDB_SQL_SETTING_LOG
+typedef             preludedb_sql_settings_t;
+int                 preludedb_sql_settings_new          (preludedb_sql_settings_t **settings);
+int                 preludedb_sql_settings_new_from_string
+                                                        (preludedb_sql_settings_t **settings,
+                                                         const char *str);
+void                preludedb_sql_settings_destroy      (preludedb_sql_settings_t *settings);
+int                 preludedb_sql_settings_set          (preludedb_sql_settings_t *settings,
+                                                         const char *name,
+                                                         const char *value);
+int                 preludedb_sql_settings_set_from_string
+                                                        (preludedb_sql_settings_t *settings,
+                                                         const char *str);
+const char *        preludedb_sql_settings_get          (const preludedb_sql_settings_t *settings,
+                                                         const char *name);
+int                 preludedb_sql_settings_set_type     (preludedb_sql_settings_t *settings,
+                                                         const char *value);
+const char *        preludedb_sql_settings_get_type     (const preludedb_sql_settings_t *settings);
+int                 preludedb_sql_settings_set_host     (preludedb_sql_settings_t *settings,
+                                                         const char *value);
+const char *        preludedb_sql_settings_get_host     (const preludedb_sql_settings_t *settings);
+int                 preludedb_sql_settings_set_port     (preludedb_sql_settings_t *settings,
+                                                         const char *value);
+const char *        preludedb_sql_settings_get_port     (const preludedb_sql_settings_t *settings);
+int                 preludedb_sql_settings_set_name     (preludedb_sql_settings_t *settings,
+                                                         const char *value);
+const char *        preludedb_sql_settings_get_name     (const preludedb_sql_settings_t *settings);
+int                 preludedb_sql_settings_set_user     (preludedb_sql_settings_t *settings,
+                                                         const char *value);
+const char *        preludedb_sql_settings_get_user     (const preludedb_sql_settings_t *settings);
+int                 preludedb_sql_settings_set_pass     (preludedb_sql_settings_t *settings,
+                                                         const char *value);
+const char *        preludedb_sql_settings_get_pass     (const preludedb_sql_settings_t *settings);
+int                 preludedb_sql_settings_set_log      (preludedb_sql_settings_t *settings,
+                                                         const char *value);
+const char *        preludedb_sql_settings_get_log      (const preludedb_sql_settings_t *settings);
+int                 preludedb_sql_settings_set_file     (preludedb_sql_settings_t *settings,
+                                                         const char *value);
+const char *        preludedb_sql_settings_get_file     (const preludedb_sql_settings_t *settings);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libpreludedb-preludedb-sql-settings.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libpreludedb-preludedb-sql-settings.details"></a><h2>Details</h2>
+<div class="refsect2" title="PRELUDEDB_SQL_SETTING_TYPE">
+<a name="PRELUDEDB-SQL-SETTING-TYPE--CAPS"></a><h3>PRELUDEDB_SQL_SETTING_TYPE</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_SETTING_TYPE "type"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PRELUDEDB_SQL_SETTING_HOST">
+<a name="PRELUDEDB-SQL-SETTING-HOST--CAPS"></a><h3>PRELUDEDB_SQL_SETTING_HOST</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_SETTING_HOST "host"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PRELUDEDB_SQL_SETTING_PORT">
+<a name="PRELUDEDB-SQL-SETTING-PORT--CAPS"></a><h3>PRELUDEDB_SQL_SETTING_PORT</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_SETTING_PORT "port"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PRELUDEDB_SQL_SETTING_NAME">
+<a name="PRELUDEDB-SQL-SETTING-NAME--CAPS"></a><h3>PRELUDEDB_SQL_SETTING_NAME</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_SETTING_NAME "name"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PRELUDEDB_SQL_SETTING_USER">
+<a name="PRELUDEDB-SQL-SETTING-USER--CAPS"></a><h3>PRELUDEDB_SQL_SETTING_USER</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_SETTING_USER "user"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PRELUDEDB_SQL_SETTING_PASS">
+<a name="PRELUDEDB-SQL-SETTING-PASS--CAPS"></a><h3>PRELUDEDB_SQL_SETTING_PASS</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_SETTING_PASS "pass"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PRELUDEDB_SQL_SETTING_FILE">
+<a name="PRELUDEDB-SQL-SETTING-FILE--CAPS"></a><h3>PRELUDEDB_SQL_SETTING_FILE</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_SETTING_FILE "file"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PRELUDEDB_SQL_SETTING_LOG">
+<a name="PRELUDEDB-SQL-SETTING-LOG--CAPS"></a><h3>PRELUDEDB_SQL_SETTING_LOG</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_SETTING_LOG "log"
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_t">
+<a name="preludedb-sql-settings-t"></a><h3>preludedb_sql_settings_t</h3>
+<pre class="programlisting">typedef struct preludedb_sql_settings preludedb_sql_settings_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_new ()">
+<a name="preludedb-sql-settings-new"></a><h3>preludedb_sql_settings_new ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_new          (preludedb_sql_settings_t **settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_new_from_string ()">
+<a name="preludedb-sql-settings-new-from-string"></a><h3>preludedb_sql_settings_new_from_string ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_new_from_string
+                                                        (preludedb_sql_settings_t **settings,
+                                                         const char *str);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_destroy ()">
+<a name="preludedb-sql-settings-destroy"></a><h3>preludedb_sql_settings_destroy ()</h3>
+<pre class="programlisting">void                preludedb_sql_settings_destroy      (preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set ()">
+<a name="preludedb-sql-settings-set"></a><h3>preludedb_sql_settings_set ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set          (preludedb_sql_settings_t *settings,
+                                                         const char *name,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_from_string ()">
+<a name="preludedb-sql-settings-set-from-string"></a><h3>preludedb_sql_settings_set_from_string ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_from_string
+                                                        (preludedb_sql_settings_t *settings,
+                                                         const char *str);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get ()">
+<a name="preludedb-sql-settings-get"></a><h3>preludedb_sql_settings_get ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get          (const preludedb_sql_settings_t *settings,
+                                                         const char *name);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_type ()">
+<a name="preludedb-sql-settings-set-type"></a><h3>preludedb_sql_settings_set_type ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_type     (preludedb_sql_settings_t *settings,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get_type ()">
+<a name="preludedb-sql-settings-get-type"></a><h3>preludedb_sql_settings_get_type ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get_type     (const preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_host ()">
+<a name="preludedb-sql-settings-set-host"></a><h3>preludedb_sql_settings_set_host ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_host     (preludedb_sql_settings_t *settings,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get_host ()">
+<a name="preludedb-sql-settings-get-host"></a><h3>preludedb_sql_settings_get_host ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get_host     (const preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_port ()">
+<a name="preludedb-sql-settings-set-port"></a><h3>preludedb_sql_settings_set_port ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_port     (preludedb_sql_settings_t *settings,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get_port ()">
+<a name="preludedb-sql-settings-get-port"></a><h3>preludedb_sql_settings_get_port ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get_port     (const preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_name ()">
+<a name="preludedb-sql-settings-set-name"></a><h3>preludedb_sql_settings_set_name ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_name     (preludedb_sql_settings_t *settings,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get_name ()">
+<a name="preludedb-sql-settings-get-name"></a><h3>preludedb_sql_settings_get_name ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get_name     (const preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_user ()">
+<a name="preludedb-sql-settings-set-user"></a><h3>preludedb_sql_settings_set_user ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_user     (preludedb_sql_settings_t *settings,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get_user ()">
+<a name="preludedb-sql-settings-get-user"></a><h3>preludedb_sql_settings_get_user ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get_user     (const preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_pass ()">
+<a name="preludedb-sql-settings-set-pass"></a><h3>preludedb_sql_settings_set_pass ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_pass     (preludedb_sql_settings_t *settings,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get_pass ()">
+<a name="preludedb-sql-settings-get-pass"></a><h3>preludedb_sql_settings_get_pass ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get_pass     (const preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_log ()">
+<a name="preludedb-sql-settings-set-log"></a><h3>preludedb_sql_settings_set_log ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_log      (preludedb_sql_settings_t *settings,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get_log ()">
+<a name="preludedb-sql-settings-get-log"></a><h3>preludedb_sql_settings_get_log ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get_log      (const preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_set_file ()">
+<a name="preludedb-sql-settings-set-file"></a><h3>preludedb_sql_settings_set_file ()</h3>
+<pre class="programlisting">int                 preludedb_sql_settings_set_file     (preludedb_sql_settings_t *settings,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_settings_get_file ()">
+<a name="preludedb-sql-settings-get-file"></a><h3>preludedb_sql_settings_get_file ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_settings_get_file     (const preludedb_sql_settings_t *settings);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

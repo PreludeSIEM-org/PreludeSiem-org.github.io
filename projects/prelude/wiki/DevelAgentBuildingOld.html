@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>DevelAgentBuildingOld - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="KteZ5+grhqNLzXlPFyMQC/pM9isWSC1HlDSGhZ2V2ls5+PGIIT+LIMFncbUKa1lVhgeHtQxCdAlKukIVGZXuWA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Building-a-Sensor"></a>
+<h1 >Building a Sensor<a href="#Building-a-Sensor" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><a class="wiki-page new" href="/projects/prelude/wiki/TracNav(TOCManualDevel)?parent=DevelAgentBuildingOld">TracNav(TOCManualDevel)</a></p>
+
+
+	<ul>
+	<li><strong>[#UsingC Using C]</strong></li>
+		<li><strong>[#UsingPerl Using Perl]</strong></li>
+		<li><strong>[#UsingPython Using Python]</strong></li>
+	</ul>
+
+
+	<a name="Using-C"></a>
+<h2 >Using C<a href="#Using-C" class="wiki-anchor">&para;</a></h2>
+
+
+Building a sensor in C to communicate with the prelude manager is done in three building steps:
+	<ul>
+	<li>Creating the Prelude client</li>
+		<li>Using the low level IDMEF API</li>
+		<li>Using the high level IDMEF API</li>
+	</ul>
+
+
+	<p>We will describe each step and the functions you can use from the API accordingly.</p>
+
+
+	<a name="Initializing-the-Prelude-library"></a>
+<h3 >Initializing the Prelude library<a href="#Initializing-the-Prelude-library" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Before any operation are done using the prelude library, the user first need to initialize it using<br />the <em>prelude_init()</em> function.</p>
+
+
+<pre>
+#include "prelude.h" 
+
+int ret;
+
+ret = prelude_init(&#38;argc, argv);
+if ( ret &lt; 0 ) {
+        prelude_perror(ret, "unable to initialize the prelude library");
+        return -1;
+}
+
+</pre>
+
+	<a name="Creating-the-Prelude-client"></a>
+<h3 >Creating the Prelude client<a href="#Creating-the-Prelude-client" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The first thing to do before using the Prelude library function is to create a prelude_client_t<br />object. This object will be necessary for most of the work you are going to do with prelude.</p>
+
+
+The creation of a <em>prelude_client_t</em> object involve several steps, including, but not limited to:
+	<ul>
+	<li>Parsing specific Prelude command line / configuration file options</li>
+		<li>Checking that the profile has been registered (the "my-analyzer" argument ahead).</li>
+	</ul>
+
+
+	<p>The <em>prelude_client_new()</em> function should be used for this task.</p>
+
+
+<pre>
+int ret;
+prelude_client_t *client;
+
+ret = prelude_client_new(&#38;client, "my-analyzer");
+if ( ! client ) {
+        prelude_perror(ret, "Unable to create a prelude client object");
+        return -1;
+}
+</pre>
+
+	<p>Once the client is created, an you have everything setup. You will need to start your client.<br />The <em>prelude_client_start()</em> function is responsible for this, and will trigger the connection to <br />the configured manager, and send the initial client heartbeat.</p>
+
+
+<pre>
+ret = prelude_client_start(client);
+if ( ret &lt; 0 ) {
+       prelude_perror(ret, "Unable to start prelude client");
+       return -1;
+}
+</pre>
+
+	<p>The prelude library will also register an internal timer in order to send heartbeat message at the defined interval. Timer registered by the library itself or by the program will either be called automatically if the <em>PRELUDE_CLIENT_FLAGS_ASYNC_TIMER</em> is set, otherwise, the program is responssible for calling the <em>prelude_timer_wakeup()</em> function every second from it's main loop, in order to check the registered timer.</p>
+
+
+	<ul>
+	<li>PRELUDE_CLIENT_FLAGS_HEARTBEAT   - Used for client to send heartbeat (this is the default).</li>
+		<li>PRELUDE_CLIENT_FLAGS_ASYNC_SEND  - Used if you want message to be sent asynchronously.</li>
+		<li>PRELUDE_CLIENT_FLAGS_ASYNC_TIMER - Used if you want timer to be automatically called from the asynchronous thread.</li>
+	</ul>
+
+
+<pre>
+ret = prelude_client_set_flags(client, PRELUDE_CLIENT_FLAGS_ASYNC_SEND|PRELUDE_CLIENT_FLAGS_ASYNC_TIMER);
+if ( ret &lt; 0 ) {
+       fprintf(stderr, "Unable to set asynchronous send and timer.\n");
+       return -1;
+}
+</pre>
+
+	<a name="Which-IDMEF-API-to-use-low-or-high-level"></a>
+<h3 >Which IDMEF API to use, low or high level?<a href="#Which-IDMEF-API-to-use-low-or-high-level" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>It all depend on your sensor requirement. Using the low level API is more error prone, and the resulting code will be harder to maintain, but the result will be faster and more optimized. On the other end, the higher level API is slower, but maintaining the code will be much easier.</p>
+
+
+	<a name="Using-the-low-level-IDMEF-API"></a>
+<h3 >Using the low level IDMEF API<a href="#Using-the-low-level-IDMEF-API" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Here is an example of creating different IDMEF object. The top level IDMEF object<br />is always <em>idmef_message_t</em>. You should refer to the IDMEF draft, or to the Prelude API documentation in order to get a complete listing of theses objet, or a description of what information an object carry.</p>
+
+
+<pre>
+idmef_message_t *idmef;
+
+ret = idmef_message_new(&#38;idmef);
+if ( ret &lt; 0 ) {
+        prelude_perror(ret, "unable to create IDMEF message");
+        return;
+}
+
+ret = idmef_message_new_alert(idmef, &#38;alert);
+if ( ret &lt; 0 ) {
+        prelude_perror(ret, "unable to create IDMEF alert");
+        idmef_message_destroy(idmef);
+        return;
+}
+
+ret = idmef_alert_new_classification(alert, &#38;class);
+if ( ret &lt; 0 ) {
+        prelude_perror(ret, "unable to create IDMEF classification");
+        idmef_message_destroy(idmef);
+        return;
+}
+
+ret = idmef_classification_new_text(class, &#38;str);
+if ( ret &lt; 0 ) {
+        prelude_perror(ret, "unable to create classification text");
+        idmef_message_destroy(idmef);
+        return;
+}
+
+prelude_string_set_constant(str, "My classification");
+</pre>
+
+	<a name="Using-the-high-level-IDMEF-API"></a>
+<h3 >Using the high level IDMEF API<a href="#Using-the-high-level-IDMEF-API" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Here is an example of using the high level IDMEF API:</p>
+
+
+<pre>
+static int add_idmef_object(idmef_message_t *message, const char *object, const char *value)
+{
+        int ret;
+        idmef_value_t *val;
+        idmef_path_t *path;
+
+        ret = idmef_path_new_fast(&#38;path, object);
+        if ( ret &lt; 0 )
+                return -1;
+
+        ret = idmef_value_new_from_path(&#38;val, path, value);
+        if ( ret &lt; 0 ) {
+                idmef_path_destroy(path);
+                return -1;
+        }
+
+        ret = idmef_path_set(path, message, val);
+
+        idmef_value_destroy(val);
+        idmef_path_destroy(path);
+
+        return ret;
+}
+</pre>
+
+	<p>You will then be able to set any field of the IDMEF message using:</p>
+
+
+<pre>
+idmef_message_t *idmef;
+
+ret = idmef_message_new(&#38;idmef);
+if ( ret &lt; 0 )
+        return -1;
+
+add_idmef_object(idmef, "alert.classification.text", "My classification text");
+add_idmef_object(idmef, "alert.classification.reference(0).name", "OSVDB-XXXX");
+add_idmef_object(idmef, "alert.classification.reference(0).origin", "osvdb");
+add_idmef_object(idmef, "alert.classification.reference(0).url", "http://my.url/");
+</pre>
+
+	<a name="Sending-the-IDMEF-message"></a>
+<h3 >Sending the IDMEF message<a href="#Sending-the-IDMEF-message" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>This function will trigger the sending of the <em>idmef_message_t</em> you created above. Once this function is called, you might safely destroy the message (even if you are using the asynchronous sending mode).</p>
+
+
+<pre>
+prelude_client_send_idmef(client, idmef);
+idmef_message_destroy(idmef);
+</pre>
+
+	<a name="Destroying-the-client"></a>
+<h3 >Destroying the client<a href="#Destroying-the-client" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>In case the analyzer you are developing is not a persistent analyzer (meaning an analyzer that is not supposed to exit), it is important that you call the <em>prelude_client_destroy()</em> function prior to exiting. This function have the side effect of sending an heartbeat to the remote manager, as well as an information regarding the analyzer state.</p>
+
+
+	<p>This state information is important since an analyzer not reporting a successful exit status, or an analyzer which stop sending heartbeat at all will be reported as having a problem.</p>
+
+
+	<ul>
+	<li>PRELUDE_CLIENT_EXIT_STATUS_SUCCESS - Exiting the sensor is the expected behavior.</li>
+		<li>PRELUDE_CLIENT_EXIT_STATUS_FAILURE  - There is something wrong going on, notice the security analyst.</li>
+	</ul>
+
+
+<pre>
+prelude_client_destroy(client, PRELUDE_CLIENT_EXIT_STATUS_SUCCESS);
+</pre>
+
+	<p>As a side note, please remember that a persistent sensor should never use this function (except maybe if it is working in batch mode), unless it want to report the <em>PRELUDE_CLIENT_EXIT_STATUS_FAILURE</em> exit status. This is also the case if your persistent sensor is interrupted by a signal.</p>
+
+
+	<a name="Using-Perl"></a>
+<h2 >Using Perl<a href="#Using-Perl" class="wiki-anchor">&para;</a></h2>
+
+
+<pre>
+use strict;
+use Prelude;
+
+my $client;
+my $message;
+my $ret;
+my $time;
+
+sub add_idmef_object($$$)
+{
+        my $ret;
+        my $path;
+        my $val;
+        my $message = shift;
+        my $object = shift;
+        my $value  = shift;
+
+        $ret = Prelude::idmef_path_new(\$path, $object);
+        if ( $ret != 0 ) {
+                print "$object: " . Prelude::prelude_strerror($ret) . "\n";
+                exit;
+        }
+
+        $ret = Prelude::idmef_value_new_from_path(\$val, $path, $value);
+        if ( $ret != 0 ) {
+                print "could not create value for object $object: " . Prelude::prelude_strerror($ret) . "\n";
+                exit;
+        }
+
+        $ret = Prelude::idmef_path_set($path, $message, $val);
+        if ( $ret != 0 ) {
+                print "error setting path $object: " . Prelude::prelude_strerror($ret) . "\n";
+                exit;
+        }
+
+        Prelude::idmef_path_destroy($path);
+}
+
+$ret = Prelude::prelude_init(1, [[MySensor]]);
+if ( $ret != 0 ) {
+        print "error initializing library: " . Prelude::prelude_strerror($ret) . "\n";
+        exit;
+}
+
+$ret = Prelude::prelude_client_new(\$client, "MySensor");
+if ( $ret != 0 ) {
+        print "error creating client: " . Prelude::prelude_strerror($ret) . "\n";
+        exit;
+}
+
+$ret = Prelude::prelude_client_start($client);
+if ( $ret != 0 ) {
+        print "error starting client: " . Prelude::prelude_strerror($ret) . "\n";
+
+        if ( Prelude::prelude_client_is_setup_needed($ret) ) {
+                Prelude::prelude_client_print_setup_error($client);
+        }
+        exit;
+}
+
+$ret = Prelude::idmef_message_new(\$message);
+if ( $ret != 0 ) {
+        exit;
+}
+
+# Set create time
+my $alert;
+Prelude::idmef_time_new_from_gettimeofday(\$time);
+Prelude::idmef_message_new_alert($message, \$alert);
+Prelude::idmef_alert_set_create_time($alert, $time);
+
+# Classification
+add_idmef_object($message, "alert.classification.text", "test perl");
+
+# Source
+add_idmef_object($message, "alert.source(0).node.address(0).address", "10.0.0.1");
+
+# Target
+add_idmef_object($message, "alert.target(0).node.address(0).address", "10.0.0.2");
+add_idmef_object($message, "alert.target(1).node.address(0).address", "10.0.0.3");
+
+# Assessment
+add_idmef_object($message, "alert.assessment.impact.severity", "low");
+add_idmef_object($message, "alert.assessment.impact.completion", "failed");
+add_idmef_object($message, "alert.assessment.impact.type", "recon");
+
+# Additional Data
+add_idmef_object($message, "alert.additional_data(0).data", "something");
+
+Prelude::prelude_client_send_idmef($client, $message);
+Prelude::idmef_message_destroy($message);
+Prelude::prelude_client_destroy($client, $Prelude::PRELUDE_CLIENT_EXIT_STATUS_SUCCESS);
+
+</pre>
+
+	<a name="Using-Python"></a>
+<h2 >Using Python<a href="#Using-Python" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>It's following the C API:<br /><pre>
+import time
+import prelude
+import sys
+
+def add_idmef_object(message, object, value):
+    try: path = prelude.idmef_path_new(object)
+    except Exception, e:
+        print "%s: %s" % (object, e)
+        sys.exit()
+
+    try: val = prelude.idmef_value_new_from_path(path, value)
+    except Exception, e:
+        print "could not create value for object %s: %s" % (object, e)
+        sys.exit()
+
+    try: prelude.idmef_path_set(path, message, val)
+    except Exception, e:
+        print "error setting path %s: %s" % (object, e)
+        sys.exit()
+
+    prelude.idmef_value_destroy(val)
+    prelude.idmef_path_destroy(path)
+
+try: prelude.prelude_init(1, ["MySensor"])
+except Exception, e:
+    print "error initializing library: %s" % e
+    sys.exit()
+
+try: client = prelude.prelude_client_new("MySensor")
+except Exception, e:
+    print "error creating client: %s" % e
+    sys.exit()
+
+try: prelude.prelude_client_start(client);
+except Exception, e:
+    print "error starting client: %s" % e
+
+    if prelude.prelude_client_is_setup_needed(e.errno):
+        prelude.prelude_client_print_setup_error(client)
+
+    sys.exit()
+
+message = prelude.idmef_message_new()
+
+# Create Time
+time = prelude.idmef_time_new_from_time(long(time.time()))
+alert = prelude.idmef_message_new_alert(message)
+prelude.idmef_alert_set_create_time(alert, time)
+
+# Classification
+add_idmef_object(message, "alert.classification.text", "test python")
+
+# Source
+add_idmef_object(message, "alert.source(0).node.address(0).address", "10.0.0.1")
+
+# Target
+add_idmef_object(message, "alert.target(0).node.address(0).address", "10.0.0.2")
+add_idmef_object(message, "alert.target(1).node.address(0).address", "10.0.0.3")
+
+# Assessment
+add_idmef_object(message, "alert.assessment.impact.severity", "low")
+add_idmef_object(message, "alert.assessment.impact.completion", "failed")
+add_idmef_object(message, "alert.assessment.impact.type", "recon")
+
+# Additional Data
+add_idmef_object(message, "alert.additional_data(0).data", "something")
+
+prelude.prelude_client_send_idmef(client, message)
+prelude.idmef_message_destroy(message)
+prelude.prelude_client_destroy(client, prelude.PRELUDE_CLIENT_EXIT_STATUS_SUCCESS)
+</pre></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a class="wiki-page new" href="/projects/prelude/wiki/Libprelude?parent=DevelAgentBuildingOld">Prelude library Reference Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">PreludeIDMEF</a></li>
+	</ul>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/155/prelude-simplest-sensor.c">prelude-simplest-sensor.c</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/155/prelude-simplest-sensor.c">View</a>
+  
+  <span class="size">(2.36 KB)</span>
+    <span class="author">Sebastien Tricaud, 08/22/2007 11:54 AM</span>
+  </p>
+</div>
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

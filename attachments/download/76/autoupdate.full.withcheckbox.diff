@@ -1,0 +1,217 @@
+diff -ur prewikka.orig/htdocs/js/functions.js prewikka/htdocs/js/functions.js
+--- prewikka.orig/htdocs/js/functions.js	2007-04-13 11:52:30.000000000 -0400
++++ prewikka/htdocs/js/functions.js	2007-07-06 17:42:17.000000000 -0400
+@@ -58,3 +58,97 @@
+  		}
+  	}
+ }
++var secondcounter="0"
++
++function autoapplytime(){
++	if (document.viewfilter && document.viewfilter.auto_apply.value){
++		var rawtime=document.viewfilter.auto_apply.value;
++	}
++	else{
++		var rawtime="0:00";
++	}
++	if (document.images){
++		var parselimit=rawtime.split(":");
++		if (parselimit[0] && parselimit[1] &&parselimit[2]){
++			secondcounter=parselimit[0]*3600+parselimit[1]*60+parselimit[2]*1;
++		}
++		else if (parselimit[0] && parselimit[1]){
++			secondcounter=parselimit[0]*60+parselimit[1]*1;
++		}
++		else{
++			secondcounter=rawtime
++		}
++	}
++}
++
++function autoapplycounter(){
++	if (!document.images)
++		return;
++	if (secondcounter==0)
++		return;
++	if (eval("document.viewfilter.auto_apply_enable_check.checked") == false){
++		curmin=Math.floor(secondcounter/60)
++		cursec=secondcounter%60
++		if (curmin!=0)
++			curtime="Paused Auto Update with  "+curmin+" minutes and "+cursec+" seconds remaining on the timer!"
++		else
++			curtime="Paused Auto Update with "+cursec+" seconds remaining on the timer!"
++			window.status=curtime
++			setTimeout("autoapplycounter()",1000)
++		return;
++	    
++	}
++	else if (secondcounter==1){
++		var yaxis = "0";
++		if (window.pageYOffset){
++			yaxis = window.pageYOffset;
++		}
++		else if (window.documentElement && window.documentElement.scrollTop){
++			yaxis = window.documentElement.scrollTop;
++		}
++		else if (document.body.scrollTop){
++			yaxis = window.body.scrollTop;
++		}
++		//alert("yaxis "+ yaxis);
++		document.viewfilter.yaxis.value=yaxis;
++		//alert("yaxis is set to" + document.viewfilter.yaxis.value );
++		document.viewfilter.submit("Apply")
++	}
++	else{ 
++		secondcounter-=1
++		curmin=Math.floor(secondcounter/60)
++		cursec=secondcounter%60
++		if (curmin!=0)
++			curtime="This Page will Auto Update in "+curmin+" minutes and "+cursec+" seconds!"
++		else
++			curtime="This Page will Auto Update in "+cursec+" seconds!"
++			window.status=curtime
++			setTimeout("autoapplycounter()",1000)
++	}
++}
++
++
++function setscrollbar(){
++	//beginautoapply();
++	if (document.viewfilter.yaxis.value){
++		//alert("yaxis detecting last known scroll " + document.viewfilter.yaxis.value);
++		var setyaxis=document.viewfilter.yaxis.value;
++		window.scrollTo('0',setyaxis) ;
++		document.viewfilter.yaxis.value="0";
++		return
++	}
++	else{
++		//alert("no yaxis")
++		return
++	}
++
++}
++function beginautoapply(){
++	if (document.viewfilter){
++		setscrollbar()
++		autoapplytime()
++		autoapplycounter()
++	}
++
++}
++
+diff -ur prewikka.orig/prewikka/templates/MessageListing.tmpl prewikka/prewikka/templates/MessageListing.tmpl
+--- prewikka.orig/prewikka/templates/MessageListing.tmpl	2007-04-11 09:20:45.000000000 -0400
++++ prewikka/prewikka/templates/MessageListing.tmpl	2007-07-06 18:57:42.000000000 -0400
+@@ -2,7 +2,20 @@
+ #extends prewikka.templates.ClassicLayout
+ 
+ #def layout_start_hook
+-<form method="post" action="?">
++<script type="text/javascript">
++
++<!--
++ function settimer(){
++    if (eval("document.viewfilter.auto_apply_enable_check.checked") == true){
++	document.viewfilter.auto_apply_enable.value="checked"
++    }
++    else{
++	document.viewfilter.auto_apply_enable.value="paused"
++    }
++ }
++
++//--></script> 
++<form name="viewfilter" method="post" action="?">
+ #for $name, $value in $hidden_parameters
+   <input type="hidden" name="$name" value="$value"/>
+ #end for
+@@ -98,7 +111,24 @@
+     <input id="timeline_limit_value" type="text" size="2" name="limit" value="$limit"/>
+    </td>
+   </tr>
++  
++  <tr>
++    <th id="auto_apply_label">$_("Auto Update Time")</th>
+ 
++    <td colspan="2">
++     <input id="autoapply_value" type="text" size="2" name="auto_apply" value="$auto_apply"/>
++    </td>
++    <th id="auto_apply_enabled_label">$_("Enabled")</th>
++    <td colspan="2">
++    #if $auto_apply_enable == "checked"
++	#set $enabled="checked=checked"
++    #else:
++	#set $enabled=""
++    #end if
++     <input class="checkbox" type="checkbox" id="autoapply_enable_check_value" name="auto_apply_enable_check" "$enabled" onclick=settimer() />
++    </td>
++  </tr>
++ 
+   <tr style="text-align: center;">
+       <td colspan=3><input type="submit" name="apply" value="$_("Apply")" />
+       <input type="submit" name="_save" value="$_("Save")" /></td>
+diff -ur prewikka.orig/prewikka/templates/TopLayout.tmpl prewikka/prewikka/templates/TopLayout.tmpl
+--- prewikka.orig/prewikka/templates/TopLayout.tmpl	2005-07-19 09:32:07.000000000 -0400
++++ prewikka/prewikka/templates/TopLayout.tmpl	2007-07-06 17:39:38.000000000 -0400
+@@ -4,7 +4,7 @@
+ #end def
+ 
+ #block body
+-<body class="$body_class">
++<body class="$body_class" onload="beginautoapply()"
+ 	<div id="top_view">
+ 		<div id="top_view_header">
+ 			<div id="top_view_header_software">$prewikka.software</div>
+diff -ur prewikka.orig/prewikka/views/alertlisting.py prewikka/prewikka/views/alertlisting.py
+--- prewikka.orig/prewikka/views/alertlisting.py	2007-06-13 09:37:34.000000000 -0400
++++ prewikka/prewikka/views/alertlisting.py	2007-07-05 20:53:45.000000000 -0400
+@@ -1097,6 +1097,8 @@
+         self.dataset["nav.from"] = self.parameters["offset"] + 1
+         self.dataset["nav.to"] = self.parameters["offset"] + len(self.dataset["messages"])
+         self.dataset["limit"] = self.parameters["limit"]
++	self.dataset["auto_apply"] = self.parameters["auto_apply"]
++	self.dataset["auto_apply_enable"] = self.parameters["auto_apply_enable"]
+         self.dataset["total"] = total
+         self.dataset["correlation_alert_view"] = False
+ 
+diff -ur prewikka.orig/prewikka/views/messagelisting.py prewikka/prewikka/views/messagelisting.py
+--- prewikka.orig/prewikka/views/messagelisting.py	2007-06-13 09:37:34.000000000 -0400
++++ prewikka/prewikka/views/messagelisting.py	2007-07-06 19:07:37.000000000 -0400
+@@ -108,6 +108,8 @@
+         self.optional("timezone", str, "frontend_localtime", save=True)
+         self.optional("delete", list, [ ])
+         self.optional("apply", str)
++	self.optional("auto_apply", str,default="0:00", save=True)
++	self.optional("auto_apply_enable",str, default="checked", save=True)
+         
+         # submit with an image passes the x and y coordinate values
+         # where the image was clicked
+@@ -215,6 +217,20 @@
+         self.dataset["hidden_parameters"] = [ [ "view", self.view_name ] ]
+         if self.parameters.has_key("timeline_end"):
+             self.dataset["hidden_parameters"].append(("timeline_end", self.parameters["timeline_end"]))
++	if self.parameters.has_key("yaxis"):
++	    self.dataset["hidden_parameters"].append(("yaxis", self.parameters["yaxis"]))
++	else:
++	    self.dataset["hidden_parameters"].append(("yaxis", 0))
++	if self.parameters.has_key("auto_apply_enable"):
++	    self.dataset["hidden_parameters"].append(("auto_apply_enable", self.parameters["auto_apply_enable"]))
++	else:
++	    self.dataset["hidden_parameters"].append(("auto_apply_enable", "checked"))
++
++    def _autoapply(self):
++	if self.parameters.has_key("autoapply"):
++	    self.dataset["auto.apply"] = [ [ "auto_apply", self.parameters["auto_apply"] ] ]
++	else:
++	    self.dataset["auto.apply"] = [ [ "auto_apply", "0:00" ] ]
+ 
+     def _setTimelineNext(self, next):
+         parameters = self.parameters - [ "offset" ] + { "timeline_end": int(next) }
+@@ -223,7 +239,7 @@
+     def _setTimelinePrev(self, prev):
+         parameters = self.parameters - [ "offset" ] + { "timeline_end": int(prev) }
+         self.dataset["timeline.prev"] = utils.create_link(self.view_name, parameters)
+-        
++
+     def _getTimelineRange(self):
+         if self.parameters.has_key("timeline_start"):  
+             start = _MyTime(self.parameters["timeline_start"])  

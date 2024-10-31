@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>relpath.2.diff - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="mVWPuGHMQPjzXNCXXfrnHkVzh0IJqERtMiqbARTb+qSKeufXqNhNe3n22G1Asq5AOTj23BOiHSPspF+RkNvOpw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-libprelude controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>relpath.2.diff</h2>
+
+<div class="attachments">
+<p>
+   <span class="author"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a>, 10/03/2008 04:58 PM</span></p>
+<p><a href="/attachments/download/136/relpath.2.diff">Download</a>   <span class="size">(9.14 KB)</span></p>
+</div>
+
+  <form action="/attachments/136/relpath.2.diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      src/prelude-client-profile.c
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">82</th>
+  <th class="line-num">82</th>
+  <td class="line-code ">
+    <pre>extern char *_prelude_prefix;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">83</th>
+  <th class="line-num">83</th>
+  <td class="line-code ">
+    <pre>static char *user_prefix = NULL;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">84</th>
+  <th class="line-num">84</th>
+  <td class="line-code ">
+    <pre>static const char *relocated_prefix;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">85</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>static const char *relative_spool_dir;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">86</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>static const char *relative_config_default_dir;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">87</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>static const char *relative_profile_dir;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">88</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">85</th>
+  <td class="line-code diff_in">
+    <pre>static const char *relative_spool_dir = NULL;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">86</th>
+  <td class="line-code diff_in">
+    <pre>static const char *relative_config_default_dir = NULL;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">87</th>
+  <td class="line-code diff_in">
+    <pre>static const char *relative_profile_dir = NULL;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">89</th>
+  <th class="line-num">88</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">90</th>
+  <th class="line-num">89</th>
+  <td class="line-code ">
+    <pre>gl_lock_t lock = gl_lock_initializer;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">91</th>
+  <th class="line-num">90</th>
+  <td class="line-code ">
+    <pre>gl_once_define(static, relocate_once);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">92</th>
+  <th class="line-num">91</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">93</th>
+  <th class="line-num">92</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">93</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">94</th>
+  <td class="line-code diff_in">
+    <pre>static const char *get_relpath(const char *path)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">95</th>
+  <td class="line-code diff_in">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre>        return ( strstr(path, INSTALLPREFIX) ) ? path + sizeof(INSTALLPREFIX) : NULL;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">98</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">99</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">100</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">94</th>
+  <th class="line-num">101</th>
+  <td class="line-code ">
+    <pre>static void _get_dir_once(void)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">95</th>
+  <th class="line-num">102</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">96</th>
+  <th class="line-num">103</th>
+  <td class="line-code ">
+    <pre>        relocated_prefix = (_prelude_prefix) ? _prelude_prefix : relocate(INSTALLPREFIX);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">97</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        relative_spool_dir = PRELUDE_SPOOL_DIR + sizeof(INSTALLPREFIX);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">98</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        relative_profile_dir = PRELUDE_PROFILE_DIR + sizeof(INSTALLPREFIX);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">99</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        relative_config_default_dir = PRELUDE_CONFIG_DEFAULT_DIR + sizeof(INSTALLPREFIX);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">104</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre>        relative_spool_dir = get_relpath(PRELUDE_SPOOL_DIR);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">106</th>
+  <td class="line-code diff_in">
+    <pre>        relative_profile_dir = get_relpath(PRELUDE_PROFILE_DIR);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">107</th>
+  <td class="line-code diff_in">
+    <pre>        relative_config_default_dir = get_relpath(PRELUDE_CONFIG_DEFAULT_DIR);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">100</th>
+  <th class="line-num">108</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">101</th>
+  <th class="line-num">109</th>
+  <td class="line-code ">
+    <pre>        prelude_log_debug(2, &quot;install   prefix=%s&quot;, INSTALLPREFIX);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">102</th>
+  <th class="line-num">110</th>
+  <td class="line-code ">
+    <pre>        prelude_log_debug(2, &quot;relocated prefix=%s\n&quot;, relocated_prefix);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">103</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prelude_log_debug(2, &quot;relative   spool=%s\n&quot;, relative_spool_dir<span></span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">104</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prelude_log_debug(2, &quot;relative  config=%s\n&quot;, relative_config_default_dir<span></span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">105</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prelude_log_debug(2, &quot;relative profile=%s\n&quot;, relative_profile_dir<span></span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">111</th>
+  <td class="line-code diff_in">
+    <pre>        prelude_log_debug(2, &quot;relative   spool=%s\n&quot;, relative_spool_dir<span> ? relative_spool_dir : PRELUDE_SPOOL_DIR</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre>        prelude_log_debug(2, &quot;relative  config=%s\n&quot;, relative_config_default_dir<span> ? relative_config_default_dir : PRELUDE_CONFIG_DEFAULT_DIR</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">113</th>
+  <td class="line-code diff_in">
+    <pre>        prelude_log_debug(2, &quot;relative profile=%s\n&quot;, relative_profile_dir<span> ? relative_profile_dir : PRELUDE_PROFILE_DIR</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">106</th>
+  <th class="line-num">114</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">107</th>
+  <th class="line-num">115</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">108</th>
+  <th class="line-num">116</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">109</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>static const char *<span></span>get_prefix(void)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">117</th>
+  <td class="line-code diff_in">
+    <pre>static const char *<span>init_once_and_</span>get_prefix(void)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">110</th>
+  <th class="line-num">118</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">111</th>
+  <th class="line-num">119</th>
+  <td class="line-code ">
+    <pre>        gl_once(relocate_once, _get_dir_once);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">112</th>
+  <th class="line-num">120</th>
+  <td class="line-code ">
+    <pre>        return (user_prefix) ? user_prefix : relocated_prefix;</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">194</th>
+  <th class="line-num">202</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">195</th>
+  <th class="line-num">203</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">196</th>
+  <th class="line-num">204</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">197</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = <span></span>get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">205</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = <span>init_once_and_</span>get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">198</th>
+  <th class="line-num">206</th>
+  <td class="line-code ">
+    <pre>        snprintf(buf, size, &quot;%s&quot;, prefix);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">199</th>
+  <th class="line-num">207</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">200</th>
+  <th class="line-num">208</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">218</th>
+  <th class="line-num">226</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">219</th>
+  <th class="line-num">227</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">220</th>
+  <th class="line-num">228</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">221</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">222</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s&quot;, prefix, relative_config_default_dir);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">229</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">230</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_config_default_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">231</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s&quot;, PRELUDE_CONFIG_DEFAULT_DIR);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">232</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">233</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s&quot;, prefix, relative_config_default_dir);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">223</th>
+  <th class="line-num">234</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">224</th>
+  <th class="line-num">235</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">225</th>
+  <th class="line-num">236</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">243</th>
+  <th class="line-num">254</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">244</th>
+  <th class="line-num">255</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">245</th>
+  <th class="line-num">256</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">246</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">247</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s/analyzerid&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">257</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">258</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">259</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/analyzerid&quot;, PRELUDE_PROFILE_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">260</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">261</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s/analyzerid&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">248</th>
+  <th class="line-num">262</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">249</th>
+  <th class="line-num">263</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">250</th>
+  <th class="line-num">264</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">268</th>
+  <th class="line-num">282</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">269</th>
+  <th class="line-num">283</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">270</th>
+  <th class="line-num">284</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">271</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">272</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s/config&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">285</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">286</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">287</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/config&quot;, PRELUDE_PROFILE_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">288</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">289</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s/config&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">273</th>
+  <th class="line-num">290</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">274</th>
+  <th class="line-num">291</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">275</th>
+  <th class="line-num">292</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">276</th>
+  <th class="line-num">293</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">277</th>
+  <th class="line-num">294</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">278</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">279</th>
+  <th class="line-num">295</th>
+  <td class="line-code ">
+    <pre>/**</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">280</th>
+  <th class="line-num">296</th>
+  <td class="line-code ">
+    <pre> * prelude_client_profile_get_tls_key_filename:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">281</th>
+  <th class="line-num">297</th>
+  <td class="line-code ">
+    <pre> * @cp: pointer on a #prelude_client_profile_t object.</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">293</th>
+  <th class="line-num">309</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">294</th>
+  <th class="line-num">310</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">295</th>
+  <th class="line-num">311</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">296</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">297</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s/key&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">312</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">313</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">314</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/key&quot;, PRELUDE_PROFILE_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">315</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">316</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s/key&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">298</th>
+  <th class="line-num">317</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">299</th>
+  <th class="line-num">318</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">300</th>
+  <th class="line-num">319</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">319</th>
+  <th class="line-num">338</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">320</th>
+  <th class="line-num">339</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">321</th>
+  <th class="line-num">340</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">322</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">323</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s/server.ca&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">341</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">342</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">343</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/server.ca&quot;, PRELUDE_PROFILE_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">344</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">345</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s/server.ca&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">324</th>
+  <th class="line-num">346</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">325</th>
+  <th class="line-num">347</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">326</th>
+  <th class="line-num">348</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">345</th>
+  <th class="line-num">367</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">346</th>
+  <th class="line-num">368</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">347</th>
+  <th class="line-num">369</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">348</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">349</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s/server.keycrt&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">370</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">371</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">372</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/server.keycrt&quot;, PRELUDE_PROFILE_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">373</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">374</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s/server.keycrt&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">350</th>
+  <th class="line-num">375</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">351</th>
+  <th class="line-num">376</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">352</th>
+  <th class="line-num">377</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">371</th>
+  <th class="line-num">396</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">372</th>
+  <th class="line-num">397</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">373</th>
+  <th class="line-num">398</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">374</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">375</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s/server.crl&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">399</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">400</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">401</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/server.crl&quot;, PRELUDE_PROFILE_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">402</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">403</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s/server.crl&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">376</th>
+  <th class="line-num">404</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">377</th>
+  <th class="line-num">405</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">378</th>
+  <th class="line-num">406</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">397</th>
+  <th class="line-num">425</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">398</th>
+  <th class="line-num">426</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">399</th>
+  <th class="line-num">427</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">400</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">401</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s/client.trusted&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">428</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">429</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">430</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/client.trusted&quot;, PRELUDE_PROFILE_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">431</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">432</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s/client.trusted&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">402</th>
+  <th class="line-num">433</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">403</th>
+  <th class="line-num">434</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">404</th>
+  <th class="line-num">435</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">424</th>
+  <th class="line-num">455</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">425</th>
+  <th class="line-num">456</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">426</th>
+  <th class="line-num">457</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">427</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">428</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s/client.keycrt&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">458</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">459</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">460</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/client.keycrt&quot;, PRELUDE_PROFILE_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">461</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">462</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s/client.keycrt&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">429</th>
+  <th class="line-num">463</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">430</th>
+  <th class="line-num">464</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">431</th>
+  <th class="line-num">465</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">450</th>
+  <th class="line-num">484</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">451</th>
+  <th class="line-num">485</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">452</th>
+  <th class="line-num">486</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">453</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">454</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        snprintf(buf, size, &quot;%s/%s/%s&quot;, prefix, relative_spool_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">487</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">488</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_spool_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">489</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s&quot;, PRELUDE_SPOOL_DIR, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">490</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">491</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s&quot;, prefix, relative_spool_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">455</th>
+  <th class="line-num">492</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">456</th>
+  <th class="line-num">493</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">457</th>
+  <th class="line-num">494</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">474</th>
+  <th class="line-num">511</th>
+  <td class="line-code ">
+    <pre>        prelude_return_if_fail(buf);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">475</th>
+  <th class="line-num">512</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">476</th>
+  <th class="line-num">513</th>
+  <td class="line-code ">
+    <pre>        gl_lock_lock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">477</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prefix = get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">478</th>
+  <th class="line-num">514</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">479</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        if ( cp &amp;&amp; cp-&gt;name )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">480</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                snprintf(buf, size, &quot;%s/%s/%s&quot;, prefix, relative_profile_dir, cp-&gt;name);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">515</th>
+  <td class="line-code diff_in">
+    <pre>        prefix = init_once_and_get_prefix();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">516</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! relative_profile_dir )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">517</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s%s&quot;, PRELUDE_PROFILE_DIR, (cp-&gt;name) ? &quot;/&quot; : &quot;&quot;, (cp-&gt;name) ? cp-&gt;name : &quot;&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">481</th>
+  <th class="line-num">518</th>
+  <td class="line-code ">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">482</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                snprintf(buf, size, &quot;%s/%s<span>&quot;, prefix, relative_profile_dir</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">519</th>
+  <td class="line-code diff_in">
+    <pre>                snprintf(buf, size, &quot;%s/%s<span>%s%s&quot;, prefix, relative_profile_dir, (cp-&gt;name) ? &quot;/&quot; : &quot;&quot;, (cp-&gt;name) ? cp-&gt;name : &quot;&quot;</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">483</th>
+  <th class="line-num">520</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">484</th>
+  <th class="line-num">521</th>
+  <td class="line-code ">
+    <pre>        gl_lock_unlock(lock);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">485</th>
+  <th class="line-num">522</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

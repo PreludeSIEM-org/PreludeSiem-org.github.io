@@ -1,0 +1,108 @@
+make  all-recursive
+make[1] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0 »
+Making all in libltdl
+make[2] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libltdl »
+make  all-am
+make[3] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libltdl »
+make[3]: rien à faire pour « all-am ».
+make[3] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libltdl »
+make[2] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libltdl »
+Making all in libmissing
+make[2] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing »
+make  all-recursive
+make[3] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing »
+Making all in .
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing »
+make[4]: rien à faire pour « all-am ».
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing »
+Making all in tests
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing/tests »
+make  all-recursive
+make[5] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing/tests »
+Making all in .
+make[6] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing/tests »
+make[6]: rien à faire pour « all-am ».
+make[6] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing/tests »
+make[5] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing/tests »
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing/tests »
+make[3] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing »
+make[2] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/libmissing »
+Making all in m4
+make[2] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/m4 »
+make[2]: rien à faire pour « all ».
+make[2] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/m4 »
+Making all in src
+make[2] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src »
+make  all-recursive
+make[3] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src »
+Making all in libprelude-error
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src/libprelude-error »
+make  all-am
+make[5] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src/libprelude-error »
+make[5]: rien à faire pour « all-am ».
+make[5] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src/libprelude-error »
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src/libprelude-error »
+Making all in jsmn
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src/jsmn »
+make[4]: rien à faire pour « all ».
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src/jsmn »
+Making all in include
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src/include »
+make[4]: rien à faire pour « all ».
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src/include »
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src »
+make[4]: rien à faire pour « all-am ».
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src »
+make[3] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src »
+make[2] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/src »
+Making all in prelude-admin
+make[2] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/prelude-admin »
+make[2]: rien à faire pour « all ».
+make[2] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/prelude-admin »
+Making all in bindings
+make[2] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings »
+Making all in c++
+make[3] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/c++ »
+Making all in include
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/c++/include »
+make[4]: rien à faire pour « all ».
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/c++/include »
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/c++ »
+make[4]: rien à faire pour « all-am ».
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/c++ »
+make[3] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/c++ »
+Making all in lua
+make[3] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/lua »
+make[3]: rien à faire pour « all ».
+make[3] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/lua »
+Making all in python
+make[3] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/python »
+CC="g++" /usr/bin/python2 setup.py build
+running build
+running build_py
+running build_ext
+make[3] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/python »
+Making all in ruby
+make[3] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/ruby »
+make[3]: rien à faire pour « all ».
+make[3] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/ruby »
+make[3] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings »
+cd perl && LANG="" DESTDIR= LIBDIR=/usr/local/lib /usr/bin/perl Makefile.PL INSTALLDIRS=site CC="g++"
+Generating a Unix-style Makefile
+Writing Makefile for Prelude
+Writing MYMETA.yml and MYMETA.json
+cd perl && make LD_RUN_PATH="" CC="g++"
+make[4] : on entre dans le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/perl »
+rm -f blib/arch/auto/Prelude/Prelude.so
+LD_RUN_PATH="" x86_64-linux-gnu-gcc  -L../../src/.libs -shared -L/usr/local/lib -fstack-protector-strong  -z relro -z now,-rpath Prelude.o  -o blib/arch/auto/Prelude/Prelude.so 	\
+   -L/home/diane/T\x{00c3}\x{00a9}l\x{00c3}\x{00a9}chargements/libprelude-5.0.0/bindings/perl/../../src/.libs -lprelude -L/home/diane/T\x{00c3}\x{00a9}l\x{00c3}\x{00a9}chargements/libprelude-5.0.0/bindings/perl/../../bindings/c++/.libs -lpreludecpp  	\
+  
+Makefile:474 : la recette pour la cible « blib/arch/auto/Prelude/Prelude.so » a échouée
+make[4] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings/perl »
+Makefile:1880 : la recette pour la cible « perl-build » a échouée
+make[3] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings »
+Makefile:1582 : la recette pour la cible « all-recursive » a échouée
+make[2] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0/bindings »
+Makefile:1669 : la recette pour la cible « all-recursive » a échouée
+make[1] : on quitte le répertoire « /home/diane/Téléchargements/libprelude-5.0.0 »
+Makefile:1534 : la recette pour la cible « all » a échouée

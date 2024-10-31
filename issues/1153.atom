@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/1153.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2019-11-08T09:12:47Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prewikka - Support #1153: Suricata changes the output from version 4</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1153"/>
+    <id>http://www.prelude-siem.org/issues/1153?journal_id=5919</id>
+    <updated>2019-11-08T09:12:47Z</updated>
+    <author>
+      <name>Camille GARDET</name>
+      <email>camille.gardet@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Andrew Goldy&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Hello Andrew,&lt;/p&gt;
+
+
+	&lt;p&gt;Thank you for reporting this.&lt;br /&gt;In this case, it is the alert from Snort where the &lt;em&gt;classification.text&lt;/em&gt; and the &lt;em&gt;description&lt;/em&gt; are swapped. In the IDMEF format (and philosophy), the field &lt;em&gt;classification.text&lt;/em&gt; should be as generic as possible, to ease the correlation.&lt;/p&gt;
+
+
+	&lt;p&gt;We changed this behavior in suricata through this PR &lt;a class="external" href="https://github.com/OISF/suricata/pull/3253"&gt;https://github.com/OISF/suricata/pull/3253&lt;/a&gt; on GitHub.&lt;br /&gt;If you are able to contribute to the Snort project by submitting a patch, it would be great. If not, we will look into it &lt;img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"&gt;&lt;/p&gt;    </content>
+  </entry>
+</feed>

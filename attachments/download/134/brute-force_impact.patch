@@ -1,0 +1,13 @@
+--- brute-force.lua.orig	2008-09-19 09:51:32.000000000 +0200
++++ brute-force.lua	2008-09-19 09:52:13.000000000 +0200
+@@ -67,8 +67,8 @@
+         if ctx:CheckAndDecThreshold() then
+             ctx:set("alert.classification.text", "Brute force attack")
+             ctx:set("alert.correlation_alert.name", "Multiple failed login")
+-            ctx:set("alert.impact.severity", "high")
+-            ctx:set("alert.impact.description", "Multiple failed attempts have been made to login to a user account")
++            ctx:set("alert.assessment.impact.severity", "high")
++            ctx:set("alert.assessment.impact.description", "Multiple failed attempts have been made to login to a user account")
+ 
+             ctx:alert()
+             ctx:del()

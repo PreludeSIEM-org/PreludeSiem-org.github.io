@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/386.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2012-05-31T17:09:34Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Libprelude - Bug #386: libprelude build failure with libtool 2.4</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/386"/>
+    <id>http://www.prelude-siem.org/issues/386?journal_id=1604</id>
+    <updated>2012-05-31T17:09:34Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Libprelude&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #386: libprelude build failure with libtool 2.4</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/386"/>
+    <id>http://www.prelude-siem.org/issues/386?journal_id=1717</id>
+    <updated>2013-09-23T11:18:40Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;124&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #386: libprelude build failure with libtool 2.4</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/386"/>
+    <id>http://www.prelude-siem.org/issues/386?journal_id=1825</id>
+    <updated>2014-07-22T10:34:45Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Yoann VANDOORSELAERE&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;124&lt;/i&gt; to &lt;i&gt;126&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;fixed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Fixed in commit &lt;a class="changeset" title="Fix conflicting lt_preloaded_symbol type compilation error. LT_DLSYM_CONST has been defined duri..." href="http://www.prelude-siem.org/projects/libprelude/repository/revisions/cd72c76d6c547ac0615cab3005102a8b3d215b82"&gt;cd72c76d6c547ac0615cab3005102a8b3d215b82&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #386: libprelude build failure with libtool 2.4</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/386"/>
+    <id>http://www.prelude-siem.org/issues/386?journal_id=2452</id>
+    <updated>2015-11-08T14:56:21Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;126&lt;/i&gt; to &lt;i&gt;Prelude OSS 1.2.5&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

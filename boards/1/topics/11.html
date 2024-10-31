@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>[Solved] Prelude-Manager : Prelude Heartbeat and SMTP plugin - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="KYyFe6d92PFWXm4UxoMufAUHXcc4b9V1n/0ex//jYcg6o+0UbmnVctz0Zu7by2cieUwsWSJljDtBc9pXe+NVyw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>[Solved] Prelude-Manager : Prelude Heartbeat and SMTP plugin</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/440">Romain Duperré</a> <a title="08/24/2015 03:43 PM" href="/projects/prelude/activity?from=2015-08-24">about 9 years</a> ago</span></p>
+<div class="wiki">
+<p>Hello,</p>
+
+
+	<p>How can I prevent the SMTP plugin to send me "Prelude Heartbeat" emails ?</p>
+
+
+	<p>I tried this in <code>/etc/prelude-manager/prelude-manager.conf</code> :</p>
+
+
+<pre>
+[textmod=null]
+ logfile = /dev/null
+
+[thresholding]
+ path = heartbeat
+ limit = 3600
+ count = 1
+ limit = 1
+ hook = textmod[null]
+
+[idmef-criteria]
+ rule = heartbeat.messageid != "" 
+ hook = textmod[null]
+</pre>
+
+	<p>But I still receive tons of heartbeat emails.<br />This was not the case before...<br />I restart prelude-manager SMTP plugin after a long time and Prelude Heartbeat emails suddenly appeared.</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (4)</h3>
+  <div class="message reply" id="message-12">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/11?r=12#message-12">RE: Prelude-Manager : Prelude Heartbeat and SMTP plugin</a>
+    -
+    Added by <a class="user active" href="/users/335">Song TRAN</a> <a title="08/26/2015 12:15 PM" href="/projects/prelude/activity?from=2015-08-26">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>Can you show us a mail containing Prelude Heartbeat ? (obfuscate your sensitive information)</p>
+
+
+	<p>If you enable smtp-plugin, you will receive all alerts IDMEF (without heartbeats), that's why a filter IDMEF must be set. Here is a example:</p>
+
+
+<pre>
+[idmef-criteria]
+rule = alert.classification.text == 'User login successful'
+rule = alert.assessment.impact.severity == medium
+hook = smtp[default]
+</pre>
+
+	<p>Here, you will receive mails containing alerts with classification text = "User login successful" and severity = "medium" <br />Don't forget to restart prelude-manger.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-13">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/11?r=13#message-13">RE: Prelude-Manager : Prelude Heartbeat and SMTP plugin</a>
+    -
+    Added by <a class="user active" href="/users/440">Romain Duperré</a> <a title="08/27/2015 09:42 AM" href="/projects/prelude/activity?from=2015-08-27">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Thanks,</p>
+
+
+	<p>The mails body looks like this :</p>
+
+
+<pre>
+version: &lt;empty&gt;
+heartbeat:
+        messageid: b09345b4-4b4c-12e5-b47a
+        analyzer(0):
+                analyzerid: 2891201279537359
+                name: prelude-manager
+                manufacturer: http://www.prelude-ids.com
+                model: Prelude Manager
+                version: 1.0.1
+                class: Concentrator
+                ostype: Linux
+                osversion: ...
+                node:
+                        category: unknown (0)
+                        name: name1
+                        address(0):
+                                category: ipv4-addr (7)
+                                address: ip1
+                process:
+                        name: prelude-manager
+                        pid: 24940
+                        path: /usr/sbin/prelude-manager
+        analyzer(1):
+                analyzerid: 772129246787006
+                name: prelude-lml
+                manufacturer: http://www.prelude-ids.com
+                model: Prelude LML
+                version: 1.0.0
+                class: Log Analyzer
+                ostype: Linux
+                osversion: ...
+                node:
+                        category: unknown (0)
+                        name: name2
+                process:
+                        name: prelude-lml
+                        pid: 477
+                        path: /usr/bin/prelude-lml
+        create_time: 24/08/2015 12:41:34.507148 +02:00
+        analyzer_time: 24/08/2015 15:30:01.539766 +02:00
+        heartbeat_interval: 600
+        additional_data(0):
+                type: string (0)
+                meaning: Analyzer status
+                data: running
+        additional_data(1):
+                type: string (0)
+                meaning: Analyzer SHA1
+                data: c81e8f49cfaff531abdf2d20844ezcd9f4597ba4
+</pre>
+
+	<p>I already receive all alerts (there is no filter IDMEF on <code>alert.*</code>) and this is ok ; I understand i can filter these ones.<br />But I receive the heartbeats too and this is a problem.<br />With the configuration I proposed, I tried to say "I don't want the <code>heartbeat.*</code> messages".</p>
+
+
+	<p>Based on your example, i set this filter :<br /><pre>
+[idmef-criteria]
+rule = alert.assessment.impact.severity == medium
+hook = smtp[default]
+</pre><br />I don't receive heartbeat messages anymore and this is great.<br />But what if I want to receive all alerts, not just with a medium severity ?</p>
+
+
+	<p>Regards,</p></div>
+  
+  </div>
+  <div class="message reply" id="message-14">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/11?r=14#message-14">RE: Prelude-Manager : Prelude Heartbeat and SMTP plugin</a>
+    -
+    Added by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/27/2015 09:44 AM" href="/projects/prelude/activity?from=2015-08-27">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello Romain,</p>
+
+
+	<p>If you only want to filter out heartbeat, then you can use :</p>
+
+
+	<p>[idmef-criteria]<br />rule = !heartbeat<br />hook = smtp[default]</p></div>
+  
+  </div>
+  <div class="message reply" id="message-15">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/11?r=15#message-15">RE: Prelude-Manager : Prelude Heartbeat and SMTP plugin</a>
+    -
+    Added by <a class="user active" href="/users/440">Romain Duperré</a> <a title="08/27/2015 10:13 AM" href="/projects/prelude/activity?from=2015-08-27">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello Yoann,</p>
+
+
+	<p>This is what I need.</p>
+
+
+	<p>Thanks for your time.</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-4/4)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

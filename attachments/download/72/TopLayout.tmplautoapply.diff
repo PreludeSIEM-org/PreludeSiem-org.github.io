@@ -1,0 +1,11 @@
+--- ./TopLayout.tmpl.orig	2007-04-17 08:21:25.000000000 -0400
++++ ./TopLayout.tmpl	2007-06-28 18:09:34.590350969 -0400
+@@ -4,7 +4,7 @@
+ #end def
+ 
+ #block body
+-<body class="$body_class">
++<body onload="beginautoapply()" class="$body_class">
+ 	<div id="top_view">
+ 		<div id="top_view_header">
+ 			<div id="top_view_header_software">$prewikka.software</div>

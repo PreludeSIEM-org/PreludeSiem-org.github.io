@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #100: &quot;Random&quot; segfaults in prelude-lml 0.9.0 - Prelude-LML - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="SilylNldEf+SEHo1ly5CW+R5QvsF8ttQqnAFdSKXjPtZBhr7EEkcfBi6cs+KZgsFmDIzZR/4gh50/sHlppe4+A==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude-LML - Bug #100: &quot;Random&quot; segfaults in prelude-lml 0.9.0" href="http://www.prelude-siem.org/issues/100.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-lml controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-lml/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-lml">Overview</a></li><li><a class="activity" href="/projects/prelude-lml/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-lml/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-lml/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-lml/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-lml/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-lml/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-lml/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-lml/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-lml/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-lml/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #100</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#107" accesskey="p" href="/issues/107">« Previous</a> |
+        <span class="position">4 of 5</span> |
+      <a title="#73" accesskey="n" href="/issues/73">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>&quot;Random&quot; segfaults in prelude-lml 0.9.0</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="09/23/2005 08:07 PM" href="/projects/prelude-lml/activity?from=2005-09-23">about 19 years</a> ago.
+        Updated <a title="04/29/2009 12:27 PM" href="/projects/prelude-lml/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="11/24/2005" href="/versions/1">0.9.1</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Running Prelude 0.9.0 on [[CentOS]] 3.5 (kernel 2.4.21, glibc 2.3.2), also with following supplimental packages:<br />pcre-5.0-4<br />gnutls-1.0.25<br />opencdk-0.5.4<br />libgcrypt-1.2.1</p>
+
+
+	<p>Getting occasional segmentation faults.  A typical log entry looks like the following (however, this does not happen on /all/ such entries):</p>
+
+
+<pre>
+Sep 23 09:44:53 web01 sshdr15291: Accepted publickey for asparks from 216.150.62.80 port 34121 ssh2
+</pre>
+
+<pre>
+
+(gdb) bt
+#0  0x00640213 in prelude_string_set_dup (string=0x99680a8, buf=0x0)
+    at prelude-string.c:412
+#1  0x0804f23f in fill_target (node=0x9967700, ai=0x9968000) at
+lml-alert.c:114
+#2  0x0804f60c in generate_target (log_entry=0x9965760, alert=0x9954720)
+    at lml-alert.c:252
+#3  0x0804f790 in lml_alert_emit (ls=0x98db248, log=0x9965760,
+    message=0x99681c0) at lml-alert.c:310
+#4  0x00f03867 in match_rule_list (rc=0x9939010, state=0xbfffa3f0,
+    ls=0x98db248, log_entry=0x9965760, match_flags=0xbfffa3b8)
+    at rule-regex.c:227
+#5  0x00f037a5 in match_rule_list (rc=0x9938080, state=0xbfffa3f0,
+    ls=0x98db248, log_entry=0x9965760, match_flags=0xbfffa438)
+    at rule-regex.c:197
+#6  0x00f03909 in rule_regex_match (root=0x9938080, ls=0x98db248,
+    log_entry=0x9965760, match_flags=0xbfffa438) at rule-regex.c:249
+#7  0x00f024ea in pcre_run (pi=0x98dbe20, ls=0x98db248, log_entry=0x9965760)
+    at pcre-mod.c:650
+#8  0x0804d1c5 in log_plugin_run (pi=0x98dbe20, ls=0x98db248, log=0x9965760)
+    at log-plugins.c:75
+#9  0x0804bd52 in regex_match_cb (plugin=0x98dbe20, data=0x0)
+    at prelude-lml.c:171
+#10 0x0804c99d in regex_exec (list=0x98daf70, cb=0x804bd3c &lt;regex_match_cb&gt;,
+    data=0xbfffa5d0,
+    str=0x99677e0 "Sep 23 09:44:53 web01 sshdr15291: Accepted publickey
+for asparks from 216.150.62.80 port 34121 ssh2", len=101) at
+regex.c:281
+#11 0x0804bde6 in lml_dispatch_log (list=0x98daf70, ls=0x98db248,
+    str=0x98db8c0 "Sep 23 09:44:53 web01 sshdr15291: Accepted publickey
+for asparks from 216.150.62.80 port 34121 ssh2", size=101) at
+prelude-lml.c:205
+#12 0x0804e9a4 in check_logfile_data (monitor=0x98db898, st=0xbfffa650)
+    at file-server.c:544
+#13 0x0804f02a in process_file_event (monitor=0x98db898) at
+file-server.c:1053
+#14 0x0804f0c5 in file_server_wake_up () at file-server.c:1104
+#15 0x0804c10a in main (argc=1, argv=0x6) at prelude-lml.c:323
+</pre>
+
+	<p>Looks like under some cases, the ai_canonname field is NULL, do not know the circumstances when this can happen:</p>
+
+
+<pre>
+(gdb) print *ai
+$4 = {ai_flags = 2, ai_family = 2, ai_socktype = 1, ai_protocol = 6,
+  ai_addrlen = 16, ai_addr = 0x9968020, ai_canonname = 0x0,
+  ai_next = 0x9968038}
+</pre>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-219" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/23/2005 11:06 PM" href="/projects/prelude-lml/activity?from=2005-09-23">about 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-219-notes" class="wiki"><p>Fixed in r7318. Thanks!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1218" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:27 PM" href="/projects/prelude-lml/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prelude-LML</i></li>
+       <li><strong>Category</strong> deleted (<del><i>4</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.1</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/100.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/100.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

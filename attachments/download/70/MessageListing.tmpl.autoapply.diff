@@ -1,0 +1,26 @@
+--- ./MessageListing.tmpl.orig	2007-04-17 08:21:25.000000000 -0400
++++ ./MessageListing.tmpl	2007-06-28 20:12:09.069458848 -0400
+@@ -2,7 +2,7 @@
+ #extends prewikka.templates.ClassicLayout
+ 
+ #def layout_start_hook
+-<form method="post" action="?">
++<form name="viewfilter" method="post" action="?">
+ #for $name, $value in $hidden_parameters
+   <input type="hidden" name="$name" value="$value"/>
+ #end for
+@@ -98,6 +98,14 @@
+     <input id="timeline_limit_value" type="text" size="2" name="limit" value="$limit"/>
+    </td>
+   </tr>
++  
++  <tr>
++    <th id="auto_apply_label">$_("Auto Update Time")</th>
++
++    <td colspan="4">
++     <input id="autoapply_value" type="text" size="2" name="auto_apply" value="$auto_apply"/>
++    </td>
++  </tr>
+ 
+   <tr style="text-align: center;">
+       <td colspan=3><input type="submit" name="apply" value="$_("Apply")" />

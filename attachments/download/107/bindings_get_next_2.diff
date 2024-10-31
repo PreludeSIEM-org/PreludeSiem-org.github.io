@@ -1,0 +1,84 @@
+Index: libprelude.i
+===================================================================
+--- libprelude.i	(révision 10121)
++++ libprelude.i	(copie de travail)
+@@ -186,7 +186,30 @@
+         idmef_data_t *
+ };
+ 
++/* the following typemaps are used to allow NULL pointers to be passed
++ * to _get_next_* functions
++ */
++%apply SWIGTYPE *LISTEDPARAM {
++        idmef_reference_t *object,
++        idmef_user_id_t *object,
++        idmef_address_t *object,
++        idmef_file_access_t *object,
++        idmef_linkage_t *object,
++        idmef_checksum_t *object,
++        idmef_file_t *object,
++        idmef_action_t *object,
++        idmef_alertident_t *object,
++        idmef_alertident_t *object,
++        idmef_analyzer_t *object,
++        idmef_source_t *object,
++        idmef_target_t *object,
++        idmef_additional_data_t *object,
++        idmef_analyzer_t *object,
++        idmef_additional_data_t *object
++};
+ 
++
++
+ %ignore idmef_path_new_v;
+ %ignore prelude_string_vprintf;
+ %ignore _prelude_log_v;
+Index: libprelude_python.i
+===================================================================
+--- libprelude_python.i	(révision 10121)
++++ libprelude_python.i	(copie de travail)
+@@ -93,6 +93,18 @@
+ };
+ 
+ 
++/* This typemap is used to allow NULL pointers in _get_next_* functions
++ */
++%typemap(in) SWIGTYPE *LISTEDPARAM {
++	if ( $input == Py_None ) {
++		$1 = NULL;
++	} else {
++		if ( SWIG_ConvertPtr($input, (void **)&$1, $1_descriptor, SWIG_POINTER_EXCEPTION|0) )
++			return NULL;
++	}
++};
++
++
+ %typemap(in) const char * {
+ 	if ( $input == Py_None )
+ 		$1 = NULL;
+Index: libprelude_perl.i
+===================================================================
+--- libprelude_perl.i	(révision 10121)
++++ libprelude_perl.i	(copie de travail)
+@@ -74,6 +74,21 @@
+ 
+ %}
+ 
++
++/* This typemap is used to allow NULL pointers in _get_next_* functions
++ */
++%typemap(in) SWIGTYPE *LISTEDPARAM {
++	if ( ! SvOK($input) ) {
++                $1 = NULL;
++	} else {
++		if ( SWIG_ConvertPtr($input, (void **)&$1, $1_descriptor, 0) ) {
++			croak("Expected type $1_type for argument $argnum.");
++			return;
++		}
++	}
++}
++
++
+ %typemap(in) char **argv {
+ 	AV *tempav;
+ 	I32 len;

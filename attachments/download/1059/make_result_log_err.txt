@@ -1,0 +1,34 @@
+Warning: -L../../src/.libs changed to -L/home/diane/Téléchargements/libprelude-5.0.0/bindings/perl/../../src/.libs
+Warning: -L../../bindings/c++/.libs changed to -L/home/diane/Téléchargements/libprelude-5.0.0/bindings/perl/../../bindings/c++/.libs
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+/usr/bin/ld: warning: -z now,-rpath ignored.
+/usr/bin/ld : ne peut trouver -lpreludecpp
+collect2: error: ld returned 1 exit status
+make[4]: *** [blib/arch/auto/Prelude/Prelude.so] Erreur 1
+make[3]: *** [perl-build] Erreur 2
+make[2]: *** [all-recursive] Erreur 1
+make[1]: *** [all-recursive] Erreur 1
+make: *** [all] Erreur 2

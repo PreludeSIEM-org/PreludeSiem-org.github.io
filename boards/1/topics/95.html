@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Install  Issue - libpreludedb    Mariadb not detected? so no MySQL plugin installed - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="cD47ZSQxZn14LIyY0oxlIzl1HfVegjDbzlzEI32ZxiljEVMK7SVr/vKGhGLPxCx9RT5sa0SIaZUQ0gCz+ZnyKg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>Install  Issue - libpreludedb    Mariadb not detected? so no MySQL plugin installed</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/589">Tony Su</a> <a title="12/16/2016 06:14 PM" href="/projects/prelude/activity?from=2016-12-16">almost 8 years</a> ago</span></p>
+<div class="wiki">
+<p>As the subject line describes,<br />Installing on an openSUSE LEAP 42.2</p>
+
+
+	<p>LAMP installed, apache2 and maariadb (mysql.service) verified running.</p>
+
+
+	<p>Downloaded the most recent libpreludedb tar file libpreludedb-3.1.0.tar.gz <br />Extracted.<br />Run ".configure" <br />Result is as follows</p>
+
+
+	<ul>
+	<li>Dumping configuration ***<br />    - Generate documentation      : no<br />    - Enable MySQL plugin         : no<br />    - Enable PostgreSQL plugin    : no<br />    - Enable SQLite3 plugin       : no<br />    - Python2.x binding           : yes<br />    - Python3.x binding           : no<br />    - Easy bindings               : yes</li>
+	</ul>
+
+
+	<p>How to resolve?</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (4)</h3>
+  <div class="message reply" id="message-98">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/95?r=98#message-98">RE: Install  Issue - libpreludedb    Mariadb not detected? so no MySQL plugin installed</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="12/16/2016 07:36 PM" href="/projects/prelude/activity?from=2016-12-16">almost 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>You need to install the mysql/mariadb development package, like specified in the README file.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-99">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/95?r=99#message-99">RE: Install  Issue - libpreludedb    Mariadb not detected? so no MySQL plugin installed [Addressed]</a>
+    -
+    Added by <a class="user active" href="/users/589">Tony Su</a> <a title="12/17/2016 12:34 PM" href="/projects/prelude/activity?from=2016-12-17">almost 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Thank you.<br />After some research, it seems that the MySQL (and therefor also Mariadb) Project fairly uniquely does not build in a typical way, so source and headers are not normally available or distributed for anyone, but a special separate effort has been made to support CentOS7/RHEL.</p>
+
+
+	<p>Since source/headers are specific to the version of MySQL/Mariadb installed, instead of replacing the current distributed Mariadb from the distro with a "foreign" CentOS version, I've decided to try PostgreSQL instead, and if I run into issues then SQLite3, both of which commonly make development headers available.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-100">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/95?r=100#message-100">RE: Install  Issue - libpreludedb    Mariadb not detected? so no MySQL plugin installed</a>
+    -
+    Added by <a class="user active" href="/users/589">Tony Su</a> <a title="12/18/2016 01:00 AM" href="/projects/prelude/activity?from=2016-12-18">almost 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>It looks like an attempt to fix the packages for SUSE/openSUSE has just been posted with updated instructions<br /><img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"></p>
+
+
+	<p>So, I'll put my efforts to install from source on the back burner for now in favor of testing the new instructions, but there is still a lot of missing I can add even to the current instructions for initially setting up before the first Prelude package is downloaded.</p>
+
+
+	<p>Am interested in messaging with whomever is doing the work for the SUSE/openSUSE install, is it you Antoine?</p>
+
+
+	<p>Although my contribution can wait until after I've verified the entire install works, I'm also happy to speed improvements for those things I'm already very certain about.</p>
+
+
+	<p>TIA.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-104">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/95?r=104#message-104">RE: Install  Issue - libpreludedb    Mariadb not detected? so no MySQL plugin installed</a>
+    -
+    Added by <a class="user active" href="/users/301">Thomas </a> <a title="12/18/2016 11:04 PM" href="/projects/prelude/activity?from=2016-12-18">almost 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello</p>
+
+
+	<p>I'm doing the work for OpenSuse (and other distributions). The wiki is for the packaged version.</p>
+
+
+	<p>Can you let us know what is missing in the wiki ? I run the procedure and it works on my side.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-4/4)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

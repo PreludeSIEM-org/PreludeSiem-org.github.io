@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>0001-imported-initial-files-for-java-bindings.patch - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="UbgDfCVo4S9b4kPLlCl0lhq0AckfUusifYV6nOrhd0RCl2sT7HzsrNFISzGJYT3IZv9wVwVYsmyjC74MbuFDRw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-libprelude controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>0001-imported-initial-files-for-java-bindings.patch</h2>
+
+<div class="attachments">
+<p>initial import of java - 
+   <span class="author">Anonymous, 09/14/2009 06:11 PM</span></p>
+<p><a href="/attachments/download/195/0001-imported-initial-files-for-java-bindings.patch">Download</a>   <span class="size">(8.72 KB)</span></p>
+</div>
+
+  <form action="/attachments/195/0001-imported-initial-files-for-java-bindings.patch" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      bindings/Makefile.am
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>SUBDIRS = c++ low-level lua python ruby<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre>SUBDIRS = c++ low-level lua python ruby<span> java</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">2</th>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre>EXTRA_DIST = libpreludecpp.i libpreludecpp-perl.i perl/Makefile.PL.in</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <th class="line-num">4</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">12</th>
+  <th class="line-num">12</th>
+  <td class="line-code ">
+    <pre>			perl/PreludeEasy.bs 	     \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">13</th>
+  <th class="line-num">13</th>
+  <td class="line-code ">
+    <pre>                        python/_PreludeEasy.cxx	     \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">14</th>
+  <th class="line-num">14</th>
+  <td class="line-code ">
+    <pre>			python/PreludeEasy.py	     \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">15</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>			ruby/PreludeEasy.cxx</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>			ruby/PreludeEasy.cxx    \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre>            java/PreludeEasy.cxx</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">16</th>
+  <th class="line-num">17</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">17</th>
+  <th class="line-num">18</th>
+  <td class="line-code ">
+    <pre>all-am: perl</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">18</th>
+  <th class="line-num">19</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      bindings/c++/include/prelude.hxx
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">37</th>
+  <th class="line-num">37</th>
+  <td class="line-code ">
+    <pre>#include &quot;idmef-criteria.hxx&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">38</th>
+  <th class="line-num">38</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">39</th>
+  <th class="line-num">39</th>
+  <td class="line-code ">
+    <pre>const char *CheckVersion(const char *version = NULL);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre>int prelude_init(int *argc = NULL, char **argv = NULL);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">40</th>
+  <th class="line-num">41</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">41</th>
+  <th class="line-num">42</th>
+  <td class="line-code ">
+    <pre>#endif</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      bindings/java/Makefile.am
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre>if HAVE_EASY_BINDINGS</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre>if HAVE_JAVA</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">3</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre>EXTRA_DIST = libpreludecpp-java.i PreludeEasy.cxx</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">6</th>
+  <td class="line-code diff_in">
+    <pre>all-am: java-build</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">8</th>
+  <td class="line-code diff_in">
+    <pre>java-build: PreludeEasy.cxx  PreludeEasy.o</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>    $(JAVAC) com/prelude/easy/*.java</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">10</th>
+  <td class="line-code diff_in">
+    <pre>    ant compile &amp;&amp; ant jar</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre>install-exec-hook:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre>    cp libpreludejava.so /usr/local/lib</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre>    ldconfig</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>    cp build/jar/PreludeEasy.jar /usr/share/java</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">17</th>
+  <td class="line-code diff_in">
+    <pre>uninstall-hook:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre>    rm -f /usr/local/lib/libpreludejava.so</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">19</th>
+  <td class="line-code diff_in">
+    <pre>    ldconfig</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre>    rm -f /usr/share/java/PreludeEasy.jar</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">22</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">23</th>
+  <td class="line-code diff_in">
+    <pre>PreludeEasy.o: PreludeEasy.cxx</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">24</th>
+  <td class="line-code diff_in">
+    <pre>    $(CXX) -I $(top_srcdir)/bindings/c++/include -c -I $(top_srcdir)/src/include/ -I $(top_srcdir)/src/libprelude-error/ -I$(top_srcdir) -I $(top_srcdir)/libmissing/ -fPIC PreludeEasy.cxx</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">25</th>
+  <td class="line-code diff_in">
+    <pre>    $(CXX) -shared PreludeEasy.o $(top_srcdir)/bindings/c++/.libs/libpreludecpp.so -o libpreludejava.so</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">26</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">27</th>
+  <td class="line-code diff_in">
+    <pre>PreludeEasy.cxx: $(top_srcdir)/bindings/c++/include/*.hxx $(top_srcdir)/bindings/libpreludecpp.i libpreludecpp-java.i</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">28</th>
+  <td class="line-code diff_in">
+    <pre>if HAVE_SWIG</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">29</th>
+  <td class="line-code diff_in">
+    <pre>    $(SWIG) -c++ -I$(top_srcdir)/bindings -I$(top_srcdir)/bindings/c++/include -I$(top_srcdir)/src/include -I$(top_srcdir)/src/libprelude-error -java -package com.prelude.easy -outdir com/prelude/easy -o $@ ../libpreludecpp.i</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">30</th>
+  <td class="line-code diff_in">
+    <pre>endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">31</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">32</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">33</th>
+  <td class="line-code diff_in">
+    <pre>clean-local:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre>    rm -f com/prelude/easy/*.class com/prelude/easy/*.java</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">35</th>
+  <td class="line-code diff_in">
+    <pre>    rm -f PreludeEasy.o libpreludejava.so PreludeEasy.cxx</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">36</th>
+  <td class="line-code diff_in">
+    <pre>    rm -f Makefile.old</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">37</th>
+  <td class="line-code diff_in">
+    <pre>    ant clean</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre>    rm -f testapp/*.class</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">39</th>
+  <td class="line-code diff_in">
+    <pre>endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre>endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">42</th>
+  <td class="line-code diff_in">
+    <pre>-include $(top_srcdir)/git.mk</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      bindings/java/build.xml
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre>&lt;project&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;target name=&quot;clean&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">3</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;delete dir=&quot;build&quot;/&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/target&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">6</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;target name=&quot;compile&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;mkdir dir=&quot;build/classes&quot;/&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">8</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;javac srcdir=&quot;./com&quot; destdir=&quot;build/classes&quot; debug=&quot;on&quot; debuglevel=&quot;lines,vars,source&quot; /&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/target&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">10</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;target name=&quot;jar&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;mkdir dir=&quot;build/jar&quot;/&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;jar destfile=&quot;build/jar/PreludeEasy.jar&quot; basedir=&quot;build/classes&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;manifest&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>            &lt;/manifest&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;/jar&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">17</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/target&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">19</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;target name=&quot;run&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;java jar=&quot;build/jar/PreludeEasy.jar&quot; fork=&quot;true&quot;/&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/target&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">22</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">23</th>
+  <td class="line-code diff_in">
+    <pre>&lt;/project&gt;</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      bindings/java/libpreludecpp-java.i
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre>%module preludejava</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">3</th>
+  <td class="line-code diff_in">
+    <pre>%rename (String) *::operator const std::string() const;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre>%rename (String) *::operator const char*;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">6</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator int() const;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator double() const;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">8</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator long() const;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator &gt;&gt; const;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">10</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator &lt;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator &gt;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator ==;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator &lt;=;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator &gt;=;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator !=;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre>%ignore *::operator =;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">17</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre>%typemap(throws, throws=&quot;java.io.IOException&quot;) Prelude::PreludeError {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">19</th>
+  <td class="line-code diff_in">
+    <pre>  jclass excep = jenv-&gt;FindClass(&quot;java/io/IOException&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre>  if (excep)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre>    jenv-&gt;ThrowNew(excep, $1.what());</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">22</th>
+  <td class="line-code diff_in">
+    <pre>  return $null;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">23</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">24</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">25</th>
+  <td class="line-code diff_in">
+    <pre>%fragment(&quot;TransitionFunc&quot;, &quot;header&quot;) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">26</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">27</th>
+  <td class="line-code diff_in">
+    <pre>static ssize_t _cb_java_read(prelude_io_t *fd, void *buf, size_t size)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">28</th>
+  <td class="line-code diff_in">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">29</th>
+  <td class="line-code diff_in">
+    <pre>        ssize_t ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">30</th>
+  <td class="line-code diff_in">
+    <pre>        FILE *f = (FILE *) prelude_io_get_fdptr(fd);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">31</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">32</th>
+  <td class="line-code diff_in">
+    <pre>        ret = fread(buf, 1, size, f);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">33</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre>                ret = prelude_error_from_errno(errno);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">35</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">36</th>
+  <td class="line-code diff_in">
+    <pre>        else if ( ret == 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">37</th>
+  <td class="line-code diff_in">
+    <pre>                ret = prelude_error(PRELUDE_ERROR_EOF);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">39</th>
+  <td class="line-code diff_in">
+    <pre>        return ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">42</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      bindings/java/testapp/build.sh
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre>#!/bin/sh -x</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre>javac -cp /usr/share/java/PreludeEasy.jar test.java</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      bindings/java/testapp/run.sh
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre>#!/bin/bash</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre>java -cp /usr/share/java/PreludeEasy.jar:. test</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      bindings/java/testapp/test.java
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre>import com.prelude.easy.ClientEasy;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre>import com.prelude.easy.IDMEF;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">3</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre>public class test {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">6</th>
+  <td class="line-code diff_in">
+    <pre>  static {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre>    try {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">8</th>
+  <td class="line-code diff_in">
+    <pre>      System.loadLibrary(&quot;preludejava&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>    } catch (UnsatisfiedLinkError e) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">10</th>
+  <td class="line-code diff_in">
+    <pre>      System.err.println(&quot;Native code library failed to load. &quot; + e);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre>      System.exit(1);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre>  }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>    private static ClientEasy c;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">17</th>
+  <td class="line-code diff_in">
+    <pre>    public static void main(String argv[]){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre>        com.prelude.easy.PreludeEasy.prelude_init();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">19</th>
+  <td class="line-code diff_in">
+    <pre>        c= new ClientEasy(&quot;prelude-java-agent&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre>        try {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre>            c.Start();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">22</th>
+  <td class="line-code diff_in">
+    <pre>            System.out.println(&quot;Creating IDMEF msg&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">23</th>
+  <td class="line-code diff_in">
+    <pre>            IDMEF msg = new IDMEF();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">24</th>
+  <td class="line-code diff_in">
+    <pre>            System.out.println(&quot;Setting attribs...&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">25</th>
+  <td class="line-code diff_in">
+    <pre>            msg.Set(&quot;alert.source(0).node.address(0).address&quot;,&quot;192.168.1.1&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">26</th>
+  <td class="line-code diff_in">
+    <pre>            msg.Set(&quot;alert.target(0).node.address(0).address&quot;,&quot;192.168.1.2&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">27</th>
+  <td class="line-code diff_in">
+    <pre>            System.out.println(&quot;Sending msg...&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">28</th>
+  <td class="line-code diff_in">
+    <pre>            c.SendIDMEF(msg);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">29</th>
+  <td class="line-code diff_in">
+    <pre>        } catch (Exception exception){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">30</th>
+  <td class="line-code diff_in">
+    <pre>            System.out.println(exception.toString());</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">31</th>
+  <td class="line-code diff_in">
+    <pre>            exception.printStackTrace();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">32</th>
+  <td class="line-code diff_in">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">33</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      configure.in
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">434</th>
+  <th class="line-num">434</th>
+  <td class="line-code ">
+    <pre>PERL_EXTRA_PARAMS=&quot;INSTALLDIRS=$PERL_INSTALLDIRS&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">435</th>
+  <th class="line-num">435</th>
+  <td class="line-code ">
+    <pre>AC_SUBST(PERL_EXTRA_PARAMS)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">436</th>
+  <th class="line-num">436</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">437</th>
+  <td class="line-code diff_in">
+    <pre>dnl **************************************************</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">438</th>
+  <td class="line-code diff_in">
+    <pre>dnl * Java support                                   *</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">439</th>
+  <td class="line-code diff_in">
+    <pre>dnl **************************************************</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">440</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">441</th>
+  <td class="line-code diff_in">
+    <pre>AC_ARG_WITH(java, AC_HELP_STRING(--with-java@&lt;:@=PATH@:&gt;@, Enable support for java binding @&lt;:@default=auto@:&gt;@),</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">442</th>
+  <td class="line-code diff_in">
+    <pre>            [java_required=true; if test x$withval = xyes; then with_java=&quot;javac&quot;; fi], with_java=&quot;javac&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">443</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">444</th>
+  <td class="line-code diff_in">
+    <pre>if test x$with_java != xno; then</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">445</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">446</th>
+  <td class="line-code diff_in">
+    <pre>    AC_PATH_PROG(JAVAC, `basename $with_java`, no, `dirname $with_java`:$PATH)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">447</th>
+  <td class="line-code diff_in">
+    <pre>    if test x$JAVAC = xno; then</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">448</th>
+  <td class="line-code diff_in">
+    <pre>        with_java=no</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">449</th>
+  <td class="line-code diff_in">
+    <pre>    else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">450</th>
+  <td class="line-code diff_in">
+    <pre>        with_java=yes</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">451</th>
+  <td class="line-code diff_in">
+    <pre>    fi</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">452</th>
+  <td class="line-code diff_in">
+    <pre>fi</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">453</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">454</th>
+  <td class="line-code diff_in">
+    <pre>AM_CONDITIONAL(HAVE_JAVA, test x$with_java = xyes)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">437</th>
+  <th class="line-num">455</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">438</th>
+  <th class="line-num">456</th>
+  <td class="line-code ">
+    <pre>dnl **************************************************</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">439</th>
+  <th class="line-num">457</th>
+  <td class="line-code ">
+    <pre>dnl * Python support                                 *</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">761</th>
+  <th class="line-num">779</th>
+  <td class="line-code ">
+    <pre>bindings/python/Makefile</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">762</th>
+  <th class="line-num">780</th>
+  <td class="line-code ">
+    <pre>bindings/python/setup.py</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">763</th>
+  <th class="line-num">781</th>
+  <td class="line-code ">
+    <pre>bindings/ruby/Makefile</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">782</th>
+  <td class="line-code diff_in">
+    <pre>bindings/java/Makefile</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">764</th>
+  <th class="line-num">783</th>
+  <td class="line-code ">
+    <pre>tests/Makefile</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">765</th>
+  <th class="line-num">784</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">766</th>
+  <th class="line-num">785</th>
+  <td class="line-code ">
+    <pre>])</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">776</th>
+  <th class="line-num">795</th>
+  <td class="line-code ">
+    <pre>echo &quot;    - Python binding           : $with_python&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">777</th>
+  <th class="line-num">796</th>
+  <td class="line-code ">
+    <pre>echo &quot;    - Ruby binding             : $with_ruby&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">778</th>
+  <th class="line-num">797</th>
+  <td class="line-code ">
+    <pre>echo &quot;    - Easy bindings            : $enable_easy_bindings&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">779</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">798</th>
+  <td class="line-code diff_in">
+    <pre>echo &quot;    - Java bindings            : $with_java&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">780</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- </pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

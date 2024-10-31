@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Connector: Activity</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/connector/activity.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/connector/activity"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2024-10-30T10:44:08+00:00</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+</feed>

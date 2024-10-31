@@ -1,0 +1,227 @@
+Prelude OSS 4.0.0
+=================
+
+
+* 2017-02-16, libprelude-4.0.0
+------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Fix crash when retrieving listed value
+
+- Update GnuLib and SWIG generated code
+
+- Get rid of libgcrypt
+
+    Nowadays, libgcrypt functions that we used are now available
+    directly from GnuTLS, which uses libnettle.
+
+- Implement idmef_criteria_get_class()
+
+    This function can be used to retrieve the idmef_class_id_t of the root
+    paths elements used for a given criteria.
+
+- Implement prelude.return_unicode(flags)
+
+    When enabled, string returned from SWIG wrapped function will be
+    converted to unicode.
+
+- Fix possible IDMEFValue 'out of range' error
+
+* 2017-02-16, libpreludedb-4.0.0
+--------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Raise an error if timezone convertion is not supported
+
+- Fix getLastInsertIdent() crash on uninitialized session
+
+- Update Gnulib and SWIG generated code
+
+- Implement preludedb_delete()
+
+- Implement preludedb.return_unicode(flags)
+
+    When enabled, string returned from SWIG wrapped function will be
+    converted to unicode.
+
+- Add missing getServerVersion method to PreludeDB::SQL
+
+Author: Antoine Luong
+
+- Add binding for preludedb_get_last_insert_ident()
+
+- Do not automatically regenerate SWIG bindings by default
+
+* 2017-02-16, prelude-manager-4.0.0
+-----------------------------------
+
+Author: Yoann Vandoorselaere
+
+- prelude-manager heartbeat did not assign messageid
+
+- Update GnuLib/libev code
+
+- Get rid of libgcrypt
+
+* 2017-02-16, prelude-lml-4.0.0
+-------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Update GnuLib/libev code
+
+- Get rid of libgcrypt
+
+Author: Song Tran
+
+- Add SELinux policy for using unreserved ports on rhel7
+
+* 2017-02-16, prelude-lml-rules-4.0.0
+-------------------------------------
+
+Author: Camille Gardet
+
+- Add NXLog rules
+
+* 2017-02-16, prelude-correlator-4.0.0
+--------------------------------------
+
+Author: Thomas 
+
+- Fix Python 3 compatibility
+
+Author: Camille Gardet
+
+- Fix CIArmy config keyword
+
+Author: Song Tran
+
+- Add INSTALL file
+
+* 2017-02-16, prewikka-4.0.0
+----------------------------
+
+Author: Antoine Luong
+
+- Fix input order in Heartbeats
+- Fix menu for MyAccount page
+- Refresh the page after saving a filter
+- Format paths for use in QueryResultsRow
+- Menu update
+- Add new methods for dataproviders
+- Normalize None values at link creation
+- CSS tweaks in Apps and MessageSummary
+- Use the Bootstrap/FontAwesome theme for free-jqGrid
+- Improve error messages when loading views
+- Add the "enum" and "text" types in dataprovider
+- Do not modify the passed criteria in dataprovider
+- Fix JS condition causing the tabs to disappear
+- Fix incorrect dropdown display in filter edition
+- Make it possible to create private views
+- Include the control menu in the agent view
+- CSS and theme fixes
+- Fix control menu's unexpected behavior
+- Correctly translate errors
+- Improvements and fixes in filter views
+- Implement copying traceback to clipboard
+- Menu improvements
+- Implement an ajax-reload response type
+- Filter view overhaul
+- Add path-related functions to the dataprovider API
+- Menu rework, use a YAML configuration file
+- Bugfixes
+
+    - Auth and user fixes
+    - Allow hook registration of an empty object
+    - Fix recursion problem when printing errors
+
+- New prewikka_autocomplete function
+- Add a method for checking user permissions
+- Set the process name to 'prewikka' in logs
+- CommonListing API tweaks
+- Support additional operations in dataproviders
+- Drop IE9 support
+
+Author: Yoann Vandoorselaere
+
+- Resolve data in dataprovider write operations
+- Fix upsert (CTE version) with empty values rows
+- Correctly escape document.(base_url|href)
+- Prevent soundex() algorithm error with unicode
+- Normalize --root parameter
+- Properly map ConfigParserSection
+- Fix encoding problem with external script
+- Filter out invalid characters in ASCII payload dump
+- View membership / permissions rework
+
+    UNIX-like permissions for views: a given view can now be owned
+    by a list of users (view_users), or/and a list of groups (view_groups).
+
+- url_for() now has a _default argument
+- Improve widget creation mechanisms
+- Fix upsert with empty generator
+- Fix possible tab activation issue on initial load
+- Route API fixes
+
+    - Use view_id as the view basepoint
+    - Implement HOOK_URL_FOR to workaround viewmanagement
+    - Fix view_extensions with new @route API
+    - Prevent invalid method error in case of authentication failure
+
+- Correctly check in auth whether the method is not the base implementation
+- Initialize dataprovider backend before type
+- Fix upsert with empty data
+- Core evolutions
+
+    - Implementation of @view.route()
+    - Move dataset, menu and parameters to env.request
+    - Python3 compatibility
+    - Mako templating engine, drop Cheetah
+    - Implement Criterion(), and generalize dataprovider usage
+    - Implement our own JSON layer
+    - Implement generic upsert framework
+    - Unify error handling
+    - Implement generic cache system
+    - Use full module name, plugin loader rework
+- Bugfixes
+
+    - Fix WSGI redirect
+    - Do not pass the request to Prewikka core on invalid static files
+    - Do not silently fail when a backend does not support a given operation
+    - Prevent query burst upon start
+    - Handle index create/drop for PostgreSQL/SQLite
+    - use_flock() database loading regression
+
+Author: Camille Gardet
+
+- @use_transaction uses the name of the original function
+- Update favicon
+- Fix MessageListing pagination
+- Fix columns ordering in jqGrid tables
+- Minor display fixes
+- Translate error name when it is needed
+- Log more actions
+
+Author: Thomas 
+
+- Add mainmenu to messagesummary
+- Update INSTALL file
+- Fix browser title to display section
+- Update messagesummary to Bootstrap
+- Add error code for user errors
+- Fix mainmenu initialization
+- Enable translation for label in URL links
+- Fix prewikka-httpd get_raw_uri and querystring
+- Fix WSGI self.body not filled
+- Fix alertlisting classification alert.type filter
+
+Author: Song Tran
+
+- Add INSTALL file to MANIFEST.in
+
+Author: Sélim Menouar
+
+- Add HOOK_LINK for messageid and ident in messagelisting
+- Automatically escape different types in SQL query

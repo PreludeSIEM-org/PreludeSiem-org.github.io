@@ -1,0 +1,70 @@
+---
+bindings/Makefile.am |    5 +++--
+configure.in         |   21 ++++++++++++++++++++-
+2 files changed, 23 insertions(+), 3 deletions(-)
+
+diff --git a/bindings/Makefile.am b/bindings/Makefile.am
+index 9ecd368..72e78f3 100644
+--- a/bindings/Makefile.am
++++ b/bindings/Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = c++ low-level lua python ruby
++SUBDIRS = c++ low-level lua python ruby java
+
+EXTRA_DIST = libpreludecpp.i libpreludecpp-perl.i perl/Makefile.PL.in
+
+@@ -12,7 +12,8 @@ MAINTAINERCLEANFILES =   \
+			perl/PreludeEasy.bs 	     \
+                        python/_PreludeEasy.cxx	     \
+			python/PreludeEasy.py	     \
+-			ruby/PreludeEasy.cxx
++			ruby/PreludeEasy.cxx \
++			java/PreludeEasy.cxx
+
+all-am: perl
+
+diff --git a/configure.in b/configure.in
+index c2f591a..dd1e1b4 100644
+--- a/configure.in
++++ b/configure.in
+@@ -434,6 +434,24 @@ fi
+PERL_EXTRA_PARAMS="INSTALLDIRS=$PERL_INSTALLDIRS"
+AC_SUBST(PERL_EXTRA_PARAMS)
+
++dnl **************************************************
++dnl * Java support                                   *
++dnl **************************************************
++
++AC_ARG_WITH(java, AC_HELP_STRING(--with-java@<:@=PATH@:>@, Enable support for java binding @<:@default=auto@:>@),
++            [java_required=true; if test x$withval = xyes; then with_java="javac"; fi], with_java="javac")
++
++if test x$with_java != xno; then
++
++    AC_PATH_PROG(JAVAC, `basename $with_java`, no, `dirname $with_java`:$PATH)
++    if test x$JAVAC = xno; then
++        with_java=no
++    else
++        with_java=yes
++    fi
++fi
++
++AM_CONDITIONAL(HAVE_JAVA, test x$with_java = xyes)
+
+dnl **************************************************
+dnl * Python support                                 *
+@@ -761,6 +779,7 @@ bindings/perl/Makefile.PL
+bindings/python/Makefile
+bindings/python/setup.py
+bindings/ruby/Makefile
++bindings/java/Makefile
+tests/Makefile
+
+])
+@@ -776,4 +795,4 @@ echo "    - Perl binding             : $with_perl"
+echo "    - Python binding           : $with_python"
+echo "    - Ruby binding             : $with_ruby"
+echo "    - Easy bindings            : $enable_easy_bindings"
+-
++echo "    - Java bindings            : $with_java"
+-- 
+1.6.3.3

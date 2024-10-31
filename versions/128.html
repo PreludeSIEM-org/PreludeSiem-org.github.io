@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Prelude OSS 1.0.1 - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Hu6d5EhSMUM94prb2ouIsE4vMBD6QeFWfe12vnXp7v4NwfWLgUY8wLdIkiHHw8HuMmRBjuBLuBijY7Iu8ena/Q==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude controller-versions action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap selected" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+</div>
+
+<h2>Prelude OSS 1.0.1</h2>
+
+<div id="roadmap" class="version-completed version-closed">
+<div class="version-overview">
+  <p>08/01/2012</p>
+
+<p>Many bug fixes, few improvements on the GUI, some fixes on translations, new Prelude LML rules, copyrights changes, relay option transfered to Prelude Pro</p>
+
+    <table class="progress progress-100"><tr><td style="width: 100%;" class="closed" title="closed: 100%"></td></tr></table><p class="percent">100%</p>
+    <p class="progress-info">
+      <a href="/projects/prelude/issues?fixed_version_id=128&amp;set_filter=1&amp;status_id=%2A">7 issues</a>
+      &nbsp;
+      (<a href="/projects/prelude/issues?fixed_version_id=128&amp;set_filter=1&amp;status_id=c">7 closed</a>
+      &#8212;
+      0 open)
+    </p>
+</div>
+
+
+
+<div id="version-summary">
+<fieldset class="time-tracking"><legend>Time tracking</legend>
+<table>
+<tr>
+    <th>Estimated time</th>
+    <td class="total-hours"><span class="hours hours-int">2</span><span class="hours hours-dec">.00</span> hours</td>
+</tr>
+</table>
+</fieldset>
+
+<div id="status_by">
+<form id="status_by_form" action="/versions/128" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="/DayFxElEXzgSaFvKNwcqxFfRZCobBBgIOuIsfzi/q7vGdp42DEc/2rjqZU1lFX1bRQ0DrJmSS7+ZUwheOLKrQ==" /><fieldset>
+<legend>
+Issues by <select name="status_by" id="status_by_select" data-remote="true" data-method="post" data-url="/versions/128/status_by"><option selected="selected" value="tracker">Tracker</option>
+<option value="status">Status</option>
+<option value="priority">Priority</option>
+<option value="author">Author</option>
+<option value="assigned_to">Assignee</option>
+<option value="category">Category</option></select>
+</legend>
+    <table>
+    <tr>
+        <td style="width:130px; text-align:right;">
+            <a href="/projects/prelude/issues?fixed_version_id=128&amp;set_filter=1&amp;status_id=%2A&amp;tracker_id=1">Bug</a>
+        </td>
+        <td style="width:240px;">
+            <table class="progress progress-100"><tr><td style="width: 100%;" class="closed" title="100%"></td></tr></table><p class="percent">6/6</p>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:130px; text-align:right;">
+            <a href="/projects/prelude/issues?fixed_version_id=128&amp;set_filter=1&amp;status_id=%2A&amp;tracker_id=3">Support</a>
+        </td>
+        <td style="width:240px;">
+            <table class="progress progress-100"><tr><td style="width: 100%;" class="closed" title="100%"></td></tr></table><p class="percent">1/1</p>
+        </td>
+    </tr>
+    </table>
+</fieldset>
+</form>
+</div>
+</div>
+
+<form action="/versions/128" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="webU5bi/fVfH1l0/k1uBfO+AN6wOkHP+DJgpBWyg93nSybyKcatw1E18VcWOE8gik8tGMhSaKrDSFu2V6KDDeg==" />  <table class="list related-issues">
+  <caption>Related issues</caption>
+    <tr class="issue hascontextmenu">
+      <td class="checkbox"><input type="checkbox" name="ids[]" value="188" /></td>
+      <td class="subject">Prewikka - <a class="issue tracker-1 status-5 priority-4 priority-default closed" href="/issues/188">Bug #188</a>: building RPM from .spec file fails</td>
+    </tr>
+    <tr class="issue hascontextmenu">
+      <td class="checkbox"><input type="checkbox" name="ids[]" value="381" /></td>
+      <td class="subject">Prewikka - <a class="issue tracker-1 status-5 priority-4 priority-default closed" href="/issues/381">Bug #381</a>: cgi authentication in prewikka cant work</td>
+    </tr>
+    <tr class="issue hascontextmenu">
+      <td class="checkbox"><input type="checkbox" name="ids[]" value="385" /></td>
+      <td class="subject">Prelude Manager - <a class="issue tracker-1 status-5 priority-5 priority-high3 closed" href="/issues/385">Bug #385</a>: Infinite loop in bufpool_add_message</td>
+    </tr>
+    <tr class="issue hascontextmenu">
+      <td class="checkbox"><input type="checkbox" name="ids[]" value="469" /></td>
+      <td class="subject">Prewikka - <a class="issue tracker-1 status-5 priority-4 priority-default closed" href="/issues/469">Bug #469</a>: Heartbeat analyser failed</td>
+    </tr>
+    <tr class="issue hascontextmenu">
+      <td class="checkbox"><input type="checkbox" name="ids[]" value="475" /></td>
+      <td class="subject">Prewikka - <a class="issue tracker-1 status-5 priority-4 priority-default closed" href="/issues/475">Bug #475</a>: Filtering on sensors status hides all sensors</td>
+    </tr>
+    <tr class="issue hascontextmenu">
+      <td class="checkbox"><input type="checkbox" name="ids[]" value="494" /></td>
+      <td class="subject">Prelude Correlator - <a class="issue tracker-1 status-5 priority-4 priority-default closed" href="/issues/494">Bug #494</a>: Prelude Correlator not stopping</td>
+    </tr>
+    <tr class="issue hascontextmenu">
+      <td class="checkbox"><input type="checkbox" name="ids[]" value="388" /></td>
+      <td class="subject">Prelude Manager - <a class="issue tracker-3 status-5 priority-4 priority-default closed" href="/issues/388">Support #388</a>: Can&#39;t install Prelude-Manager</td>
+    </tr>
+  </table>
+</form><script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+</div>
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

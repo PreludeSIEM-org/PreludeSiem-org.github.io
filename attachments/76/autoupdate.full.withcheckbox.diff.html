@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>autoupdate.full.withcheckbox.diff - Prewikka - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="7A7UAbvCMSUJUuaId9Oko6JMvAMv4T7uJmDA5nl1FF7/IbxuctY8poP47nJqm+393gfNnTXrZ6D47gR2/XUgXQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-prewikka controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prewikka/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prewikka">Overview</a></li><li><a class="activity" href="/projects/prewikka/activity">Activity</a></li><li><a class="roadmap" href="/projects/prewikka/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prewikka/issues">Issues</a></li><li><a class="gantt" href="/projects/prewikka/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prewikka/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prewikka/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>autoupdate.full.withcheckbox.diff</h2>
+
+<div class="attachments">
+<p>full copy of the patch against the svn version with the check box added - 
+   <span class="author"><a class="user active" href="/users/93">prmarino1-gmail-com -</a>, 07/07/2007 01:15 AM</span></p>
+<p><a href="/attachments/download/76/autoupdate.full.withcheckbox.diff">Download</a>   <span class="size">(7.64 KB)</span></p>
+</div>
+
+  <form action="/attachments/76/autoupdate.full.withcheckbox.diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/htdocs/js/functions.js	2007-07-06 17:42:17.000000000 -0400
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">58</th>
+  <th class="line-num">58</th>
+  <td class="line-code ">
+    <pre> 		}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">59</th>
+  <th class="line-num">59</th>
+  <td class="line-code ">
+    <pre> 	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">60</th>
+  <th class="line-num">60</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">61</th>
+  <td class="line-code diff_in">
+    <pre>var secondcounter=&quot;0&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">62</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">63</th>
+  <td class="line-code diff_in">
+    <pre>function autoapplytime(){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">64</th>
+  <td class="line-code diff_in">
+    <pre>	if (document.viewfilter &amp;&amp; document.viewfilter.auto_apply.value){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">65</th>
+  <td class="line-code diff_in">
+    <pre>		var rawtime=document.viewfilter.auto_apply.value;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">67</th>
+  <td class="line-code diff_in">
+    <pre>	else{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">68</th>
+  <td class="line-code diff_in">
+    <pre>		var rawtime=&quot;0:00&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">69</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">70</th>
+  <td class="line-code diff_in">
+    <pre>	if (document.images){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">71</th>
+  <td class="line-code diff_in">
+    <pre>		var parselimit=rawtime.split(&quot;:&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">72</th>
+  <td class="line-code diff_in">
+    <pre>		if (parselimit[0] &amp;&amp; parselimit[1] &amp;&amp;parselimit[2]){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">73</th>
+  <td class="line-code diff_in">
+    <pre>			secondcounter=parselimit[0]*3600+parselimit[1]*60+parselimit[2]*1;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">74</th>
+  <td class="line-code diff_in">
+    <pre>		}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">75</th>
+  <td class="line-code diff_in">
+    <pre>		else if (parselimit[0] &amp;&amp; parselimit[1]){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">76</th>
+  <td class="line-code diff_in">
+    <pre>			secondcounter=parselimit[0]*60+parselimit[1]*1;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">77</th>
+  <td class="line-code diff_in">
+    <pre>		}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">78</th>
+  <td class="line-code diff_in">
+    <pre>		else{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">79</th>
+  <td class="line-code diff_in">
+    <pre>			secondcounter=rawtime</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">80</th>
+  <td class="line-code diff_in">
+    <pre>		}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">81</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">82</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">83</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">84</th>
+  <td class="line-code diff_in">
+    <pre>function autoapplycounter(){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">85</th>
+  <td class="line-code diff_in">
+    <pre>	if (!document.images)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">86</th>
+  <td class="line-code diff_in">
+    <pre>		return;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">87</th>
+  <td class="line-code diff_in">
+    <pre>	if (secondcounter==0)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">88</th>
+  <td class="line-code diff_in">
+    <pre>		return;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">89</th>
+  <td class="line-code diff_in">
+    <pre>	if (eval(&quot;document.viewfilter.auto_apply_enable_check.checked&quot;) == false){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">90</th>
+  <td class="line-code diff_in">
+    <pre>		curmin=Math.floor(secondcounter/60)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">91</th>
+  <td class="line-code diff_in">
+    <pre>		cursec=secondcounter%60</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">92</th>
+  <td class="line-code diff_in">
+    <pre>		if (curmin!=0)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">93</th>
+  <td class="line-code diff_in">
+    <pre>			curtime=&quot;Paused Auto Update with  &quot;+curmin+&quot; minutes and &quot;+cursec+&quot; seconds remaining on the timer!&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">94</th>
+  <td class="line-code diff_in">
+    <pre>		else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">95</th>
+  <td class="line-code diff_in">
+    <pre>			curtime=&quot;Paused Auto Update with &quot;+cursec+&quot; seconds remaining on the timer!&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre>			window.status=curtime</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>			setTimeout(&quot;autoapplycounter()&quot;,1000)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">98</th>
+  <td class="line-code diff_in">
+    <pre>		return;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">99</th>
+  <td class="line-code diff_in">
+    <pre>	    </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">100</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">101</th>
+  <td class="line-code diff_in">
+    <pre>	else if (secondcounter==1){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">102</th>
+  <td class="line-code diff_in">
+    <pre>		var yaxis = &quot;0&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">103</th>
+  <td class="line-code diff_in">
+    <pre>		if (window.pageYOffset){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">104</th>
+  <td class="line-code diff_in">
+    <pre>			yaxis = window.pageYOffset;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre>		}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">106</th>
+  <td class="line-code diff_in">
+    <pre>		else if (window.documentElement &amp;&amp; window.documentElement.scrollTop){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">107</th>
+  <td class="line-code diff_in">
+    <pre>			yaxis = window.documentElement.scrollTop;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">108</th>
+  <td class="line-code diff_in">
+    <pre>		}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">109</th>
+  <td class="line-code diff_in">
+    <pre>		else if (document.body.scrollTop){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">110</th>
+  <td class="line-code diff_in">
+    <pre>			yaxis = window.body.scrollTop;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">111</th>
+  <td class="line-code diff_in">
+    <pre>		}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre>		//alert(&quot;yaxis &quot;+ yaxis);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">113</th>
+  <td class="line-code diff_in">
+    <pre>		document.viewfilter.yaxis.value=yaxis;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">114</th>
+  <td class="line-code diff_in">
+    <pre>		//alert(&quot;yaxis is set to&quot; + document.viewfilter.yaxis.value );</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">115</th>
+  <td class="line-code diff_in">
+    <pre>		document.viewfilter.submit(&quot;Apply&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">116</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">117</th>
+  <td class="line-code diff_in">
+    <pre>	else{ </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">118</th>
+  <td class="line-code diff_in">
+    <pre>		secondcounter-=1</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">119</th>
+  <td class="line-code diff_in">
+    <pre>		curmin=Math.floor(secondcounter/60)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">120</th>
+  <td class="line-code diff_in">
+    <pre>		cursec=secondcounter%60</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">121</th>
+  <td class="line-code diff_in">
+    <pre>		if (curmin!=0)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">122</th>
+  <td class="line-code diff_in">
+    <pre>			curtime=&quot;This Page will Auto Update in &quot;+curmin+&quot; minutes and &quot;+cursec+&quot; seconds!&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">123</th>
+  <td class="line-code diff_in">
+    <pre>		else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">124</th>
+  <td class="line-code diff_in">
+    <pre>			curtime=&quot;This Page will Auto Update in &quot;+cursec+&quot; seconds!&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">125</th>
+  <td class="line-code diff_in">
+    <pre>			window.status=curtime</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">126</th>
+  <td class="line-code diff_in">
+    <pre>			setTimeout(&quot;autoapplycounter()&quot;,1000)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">127</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">128</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">129</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">130</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">131</th>
+  <td class="line-code diff_in">
+    <pre>function setscrollbar(){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">132</th>
+  <td class="line-code diff_in">
+    <pre>	//beginautoapply();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">133</th>
+  <td class="line-code diff_in">
+    <pre>	if (document.viewfilter.yaxis.value){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">134</th>
+  <td class="line-code diff_in">
+    <pre>		//alert(&quot;yaxis detecting last known scroll &quot; + document.viewfilter.yaxis.value);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">135</th>
+  <td class="line-code diff_in">
+    <pre>		var setyaxis=document.viewfilter.yaxis.value;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">136</th>
+  <td class="line-code diff_in">
+    <pre>		window.scrollTo(&#39;0&#39;,setyaxis) ;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">137</th>
+  <td class="line-code diff_in">
+    <pre>		document.viewfilter.yaxis.value=&quot;0&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">138</th>
+  <td class="line-code diff_in">
+    <pre>		return</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">139</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">140</th>
+  <td class="line-code diff_in">
+    <pre>	else{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">141</th>
+  <td class="line-code diff_in">
+    <pre>		//alert(&quot;no yaxis&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">142</th>
+  <td class="line-code diff_in">
+    <pre>		return</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">143</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">144</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">145</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">146</th>
+  <td class="line-code diff_in">
+    <pre>function beginautoapply(){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">147</th>
+  <td class="line-code diff_in">
+    <pre>	if (document.viewfilter){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">148</th>
+  <td class="line-code diff_in">
+    <pre>		setscrollbar()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">149</th>
+  <td class="line-code diff_in">
+    <pre>		autoapplytime()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">150</th>
+  <td class="line-code diff_in">
+    <pre>		autoapplycounter()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">151</th>
+  <td class="line-code diff_in">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">152</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">153</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">154</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/prewikka/templates/MessageListing.tmpl	2007-07-06 18:57:42.000000000 -0400
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">2</th>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre>#extends prewikka.templates.ClassicLayout</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <th class="line-num">4</th>
+  <td class="line-code ">
+    <pre>#def layout_start_hook</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>&lt;form method=&quot;post&quot; action=&quot;?&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre>&lt;script type=&quot;text/javascript&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">6</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre>&lt;!--</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">8</th>
+  <td class="line-code diff_in">
+    <pre> function settimer(){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>    if (eval(&quot;document.viewfilter.auto_apply_enable_check.checked&quot;) == true){</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">10</th>
+  <td class="line-code diff_in">
+    <pre>	document.viewfilter.auto_apply_enable.value=&quot;checked&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre>    else{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre>	document.viewfilter.auto_apply_enable.value=&quot;paused&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre>    }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre> }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">17</th>
+  <td class="line-code diff_in">
+    <pre>//--&gt;&lt;/script&gt; </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre>&lt;form name=&quot;viewfilter&quot; method=&quot;post&quot; action=&quot;?&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">6</th>
+  <th class="line-num">19</th>
+  <td class="line-code ">
+    <pre>#for $name, $value in $hidden_parameters</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">7</th>
+  <th class="line-num">20</th>
+  <td class="line-code ">
+    <pre>  &lt;input type=&quot;hidden&quot; name=&quot;$name&quot; value=&quot;$value&quot;/&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">8</th>
+  <th class="line-num">21</th>
+  <td class="line-code ">
+    <pre>#end for</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">98</th>
+  <th class="line-num">111</th>
+  <td class="line-code ">
+    <pre>    &lt;input id=&quot;timeline_limit_value&quot; type=&quot;text&quot; size=&quot;2&quot; name=&quot;limit&quot; value=&quot;$limit&quot;/&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">99</th>
+  <th class="line-num">112</th>
+  <td class="line-code ">
+    <pre>   &lt;/td&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">100</th>
+  <th class="line-num">113</th>
+  <td class="line-code ">
+    <pre>  &lt;/tr&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">114</th>
+  <td class="line-code diff_in">
+    <pre>  </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">115</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;tr&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">116</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;th id=&quot;auto_apply_label&quot;&gt;$_(&quot;Auto Update Time&quot;)&lt;/th&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">101</th>
+  <th class="line-num">117</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">118</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;td colspan=&quot;2&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">119</th>
+  <td class="line-code diff_in">
+    <pre>     &lt;input id=&quot;autoapply_value&quot; type=&quot;text&quot; size=&quot;2&quot; name=&quot;auto_apply&quot; value=&quot;$auto_apply&quot;/&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">120</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/td&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">121</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;th id=&quot;auto_apply_enabled_label&quot;&gt;$_(&quot;Enabled&quot;)&lt;/th&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">122</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;td colspan=&quot;2&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">123</th>
+  <td class="line-code diff_in">
+    <pre>    #if $auto_apply_enable == &quot;checked&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">124</th>
+  <td class="line-code diff_in">
+    <pre>	#set $enabled=&quot;checked=checked&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">125</th>
+  <td class="line-code diff_in">
+    <pre>    #else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">126</th>
+  <td class="line-code diff_in">
+    <pre>	#set $enabled=&quot;&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">127</th>
+  <td class="line-code diff_in">
+    <pre>    #end if</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">128</th>
+  <td class="line-code diff_in">
+    <pre>     &lt;input class=&quot;checkbox&quot; type=&quot;checkbox&quot; id=&quot;autoapply_enable_check_value&quot; name=&quot;auto_apply_enable_check&quot; &quot;$enabled&quot; onclick=settimer() /&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">129</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/td&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">130</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;/tr&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">131</th>
+  <td class="line-code diff_in">
+    <pre> </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">102</th>
+  <th class="line-num">132</th>
+  <td class="line-code ">
+    <pre>  &lt;tr style=&quot;text-align: center;&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">103</th>
+  <th class="line-num">133</th>
+  <td class="line-code ">
+    <pre>      &lt;td colspan=3&gt;&lt;input type=&quot;submit&quot; name=&quot;apply&quot; value=&quot;$_(&quot;Apply&quot;)&quot; /&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">104</th>
+  <th class="line-num">134</th>
+  <td class="line-code ">
+    <pre>      &lt;input type=&quot;submit&quot; name=&quot;_save&quot; value=&quot;$_(&quot;Save&quot;)&quot; /&gt;&lt;/td&gt;</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/prewikka/templates/TopLayout.tmpl	2007-07-06 17:39:38.000000000 -0400
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">4</th>
+  <th class="line-num">4</th>
+  <td class="line-code ">
+    <pre>#end def</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <th class="line-num">5</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">6</th>
+  <th class="line-num">6</th>
+  <td class="line-code ">
+    <pre>#block body</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">7</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>&lt;body class=&quot;$body_class&quot;<span>&gt;</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre>&lt;body class=&quot;$body_class&quot;<span> onload=&quot;beginautoapply()&quot;</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">8</th>
+  <th class="line-num">8</th>
+  <td class="line-code ">
+    <pre>	&lt;div id=&quot;top_view&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">9</th>
+  <th class="line-num">9</th>
+  <td class="line-code ">
+    <pre>		&lt;div id=&quot;top_view_header&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">10</th>
+  <th class="line-num">10</th>
+  <td class="line-code ">
+    <pre>			&lt;div id=&quot;top_view_header_software&quot;&gt;$prewikka.software&lt;/div&gt;</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/prewikka/views/alertlisting.py	2007-07-05 20:53:45.000000000 -0400
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1097</th>
+  <th class="line-num">1097</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;nav.from&quot;] = self.parameters[&quot;offset&quot;] + 1</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1098</th>
+  <th class="line-num">1098</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;nav.to&quot;] = self.parameters[&quot;offset&quot;] + len(self.dataset[&quot;messages&quot;])</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1099</th>
+  <th class="line-num">1099</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;limit&quot;] = self.parameters[&quot;limit&quot;]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1100</th>
+  <td class="line-code diff_in">
+    <pre>	self.dataset[&quot;auto_apply&quot;] = self.parameters[&quot;auto_apply&quot;]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1101</th>
+  <td class="line-code diff_in">
+    <pre>	self.dataset[&quot;auto_apply_enable&quot;] = self.parameters[&quot;auto_apply_enable&quot;]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1100</th>
+  <th class="line-num">1102</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;total&quot;] = total</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1101</th>
+  <th class="line-num">1103</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;correlation_alert_view&quot;] = False</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1102</th>
+  <th class="line-num">1104</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/prewikka/views/messagelisting.py	2007-07-06 19:07:37.000000000 -0400
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">108</th>
+  <th class="line-num">108</th>
+  <td class="line-code ">
+    <pre>        self.optional(&quot;timezone&quot;, str, &quot;frontend_localtime&quot;, save=True)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">109</th>
+  <th class="line-num">109</th>
+  <td class="line-code ">
+    <pre>        self.optional(&quot;delete&quot;, list, [ ])</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">110</th>
+  <th class="line-num">110</th>
+  <td class="line-code ">
+    <pre>        self.optional(&quot;apply&quot;, str)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">111</th>
+  <td class="line-code diff_in">
+    <pre>	self.optional(&quot;auto_apply&quot;, str,default=&quot;0:00&quot;, save=True)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre>	self.optional(&quot;auto_apply_enable&quot;,str, default=&quot;checked&quot;, save=True)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">111</th>
+  <th class="line-num">113</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">112</th>
+  <th class="line-num">114</th>
+  <td class="line-code ">
+    <pre>        # submit with an image passes the x and y coordinate values</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">113</th>
+  <th class="line-num">115</th>
+  <td class="line-code ">
+    <pre>        # where the image was clicked</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">215</th>
+  <th class="line-num">217</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;hidden_parameters&quot;] = [ [ &quot;view&quot;, self.view_name ] ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">216</th>
+  <th class="line-num">218</th>
+  <td class="line-code ">
+    <pre>        if self.parameters.has_key(&quot;timeline_end&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">217</th>
+  <th class="line-num">219</th>
+  <td class="line-code ">
+    <pre>            self.dataset[&quot;hidden_parameters&quot;].append((&quot;timeline_end&quot;, self.parameters[&quot;timeline_end&quot;]))</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">220</th>
+  <td class="line-code diff_in">
+    <pre>	if self.parameters.has_key(&quot;yaxis&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">221</th>
+  <td class="line-code diff_in">
+    <pre>	    self.dataset[&quot;hidden_parameters&quot;].append((&quot;yaxis&quot;, self.parameters[&quot;yaxis&quot;]))</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">222</th>
+  <td class="line-code diff_in">
+    <pre>	else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">223</th>
+  <td class="line-code diff_in">
+    <pre>	    self.dataset[&quot;hidden_parameters&quot;].append((&quot;yaxis&quot;, 0))</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">224</th>
+  <td class="line-code diff_in">
+    <pre>	if self.parameters.has_key(&quot;auto_apply_enable&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">225</th>
+  <td class="line-code diff_in">
+    <pre>	    self.dataset[&quot;hidden_parameters&quot;].append((&quot;auto_apply_enable&quot;, self.parameters[&quot;auto_apply_enable&quot;]))</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">226</th>
+  <td class="line-code diff_in">
+    <pre>	else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">227</th>
+  <td class="line-code diff_in">
+    <pre>	    self.dataset[&quot;hidden_parameters&quot;].append((&quot;auto_apply_enable&quot;, &quot;checked&quot;))</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">228</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">229</th>
+  <td class="line-code diff_in">
+    <pre>    def _autoapply(self):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">230</th>
+  <td class="line-code diff_in">
+    <pre>	if self.parameters.has_key(&quot;autoapply&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">231</th>
+  <td class="line-code diff_in">
+    <pre>	    self.dataset[&quot;auto.apply&quot;] = [ [ &quot;auto_apply&quot;, self.parameters[&quot;auto_apply&quot;] ] ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">232</th>
+  <td class="line-code diff_in">
+    <pre>	else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">233</th>
+  <td class="line-code diff_in">
+    <pre>	    self.dataset[&quot;auto.apply&quot;] = [ [ &quot;auto_apply&quot;, &quot;0:00&quot; ] ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">218</th>
+  <th class="line-num">234</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">219</th>
+  <th class="line-num">235</th>
+  <td class="line-code ">
+    <pre>    def _setTimelineNext(self, next):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">220</th>
+  <th class="line-num">236</th>
+  <td class="line-code ">
+    <pre>        parameters = self.parameters - [ &quot;offset&quot; ] + { &quot;timeline_end&quot;: int(next) }</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">223</th>
+  <th class="line-num">239</th>
+  <td class="line-code ">
+    <pre>    def _setTimelinePrev(self, prev):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">224</th>
+  <th class="line-num">240</th>
+  <td class="line-code ">
+    <pre>        parameters = self.parameters - [ &quot;offset&quot; ] + { &quot;timeline_end&quot;: int(prev) }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">225</th>
+  <th class="line-num">241</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;timeline.prev&quot;] = utils.create_link(self.view_name, parameters)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">226</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">242</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">227</th>
+  <th class="line-num">243</th>
+  <td class="line-code ">
+    <pre>    def _getTimelineRange(self):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">228</th>
+  <th class="line-num">244</th>
+  <td class="line-code ">
+    <pre>        if self.parameters.has_key(&quot;timeline_start&quot;):  </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">229</th>
+  <th class="line-num">245</th>
+  <td class="line-code ">
+    <pre>            start = _MyTime(self.parameters[&quot;timeline_start&quot;])  </pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

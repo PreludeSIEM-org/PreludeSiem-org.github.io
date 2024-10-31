@@ -1,0 +1,104 @@
+Prelude OSS 1.1.0
+=================
+
+
+* 2013-09-19, prewikka-1.1.0:
+
+New features :
+
+- Added a popup for filtering by analyzer model
+
+- Allowed filtering in sensors listing view
+
+- Added the host_url feature
+
+- Added a hideall/showall button in sensor listing
+
+Bug fixed :
+
+- Raise DatabaseSchemaError only if schema version does not match
+
+- More XHTML compliant : 
+  - Fixed some missing closing tags
+  - Fixed & encoding in URL
+  - Fixed empty options in aggregated filters,
+  - Fixed bad forms in users listing
+
+- Added missing _set_host_commands function
+
+- Fixed non-display of popup menu with Internet Explorer
+
+- SensorListing : fixed a malformed style attribute
+
+- Sensors and Heartbeat listing : Fixed a bug leading to the page top when clicking on a popup menu link
+
+- Fixed a display problem of url-related links : 
+  When the address category is unknown, two values are possible : None or "unknown".
+
+- Fixed prewikka layout : replace fixed positions by floats
+
+- Fixed #468 : Division by zero in stats
+
+- Fixed #495 : Request-URI Too Large
+
+- Fixed #377 : max() takes no keyword arguments
+
+- Set INNODB engine for MySQL
+
+- Fixed no css bug when adding a final slash to url
+
+- Config :
+  - Removed useless path to prewikka.conf
+  - Changed locales encoding to support non-latin characters in the top date
+
+- CGI module : removed useless imports
+
+- ModPythonHandler : Copy HTTP headers in Request.input_headers to share headers between modpython and internal http server
+
+- Packaging :
+  - RHEL6 : Added missing dependency to pycairo
+  - Added Makefile
+
+- Fixed #519 : Deprecation warnings in the apache log
+
+
+* 2013-09-18, prelude-lml-1.0.2:
+
+- Removed ruleset. Ruleset are now shipped with the prelude-lml-rules module.
+
+- Fixed recursive inclusion of headers
+
+- Fixed #520 : start problem with UDP and SELinux
+
+- Added /var/log/secure in the default monitored log files
+
+
+* 2013-09-20, prelude-correlator-1.0.2:
+
+- setup.py : Fixed files downloading behind proxies
+
+- RHEL : Added missing dependency to python-setuptools
+
+- RHEL : Fixed #517 : Prelude Correlator not starting (SELinux)
+
+- RHEL : Fixed #494 : Prelude Correlator not stopping
+
+- Added some debug infos
+
+
+* 2013-09-18, prelude-lml-rules 1.0.0
+
+- Initial release from prelude-lml ruleset
+
+- Updated rules for
+  - Juniper MAG SSLVPN (operador@seguridadx.com)
+  - Symantec Endpoint Protection Manager 12.1.2x (operador@seguridadx.com)
+  - Cisco ASA 8.2.x (operador@seguridadx.com)
+
+- New rules for
+  - Cisco ACE (operador@seguridadx.com)
+  - Cisco IPS module (operador@seguridadx.com)
+  - FreeRadius 1.1.7 (operador@seguridadx.com)
+  - Symantec Critical System Protection 5.2 (operador@seguridadx.com)
+  - IBM Data Power XG45 (operador@seguridadx.com)
+  - Windows Server Radius (firsovma@alfastrah.ru)

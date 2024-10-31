@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>/ - Repository - Prelude Correlator - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="sFBKmIcKwtm681pS9EKaC7Ocaf/4g+mFSDPfHDR/Ur2jfyL3Th7PWjBZUqjpCtNVz9cYYeKJsMuWvRuMsH9mvg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+  <script src="/javascripts/repository_navigation.js"></script>
+  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.prelude-siem.org/projects/prelude-correlator/repository/revisions.atom" />
+  <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" />
+</head>
+<body class="theme-Prelude project-prelude-correlator controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-correlator/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="changesets" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-correlator/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="changesets" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-correlator/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-correlator">Overview</a></li><li><a class="activity" href="/projects/prelude-correlator/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-correlator/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude-correlator/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-correlator/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-correlator/issues/calendar">Calendar</a></li><li><a class="repository selected" href="/projects/prelude-correlator/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+<div class="contextual">
+  
+<a class="icon icon-stats" href="/projects/prelude-correlator/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/prelude-correlator/repository" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />  <!-- Branches Dropdown -->
+    | Branch: 
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option>
+<option value="release-1.2">release-1.2</option>
+<option value="release-3.0">release-3.0</option>
+<option value="release-4.0">release-4.0</option>
+<option value="release-4.1">release-4.1</option>
+<option value="release-5.0">release-5.0</option>
+<option value="release-5.1">release-5.1</option></select>
+
+    | Tag: 
+    <select name="tag" id="tag"><option value="">&nbsp;</option>
+<option value="0.9.0-beta1">0.9.0-beta1</option>
+<option value="0.9.0-beta1a">0.9.0-beta1a</option>
+<option value="0.9.0-beta1b">0.9.0-beta1b</option>
+<option value="0.9.0-beta2">0.9.0-beta2</option>
+<option value="0.9.0-beta3">0.9.0-beta3</option>
+<option value="0.9.0-beta4">0.9.0-beta4</option>
+<option value="0.9.0-beta5">0.9.0-beta5</option>
+<option value="0.9.0-beta6">0.9.0-beta6</option>
+<option value="0.9.0-beta7">0.9.0-beta7</option>
+<option value="1.0.0">1.0.0</option>
+<option value="1.0.0rc1">1.0.0rc1</option>
+<option value="1.0.0rc2">1.0.0rc2</option>
+<option value="1.0.0rc3">1.0.0rc3</option>
+<option value="1.0.0rc4">1.0.0rc4</option>
+<option value="1.0.1">1.0.1</option>
+<option value="1.0.2">1.0.2</option>
+<option value="1.2.5">1.2.5</option>
+<option value="1.2.6">1.2.6</option>
+<option value="1.2.6rc1">1.2.6rc1</option>
+<option value="1.2.6rc2">1.2.6rc2</option>
+<option value="1.2.6rc4">1.2.6rc4</option>
+<option value="1.2.6rc5">1.2.6rc5</option>
+<option value="1.2.7">1.2.7</option>
+<option value="1.3.0alpha1">1.3.0alpha1</option>
+<option value="1.3.0beta1">1.3.0beta1</option>
+<option value="1.3.0beta2">1.3.0beta2</option>
+<option value="1.3.0rc1">1.3.0rc1</option>
+<option value="1.3.0rc2">1.3.0rc2</option>
+<option value="1.3.0rc3">1.3.0rc3</option>
+<option value="3.0.0">3.0.0</option>
+<option value="3.0.0rc4">3.0.0rc4</option>
+<option value="3.0.1">3.0.1</option>
+<option value="3.0.2">3.0.2</option>
+<option value="3.1.0">3.1.0</option>
+<option value="3.1.0rc1">3.1.0rc1</option>
+<option value="3.1.0rc2">3.1.0rc2</option>
+<option value="3.1.0rc3">3.1.0rc3</option>
+<option value="4.0.0">4.0.0</option>
+<option value="4.0.0beta1">4.0.0beta1</option>
+<option value="4.0.0beta2">4.0.0beta2</option>
+<option value="4.0.0rc1">4.0.0rc1</option>
+<option value="4.0.0rc2">4.0.0rc2</option>
+<option value="4.0.0rc3">4.0.0rc3</option>
+<option value="4.0.1">4.0.1</option>
+<option value="4.0.2">4.0.2</option>
+<option value="4.1.0">4.1.0</option>
+<option value="4.1.0beta1">4.1.0beta1</option>
+<option value="4.1.0beta2">4.1.0beta2</option>
+<option value="4.1.0rc1">4.1.0rc1</option>
+<option value="4.1.0rc2">4.1.0rc2</option>
+<option value="4.1.1">4.1.1</option>
+<option value="4.2.0rc1">4.2.0rc1</option>
+<option value="5.0.0">5.0.0</option>
+<option value="5.0.0beta1">5.0.0beta1</option>
+<option value="5.0.0beta2">5.0.0beta2</option>
+<option value="5.0.0rc1">5.0.0rc1</option>
+<option value="5.0.1">5.0.1</option>
+<option value="5.0.2">5.0.2</option>
+<option value="5.1.0">5.1.0</option>
+<option value="5.1.0alpha1">5.1.0alpha1</option>
+<option value="5.1.0beta1">5.1.0beta1</option>
+<option value="5.1.0rc1">5.1.0rc1</option>
+<option value="5.1.1">5.1.1</option>
+<option value="5.1.2">5.1.2</option>
+<option value="5.2.0">5.2.0</option>
+<option value="5.2.0beta1">5.2.0beta1</option>
+<option value="5.2.0beta2">5.2.0beta2</option>
+<option value="5.2.0rc1">5.2.0rc1</option>
+<option value="5.2.0rc2">5.2.0rc2</option>
+<option value="5.2.0rc3">5.2.0rc3</option>
+<option value="CSSTART">CSSTART</option></select>
+
+    | Revision: 
+    <input type="text" name="rev" id="rev" value="master" size="8" />
+</form>
+</div>
+
+<h2><a href="/projects/prelude-correlator/repository/revisions/master/show">root</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr id="8d777f385d3dfec8815d20f7496026dc" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('8d777f385d3dfec8815d20f7496026dc', '/projects/prelude-correlator/repository/revisions/master/show/data?depth=1&amp;parent_id=8d777f385d3dfec8815d20f7496026dc');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/prelude-correlator/repository/revisions/master/show/data">data</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="e3e2a9bfd88566b05001b02a3f51d286" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('e3e2a9bfd88566b05001b02a3f51d286', '/projects/prelude-correlator/repository/revisions/master/show/docs?depth=1&amp;parent_id=e3e2a9bfd88566b05001b02a3f51d286');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/prelude-correlator/repository/revisions/master/show/docs">docs</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="d83fc9f721223238c136aab0d4e13297" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('d83fc9f721223238c136aab0d4e13297', '/projects/prelude-correlator/repository/revisions/master/show/preludecorrelator?depth=1&amp;parent_id=d83fc9f721223238c136aab0d4e13297');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/prelude-correlator/repository/revisions/master/show/preludecorrelator">preludecorrelator</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a4f86f7bfc24194b276c22e0ef158197" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('a4f86f7bfc24194b276c22e0ef158197', '/projects/prelude-correlator/repository/revisions/master/show/rules?depth=1&amp;parent_id=a4f86f7bfc24194b276c22e0ef158197');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/prelude-correlator/repository/revisions/master/show/rules">rules</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="f97cff8cc7a7e091b3e7f0ac667b1a25" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('f97cff8cc7a7e091b3e7f0ac667b1a25', '/projects/prelude-correlator/repository/revisions/master/show/selinux?depth=1&amp;parent_id=f97cff8cc7a7e091b3e7f0ac667b1a25');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/prelude-correlator/repository/revisions/master/show/selinux">selinux</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/prelude-correlator/repository/changes/.gitignore?rev=master">.gitignore</a>
+</td>
+<td class="size">43 Bytes</td>
+</tr>
+<tr id="3d350169560e75d0cf9fc8e3574a3639" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/prelude-correlator/repository/changes/AUTHORS?rev=master">AUTHORS</a>
+</td>
+<td class="size">125 Bytes</td>
+</tr>
+<tr id="7116ef0705885343c9e1b2171a06be0e" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/prelude-correlator/repository/changes/COPYING?rev=master">COPYING</a>
+</td>
+<td class="size">17.7 KB</td>
+</tr>
+<tr id="f4907f33ea36d07323c734b54386c6b2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/prelude-correlator/repository/changes/HACKING.README?rev=master">HACKING.README</a>
+</td>
+<td class="size">794 Bytes</td>
+</tr>
+<tr id="6a755e7d228a2b491321dbae0a7a248b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/prelude-correlator/repository/changes/INSTALL?rev=master">INSTALL</a>
+</td>
+<td class="size">1.07 KB</td>
+</tr>
+<tr id="97c91a104c431d0c365565d3ac03ac13" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/prelude-correlator/repository/changes/MANIFEST.in?rev=master">MANIFEST.in</a>
+</td>
+<td class="size">192 Bytes</td>
+</tr>
+<tr id="ff4e2dc4962dc25a1512353299992c8d" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/prelude-correlator/repository/changes/NEWS?rev=master">NEWS</a>
+</td>
+<td class="size">17.6 KB</td>
+</tr>
+<tr id="c47c7c7383225ab55ff591cb59c41e6b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/prelude-correlator/repository/changes/README?rev=master">README</a>
+</td>
+<td class="size">1.45 KB</td>
+</tr>
+<tr id="7842d55a7f330595c7cdf838138b61d4" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/prelude-correlator/repository/changes/prelude-correlator.conf?rev=master">prelude-correlator.conf</a>
+</td>
+<td class="size">3.36 KB</td>
+</tr>
+<tr id="380c6a8ebbbce17d55d50ef17d3cf906" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/prelude-correlator/repository/changes/setup.cfg?rev=master">setup.cfg</a>
+</td>
+<td class="size">113 Bytes</td>
+</tr>
+<tr id="2eeaed663bd0d25b7e608891384b7298" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-x-python" href="/projects/prelude-correlator/repository/changes/setup.py?rev=master">setup.py</a>
+</td>
+<td class="size">5.81 KB</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"f32f03d861e5e8b9587f47c7643d2291fcc70694":{"parent_scmids":["f75e869a711eae0c81949441fc5c0a5204d9b0a4"],"rdmid":0,"refs":null,"scmid":"f32f03d861e5e8b9587f47c7643d2291fcc70694","href":"/projects/prelude-correlator/repository/revisions/f32f03d861e5e8b9587f47c7643d2291fcc70694","space":0},"79d4145ce0e07ff974af880687ae034b835021fd":{"parent_scmids":["f32f03d861e5e8b9587f47c7643d2291fcc70694"],"rdmid":1,"refs":null,"scmid":"79d4145ce0e07ff974af880687ae034b835021fd","href":"/projects/prelude-correlator/repository/revisions/79d4145ce0e07ff974af880687ae034b835021fd","space":0},"86e4d9ca387780bc2d18c16ca9cf8c622d21b653":{"parent_scmids":["79d4145ce0e07ff974af880687ae034b835021fd"],"rdmid":2,"refs":null,"scmid":"86e4d9ca387780bc2d18c16ca9cf8c622d21b653","href":"/projects/prelude-correlator/repository/revisions/86e4d9ca387780bc2d18c16ca9cf8c622d21b653","space":0},"85651a52bab785fe60d6c6a9c6c6ea405470ef0f":{"parent_scmids":["86e4d9ca387780bc2d18c16ca9cf8c622d21b653"],"rdmid":3,"refs":null,"scmid":"85651a52bab785fe60d6c6a9c6c6ea405470ef0f","href":"/projects/prelude-correlator/repository/revisions/85651a52bab785fe60d6c6a9c6c6ea405470ef0f","space":0},"f1c1b3e974b5fdc59090ec99c3478a5908dd2162":{"parent_scmids":["85651a52bab785fe60d6c6a9c6c6ea405470ef0f"],"rdmid":4,"refs":null,"scmid":"f1c1b3e974b5fdc59090ec99c3478a5908dd2162","href":"/projects/prelude-correlator/repository/revisions/f1c1b3e974b5fdc59090ec99c3478a5908dd2162","space":0},"18ba266b54b0d8196fc0143bbfa805332313661a":{"parent_scmids":["f1c1b3e974b5fdc59090ec99c3478a5908dd2162"],"rdmid":5,"refs":null,"scmid":"18ba266b54b0d8196fc0143bbfa805332313661a","href":"/projects/prelude-correlator/repository/revisions/18ba266b54b0d8196fc0143bbfa805332313661a","space":0},"e1cd00a9f31b04807e3698acbc59f7e6cbb46530":{"parent_scmids":["18ba266b54b0d8196fc0143bbfa805332313661a"],"rdmid":6,"refs":null,"scmid":"e1cd00a9f31b04807e3698acbc59f7e6cbb46530","href":"/projects/prelude-correlator/repository/revisions/e1cd00a9f31b04807e3698acbc59f7e6cbb46530","space":0},"4de695b58467db233597ee15c120f663969ab5a7":{"parent_scmids":["e1cd00a9f31b04807e3698acbc59f7e6cbb46530"],"rdmid":7,"refs":null,"scmid":"4de695b58467db233597ee15c120f663969ab5a7","href":"/projects/prelude-correlator/repository/revisions/4de695b58467db233597ee15c120f663969ab5a7","space":0},"714b50071073f204855e634b267d4c3552961cea":{"parent_scmids":["4de695b58467db233597ee15c120f663969ab5a7"],"rdmid":8,"refs":null,"scmid":"714b50071073f204855e634b267d4c3552961cea","href":"/projects/prelude-correlator/repository/revisions/714b50071073f204855e634b267d4c3552961cea","space":0},"8cd4749096f6b2e92020d7b7d9f612b17068c85a":{"parent_scmids":["714b50071073f204855e634b267d4c3552961cea"],"rdmid":9,"refs":"master","scmid":"8cd4749096f6b2e92020d7b7d9f612b17068c85a","href":"/projects/prelude-correlator/repository/revisions/8cd4749096f6b2e92020d7b7d9f612b17068c85a","space":0}},
+    0
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"></div>
+
+
+<form action="/projects/prelude-correlator/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 8cd47490" href="/projects/prelude-correlator/repository/revisions/8cd4749096f6b2e92020d7b7d9f612b17068c85a">8cd47490</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-1" value="8cd4749096f6b2e92020d7b7d9f612b17068c85a" onclick="$(&#39;#cbto-2&#39;).prop(&#39;checked&#39;,true);" checked="checked" /></td>
+<td class="checkbox"></td>
+<td class="committed_on">09/09/2020 11:38 AM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>Update NEWS, bump version</p>
+
+
+	<p>Change-Id: I5c8139a670e72d1267f569332848d9cca9eb1715</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 714b5007" href="/projects/prelude-correlator/repository/revisions/714b50071073f204855e634b267d4c3552961cea">714b5007</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-2" value="714b50071073f204855e634b267d4c3552961cea" onclick="$(&#39;#cbto-3&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-2" value="714b50071073f204855e634b267d4c3552961cea" onclick="if ($(&#39;#cb-2&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-1&#39;).prop(&#39;checked&#39;,true);}" checked="checked" /></td>
+<td class="committed_on">08/18/2020 02:44 PM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>Update NEWS, bump version</p>
+
+
+	<p>Change-Id: I76d9c87ce95f0d9f5556d07b5ea1f97c88bc54bb</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 4de695b5" href="/projects/prelude-correlator/repository/revisions/4de695b58467db233597ee15c120f663969ab5a7">4de695b5</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-3" value="4de695b58467db233597ee15c120f663969ab5a7" onclick="$(&#39;#cbto-4&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-3" value="4de695b58467db233597ee15c120f663969ab5a7" onclick="if ($(&#39;#cb-3&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-2&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">08/07/2020 01:22 PM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>[#3190] Take timeout into account for CTI data</p>
+
+
+	<p>Change-Id: I8918bd03532b5abcfd02b8b1f23448059b5d2307</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision e1cd00a9" href="/projects/prelude-correlator/repository/revisions/e1cd00a9f31b04807e3698acbc59f7e6cbb46530">e1cd00a9</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-4" value="e1cd00a9f31b04807e3698acbc59f7e6cbb46530" onclick="$(&#39;#cbto-5&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-4" value="e1cd00a9f31b04807e3698acbc59f7e6cbb46530" onclick="if ($(&#39;#cb-4&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-3&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">08/04/2020 12:53 PM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>Update NEWS, bump version</p>
+
+
+	<p>Change-Id: I0cd6e8d587b29448f9ffe1357a075ef6db955f51</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 18ba266b" href="/projects/prelude-correlator/repository/revisions/18ba266b54b0d8196fc0143bbfa805332313661a">18ba266b</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-5" value="18ba266b54b0d8196fc0143bbfa805332313661a" onclick="$(&#39;#cbto-6&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-5" value="18ba266b54b0d8196fc0143bbfa805332313661a" onclick="if ($(&#39;#cb-5&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-4&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/31/2020 09:50 AM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>[#4084] Change company name</p>
+
+
+	<p>Change-Id: I1aaa77c73473dffa39c974afe0025869a1b5ac25</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision f1c1b3e9" href="/projects/prelude-correlator/repository/revisions/f1c1b3e974b5fdc59090ec99c3478a5908dd2162">f1c1b3e9</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-6" value="f1c1b3e974b5fdc59090ec99c3478a5908dd2162" onclick="$(&#39;#cbto-7&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-6" value="f1c1b3e974b5fdc59090ec99c3478a5908dd2162" onclick="if ($(&#39;#cb-6&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-5&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/23/2020 01:34 PM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>Update NEWS, bump version</p>
+
+
+	<p>Change-Id: Ie36cb4524ceb654394bb2d81d7f510e7611b5432</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 85651a52" href="/projects/prelude-correlator/repository/revisions/85651a52bab785fe60d6c6a9c6c6ea405470ef0f">85651a52</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-7" value="85651a52bab785fe60d6c6a9c6c6ea405470ef0f" onclick="$(&#39;#cbto-8&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-7" value="85651a52bab785fe60d6c6a9c6c6ea405470ef0f" onclick="if ($(&#39;#cb-7&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-6&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/01/2020 02:46 PM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>[#4060] Fix DownloadCache initialization</p>
+
+
+	<p>Change-Id: Iaa355b942f5f5f9493c25ca83d5331ccb288f107</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 86e4d9ca" href="/projects/prelude-correlator/repository/revisions/86e4d9ca387780bc2d18c16ca9cf8c622d21b653">86e4d9ca</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-8" value="86e4d9ca387780bc2d18c16ca9cf8c622d21b653" onclick="$(&#39;#cbto-9&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-8" value="86e4d9ca387780bc2d18c16ca9cf8c622d21b653" onclick="if ($(&#39;#cb-8&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-7&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 02:56 PM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>Update NEWS, bump version</p>
+
+
+	<p>Change-Id: I47df2a8fd60718ff74d1735bf87daacb24b49d2d</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 79d4145c" href="/projects/prelude-correlator/repository/revisions/79d4145ce0e07ff974af880687ae034b835021fd">79d4145c</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-9" value="79d4145ce0e07ff974af880687ae034b835021fd" onclick="$(&#39;#cbto-10&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-9" value="79d4145ce0e07ff974af880687ae034b835021fd" onclick="if ($(&#39;#cb-9&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-8&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 02:05 PM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>[#4055] Add SELinux rule for service startup</p>
+
+
+	<p>Change-Id: I25700c30bb28af9d24f7523db94b7a3a29c2a636</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision f32f03d8" href="/projects/prelude-correlator/repository/revisions/f32f03d861e5e8b9587f47c7643d2291fcc70694">f32f03d8</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-10" value="f32f03d861e5e8b9587f47c7643d2291fcc70694" onclick="if ($(&#39;#cb-10&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-9&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/22/2020 11:53 AM</td>
+<td class="author">Antoine LUONG</td>
+<td class="comments"><p>Update NEWS, bump version</p>
+
+
+	<p>Change-Id: I4c9951eb7cc69ec7cb6211aab7d5695fecdd8efd</p></td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="View differences" />
+</form></div>
+
+  <p>
+    <a href="/projects/prelude-correlator/repository/revisions">View all revisions</a>
+    |
+    <a href="/projects/prelude-correlator/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="/projects/prelude-correlator/repository/revisions.atom">Atom</a></span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

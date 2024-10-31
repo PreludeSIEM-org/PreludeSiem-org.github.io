@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PRELUDE SIEM: Devel</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/prelude/boards/2.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/prelude/boards/2"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2019-07-12T09:22:10Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>Devel: RE: [prelude-correlator] alert is not triggered when receiving continuous logs in a context</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/222?r=227#message-227"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/222?r=227#message-227</id>
+    <updated>2019-07-12T09:22:10Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;This behavior will change in 5.1.0.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: [prelude-correlator] alert is not triggered when receiving continuous logs in a context</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/222?r=226#message-226"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/222?r=226#message-226</id>
+    <updated>2019-04-16T15:44:04Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Maybe we should have an additional threshold causing the alert to be sent regardless of the timer when reached.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: xmlmod plugin without format options writes all the alerts in the same line</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/225"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/225</id>
+    <updated>2019-03-29T12:01:51Z</updated>
+    <author>
+      <name>Steven Shawn</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;While trying to forward XML Prelude alerts (using the xmlmod plugin output) to a centralized machine through syslog or filebeat I realized that If you haven't enabled the format option, each new alert is written at the same line, so, for example, filebeat doesn't detect that a new alert has been written and consecuently is not sent. The format option I'm referring to is:&lt;/p&gt;
+
+
+&lt;pre&gt;
+# Tells Xmlmod to produce a pretty, human-readable xml output:
+# format
+&lt;/pre&gt;
+
+	&lt;p&gt;As I'm not interested in having a human-redeable xml output I disabled it.&lt;/p&gt;
+
+
+	&lt;p&gt;A quick workaround to solve this:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="python syntaxhl"&gt;&lt;span class="CodeRay"&gt;static &lt;span class="predefined"&gt;int&lt;/span&gt; file_write(void *context, const char *buf, &lt;span class="predefined"&gt;int&lt;/span&gt; &lt;span class="predefined"&gt;len&lt;/span&gt;)
+{
+        size_t ret;
+
+        ret = fwrite(buf, &lt;span class="integer"&gt;1&lt;/span&gt;, (size_t) &lt;span class="predefined"&gt;len&lt;/span&gt;, context);
+        &lt;span class="keyword"&gt;if&lt;/span&gt; ( ret != (size_t ) &lt;span class="predefined"&gt;len&lt;/span&gt; &amp;#38;&amp;#38; ferror((FILE *) context) ) {
+                prelude_log(PRELUDE_LOG_ERR, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;could not write IDMEF-XML data: '%s'.&lt;/span&gt;&lt;span class="char"&gt;\n&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, strerror(errno));
+                &lt;span class="keyword"&gt;return&lt;/span&gt; -&lt;span class="integer"&gt;1&lt;/span&gt;;
+        }
+        fwrite(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="char"&gt;\n&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, sizeof(char), &lt;span class="integer"&gt;1&lt;/span&gt;, context);
+
+        &lt;span class="keyword"&gt;return&lt;/span&gt; (&lt;span class="predefined"&gt;int&lt;/span&gt;) ret;
+}
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;The addition is&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="python syntaxhl"&gt;&lt;span class="CodeRay"&gt;fwrite(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="char"&gt;\n&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, sizeof(char), &lt;span class="integer"&gt;1&lt;/span&gt;, context);
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;This is not the perfect solution, so I recommend to analyze the distinct options. The best one, in my opinion, is to append "/n" at the end of buf.&lt;/p&gt;
+
+
+	&lt;p&gt;Thank you&lt;/p&gt;
+
+
+	&lt;p&gt;Steven&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: [prelude-correlator] alert is not triggered when receiving continuous logs in a context</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/222"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/222</id>
+    <updated>2019-03-28T10:15:06Z</updated>
+    <author>
+      <name>Marcus Smith</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;The detected issue is described at&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a class="external" href="https://www.prelude-siem.org/boards/1/topics/218"&gt;https://www.prelude-siem.org/boards/1/topics/218&lt;/a&gt;.&lt;/p&gt;
+
+
+	&lt;p&gt;To sum up, it seems that in order to raise an alert, two conditions must be fullfiled:&lt;/p&gt;
+
+
+	&lt;p&gt;1. the expire (time) of the context ran out&lt;br /&gt;2. the threshold reaches the limit value&lt;/p&gt;
+
+
+	&lt;p&gt;So, in a use case when I'm receiving continuous logs, despite the threshold is reached, the timer would be reset continuosly and the alert will not be triggered until we stop receiving logs (I tested it). And that supposes that I won't notice that I'm receiving an EventStorm for example until it ended.&lt;/p&gt;
+
+
+	&lt;p&gt;So there are two options to solve this issue:&lt;/p&gt;
+
+
+	&lt;p&gt;1. Avoid the timer reset each time a new context is called/updated&lt;/p&gt;
+
+
+	&lt;p&gt;Changing ctx = search(name, idmef, update=True) to ctx = search(name, idmef, update=False) at the new function&lt;/p&gt;
+
+
+	&lt;p&gt;2. Trigger an alert when a context reaches the threshold value, regardless the expire value. (I didn't analyze where this process takes place)&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: Just a comment on possible roadmap to the future</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/107?r=115#message-115"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/107?r=115#message-115</id>
+    <updated>2016-12-21T20:51:58Z</updated>
+    <author>
+      <name>Tony Su</name>
+      <email>tonysu@su-networking.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Thx for the clarification!&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: Just a comment on possible roadmap to the future</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/107?r=110#message-110"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/107?r=110#message-110</id>
+    <updated>2016-12-20T08:17:44Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello&lt;/p&gt;
+
+
+	&lt;p&gt;Thanks for explaining your point around NoSQL and Elasticsearch.&lt;/p&gt;
+
+
+	&lt;p&gt;But, this is Prelude OSS and not Prelude SIEM. Prelude OSS do only the alert part (real time part).&lt;br /&gt;With Prelude SIEM (Commercial), we include the raw data (Syslog and others) through elasticsearch since 2 years. We also include many other things : behavior analytics, dashboard, reporting, incidents, administration, authentication, etc.&lt;/p&gt;
+
+
+	&lt;p&gt;The roadmap of Prelude OSS does not include the integration of the raw data part, sorry. But if you want, you can contribute to the projet to add the support.&lt;/p&gt;
+
+
+	&lt;p&gt;Every year, we do an audit of the performance part with experts in database (relational and NoSQL) and for now, our needs keep that relational database is the best choice for IDMEF database.&lt;/p&gt;
+
+
+	&lt;p&gt;If you have more than 10000 alerts peer day, then you use Prelude in the wrong way, it is not a log management system. &lt;br /&gt;Normally, you have to check every alerts, why it comes, and so on.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: Just a comment on possible roadmap to the future</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/107"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/107</id>
+    <updated>2016-12-19T19:30:17Z</updated>
+    <author>
+      <name>Tony Su</name>
+      <email>tonysu@su-networking.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;As I'm working my way through deploying Prelude for the first time, there are a number of things in the documented architecture where I'd like to at least just raise suggestions... Which would address some things I anticipate down the road and maybe are not immediately imperative.&lt;/p&gt;
+
+
+	&lt;p&gt;First,&lt;br /&gt;The use of a relational database.&lt;br /&gt;Although proven for its reliability and performance, I wonder if it's really the best choice for an app like Prelude which requires aggregating enormous amounts of data, in fact the more that can be accumulated from more sources and over a longer period of time, the better the analysis should typically become.&lt;/p&gt;
+
+
+	&lt;p&gt;A relational database has two fundamental limitations that are hard obstructions... The inability to modify the original schema and physical data storage limitations. Clustering can incrementally increase storage but with great effort.&lt;/p&gt;
+
+
+	&lt;p&gt;NoSQL databases, particularly Hadoop style storage have no such limitations. Static schemas are replaced with the ability to just add new data types as you wish on demand and relational aspects are abstracted into a meta layer that can be re-configured easily. Also, hadoop type storage and NoSQL like Cassandra can expand storage simply by just bringing up a new node as a member of the cluster, and today the various administrative tasks like joining, node communication and data mapping are done automatically.&lt;/p&gt;
+
+
+	&lt;p&gt;Secondly,&lt;br /&gt;I can see that Prelude is in its nascient beginnings of implementing an Agent based distributed architecture with its many advantages (decentralized computing load distribution, local administration and configuration) compared to centralization (better centralized control).&lt;/p&gt;
+
+
+	&lt;p&gt;To address the above issues and objectives,&lt;br /&gt;You may or may not know about the Elasticsearch project (&lt;a class="external" href="http://elastic.co"&gt;http://elastic.co&lt;/a&gt;) which I've also been using. Elasticsearch is a competitor to, and a solid alternative to the pure Hadoop/Solr/Pig/Hive Big Data analytical solutions typically used for the biggest Web search engines, IBM Watson which was a Jeopardy! game contestant against humans in 2011(?), and much more. As a re-imagination of the traditional Hadoop stack, a number of features were implemented in Elasticsearch&lt;/p&gt;
+
+
+	&lt;p&gt;- As much as possible, instead of requiring a different language for each component in the Hadoop stack, everything in the Elasticsearch stack is based on the same web languages of HTML, javascript and JSON, optionally secured with SSL/TLS. By supporting web protocols and interfaces, curl is typically used for consoles.&lt;br /&gt;- All analytics, data structures and data movement is based on JSON&lt;br /&gt;- As described above, limitless storage by adding inexpensive nodes to the cluster.&lt;br /&gt;- Use Logstash as the main data aggregator and conversion agent, which uses standard grok to create filters that parse data. Links to existing plugins and filters and more is here,&lt;br /&gt;&lt;a class="external" href="https://www.elastic.co/guide/en/logstash/current/index.html"&gt;https://www.elastic.co/guide/en/logstash/current/index.html&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;I would think that you only need to create IDMEF and IODEF filters(actually definitions) to immediately import or export data from everything else Logstash can already translate into and out of Prelude. And, if you want to inject something into the data like metadata tags, Logstash can do that for you, too.&lt;/p&gt;
+
+
+	&lt;p&gt;In fact, should you wish to take a closer look at the Elasticsearch stack to see what you might like to assimilate, you'll notice that its three major components (Kibana which is the web query interface, Elasticsearch itself which is generally storage and Logstash which is the data aggregator and convertor) are completely independent components on their own which can be deployed completely independently or replaced... You just need to need to know how to "talk JSON."&lt;/p&gt;
+
+
+	&lt;p&gt;In any case, am very interested in getting Prelude as it now exists off the ground...&lt;br /&gt;&lt;img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: Development of an "attack map" plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/70?r=75#message-75"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/70?r=75#message-75</id>
+    <updated>2016-08-01T16:41:44Z</updated>
+    <author>
+      <name>David Casier</name>
+      <email>david@casier-deroland.fr</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Thanks, with your helpp, I've been able to produce a first basic fonctionnal version of my plugin.&lt;/p&gt;
+
+
+	&lt;p&gt;You can find it &lt;a href="https://github.com/davidcasier/preludeplugin-alertmap" class="external"&gt;here&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;There is still however a bug; Any Ajax request prevent the map from loading and unbind javascript functions linked to buttons. Reloading the map fix the issue, but in order to use more function of the map API, I still need to fix that bug.&lt;/p&gt;
+
+
+	&lt;p&gt;I suppose this is caused by the fact that the javascript is not loaded a second time after an ajax request, but i didnt found how to force the javascript reloading.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: Plugin Prewikka</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/74"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/74</id>
+    <updated>2016-08-01T14:07:50Z</updated>
+    <author>
+      <name>Anis OUARED</name>
+      <email>anis.ouared@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;br /&gt;I am currently developing an API for Prelude I want to know what are the functions of prewikka to use in order to make a Prewikka plugin ?&lt;/p&gt;
+
+
+	&lt;p&gt;Best regards.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: Development of an "attack map" plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/70?r=73#message-73"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/70?r=73#message-73</id>
+    <updated>2016-07-21T17:46:36Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;You should use the libpreludedb API for this. For example in Python:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="python syntaxhl"&gt;&lt;span class="CodeRay"&gt;&lt;span class="keyword"&gt;import&lt;/span&gt; &lt;span class="include"&gt;preludedb&lt;/span&gt;
+
+db = preludedb.DB(preludedb.SQL(&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;type=mysql host=localhost name=prelude user=prelude pass=prelude&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;))
+
+&lt;span class="comment"&gt;# Get the first 10 classifications of high-severity alerts&lt;/span&gt;
+results = db.getValues([&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;count(alert.classification.text)/order_desc&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;alert.classification.text/group_by&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;],
+                       criteria=&lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;alert.assessment.impact.severity == 'high'&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, limit=&lt;span class="integer"&gt;10&lt;/span&gt;, offset=&lt;span class="integer"&gt;0&lt;/span&gt;)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;More info here: &lt;a class="wiki-page" href="http://www.prelude-siem.org/projects/prelude/wiki/LibpreludedbAPI"&gt;LibpreludedbAPI&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: Development of an "attack map" plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/70?r=72#message-72"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/70?r=72#message-72</id>
+    <updated>2016-07-21T11:28:56Z</updated>
+    <author>
+      <name>David Casier</name>
+      <email>david@casier-deroland.fr</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;Thanks for your help. I've found a better script for the map visualization, using Javascript rather than Python. &lt;br /&gt;Also, is it possible to query the alert database from the plugin through a simple SQL command or is there already implemented method for that? I'm trying to query the IP in order to add markers on the map.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: Development of an "attack map" plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/70?r=71#message-71"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/70?r=71#message-71</id>
+    <updated>2016-07-19T18:25:33Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;The pyplot.show() function is not adapted to web development, you cannot use it here. You need to export to png format, and then use &amp;lt;img&amp;gt; html tags.&lt;/p&gt;
+
+
+	&lt;p&gt;The ConfigParserSection.get() function is the same as the classic dict get() since ConfigParserSection inherits from OrderedDict.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: Development of an "attack map" plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/70"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/70</id>
+    <updated>2016-07-19T11:09:35Z</updated>
+    <author>
+      <name>David Casier</name>
+      <email>david@casier-deroland.fr</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;I'm a student in computer science and Iâ€™m currently creating a prewikka plugin which would display the localisation of attacks on a map, through the geolocalisation of Ip addresses.&lt;br /&gt;I currently use a modified version of &lt;a href="https://github.com/pierrrrrrre/PyGeoIpMap" class="external"&gt;this&lt;/a&gt; python script to geolocalize IPs and create the map as an png file.&lt;/p&gt;
+
+
+	&lt;p&gt;The problem of this method is that the generation of the map (as a png image) can take a bit of time, which can be troublesome if it need to be updated regularly.&lt;/p&gt;
+
+
+	&lt;p&gt;Do you happen to know if it is possible to include a pyplot image in a cheetah template? I didnâ€™t found any documentation about this. I tried to create a simple pyplot graph and use pyplot.show() in the plugin, but it then keep loading endlessly without displaying an error.&lt;/p&gt;
+
+
+	&lt;p&gt;Also how does the _config.get() function work in prewikka? The example in the plugin tutorial isn't clear about what the parameters do.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: Creating a more advanced plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/57?r=66#message-66"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/57?r=66#message-66</id>
+    <updated>2016-05-20T12:38:41Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Can we see the output of the "python setup.py install" command?&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Devel: RE: Creating a more advanced plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/2/topics/57?r=65#message-65"/>
+    <id>http://www.prelude-siem.org/boards/2/topics/57?r=65#message-65</id>
+    <updated>2016-05-18T14:13:21Z</updated>
+    <author>
+      <name>hacen bani</name>
+      <email>hana8attia@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;thank you for the response , &lt;br /&gt;well , when I run it from python console I get this :&lt;/p&gt;
+
+
+&lt;pre&gt;
+&amp;gt;&amp;gt;&amp;gt; from prewikka import view
+&amp;gt;&amp;gt;&amp;gt; 
+&amp;gt;&amp;gt;&amp;gt; view.View
+&amp;lt;class 'prewikka.view.View'&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; 
+&lt;/pre&gt;
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,275 @@
+Prelude OSS 3.1.0
+=================
+
+
+* 2016-09-14, libprelude-3.1.0
+------------------------------
+
+Author: Thomas 
+
+- Fix idmef_path_(get|set) docstring
+
+- Fix configure --with-ruby
+
+- Various autotools fixes
+
+    - Fix detection of lua 5.2
+    - Fix python uninstall with /usr and /usr/local
+    - Fix perl binding cleaning
+    - Make the perl binding use LDFLAGS
+    - Enable configure to detect ruby with pkg-config
+    - Fix cleaning of lex and yacc files
+    - Make libprelude-error take CFLAGS into account
+    - Rename configure.in to configure.ac
+
+- Missing dependencies in README
+
+- Update FSF address and copyrights
+
+Author: Yoann Vandoorselaere
+
+- Add a JSON export/import module
+
+- Update SWIG and GnuLib code
+
+- Various code fixes
+
+    - idmef_data_to_string() can output binary string stored as "char-string"
+    - Handle EAGAIN even if it's not supposed to happen
+    - Implement prelude_msg_get_data()
+    - API for atomic message write
+    - Improved message handling
+
+Author: Sélim Menouar
+
+- Add libprelude-config man page
+
+
+* 2016-09-14, libpreludedb-3.1.0
+--------------------------------
+
+Author: Thomas 
+
+- Rename configure.in to configure.ac
+
+Author: Yoann Vandoorselaere
+
+- Support DISTINCT
+
+- Prefix Flex/Yacc public symbol
+
+- Add --optimize delete operation parameter
+
+- Code cleanup, error handling improvement
+
+- Check libpq / PostgreSQL server compatibility
+
+    libpq < 9.0 is not capable of unescaping hexadecimal bytea output,
+    which is the default in PostgreSQL server 9.0 and newer.
+
+- Update SWIG and GnuLib code
+
+Author: Sélim Menouar
+
+- Add libpreludedb-config man page
+
+
+* 2016-09-14, prelude-correlator-3.1.0
+--------------------------------------
+
+Author: Antoine Luong
+
+- Prevent potential import errors when loading contexts
+
+- Rename analyzer model to 'Prelude Correlator'
+
+- Minor fixes in exception handling
+
+Author: Thomas 
+
+- Make the context able to access plugins
+
+- Disable flatten when getting alert.source(*) in BruteForce
+
+- Missing import in prelude-correlator plugin manager
+
+Author: Abdel Elmili
+
+- Add --profile option to prelude-correlator
+
+    The goal of adding this option is to allow operators to run more than
+    one correlator on the same host. Each correlator will use a different
+    profile.
+
+Author: Sélim Menouar
+
+- Clearly separate File and IDMEFClient inputs
+
+
+* 2016-09-14, prelude-lml-3.1.0
+-------------------------------
+
+Author: Thomas 
+
+- Allow the libev on system to be used
+
+- Rename configure.in to configure.ac
+
+Author: Yoann Vandoorselaere
+
+- Update libev and GnuLib code
+
+
+* 2016-09-14, prelude-lml-rules-3.1.0
+-------------------------------------
+
+Author: Thomas 
+
+- Update FSF address and copyrights
+
+- Fix GRSecurity and Snare rules
+
+
+* 2016-09-14, prelude-manager-3.1.0
+-----------------------------------
+
+Author: Thomas 
+
+- Rename --with-libwrap-prefix to --with-libwrap
+
+- Fix configure for --enable-libmaxminddb
+
+- Fix configure for --with-libwrap-prefix=yes
+
+- Allow the libev on system to be used
+
+    Thanks to Gokturk Yuksek <gokturk@gentoo.org>
+
+- Rename configure.in to configure.ac
+
+Author: Song Tran
+
+- Add SELinux policy for Unix socket connection
+
+Author: Yoann Vandoorselaere
+
+- Reverse relaying code fixes / performance improvements
+
+    - Reduce per connection memory footprint
+    - Use hash-table for analyzerid->client lookup performance
+    - Reading events from multiple agents using the same analyzerid now works (even though it is not advised)
+
+- Update libev and GnuLib code
+
+- Fix possible debug and smtp plugins assertions
+
+- Fix memory corruption with multiple reverse relay
+
+- Fix double free in case of failover saving error
+
+- Prevent some geoip warnings
+
+Author: Antoine Luong
+
+- Fix assertion errors in thresholding plugin
+
+
+* 2016-09-14, prewikka-3.1.0
+----------------------------
+
+Author: Antoine Luong
+
+- Language fix in Babel polyfill
+
+- Add missing import detected by pylint
+
+- Fix endless reloading loop in Apps
+
+- Fix undefined variable for NTEventLog
+
+- Translate error messages in interface, but not in logs
+
+- Fix a bug with the '%' character in IDMEF criteria
+
+- Control menu display fixes
+
+- Fix hook in agents returning None
+
+- Add a Cheetah filter for JSON
+
+- Use of free-jqGrid for agent listing
+
+- Automatic query escaping for Prewikka database
+
+- Fix the condition for an agent to be considered offline
+
+Author: Yoann Vandoorselaere
+
+- Implement use_lock() decorator, use_transaction() improvement
+
+- Logout / session expiration fixes
+
+    - logout redirect to Prewikka baseurl or to optional redirect argument
+    - Prevent location.reload() on session expire to avoid POST warning
+
+- Normalize parameters only when using view.respond()
+
+- PrewikkaResponse() allow empty headers argument
+
+- Correctly propagate error code in case of HTML error response
+
+- Support view that does not require authentication
+
+- Headers can now be specified in PrewikkaResponse
+
+- sendStream fixes, "close" event is not part of the protocol
+
+- PrewikkaTemplate now provides  __json__
+
+- Configuration handling overhaul
+
+- Implement a deprecated() decorator
+
+- Rework hookmanager API
+
+- Standardize user/request access
+
+Author: Sélim Menouar
+
+- Avoid double iteration in CachingIterator
+
+- Use response for ajax host url
+
+- Display CorrelationAlert children in widget
+
+- Add option to disable error traceback
+
+- Add readfp and read_string methods in ConfigParser
+
+- Add a JSON type in view parameters
+
+- Prewikka notification handling
+
+- Add a PrewikkaResponse object
+
+Author: Thomas 
+
+- Fix WSGI headers to be a standard dict
+
+- Fix behavior of get_users_by_properties function
+
+- Fix prewikka.wsgi permissions
+
+Author: Francois 
+
+- UPSERT for custom filters
+
+- Support multiple extra mainmenu entry
+
+- Allow spaces in sub-section names
+
+Author: Abdel Elmili
+
+- QueryResults rework
+
+- Add return type in dataproviders

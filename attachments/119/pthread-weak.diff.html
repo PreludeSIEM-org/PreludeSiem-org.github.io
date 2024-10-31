@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>pthread-weak.diff - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ThL2Lmrg1wReLZfjeQeGK2uulZt/qdiHuvx8OWt8C3pdPZ5Bo/Tah9SHnxlkT891F+XkBWWjgclkcrip73w/eQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-libprelude controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>pthread-weak.diff</h2>
+
+<div class="attachments">
+<p>Declare pthread symbols weak - v3 - 
+   <span class="author"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a>, 05/06/2008 03:29 PM</span></p>
+<p><a href="/attachments/download/119/pthread-weak.diff">Download</a>   <span class="size">(5.23 KB)</span></p>
+</div>
+
+  <form action="/attachments/119/pthread-weak.diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      src/prelude-async.c
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">82</th>
+  <th class="line-num">82</th>
+  <td class="line-code ">
+    <pre># endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">83</th>
+  <th class="line-num">83</th>
+  <td class="line-code ">
+    <pre>#endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">84</th>
+  <th class="line-num">84</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">85</th>
+  <td class="line-code diff_in">
+    <pre>/*</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">86</th>
+  <td class="line-code diff_in">
+    <pre> * In case weak symbol are supported, we should define them for symbols</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">87</th>
+  <td class="line-code diff_in">
+    <pre> * used in this implementation so that an application linking to</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">88</th>
+  <td class="line-code diff_in">
+    <pre> * libprelude without using pthreads flags won&#39;t give undefined</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">89</th>
+  <td class="line-code diff_in">
+    <pre> * reference.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">90</th>
+  <td class="line-code diff_in">
+    <pre> */</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">91</th>
+  <td class="line-code diff_in">
+    <pre>#ifdef USE_POSIX_THREADS_WEAK</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">92</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_create</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">93</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_join</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">94</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_sigmask</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">95</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre># ifdef HAVE_PTHREAD_ATFORK</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>#  pragma weak pthread_atfork</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">98</th>
+  <td class="line-code diff_in">
+    <pre># endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">99</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">100</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutex_init</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">101</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutex_lock</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">102</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutex_unlock</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">103</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutex_destroy</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">104</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_init</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">106</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_wait</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">107</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_signal</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">108</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_timedwait</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">109</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_destroy</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">110</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">111</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_condattr_init</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_condattr_setclock</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">113</th>
+  <td class="line-code diff_in">
+    <pre>#endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">114</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">85</th>
+  <th class="line-num">115</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">86</th>
+  <th class="line-num">116</th>
+  <td class="line-code ">
+    <pre>static PRELUDE_LIST(joblist);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">87</th>
+  <th class="line-num">117</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      src/prelude-thread.c
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">42</th>
+  <th class="line-num">42</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">43</th>
+  <th class="line-num">43</th>
+  <td class="line-code ">
+    <pre>#ifdef USE_POSIX_THREADS_WEAK</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">44</th>
+  <th class="line-num">44</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">45</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_create</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">46</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_join</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">47</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_sigmask</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">48</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_once</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">49</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_exit</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">50</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">51</th>
+  <td class="line-code diff_in">
+    <pre># ifdef HAVE_PTHREAD_ATFORK</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">52</th>
+  <td class="line-code diff_in">
+    <pre>#  pragma weak pthread_atfork</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">53</th>
+  <td class="line-code diff_in">
+    <pre># endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">54</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">55</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutex_init</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">56</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutex_lock</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">57</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutex_unlock</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">58</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutex_destroy</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">59</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">60</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutexattr_init</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">61</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutexattr_settype</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">62</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_mutexattr_destroy</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">63</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">64</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_init</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">65</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_wait</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_signal</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">67</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_broadcast</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">68</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_timedwait</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">69</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_cond_destroy</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">70</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">71</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_condattr_init</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">72</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_condattr_setclock</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">73</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">74</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_getspecific</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">75</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_setspecific</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">76</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">77</th>
+  <td class="line-code diff_in">
+    <pre># pragma weak pthread_key_delete</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">78</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">79</th>
+  <td class="line-code diff_in">
+    <pre># ifndef pthread_self</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">80</th>
+  <td class="line-code diff_in">
+    <pre>#  pragma weak pthread_self</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">81</th>
+  <td class="line-code diff_in">
+    <pre># endif</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">82</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">45</th>
+  <th class="line-num">83</th>
+  <td class="line-code ">
+    <pre># if !PTHREAD_IN_USE_DETECTION_HARD</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">46</th>
+  <th class="line-num">84</th>
+  <td class="line-code ">
+    <pre>#  pragma weak pthread_cancel</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">47</th>
+  <th class="line-num">85</th>
+  <td class="line-code ">
+    <pre>#  define __prelude_thread_in_use() (pthread_cancel != NULL)</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">91</th>
+  <th class="line-num">129</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">92</th>
+  <th class="line-num">130</th>
+  <td class="line-code ">
+    <pre>        if ( ! need_init )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">93</th>
+  <th class="line-num">131</th>
+  <td class="line-code ">
+    <pre>                return;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">94</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">132</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">95</th>
+  <th class="line-num">133</th>
+  <td class="line-code ">
+    <pre>        pthread_key_create(&amp;thread_error_key, thread_error_key_destroy);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">96</th>
+  <th class="line-num">134</th>
+  <td class="line-code ">
+    <pre>        need_init = FALSE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">97</th>
+  <th class="line-num">135</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">171</th>
+  <th class="line-num">209</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">172</th>
+  <th class="line-num">210</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">173</th>
+  <th class="line-num">211</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">174</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>int prelude_thread_condattr_init(pthread_condattr_t *attr)<span> </span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">212</th>
+  <td class="line-code diff_in">
+    <pre>int prelude_thread_condattr_init(pthread_condattr_t *attr)<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">175</th>
+  <th class="line-num">213</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">176</th>
+  <th class="line-num">214</th>
+  <td class="line-code ">
+    <pre>        THR_FUNC(pthread_condattr_init(attr));</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">177</th>
+  <th class="line-num">215</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">228</th>
+  <th class="line-num">266</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">229</th>
+  <th class="line-num">267</th>
+  <td class="line-code ">
+    <pre>        if ( use_thread ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">230</th>
+  <th class="line-num">268</th>
+  <td class="line-code ">
+    <pre>                char *previous;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">231</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">269</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">232</th>
+  <th class="line-num">270</th>
+  <td class="line-code ">
+    <pre>                previous = pthread_getspecific(thread_error_key);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">233</th>
+  <th class="line-num">271</th>
+  <td class="line-code ">
+    <pre>                if ( previous )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">234</th>
+  <th class="line-num">272</th>
+  <td class="line-code ">
+    <pre>                        free(previous);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">235</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">273</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">236</th>
+  <th class="line-num">274</th>
+  <td class="line-code ">
+    <pre>                pthread_key_delete(thread_error_key);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">237</th>
+  <th class="line-num">275</th>
+  <td class="line-code ">
+    <pre>                need_init = TRUE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">238</th>
+  <th class="line-num">276</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">239</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">277</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">240</th>
+  <th class="line-num">278</th>
+  <td class="line-code ">
+    <pre>        else if ( shared_error_buffer ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">241</th>
+  <th class="line-num">279</th>
+  <td class="line-code ">
+    <pre>                free(shared_error_buffer);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">242</th>
+  <th class="line-num">280</th>
+  <td class="line-code ">
+    <pre>                shared_error_buffer = NULL;</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">262</th>
+  <th class="line-num">300</th>
+  <td class="line-code ">
+    <pre>        int ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">263</th>
+  <th class="line-num">301</th>
+  <td class="line-code ">
+    <pre>        void *retval;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">264</th>
+  <th class="line-num">302</th>
+  <td class="line-code ">
+    <pre>        pthread_t thread;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">265</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">303</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">266</th>
+  <th class="line-num">304</th>
+  <td class="line-code ">
+    <pre>        ret = pthread_create(&amp;thread, NULL, dummy_thread_func, NULL);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">267</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        if ( ret != 0 )<span> </span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">305</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ret != 0 )<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">268</th>
+  <th class="line-num">306</th>
+  <td class="line-code ">
+    <pre>                /* we&#39;re using libc stubs */</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">269</th>
+  <th class="line-num">307</th>
+  <td class="line-code ">
+    <pre>                return FALSE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">270</th>
+  <th class="line-num">308</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">274</th>
+  <th class="line-num">312</th>
+  <td class="line-code ">
+    <pre>        ret = pthread_join(thread, &amp;retval);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">275</th>
+  <th class="line-num">313</th>
+  <td class="line-code ">
+    <pre>        if ( ret != 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">276</th>
+  <th class="line-num">314</th>
+  <td class="line-code ">
+    <pre>                abort();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">277</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">315</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">278</th>
+  <th class="line-num">316</th>
+  <td class="line-code ">
+    <pre>        return TRUE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">279</th>
+  <th class="line-num">317</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">280</th>
+  <th class="line-num">318</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">285</th>
+  <th class="line-num">323</th>
+  <td class="line-code ">
+    <pre>prelude_bool_t _prelude_thread_in_use(void)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">286</th>
+  <th class="line-num">324</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">287</th>
+  <th class="line-num">325</th>
+  <td class="line-code ">
+    <pre>        static prelude_bool_t tested = FALSE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">288</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">326</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">289</th>
+  <th class="line-num">327</th>
+  <td class="line-code ">
+    <pre>        if ( tested ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">290</th>
+  <th class="line-num">328</th>
+  <td class="line-code ">
+    <pre>                thread_init_if_needed();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">291</th>
+  <th class="line-num">329</th>
+  <td class="line-code ">
+    <pre>                return use_thread;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">292</th>
+  <th class="line-num">330</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">293</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">331</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">294</th>
+  <th class="line-num">332</th>
+  <td class="line-code ">
+    <pre>        use_thread = __prelude_thread_in_use();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">295</th>
+  <th class="line-num">333</th>
+  <td class="line-code ">
+    <pre>        tested = TRUE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">296</th>
+  <th class="line-num">334</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">297</th>
+  <th class="line-num">335</th>
+  <td class="line-code ">
+    <pre>        prelude_log(PRELUDE_LOG_DEBUG, &quot;[init] thread used=%d\n&quot;, use_thread);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">298</th>
+  <th class="line-num">336</th>
+  <td class="line-code ">
+    <pre>        thread_init_if_needed();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">299</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">337</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">300</th>
+  <th class="line-num">338</th>
+  <td class="line-code ">
+    <pre>        return use_thread;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">301</th>
+  <th class="line-num">339</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">302</th>
+  <th class="line-num">340</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">305</th>
+  <th class="line-num">343</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">306</th>
+  <th class="line-num">344</th>
+  <td class="line-code ">
+    <pre>        char *previous;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">307</th>
+  <th class="line-num">345</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">308</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        if ( ! use_thread ) {<span>                </span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">346</th>
+  <td class="line-code diff_in">
+    <pre>        if ( ! use_thread ) {<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">309</th>
+  <th class="line-num">347</th>
+  <td class="line-code ">
+    <pre>                if ( shared_error_buffer )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">310</th>
+  <th class="line-num">348</th>
+  <td class="line-code ">
+    <pre>                        free(shared_error_buffer);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">311</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">349</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">312</th>
+  <th class="line-num">350</th>
+  <td class="line-code ">
+    <pre>                shared_error_buffer = strdup(error);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">313</th>
+  <th class="line-num">351</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">314</th>
+  <th class="line-num">352</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">316</th>
+  <th class="line-num">354</th>
+  <td class="line-code ">
+    <pre>                previous = pthread_getspecific(thread_error_key);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">317</th>
+  <th class="line-num">355</th>
+  <td class="line-code ">
+    <pre>                if ( previous )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">318</th>
+  <th class="line-num">356</th>
+  <td class="line-code ">
+    <pre>                        free(previous);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">319</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">357</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">320</th>
+  <th class="line-num">358</th>
+  <td class="line-code ">
+    <pre>                pthread_setspecific(thread_error_key, strdup(error));</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">321</th>
+  <th class="line-num">359</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">322</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">360</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">323</th>
+  <th class="line-num">361</th>
+  <td class="line-code ">
+    <pre>        return 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">324</th>
+  <th class="line-num">362</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">325</th>
+  <th class="line-num">363</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">326</th>
+  <th class="line-num">364</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">327</th>
+  <th class="line-num">365</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">328</th>
+  <th class="line-num">366</th>
+  <td class="line-code ">
+    <pre>const char *_prelude_thread_get_error(void)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">329</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>{<span>        </span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">367</th>
+  <td class="line-code diff_in">
+    <pre>{<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">330</th>
+  <th class="line-num">368</th>
+  <td class="line-code ">
+    <pre>        if ( use_thread )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">331</th>
+  <th class="line-num">369</th>
+  <td class="line-code ">
+    <pre>                return pthread_getspecific(thread_error_key);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">332</th>
+  <th class="line-num">370</th>
+  <td class="line-code ">
+    <pre>        else</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

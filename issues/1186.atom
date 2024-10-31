@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/1186.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2020-03-07T08:00:41Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>PRELUDE SIEM - Bug #1186: Prelude correlator</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1186"/>
+    <id>http://www.prelude-siem.org/issues/1186?journal_id=6241</id>
+    <updated>2020-03-07T08:00:41Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Your context file seems corrupted or you put too many idmef alerts inside a context.&lt;/p&gt;
+
+
+	&lt;p&gt;Remove the file /var/lib/prelude-correlator/prelude-correlator/context.dat and restart the correlator.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+</feed>

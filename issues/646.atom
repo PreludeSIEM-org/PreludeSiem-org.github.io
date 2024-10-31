@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/646.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2015-11-01T09:59:56Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>PRELUDE SIEM - Bug #646: Prewikka, création tables avec mysql</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/646"/>
+    <id>http://www.prelude-siem.org/issues/646?journal_id=2364</id>
+    <updated>2015-11-01T09:59:56Z</updated>
+    <author>
+      <name>patrick moulin</name>
+      <email>laster13012@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Je rectifie la commande ci dessus, c'est bien celle ci que j'ai utilisé et qui ne fonctionne pas&lt;br /&gt;&lt;pre&gt;
+mysql -u prewikka prewikka -p &amp;lt; /usr/local/share/prewikka/database/mysql.sql
+&lt;/pre&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>PRELUDE SIEM - Bug #646: Prewikka, création tables avec mysql</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/646"/>
+    <id>http://www.prelude-siem.org/issues/646?journal_id=2365</id>
+    <updated>2015-11-02T00:15:32Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Antoine LUONG&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The database schema is automaticly created during the first start of prewikka 1.2.6 . You do not need to do this. You just have to create the database and fill in prewikka.conf&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>PRELUDE SIEM - Bug #646: Prewikka, création tables avec mysql</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/646"/>
+    <id>http://www.prelude-siem.org/issues/646?journal_id=2366</id>
+    <updated>2015-11-02T07:46:50Z</updated>
+    <author>
+      <name>patrick moulin</name>
+      <email>laster13012@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Thanks, effectiely it works &lt;img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"&gt; is it normal that the database doesn't appear in the parametre?&lt;br /&gt;&lt;img src="https://dl.dumptruck.goldenfrog.com/p/Y17CJzlETM/prewikka1.PNG" alt="" /&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>PRELUDE SIEM - Bug #646: Prewikka, création tables avec mysql</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/646"/>
+    <id>http://www.prelude-siem.org/issues/646?journal_id=2367</id>
+    <updated>2015-11-02T07:49:52Z</updated>
+    <author>
+      <name>patrick moulin</name>
+      <email>laster13012@gmail.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;How can i create a user ? with prewikka 1.2.5 i had&lt;br /&gt;&lt;pre&gt;
+[auth loginpassword]
+expiration: 60
+initial_admin_user: admin
+initial_admin_pass: admin
+&lt;/pre&gt;&lt;br /&gt;but nothin in 1.2.6&lt;br /&gt;Thanks&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>PRELUDE SIEM - Bug #646: Prewikka, création tables avec mysql</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/646"/>
+    <id>http://www.prelude-siem.org/issues/646?journal_id=2368</id>
+    <updated>2015-11-02T08:29:36Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;For now, you can not create user. We are migrating the old prewikka to this new architecture.&lt;/p&gt;
+
+
+	&lt;p&gt;But feel free to suggest a patch to add this functionality&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>PRELUDE SIEM - Bug #646: Prewikka, création tables avec mysql</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/646"/>
+    <id>http://www.prelude-siem.org/issues/646?journal_id=2491</id>
+    <updated>2015-11-13T20:52:43Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;Prelude OSS 1.2.6&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,47 @@
+Index: configure.in
+===================================================================
+--- configure.in	(révision 8807)
++++ configure.in	(copie de travail)
+@@ -53,8 +53,19 @@
+ 
+ 
+ dnl setup libltdl
++AC_ARG_WITH(ltdl, AC_HELP_STRING(--with-ltdl, Compile libtool dynamic linking loader),
++            [libtool_dl="$withval"], libtool_dl="no")
++if test x$libtool_dl != xyes; then
++    AC_CHECK_LIB([ltdl], [lt_dlopen],,libtool_dl=yes,)
++fi
++if test x$libtool_dl != xyes; then
++    AC_CHECK_HEADERS(ltdl.h,,libtool_dl=yes)
++fi
++AM_CONDITIONAL(NEED_LIBTOOL_DL, test x$libtool_dl = xyes)
++if test x$libtool_dl = xyes; then
++    AC_CONFIG_SUBDIRS(libltdl)
++fi
+ 
+-AC_CONFIG_SUBDIRS(libltdl)
+ AC_LIBTOOL_DLOPEN
+ AC_LTDL_DLLIB
+ AC_LIBLTDL_CONVENIENCE
+@@ -722,3 +733,5 @@
+ echo "    - Generate documentation : $enable_gtk_doc"
+ echo "    - Perl binding           : $with_perl"
+ echo "    - Python binding         : $with_python"
++echo "    - Libtool dynamic loader : $libtool_dl"
++
+Index: Makefile.am
+===================================================================
+--- Makefile.am	(révision 8807)
++++ Makefile.am	(copie de travail)
+@@ -1,7 +1,10 @@
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
+ 
+ ACLOCAL_AMFLAGS = -I m4 -I libmissing/m4
+-SUBDIRS = libltdl libmissing m4 src prelude-adduser bindings docs
++SUBDIRS = libmissing m4 src prelude-adduser bindings docs
++if NEED_LIBTOOL_DL
++SUBDIRS += libltdl
++endif
+ 
+ EXTRA_DIST = HACKING.README LICENSE.README client.conf global.conf idmef-client.conf tls.conf
+ 

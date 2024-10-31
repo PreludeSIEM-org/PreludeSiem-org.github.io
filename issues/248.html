@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #248: prelude-manager crash - Prelude Manager - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="1i/jmDSDZHC45AMBUG0Wqo7UKHO8YiiHYHCZBPSNCKjFAIv3/Zdp8zJOC/tNJV/08p9Z7aZoccm+/l2UcI08qw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude Manager - Bug #248: prelude-manager crash" href="http://www.prelude-siem.org/issues/248.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-manager controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-manager/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-manager/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-manager/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-manager">Overview</a></li><li><a class="activity" href="/projects/prelude-manager/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-manager/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-manager/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-manager/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-manager/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-manager/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-manager/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-manager/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-manager/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-manager/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #248</h2>
+
+<div class="issue tracker-1 status-5 priority-5 priority-high3 closed details">
+    <div class="next-prev-links contextual">
+      <a title="#270" accesskey="p" href="/issues/270">« Previous</a> |
+        <span class="position">357 of 390</span> |
+      <a title="#234" accesskey="n" href="/issues/234">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>prelude-manager crash</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="07/12/2007 07:05 AM" href="/projects/prelude-manager/activity?from=2007-07-12">over 17 years</a> ago.
+        Updated <a title="04/29/2009 12:20 PM" href="/projects/prelude-manager/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">High</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">invalid</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>running the prelude-manager with aproximitly 400 lml agents i get this message in syslog</p>
+
+
+<pre>
+
+prelude-manager: idmef-message-scheduler.c:init_file_output:573: couldn't open /var/spool/prelude/prelude-manager/mid-priority-fifo.146 in append mode: Too many open files.
+
+</pre>
+
+	<p>shortly after that if im lucky the prelude-manager stops reporting but is still running and the lmls start crashing with messages like<br /><pre>
+
+ prelude-lml: prelude-client: error starting prelude-client: TLS handshake failed: A TLS packet with unexpected length was received..  In order to register this sensor, please run: prelude-adduser register prelude-lml "idmef:w" hostnamehere --uid 0 --gid 0  Profile 'prelude-lml' does not exist. In order to create it, please run: prelude-adduser register prelude-lml "idmef:w" &lt;manager address&gt; --uid 0 --gid 0.
+
+</pre></p>
+
+
+	<p>If im not lucky the box running the lml becomes inaccessable via ssh or concole until it is rebooted. I suspect that this might be solved be increasing fs.file-max in /etc/sysctrl however this is still untested. if it works a note should be added to the installation instructions about large installs.</p>
+
+
+	<p>I will provide more debuging information as I find it but this should be looked into</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-648" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/12/2007 12:02 PM" href="/projects/prelude-manager/activity?from=2007-07-12">over 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    <div id="journal-648-notes" class="wiki"><p>Hello Paul,</p>
+
+
+	<p>From your report, it isn't clear whether Prelude-Manager or Prelude-LML crash, or both? If one of them do, could you try to reproduce the issue under GDB, so that we can trace where the problem come from?</p>
+
+
+	<p>Another things is that the file descriptor limit is usually a per-process limit. Could you open a session on the machine where it occur (where you will be monitoring system logfile and cpu / memory usage), then attempt to reproduce the problem, to see what is the cause of the SSH/console inaccessibility.</p>
+
+
+	<p>Thanks,</p></div>
+    </div>
+  </div>
+  
+  <div id="change-649" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="07/13/2007 10:28 PM" href="/projects/prelude-manager/activity?from=2007-07-13">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-649-notes" class="wiki"><p>I did some testing and I found this was caused by the default setting in ulimit -n of 1024.<br />the fix is to increase the nofile setting in /etc/security/limits.conf</p>
+
+
+<pre>
+
+*                -       nofile          4096
+
+</pre>
+
+	<p>I will add this to the prelude-managet trouble shooting page latter tonight</p>
+
+
+	<p>To clarify what happened it seems like the prelude manager creates 3 fifos for each sensor that attaches to it (400 sensors * 3 fifos = 1200 files). The person who installed the prelude-manager on this host  (not me) configured it to run as root rather than its own user. when the prelude-manager excided the maximum number of open files for the user it caused several other processs running as root to hang. The system lock out until a reboot was a side effect caused by an other process not being able to open files.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-650" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/19/2007 06:25 PM" href="/projects/prelude-manager/activity?from=2007-07-19">over 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>invalid</i></li>
+    </ul>
+    <div id="journal-650-notes" class="wiki"><p>I'm marking this bug as Invalid since it was not Prelude-Manager related. Don't hesitate to add documentation to the wiki concerning the configuration for working around the 'Too many open files' problem.</p>
+
+
+	<p>Regards,</p></div>
+    </div>
+  </div>
+  
+  <div id="change-998" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:20 PM" href="/projects/prelude-manager/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prelude Manager</i></li>
+       <li><strong>Category</strong> deleted (<del><i>3</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/248.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/248.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

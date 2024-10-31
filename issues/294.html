@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #294: Prelude-lml segfault with libtool 2.2.4 compliation. - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="hrCMCepM9jVuizePVy1iKuT3cvVLt5ABxTEyRMEGyECVn+RmI1j7tuQhP3VKZSt0mLwDa1G9yU8bv/bURQb8Qw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Libprelude - Bug #294: Prelude-lml segfault with libtool 2.2.4 compliation." href="http://www.prelude-siem.org/issues/294.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-libprelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/libprelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/libprelude/issues/report">Summary</a></li>
+
+<li><a href="/projects/libprelude/issues/calendar">Calendar</a></li>
+<li><a href="/projects/libprelude/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #294</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+
+  
+
+<div class="subject">
+<div><h3>Prelude-lml segfault with libtool 2.2.4 compliation.</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="06/27/2008 01:40 AM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago.
+        Updated <a title="04/29/2009 12:04 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value">-</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="05/01/2009" href="/versions/96">0.9.22</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Hi, I've been suggested to forward this bug upstream ... It would really depend mostly when you are going to support libtool 2.2.4 but I have created a small patch and how to get it to work properly.</p>
+
+
+	<p>This is also related to prelude-manager as it suffers the same problem.  Below is the backtrace related to prelude-manager as I failed to get one... <img src="/plugin_assets/redmine_wiki_extensions/images/sad.png" alt=":("> sorry I know.</p>
+
+
+<pre>
+#0  0x00007f18e7a3e690 in strcmp () from /lib/libc.so.6
+#1  0x00007f18e75af672 in lt_dlpreload_open () from /usr/lib/libltdl.so.7
+#2  0x00007f18e8c90470 in prelude_plugin_load_from_dir (head=0x0,dirname=0x40fa60 "/usr/lib64/prelude-manager/reports", symbol=0x40fd3b "manager_plugin_init", ptr=0x6160e0 subscribe=0x40ab25 &lt;subscribe&gt;, unsubscribe=0x40aacf &lt;unsubscribe&gt;)
+at prelude-plugin.c:525 #3  0x000000000040aa20 in report_plugins_init (dirname=0x40fa60 "/usr/lib64/prelude-manager/reports", data=0x6160e0)
+at report-plugins.c:406 #4  0x00000000004086dd in main (argc=1, argv=0x7ffff1325478) at prelude-manager.c:165
+</pre>
+
+	<p>The patch is fairly easy and specific, in the case of prelude-lml it's fairly easy.</p>
+
+
+<pre>
+diff --git a/src/prelude-lml.c b/src/prelude-lml.c
+index 8880dc8..c98c313 100644
+--- a/src/prelude-lml.c
++++ b/src/prelude-lml.c
+@@ -37,6 +37,7 @@
+ #include &lt;sys/select.h&gt;
+ #include &lt;netinet/in.h&gt;
+ #include &lt;arpa/inet.h&gt;
++#include "ltdl.h" 
+
+ #if TIME_WITH_SYS_TIME
+ # include &lt;sys/time.h&gt;
+</pre>
+
+	<p>then you'll want to run libtoolize --force and aclocal and autoconf to regenerate configure.</p>
+
+
+	<p>Then you can ./configure and build properly.</p>
+
+
+	<p>I will attach the diff's for both prelude-lml and prelude-manager, if you'd like me to open 2 seperate bug reports I will.</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/122/prelude-lml-0.9.10.1.patch">prelude-lml-0.9.10.1.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/122/prelude-lml-0.9.10.1.patch">View</a>
+   - prelude-lml patch
+  <span class="size">(291 Bytes)</span>
+    <span class="author">, 06/27/2008 01:40 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/123/prelude-manager-0.9.9.1.patch">prelude-manager-0.9.9.1.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/123/prelude-manager-0.9.9.1.patch">View</a>
+   - prelude-manager.patch
+  <span class="size">(319 Bytes)</span>
+    <span class="author">, 06/27/2008 01:41 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/124/prelude-plugin-libtool2.patch">prelude-plugin-libtool2.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/124/prelude-plugin-libtool2.patch">View</a>
+  
+  <span class="size">(479 Bytes)</span>
+    <span class="author">Yoann VANDOORSELAERE, 06/27/2008 05:27 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-767" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/27/2008 09:33 AM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-767-notes" class="wiki"><p>Thanks for reporting this issue! The fix introduce a direct dependency of Prelude-LML and Prelude-Manager to libltdl, although plugin support code is located in libprelude. Do you have an analysis of what is going wrong without the patch? Are you aware of any other possible fix?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-768" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="06/27/2008 09:52 AM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-768-notes" class="wiki"><p>Unfortunately I am not aware of any other fix, as it appears to be something changed in Libtool 2.2.4.  It was a bit of an odd bug, and the backtrace I posted was with full debugging enabled on prelude.  From personal experience it's not terribly surprising with libtool as much <strong>FUN</strong> as it is.  If you can find any other way to patch it (other then downgrading libtool) I'm all ears.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-769" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/27/2008 12:26 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-769-notes" class="wiki"><p>I have tried reproducing this problem using libtool 2.2.4. I was able to reproduce the sigsegv under the specific condition that libprelude is compiled with libtool 2.2.4, but prelude-manager (which I used for testing), was not recompiled afterwise.</p>
+
+
+	<p>Another issue that arise, this time when recompiling prelude-manager (without your patch), is the following build error:<br /><pre>
+prelude-manager/src/prelude-manager.c:188: undefined reference to @lt_preloaded_symbols'
+</pre></p>
+
+
+	<p>It look like this is due to an API change in libltdl: <strong>lt_preloaded_symbols</strong> seems to have been renamed to <strong>lt+PROGRAM+LTX_preloaded_symbols</strong>.</p>
+
+
+	<p>Could you confirm theses finding by trying to compile prelude-manager without your patch ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-770" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by  <a title="06/27/2008 04:45 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-770-notes" class="wiki"><p>It's more of a ABI than API change.<br />lt_preloaded_symbols is still defined in ltdl.h,<br />only its defined as lt+PROGRAM+LTX_preloaded_symbols.<br />If libtool gets updated, it resolved that correctly, without any need for changes,<br />unless of course, your trying to hide libltdl dependency, as you do, then it may break.<br />For reference, have a look at this bug:<br /><a class="external" href="http://bugs.gentoo.org/show_bug.cgi?id=212723">http://bugs.gentoo.org/show_bug.cgi?id=212723</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-771" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/27/2008 05:27 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-771-notes" class="wiki"><p>You are correct that the plugin system is in the libprelude core code: we do as much as possible to hide the details from the applications and try to avoid pulling duplicate libltdl dependencies everywhere.</p>
+
+
+	<p>I'm attaching a libprelude only fix for this problem, please let me know whether that fixes the issue for you.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-772" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="06/27/2008 06:14 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-772-notes" class="wiki"><p>Truthfully I only had to patch prelude-lml, and prelude-manager.</p>
+
+
+	<p>libprelude did not rot require any changes in order to work with libtool 2.2.4, as far as the undefined symbol I got that also, I then looked at the libtool documentation and it suggested to #include "ltdl.h" ...  Which resolved the unresolved symbols and has been working fine here since.  Although I just have been untar'ing the source, and running configure, I did not have to libtoolize --force etc...</p></div>
+    </div>
+  </div>
+  
+  <div id="change-773" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/27/2008 06:42 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-773-notes" class="wiki"><p>Your change fixed the problem because ltdl.h include the following:<br /><pre>
+#define lt_preloaded_symbols lt+PROGRAM+LTX_preloaded_symbols 
+</pre></p>
+
+
+	<p>However, we can't push theses patch upstream, since they would introduce an ltdl.h depencency that we try to avoid (and that would not necessarily be installed system wide on a given machine). If you get some time, please let me know whether <a class="attachment" href="/attachments/download/124/prelude-plugin-libtool2.patch">prelude-plugin-libtool2.patch</a> solve the problem for both [[PreludeLML]] and [[PreludeManager]] (remove your own patch first).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-774" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by  <a title="06/27/2008 07:30 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-774-notes" class="wiki"><p>I tried using</p>
+
+
+	<p>{{<br />#define lt_preloaded_symbols lt+PROGRAM+LTX_preloaded_symbols <br />}}</p>
+
+
+	<p>patched libprelude and it built, works from everything I can see... restarted the patched prelude-manager no problem.</p>
+
+
+	<p>Tried straight patching that into prelude-manager and it ran into,</p>
+
+
+	<p>{{<br />ldl ../libmissing/.libs/libmissing.a<br />prelude-manager.o: In function @main':<br />prelude-manager.c:(.text+0x6a): undefined reference to @lt+PROGRAM+LTX_preloaded_symbols'<br />collect2: ld returned 1 exit status<br />}}</p>
+
+
+	<p>Which makes me still hate libtool.</p>
+
+
+	<p>libtoolize --force<br />autoreconf</p>
+
+
+	<p>It compiles and works.</p>
+
+
+	<p>I just added</p>
+
+
+	<p>{{<br />#define lt_preloaded_symbols lt+PROGRAM+LTX_preloaded_symbols <br />}}</p>
+
+
+	<p>to src/include/prelude-manager.h</p>
+
+
+	<p>So that fixes the problem as long as you do libtoolize --force and autoreconf.  <img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"></p></div>
+    </div>
+  </div>
+  
+  <div id="change-775" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by  <a title="06/27/2008 08:06 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-775-notes" class="wiki"><p>That's cause you need an updated libtool to correctly expand that symbol,<br />otherwise it's not expanded and stays undefined.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-776" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by  <a title="06/27/2008 08:11 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-776-notes" class="wiki"><p>Ah ok, well then it works for me <img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"></p>
+
+
+<pre>
+#define lt_preloaded_symbols lt+PROGRAM+LTX_preloaded_symbols 
+</pre>
+
+	<p>In prelude-lml/prelude-manager and libprelude.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-777" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/27/2008 09:17 PM" href="/projects/libprelude/activity?from=2008-06-27">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-777-notes" class="wiki"><p>Doing it in libprelude should be sufficient, since Prelude-Manager &#38; Prelude-LML both include prelude-plugin.h, where the definition is done. Can you confirm this, or is there a problem?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-778" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by  <a title="06/28/2008 02:19 AM" href="/projects/libprelude/activity?from=2008-06-28">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-778-notes" class="wiki"><p>Actually you are correct, that is sufficient.  I forgot to run libtoolize --force / autoreconf after reinstalling libprelude with that patch.</p>
+
+
+	<p>It does now build and work.  Sorry was a bit scatter brains this morning <img src="/plugin_assets/redmine_wiki_extensions/images/sad.png" alt=":("></p></div>
+    </div>
+  </div>
+  
+  <div id="change-779" class="journal has-notes has-details">
+    <div id="note-13">
+    <h4><a href="#note-13" class="journal-link">#13</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/01/2008 10:34 AM" href="/projects/libprelude/activity?from=2008-07-01">over 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-779-notes" class="wiki"><p>(In r10626) Transparently handle libtool 2.2 ABI change. Fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: Prelude-lml segfault with libtool 2.2.4 compliation. (Closed)" href="/issues/294">#294</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-780" class="journal has-notes">
+    <div id="note-14">
+    <h4><a href="#note-14" class="journal-link">#14</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/01/2008 10:35 AM" href="/projects/libprelude/activity?from=2008-07-01">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-780-notes" class="wiki"><p>Thanks for the feedbacks, the patch has been checked in r10626.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-781" class="journal has-notes has-details">
+    <div id="note-15">
+    <h4><a href="#note-15" class="journal-link">#15</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/15/2008 10:06 AM" href="/projects/libprelude/activity?from=2008-07-15">over 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Closed</i> to <i>Feedback</i></li>
+       <li><strong>Resolution</strong> deleted (<del><i>fixed</i></del>)</li>
+    </ul>
+    <div id="journal-781-notes" class="wiki"><p>Change reverted in r10657 since it breaks with libtool 1.5.x. Looking for a correct fixes.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-782" class="journal has-notes">
+    <div id="note-16">
+    <h4><a href="#note-16" class="journal-link">#16</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="11/05/2008 01:18 PM" href="/projects/libprelude/activity?from=2008-11-05">almost 16 years</a> ago
+    </h4>
+
+    <div id="journal-782-notes" class="wiki"><p>See <a class="external" href="http://thread.gmane.org/gmane.comp.gnu.libtool.bugs/6598">http://thread.gmane.org/gmane.comp.gnu.libtool.bugs/6598</a> for a complete description of the problem. We are currently looking for a clean workaround to the API / ABI issues.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-783" class="journal has-notes has-details">
+    <div id="note-17">
+    <h4><a href="#note-17" class="journal-link">#17</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="11/12/2008 10:42 AM" href="/projects/libprelude/activity?from=2008-11-12">almost 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Feedback</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-783-notes" class="wiki"><p>(In r11086) Workaround libtool/libltdl 1.5 -> 2.x ABI compatibility issues. This<br />introduce two fixes:</p>
+
+
+	<p>- Fix a crash when an application use a different libtool version than the<br />  libltdl version used to compile libprelude. In order to prevent this<br />  problem, we automatically rewrite symbol table provided by libtool 1.5<br />  application, and make it compatible with libltdl 2.2 (we will now ship<br />  libtool/ltdl 2.2 as the default with libprelude).</p>
+
+
+	<p>- Automatic handling of symbol renaming between libtool 1.5 -> 2.x,<br />  which solve application linking problem.</p>
+
+
+	<p>This fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: Prelude-lml segfault with libtool 2.2.4 compliation. (Closed)" href="/issues/294">#294</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-957" class="journal has-details">
+    <div id="note-18">
+    <h4><a href="#note-18" class="journal-link">#18</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:04 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Libprelude</i></li>
+       <li><strong>Category</strong> deleted (<del><i>1</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>92</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/294.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/294.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

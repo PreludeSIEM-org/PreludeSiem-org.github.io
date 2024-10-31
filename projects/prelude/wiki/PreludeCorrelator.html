@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>PreludeCorrelator - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ovlTNAuupGLlVPUjr2gcx3DCGz84MlRoz0fLJVNBeIqx1jtbwrqp4W/+/dmyIFWZDIlqoSI4DSYRyQ+110FMiQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/prelude/wiki/ManualUser">ManualUser</a> » <a href="/projects/prelude/wiki/PreludeComponentsConfiguration">PreludeComponentsConfiguration</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Prelude-Correlator"></a>
+<h1 >Prelude Correlator<a href="#Prelude-Correlator" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><strong>Prelude-Correlator</strong> is a Python rules based correlation engine. It has the ability to connect and fetch alerts from a remote Prelude-Manager server, and correlate incoming alerts based on the provided ruleset. Upon successful correlation, IDMEF correlation alerts are raised.</p>
+
+
+	<p>Initially, the Prelude-Correlator rule language was inspired by SEC, evolving to use a real programming language. At this point, we decided to switch to a Python based rules engine, which provides the great flexibility required for writing correlation rules.</p>
+
+
+	<a name="Python-based-rule-format-example"></a>
+<h2 >Python-based rule format example<a href="#Python-based-rule-format-example" class="wiki-anchor">&para;</a></h2>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">preludecorrelator.context</span> <span class="keyword">import</span> <span class="include">Context</span>
+<span class="keyword">from</span> <span class="include">preludecorrelator.pluginmanager</span> <span class="keyword">import</span> <span class="include">Plugin</span>
+
+<span class="keyword">class</span> <span class="class">EventScanPlugin</span>(Plugin):
+    <span class="keyword">def</span> <span class="function">run</span>(<span class="predefined-constant">self</span>, idmef):
+        source = idmef.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.source(*).node.address(*).address</span><span class="delimiter">&quot;</span></span>)
+        target = idmef.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.target(*).node.address(*).address</span><span class="delimiter">&quot;</span></span>)
+
+        <span class="keyword">if</span> <span class="keyword">not</span> source <span class="keyword">or</span> <span class="keyword">not</span> target:
+            <span class="keyword">return</span>
+
+        <span class="keyword">for</span> saddr <span class="keyword">in</span> source:
+            <span class="keyword">for</span> daddr <span class="keyword">in</span> target:
+                ctx = Context((<span class="string"><span class="delimiter">&quot;</span><span class="content">SCAN EVENTSCAN</span><span class="delimiter">&quot;</span></span>, saddr, daddr), { <span class="string"><span class="delimiter">&quot;</span><span class="content">expire</span><span class="delimiter">&quot;</span></span>: <span class="integer">60</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">threshold</span><span class="delimiter">&quot;</span></span>: <span class="integer">30</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">alert_on_expire</span><span class="delimiter">&quot;</span></span>: <span class="predefined-constant">True</span> }, update = <span class="predefined-constant">True</span>, idmef=idmef)
+                <span class="keyword">if</span> ctx.getUpdateCount() == <span class="integer">0</span>:
+                    ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.correlation_alert.name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">A single host has played many events against a single target. This may be a vulnerability scan</span><span class="delimiter">&quot;</span></span>)
+                    ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Eventscan</span><span class="delimiter">&quot;</span></span>)
+                    ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.assessment.impact.severity</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">high</span><span class="delimiter">&quot;</span></span>)
+
+</span></code></pre>
+
+	<a name="Writing-Python-rules"></a>
+<h2 >Writing Python rules<a href="#Writing-Python-rules" class="wiki-anchor">&para;</a></h2>
+
+
+In order to write Prelude-Correlator rules, you will need to learn basics of the Python language. Here are some good starting points for learning Python:
+	<ul>
+	<li><a href="http://www.python.org/" class="external">Python website</a></li>
+		<li><a href="http://docs.python.org/" class="external">Python documentation</a></li>
+		<li><a href="http://www.diveintopython.net/" class="external">Dive into Python</a></li>
+	</ul>
+
+
+	<p>Each Python plugin consists of a primary Python class which will run upon reception of an IDMEF event.</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">preludecorrelator.pluginmanager</span> <span class="keyword">import</span> <span class="include">Plugin</span>
+
+print(<span class="string"><span class="delimiter">&quot;</span><span class="content">*** Any global initialization code goes here</span><span class="delimiter">&quot;</span></span>)
+
+<span class="keyword">class</span> <span class="class">MyPlugin</span>(Plugin):
+    <span class="keyword">def</span> <span class="function">run</span>(<span class="predefined-constant">self</span>, idmef):
+        print(<span class="string"><span class="delimiter">&quot;</span><span class="content">*** This function is going to be called when Prelude-Correlator receives an IDMEF event</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>The primary run() function takes a single argument: the IDMEF message received by Prelude-Correlator.</p>
+
+
+	<p>When running Prelude-Correlator using this simple ruleset, here is what you will get:</p>
+
+
+<pre>
+$ prelude-correlator 
+*** Any global initialization code goes here
+09 Feb 09:53:32 (process:14076) INFO: 10 plugin have been loaded.
+09 Feb 09:53:32 (process:14076) INFO: Connecting to 127.0.0.1:4690 prelude Manager server.
+09 Feb 09:53:32 (process:14076) INFO: TLS authentication succeed with Prelude Manager.
+
+[And when Prelude-Correlator receive an IDMEF message]:
+
+*** This function is going to be called when Prelude-Correlator receive an IDMEF event
+</pre>
+
+	<a name="Playing-with-received-IDMEF-messages"></a>
+<h3 >Playing with received IDMEF messages<a href="#Playing-with-received-IDMEF-messages" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The IDMEF message object ('idmef' in the example above), passed to the primary plugin run() method, provides a number of methods:</p>
+
+
+	<a name="The-get-method"></a>
+<h4 >The <strong>get()</strong> method<a href="#The-get-method" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The get() method allow to retrieve a given field from the IDMEF message using an <a class="wiki-page" href="/projects/prelude/wiki/IDMEFPath">IDMEF Path</a>. Example:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"> classification = idmef.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>)
+ print(<span class="string"><span class="delimiter">&quot;</span><span class="content">*** %s</span><span class="delimiter">&quot;</span></span> % classification)
+</span></code></pre>
+
+	<p>This will retrieve the <strong>alert.classification.text</strong> <a class="wiki-page" href="/projects/prelude/wiki/IDMEFPath">IDMEF Path</a>, and print it afterwise:</p>
+
+
+<pre>
+*** Portscan
+</pre>
+
+	<p>Now let see how results are retrieved for more complex object (example: listed object):</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">sources = idmef.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.source(*).node.address(*).address</span><span class="delimiter">&quot;</span></span>)
+<span class="keyword">for</span> addr <span class="keyword">in</span> sources:
+    print(<span class="string"><span class="delimiter">&quot;</span><span class="content">*** %s</span><span class="delimiter">&quot;</span></span> % addr)
+</span></code></pre>
+
+	<p>This will retrieve the <strong>alert.source(*).node.address(*).address</strong> <a class="wiki-page" href="/projects/prelude/wiki/IDMEFPath">IDMEF Path</a>, iterate the returned value and print them one by one:</p>
+
+
+<pre>
+*** 192.0.2.50
+*** 192.0.2.51
+*** 192.0.2.52
+</pre>
+
+	<a name="The-match-method"></a>
+<h4 >The <strong>match()</strong> method<a href="#The-match-method" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The <em>match</em> method is similar to the <em>Get</em> method described above, except it allows matching the value against a regular expression:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">is_failed_auth = idmef.match(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">(.+)</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<a name="The-set-and-alert-methods"></a>
+<h4 >The <strong>set()</strong> and <strong>alert()</strong> methods<a href="#The-set-and-alert-methods" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The <em>set</em> method allows you to set <a class="wiki-page" href="/projects/prelude/wiki/IDMEFPath">IDMEF Path</a> to a certain value within an IDMEF object. The <em>alert</em> method allow to send an IDMEF object to the Prelude-Manager concentrator.<br />This is mostly useful when generating CorrelationAlert. Here we will make a simple demonstration of how to use these methods:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">  <span class="keyword">from</span> <span class="include">preludecorrelator.idmef</span> <span class="keyword">import</span> <span class="include">IDMEF</span>
+
+  <span class="comment"># create a new IDMEF object</span>
+  idmef = IDMEF() 
+  idmef.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My Classification</span><span class="delimiter">&quot;</span></span>)
+  idmef.alert()
+</span></code></pre>
+
+	<p>If you run the above code in a Prelude-Correlator plugin, here is what you will get when Prelude-Correlator receives an IDMEF message:</p>
+
+
+<pre>
+$ prelude-correlator --print-output
+25 Jun 14:00:38 (process:13208) INFO: 1 plugins have been loaded.
+25 Jun 14:00:38 (process:13208) INFO: Connecting to 127.0.0.1:4690 prelude Manager server.
+25 Jun 14:00:38 (process:13208) INFO: TLS authentication succeed with Prelude Manager.
+
+[When Prelude-Correlator receive an IDMEF message]:
+
+version: &lt;empty&gt;
+alert:
+        messageid: bd32c2a8-1559-11df-8f1a
+        analyzer(0): 
+                analyzerid: 952281412762694
+                name: prelude-correlator
+                manufacturer: CS-SI
+                model: Prelude-Correlator
+                version: 1.2.6
+                class: Correlator
+                ostype: Linux
+                osversion: 2.6.32-573.3.1.el6.x86_64
+                process:
+                        name: prelude-correlator
+                        pid: 14286
+                        path: /usr/bin/prelude-correlator
+        create_time: 09/11/2015 18:26:39.66467 +01:00
+        classification:
+                text: My Classification
+</pre>
+
+	<a name="Python-Context"></a>
+<h3 >Python Context<a href="#Python-Context" class="wiki-anchor">&para;</a></h3>
+
+
+A <strong>Context</strong> class is available, that greatly eases the writing of Python correlation rules. A Context is a named variable, which you can use to keep track of a given plugin state. They consist of:
+	<ul>
+	<li>The context name, used to identify the context</li>
+		<li>An embedded IDMEF message, that might be used to generate a CorrelationAlert</li>
+		<li>An optional expiry timer (the context is destroyed on timer expiration)</li>
+		<li>An optional threshold.</li>
+	</ul>
+
+
+	<p>Creating a context:<br /><pre><code class="python syntaxhl"><span class="CodeRay">  ctx = Context(<span class="string"><span class="delimiter">&quot;</span><span class="content">MY_CONTEXT_NAME</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre></p>
+
+
+	<p>Updating a context (create the context if it does not exist, or reset it's expiration timer if it does):<br /><pre><code class="python syntaxhl"><span class="CodeRay">  ctx = Context(<span class="string"><span class="delimiter">&quot;</span><span class="content">MY_CONTEXT_NAME</span><span class="delimiter">&quot;</span></span>, update=<span class="predefined-constant">True</span>)
+</span></code></pre></p>
+
+
+Additionally, several context creation options might be specified:
+	<ul>
+	<li><strong>expire</strong> : number of seconds after which the context should be destroyed.</li>
+		<li><strong>alert_on_expire</strong> : If a context expires and this option is set, the embedded IDMEF message will be sent.</li>
+		<li><strong>threshold</strong> : Internal threshold counter, that might be checked using the <strong>getUpdateCount</strong> method.</li>
+	</ul>
+
+
+	<p>Example, creating (or updating) a context that will expire after 60 seconds, and with the threshold counter set to 30:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"> ctx = Context(<span class="string"><span class="delimiter">&quot;</span><span class="content">MY_CONTEXT_NAME</span><span class="delimiter">&quot;</span></span>, { expire = <span class="integer">60</span>, threshold = <span class="integer">30</span> }, update=<span class="predefined-constant">True</span>) 
+</span></code></pre>
+
+	<p>Setting values within the context embedded IDMEF object:<br /><pre><code class="python syntaxhl"><span class="CodeRay"> ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">My Correlation Alert</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre></p>
+
+
+	<p>Retrieving a context: <br /><pre><code class="python syntaxhl"><span class="CodeRay"> ctx = context.search(<span class="string"><span class="delimiter">&quot;</span><span class="content">MY_CONTEXT_NAME</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre></p>
+
+
+	<a name="Example-CorrelationAlert-on-EventStorm-playing-excessive-events-by-a-single-host"></a>
+<h3 >Example: CorrelationAlert on EventStorm (playing excessive events by a single host)<a href="#Example-CorrelationAlert-on-EventStorm-playing-excessive-events-by-a-single-host" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Here is how to write a Python correlation plugin for EventStorm detection: we want to generate a CorrelationAlert if a single source is generating an excessive amount of events.</p>
+
+
+	<p>We initially start by retrieving a list of all the source addresses within the received alert:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">source = IDMEF.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.source(*).node.address(*).address</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>We then iterate the sources list, and create (or retrieve - if it already exists) the <em>Context</em> associated with each source address.<br />The <em>Context</em> is set to expire after 120 seconds, and the internal threshold counter is set to 150.</p>
+
+
+	<p>If receiving an IDMEF message with the "x.x.x.x" source address, the created context will be named <strong>SCAN_EVENTSTORM_x.x.x.x</strong>.</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">for</span> saddr <span class="keyword">in</span> source:
+    ctx = Context((<span class="string"><span class="delimiter">&quot;</span><span class="content">SCAN_EVENTSTORM</span><span class="delimiter">&quot;</span></span>, saddr), { <span class="string"><span class="delimiter">&quot;</span><span class="content">expire</span><span class="delimiter">&quot;</span></span>: <span class="integer">120</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">threshold</span><span class="delimiter">&quot;</span></span>: <span class="integer">150</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">alert_on_expire</span><span class="delimiter">&quot;</span></span>: <span class="predefined-constant">True</span> }, update = <span class="predefined-constant">True</span>, idmef = idmef)
+</span></code></pre>
+
+	<p>Notice that we provides the received IDMEF message to the Context creation/update method. This will append the received alert source and target to the Context embedded IDMEF message (which will become the generated CorrelationAlert).</p>
+
+
+	<p>This is equivalent to calling:<br /><pre><code class="python syntaxhl"><span class="CodeRay">   created_idmef_message = IDMEF()
+   created_idmef_message.addAlertReference(received_idmef_message)
+</span></code></pre></p>
+
+
+	<p>After creating/updating the context, we check whether the context has been created (and not updated), and we initialize portion of the alert to be generated if this is the case :</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">            <span class="keyword">if</span> ctx.getUpdateCount() == <span class="integer">0</span>:
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.correlation_alert.name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">A single host is producing an unusual amount of events</span><span class="delimiter">&quot;</span></span>)
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Eventstorm</span><span class="delimiter">&quot;</span></span>)
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.assessment.impact.severity</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">high</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>That's it. Here is what will happen with the above plugin (with a threshold of 3, so that the example is readable):</p>
+
+
+	<ul>
+	<li>Prelude-Correlator receives the first alert: [source address: 1.1.1.1 -> target address: 2.2.2.2]
+	<ul>
+	<li>The <strong>SCAN_EVENTSTORM_1.1.1.1</strong> context is created, setup to expire in 120 seconds, with an internal threshold of 3.</li>
+		<li>The <strong>!getUpdateCount()</strong> method returns 0, so we copy some of the current alert data into the Context embedded correlation alert.</li>
+	</ul></li>
+	</ul>
+
+
+	<ul>
+	<li>Prelude-Correlator receives the second alert: [source address: 1.1.1.1 -> target address: 3.3.3.3]
+	<ul>
+	<li>The <strong>SCAN_EVENTSTORM_1.1.1.1</strong> context is updated, the 120 seconds timer is reset.</li>
+		<li>The <strong>!getUpdateCount()</strong> method returns 1.</li>
+	</ul></li>
+	</ul>
+
+
+	<ul>
+	<li>Prelude-Correlator receives the third alert: [source address: 1.1.1.1 -> target address: 4.4.4.4]
+	<ul>
+	<li>The <strong>SCAN_EVENTSTORM_1.1.1.1</strong> context is updated, the 120 seconds timer is reset.</li>
+		<li>The <strong>!getUpdateCount()</strong> method returns 2.</li>
+	</ul></li>
+	</ul>
+
+
+	<p>At this point, we know a CorrelationAlert is going to be generated as soon as the internal context Timer will expire.</p>
+
+
+	<p>Here is the alert generated:<br /><pre>
+version: &lt;empty&gt;
+alert:
+        messageid: 12e8fe68-42bd-11dd-9544
+        analyzer(0): 
+                analyzerid: 2052969743121519
+                name: prelude-correlator
+                model: prelude-correlator
+                version: 1.2.6
+                class: Correlator
+                ostype: Linux
+                osversion: 2.6.32-573.3.1.el6.x86_64
+
+        create_time: 09/11/2015 18:26:39.66467 +01:00
+        classification:
+                text: Eventstorm
+        source(0): 
+                spoofed: unknown (0)
+                node:
+                        category: unknown (0)
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 1.1.1.1
+        target(0): 
+                decoy: unknown (0)
+                node:
+                        category: unknown (0)
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 2.2.2.2
+        target(1): 
+                decoy: unknown (0)
+                node:
+                        category: unknown (0)
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 3.3.3.3
+        target(2): 
+                decoy: unknown (0)
+                node:
+                        category: unknown (0)
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 4.4.4.4
+        assessment:
+                impact:
+                        severity: high (4)
+                        type: other (0)
+        correlation_alert:
+                name: A single host is producing an unusual amount of events
+                alertident(0): 
+                        alertident: 90704f76-42bd-11dd-8410
+                        analyzerid: bc-fs-sensor13
+                alertident(1): 
+                        alertident: 94a7b25a-42bd-11dd-ba64
+                        analyzerid: bc-fs-sensor13
+                alertident(2): 
+                        alertident: 9bc0e962-42bd-11dd-b088
+                        analyzerid: bc-fs-sensor13
+</pre></p>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

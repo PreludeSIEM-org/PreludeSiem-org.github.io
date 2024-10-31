@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Libprelude: Issues</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/libprelude/issues.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/libprelude/issues"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2017-06-24T14:23:44Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>Bug #893 (New): libprelude-errors failed compile on hhurd-i386</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/893"/>
+    <id>http://www.prelude-siem.org/issues/893</id>
+    <updated>2017-06-24T14:23:44Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;pre&gt;
+make[6]: Entering directory '/&amp;lt;&amp;lt;PKGBUILDDIR&amp;gt;&amp;gt;/src/libprelude-error'
+LANG="" gawk -f ./mkstrtable.awk -v textidx=3 \
+    ./err-sources.h.in &amp;gt;err-sources.h
+LANG="" gawk -f ./mkstrtable.awk -v textidx=3 \
+./err-codes.h.in &amp;gt;err-codes.h
+LANG="" gawk -f ./mkerrcodes1.awk ./errnos.in &amp;gt;_mkerrcodes.h
+gcc -E -P _mkerrcodes.h | grep PRELUDE_ERROR_ | LANG="" gawk -f ./mkerrcodes.awk &amp;gt;mkerrcodes.h
+rm _mkerrcodes.h
+gcc -g -O2 -fdebug-prefix-map=/&amp;lt;&amp;lt;PKGBUILDDIR&amp;gt;&amp;gt;=. -specs=/usr/share/dpkg/pie-compile.specs -fstack-protector-strong -Wformat -Werror=format-security -I. -I. -o mkerrcodes ./mkerrcodes.c
+In file included from ./mkerrcodes.c:26:0:
+./mkerrcodes.h:3:3: error: expected identifier or '(' before numeric constant
+ ((0x10 &amp;lt;&amp;lt; 26) | ((7) &amp;#38; 0x3fff)) PRELUDE_ERROR_E2BIG
+   ^~~~
+./mkerrcodes.h:3:15: error: expected ')' before '|' token
+ ((0x10 &amp;lt;&amp;lt; 26) | ((7) &amp;#38; 0x3fff)) PRELUDE_ERROR_E2BIG
+               ^
+./mkerrcodes.c: In function 'main':
+./mkerrcodes.c:59:31: error: 'err_table' undeclared (first use in this function)
+       for (i = 0; i &amp;lt; sizeof (err_table) / sizeof (err_table[0]) - 1; i++)
+                               ^~~~~~~~~
+./mkerrcodes.c:59:31: note: each undeclared identifier is reported only once for each function it appears in
+Makefile:1790: recipe for target 'mkerrcodes' failed
+&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #887 (New): Timer tests on slow system</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/887"/>
+    <id>http://www.prelude-siem.org/issues/887</id>
+    <updated>2017-05-14T14:22:27Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;On slow system, sometimes, timer tests (tests/prelude-timer.c) work works.&lt;/p&gt;
+
+
+	&lt;p&gt;Adding "1" to max_expire in for loop solve this&lt;/p&gt;
+
+
+&lt;pre&gt;
+-        for ( i = 0; i &amp;lt;= max_expire &amp;#38;&amp;#38; timer_alive; i++ ) {
++        for ( i = 0; i &amp;lt;= max_expire + 1 &amp;#38;&amp;#38; timer_alive; i++ ) {
+&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #886 (New): Sometimes, test-lock from libmissing wont works</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/886"/>
+    <id>http://www.prelude-siem.org/issues/886</id>
+    <updated>2017-05-14T14:19:50Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Same issues in coreutils and other packages : &lt;a class="external" href="http://pkgs.fedoraproject.org/cgit/rpms/coreutils.git/commit/?id=8d346246"&gt;http://pkgs.fedoraproject.org/cgit/rpms/coreutils.git/commit/?id=8d346246&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Hope that gnulib will update this test&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #885 (New): Segfault with atfork on arm64, armhf and ppc64el</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/885"/>
+    <id>http://www.prelude-siem.org/issues/885</id>
+    <updated>2017-05-14T14:16:45Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;See &lt;a class="external" href="https://bugs.launchpad.net/ubuntu/+source/libprelude/+bug/1262430"&gt;https://bugs.launchpad.net/ubuntu/+source/libprelude/+bug/1262430&lt;/a&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #879 (New): M4 for Ruby on Debian 9 not working</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/879"/>
+    <id>http://www.prelude-siem.org/issues/879</id>
+    <updated>2017-03-27T22:48:17Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;The actual M4 (3.1, m4/am_path_ruby) can't detect ruby on debian 9&lt;/p&gt;
+
+
+	&lt;p&gt;Here is an example of patch :&lt;/p&gt;
+
+
+&lt;pre&gt;
+--- libprelude-3.1.0/m4/am_path_ruby.m4 2017-02-28 18:00:21.227299410 -0500
++++ libprelude-3.1.0/m4/am_path_ruby.m4 2017-02-28 18:01:06.702306372 -0500
+@@ -95,7 +95,7 @@
+   dnl   (shared libraries)
+   AC_CACHE_CHECK([for $am_display_RUBY extension module directory],
+     [am_cv_ruby_rbexecdir],
+-    [am_cv_ruby_rbexecdir=`$RUBY -rrbconfig -e "drive = File::PATH_SEPARATOR == ';' ? /\A\w:/ : /\A/; prefix = Regexp.new('\\A' + Regexp.quote(RbConfig::CONFIG[['prefix']])); \\$prefix = RbConfig::CONFIG[['prefix']].sub(drive, ''); \\$sitearchdir = RbConfig::CONFIG[['sitearchdir']].sub(prefix, '\\$(prefix)').sub(drive, ''); print \\$sitearchdir;" 2&amp;gt;/dev/null || echo "${RUBY_EXEC_PREFIX}/local/lib/site_ruby/${RUBY_VERSION}/${RUBY_PLATFORM}"`])
++    [am_cv_ruby_rbexecdir=`$RUBY -r rbconfig -e "print RbConfig::CONFIG[['vendorarchdir']]"`])
+   AC_SUBST([rbexecdir], [$am_cv_ruby_rbexecdir])
+
+   dnl if PKG-CONFIG is available, we use it. Else, we try to dectect RUBY_INCLUDES manually
+&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #860 (Assigned): Fedora : ruby sitearchdir need to be vendorarchdir</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/860"/>
+    <id>http://www.prelude-siem.org/issues/860</id>
+    <updated>2016-10-31T21:33:18Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;On Fedora, sitearchdir is not defined, so ruby "so" file go to /usr/local.&lt;/p&gt;
+
+
+	&lt;p&gt;On Fedora it is vendorarchdir&lt;/p&gt;    </content>
+  </entry>
+</feed>

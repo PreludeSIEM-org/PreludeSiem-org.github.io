@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>/ - Repository - GLPI - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="mVGtZZwIbxVv/QofsWjpYIfA5MZ1pB3Jf9sgW8himSqKfsUKVRxiluVXAuWsIKA++4uVWG+uRIehVeTLTGKtKQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+  <script src="/javascripts/repository_navigation.js"></script>
+  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.prelude-siem.org/projects/glpi/repository/revisions.atom" />
+  <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" />
+</head>
+<body class="theme-Prelude project-glpi controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/glpi/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="changesets" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/glpi/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="changesets" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/glpi/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/glpi">Overview</a></li><li><a class="activity" href="/projects/glpi/activity">Activity</a></li><li><a class="repository selected" href="/projects/glpi/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+<div class="contextual">
+  
+<a class="icon icon-stats" href="/projects/glpi/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/glpi/repository" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />  <!-- Branches Dropdown -->
+    | Branch: 
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option></select>
+
+    | Tag: 
+    <select name="tag" id="tag"><option value="">&nbsp;</option>
+<option value="v4.1.0">v4.1.0</option>
+<option value="v4.1.0rc1">v4.1.0rc1</option>
+<option value="v4.1.0rc2">v4.1.0rc2</option>
+<option value="v4.1.0rc3">v4.1.0rc3</option></select>
+
+    | Revision: 
+    <input type="text" name="rev" id="rev" value="master" size="8" />
+</form>
+</div>
+
+<h2><a href="/projects/glpi/repository/revisions/master/show">glpi</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr id="a46a1bce0b67c45bec8f435bd5390a54" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('a46a1bce0b67c45bec8f435bd5390a54', '/projects/glpi/repository/revisions/master/show/pkg?depth=1&amp;parent_id=a46a1bce0b67c45bec8f435bd5390a54');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/glpi/repository/revisions/master/show/pkg">pkg</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="25d902c24283ab8cfbac54dfa101ad31" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('25d902c24283ab8cfbac54dfa101ad31', '/projects/glpi/repository/revisions/master/show/src?depth=1&amp;parent_id=25d902c24283ab8cfbac54dfa101ad31');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/glpi/repository/revisions/master/show/src">src</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/glpi/repository/changes/.gitignore?rev=master">.gitignore</a>
+</td>
+<td class="size">428 Bytes</td>
+</tr>
+<tr id="21c55fa400e4d25aed3a755371e32151" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/glpi/repository/changes/COPYING.txt?rev=master">COPYING.txt</a>
+</td>
+<td class="size">17.7 KB</td>
+</tr>
+<tr id="b67911656ef5d18c4ae36cb6741b7965" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/glpi/repository/changes/Makefile?rev=master">Makefile</a>
+</td>
+<td class="size">3.03 KB</td>
+</tr>
+<tr id="26fd799ea07494916e9da9b91b2aac64" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/glpi/repository/changes/README.txt?rev=master">README.txt</a>
+</td>
+<td class="size">2.12 KB</td>
+</tr>
+<tr id="780b48c08acd302f35338634f56df2ae" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/glpi/repository/changes/VERSION.txt?rev=master">VERSION.txt</a>
+</td>
+<td class="size">30 Bytes</td>
+</tr>
+<tr id="a91efb528777d13c9f105798a9c5673b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/glpi/repository/changes/buildenv?rev=master">buildenv</a>
+</td>
+<td class="size">12 Bytes</td>
+</tr>
+<tr id="a55fc4e553af13234f26342646b88e19" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/glpi/repository/changes/buildout.cfg?rev=master">buildout.cfg</a>
+</td>
+<td class="size">97 Bytes</td>
+</tr>
+<tr id="b5d0ee8c97c7abd7e3fa29b9a27d1780" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file application-json" href="/projects/glpi/repository/changes/composer.json?rev=master">composer.json</a>
+</td>
+<td class="size">318 Bytes</td>
+</tr>
+<tr id="1da2c7edc898c70e5a79a9997c98cecc" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/glpi/repository/changes/composer.lock?rev=master">composer.lock</a>
+</td>
+<td class="size">3.65 KB</td>
+</tr>
+<tr id="6b216d983cf0a62e9c648934c5687456" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-xml" href="/projects/glpi/repository/changes/phpcs.xml?rev=master">phpcs.xml</a>
+</td>
+<td class="size">618 Bytes</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"a68b0db72e28e0fd020875eed620a12848834535":{"parent_scmids":["945f4815d3a6d6b74830b5bf8873b5ece75bb843"],"rdmid":0,"refs":null,"scmid":"a68b0db72e28e0fd020875eed620a12848834535","href":"/projects/glpi/repository/revisions/a68b0db72e28e0fd020875eed620a12848834535","space":0},"fa5253c9aa749899f75414ce0cda628a0d19e22f":{"parent_scmids":["a68b0db72e28e0fd020875eed620a12848834535"],"rdmid":1,"refs":null,"scmid":"fa5253c9aa749899f75414ce0cda628a0d19e22f","href":"/projects/glpi/repository/revisions/fa5253c9aa749899f75414ce0cda628a0d19e22f","space":0},"6ef95d06f1bb7359d8820fefde572c2469243c7a":{"parent_scmids":["fa5253c9aa749899f75414ce0cda628a0d19e22f"],"rdmid":2,"refs":null,"scmid":"6ef95d06f1bb7359d8820fefde572c2469243c7a","href":"/projects/glpi/repository/revisions/6ef95d06f1bb7359d8820fefde572c2469243c7a","space":0},"d7f383b7a7ce7c54c3ffdc64ff45cde5bd840adf":{"parent_scmids":["6ef95d06f1bb7359d8820fefde572c2469243c7a"],"rdmid":3,"refs":null,"scmid":"d7f383b7a7ce7c54c3ffdc64ff45cde5bd840adf","href":"/projects/glpi/repository/revisions/d7f383b7a7ce7c54c3ffdc64ff45cde5bd840adf","space":0},"411a1293a1cf936990559dce62e7f1b769beacdc":{"parent_scmids":["d7f383b7a7ce7c54c3ffdc64ff45cde5bd840adf"],"rdmid":4,"refs":null,"scmid":"411a1293a1cf936990559dce62e7f1b769beacdc","href":"/projects/glpi/repository/revisions/411a1293a1cf936990559dce62e7f1b769beacdc","space":0},"6a6d5972cc29daf357330e5c0f43ea71d0b19793":{"parent_scmids":["411a1293a1cf936990559dce62e7f1b769beacdc"],"rdmid":5,"refs":null,"scmid":"6a6d5972cc29daf357330e5c0f43ea71d0b19793","href":"/projects/glpi/repository/revisions/6a6d5972cc29daf357330e5c0f43ea71d0b19793","space":0},"09aac931acdc48701ab4d90ba95934c4b0d47fc2":{"parent_scmids":["6a6d5972cc29daf357330e5c0f43ea71d0b19793"],"rdmid":6,"refs":null,"scmid":"09aac931acdc48701ab4d90ba95934c4b0d47fc2","href":"/projects/glpi/repository/revisions/09aac931acdc48701ab4d90ba95934c4b0d47fc2","space":0},"2605341d815a30a03d4b9c294b0e91c00835632b":{"parent_scmids":["09aac931acdc48701ab4d90ba95934c4b0d47fc2"],"rdmid":7,"refs":null,"scmid":"2605341d815a30a03d4b9c294b0e91c00835632b","href":"/projects/glpi/repository/revisions/2605341d815a30a03d4b9c294b0e91c00835632b","space":0},"b2feaa038b7ec171b2c27f714c6cd4dd6d68ded7":{"parent_scmids":["2605341d815a30a03d4b9c294b0e91c00835632b"],"rdmid":8,"refs":null,"scmid":"b2feaa038b7ec171b2c27f714c6cd4dd6d68ded7","href":"/projects/glpi/repository/revisions/b2feaa038b7ec171b2c27f714c6cd4dd6d68ded7","space":0},"f1634ea8fa634f8d674342246075e8cbe00cfdcf":{"parent_scmids":["b2feaa038b7ec171b2c27f714c6cd4dd6d68ded7"],"rdmid":9,"refs":"master","scmid":"f1634ea8fa634f8d674342246075e8cbe00cfdcf","href":"/projects/glpi/repository/revisions/f1634ea8fa634f8d674342246075e8cbe00cfdcf","space":0}},
+    0
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"></div>
+
+
+<form action="/projects/glpi/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision f1634ea8" href="/projects/glpi/repository/revisions/f1634ea8fa634f8d674342246075e8cbe00cfdcf">f1634ea8</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-1" value="f1634ea8fa634f8d674342246075e8cbe00cfdcf" onclick="$(&#39;#cbto-2&#39;).prop(&#39;checked&#39;,true);" checked="checked" /></td>
+<td class="checkbox"></td>
+<td class="committed_on">08/06/2018 03:58 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Préparation Vigilo v5.0.0</p>
+
+
+	<p>Change-Id: Ie774b75ab8cbc6913707eeee6051fae90a7ccab2</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision b2feaa03" href="/projects/glpi/repository/revisions/b2feaa038b7ec171b2c27f714c6cd4dd6d68ded7">b2feaa03</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-2" value="b2feaa038b7ec171b2c27f714c6cd4dd6d68ded7" onclick="$(&#39;#cbto-3&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-2" value="b2feaa038b7ec171b2c27f714c6cd4dd6d68ded7" onclick="if ($(&#39;#cb-2&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-1&#39;).prop(&#39;checked&#39;,true);}" checked="checked" /></td>
+<td class="committed_on">08/03/2018 01:19 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#1666] Correction URL vers le site web</p>
+
+
+	<p>Change-Id: Ibad1fee6135203511b861df5a5ec5700ddeac901<br />Refs: #1666</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 2605341d" href="/projects/glpi/repository/revisions/2605341d815a30a03d4b9c294b0e91c00835632b">2605341d</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-3" value="2605341d815a30a03d4b9c294b0e91c00835632b" onclick="$(&#39;#cbto-4&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-3" value="2605341d815a30a03d4b9c294b0e91c00835632b" onclick="if ($(&#39;#cb-3&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-2&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">11/13/2017 11:52 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Evite erreur sur la doc d'API dans la CI</p>
+
+
+	<p>Change-Id: I0dfd75fcc539a8d3806ea8e94c7cdf2807a349a5</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 09aac931" href="/projects/glpi/repository/revisions/09aac931acdc48701ab4d90ba95934c4b0d47fc2">09aac931</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-4" value="09aac931acdc48701ab4d90ba95934c4b0d47fc2" onclick="$(&#39;#cbto-5&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-4" value="09aac931acdc48701ab4d90ba95934c4b0d47fc2" onclick="if ($(&#39;#cb-4&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-3&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">10/26/2017 04:58 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Prise en compte màj des versions des logiciels</p>
+
+
+	<p>Change-Id: I9ff8fbafecf6c62c4f8c3e126523a290eacc1a3e</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 6a6d5972" href="/projects/glpi/repository/revisions/6a6d5972cc29daf357330e5c0f43ea71d0b19793">6a6d5972</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-5" value="6a6d5972cc29daf357330e5c0f43ea71d0b19793" onclick="$(&#39;#cbto-6&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-5" value="6a6d5972cc29daf357330e5c0f43ea71d0b19793" onclick="if ($(&#39;#cb-5&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-4&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">10/25/2017 04:37 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>On s'assure que les ID obtenus sont numériques</p>
+
+
+	<p>Change-Id: Ia36e086c889f340fbabd0a67b4c2de157aa574a6</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 411a1293" href="/projects/glpi/repository/revisions/411a1293a1cf936990559dce62e7f1b769beacdc">411a1293</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-6" value="411a1293a1cf936990559dce62e7f1b769beacdc" onclick="$(&#39;#cbto-7&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-6" value="411a1293a1cf936990559dce62e7f1b769beacdc" onclick="if ($(&#39;#cb-6&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-5&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">10/20/2017 05:54 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Correction pour conventions de codage</p>
+
+
+	<p>Change-Id: I3fcc89478155633b34263679b61bc1e88892195f</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision d7f383b7" href="/projects/glpi/repository/revisions/d7f383b7a7ce7c54c3ffdc64ff45cde5bd840adf">d7f383b7</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-7" value="d7f383b7a7ce7c54c3ffdc64ff45cde5bd840adf" onclick="$(&#39;#cbto-8&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-7" value="d7f383b7a7ce7c54c3ffdc64ff45cde5bd840adf" onclick="if ($(&#39;#cb-7&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-6&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">10/20/2017 05:41 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Exécution de phpcs en guise de tests</p>
+
+
+	<p>Change-Id: I1064f671fb107bf31989d517c12f66b4bdcd8de3</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 6ef95d06" href="/projects/glpi/repository/revisions/6ef95d06f1bb7359d8820fefde572c2469243c7a">6ef95d06</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-8" value="6ef95d06f1bb7359d8820fefde572c2469243c7a" onclick="$(&#39;#cbto-9&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-8" value="6ef95d06f1bb7359d8820fefde572c2469243c7a" onclick="if ($(&#39;#cb-8&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-7&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">10/20/2017 03:48 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Correction dépendance sur GLPI</p>
+
+
+	<p>Le plugin nécessite la version 9.1.1 ou plus de GLPI.</p>
+
+
+	<p>Change-Id: Ia846d2c1cda030ca7766cbefd7096d9df36bda21</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision fa5253c9" href="/projects/glpi/repository/revisions/fa5253c9aa749899f75414ce0cda628a0d19e22f">fa5253c9</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-9" value="fa5253c9aa749899f75414ce0cda628a0d19e22f" onclick="$(&#39;#cbto-10&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-9" value="fa5253c9aa749899f75414ce0cda628a0d19e22f" onclick="if ($(&#39;#cb-9&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-8&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">10/19/2017 04:22 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Suppression connector-syncevents</p>
+
+
+	<p>Il ne s'agit pas d'un démon, donc la supervision du processus n'a pas de<br />sens.</p>
+
+
+	<p>Change-Id: I4697903ebb64c1c0b33cf7367a856b12c566ec21</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision a68b0db7" href="/projects/glpi/repository/revisions/a68b0db72e28e0fd020875eed620a12848834535">a68b0db7</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-10" value="a68b0db72e28e0fd020875eed620a12848834535" onclick="if ($(&#39;#cb-10&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-9&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">10/19/2017 04:22 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Ajout cibles tests et apidoc pour la CI</p>
+
+
+	<p>Change-Id: Ia3b1106c64fb92d25818e72adf6e757b99503b60</p></td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="View differences" />
+</form></div>
+
+  <p>
+    <a href="/projects/glpi/repository/revisions">View all revisions</a>
+    |
+    <a href="/projects/glpi/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="/projects/glpi/repository/revisions.atom">Atom</a></span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

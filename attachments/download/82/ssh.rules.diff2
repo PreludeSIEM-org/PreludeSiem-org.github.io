@@ -1,0 +1,11 @@
+--- ./ssh.rules.orig	2007-06-05 17:53:13.202815100 -0400
++++ ./ssh.rules	2007-06-05 17:56:18.308984700 -0400
+@@ -65,7 +65,7 @@
+  assessment.impact.severity=low; \
+  assessment.impact.completion=succeeded; \
+  assessment.impact.type=user; \
+- assessment.impact.description=User $2 logged in from $3:$4 using the $1 method; \
++ assessment.impact.description=User $2 logged in from $4:$5 using the $1 method; \
+  source(0).node.address(0).category=ipv4-addr; \
+  source(0).node.address(0).address=$4; \
+  source(0).service.port=$5; \

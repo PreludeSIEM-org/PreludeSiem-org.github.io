@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/880.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2018-09-27T12:38:08Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Libprelude - Bug #880: Spelling issues on manpages</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/880"/>
+    <id>http://www.prelude-siem.org/issues/880?journal_id=4914</id>
+    <updated>2018-09-27T12:38:08Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Fixed in &lt;a class="changeset" title="[#2558] Manpage spelling check Change-Id: I330ead04de1aa98c858002d78b5340201c4c4a9f" href="http://www.prelude-siem.org/projects/libprelude/repository/revisions/bcd1567bab84d1886fd12cdb9be32c166cfce8fe"&gt;bcd1567bab84d1886fd12cdb9be32c166cfce8fe&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+</feed>

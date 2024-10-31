@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Prelude-LML: Issues</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/prelude-lml/issues.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/prelude-lml/issues"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2017-10-16T21:51:10Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>Bug #915 (New): Text spelling issue</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/915"/>
+    <id>http://www.prelude-siem.org/issues/915</id>
+    <updated>2017-10-16T21:51:10Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+Two issues :
+	&lt;ul&gt;
+	&lt;li&gt;supressed =&gt; suppressed&lt;/li&gt;
+		&lt;li&gt;authentification =&gt; authentication&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #872 (New): Prelude-LML check not working</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/872"/>
+    <id>http://www.prelude-siem.org/issues/872</id>
+    <updated>2017-01-28T18:26:52Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Since we move rules to another subproject (prelude-lml-rules), make check is not working. Error in "tests" folder.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Feature #315 (New): Using Named variables in PCRE ruleset</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/315"/>
+    <id>http://www.prelude-siem.org/issues/315</id>
+    <updated>2008-09-13T20:42:09Z</updated>
+    <content type="html">
+&lt;p&gt;Named Variables in pcre:&lt;/p&gt;
+
+
+	&lt;p&gt;This would make for quicker and simpler rules to be created in prelude-lml.&lt;/p&gt;
+
+
+	&lt;p&gt;Example from ntsyslog.rules:&lt;/p&gt;
+
+
+&lt;pre&gt;
+regex=security\[success\] 528 (.*) Successful Logon:  User Name:(?&amp;lt;username&amp;gt;[\w ]+)  Domain:(?&amp;lt;domain&amp;gt;.+)  Logon ID:\(?&amp;lt;lid&amp;gt;.*\)  Logon Type:(?&amp;lt;ltype&amp;gt;\d+)  Logon Process:(?&amp;lt;lprocess&amp;gt;\w+) .* Workstation Name:(?&amp;lt;wks&amp;gt;\S+);
+    classification.text=Login; \
+    classification.reference(0).origin=vendor-specific; \
+    classification.reference(0).meaning=Windows Event ID; \
+    classification.reference(0).name=528; \
+    classification.reference(0).url=http://www.ultimatewindowssecurity.com/events/com189.html; \
+    id=1401; \
+    revision=3; \
+    analyzer(0).name=NTsyslog; \
+    analyzer(0).manufacturer=ntsyslog.sourceforge.net; \
+    analyzer(0).class=Logging; \
+    assessment.impact.severity=low; \
+    assessment.impact.completion=succeeded; \
+    assessment.impact.type=user; \
+    assessment.impact.description=$username successfully logged on on $wks ($domain domain) via $ltype; \
+    source(0).process.name=$5; \
+    source(0).node.address(0).category=unknown; \
+    source(0).node.address(0).address=$wks; \
+    source(0).node.name=$wks; \
+    source(0).user.category=os-device; \
+    source(0).user.user_id(0).type=current-user; \
+    source(0).user.user_id(0).name=$username; \
+    target(0).user.user_id(0).type=current-user; \
+    target(0).user.user_id(0).name=$username; \
+    additional_data(0).type=integer; \
+    additional_data(0).meaning=Logon type; \
+    additional_data(0).data=$ltype; \
+    additional_data(1).type=string; \
+    additional_data(1).meaning=Authentication domain; \
+    additional_data(1).data=$domain; \
+    last
+&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title>Feature #238 (New): manpage</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/238"/>
+    <id>http://www.prelude-siem.org/issues/238</id>
+    <updated>2007-06-09T00:32:30Z</updated>
+    <content type="html">
+&lt;p&gt;Here is a manpage for prelude-lml, mostly taken from --help command line and the wiki. Please review for integration.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #215 (New): ntsyslog.rules does not detect domain login events</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/215"/>
+    <id>http://www.prelude-siem.org/issues/215</id>
+    <updated>2007-04-03T17:44:11Z</updated>
+    <content type="html">
+&lt;p&gt;The ruleset appears to detect only host-based login attempts rather than login attempts against a domain.&lt;/p&gt;
+
+
+	&lt;p&gt;event id 675: (bad password)&lt;/p&gt;
+
+
+	&lt;p&gt;security[failure] 675 NT AUTHORITY\SYSTEM Pre-authentication failed: User Name:mike User ID: %{x-x-x-xx-xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxx-xxx} Service Name:krbtgt/HQ Pre-Authentication Type:0x2 Failure Code:0x18 Client&lt;br /&gt;Address:10.120.120.152&lt;/p&gt;
+
+
+	&lt;p&gt;more info: &lt;a class="external" href="http://www.ultimatewindowssecurity.com/events/com298.html"&gt;http://www.ultimatewindowssecurity.com/events/com298.html&lt;/a&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #214 (New): Invalid classification reference in several LML rulesets</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/214"/>
+    <id>http://www.prelude-siem.org/issues/214</id>
+    <updated>2007-04-03T17:37:44Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Some LML rulesets are missing an "url" field for the Classification Reference. IDMEF specify that the "url" member of a Reference has to be specified.&lt;/p&gt;
+
+
+Example of such rulesets are:
+	&lt;ul&gt;
+	&lt;li&gt;cisco-vpn.rules&lt;/li&gt;
+		&lt;li&gt;cisco-css.rules&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #213 (New): LML rulesets should be updated to use IDMEF Action</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/213"/>
+    <id>http://www.prelude-siem.org/issues/213</id>
+    <updated>2007-04-03T17:31:44Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Current rulesets (except modsecurity) does not make use of the IDMEF Action class.&lt;/p&gt;
+
+
+&lt;pre&gt;
+4.2.6.2.  The Action Class
+
+   The Action class is used to describe any actions taken by the
+   analyzer in response to the event. 
+   category
+
+      The type of action taken.  The permitted values are shown below.
+      The default value is "other".  (See also Section 10.)
+
+   +------+-------------------+----------------------------------------+
+   | Rank | Keyword           | Description                            |
+   +------+-------------------+----------------------------------------+
+   |    0 | block-installed   | A block of some sort was installed to  |
+   |      |                   | prevent an attack from reaching its    |
+   |      |                   | destination.  The block could be a     |
+   |      |                   | port block, address block, etc., or    |
+   |      |                   | disabling a user account.              |
+   |      |                   |                                        |
+   |    1 | notification-sent | A notification message of some sort    |
+   |      |                   | was sent out-of-band (via pager,       |
+   |      |                   | e-mail, etc.).  Does not include the   |
+   |      |                   | transmission of this alert.            |
+   |      |                   |                                        |
+   |    2 | taken-offline     | A system, computer, or user was taken  |
+   |      |                   | offline, as when the computer is shut  |
+   |      |                   | down or a user is logged off.          |
+   |      |                   |                                        |
+   |    3 | other             | Anything not in one of the above       |
+   |      |                   | categories.                            |
+   +------+-------------------+----------------------------------------+
+
+      The element itself may be empty, or may contain a textual
+      description of the action, if the analyzer is able to provide
+      additional details.
+&lt;/pre&gt;    </content>
+  </entry>
+</feed>

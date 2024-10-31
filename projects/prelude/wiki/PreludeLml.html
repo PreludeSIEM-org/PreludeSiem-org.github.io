@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>PreludeLml - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="4wJ/gGAAp5KJds1MKuzLVV//Wfzb4W6sTH/xywKhobfwLRfvqRSqEQPcxbY3pIILI7QoYsHrN+KS8TVbhqGVtA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/prelude/wiki/ManualUser">ManualUser</a> » <a href="/projects/prelude/wiki/PreludeComponentsConfiguration">PreludeComponentsConfiguration</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Prelude-LML"></a>
+<h1 >Prelude LML<a href="#Prelude-LML" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><strong>Prelude-LML</strong>, or Prelude Log Monitoring Lackey, is a part of the project that deals with host based intrusion detection aspects through log analysis. It can monitor files created by a syslog daemon coming from different hosts on heterogeneous platforms, other types of single-line event logs, or simulate a syslog server on its own. Thus any system generating logs can benefit from the Prelude-LML's analysis engine.</p>
+
+
+	<ul>
+	<li>Some example platforms are:
+	<ul>
+	<li>Unix systems</li>
+		<li>Switches and routers</li>
+		<li>Firewalls</li>
+		<li>Printers</li>
+		<li>Others systems which can log in Syslog format (like Windows NT/2K/XP with tools like Ntsyslog)</li>
+	</ul></li>
+	</ul>
+
+
+	<p>By placing Prelude-LML on a network and configuring other machines to send log messages to the Syslog daemon, it is possible to monitor an entire network of machines' logs.</p>
+
+
+	<ul>
+	<li>Prelude-LML has two modes of operation:
+	<ul>
+	<li>Watch log files on the host where it is running (syslog or any other).</li>
+		<li>Receive UDP syslog messages from other hosts on the network.</li>
+	</ul></li>
+	</ul>
+
+
+	<p>Prelude-LML's primary function is log analysis. Logs on a local system or logs monitored over the network (if configured to accept syslog messages from other hosts) can be processed and analyzed in order to discover security anomalies.</p>
+
+
+	<p>Prelude-LML has a plugin system which actually performs all analysis and monitoring.</p>
+
+
+	<p>One of these plugins, called <em>Pcre</em>, is a regular expression engine powered by the <a href="http://www.pcre.org/" class="external">PCRE</a> (Perl Compatible Regular Expression) library. This plugin is used in Prelude LML to match a set of regular expressions (in common terms, signatures). Each ruleset provides regular expression matching for a particular purpose. Therefore, the Netfilter ruleset 'watches' for netfilter messages, and the GRSecurity ruleset 'watches' for GRSecurity messages. The configuration file tells Prelude-LML what analysis plugins to load and use to process logs.</p>
+
+
+Here is a non exhaustive list of logs that Prelude-LML <em>Pcre</em> plugin has rulesets for:
+	<ul>
+	<li>APC Environmental Monitoring Unit</li>
+		<li>arpwatch</li>
+		<li>F5 Big-IP</li>
+		<li>Cisco PIX</li>
+		<li>Cisco Router</li>
+		<li>Cisco VPN Concentrator</li>
+		<li>Clam Antivirus</li>
+		<li>Dell OpenManage</li>
+		<li>GRSecurity</li>
+		<li>Honeyd</li>
+		<li>IPChains</li>
+		<li>IPFW</li>
+		<li>Checkpoint IPSO</li>
+		<li>mod_security</li>
+		<li>Norton Antivirus Corporate Edition</li>
+		<li>NetApp ONTAP</li>
+		<li>Netfilter</li>
+		<li>Windows NT/200x/XP</li>
+		<li>PAM</li>
+		<li>pcAnywhere</li>
+		<li>SentryTools Portsentry</li>
+		<li>Postfix</li>
+		<li><a class="wiki-page new" href="/projects/prelude/wiki/ProFTPd?parent=PreludeLml">ProFTPd</a></li>
+		<li>QPopper</li>
+		<li>SELinux</li>
+		<li>Sendmail</li>
+		<li>GNU Shadow Utils</li>
+		<li>Squid Proxy </li>
+		<li><a class="wiki-page new" href="/projects/prelude/wiki/OpenSSH?parent=PreludeLml">OpenSSH</a> sshd</li>
+		<li>GNU sudo</li>
+		<li>Open Source Tripwire</li>
+		<li>Vigor</li>
+		<li>Vpopmail</li>
+		<li>Linksys WAP11</li>
+		<li>Webmin</li>
+		<li>WU-FTPd</li>
+		<li>Exim</li>
+		<li>Oracle</li>
+		<li>tftpd</li>
+		<li>P3Scan</li>
+		<li>D-Link Wireless Router</li>
+	</ul>
+
+
+	<p>With the power of PCRE (the regexp engine that the signature engine uses), writing additional rules is an easy task.</p>
+
+
+	<a name="Multiple-log-files-different-format"></a>
+<h2 >Multiple log files, different format<a href="#Multiple-log-files-different-format" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>If you use multiple log file with different formatting, you can configure LML so that it know how to handle each log format.<br />This is done using a <strong>format</strong> section, in the <a class="wiki-page" href="/projects/prelude/wiki/PreludeLML">PreludeLML</a> configuration file:</p>
+
+
+<pre>
+[format=syslog]
+time-format = "%b %d %H:%M:%S" 
+prefix-regex = "^(?P&lt;timestamp&gt;.{15}) (?P&lt;hostname&gt;\S+) (?:(?P&lt;process&gt;\S+?)(?:\[(?P&lt;pid&gt;[0-9]+)\])?: )?" 
+file = /var/log/messages
+file = /var/log/auth.log
+udp-server = 0.0.0.0:514
+</pre>
+
+	<p>Additionally, LML can accept different format from a single log source (be it a file, or the UDP server). As an example, using the following configuration, LML will know how to parse any of the specified format from <em>/var/log/mylogfile</em> and UDP 0.0.0.0:514:</p>
+
+
+<pre>
+[format=syslog]
+time-format = "%b %d %H:%M:%S" 
+prefix-regex = "^(?P&lt;timestamp&gt;.{15}) (?P&lt;hostname&gt;\S+) (?:(?P&lt;process&gt;\S+?)(?:\[(?P&lt;pid&gt;[0-9]+)\])?: )?" 
+file = /var/log/mylogfile
+udp-server = 0.0.0.0:514
+
+[format=apache]
+time-format = "%d/%b/%Y:%H:%M:%S" 
+prefix-regex = "^(?P&lt;hostname&gt;\S+) - - \[(?P&lt;timestamp&gt;.{20}) \+.{4}\] " 
+file = /var/log/mylogfile
+udp-server = 0.0.0.0:514
+</pre>
+
+	<p>The <strong>format</strong> section allow several <strong>option</strong>:</p>
+
+
+	<ul>
+	<li><strong>prefix-regex</strong></li>
+	</ul>
+
+
+	<p>This tell LML how to handle the log header. With this option, you can bind variable used by LML to fill specific fields in the generated IDMEF Alert. Variable that you can use are:</p>
+
+
+	<table>
+		<tr>
+			<td></td>
+			<td>Variable</td>
+			<td></td>
+			<td>Usage</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>timestamp</td>
+			<td></td>
+			<td>Bind to the DetectTime information of an IDMEF Alert</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>hostname</td>
+			<td></td>
+			<td>Bind to the Target node information in an IDMEF Alert</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>process</td>
+			<td></td>
+			<td>Bind to the Target process name in an IDMEF Alert</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>pid</td>
+			<td></td>
+			<td>Bind to the Target process pid in an IDMEF Alert</td>
+			<td></td>
+		</tr>
+	</table>
+
+
+
+
+	<p>Here is an example of how it work, using the following <em>prefix-regex</em>:<br /><pre>
+prefix-regex = "^(?P&lt;timestamp&gt;.{15}) (?P&lt;hostname&gt;\S+) (?:(?P&lt;process&gt;\S+?)(?:\[(?P&lt;pid&gt;[0-9]+)\])?: )?" 
+</pre></p>
+
+
+	<p>Together with the following log entry:<br /><pre>
+Dec 30 20:09:03 hacklab honeydr5711: this is a log entry
+</pre></p>
+
+
+	<p>When LML parse this log entry using the above <strong>prefix-regex</strong>, the <em>timestamp</em>, <em>hostname</em>, <em>process</em>, and <em>pid</em> variable will be set to the following value:</p>
+
+
+	<table>
+		<tr>
+			<td></td>
+			<td>Variable</td>
+			<td></td>
+			<td>Value</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>timestamp</td>
+			<td></td>
+			<td>Dec 30 20:09:03</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>hostname</td>
+			<td></td>
+			<td>hacklab</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>process</td>
+			<td></td>
+			<td>honeyd</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>pid</td>
+			<td></td>
+			<td>5711</td>
+			<td></td>
+		</tr>
+	</table>
+
+
+
+
+	<p>Each of these value will be assigned in the relevant IDMEF fields of the generated alert.<br />Please note that the <em>timestamp</em> variable is specific in that you have to specify an additional <strong>time-format</strong> option, so that LML is able to parse the time representation.</p>
+
+
+	<ul>
+	<li><strong>time-format</strong></li>
+	</ul>
+
+
+	<p>Should be set so that LML know how to format the timestamp in your log entry. This will be used to match the <em>timestamp</em> vaiable content defined through the <strong>prefix-regex</strong> option.</p>
+
+
+	<table>
+		<tr>
+			<td></td>
+			<td>Sequence</td>
+			<td></td>
+			<td>Description</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%%</td>
+			<td></td>
+			<td>The % character</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%a or %A</td>
+			<td></td>
+			<td>The weekday name according to the current locale, in abbreviated form or the full name.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%b or %B or %h</td>
+			<td></td>
+			<td>The month name according to the current locale, in abbreviated form or the full name.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%c</td>
+			<td></td>
+			<td>The date and time representation for the current locale.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%C</td>
+			<td></td>
+			<td>The century number (0-99).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%d or %e</td>
+			<td></td>
+			<td>The day of month (1-31).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%D</td>
+			<td></td>
+			<td>Equivalent  to  %m/%d/%y.  (This  is  the American style date, very confusing to non-Americans, especially since %d/%m/%y is widely used in Europe.  The ISO 8601 standard format is %Y-%m-%d.)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%H</td>
+			<td></td>
+			<td>The hour (0-23).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%I</td>
+			<td></td>
+			<td>The hour on a 12-hour clock (1-12).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%j</td>
+			<td></td>
+			<td>The day number in the year (1-366).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%m</td>
+			<td></td>
+			<td>The month number (1-12).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%M</td>
+			<td></td>
+			<td>The minute (0-59).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%n</td>
+			<td></td>
+			<td>Arbitrary whitespace.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%p</td>
+			<td></td>
+			<td>The locale's equivalent of AM or PM. (Note: there may be none.)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%r</td>
+			<td></td>
+			<td>The 12-hour clock time (using the locale's AM or PM).  In the POSIX locale equivalent to %I:%M:%S  %p.   If  t_fmt_ampm  is  empty  in  the LC_TIME part of the current locale then the behaviour is undefined.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%R</td>
+			<td></td>
+			<td>Equivalent to %H:%M.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%S</td>
+			<td></td>
+			<td>The second (0-60; 60 may occur for leap seconds; earlier also 61 was allowed).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%t</td>
+			<td></td>
+			<td>Arbitrary whitespace.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%T</td>
+			<td></td>
+			<td>Equivalent to %H:%M:%S.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%U</td>
+			<td></td>
+			<td>The week number with Sunday the first day of the week (0-53).  The first Sunday of January is the first day of week 1.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%w</td>
+			<td></td>
+			<td>The weekday number (0-6) with Sunday = 0.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%W</td>
+			<td></td>
+			<td>The week number with Monday the first day of the week (0-53).  The first Monday of January is the first day of week 1.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%x</td>
+			<td></td>
+			<td>The date, using the locale's date format.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%X</td>
+			<td></td>
+			<td>The time, using the locale's time format.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%y</td>
+			<td></td>
+			<td>The  year within century (0-99).  When a century is not otherwise specified, values in the range 69-99 refer to years in the twentieth century (1969-1999); values in the range 00-68 refer to years in the twenty-first century (2000-2068).</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%Y</td>
+			<td></td>
+			<td>The year, including century (for example, 1991).</td>
+			<td></td>
+		</tr>
+	</table>
+
+
+
+
+	<p>Some field descriptors can be modified by the E or O modifier characters to indicate that an alternative format or specification should  be  used.<br />If the alternative format or specification does not exist in the current locale, the unmodified field descriptor is used.</p>
+
+
+The E modifier specifies that the input string may contain alternative locale-dependent versions of the date and time representation:
+	<table>
+		<tr>
+			<td></td>
+			<td>Sequence</td>
+			<td></td>
+			<td>Description</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%Ec</td>
+			<td></td>
+			<td>The locale's alternative date and time representation.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%EC</td>
+			<td></td>
+			<td>The name of the base year (period) in the locale's alternative representation.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%Ex</td>
+			<td></td>
+			<td>The locale's alternative date representation.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%EX</td>
+			<td></td>
+			<td>The locale's alternative time representation.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%Ey</td>
+			<td></td>
+			<td>The offset from %EC (year only) in the locale's alternative representation.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%EY</td>
+			<td></td>
+			<td>The full alternative year representation.</td>
+			<td></td>
+		</tr>
+	</table>
+
+
+
+
+The O modifier specifies that the numerical input may be in an alternative locale-dependent format:
+	<table>
+		<tr>
+			<td></td>
+			<td>Sequence</td>
+			<td></td>
+			<td>Description</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%Od or %Oe</td>
+			<td></td>
+			<td>The day of the month using the locale's alternative numeric symbols; leading zeros are permitted but not required.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%OH</td>
+			<td></td>
+			<td>The hour (24-hour clock) using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%OI</td>
+			<td></td>
+			<td>The hour (12-hour clock) using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%Om</td>
+			<td></td>
+			<td>The month using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%OM</td>
+			<td></td>
+			<td>The minutes using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%OS</td>
+			<td></td>
+			<td>The seconds using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%OU</td>
+			<td></td>
+			<td>The week number of the year (Sunday as the first day of the week) using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%Ow</td>
+			<td></td>
+			<td>The number of the weekday (Sunday=0) using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%OW</td>
+			<td></td>
+			<td>The week number of the year (Monday as the first day of the week) using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>%Oy</td>
+			<td></td>
+			<td>The year (offset from %C) using the locale's alternative numeric symbols.</td>
+			<td></td>
+		</tr>
+	</table>
+
+
+
+
+	<ul>
+	<li><strong>file</strong></li>
+	</ul>
+
+
+	<p>A file to monitor, this option might be set several time if you want to monitor multiple files with this format.</p>
+
+
+	<ul>
+	<li><strong>udp-server</strong></li>
+	</ul>
+
+
+	<p>Create an UDP server that is able to handle this format, and which listen to the specified address.</p>
+
+
+	<ul>
+	<li><strong>idmef-alter</strong> and <strong>idmef-alter-force</strong></li>
+	</ul>
+
+
+	<p>Recent PreludeLML version allow you to include static values into events generated using a given format:</p>
+
+
+<pre>
+[format=syslog]
+idmef-alter = alert.analyzer(-1).node.location = My Location 
+</pre>
+
+	<p>Using the above example, any events generated from a syslog format source will have the <em>alert.analyzer(-1).node.location</em> <a class="wiki-page" href="/projects/prelude/wiki/IDMEFPath">IDMEFPath</a> set to <em>My Location</em>, unless the path is already set. You might use the <strong>idmef-alter-force</strong> option in case you want to overwrite a path that is already set.</p>
+
+
+	<a name="Metadata"></a>
+<h2 >Metadata<a href="#Metadata" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>In the default mode of operation, Prelude-LML will keep track of the last offset analyzed in a given log file. If Prelude-LML is restarted,<br />it will start analyzing log files at their last known analyzed position.</p>
+
+
+	<p>You can overcome this behavior by using the 'metadata' option (available from the command line or the configuration file). This option might<br />take multiple arguments:</p>
+
+
+	<table>
+		<tr>
+			<td></td>
+			<td>Value</td>
+			<td></td>
+			<td>Description</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><strong>tail</strong></td>
+			<td></td>
+			<td>Analyze from the tail of the file</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><strong>head</strong></td>
+			<td></td>
+			<td>Analyze from the head of the file</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><strong>last</strong></td>
+			<td></td>
+			<td>Analyze from the last known file position (default)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><strong>nowrite</strong></td>
+			<td></td>
+			<td>Do not write file metadata (prevent <strong>last</strong> keyword from working)</td>
+			<td></td>
+		</tr>
+	</table>
+
+
+
+
+	<p><strong>Example</strong>: if you want to analyze a log from the beginning of the file, without writing any metadata to be used for resuming operation, you could start Prelude-LML with the following options:</p>
+
+
+<pre>
+ prelude-lml --metadata=head,nowrite
+</pre>
+
+	<a name="Ruleset-Tuning"></a>
+<h2 >Ruleset Tuning<a href="#Ruleset-Tuning" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>In order to get the best performance out of Prelude-LML, you need to tune it post-install.<br />The most important thing to realize about the default Prelude-LML rulesets is that there are a wide range of devices supported, most of which are probably not even present in your environment.  Each of these device rulesets that you leave turned on sap CPU cycles from the LML parser.</p>
+
+
+	<p>The easiest way to ensure that LML runs efficiently is to turn off those rulesets you don't need.  There are two places to do this:</p>
+
+
+	<ul>
+	<li>In pcre.rules, comment out the rulesets that don't apply.</li>
+		<li>In single.rules, comment out the stand-alone rules that don't apply.</li>
+	</ul>
+
+
+	<p>The largest performance gain you'll see will be from pruning single.rules.  Each of the rulesets in pcre.rules has a required regex to allow events to be processed by them.  single.rules rules, on the other hand, are individually evaluated for every incoming log line, and those regexes are larger and more complex than the pre-ruleset regexes on each of the other rulesets.</p>
+
+
+	<p>Another thing you can do to speed up LML is to study and understand your per-device event rates and rearrange the ordering of the rulesets in pcre.rules to give preference to high event-rate devices.  For instance, in Linux-heavy environments, you might places the rulesets that match the regex=kernel and regex=sshd pre-ruleset regex at the top of your ruleset list.  In an environment where you were mostly monitoring PIX firewalls, you'd put the regex=%PIX line at the top.  This ensures that the high-rate events will hit a match and be removed from the parsing queue more quickly, resulting in better overall performance.</p>
+
+
+	<a name="Using-more-than-one-Pcre-modifying-prelude-lmlconf-and-pluginsrules"></a>
+<h2 >Using more than one Pcre (modifying prelude-lml.conf and plugins.rules)<a href="#Using-more-than-one-Pcre-modifying-prelude-lmlconf-and-pluginsrules" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>In some case you will try to split your logfile and match different rules on the multiple log files. In order to do that you must change the prelude-lml.conf and plugins.rules. By default if you do not specify a Pcre name, there will be only one Pcre named default.</p>
+
+
+	<p>Example :</p>
+
+
+	<p>- You have two syslog files "first.log" and "second.log" and you have three rules files "1.rules" "2.rules" "3.rules"</p>
+
+
+	<p>- You need to create two different Pcre instance :</p>
+
+
+	<p>plugins.rules original :</p>
+
+
+<pre>
+#   filename   plugin-name-list   pcre-option   regex
+#   *          Debug              -             .*
+****          Pcre               -             .*
+</pre>
+
+	<p>plugins.rules new file :</p>
+
+
+<pre>
+#   filename   plugin-name-list   pcre-option   regex
+    /var/log/first.log  Pcre[first]        -             .*
+    /var/log/second.log Pcre[second]       -             .*
+</pre>
+
+	<p>And the new prelude-lml.conf :</p>
+
+
+<pre>
+include = /usr/local/etc/prelude/default/idmef-client.conf
+
+#next you specify the files that you will check (if you do not put files in prelude-lml.conf nothing will be check)
+
+#syslog
+time-format = "%b %d %H:%M:%S" 
+prefix-regex= "^(?P&lt;timestamp&gt;.{15}) (?P&lt;hostname&gt;\S+) (?:(?&lt;process&gt;\S+?)(?:\[(?P&lt;pid&gt;[0-9]+)\])?: )?" 
+
+file= /var/log/first.log
+file= /var/log/second.log
+
+[Pcre=first]
+ruleset= /usr/local/etc/prelude-lml/ruleser/1.rules
+ruleset= /usr/local/etc/prelude-lml/ruleser/2.rules
+
+[Pcre=second]
+ruleset= /usr/local/etc/prelude-lml/ruleser/2.rules
+ruleset= /usr/local/etc/prelude-lml/ruleser/3.rules
+
+</pre>
+
+	<p>And when you lauch prelude-lml you should see :</p>
+
+
+<pre>
+Subscribing plugin pcre[first]
+Monitoring /var/log/first.log
+Subscribing plugin pcre[second]
+Monitoring /var/log/second.log
+</pre>
+
+	<a name="Filtering-specific-events"></a>
+<h2 >Filtering specific events<a href="#Filtering-specific-events" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>In order to filter certain events, you need to create a rule dedicated to matching the event you wish to filter out.<br />As an example, if you want to skip all PAM events concerning a successful login by <em>alex</em>, triggered by the following log entry:</p>
+
+
+	<p><em>Apr 10 16:40:05 bigamd sshd(pam_unix)!r10566: session opened for user alex by (uid=0)</em></p>
+
+
+	<p>You could add the following rule <strong>before</strong> the one triggering an alert:<br /><pre>
+regex=session opened for user alex by (\S*)\(uid=(\d*)\); last
+</pre></p>
+
+
+	<p>The <strong>last</strong> keyword tell the engine that further processing should stop if this rule is matched. <br />Please note that rules are evaluated from top to bottom, so this must be inserted before the rule that actually match.</p>
+
+
+	<a name="Creating-and-contributing-rules"></a>
+<h2 >Creating and contributing rules<a href="#Creating-and-contributing-rules" class="wiki-anchor">&para;</a></h2>
+
+
+Rulesets that you contribute to the Prelude-LML maintainer should follow these guidelines:
+	<ul>
+	<li>Avoid using .+ or .* in regex entries unless actually necessary. Doing so will make your rule CPU-costly to implement.</li>
+		<li>Avoid capturing variables which you don't use. This causes unnecessary memory consumption.</li>
+		<li>At a minimum, include regex, <strong>classification.text</strong>, <strong>assessement.impact.severity</strong>, <strong>assessment.impact.type</strong>, <strong>assessment.impact.description</strong>.</li>
+		<li>If it's correct for this application, use the <em>last</em> keyword.</li>
+		<li>For readability, put only a single field on each line of your rules.</li>
+		<li><strong>Include a sample log entry with each rule. This is very important for regression testing.</strong></li>
+		<li>Gather as many pieces of data, and fill as many IDMEF fields as possible from the log entry.</li>
+		<li>If a similar rule exists in another ruleset (same function, different software), use the classification.text from the other rule.</li>
+		<li>Use only the actual log message, none of the syslog headers (this generally includes timestamp, originating node, originating process, and pid).</li>
+		<li>Submit new rulesets to the prelude-devel mailing list for consideration.</li>
+	</ul>
+
+
+	<a name="Rule-format"></a>
+<h3 >Rule format<a href="#Rule-format" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>An LML rules consist of a regular expression, used to match a given log entry, followed by <a class="wiki-page" href="/projects/prelude/wiki/IDMEFPath">IDMEFPath</a> assignement (that might use value captured from the regular expression) in order to create an alert:</p>
+
+
+<pre>
+ regex=your_regex; idmef.path = value; idmef.path2 = value2;
+</pre>
+
+	<p>Here is a working example:</p>
+
+
+<pre>
+#LOG:Dec  8 14:45:17 itguxweb1 sshdr32112: Accepted publickey for root from 12.34.56.78 port 56634 ssh2
+#LOG:Jan 14 03:30:44 mail sshdr20298: Accepted publickey for root from fec0:0:201::3 port 63018 ssh2
+
+regex=Accepted (\S+) for root from (\S+) port (\d+); \
+ classification.text=Admin login; \
+ id=1908; \
+ revision=3; \
+ analyzer(0).name=sshd; \
+ analyzer(0).manufacturer=OpenSSH; \
+ analyzer(0).class=Authentication; \
+ assessment.impact.severity=medium; \
+ assessment.impact.completion=succeeded; \
+ assessment.impact.type=admin; \
+ assessment.impact.description=Root logged in from $2 port $3 using the $1 method; \
+ source(0).node.address(0).address=$2; \
+ source(0).service.port=$3; \
+ source(0).service.iana_protocol_name=tcp; \
+ source(0).service.iana_protocol_number=6; \
+ target(0).service.port=22; \
+ target(0).service.name=ssh; \
+ target(0).service.iana_protocol_name=tcp; \
+ target(0).service.iana_protocol_number=6; \
+ target(0).user.category=os-device; \
+ target(0).user.user_id(0).type=target-user; \
+ target(0).user.user_id(0).name=root; \
+ additional_data(0).type=string; \
+ additional_data(0).meaning=Authentication method; \
+ additional_data(0).data=$1; \
+ last;
+</pre>
+
+	<p>Prelude-LML can accept any IDMEF field in the form of an <a class="wiki-page" href="/projects/prelude/wiki/IDMEFPath">IDMEFPath</a>. Below, you will find<br />some example of IDMEF fields.</p>
+
+
+	<p>For listed IDMEF field (annotated <img src="/plugin_assets/redmine_wiki_extensions/images/x_mark.png" alt="(x)"> above), indexing starts at 0, so, for example, an event with multiple targets would have the first target listed <br />as target(0), followed by whatever IDMEF fields you use.  See the existing rulesets for examples.</p>
+
+
+	<ul>
+	<li><strong>regex</strong>: A PCRE regex that should be matched to trigger the alert.</li>
+		<li><strong>classification.text</strong>: The name of the alert, from one of the origins listed below.</li>
+		<li><strong>classification.reference(x).origin</strong>: The type of reference, permitted values are: unknown, vendor-specific, user-specific, bugtraqid, cve, osvdb</li>
+		<li><strong>classification.reference(x).name</strong>: Exactly one string containing the name of the reference from the source.  </li>
+		<li><strong>classification.reference(x).meaning</strong>: A brief manager (or the human operator of the manager) description of the alert</li>
+		<li><strong>classification.reference(x).url</strong>: A URL at which the manager (or the human operator of the manager) can find additional information about the alert. The document pointed to by the URL may include an in-depth description of the attack, appropriate countermeasures, or other information deemed relevant by the vendor.</li>
+		<li><strong>assessment.impact.severity</strong>: An estimate of the relative severity of the event (Possible values are: <em>info</em>, <em>low</em>, <em>medium</em>, <em>high</em>).</li>
+		<li><strong>assessment.impact.completion</strong>: An indication of whether the analyzer believes the attempt that the event describes was successful or not. The permitted values are: failed, succeeded.</li>
+		<li><strong>assessment.impact.type</strong>: The type of attempt represented by this event, in relatively broad categories. The permitted values are: <em>admin</em>, <em>dos</em>, <em>file</em>, <em>recon</em>, <em>user</em>, <em>other</em>.</li>
+		<li><strong>assessment.impact.description</strong>: May contain a textual description of the impact, if the analyzer is able to provide additional details.</li>
+		<li><strong>source(x).node.address(y).address</strong>, <strong>target(x).node.address(y).address</strong>: Address that has been attacked/Address that issued the attack. There can be more than one.</li>
+		<li><strong>source(x).node.address(y).category</strong>, <strong>target(x).node.address(y).category</strong>: The type of address provided. Possible values: <em>unknown</em>, <em>atm</em>, <em>e-mail</em>, <em>lotus-notes</em>, <em>mac</em>, <em>sna</em>, <em>vm</em>, <em>ipv4-addr</em>, <em>ipv4-addr-hex</em>, <em>ipv6-addr</em>, <em>ipv6-addr-hex</em>, <em>ipv6-net</em>, <em>ipv6-net-mask</em>.</li>
+		<li><strong>source(x).node.address(y).vlan_name</strong>, <strong>target(x).node.address(y).vlan_name</strong>: The name of the Virtual LAN to which the address belongs.</li>
+		<li><strong>source(x).node.address(y).vlan_num</strong>, <strong>target(x).node.address(y).vlan_num</strong>: The number of the Virtual LAN to which the address belongs.</li>
+		<li><strong>source(x).node.name</strong>, <strong>target(x).node.name</strong>: The name of the equipment. This information MUST be provided if no Address information is given.</li>
+		<li><strong>source(x).node.category</strong>, <strong>target(x).node.category</strong>: The domain from which the name information was obtained. Possible values are: <em>unknown</em>, <em>ads</em>, <em>afs</em>, <em>coda</em>, <em>dfs</em>, <em>dns</em>, <em>hosts</em>, <em>kerberos</em>, <em>nds</em>, <em>nis</em>, <em>nisplus</em>, <em>nt</em>, <em>wfw</em>.</li>
+		<li><strong>source(x).node.location</strong>, <strong>target().node.location</strong>: The location of the equipment.</li>
+		<li><strong>source(x).spoofed</strong>, <strong>target(x).decoy</strong>: An indication of whether the source/target is a decoy. The permitted values are: <em>unknown</em>, <em>yes</em>, <em>no</em>.</li>
+		<li><strong>source(x).interface</strong>, <strong>target(x).interface</strong>: May be used by a network-based analyzer with multiple interfaces to indicate which interfaces this source/target was seen on.</li>
+		<li><strong>source(x).service.name</strong>, <strong>target(y).service.name</strong>: The name of the service. Whenever possible, the name from the IANA list of well-known ports SHOULD be used.</li>
+		<li><strong>source(x).service.port</strong>, <strong>target(x).service.port</strong>: The port number being used.</li>
+		<li><strong>source(x).service.iana_protocol_name</strong>, <strong>target(x).service.ianal_protocol_name</strong>: The protocol being used.</li>
+		<li><strong>source(x).service.portlist</strong>, <strong>target(x).service.portlist</strong>: A list of port numbers being used.</li>
+		<li><strong>source(x).user.category</strong>, <strong>target(y).user.category</strong>: The type of user represented (<em>unknown</em>, <em>application</em>, <em>os-device</em>).</li>
+		<li><strong>source(x).user.user_id(y).type</strong>, <strong>target(x).user.user_id(y).type</strong>: The type of user information represented (<em>current-user</em>, <em>original-user</em>, <em>target-user</em>, <em>user-privs</em>, <em>current-group</em>, <em>group-privs</em>, <em>other-privs</em>).</li>
+		<li><strong>source(x).user.user_id(y).name</strong>, <strong>target(x).user.user_id(y).name</strong>: A user or group name.</li>
+		<li><strong>source(x).user.user_id(y).number</strong>, <strong>target(x).user.user_id(y).number</strong>: A user or group number.</li>
+		<li><strong>source(x).process.name</strong>, <strong>target(x).process.name</strong>: A process name</li>
+		<li><strong>source(x).process.pid</strong>, <strong>target(x).process.pid</strong>: A process PID.</li>
+	</ul>
+
+
+	<a name="Rule-flow-control"></a>
+<h3 >Rule flow control<a href="#Rule-flow-control" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li><strong>last</strong>: if a rule using the <em>last</em> keyword is matched, Prelude-LML won't process further rules.</li>
+		<li><strong>silent</strong>: if a rule using the <em>silent</em> keyword is matched, Prelude-LML will remain silent and won't generate an alert.</li>
+		<li><strong>chained</strong>: Rule marked as chained can only be called from other rules, using the <strong>goto</strong> or <strong>optgoto</strong> keyword.</li>
+		<li><strong>goto</strong>: allow to call a specific rule from the currently matched rule: <strong>goto</strong> = <em>rule_id</em>. If the rule that is called doesn't match, the current rule will fail.</li>
+		<li><strong>optgoto</strong>: Same as goto, but the called rule remain optional.</li>
+		<li><strong>optregex</strong>: Allow to specify an optional regex.</li>
+		<li><strong>min-optgoto-match</strong>: Require that at least the specified number of <strong>optgoto</strong> match for the current rule to be considered as a match.</li>
+		<li><strong>min-optregex-match</strong>: Same as <em>min-optgoto-match</em>, but for <strong>optregex</strong>.</li>
+	</ul>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

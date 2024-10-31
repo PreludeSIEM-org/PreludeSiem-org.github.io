@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>How to create a plugin - Part 2 Inventory - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Bi3iIFBVvcPw1y9yuu6EaiEcnUMUb6d39ihx1rfa6YkVAopPmUGwQHp9J4inps00XVfs3Q5l/jkoprVGM9rdig==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/prelude/wiki/ManualDevel">ManualDevel</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="How-to-create-a-plugin-Part-2-Inventory"></a>
+<h1 >How to create a plugin - Part 2 Inventory<a href="#How-to-create-a-plugin-Part-2-Inventory" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#How-to-create-a-plugin-Part-2-Inventory">How to create a plugin - Part 2 Inventory</a><ul><li><a href="#Introduction">Introduction</a><ul><li><a href="#File-hierarchy">File hierarchy</a></li></ul>
+</li><li><a href="#Creating-a-new-plugin">Creating a new plugin</a></li><li><a href="#Adding-the-database-support">Adding the database support</a><ul><li><a href="#Defining-the-schema">Defining the schema</a></li><li><a href="#Defining-the-API">Defining the API</a></li><li><a href="#Initializing-the-Inventory-class">Initializing the Inventory class</a></li></ul>
+</li><li><a href="#Adding-the-template-file">Adding the template file</a><ul><li><a href="#Creating-the-template">Creating the template</a></li><li><a href="#Defining-the-accepted-parameters">Defining the accepted parameters</a></li></ul>
+</li><li><a href="#Including-CSS-and-Javascript-files">Including CSS and Javascript files</a><ul><li><a href="#Defining-the-plugin_htdocs-attribute">Defining the plugin_htdocs attribute</a></li><li><a href="#Creating-the-CSS">Creating the CSS</a></li><li><a href="#Creating-the-Javascript">Creating the Javascript</a></li><li><a href="#Updating-the-template">Updating the template</a></li></ul>
+</li><li><a href="#Handling-a-custom-configuration-file">Handling a custom configuration file</a></li><li><a href="#Implementing-a-hook">Implementing a hook</a></li><li><a href="#Testing-the-plugin">Testing the plugin</a><ul><li><a href="#Installation">Installation</a></li><li><a href="#Plugins-page">Plugins page</a></li><li><a href="#AlertListing-page">AlertListing page</a></li><li><a href="#Inventory-page">Inventory page</a></li></ul></li></ul></li></ul>
+
+
+	<p>This tutorial is based on <strong>Prewikka 3.1.0</strong> and <strong>Python 2.X</strong> (where X >= 6).<br />It will teach you how to create a plugin that adds a basic inventory view to the Prewikka interface. This can be useful to keep information about the computers and network equipment we want to supervise.<br />For a simpler example of a Prewikka plugin, you can visit <a class="wiki-page" href="/projects/prelude/wiki/How_to_create_a_plugin_-_Part_1_HelloWorld">this page</a>.</p>
+
+
+	<a name="Introduction"></a>
+<h2 >Introduction<a href="#Introduction" class="wiki-anchor">&para;</a></h2>
+
+
+In this tutorial we will learn how to:
+	<ul>
+	<li>use a template file for displaying our page, including CSS and Javascript;</li>
+		<li>define and use database tables for storing our inventory;</li>
+		<li>create and handle a new configuration file;</li>
+		<li>use the hook mechanism for more interactivity between different views.</li>
+	</ul>
+
+
+	<a name="File-hierarchy"></a>
+<h3 >File hierarchy<a href="#File-hierarchy" class="wiki-anchor">&para;</a></h3>
+
+
+<pre>
+|-- inventory
+|   |-- htdocs
+|   |   |-- css
+|   |   |   `-- inventory.css
+|   |   `-- js
+|   |       `-- inventory.js
+|   |-- __init__.py
+|   |-- sql
+|   |   `-- install.py
+|   `-- templates
+|       |-- __init__.py
+|       |-- inventory.py
+|       `-- inventory.tmpl
+`-- setup.py
+</pre>
+
+	<a name="Creating-a-new-plugin"></a>
+<h2 >Creating a new plugin<a href="#Creating-a-new-plugin" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Like previously, let's begin by creating a directory named <strong>inventory</strong> and editing our main file inside it named <strong>__init__.py</strong>:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">A basic inventory plugin</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+<span class="keyword">from</span> <span class="include">prewikka</span> <span class="keyword">import</span> <span class="include">view</span>
+
+<span class="keyword">class</span> <span class="class">Inventory</span>(view.View):
+    <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">The main Inventory view</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+    plugin_name = <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory</span><span class="delimiter">&quot;</span></span> 
+    plugin_description = <span class="string"><span class="delimiter">&quot;</span><span class="content">A basic inventory plugin</span><span class="delimiter">&quot;</span></span> 
+    plugin_version = <span class="string"><span class="delimiter">&quot;</span><span class="content">1.0.0</span><span class="delimiter">&quot;</span></span> 
+    view_name = <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory</span><span class="delimiter">&quot;</span></span> 
+    view_section = <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory</span><span class="delimiter">&quot;</span></span> 
+</span></code></pre>
+
+	<p>And the <strong>setup.py</strong> script associated to it:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">setuptools</span> <span class="keyword">import</span> <span class="include">setup</span>
+
+setup(name=<span class="string"><span class="delimiter">&quot;</span><span class="content">prewikka-inventory</span><span class="delimiter">&quot;</span></span>,
+      version=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.0.0</span><span class="delimiter">&quot;</span></span>,
+      author=<span class="string"><span class="delimiter">&quot;</span><span class="content">Jane Doe</span><span class="delimiter">&quot;</span></span>,
+      author_email=<span class="string"><span class="delimiter">&quot;</span><span class="content">jane.doe@acme.com</span><span class="delimiter">&quot;</span></span>,
+      url=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://prelude-siem.org</span><span class="delimiter">&quot;</span></span>,
+      packages=[<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory</span><span class="delimiter">&quot;</span></span>],
+      install_requires=[<span class="string"><span class="delimiter">&quot;</span><span class="content">prewikka &gt;= 3.1.0</span><span class="delimiter">&quot;</span></span>],
+      entry_points={
+          <span class="string"><span class="delimiter">&quot;</span><span class="content">prewikka.views</span><span class="delimiter">&quot;</span></span>: [
+              <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory = inventory:Inventory</span><span class="delimiter">&quot;</span></span>,
+          ],
+          <span class="string"><span class="delimiter">&quot;</span><span class="content">prewikka.updatedb</span><span class="delimiter">&quot;</span></span>: [
+              <span class="string"><span class="delimiter">&quot;</span><span class="content">inventory = inventory.sql</span><span class="delimiter">&quot;</span></span>,
+          ],
+      },
+      package_data={
+          <span class="string"><span class="delimiter">&quot;</span><span class="content">inventory</span><span class="delimiter">&quot;</span></span>: [<span class="string"><span class="delimiter">&quot;</span><span class="content">htdocs/css/*.css</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">htdocs/js/*.js</span><span class="delimiter">&quot;</span></span>,
+                        <span class="string"><span class="delimiter">&quot;</span><span class="content">sql/*.py</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">templates/*.py</span><span class="delimiter">&quot;</span></span>]
+      })
+</span></code></pre>
+
+	<p>Here you can see we added a <i>package_data</i> parameter to the setup, that will include all additional files necessary to our plugin.<br />From now on, if you want to see the plugin advancement before it is finished, you can directly jump to the <a class="wiki-page" href="#Testing-the-plugin">last paragraph</a>.</p>
+
+
+	<a name="Adding-the-database-support"></a>
+<h2 >Adding the database support<a href="#Adding-the-database-support" class="wiki-anchor">&para;</a></h2>
+
+
+As we want to store data about our IT equipment, we will use the Prewikka database and create our own tables. To this purpose, we need to:
+	<ul>
+	<li>define the SQL schema for the tables ;</li>
+		<li>implement the Python functions to query the tables.</li>
+	</ul>
+
+
+	<a name="Defining-the-schema"></a>
+<h3 >Defining the schema<a href="#Defining-the-schema" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The first task is done in a new file, <strong>inventory/sql/install.py</strong>:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">prewikka.database</span> <span class="keyword">import</span> <span class="include">SQLScript</span>
+
+<span class="keyword">class</span> <span class="class">SQLUpdate</span>(SQLScript):
+    type = <span class="string"><span class="delimiter">&quot;</span><span class="content">install</span><span class="delimiter">&quot;</span></span> 
+    version = <span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> 
+
+    <span class="keyword">def</span> <span class="function">run</span>(<span class="predefined-constant">self</span>):
+        <span class="predefined-constant">self</span>.query(<span class="string"><span class="delimiter">&quot;&quot;&quot;</span><span class="content"> </span><span class="content">
+</span><span class="content">DROP TABLE IF EXISTS Prewikka_Inventory;</span><span class="content">
+</span><span class="content">
+</span><span class="content">CREATE TABLE Prewikka_Inventory (</span><span class="content">
+</span><span class="content">    hostname TEXT NOT NULL,</span><span class="content">
+</span><span class="content">    address TEXT NULL,</span><span class="content">
+</span><span class="content">    os TEXT NULL</span><span class="content">
+</span><span class="content">);</span><span class="content">
+</span><span class="delimiter">&quot;&quot;&quot;</span></span>)
+</span></code></pre>
+
+	<p>Basically, we define the operations needed to create the inventory schema in version "0".<br />In this example, a single table named <strong>Prewikka_Inventory</strong> will be enough, that will store the name, the IP address and the operating system of the host.</p>
+
+
+	<a name="Defining-the-API"></a>
+<h3 >Defining the API<a href="#Defining-the-API" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The second task is done in the same <strong>__init__.py</strong> than previously but in a new class, named <strong>InventoryDatabase</strong>.<br />For a start, let's define a function to retrieve hosts from the inventory, and another function to add a new host into the inventory:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">class</span> <span class="class">InventoryDatabase</span>(database.DatabaseHelper):
+    <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">Handle database queries related to the inventory</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+
+    <span class="keyword">def</span> <span class="function">get_hosts</span>(<span class="predefined-constant">self</span>, keyword=<span class="predefined-constant">None</span>):
+        <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">Return all hosts in the inventory database matching the keyword</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+        query = <span class="string"><span class="delimiter">&quot;</span><span class="content">SELECT hostname, address, os FROM Prewikka_Inventory</span><span class="delimiter">&quot;</span></span> 
+        <span class="keyword">if</span> keyword:
+            query += (<span class="string"><span class="delimiter">&quot;</span><span class="content"> WHERE hostname = %(keyword)s</span><span class="delimiter">&quot;</span></span> 
+                      <span class="string"><span class="delimiter">&quot;</span><span class="content"> OR address = %(keyword)s</span><span class="delimiter">&quot;</span></span> 
+                      <span class="string"><span class="delimiter">&quot;</span><span class="content"> OR os = %(keyword)s</span><span class="delimiter">&quot;</span></span>)
+        <span class="keyword">return</span> <span class="predefined-constant">self</span>.query(query, keyword=keyword)
+
+    <span class="keyword">def</span> <span class="function">add_host</span>(<span class="predefined-constant">self</span>, hostname, address, os):
+        <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">Add a host to the inventory database</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+        <span class="predefined-constant">self</span>.query(<span class="string"><span class="delimiter">&quot;</span><span class="content">INSERT INTO Prewikka_Inventory (hostname, address, os) </span><span class="delimiter">&quot;</span></span> 
+                   <span class="string"><span class="delimiter">&quot;</span><span class="content">VALUES (%s, %s, %s)</span><span class="delimiter">&quot;</span></span>, hostname, address, os)
+</span></code></pre>
+
+	<a name="Initializing-the-Inventory-class"></a>
+<h3 >Initializing the Inventory class<a href="#Initializing-the-Inventory-class" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Make sure to import the <strong>database</strong> module in order to sub-class DatabaseHelper:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">prewikka</span> <span class="keyword">import</span> <span class="include">database</span>, <span class="include">view</span>
+
+<span class="keyword">class</span> <span class="class">Inventory</span>(view.View):
+    [...]
+    plugin_database_version = <span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> 
+
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="predefined-constant">self</span>):
+        view.View.__init__(<span class="predefined-constant">self</span>)
+        <span class="predefined-constant">self</span>._db = InventoryDatabase()
+</span></code></pre>
+
+	<a name="Adding-the-template-file"></a>
+<h2 >Adding the template file<a href="#Adding-the-template-file" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Creating-the-template"></a>
+<h3 >Creating the template<a href="#Creating-the-template" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Now we have to create a <strong>inventory/templates/inventory.tmpl</strong> file based on <a href="http://www.cheetahtemplate.org" class="external">Cheetah</a>.<br />This is the template file for our inventory view, where we describe a table with three columns (hostname, address and os) and as many lines as returned by the Python code through the $inventory variable:</p>
+
+
+<pre><code class="html syntaxhl"><span class="CodeRay">#filter CleanOutput
+<span class="tag">&lt;table</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory table table-striped table-bordered table-rounded table-condensed</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;tr&gt;</span>
+    <span class="tag">&lt;th&gt;</span>Hostname<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;th&gt;</span>Address<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;th&gt;</span>OS<span class="tag">&lt;/th&gt;</span>
+  <span class="tag">&lt;/tr&gt;</span>
+  #for $host, $address, $os in $inventory
+  <span class="tag">&lt;tr&gt;</span>
+    <span class="tag">&lt;td&gt;</span>$host<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;td&gt;</span>$address<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;td&gt;</span>$os<span class="tag">&lt;/td&gt;</span>
+  <span class="tag">&lt;/tr&gt;</span>
+  #end for
+<span class="tag">&lt;/table&gt;</span>
+#end filter
+</span></code></pre>
+
+	<p>A <strong>inventory/templates/__init__.py</strong> file should also be created with the following content:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">inventory</span> <span class="keyword">import</span> <span class="include">inventory</span>
+</span></code></pre>
+
+	<a name="Defining-the-accepted-parameters"></a>
+<h3 >Defining the accepted parameters<a href="#Defining-the-accepted-parameters" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>By sub-classing view.Parameters, we are able to define which HTTP parameters are allowed for our inventory view, and which are mandatory.<br />The search parameter will be useful for querying the inventory, and the others (hostname, address and os) for adding a new host:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">class</span> <span class="class">InventoryParameters</span>(view.Parameters):
+    <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">A class that handles HTTP parameters for the Inventory view</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+
+    <span class="keyword">def</span> <span class="function">register</span>(<span class="predefined-constant">self</span>):
+        <span class="predefined-constant">self</span>.optional(<span class="string"><span class="delimiter">&quot;</span><span class="content">search</span><span class="delimiter">&quot;</span></span>, <span class="predefined">str</span>)
+        <span class="predefined-constant">self</span>.optional(<span class="string"><span class="delimiter">&quot;</span><span class="content">hostname</span><span class="delimiter">&quot;</span></span>, <span class="predefined">str</span>)
+        <span class="predefined-constant">self</span>.optional(<span class="string"><span class="delimiter">&quot;</span><span class="content">address</span><span class="delimiter">&quot;</span></span>, <span class="predefined">str</span>)
+        <span class="predefined-constant">self</span>.optional(<span class="string"><span class="delimiter">&quot;</span><span class="content">os</span><span class="delimiter">&quot;</span></span>, <span class="predefined">str</span>)
+</span></code></pre>
+
+	<p>And the corresponding code in the <strong>Inventory</strong> class:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> . import templates
+
+<span class="keyword">class</span> <span class="class">Inventory</span>(view.View):
+    [...]
+    view_template = templates.inventory
+    view_parameters = InventoryParameters
+    [...]
+
+    <span class="keyword">def</span> <span class="function">render</span>(<span class="predefined-constant">self</span>):
+        params = <span class="predefined-constant">self</span>.parameters
+        <span class="keyword">if</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">hostname</span><span class="delimiter">&quot;</span></span> <span class="keyword">in</span> params:
+            <span class="predefined-constant">self</span>._db.add_host(params.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">hostname</span><span class="delimiter">&quot;</span></span>),
+                              params.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">address</span><span class="delimiter">&quot;</span></span>),
+                              params.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">os</span><span class="delimiter">&quot;</span></span>))
+        <span class="predefined-constant">self</span>.dataset[<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory</span><span class="delimiter">&quot;</span></span>] = <span class="predefined-constant">self</span>._db.get_hosts(params.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">search</span><span class="delimiter">&quot;</span></span>))
+</span></code></pre>
+
+	<p>You can see here that we initialize self.dataset["inventory"] to the host list. This variable can be used in the template as $inventory, as we previously did.</p>
+
+
+	<a name="Including-CSS-and-Javascript-files"></a>
+<h2 >Including CSS and Javascript files<a href="#Including-CSS-and-Javascript-files" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Defining-the-plugin_htdocs-attribute"></a>
+<h3 >Defining the plugin_htdocs attribute<a href="#Defining-the-plugin_htdocs-attribute" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>It is mandatory to define the <strong>plugin_htdocs</strong> attribute in Inventory class for the web server to search the CSS/Javascript files in the right place.</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">pkg_resources</span> <span class="keyword">import</span> <span class="include">resource_filename</span>
+
+<span class="keyword">class</span> <span class="class">Inventory</span>(view.View):
+    [...]
+    plugin_htdocs = ((<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory</span><span class="delimiter">&quot;</span></span>, resource_filename(__name__, <span class="string"><span class="delimiter">&quot;</span><span class="content">htdocs</span><span class="delimiter">&quot;</span></span>)),)
+    [...]
+</span></code></pre>
+
+	<a name="Creating-the-CSS"></a>
+<h3 >Creating the CSS<a href="#Creating-the-CSS" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The <strong>inventory/htdocs/css/inventory.css</strong> file is fairly simple:</p>
+
+
+<pre><code class="css syntaxhl"><span class="CodeRay"><span class="tag">table</span><span class="class">.inventory</span> <span class="tag">th</span> {
+    <span class="key">background</span>: <span class="value">lightblue</span>;
+}
+</span></code></pre>
+
+	<a name="Creating-the-Javascript"></a>
+<h3 >Creating the Javascript<a href="#Creating-the-Javascript" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Here is the <strong>inventory/htdocs/js/inventory.js</strong> file:</p>
+
+
+<pre><code class="javascript syntaxhl"><span class="CodeRay"><span class="predefined">$</span>(document).on(<span class="string"><span class="delimiter">&quot;</span><span class="content">click</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">button.create</span><span class="delimiter">&quot;</span></span>, <span class="keyword">function</span>() {
+    <span class="predefined">$</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">div#inventory-dialog</span><span class="delimiter">&quot;</span></span>).last().dialog({
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">buttons</span><span class="delimiter">&quot;</span></span>: [{
+            <span class="key"><span class="delimiter">&quot;</span><span class="content">class</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">btn btn-default</span><span class="delimiter">&quot;</span></span>,
+            <span class="key"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">OK</span><span class="delimiter">&quot;</span></span>,
+            <span class="key"><span class="delimiter">&quot;</span><span class="content">click</span><span class="delimiter">&quot;</span></span>: <span class="keyword">function</span>() {
+                <span class="predefined">$</span>(<span class="local-variable">this</span>).find(<span class="string"><span class="delimiter">&quot;</span><span class="content">form</span><span class="delimiter">&quot;</span></span>).submit();
+            }
+        }]
+    });
+});
+</span></code></pre>
+
+	<p>This jQuery snippet aims to open a dialog box when the user clicks on the creation button.<br />The button and form are yet to be added to the template for making that possible.</p>
+
+
+	<a name="Updating-the-template"></a>
+<h3 >Updating the template<a href="#Updating-the-template" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The template must be updated in order to include the CSS and Javascript files.<br />The second inclusion is done with <a href="http://labjs.com" class="external">LABjs</a>.<br />Edit the <strong>inventory/templates/inventory.tmpl</strong> file to add these lines at the beginning:</p>
+
+
+<pre><code class="html syntaxhl"><span class="CodeRay"><span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/css</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory/css/inventory.css</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+
+<span class="tag">&lt;script</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text/javascript</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="inline">  <span class="error">\</span><span class="predefined">$LAB</span>.script(<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory/js/inventory.js</span><span class="delimiter">&quot;</span></span>);</span>
+<span class="tag">&lt;/script&gt;</span>
+</span></code></pre>
+
+	<p>And these lines at the end:</p>
+
+
+<pre><code class="html syntaxhl"><span class="CodeRay"><span class="tag">&lt;button</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">create btn btn-primary</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;i</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">fa fa-plus</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/i&gt;</span> Create<span class="tag">&lt;/button&gt;</span>
+
+<span class="tag">&lt;div</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory-dialog</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">title</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">New host</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">style</span>=<span class="string"><span class="delimiter">&quot;</span><span class="key">display</span>: <span class="value">none</span>;<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;form</span> <span class="attribute-name">method</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">post</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    #for $label, $name in (&quot;Hostname&quot;, &quot;hostname&quot;), (&quot;Address&quot;, &quot;address&quot;), (&quot;OS&quot;, &quot;os&quot;)
+    <span class="tag">&lt;div</span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">form-group</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+      <span class="tag">&lt;label&gt;</span>$label:<span class="tag">&lt;/label&gt;</span>
+      <span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">text</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">class</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">form-control</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">$name</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    #end for
+  <span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+</span></code></pre>
+
+	<a name="Handling-a-custom-configuration-file"></a>
+<h2 >Handling a custom configuration file<a href="#Handling-a-custom-configuration-file" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The main Prewikka configuration file is typically located in <strong>/etc/prewikka/prewikka.conf</strong>.<br />However, all .conf files located in <strong>/etc/prewikka/conf.d/</strong> are also imported by default, as we can see in the [include] section of the main config file:</p>
+
+
+<pre>
+[include]
+conf.d/*.conf
+</pre>
+
+	<p>We can therefore create our own <strong>/etc/prewikka/conf.d/inventory.conf</strong> which will contain the following lines:</p>
+
+
+<pre>
+[inventory]
+title: My Inventory
+</pre>
+
+	<p>The goal here is to allow the user to customize the title displayed on the inventory page.<br />So just add these lines to the Inventory class:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">class</span> <span class="class">Inventory</span>(view.View):
+    [...]
+
+    <span class="keyword">def</span> <span class="function">render</span>(<span class="predefined-constant">self</span>):
+        [...]
+        <span class="predefined-constant">self</span>.dataset[<span class="string"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>] = env.config.inventory.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>And replace in the template file:</p>
+
+
+<pre><code class="html syntaxhl"><span class="CodeRay"><span class="tag">&lt;div</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory-dialog</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">title</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">New host</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">style</span>=<span class="string"><span class="delimiter">&quot;</span><span class="key">display</span>: <span class="value">none</span>;<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+</span></code></pre>
+
+	<p>by:</p>
+
+
+<pre><code class="html syntaxhl"><span class="CodeRay"><span class="tag">&lt;div</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory-dialog</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">title</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">$title</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">style</span>=<span class="string"><span class="delimiter">&quot;</span><span class="key">display</span>: <span class="value">none</span>;<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+</span></code></pre>
+
+	<a name="Implementing-a-hook"></a>
+<h2 >Implementing a hook<a href="#Implementing-a-hook" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>We're almost there. But because we want our plugin to be more practical, it would be a good idea to be able to search through the inventory from other Prewikka pages.<br />For example, how can we add a link to the inventory when clicking on a host in the AlertListing view?</p>
+
+
+	<p>This is where the hook mechanism comes into play.<br />Fortunately, a hook called <strong>HOOK_LINK</strong> has been created in AlertListing. This means that each plugin that registers to this hook will see its custom content inserted into the drop down menu appearing in the AlertListing view.</p>
+
+
+	<p>Let's do this by editing the Inventory class one last time:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">class</span> <span class="class">Inventory</span>(view.View):
+    [...]
+
+    <span class="decorator">@hookmanager.register</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">HOOK_LINK</span><span class="delimiter">&quot;</span></span>)
+    <span class="keyword">def</span> <span class="function">_get_inventory_link</span>(<span class="predefined-constant">self</span>, value):
+        <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">Create a link to the inventory to be displayed in the alert view</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+        <span class="keyword">return</span> (<span class="string"><span class="delimiter">&quot;</span><span class="content">host</span><span class="delimiter">&quot;</span></span>,
+                <span class="string"><span class="delimiter">&quot;</span><span class="content">Search in inventory</span><span class="delimiter">&quot;</span></span>,
+                utils.create_link(<span class="predefined-constant">self</span>.view_path, {<span class="string"><span class="delimiter">&quot;</span><span class="content">search</span><span class="delimiter">&quot;</span></span>: value}),
+                <span class="predefined-constant">False</span>)
+</span></code></pre>
+
+The <strong>_get_inventory_link</strong> function will be called from AlertListing with the clicked host as parameter, and returns a tuple (typ, linkname, link, widget) where:
+	<ul>
+	<li>typ is the link type (only "host" is supported at the moment);</li>
+		<li>linkname is the text of the link that will be displayed;</li>
+		<li>link is the link to our inventory page;</li>
+		<li>widget is a boolean controlling whether the link will be opened in a widget or not.</li>
+	</ul>
+
+
+	<p>And let's not forget to import the necessary modules:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">prewikka</span> <span class="keyword">import</span> <span class="include">database</span>, <span class="include">env</span>, <span class="include">hookmanager</span>, <span class="include">utils</span>, <span class="include">view</span>
+</span></code></pre>
+
+	<a name="Testing-the-plugin"></a>
+<h2 >Testing the plugin<a href="#Testing-the-plugin" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Installation"></a>
+<h3 >Installation<a href="#Installation" class="wiki-anchor">&para;</a></h3>
+
+
+<pre>
+cheetah-compile inventory/templates/inventory.tmpl
+python setup.py install
+</pre>
+
+	<a name="Plugins-page"></a>
+<h3 >Plugins page<a href="#Plugins-page" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>After a Prewikka restart, you must install your database schema by visiting the Plugins page:</p>
+
+
+	<p><img src="/attachments/download/740/plugins.png" style="width: 100%;" alt="" /></p>
+
+
+	<a name="AlertListing-page"></a>
+<h3 >AlertListing page<a href="#AlertListing-page" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The link to the inventory has appeared:</p>
+
+
+	<p><img src="/attachments/download/741/alertlisting.png" alt="" /></p>
+
+
+	<a name="Inventory-page"></a>
+<h3 >Inventory page<a href="#Inventory-page" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>And here is our Inventory page:</p>
+
+
+	<p><img src="/attachments/download/739/inventory.png" alt="" /></p>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/427/inventory.png">inventory.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/427/inventory.png">View</a>
+  
+  <span class="size">(24.9 KB)</span>
+    <span class="author">Thomas , 09/08/2015 05:09 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/428/alertlisting.png">alertlisting.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/428/alertlisting.png">View</a>
+  
+  <span class="size">(5.76 KB)</span>
+    <span class="author">Thomas , 09/08/2015 05:09 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/429/plugins.png">plugins.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/429/plugins.png">View</a>
+  
+  <span class="size">(16.2 KB)</span>
+    <span class="author">Antoine LUONG, 09/09/2015 10:10 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/739/inventory.png">inventory.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/739/inventory.png">View</a>
+  
+  <span class="size">(33.1 KB)</span>
+    <span class="author">Antoine LUONG, 11/24/2016 06:19 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/740/plugins.png">plugins.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/740/plugins.png">View</a>
+  
+  <span class="size">(18.7 KB)</span>
+    <span class="author">Antoine LUONG, 11/24/2016 06:19 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/741/alertlisting.png">alertlisting.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/741/alertlisting.png">View</a>
+  
+  <span class="size">(9.47 KB)</span>
+    <span class="author">Antoine LUONG, 11/24/2016 06:19 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

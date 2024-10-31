@@ -1,0 +1,141 @@
+--- libprelude-1.0.1-old/configure.in	2012-06-04 11:28:01.000000000 -0300
++++ libprelude-1.0.1/configure.in	2012-08-03 19:45:51.778726467 -0300
+@@ -468,13 +468,13 @@
+ 
+ AM_PATH_RUBY(,with_ruby=yes, with_ruby=no)
+ if test x$with_ruby != xno; then
+-    RUBY_ARCHDIR=`$RUBY -e 'require "rbconfig.rb"; puts Config::expand("\$(archdir)")'`
+-    RUBY_LIBRUBYARG=`$RUBY -e 'require "rbconfig.rb"; puts Config::expand("\$(LIBRUBYARG)")'`
++    RUBY_ARCHDIR=`$RUBY -e 'require "rbconfig.rb"; puts RbConfig::expand("\$(archdir)")'`
++    RUBY_LIBRUBYARG=`$RUBY -e 'require "rbconfig.rb"; puts RbConfig::expand("\$(LIBRUBYARG)")'`
+ 
+     RUBY_LIBS="-L$RUBY_ARCHDIR $RUBY_LIBRUBYARG"
+     AC_SUBST(RUBY_LIBS)
+ 
+-    RUBY_CCFLAGS=`$RUBY -rrbconfig -e "print Config::CONFIG[['CFLAGS']]"`
++    RUBY_CCFLAGS=`$RUBY -rrbconfig -e "print RbConfig::CONFIG[['CFLAGS']]"`
+     AC_SUBST(RUBY_CCFLAGS)
+ 
+     old_CPPFLAGS="$CPPFLAGS"
+--- libprelude-1.0.1-old/m4/am_path_ruby.m4	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/m4/am_path_ruby.m4	2012-08-03 20:17:05.476741375 -0300
+@@ -86,7 +86,7 @@
+   dnl rubydir -- where to install ruby scripts.
+   AC_CACHE_CHECK([for $am_display_RUBY script directory],
+     [am_cv_ruby_rubydir],
+-    [am_cv_ruby_rubydir=`$RUBY -rrbconfig -e "drive = File::PATH_SEPARATOR == ';' ? /\A\w:/ : /\A/; prefix = Regexp.new('\\A' + Regexp.quote(Config::CONFIG[['prefix']])); \\$prefix = Config::CONFIG[['prefix']].sub(drive, ''); \\$archdir = Config::CONFIG[['archdir']].sub(prefix, '\\$(prefix)').sub(drive, ''); print \\$archdir;"`])
++    [am_cv_ruby_rubydir=`$RUBY -rrbconfig -e "drive = File::PATH_SEPARATOR == ';' ? /\A\w:/ : /\A/; prefix = Regexp.new('\\A' + Regexp.quote(RbConfig::CONFIG[['prefix']])); \\$prefix = RbConfig::CONFIG[['prefix']].sub(drive, ''); \\$archdir = RbConfig::CONFIG[['archdir']].sub(prefix, '\\$(prefix)').sub(drive, ''); print \\$archdir;"`])
+   AC_SUBST([rubydir], [$am_cv_ruby_rubydir])
+ 
+   dnl pkgrubydir -- $PACKAGE directory under rubydir.
+@@ -96,11 +96,12 @@
+   dnl   (shared libraries)
+   AC_CACHE_CHECK([for $am_display_RUBY extension module directory],
+     [am_cv_ruby_rbexecdir],
+-    [am_cv_ruby_rbexecdir=`$RUBY -rrbconfig -e "drive = File::PATH_SEPARATOR == ';' ? /\A\w:/ : /\A/; prefix = Regexp.new('\\A' + Regexp.quote(Config::CONFIG[['prefix']])); \\$prefix = Config::CONFIG[['prefix']].sub(drive, ''); \\$sitearchdir = Config::CONFIG[['sitearchdir']].sub(prefix, '\\$(prefix)').sub(drive, ''); print \\$sitearchdir;" 2>/dev/null || echo "${RUBY_EXEC_PREFIX}/local/lib/site_ruby/${RUBY_VERSION}/${RUBY_PLATFORM}"`])
++    [am_cv_ruby_rbexecdir=`$RUBY -rrbconfig -e "drive = File::PATH_SEPARATOR == ';' ? /\A\w:/ : /\A/; prefix = Regexp.new('\\A' + Regexp.quote(RbConfig::CONFIG[['prefix']])); \\$prefix = RbConfig::CONFIG[['prefix']].sub(drive, ''); \\$sitearchdir = RbConfig::CONFIG[['sitearchdir']].sub(prefix, '\\$(prefix)').sub(drive, ''); print \\$sitearchdir;" 2>/dev/null || echo "${RUBY_EXEC_PREFIX}/local/lib/site_ruby/${RUBY_VERSION}/${RUBY_PLATFORM}"`])
+   AC_SUBST([rbexecdir], [$am_cv_ruby_rbexecdir])
+ 
+-  RUBY_INCLUDES=`$RUBY -r rbconfig -e 'if Config::CONFIG[["archdir"]] then print " -I" + Config::CONFIG[["archdir"]] end
+-                                       if Config::CONFIG[["rubyhdrdir"]] then print " -I" + Config::CONFIG[["rubyhdrdir"]] end'`
++  RUBY_INCLUDES=`$RUBY -rrbconfig -e 'if RbConfig::CONFIG[["archdir"]] then print " -I" + RbConfig::CONFIG[["archdir"]] end
++                                      if RbConfig::CONFIG[["rubyhdrdir"]] then print " -I" + RbConfig::CONFIG[["rubyhdrdir"]]; print " -I" + RbConfig::CONFIG[["rubyhdrdir"]]+File::SEPARATOR+RbConfig::CONFIG[["sitearch"]] end
++				      '`
+   AC_SUBST([RUBY_INCLUDES])
+ 
+   dnl pkgrbexecdir -- $(rbexecdir)/$(PACKAGE)
+--- libprelude-1.0.1-old/bindings/ruby/libpreludecpp-ruby.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/ruby/libpreludecpp-ruby.i	2012-08-03 23:45:22.090875875 -0300
+@@ -44,7 +44,11 @@
+ 
+ %{
+ extern "C" {
++#ifdef HAVE_RUBY_IO_H
++#include "ruby/io.h"
++#else
+ #include "rubyio.h"
++#endif
+ }
+ %};
+ 
+@@ -68,11 +72,15 @@
+ {
+         FILE *f;
+         ssize_t ret;
+-        OpenFile *fptr;
++        rb_io_t *fptr;
+         VALUE *io = (VALUE *) prelude_msgbuf_get_data(fd);
+ 
+         GetOpenFile(*io, fptr);
+-        f = fptr->f;
++%#ifdef HAVE_RUBY_IO_H
++        f = rb_io_stdio_file(fptr);
++%#else
++        f = GetWriteFile(fptr);
++%#endif
+ 
+         ret = fwrite((const char *) prelude_msg_get_message_data(msg), 1, prelude_msg_get_len(msg), f);
+         if ( ret != prelude_msg_get_len(msg) )
+@@ -88,11 +96,15 @@
+ {
+         FILE *f;
+         ssize_t ret;
+-        OpenFile *fptr;
++        rb_io_t *fptr;
+         VALUE *io = (VALUE *) prelude_io_get_fdptr(fd);
+ 
+         GetOpenFile(*io, fptr);
+-        f = fptr->f;
++%#ifdef HAVE_RUBY_IO_H
++        f = rb_io_stdio_file(fptr);
++%#else
++        f = GetReadFile(fptr);
++%#endif
+ 
+         ret = fread(buf, 1, size, f);
+         if ( ret < 0 )
+@@ -155,11 +167,9 @@
+                 if ( ret < 0 )
+                         return Qnil;
+ 
+-                RARRAY(ary)->ptr[j++] = val;
++                rb_ary_store(ary, j++, val);
+         }
+ 
+-        RARRAY(ary)->len = result.size();
+-
+         return ary;
+ }
+ }
+@@ -184,12 +194,12 @@
+         int ret;
+         char **argv;
+         int _i, argc;
+-        VALUE rbargv, *ptr;
++        VALUE rbargv, *ptr, tmp;
+ 
+         __initial_thread = (gl_thread_t) gl_thread_self();
+ 
+         rbargv = rb_const_get(rb_cObject, rb_intern("ARGV"));
+-        argc = RARRAY(rbargv)->len + 1;
++        argc = RARRAY_LEN(rbargv) + 1;
+ 
+         if ( argc + 1 < 0 )
+                 throw PreludeError("Invalid argc length");
+@@ -198,11 +208,12 @@
+         if ( ! argv )
+                 throw PreludeError("Allocation failure");
+ 
+-        argv[0] = STR2CSTR(rb_gv_get("$0"));
++        tmp = rb_gv_get("$0");
++        argv[0] = StringValuePtr(tmp);
+ 
+-        ptr = RARRAY(rbargv)->ptr;
+-        for ( ptr = RARRAY(rbargv)->ptr, _i = 1; _i < argc; _i++, ptr++ )
+-                argv[_i] =  STR2CSTR(*ptr);
++        ptr = RARRAY_PTR(rbargv);
++        for ( ptr = RARRAY_PTR(rbargv), _i = 1; _i < argc; _i++, ptr++ )
++                argv[_i] =  StringValuePtr(*ptr);
+ 
+         argv[_i] = NULL;
+ 

@@ -1,0 +1,4 @@
+[1208507508] SERVICE ALERT: app1.test.domain.com;CSL_getDslProfile;CRITICAL;SOFT;1;CRITICAL - UR service (Returncode=5000) An unexpected server error occured
+[1208510512] SERVICE ALERT: app3.test.domain.com;check_int_3;WARNING;SOFT;1;bge2    :   1.2.3.4: PING WARNING - Packet loss = 0%, RTA = 140.63 ms
+[1208510778] SERVICE ALERT: app2.test.domain.com;TCPPORT_8009_ajp13;CRITICAL;HARD;5;Connection refused
+[1208510992] SERVICE ALERT: app4.test.domain.com;SNMP_sun_mem;OK;HARD;5;61.05% free RAM, 62.29% free SWAP

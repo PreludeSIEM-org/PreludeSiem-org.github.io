@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/343.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2016-03-02T14:04:05Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>PRELUDE SIEM - Bug #343: OSSEC-HIDS 1.6.1 always sets assessment.impact.completion = succeded</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/343"/>
+    <id>http://www.prelude-siem.org/issues/343?journal_id=2874</id>
+    <updated>2016-03-02T14:04:05Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Description&lt;/strong&gt; updated (&lt;a title="View differences" href="/journals/2874/diff?detail_id=2965"&gt;diff&lt;/a&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;Sebastien Tricaud&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

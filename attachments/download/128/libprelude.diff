@@ -1,0 +1,25 @@
+diff --git a/src/tls-auth.c b/src/tls-auth.c
+index f181b52..5ac2491 100644
+--- a/src/tls-auth.c
++++ b/src/tls-auth.c
+@@ -187,8 +187,8 @@ static void *fd_to_ptr(int fd)
+ int tls_auth_connection(prelude_client_profile_t *cp, prelude_io_t *io, int crypt,
+                         uint64_t *analyzerid, prelude_connection_permission_t *permission)
+ {
+-        int ret, fd;
+         void *cred;
++        int ret, fd;
+         gnutls_session session;
+ 
+         ret = prelude_client_profile_get_credentials(cp, &cred);
+@@ -197,6 +197,10 @@ int tls_auth_connection(prelude_client_profile_t *cp, prelude_io_t *io, int cryp
+ 
+         gnutls_init(&session, GNUTLS_CLIENT);
+         gnutls_set_default_priority(session);
++
++        const int c_prio[] = { GNUTLS_COMP_NULL, GNUTLS_COMP_DEFLATE, 0 };
++        gnutls_compression_set_priority(session, c_prio);
++
+         gnutls_credentials_set(session, GNUTLS_CRD_CERTIFICATE, cred);
+ 
+         fd = prelude_io_get_fd(io);

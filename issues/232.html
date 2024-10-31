@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #232: ssh.rules does not handle IPv6 address - Prelude-LML - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="oJEoTt9UZYbXj/g53SddX38fBdnSULSFzRhHhEClF+6zvkAhFkBoBV0l8MPAbxQBA1R0R8ha7csTloMUxKUj7Q==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude-LML - Bug #232: ssh.rules does not handle IPv6 address" href="http://www.prelude-siem.org/issues/232.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-lml controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-lml/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-lml">Overview</a></li><li><a class="activity" href="/projects/prelude-lml/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-lml/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-lml/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-lml/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-lml/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-lml/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-lml/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-lml/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-lml/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-lml/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #232</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#233" accesskey="p" href="/issues/233">« Previous</a> |
+        <span class="position">4 of 4</span> |
+      Next »
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>ssh.rules does not handle IPv6 address</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="06/05/2007 08:41 PM" href="/projects/prelude-lml/activity?from=2007-06-05">over 17 years</a> ago.
+        Updated <a title="04/29/2009 12:21 PM" href="/projects/prelude-lml/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="08/08/2007" href="/versions/60">0.9.10.1</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>attached to this ticket is a diff of the ssh.rules<br />I added a workaround for buggy output I'v seen on Redhat AS4 where ::ffff: is prepended to ipv4 addresses</p>
+
+
+<pre>
+Jun 5 15:50:35 somehost sshdr17740: Accepted publickey for someuser from ::ffff:192.168.0.22 port 59610 ssh2
+</pre>
+
+	<p>also I altered rule number 1909 due to the fact it always reported targer user root even though the regex only matches non root users</p>
+
+
+<pre>
+- target(0).user.user_id(0).name=root; \
++ target(0).user.user_id(0).name=$2; \
+</pre>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/83/sshrules.diff">sshrules.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/83/sshrules.diff">View</a>
+   - ssh rules diff
+  <span class="size">(7.37 KB)</span>
+    <span class="author">prmarino1-gmail-com -, 06/05/2007 08:42 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/82/ssh.rules.diff2">ssh.rules.diff2</a>   - additional patch 
+  <span class="size">(531 Bytes)</span>
+    <span class="author">prmarino1-gmail-com -, 06/05/2007 11:59 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/81/ssh-update.diff">ssh-update.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/81/ssh-update.diff">View</a>
+   - Merge ipv4/ipv6 rules together
+  <span class="size">(12.7 KB)</span>
+    <span class="author">Yoann VANDOORSELAERE, 06/06/2007 07:11 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <p><a title="Revision 08662aae" href="/projects/prelude-lml/repository/revisions/08662aaee7da4aec1c728c5a2605b12b0e99f13e">Revision 08662aae</a>
+        (<a href="/projects/prelude-lml/repository/revisions/08662aaee7da4aec1c728c5a2605b12b0e99f13e/diff">diff</a>)
+        <br />
+        <span class="author">Added by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/13/2007 11:05 AM" href="/projects/prelude-lml/activity?from=2007-07-13">over 17 years</a> ago</span></p>
+    <div class="wiki">
+        <p>SSH IPv6 compatibility fixes.</p>
+
+
+	<p>Make all SSH rules IPv6 compliant, allowing to merge old<br />IPv6 only rules with IPv4 rules. Some additional minor<br />bug fixes.</p>
+
+
+	<p>Include fix for incorrect target user assignment, as well as<br />incorrect variable in assessment.impact.description by<br />Paul Robert Marino &lt;<a class="email" href="mailto:prmarino1@gmail.com">prmarino1@gmail.com</a>&gt;</p>
+
+
+	<p>This fixes <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: ssh.rules does not handle IPv6 address (Closed)" href="/issues/232">#232</a>.</p>
+
+
+	<p>git-svn-id: file:///home/yoann/dev/prelude/git/nok/SVN/prelude-lml/trunk@9683 09c5ec92-17d4-0310-903a-819935f44dba</p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-611" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="06/06/2007 12:03 AM" href="/projects/prelude-lml/activity?from=2007-06-06">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-611-notes" class="wiki"><p>I added on more additional patch to be applied after the original patch<br />i had forgoten to update assessment.impact.description on rule id=1900</p></div>
+    </div>
+  </div>
+  
+  <div id="change-612" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/06/2007 10:26 AM" href="/projects/prelude-lml/activity?from=2007-06-06">over 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    <div id="journal-612-notes" class="wiki"><p><em>::ffff:192.168.0.22</em> is a valid IPv6 mapped IPv4 address. The regular expression should be updated to match IPv6 address by changing it from <strong>([\d\.]+)</strong> to something like <strong>([a-zA-Z\d\.:]+)</strong>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-613" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="06/06/2007 06:29 PM" href="/projects/prelude-lml/activity?from=2007-06-06">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-613-notes" class="wiki"><p>you are correct and there is a later rule which uses a regex already to handles ipv6 the problem is the behavior of ssh is to map all ipv4 addresses as ipv6 in this manner when the user connected using ipv4 it also maps this way if ipv6 is used even if the user who connects uses standard hex notation to connect. this can confus an operator who is not familiar with ipv6.</p>
+
+
+	<p>though this is probably more of an issue to take up with open ssh<br />maybe we change modify the rule so it reports both ipv4 and ipv6 version of the address in this case.</p>
+
+
+	<p>either way rule 1909 needs to be corrected <br />it is the existing ipv6 rule for user authentication and the fact that it reports all non root users as root is a major bug</p></div>
+    </div>
+  </div>
+  
+  <div id="change-614" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/06/2007 07:09 PM" href="/projects/prelude-lml/activity?from=2007-06-06">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-614-notes" class="wiki"><p>Replying to [comment:3 <a class="email" href="mailto:prmarino1@gmail.com">prmarino1@gmail.com</a>]:</p>
+
+
+<blockquote>
+
+	<p>you are correct and there is a later rule which uses a regex already to handles ipv6 the problem is the behavior of ssh is to map all ipv4 addresses as ipv6 in this manner when the user connected using ipv4 it also maps this way if ipv6 is used even if the user who connects uses standard hex notation to connect. this can confus an operator who is not familiar with ipv6.</p>
+
+
+</blockquote>
+
+	<p>I agree, although another solution would be to use the Prelude-Manager normalization plugin to fix the problem, since other products could exhibit the same behavior as [[OpenSSH]]. Then maybe we should fix Normalize so that it always remap IPv6 mapped IPv4 address to IPv4.</p>
+
+
+<blockquote>
+
+	<p>though this is probably more of an issue to take up with open ssh<br />maybe we change modify the rule so it reports both ipv4 and ipv6 version of the address in this case.</p>
+
+
+</blockquote>
+
+	<p>In the attached patch, all the rule now use (\S+), allowing to merge IPv4 and IPv6 rules together, and let the Normalization plugin set the <em>address.category</em> member.</p>
+
+
+<blockquote>
+
+	<p>either way rule 1909 needs to be corrected <br />it is the existing ipv6 rule for user authentication and the fact that it reports all non root users as root is a major bug</p>
+
+
+</blockquote>
+
+	<p>This is also ported in the attached file.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-615" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="06/06/2007 10:10 PM" href="/projects/prelude-lml/activity?from=2007-06-06">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-615-notes" class="wiki"><p>I like the idea of having the prelude-manager nomalize the addresses because you are right I've looked through my logs and found cfengine also does this too. the only reservation I have is ([A-Fa-f\d:\.]+) should be used instead of (\S+) followed by an identical rule using (\S+) but maps to source(0).node.name because I have seen implementations in the past that use hostnames where avalable instead of addresses this way we can catch the ones that match ip addresses first and any thing that does not match an ip address can be cought by the second rule as a hostname</p></div>
+    </div>
+  </div>
+  
+  <div id="change-616" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="06/06/2007 10:17 PM" href="/projects/prelude-lml/activity?from=2007-06-06">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-616-notes" class="wiki"><p>Replying to [comment:5 <a class="email" href="mailto:prmarino1@gmail.com">prmarino1@gmail.com</a>]:</p>
+
+
+<blockquote>
+
+	<p>I like the idea of having the prelude-manager nomalize the addresses because you are right I've looked through my logs and found cfengine also does this too. the only reservation I have is ([A-Fa-f\d:\.]+) should be used instead of (\S+) followed by an identical rule using (\S+) but maps to source(0).node.name because I have seen implementations in the past that use hostnames where avalable instead of addresses this way we can catch the ones that match ip addresses first and any thing that does not match an ip address can be cought by the second rule as a hostname</p>
+
+
+</blockquote>
+
+	<p>The normalize plugin for Prelude-Manager should be able to handle this, and handle it in a more consistent manner than a bunch of different rules.  The more rules you make for the end-sensors, the more complex the ruleset becomes and the more difficult it is to maintain.  If, instead, you let Prelude-Manager handle this, you get a more comprehensive solution that takes into account all of the sensors (including sensors that haven't even been written yet), instead of a single sensor at a time.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-617" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/07/2007 12:25 PM" href="/projects/prelude-lml/activity?from=2007-06-07">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-617-notes" class="wiki"><p>I don't like the idea of having the Normalizer moving entry from <em>node.address.address</em> to <em>node.name</em>, since it would encourage bad ruleset/alert writing behavior.</p>
+
+
+	<p>Original, IPv4 and IPv6 compliant version:<br /><pre>
+regex=Accepted (\S+) for root from ([A-Fa-f\d:\.]+) port (\d+); \ 
+ source(0).node.address(0).address=$2; \
+ source(0).service.port=$3; \ 
+</pre></p>
+
+
+<hr />
+
+
+	<p>Version that can handle IPv4, IPv6, as well as hostname:<br /><pre>
+regex=Accepted (\S+) for root from (([A-Fa-f\d:\.]+)|(\S+)) port (\d+); \ 
+ source(0).node.address(0).address=$3; \
+ source(0).node.name = $4; \ 
+ source(0).service.port=$5; \ 
+</pre></p>
+
+
+	<p>Using multiple regular expression to capture different type of input work, but it make rules difficult to understand. Paradoxically, it make it more clear to the experienced reader what is currently going on by exclusively relying on PCRE.</p>
+
+
+<hr />
+
+
+	<p>Another solution would be to create some kind of PCRE macro:</p>
+
+
+<pre>
+regex=Accepted (\S+) for root from $get_name_or_address($host1, $addr1) port (\d+); \ 
+ source(0).node.address(0).address=$addr1; \
+ source(0).node.name = $host1; \ 
+ source(0).service.port=$2; \ 
+</pre>
+
+	<p>Or:</p>
+
+
+<pre>
+regex=Accepted (\S+) for root from $get_name_or_address(source(0).node.name, source(0).node.address(0).address) port (\d+); \ 
+ source(0).service.port=$2; \ 
+</pre>
+
+	<p>Comments?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-618" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/18/2007 09:38 AM" href="/projects/prelude-lml/activity?from=2007-06-18">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-618-notes" class="wiki"><p>(In r9659) Improve IPv4 / IPv6 address normalization.</p>
+
+
+	<p>IPv4 mapped IPv6 addresses are now mapped back to IPv4.<br />Additionally, the Normalize plugin now provide two additionals option:</p>
+
+
+	<p>- ipv6-only: Map any incoming IPv4 address to IPv6.<br />- keep-ipv4-mapped-ipv6: do not map IPv4 mapped IPv6 addresses back to IPv4.</p>
+
+
+	<p>refs <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: ssh.rules does not handle IPv6 address (Closed)" href="/issues/232">#232</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-619" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/13/2007 11:05 AM" href="/projects/prelude-lml/activity?from=2007-07-13">over 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-619-notes" class="wiki"><p>(In r9683) SSH IPv6 compatibility fixes.</p>
+
+
+	<p>Make all SSH rules IPv6 compliant, allowing to merge old<br />IPv6 only rules with IPv4 rules. Some additional minor<br />bug fixes.</p>
+
+
+	<p>Include fix for incorrect target user assignment, as well as<br />incorrect variable in assessment.impact.description by<br />Paul Robert Marino &lt;<a class="email" href="mailto:prmarino1@gmail.com">prmarino1@gmail.com</a>&gt;</p>
+
+
+	<p>This fixes <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: ssh.rules does not handle IPv6 address (Closed)" href="/issues/232">#232</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1012" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:21 PM" href="/projects/prelude-lml/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prelude-LML</i></li>
+       <li><strong>Category</strong> deleted (<del><i>4</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.10.1</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/232.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/232.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

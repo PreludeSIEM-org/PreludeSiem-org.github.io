@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>0001-added-spamhausdrop.py-to-plugins.patch - Prelude Correlator - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="1xZHtTDpDSa0v2dIFdUn5PaUO2k8Qc+cwBHHJ+QTd8zEOS/a+f0ApT4Vb7IInW66it9K9yZLltIenwO3YBNDzw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-prelude-correlator controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-correlator/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-correlator/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-correlator/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-correlator">Overview</a></li><li><a class="activity" href="/projects/prelude-correlator/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-correlator/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude-correlator/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-correlator/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-correlator/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-correlator/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>0001-added-spamhausdrop.py-to-plugins.patch</h2>
+
+<div class="attachments">
+<p>
+   <span class="author"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a>, 09/14/2009 11:54 AM</span></p>
+<p><a href="/attachments/download/194/0001-added-spamhausdrop.py-to-plugins.patch">Download</a>   <span class="size">(9.51 KB)</span></p>
+</div>
+
+  <form action="/attachments/194/0001-added-spamhausdrop.py-to-plugins.patch" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      PreludeCorrelator/plugins/spamhausdrop.py
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1</th>
+  <td class="line-code diff_in">
+    <pre># Copyright (C) 2009 PreludeIDS Technologies. All Rights Reserved.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre># Author: Yoann Vandoorselaere &lt;yoann.v@prelude-ids.com&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">3</th>
+  <td class="line-code diff_in">
+    <pre># Author: Wes Young &lt;wes@barely3am.com&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre># This file is part of the Prelude-Correlator program.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">6</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre># This program is free software; you can redistribute it and/or modify</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">8</th>
+  <td class="line-code diff_in">
+    <pre># it under the terms of the GNU General Public License as published by</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre># the Free Software Foundation; either version 2, or (at your option)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">10</th>
+  <td class="line-code diff_in">
+    <pre># any later version.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre># This program is distributed in the hope that it will be useful,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre># but WITHOUT ANY WARRANTY; without even the implied warranty of</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre># GNU General Public License for more details.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">17</th>
+  <td class="line-code diff_in">
+    <pre># You should have received a copy of the GNU General Public License</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre># along with this program; see the file COPYING.  If not, write to</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">19</th>
+  <td class="line-code diff_in">
+    <pre># the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre>import os, httplib, time</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">22</th>
+  <td class="line-code diff_in">
+    <pre>from PreludeCorrelator import require</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">23</th>
+  <td class="line-code diff_in">
+    <pre>from PreludeCorrelator.idmef import IDMEF</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">24</th>
+  <td class="line-code diff_in">
+    <pre>from PreludeCorrelator.pluginmanager import Plugin</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">25</th>
+  <td class="line-code diff_in">
+    <pre>from PreludeCorrelator.context import Context, Timer</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">26</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">27</th>
+  <td class="line-code diff_in">
+    <pre>import netaddr</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">28</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">29</th>
+  <td class="line-code diff_in">
+    <pre>if tuple(int(x) for x in netaddr.__version__.split(&quot;.&quot;)) &gt;= (0, 7):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">30</th>
+  <td class="line-code diff_in">
+    <pre>    from netaddr import IPAddress, IPNetwork, IPSet</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">31</th>
+  <td class="line-code diff_in">
+    <pre>else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">32</th>
+  <td class="line-code diff_in">
+    <pre>    from netaddr import IP as IPAddress</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">33</th>
+  <td class="line-code diff_in">
+    <pre>    from netaddr import CIDR as IPNetwork</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">35</th>
+  <td class="line-code diff_in">
+    <pre>    class IPSet(list):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">36</th>
+  <td class="line-code diff_in">
+    <pre>        def __contains__(self, y):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">37</th>
+  <td class="line-code diff_in">
+    <pre>            for i in iter(self):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre>                if y in i:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">39</th>
+  <td class="line-code diff_in">
+    <pre>                    return True</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre>            return False</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">42</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">43</th>
+  <td class="line-code diff_in">
+    <pre>        def add(self, obj):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">44</th>
+  <td class="line-code diff_in">
+    <pre>            self.append(obj)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">45</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">46</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">47</th>
+  <td class="line-code diff_in">
+    <pre>class SpamhausDropPlugin(Plugin):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">48</th>
+  <td class="line-code diff_in">
+    <pre>    RELOAD = 7 * 24 * 60 * 60</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">49</th>
+  <td class="line-code diff_in">
+    <pre>    SERVER = &quot;www.spamhaus.org&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">50</th>
+  <td class="line-code diff_in">
+    <pre>    URI = &quot;/drop/drop.lasso&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">51</th>
+  <td class="line-code diff_in">
+    <pre>    TIMEOUT = 10</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">52</th>
+  <td class="line-code diff_in">
+    <pre>    FILENAME = require.get_data_filename(__name__, &quot;spamhaus_drop.dat&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">53</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">54</th>
+  <td class="line-code diff_in">
+    <pre>    def __loadData(self, age=0):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">55</th>
+  <td class="line-code diff_in">
+    <pre>        for line in open(self.__filename, &quot;r&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">56</th>
+  <td class="line-code diff_in">
+    <pre>            if line[0] == &#39;;&#39;:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">57</th>
+  <td class="line-code diff_in">
+    <pre>                continue</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">58</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">59</th>
+  <td class="line-code diff_in">
+    <pre>            ip, sbl = line.split(&#39;;&#39;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">60</th>
+  <td class="line-code diff_in">
+    <pre>            ip = IPNetwork(ip.strip())</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">61</th>
+  <td class="line-code diff_in">
+    <pre>            self.__mynets.add(ip)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">62</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">63</th>
+  <td class="line-code diff_in">
+    <pre>        if self.__reload &gt; 0:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">64</th>
+  <td class="line-code diff_in">
+    <pre>            Timer(self.__reload - age, self.__retrieveData).start()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">65</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>    def __downloadData(self):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">67</th>
+  <td class="line-code diff_in">
+    <pre>        self.info(&quot;Downloading host list, this might take some time...&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">68</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">69</th>
+  <td class="line-code diff_in">
+    <pre>        try:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">70</th>
+  <td class="line-code diff_in">
+    <pre>            con = httplib.HTTPConnection(self.__server, timeout=self.__timeout)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">71</th>
+  <td class="line-code diff_in">
+    <pre>        except TypeError:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">72</th>
+  <td class="line-code diff_in">
+    <pre>            con = httplib.HTTPConnection(self.__server)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">73</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">74</th>
+  <td class="line-code diff_in">
+    <pre>        con.request(&quot;GET&quot;, self.__uri)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">75</th>
+  <td class="line-code diff_in">
+    <pre>        r = con.getresponse()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">76</th>
+  <td class="line-code diff_in">
+    <pre>        if r.status != 200:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">77</th>
+  <td class="line-code diff_in">
+    <pre>            raise Exception, &quot;Could not download spamhaus DROP list, error %d&quot; % r.status</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">78</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">79</th>
+  <td class="line-code diff_in">
+    <pre>        fd = open(self.__filename, &quot;w&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">80</th>
+  <td class="line-code diff_in">
+    <pre>        fd.write(r.read())</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">81</th>
+  <td class="line-code diff_in">
+    <pre>        fd.close()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">82</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">83</th>
+  <td class="line-code diff_in">
+    <pre>        self.info(&quot;Downloading done, processing data.&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">84</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">85</th>
+  <td class="line-code diff_in">
+    <pre>    def __retrieveData(self, timer=None):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">86</th>
+  <td class="line-code diff_in">
+    <pre>        try:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">87</th>
+  <td class="line-code diff_in">
+    <pre>            st = os.stat(self.__filename)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">88</th>
+  <td class="line-code diff_in">
+    <pre>            if self.__reload &lt;= 0 or time.time() - st.st_mtime &lt; self.__reload:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">89</th>
+  <td class="line-code diff_in">
+    <pre>                return self.__loadData(time.time() - st.st_mtime)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">90</th>
+  <td class="line-code diff_in">
+    <pre>        except OSError:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">91</th>
+  <td class="line-code diff_in">
+    <pre>            pass</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">92</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">93</th>
+  <td class="line-code diff_in">
+    <pre>        self.__downloadData()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">94</th>
+  <td class="line-code diff_in">
+    <pre>        self.__loadData()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">95</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>    def __init__(self, env):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">98</th>
+  <td class="line-code diff_in">
+    <pre>        Plugin.__init__(self, env)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">99</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">100</th>
+  <td class="line-code diff_in">
+    <pre>        self.__mynets = IPSet()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">101</th>
+  <td class="line-code diff_in">
+    <pre>        self.__reload = self.getConfigValue(&quot;reload&quot;, self.RELOAD, type=int)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">102</th>
+  <td class="line-code diff_in">
+    <pre>        self.__filename = self.getConfigValue(&quot;filename&quot;, self.FILENAME)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">103</th>
+  <td class="line-code diff_in">
+    <pre>        self.__server = self.getConfigValue(&quot;server&quot;, self.SERVER)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">104</th>
+  <td class="line-code diff_in">
+    <pre>        self.__uri = self.getConfigValue(&quot;uri&quot;, self.URI)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre>        self.__timeout = self.getConfigValue(&quot;timeout&quot;, self.TIMEOUT, type=float)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">106</th>
+  <td class="line-code diff_in">
+    <pre>        self.__retrieveData()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">107</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">108</th>
+  <td class="line-code diff_in">
+    <pre>    def run(self, idmef):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">109</th>
+  <td class="line-code diff_in">
+    <pre>        for source in idmef.Get(&quot;alert.source(*).node.address(*).address&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">110</th>
+  <td class="line-code diff_in">
+    <pre>            if IPAddress(source) in self.__mynets:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">111</th>
+  <td class="line-code diff_in">
+    <pre>                ca = IDMEF()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre>                ca.addAlertReference(idmef)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">113</th>
+  <td class="line-code diff_in">
+    <pre>                ca.Set(&quot;alert.classification.text&quot;, &quot;IP source matching Spamhaus DROP dataset&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">114</th>
+  <td class="line-code diff_in">
+    <pre>                ca.Set(&quot;alert.correlation_alert.name&quot;, &quot;IP source matching Spamhaus DROP dataset&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">115</th>
+  <td class="line-code diff_in">
+    <pre>                ca.Set(&quot;alert.assessment.impact.description&quot;, &quot;Spamhaus gathered this IP address in their DROP list - %s&quot; % (source))</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">116</th>
+  <td class="line-code diff_in">
+    <pre>                ca.Set(&quot;alert.assessment.impact.severity&quot;, &quot;medium&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">117</th>
+  <td class="line-code diff_in">
+    <pre>                ca.alert()</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prelude_correlator.egg-info/SOURCES.txt
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">24</th>
+  <th class="line-num">24</th>
+  <td class="line-code ">
+    <pre>PreludeCorrelator/plugins/firewall.py</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">25</th>
+  <th class="line-num">25</th>
+  <td class="line-code ">
+    <pre>PreludeCorrelator/plugins/opensshauth.py</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">26</th>
+  <th class="line-num">26</th>
+  <td class="line-code ">
+    <pre>PreludeCorrelator/plugins/scan.py</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">27</th>
+  <td class="line-code diff_in">
+    <pre>PreludeCorrelator/plugins/spamhausdrop.py</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">27</th>
+  <th class="line-num">28</th>
+  <td class="line-code ">
+    <pre>PreludeCorrelator/plugins/worm.py</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">28</th>
+  <th class="line-num">29</th>
+  <td class="line-code ">
+    <pre>prelude_correlator.egg-info/PKG-INFO</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">29</th>
+  <th class="line-num">30</th>
+  <td class="line-code ">
+    <pre>prelude_correlator.egg-info/SOURCES.txt</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">30</th>
+  <th class="line-num">31</th>
+  <td class="line-code ">
+    <pre>prelude_correlator.egg-info/dependency_links.txt</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">31</th>
+  <th class="line-num">32</th>
+  <td class="line-code ">
+    <pre>prelude_correlator.egg-info/entry_points.txt</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">32</th>
+  <th class="line-num">33</th>
+  <td class="line-code ">
+    <pre>prelude_correlator.egg-info/not-zip-safe</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">33</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>prelude_correlator.egg-info/top_level.txt</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre>prelude_correlator.egg-info/top_level.txt</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prelude_correlator.egg-info/entry_points.txt
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">6</th>
+  <th class="line-num">6</th>
+  <td class="line-code ">
+    <pre>FirewallPlugin = PreludeCorrelator.plugins.firewall:FirewallPlugin</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">7</th>
+  <th class="line-num">7</th>
+  <td class="line-code ">
+    <pre>BruteForcePlugin = PreludeCorrelator.plugins.bruteforce:BruteForcePlugin</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">8</th>
+  <th class="line-num">8</th>
+  <td class="line-code ">
+    <pre>EventStormPlugin = PreludeCorrelator.plugins.scan:EventStormPlugin</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>SpamhausDropPlugin = PreludeCorrelator.plugins.spamhausdrop:SpamhausDropPlugin</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">9</th>
+  <th class="line-num">10</th>
+  <td class="line-code ">
+    <pre>DshieldPlugin = PreludeCorrelator.plugins.dshield:DshieldPlugin</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">10</th>
+  <th class="line-num">11</th>
+  <td class="line-code ">
+    <pre>EventScanPlugin = PreludeCorrelator.plugins.scan:EventScanPlugin</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">11</th>
+  <th class="line-num">12</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      setup.py
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">12</th>
+  <th class="line-num">12</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">13</th>
+  <th class="line-num">13</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">14</th>
+  <th class="line-num">14</th>
+  <td class="line-code ">
+    <pre>class my_sdist(sdist):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">15</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        def _<span>_init__(self, *args, **kwargs</span>):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>        def _<span>downloadDatabase(self, dname, server, url, filename</span>):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">16</th>
+  <th class="line-num">16</th>
+  <td class="line-code ">
+    <pre>                import httplib</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">17</th>
+  <th class="line-num">17</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">18</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                fin = os.popen(&#39;git log --summary --stat --no-merges --date=short&#39;, &#39;r&#39;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">19</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                fout = open(&#39;ChangeLog&#39;, &#39;w&#39;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">20</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                fout.write(fin.read())</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">21</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                fout.close()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">22</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">23</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                print &quot;Downloading DShield database, this might take a while...&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre>                print &quot;Downloading %s database, this might take a while...&quot; % (dname)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">24</th>
+  <th class="line-num">19</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">25</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                con = httplib.HTTPConnection(<span>&quot;www.dshield.org&quot;</span>)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">26</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                con.request(&quot;GET&quot;, <span>&quot;/ipsascii.html?limit=10000&quot;</span>)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre>                con = httplib.HTTPConnection(<span>server</span>)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre>                con.request(&quot;GET&quot;, <span>url</span>)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">27</th>
+  <th class="line-num">22</th>
+  <td class="line-code ">
+    <pre>                r = con.getresponse()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">28</th>
+  <th class="line-num">23</th>
+  <td class="line-code ">
+    <pre>                if r.status != 200:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">29</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                        raise Exception, &quot;Could not download <span>DShield host list, error %d&quot; % r.status</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">24</th>
+  <td class="line-code diff_in">
+    <pre>                        raise Exception, &quot;Could not download <span>%s host list, error %d&quot; % (dname, r.status)</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">30</th>
+  <th class="line-num">25</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">31</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                fd = open(<span>&quot;PreludeCorrelator/plugins/dshield.dat&quot;</span>, &quot;w&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">26</th>
+  <td class="line-code diff_in">
+    <pre>                fd = open(<span>filename</span>, &quot;w&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">32</th>
+  <th class="line-num">27</th>
+  <td class="line-code ">
+    <pre>                fd.write(r.read())</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">33</th>
+  <th class="line-num">28</th>
+  <td class="line-code ">
+    <pre>                fd.close()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">34</th>
+  <th class="line-num">29</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">30</th>
+  <td class="line-code diff_in">
+    <pre>        def __init__(self, *args, **kwargs):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">31</th>
+  <td class="line-code diff_in">
+    <pre>                fin = os.popen(&#39;git log --summary --stat --no-merges --date=short&#39;, &#39;r&#39;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">32</th>
+  <td class="line-code diff_in">
+    <pre>                fout = open(&#39;ChangeLog&#39;, &#39;w&#39;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">33</th>
+  <td class="line-code diff_in">
+    <pre>                fout.write(fin.read())</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre>                fout.close()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">35</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">36</th>
+  <td class="line-code diff_in">
+    <pre>                self._downloadDatabase(&quot;DShield&quot;, &quot;www.dshield.org&quot;, &quot;/ipsascii.html?limit=10000&quot;, &quot;PreludeCorrelator/plugins/dshield.dat&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">37</th>
+  <td class="line-code diff_in">
+    <pre>                self._downloadDatabase(&quot;Spamhaus&quot;, &quot;www.spamhaus.org&quot;, &quot;/drop/drop.lasso&quot;, &quot;PreludeCorrelator/plugins/spamhaus_drop.dat&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">35</th>
+  <th class="line-num">39</th>
+  <td class="line-code ">
+    <pre>                sdist.__init__(self, *args)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">36</th>
+  <th class="line-num">40</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">37</th>
+  <th class="line-num">41</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">85</th>
+  <th class="line-num">89</th>
+  <td class="line-code ">
+    <pre>else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">86</th>
+  <th class="line-num">90</th>
+  <td class="line-code ">
+    <pre>        package_data = {}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">87</th>
+  <th class="line-num">91</th>
+  <td class="line-code ">
+    <pre>        data_files = [ (&quot;etc/prelude-correlator&quot;, [&quot;prelude-correlator.conf&quot;]),</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">88</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                       (&quot;var/lib/prelude-correlator&quot;, [&quot;PreludeCorrelator/plugins/dshield.dat&quot;<span></span>]) ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">92</th>
+  <td class="line-code diff_in">
+    <pre>                       (&quot;var/lib/prelude-correlator&quot;, [&quot;PreludeCorrelator/plugins/dshield.dat&quot;<span>, &quot;PreludeCorrelator/plugins/spamhaus_drop.dat&quot;</span>]) ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">89</th>
+  <th class="line-num">93</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">90</th>
+  <th class="line-num">94</th>
+  <td class="line-code ">
+    <pre>setup(</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">91</th>
+  <th class="line-num">95</th>
+  <td class="line-code ">
+    <pre>        name=&quot;prelude-correlator&quot;,</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">137</th>
+  <th class="line-num">141</th>
+  <td class="line-code ">
+    <pre>                        &#39;EventScanPlugin = PreludeCorrelator.plugins.scan:EventScanPlugin&#39;,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">138</th>
+  <th class="line-num">142</th>
+  <td class="line-code ">
+    <pre>                        &#39;EventStormPlugin = PreludeCorrelator.plugins.scan:EventStormPlugin&#39;,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">139</th>
+  <th class="line-num">143</th>
+  <td class="line-code ">
+    <pre>                        &#39;EventSweepPlugin = PreludeCorrelator.plugins.scan:EventSweepPlugin&#39;,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">140</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                        &#39;WormPlugin = PreludeCorrelator.plugins.worm:WormPlugin&#39;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">144</th>
+  <td class="line-code diff_in">
+    <pre>                        &#39;WormPlugin = PreludeCorrelator.plugins.worm:WormPlugin&#39;,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">145</th>
+  <td class="line-code diff_in">
+    <pre>                        &#39;SpamhausDropPlugin = PreludeCorrelator.plugins.spamhausdrop:SpamhausDropPlugin&#39;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">141</th>
+  <th class="line-num">146</th>
+  <td class="line-code ">
+    <pre>                ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">142</th>
+  <th class="line-num">147</th>
+  <td class="line-code ">
+    <pre>        },</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">143</th>
+  <th class="line-num">148</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">144</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>- </pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,2184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>idmef-value</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libprelude Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libprelude-prelude-timer.html" title="prelude-timer">
+<link rel="next" href="object-tree.html" title="Object Hierarchy">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libprelude-prelude-timer.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libprelude Reference Manual</th>
+<td><a accesskey="n" href="object-tree.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libprelude-idmef-value.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libprelude-idmef-value.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="idmef-value">
+<a name="libprelude-idmef-value"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libprelude-idmef-value.top_of_page"></a>idmef-value</span></h2>
+<p>idmef-value</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libprelude-idmef-value.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+typedef             idmef_value_t;
+int                 idmef_value_new_int8                (idmef_value_t **value,
+                                                         int8_t val);
+int                 idmef_value_new_uint8               (idmef_value_t **value,
+                                                         uint8_t val);
+int                 idmef_value_new_int16               (idmef_value_t **value,
+                                                         int16_t val);
+int                 idmef_value_new_uint16              (idmef_value_t **value,
+                                                         uint16_t val);
+int                 idmef_value_new_int32               (idmef_value_t **value,
+                                                         int32_t val);
+int                 idmef_value_new_uint32              (idmef_value_t **value,
+                                                         uint32_t val);
+int                 idmef_value_new_int64               (idmef_value_t **value,
+                                                         int64_t val);
+int                 idmef_value_new_uint64              (idmef_value_t **value,
+                                                         uint64_t val);
+int                 idmef_value_new_float               (idmef_value_t **value,
+                                                         float val);
+int                 idmef_value_new_double              (idmef_value_t **value,
+                                                         double val);
+int                 idmef_value_new_string              (idmef_value_t **value,
+                                                         prelude_string_t *string);
+int                 idmef_value_new_time                (idmef_value_t **value,
+                                                         idmef_time_t *time);
+int                 idmef_value_new_data                (idmef_value_t **value,
+                                                         idmef_data_t *data);
+int                 idmef_value_new_class               (idmef_value_t **value,
+                                                         idmef_class_id_t classid,
+                                                         void *ptr);
+int                 idmef_value_new_list                (idmef_value_t **value);
+int                 idmef_value_new_enum                (idmef_value_t **value,
+                                                         idmef_class_id_t classid,
+                                                         const char *buf);
+int                 idmef_value_new_enum_from_string    (idmef_value_t **value,
+                                                         idmef_class_id_t classid,
+                                                         const char *buf);
+int                 idmef_value_new_enum_from_numeric   (idmef_value_t **value,
+                                                         idmef_class_id_t classid,
+                                                         int val);
+int                 idmef_value_new                     (idmef_value_t **value,
+                                                         idmef_value_type_id_t type,
+                                                         void *ptr);
+int                 idmef_value_new_from_path           (idmef_value_t **value,
+                                                         idmef_path_t *path,
+                                                         const char *buf);
+int                 idmef_value_new_from_string         (idmef_value_t **value,
+                                                         idmef_value_type_id_t type,
+                                                         const char *buf);
+int                 idmef_value_set_class               (idmef_value_t *value,
+                                                         idmef_class_id_t classid,
+                                                         void *ptr);
+int                 idmef_value_set_data                (idmef_value_t *value,
+                                                         idmef_data_t *data);
+int                 idmef_value_set_double              (idmef_value_t *value,
+                                                         double val);
+int                 idmef_value_set_enum                (idmef_value_t *value,
+                                                         idmef_class_id_t classid,
+                                                         const char *buf);
+int                 idmef_value_set_enum_from_numeric   (idmef_value_t *value,
+                                                         idmef_class_id_t classid,
+                                                         int no);
+int                 idmef_value_set_enum_from_string    (idmef_value_t *value,
+                                                         idmef_class_id_t classid,
+                                                         const char *buf);
+int                 idmef_value_set_float               (idmef_value_t *value,
+                                                         float val);
+int                 idmef_value_set_int16               (idmef_value_t *value,
+                                                         int16_t val);
+int                 idmef_value_set_int32               (idmef_value_t *value,
+                                                         int32_t val);
+int                 idmef_value_set_int64               (idmef_value_t *value,
+                                                         int64_t val);
+int                 idmef_value_set_int8                (idmef_value_t *value,
+                                                         int8_t val);
+int                 idmef_value_set_string              (idmef_value_t *value,
+                                                         prelude_string_t *string);
+int                 idmef_value_set_time                (idmef_value_t *value,
+                                                         idmef_time_t *time);
+int                 idmef_value_set_uint16              (idmef_value_t *value,
+                                                         uint16_t val);
+int                 idmef_value_set_uint32              (idmef_value_t *value,
+                                                         uint32_t val);
+int                 idmef_value_set_uint64              (idmef_value_t *value,
+                                                         uint64_t val);
+int                 idmef_value_set_uint8               (idmef_value_t *value,
+                                                         uint8_t val);
+int8_t              idmef_value_get_int8                (const idmef_value_t *val);
+uint8_t             idmef_value_get_uint8               (const idmef_value_t *val);
+int16_t             idmef_value_get_int16               (const idmef_value_t *val);
+uint16_t            idmef_value_get_uint16              (const idmef_value_t *val);
+int32_t             idmef_value_get_int32               (const idmef_value_t *val);
+uint32_t            idmef_value_get_uint32              (const idmef_value_t *val);
+int64_t             idmef_value_get_int64               (const idmef_value_t *val);
+uint64_t            idmef_value_get_uint64              (const idmef_value_t *val);
+int                 idmef_value_get_enum                (const idmef_value_t *val);
+float               idmef_value_get_float               (const idmef_value_t *val);
+double              idmef_value_get_double              (const idmef_value_t *val);
+idmef_time_t *      idmef_value_get_time                (const idmef_value_t *val);
+idmef_data_t *      idmef_value_get_data                (const idmef_value_t *val);
+prelude_string_t *  idmef_value_get_string              (const idmef_value_t *val);
+int                 idmef_value_list_add                (idmef_value_t *list,
+                                                         idmef_value_t *item);
+prelude_bool_t      idmef_value_is_list                 (const idmef_value_t *list);
+prelude_bool_t      idmef_value_list_is_empty           (const idmef_value_t *list);
+int                 idmef_value_have_own_data           (idmef_value_t *value);
+int                 idmef_value_dont_have_own_data      (idmef_value_t *value);
+idmef_value_type_id_t  idmef_value_get_type             (const idmef_value_t *value);
+idmef_class_id_t    idmef_value_get_class               (const idmef_value_t *value);
+void *              idmef_value_get_object              (const idmef_value_t *value);
+int                 idmef_value_iterate                 (const idmef_value_t *value,
+                                                         int (callbackidmef_value_t *ptr, void *extra) (),
+                                                         void *extra);
+int                 idmef_value_iterate_reversed        (const idmef_value_t *value,
+                                                         int (callbackidmef_value_t *ptr, void *extra) (),
+                                                         void *extra);
+idmef_value_t *     idmef_value_get_nth                 (const idmef_value_t *val,
+                                                         int n);
+int                 idmef_value_get_count               (const idmef_value_t *val);
+int                 idmef_value_clone                   (const idmef_value_t *val,
+                                                         idmef_value_t **dst);
+idmef_value_t *     idmef_value_ref                     (idmef_value_t *val);
+int                 idmef_value_print                   (const idmef_value_t *val,
+                                                         prelude_io_t *fd);
+int                 idmef_value_to_string               (const idmef_value_t *value,
+                                                         prelude_string_t *out);
+int                 idmef_value_get                     (const idmef_value_t *val,
+                                                         void *res);
+int                 idmef_value_match                   (idmef_value_t *val1,
+                                                         idmef_value_t *val2,
+                                                         idmef_criterion_operator_t op);
+int                 idmef_value_check_operator          (const idmef_value_t *value,
+                                                         idmef_criterion_operator_t op);
+int                 idmef_value_get_applicable_operators
+                                                        (const idmef_value_t *value,
+                                                         idmef_criterion_operator_t *result);
+void                idmef_value_destroy                 (idmef_value_t *val);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libprelude-idmef-value.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libprelude-idmef-value.details"></a><h2>Details</h2>
+<div class="refsect2" title="idmef_value_t">
+<a name="idmef-value-t"></a><h3>idmef_value_t</h3>
+<pre class="programlisting">typedef struct idmef_value idmef_value_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_int8 ()">
+<a name="idmef-value-new-int8"></a><h3>idmef_value_new_int8 ()</h3>
+<pre class="programlisting">int                 idmef_value_new_int8                (idmef_value_t **value,
+                                                         int8_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_uint8 ()">
+<a name="idmef-value-new-uint8"></a><h3>idmef_value_new_uint8 ()</h3>
+<pre class="programlisting">int                 idmef_value_new_uint8               (idmef_value_t **value,
+                                                         uint8_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_int16 ()">
+<a name="idmef-value-new-int16"></a><h3>idmef_value_new_int16 ()</h3>
+<pre class="programlisting">int                 idmef_value_new_int16               (idmef_value_t **value,
+                                                         int16_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_uint16 ()">
+<a name="idmef-value-new-uint16"></a><h3>idmef_value_new_uint16 ()</h3>
+<pre class="programlisting">int                 idmef_value_new_uint16              (idmef_value_t **value,
+                                                         uint16_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_int32 ()">
+<a name="idmef-value-new-int32"></a><h3>idmef_value_new_int32 ()</h3>
+<pre class="programlisting">int                 idmef_value_new_int32               (idmef_value_t **value,
+                                                         int32_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_uint32 ()">
+<a name="idmef-value-new-uint32"></a><h3>idmef_value_new_uint32 ()</h3>
+<pre class="programlisting">int                 idmef_value_new_uint32              (idmef_value_t **value,
+                                                         uint32_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_int64 ()">
+<a name="idmef-value-new-int64"></a><h3>idmef_value_new_int64 ()</h3>
+<pre class="programlisting">int                 idmef_value_new_int64               (idmef_value_t **value,
+                                                         int64_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_uint64 ()">
+<a name="idmef-value-new-uint64"></a><h3>idmef_value_new_uint64 ()</h3>
+<pre class="programlisting">int                 idmef_value_new_uint64              (idmef_value_t **value,
+                                                         uint64_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_float ()">
+<a name="idmef-value-new-float"></a><h3>idmef_value_new_float ()</h3>
+<pre class="programlisting">int                 idmef_value_new_float               (idmef_value_t **value,
+                                                         float val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_double ()">
+<a name="idmef-value-new-double"></a><h3>idmef_value_new_double ()</h3>
+<pre class="programlisting">int                 idmef_value_new_double              (idmef_value_t **value,
+                                                         double val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_string ()">
+<a name="idmef-value-new-string"></a><h3>idmef_value_new_string ()</h3>
+<pre class="programlisting">int                 idmef_value_new_string              (idmef_value_t **value,
+                                                         prelude_string_t *string);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_time ()">
+<a name="idmef-value-new-time"></a><h3>idmef_value_new_time ()</h3>
+<pre class="programlisting">int                 idmef_value_new_time                (idmef_value_t **value,
+                                                         idmef_time_t *time);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_data ()">
+<a name="idmef-value-new-data"></a><h3>idmef_value_new_data ()</h3>
+<pre class="programlisting">int                 idmef_value_new_data                (idmef_value_t **value,
+                                                         idmef_data_t *data);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_class ()">
+<a name="idmef-value-new-class"></a><h3>idmef_value_new_class ()</h3>
+<pre class="programlisting">int                 idmef_value_new_class               (idmef_value_t **value,
+                                                         idmef_class_id_t classid,
+                                                         void *ptr);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ptr</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_list ()">
+<a name="idmef-value-new-list"></a><h3>idmef_value_new_list ()</h3>
+<pre class="programlisting">int                 idmef_value_new_list                (idmef_value_t **value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_enum ()">
+<a name="idmef-value-new-enum"></a><h3>idmef_value_new_enum ()</h3>
+<pre class="programlisting">int                 idmef_value_new_enum                (idmef_value_t **value,
+                                                         idmef_class_id_t classid,
+                                                         const char *buf);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_enum_from_string ()">
+<a name="idmef-value-new-enum-from-string"></a><h3>idmef_value_new_enum_from_string ()</h3>
+<pre class="programlisting">int                 idmef_value_new_enum_from_string    (idmef_value_t **value,
+                                                         idmef_class_id_t classid,
+                                                         const char *buf);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_enum_from_numeric ()">
+<a name="idmef-value-new-enum-from-numeric"></a><h3>idmef_value_new_enum_from_numeric ()</h3>
+<pre class="programlisting">int                 idmef_value_new_enum_from_numeric   (idmef_value_t **value,
+                                                         idmef_class_id_t classid,
+                                                         int val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new ()">
+<a name="idmef-value-new"></a><h3>idmef_value_new ()</h3>
+<pre class="programlisting">int                 idmef_value_new                     (idmef_value_t **value,
+                                                         idmef_value_type_id_t type,
+                                                         void *ptr);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ptr</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_from_path ()">
+<a name="idmef-value-new-from-path"></a><h3>idmef_value_new_from_path ()</h3>
+<pre class="programlisting">int                 idmef_value_new_from_path           (idmef_value_t **value,
+                                                         idmef_path_t *path,
+                                                         const char *buf);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_new_from_string ()">
+<a name="idmef-value-new-from-string"></a><h3>idmef_value_new_from_string ()</h3>
+<pre class="programlisting">int                 idmef_value_new_from_string         (idmef_value_t **value,
+                                                         idmef_value_type_id_t type,
+                                                         const char *buf);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_class ()">
+<a name="idmef-value-set-class"></a><h3>idmef_value_set_class ()</h3>
+<pre class="programlisting">int                 idmef_value_set_class               (idmef_value_t *value,
+                                                         idmef_class_id_t classid,
+                                                         void *ptr);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ptr</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_data ()">
+<a name="idmef-value-set-data"></a><h3>idmef_value_set_data ()</h3>
+<pre class="programlisting">int                 idmef_value_set_data                (idmef_value_t *value,
+                                                         idmef_data_t *data);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_double ()">
+<a name="idmef-value-set-double"></a><h3>idmef_value_set_double ()</h3>
+<pre class="programlisting">int                 idmef_value_set_double              (idmef_value_t *value,
+                                                         double val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_enum ()">
+<a name="idmef-value-set-enum"></a><h3>idmef_value_set_enum ()</h3>
+<pre class="programlisting">int                 idmef_value_set_enum                (idmef_value_t *value,
+                                                         idmef_class_id_t classid,
+                                                         const char *buf);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_enum_from_numeric ()">
+<a name="idmef-value-set-enum-from-numeric"></a><h3>idmef_value_set_enum_from_numeric ()</h3>
+<pre class="programlisting">int                 idmef_value_set_enum_from_numeric   (idmef_value_t *value,
+                                                         idmef_class_id_t classid,
+                                                         int no);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>no</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_enum_from_string ()">
+<a name="idmef-value-set-enum-from-string"></a><h3>idmef_value_set_enum_from_string ()</h3>
+<pre class="programlisting">int                 idmef_value_set_enum_from_string    (idmef_value_t *value,
+                                                         idmef_class_id_t classid,
+                                                         const char *buf);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classid</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_float ()">
+<a name="idmef-value-set-float"></a><h3>idmef_value_set_float ()</h3>
+<pre class="programlisting">int                 idmef_value_set_float               (idmef_value_t *value,
+                                                         float val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_int16 ()">
+<a name="idmef-value-set-int16"></a><h3>idmef_value_set_int16 ()</h3>
+<pre class="programlisting">int                 idmef_value_set_int16               (idmef_value_t *value,
+                                                         int16_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_int32 ()">
+<a name="idmef-value-set-int32"></a><h3>idmef_value_set_int32 ()</h3>
+<pre class="programlisting">int                 idmef_value_set_int32               (idmef_value_t *value,
+                                                         int32_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_int64 ()">
+<a name="idmef-value-set-int64"></a><h3>idmef_value_set_int64 ()</h3>
+<pre class="programlisting">int                 idmef_value_set_int64               (idmef_value_t *value,
+                                                         int64_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_int8 ()">
+<a name="idmef-value-set-int8"></a><h3>idmef_value_set_int8 ()</h3>
+<pre class="programlisting">int                 idmef_value_set_int8                (idmef_value_t *value,
+                                                         int8_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_string ()">
+<a name="idmef-value-set-string"></a><h3>idmef_value_set_string ()</h3>
+<pre class="programlisting">int                 idmef_value_set_string              (idmef_value_t *value,
+                                                         prelude_string_t *string);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>string</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_time ()">
+<a name="idmef-value-set-time"></a><h3>idmef_value_set_time ()</h3>
+<pre class="programlisting">int                 idmef_value_set_time                (idmef_value_t *value,
+                                                         idmef_time_t *time);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_uint16 ()">
+<a name="idmef-value-set-uint16"></a><h3>idmef_value_set_uint16 ()</h3>
+<pre class="programlisting">int                 idmef_value_set_uint16              (idmef_value_t *value,
+                                                         uint16_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_uint32 ()">
+<a name="idmef-value-set-uint32"></a><h3>idmef_value_set_uint32 ()</h3>
+<pre class="programlisting">int                 idmef_value_set_uint32              (idmef_value_t *value,
+                                                         uint32_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_uint64 ()">
+<a name="idmef-value-set-uint64"></a><h3>idmef_value_set_uint64 ()</h3>
+<pre class="programlisting">int                 idmef_value_set_uint64              (idmef_value_t *value,
+                                                         uint64_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_set_uint8 ()">
+<a name="idmef-value-set-uint8"></a><h3>idmef_value_set_uint8 ()</h3>
+<pre class="programlisting">int                 idmef_value_set_uint8               (idmef_value_t *value,
+                                                         uint8_t val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_int8 ()">
+<a name="idmef-value-get-int8"></a><h3>idmef_value_get_int8 ()</h3>
+<pre class="programlisting">int8_t              idmef_value_get_int8                (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_uint8 ()">
+<a name="idmef-value-get-uint8"></a><h3>idmef_value_get_uint8 ()</h3>
+<pre class="programlisting">uint8_t             idmef_value_get_uint8               (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_int16 ()">
+<a name="idmef-value-get-int16"></a><h3>idmef_value_get_int16 ()</h3>
+<pre class="programlisting">int16_t             idmef_value_get_int16               (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_uint16 ()">
+<a name="idmef-value-get-uint16"></a><h3>idmef_value_get_uint16 ()</h3>
+<pre class="programlisting">uint16_t            idmef_value_get_uint16              (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_int32 ()">
+<a name="idmef-value-get-int32"></a><h3>idmef_value_get_int32 ()</h3>
+<pre class="programlisting">int32_t             idmef_value_get_int32               (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_uint32 ()">
+<a name="idmef-value-get-uint32"></a><h3>idmef_value_get_uint32 ()</h3>
+<pre class="programlisting">uint32_t            idmef_value_get_uint32              (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_int64 ()">
+<a name="idmef-value-get-int64"></a><h3>idmef_value_get_int64 ()</h3>
+<pre class="programlisting">int64_t             idmef_value_get_int64               (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_uint64 ()">
+<a name="idmef-value-get-uint64"></a><h3>idmef_value_get_uint64 ()</h3>
+<pre class="programlisting">uint64_t            idmef_value_get_uint64              (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_enum ()">
+<a name="idmef-value-get-enum"></a><h3>idmef_value_get_enum ()</h3>
+<pre class="programlisting">int                 idmef_value_get_enum                (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_float ()">
+<a name="idmef-value-get-float"></a><h3>idmef_value_get_float ()</h3>
+<pre class="programlisting">float               idmef_value_get_float               (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_double ()">
+<a name="idmef-value-get-double"></a><h3>idmef_value_get_double ()</h3>
+<pre class="programlisting">double              idmef_value_get_double              (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_time ()">
+<a name="idmef-value-get-time"></a><h3>idmef_value_get_time ()</h3>
+<pre class="programlisting">idmef_time_t *      idmef_value_get_time                (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_data ()">
+<a name="idmef-value-get-data"></a><h3>idmef_value_get_data ()</h3>
+<pre class="programlisting">idmef_data_t *      idmef_value_get_data                (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_string ()">
+<a name="idmef-value-get-string"></a><h3>idmef_value_get_string ()</h3>
+<pre class="programlisting">prelude_string_t *  idmef_value_get_string              (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_list_add ()">
+<a name="idmef-value-list-add"></a><h3>idmef_value_list_add ()</h3>
+<pre class="programlisting">int                 idmef_value_list_add                (idmef_value_t *list,
+                                                         idmef_value_t *item);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>item</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_is_list ()">
+<a name="idmef-value-is-list"></a><h3>idmef_value_is_list ()</h3>
+<pre class="programlisting">prelude_bool_t      idmef_value_is_list                 (const idmef_value_t *list);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_list_is_empty ()">
+<a name="idmef-value-list-is-empty"></a><h3>idmef_value_list_is_empty ()</h3>
+<pre class="programlisting">prelude_bool_t      idmef_value_list_is_empty           (const idmef_value_t *list);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>list</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_have_own_data ()">
+<a name="idmef-value-have-own-data"></a><h3>idmef_value_have_own_data ()</h3>
+<pre class="programlisting">int                 idmef_value_have_own_data           (idmef_value_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_dont_have_own_data ()">
+<a name="idmef-value-dont-have-own-data"></a><h3>idmef_value_dont_have_own_data ()</h3>
+<pre class="programlisting">int                 idmef_value_dont_have_own_data      (idmef_value_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_type ()">
+<a name="idmef-value-get-type"></a><h3>idmef_value_get_type ()</h3>
+<pre class="programlisting">idmef_value_type_id_t  idmef_value_get_type             (const idmef_value_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_class ()">
+<a name="idmef-value-get-class"></a><h3>idmef_value_get_class ()</h3>
+<pre class="programlisting">idmef_class_id_t    idmef_value_get_class               (const idmef_value_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_object ()">
+<a name="idmef-value-get-object"></a><h3>idmef_value_get_object ()</h3>
+<pre class="programlisting">void *              idmef_value_get_object              (const idmef_value_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_iterate ()">
+<a name="idmef-value-iterate"></a><h3>idmef_value_iterate ()</h3>
+<pre class="programlisting">int                 idmef_value_iterate                 (const idmef_value_t *value,
+                                                         int (callbackidmef_value_t *ptr, void *extra) (),
+                                                         void *extra);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>extra</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_iterate_reversed ()">
+<a name="idmef-value-iterate-reversed"></a><h3>idmef_value_iterate_reversed ()</h3>
+<pre class="programlisting">int                 idmef_value_iterate_reversed        (const idmef_value_t *value,
+                                                         int (callbackidmef_value_t *ptr, void *extra) (),
+                                                         void *extra);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>extra</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_nth ()">
+<a name="idmef-value-get-nth"></a><h3>idmef_value_get_nth ()</h3>
+<pre class="programlisting">idmef_value_t *     idmef_value_get_nth                 (const idmef_value_t *val,
+                                                         int n);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_count ()">
+<a name="idmef-value-get-count"></a><h3>idmef_value_get_count ()</h3>
+<pre class="programlisting">int                 idmef_value_get_count               (const idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_clone ()">
+<a name="idmef-value-clone"></a><h3>idmef_value_clone ()</h3>
+<pre class="programlisting">int                 idmef_value_clone                   (const idmef_value_t *val,
+                                                         idmef_value_t **dst);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_ref ()">
+<a name="idmef-value-ref"></a><h3>idmef_value_ref ()</h3>
+<pre class="programlisting">idmef_value_t *     idmef_value_ref                     (idmef_value_t *val);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_print ()">
+<a name="idmef-value-print"></a><h3>idmef_value_print ()</h3>
+<pre class="programlisting">int                 idmef_value_print                   (const idmef_value_t *val,
+                                                         prelude_io_t *fd);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fd</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_to_string ()">
+<a name="idmef-value-to-string"></a><h3>idmef_value_to_string ()</h3>
+<pre class="programlisting">int                 idmef_value_to_string               (const idmef_value_t *value,
+                                                         prelude_string_t *out);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get ()">
+<a name="idmef-value-get"></a><h3>idmef_value_get ()</h3>
+<pre class="programlisting">int                 idmef_value_get                     (const idmef_value_t *val,
+                                                         void *res);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_match ()">
+<a name="idmef-value-match"></a><h3>idmef_value_match ()</h3>
+<pre class="programlisting">int                 idmef_value_match                   (idmef_value_t *val1,
+                                                         idmef_value_t *val2,
+                                                         idmef_criterion_operator_t op);</pre>
+<p>
+Match <em class="parameter"><code>val1</code></em> and <em class="parameter"><code>val2</code></em> using <em class="parameter"><code>op</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val1</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_value_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>val2</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_value_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td> operator to use for matching.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of match, 0 for none, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_check_operator ()">
+<a name="idmef-value-check-operator"></a><h3>idmef_value_check_operator ()</h3>
+<pre class="programlisting">int                 idmef_value_check_operator          (const idmef_value_t *value,
+                                                         idmef_criterion_operator_t op);</pre>
+<p>
+Check whether <em class="parameter"><code>op</code></em> can apply to <em class="parameter"><code>value</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_value_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>op</code></em> :</span></p></td>
+<td> Type of operator to check <em class="parameter"><code>value</code></em> for.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_get_applicable_operators ()">
+<a name="idmef-value-get-applicable-operators"></a><h3>idmef_value_get_applicable_operators ()</h3>
+<pre class="programlisting">int                 idmef_value_get_applicable_operators
+                                                        (const idmef_value_t *value,
+                                                         idmef_criterion_operator_t *result);</pre>
+<p>
+Store all operator supported by <em class="parameter"><code>value</code></em> in <em class="parameter"><code>result</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_value_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td> Pointer where the result will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_value_destroy ()">
+<a name="idmef-value-destroy"></a><h3>idmef_value_destroy ()</h3>
+<pre class="programlisting">void                idmef_value_destroy                 (idmef_value_t *val);</pre>
+<p>
+Decrement refcount and destroy <em class="parameter"><code>value</code></em> if it reach 0.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>val</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_value_t</span> object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

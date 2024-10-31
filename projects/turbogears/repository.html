@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>/ - Repository - TurboGears - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="1SDw2i0vQOjgMuqJtJhpWa150awjrjuOW/Lt8X9ZUafGD5i15DtNa2qY4nOp0CAH0TKgMjmkYsCFfClh+1llpA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+  <script src="/javascripts/repository_navigation.js"></script>
+  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.prelude-siem.org/projects/turbogears/repository/revisions.atom" />
+  <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" />
+</head>
+<body class="theme-Prelude project-turbogears controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/turbogears/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="changesets" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/turbogears/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="changesets" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/turbogears/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/turbogears">Overview</a></li><li><a class="activity" href="/projects/turbogears/activity">Activity</a></li><li><a class="repository selected" href="/projects/turbogears/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+<div class="contextual">
+  
+<a class="icon icon-stats" href="/projects/turbogears/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/turbogears/repository" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />  <!-- Branches Dropdown -->
+    | Branch: 
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option>
+<option value="release-4.0">release-4.0</option>
+<option value="release-5.0">release-5.0</option>
+<option value="release-5.1">release-5.1</option>
+<option value="release-5.2">release-5.2</option>
+<option value="support/v3.5">support/v3.5</option></select>
+
+    | Tag: 
+    <select name="tag" id="tag"><option value="">&nbsp;</option>
+<option value="v3.5">v3.5</option>
+<option value="v3.5.1">v3.5.1</option>
+<option value="v3.6.0">v3.6.0</option>
+<option value="v3.6.0RC1">v3.6.0RC1</option>
+<option value="v3.6.0RC2">v3.6.0RC2</option>
+<option value="v3.6.0RC3">v3.6.0RC3</option>
+<option value="v3.6.0RC4">v3.6.0RC4</option>
+<option value="v4.0">v4.0</option>
+<option value="v4.0.1">v4.0.1</option>
+<option value="v4.0.1rc1">v4.0.1rc1</option>
+<option value="v4.0.2">v4.0.2</option>
+<option value="v4.0rc1">v4.0rc1</option>
+<option value="v4.0rc2">v4.0rc2</option>
+<option value="v4.0rc3">v4.0rc3</option>
+<option value="v4.1.0">v4.1.0</option>
+<option value="v4.1.0rc1">v4.1.0rc1</option>
+<option value="v4.1.0rc2">v4.1.0rc2</option>
+<option value="v4.1.0rc3">v4.1.0rc3</option>
+<option value="v5.0.0">v5.0.0</option>
+<option value="v5.0.0rc1">v5.0.0rc1</option>
+<option value="v5.0.0rc2">v5.0.0rc2</option>
+<option value="v5.0.1">v5.0.1</option>
+<option value="v5.0.2">v5.0.2</option>
+<option value="v5.1.0">v5.1.0</option>
+<option value="v5.1.0a1">v5.1.0a1</option>
+<option value="v5.1.0a2">v5.1.0a2</option>
+<option value="v5.1.0b1">v5.1.0b1</option>
+<option value="v5.1.1">v5.1.1</option>
+<option value="v5.1.2">v5.1.2</option>
+<option value="v5.1.3">v5.1.3</option>
+<option value="v5.2.0">v5.2.0</option>
+<option value="v5.2.0b1">v5.2.0b1</option>
+<option value="v5.2.0b2">v5.2.0b2</option>
+<option value="v5.2.0rc1">v5.2.0rc1</option></select>
+
+    | Revision: 
+    <input type="text" name="rev" id="rev" value="master" size="8" />
+</form>
+</div>
+
+<h2><a href="/projects/turbogears/repository/revisions/master/show">turbogears</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr id="9a09b4dfda82e3e665e31092d1c3ec8d" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('9a09b4dfda82e3e665e31092d1c3ec8d', '/projects/turbogears/repository/revisions/master/show/doc?depth=1&amp;parent_id=9a09b4dfda82e3e665e31092d1c3ec8d');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/turbogears/repository/revisions/master/show/doc">doc</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="db85c0ea4d2e69c8abaefa875ba77c51" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('db85c0ea4d2e69c8abaefa875ba77c51', '/projects/turbogears/repository/revisions/master/show/i18n?depth=1&amp;parent_id=db85c0ea4d2e69c8abaefa875ba77c51');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/turbogears/repository/revisions/master/show/i18n">i18n</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="6b0d3600d50944ab08b6145722eaa7c2" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('6b0d3600d50944ab08b6145722eaa7c2', '/projects/turbogears/repository/revisions/master/show/patches?depth=1&amp;parent_id=6b0d3600d50944ab08b6145722eaa7c2');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/turbogears/repository/revisions/master/show/patches">patches</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a46a1bce0b67c45bec8f435bd5390a54" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('a46a1bce0b67c45bec8f435bd5390a54', '/projects/turbogears/repository/revisions/master/show/pkg?depth=1&amp;parent_id=a46a1bce0b67c45bec8f435bd5390a54');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/turbogears/repository/revisions/master/show/pkg">pkg</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="25d902c24283ab8cfbac54dfa101ad31" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('25d902c24283ab8cfbac54dfa101ad31', '/projects/turbogears/repository/revisions/master/show/src?depth=1&amp;parent_id=25d902c24283ab8cfbac54dfa101ad31');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/turbogears/repository/revisions/master/show/src">src</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/turbogears/repository/changes/.gitignore?rev=master">.gitignore</a>
+</td>
+<td class="size">328 Bytes</td>
+</tr>
+<tr id="21c55fa400e4d25aed3a755371e32151" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/turbogears/repository/changes/COPYING.txt?rev=master">COPYING.txt</a>
+</td>
+<td class="size">17.7 KB</td>
+</tr>
+<tr id="9a0b089f32062c7ef0b2e051690951a1" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/turbogears/repository/changes/LICENSE.testutil.txt?rev=master">LICENSE.testutil.txt</a>
+</td>
+<td class="size">1.96 KB</td>
+</tr>
+<tr id="97c91a104c431d0c365565d3ac03ac13" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/turbogears/repository/changes/MANIFEST.in?rev=master">MANIFEST.in</a>
+</td>
+<td class="size">271 Bytes</td>
+</tr>
+<tr id="b67911656ef5d18c4ae36cb6741b7965" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/turbogears/repository/changes/Makefile?rev=master">Makefile</a>
+</td>
+<td class="size">1.36 KB</td>
+</tr>
+<tr id="26fd799ea07494916e9da9b91b2aac64" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/turbogears/repository/changes/README.txt?rev=master">README.txt</a>
+</td>
+<td class="size">1.46 KB</td>
+</tr>
+<tr id="a91efb528777d13c9f105798a9c5673b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/turbogears/repository/changes/buildenv?rev=master">buildenv</a>
+</td>
+<td class="size">11 Bytes</td>
+</tr>
+<tr id="a55fc4e553af13234f26342646b88e19" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/turbogears/repository/changes/buildout.cfg?rev=master">buildout.cfg</a>
+</td>
+<td class="size">101 Bytes</td>
+</tr>
+<tr id="fd5844eabfcf3340fd063669386fcd6b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/turbogears/repository/changes/development.ini?rev=master">development.ini</a>
+</td>
+<td class="size">3.55 KB</td>
+</tr>
+<tr id="380c6a8ebbbce17d55d50ef17d3cf906" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/turbogears/repository/changes/setup.cfg?rev=master">setup.cfg</a>
+</td>
+<td class="size">773 Bytes</td>
+</tr>
+<tr id="2eeaed663bd0d25b7e608891384b7298" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-x-python" href="/projects/turbogears/repository/changes/setup.py?rev=master">setup.py</a>
+</td>
+<td class="size">2.92 KB</td>
+</tr>
+<tr id="665e705a52de0ff0b2064b25d1da195d" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/turbogears/repository/changes/test.ini?rev=master">test.ini</a>
+</td>
+<td class="size">641 Bytes</td>
+</tr>
+<tr id="3421b332d183dc46c696eb3839dbc2e5" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/turbogears/repository/changes/who.ini?rev=master">who.ini</a>
+</td>
+<td class="size">1.1 KB</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"e3a354f129634b809a235273f55874c8dd3f787b":{"parent_scmids":["9d54b541d0972a4cd0515e1346e9e17c5298a722"],"rdmid":0,"refs":null,"scmid":"e3a354f129634b809a235273f55874c8dd3f787b","href":"/projects/turbogears/repository/revisions/e3a354f129634b809a235273f55874c8dd3f787b","space":0},"425a814aeea5690cf523fe7a2b3aca3e7ed4f922":{"parent_scmids":["e3a354f129634b809a235273f55874c8dd3f787b"],"rdmid":1,"refs":null,"scmid":"425a814aeea5690cf523fe7a2b3aca3e7ed4f922","href":"/projects/turbogears/repository/revisions/425a814aeea5690cf523fe7a2b3aca3e7ed4f922","space":0},"c9cced319861e90ea140a1cab9f82af4403aa0ba":{"parent_scmids":["425a814aeea5690cf523fe7a2b3aca3e7ed4f922"],"rdmid":2,"refs":null,"scmid":"c9cced319861e90ea140a1cab9f82af4403aa0ba","href":"/projects/turbogears/repository/revisions/c9cced319861e90ea140a1cab9f82af4403aa0ba","space":0},"f9ceb816ca3ead49c4d63715ca759a87c00e82fb":{"parent_scmids":["c9cced319861e90ea140a1cab9f82af4403aa0ba"],"rdmid":3,"refs":null,"scmid":"f9ceb816ca3ead49c4d63715ca759a87c00e82fb","href":"/projects/turbogears/repository/revisions/f9ceb816ca3ead49c4d63715ca759a87c00e82fb","space":0},"fe7033f6abfe4581d718743075a25685eb5a6d6c":{"parent_scmids":["f9ceb816ca3ead49c4d63715ca759a87c00e82fb"],"rdmid":4,"refs":null,"scmid":"fe7033f6abfe4581d718743075a25685eb5a6d6c","href":"/projects/turbogears/repository/revisions/fe7033f6abfe4581d718743075a25685eb5a6d6c","space":0},"043341787c420ea44dfe8a7d98feb5afea92531a":{"parent_scmids":["fe7033f6abfe4581d718743075a25685eb5a6d6c"],"rdmid":5,"refs":null,"scmid":"043341787c420ea44dfe8a7d98feb5afea92531a","href":"/projects/turbogears/repository/revisions/043341787c420ea44dfe8a7d98feb5afea92531a","space":0},"9908cd6d9f919a134403d67089cd10f7778b78f5":{"parent_scmids":["0adc42d65b1d220eef64a3b3b4224f113dba40ce"],"rdmid":6,"refs":null,"scmid":"9908cd6d9f919a134403d67089cd10f7778b78f5","href":"/projects/turbogears/repository/revisions/9908cd6d9f919a134403d67089cd10f7778b78f5","space":1},"9d5f3eb1e64a60cc61f02884feb6528a2743fb99":{"parent_scmids":["043341787c420ea44dfe8a7d98feb5afea92531a","9908cd6d9f919a134403d67089cd10f7778b78f5"],"rdmid":7,"refs":null,"scmid":"9d5f3eb1e64a60cc61f02884feb6528a2743fb99","href":"/projects/turbogears/repository/revisions/9d5f3eb1e64a60cc61f02884feb6528a2743fb99","space":0},"efa535a6232c549721773308c6f095a6a2d917f1":{"parent_scmids":["9d5f3eb1e64a60cc61f02884feb6528a2743fb99"],"rdmid":8,"refs":null,"scmid":"efa535a6232c549721773308c6f095a6a2d917f1","href":"/projects/turbogears/repository/revisions/efa535a6232c549721773308c6f095a6a2d917f1","space":0},"22986ccc8cf7c4fa0a6a6facc5eff41d09c29d90":{"parent_scmids":["efa535a6232c549721773308c6f095a6a2d917f1"],"rdmid":9,"refs":"master release-5.2","scmid":"22986ccc8cf7c4fa0a6a6facc5eff41d09c29d90","href":"/projects/turbogears/repository/revisions/22986ccc8cf7c4fa0a6a6facc5eff41d09c29d90","space":0}},
+    2
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"></div>
+
+
+<form action="/projects/turbogears/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 22986ccc" href="/projects/turbogears/repository/revisions/22986ccc8cf7c4fa0a6a6facc5eff41d09c29d90">22986ccc</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-1" value="22986ccc8cf7c4fa0a6a6facc5eff41d09c29d90" onclick="$(&#39;#cbto-2&#39;).prop(&#39;checked&#39;,true);" checked="checked" /></td>
+<td class="checkbox"></td>
+<td class="committed_on">09/10/2020 01:37 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0</p>
+
+
+	<p>Change-Id: I1d3f930522f9d259b7ff44645329fda565513eca</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision efa535a6" href="/projects/turbogears/repository/revisions/efa535a6232c549721773308c6f095a6a2d917f1">efa535a6</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-2" value="efa535a6232c549721773308c6f095a6a2d917f1" onclick="$(&#39;#cbto-3&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-2" value="efa535a6232c549721773308c6f095a6a2d917f1" onclick="if ($(&#39;#cb-2&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-1&#39;).prop(&#39;checked&#39;,true);}" checked="checked" /></td>
+<td class="committed_on">08/03/2020 08:53 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0rc1</p>
+
+
+	<p>Change-Id: Ic45c79a56f2c9da50b515f8331fdbf320a067047</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 9d5f3eb1" href="/projects/turbogears/repository/revisions/9d5f3eb1e64a60cc61f02884feb6528a2743fb99">9d5f3eb1</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-3" value="9d5f3eb1e64a60cc61f02884feb6528a2743fb99" onclick="$(&#39;#cbto-4&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-3" value="9d5f3eb1e64a60cc61f02884feb6528a2743fb99" onclick="if ($(&#39;#cb-3&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-2&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/29/2020 07:03 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Merge commit '9908cd6d'</p>
+
+
+	<p>Change-Id: I8c9bfb29e6266ea5cde0e53b24fa00da3e0278dd</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 9908cd6d" href="/projects/turbogears/repository/revisions/9908cd6d9f919a134403d67089cd10f7778b78f5">9908cd6d</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-4" value="9908cd6d9f919a134403d67089cd10f7778b78f5" onclick="$(&#39;#cbto-5&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-4" value="9908cd6d9f919a134403d67089cd10f7778b78f5" onclick="if ($(&#39;#cb-4&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-3&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/29/2020 06:11 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2043] Affichage des exceptions dans les logs</p>
+
+
+	<p>Capture les éventuelles exceptions pour les afficher dans les logs de<br />Vigilo. Ceci facilite le débogage lorsque Vigilo est utilisé avec des<br />configurations particulières, sans pour autant avoir besoin de recourir...</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 04334178" href="/projects/turbogears/repository/revisions/043341787c420ea44dfe8a7d98feb5afea92531a">04334178</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-5" value="043341787c420ea44dfe8a7d98feb5afea92531a" onclick="$(&#39;#cbto-6&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-5" value="043341787c420ea44dfe8a7d98feb5afea92531a" onclick="if ($(&#39;#cb-5&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-4&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/03/2020 01:54 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b2</p>
+
+
+	<p>Change-Id: Iaf7551357733c90d2811165d23d23a2e7680397f</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision fe7033f6" href="/projects/turbogears/repository/revisions/fe7033f6abfe4581d718743075a25685eb5a6d6c">fe7033f6</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-6" value="fe7033f6abfe4581d718743075a25685eb5a6d6c" onclick="$(&#39;#cbto-7&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-6" value="fe7033f6abfe4581d718743075a25685eb5a6d6c" onclick="if ($(&#39;#cb-6&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-5&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 03:08 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2026] Changement de dénomination sociale</p>
+
+
+	<p>Change-Id: I5b1abbb17741c7cf8656544a355c0c147c2b3cd4</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision f9ceb816" href="/projects/turbogears/repository/revisions/f9ceb816ca3ead49c4d63715ca759a87c00e82fb">f9ceb816</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-7" value="f9ceb816ca3ead49c4d63715ca759a87c00e82fb" onclick="$(&#39;#cbto-8&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-7" value="f9ceb816ca3ead49c4d63715ca759a87c00e82fb" onclick="if ($(&#39;#cb-7&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-6&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 09:31 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2026] Changement de dénomination sociale</p>
+
+
+	<p>Change-Id: I7b5685963886be595c3d650da713b2c8794e4bab<br />Refs: #2026</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision c9cced31" href="/projects/turbogears/repository/revisions/c9cced319861e90ea140a1cab9f82af4403aa0ba">c9cced31</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-8" value="c9cced319861e90ea140a1cab9f82af4403aa0ba" onclick="$(&#39;#cbto-9&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-8" value="c9cced319861e90ea140a1cab9f82af4403aa0ba" onclick="if ($(&#39;#cb-8&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-7&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/24/2020 05:07 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Vérifie que l'utilisateur est authentifié</p>
+
+
+	<p>Lève une erreur 403 dans ce cas plutôt que 500.</p>
+
+
+	<p>Change-Id: Iff465d19a3a3b6603323d9218cbdcc2f4ba2a90e</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 425a814a" href="/projects/turbogears/repository/revisions/425a814aeea5690cf523fe7a2b3aca3e7ed4f922">425a814a</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-9" value="425a814aeea5690cf523fe7a2b3aca3e7ed4f922" onclick="$(&#39;#cbto-10&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-9" value="425a814aeea5690cf523fe7a2b3aca3e7ed4f922" onclick="if ($(&#39;#cb-9&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-8&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/23/2020 09:51 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b1</p>
+
+
+	<p>Change-Id: I830ba1f05ebd6757e2e50a00d5d4aca2d93931f8</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision e3a354f1" href="/projects/turbogears/repository/revisions/e3a354f129634b809a235273f55874c8dd3f787b">e3a354f1</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-10" value="e3a354f129634b809a235273f55874c8dd3f787b" onclick="if ($(&#39;#cb-10&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-9&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/19/2020 12:55 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Tri naturel des hôtes sur la page du proxy</p>
+
+
+	<p>Change-Id: I11f999a9469bb98b967da1315f7d036bfd61dd33</p></td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="View differences" />
+</form></div>
+
+  <p>
+    <a href="/projects/turbogears/repository/revisions">View all revisions</a>
+    |
+    <a href="/projects/turbogears/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="/projects/turbogears/repository/revisions.atom">Atom</a></span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

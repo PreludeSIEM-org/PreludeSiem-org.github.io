@@ -1,0 +1,13 @@
+diff --git a/src/prelude-lml.c b/src/prelude-lml.c
+index 8880dc8..c98c313 100644
+--- a/src/prelude-lml.c
++++ b/src/prelude-lml.c
+@@ -37,6 +37,7 @@
+ #include <sys/select.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
++#include "ltdl.h"
+ 
+ #if TIME_WITH_SYS_TIME
+ # include <sys/time.h>
+

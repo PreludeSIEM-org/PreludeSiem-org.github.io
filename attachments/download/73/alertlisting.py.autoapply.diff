@@ -1,0 +1,10 @@
+--- ./alertlisting.py.orig	2007-06-07 04:28:49.000000000 -0400
++++ ./alertlisting.py	2007-06-28 14:25:23.000000000 -0400
+@@ -1097,6 +1097,7 @@
+         self.dataset["nav.from"] = self.parameters["offset"] + 1
+         self.dataset["nav.to"] = self.parameters["offset"] + len(self.dataset["messages"])
+         self.dataset["limit"] = self.parameters["limit"]
++	self.dataset["auto_apply"] = self.parameters["auto_apply"]
+         self.dataset["total"] = total
+         self.dataset["correlation_alert_view"] = False
+ 

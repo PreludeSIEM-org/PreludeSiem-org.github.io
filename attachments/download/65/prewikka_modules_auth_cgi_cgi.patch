@@ -1,0 +1,11 @@
+--- prewikka/modules/auth/cgi/cgi.py.orig	Thu May 24 12:11:13 2007
++++ prewikka/modules/auth/cgi/cgi.py	Thu May 24 12:11:41 2007
+@@ -28,7 +28,7 @@
+     	if not user:
+ 	    raise Auth.AuthError(message=_("CGI Authentication failed: no user specified."))
+         
+-        return User.User(self.db, user, User.ALL_PERMISSIONS, self.db.getConfiguration(user))
++        return User.User(self.db, user, self.db.getLanguage(user), User.ALL_PERMISSIONS, self.db.getConfiguration(user))
+ 
+ 
+ 

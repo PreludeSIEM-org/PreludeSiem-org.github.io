@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #138: problem compiling prelude manager 0.9.3 - Prelude Manager - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="5xCSvvbig6eoqvbwteY18GcckH8Ij+c9QmlDhv6cHrb0P/rRP/aOJCIA/gqornyuG1fh4RKFvnOc54cWepwqtQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude Manager - Bug #138: problem compiling prelude manager 0.9.3" href="http://www.prelude-siem.org/issues/138.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-manager controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-manager/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-manager/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-manager/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-manager">Overview</a></li><li><a class="activity" href="/projects/prelude-manager/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-manager/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-manager/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-manager/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-manager/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-manager/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-manager/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-manager/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-manager/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-manager/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #138</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#144" accesskey="p" href="/issues/144">« Previous</a> |
+        <span class="position">23 of 38</span> |
+      <a title="#82" accesskey="n" href="/issues/82">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>problem compiling prelude manager 0.9.3</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="03/06/2006 10:38 PM" href="/projects/prelude-manager/activity?from=2006-03-06">over 18 years</a> ago.
+        Updated <a title="04/29/2009 12:27 PM" href="/projects/prelude-manager/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Hi,</p>
+
+
+	<p>I'm trying to compile prelude-manager-0.9.3 on fedora core 4</p>
+
+
+	<p>I have libprelude and libpreludedb compiled and isntalled under <br />/usr/local/servers/security/libprelude-0.9.6.1<br />/usr/local/servers/security/libpreludedb-0.9.5.1</p>
+
+
+	<p>both pathes above are in the /etc/ld.so.conf file</p>
+
+
+	<p>the options I'm passing to configure are <br /><pre>
+./configure --prefix=/usr/local/servers/security/prelude-manager-0.9.3 --with-libprelude-prefix=/usr/local/servers/security/libprelude-0.9.6.1 --with-libpreludedb-prefix=/usr/local/servers/security/libpreludedb-0.9.5.1
+</pre><br />I fixed the problem by changing the include for libpreludedb in the plugins/reports/db/db.c file to the full path.</p>
+
+
+	<p>no problem when I run the configure script, but when I do make, I get the following errors</p>
+
+
+<pre>
+[root@localhost prelude-manager-0.9.3]# make
+make  all-recursive
+maker1: Entering directory @/usr/src/security/prelude-manager-0.9.3'
+Making all in libmissing
+maker2: Entering directory @/usr/src/security/prelude-manager-0.9.3/libmissing'
+cp ./alloca_.h alloca.h-t
+mv alloca.h-t alloca.h
+make  all-am
+maker3: Entering directory @/usr/src/security/prelude-manager-0.9.3/libmissing'
+/bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -
+O2 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-funct
+ion-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -c -o strnlen1.lo strnle
+n1.c
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -g -O2 -Wall -Wstrict-prototypes -Wmissing-prototy
+pes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-ext
+erns -Wunused -c strnlen1.c  -fPIC -DPIC -o .libs/strnlen1.o
+/bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -
+O2 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-funct
+ion-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -c -o mbchar.lo mbchar.c
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -g -O2 -Wall -Wstrict-prototypes -Wmissing-prototy
+pes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-ext
+erns -Wunused -c mbchar.c  -fPIC -DPIC -o .libs/mbchar.o
+/bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -
+O2 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-funct
+ion-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -c -o strcasecmp.lo strc
+asecmp.c
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -g -O2 -Wall -Wstrict-prototypes -Wmissing-prototy
+pes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-ext
+erns -Wunused -c strcasecmp.c  -fPIC -DPIC -o .libs/strcasecmp.o
+/bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -
+O2 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-funct
+ion-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -c -o vasnprintf.lo vasn
+printf.c
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -g -O2 -Wall -Wstrict-prototypes -Wmissing-prototy
+pes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-ext
+erns -Wunused -c vasnprintf.c  -fPIC -DPIC -o .libs/vasnprintf.o
+/bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -
+O2 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-funct
+ion-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -c -o printf-args.lo pri
+ntf-args.c
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -g -O2 -Wall -Wstrict-prototypes -Wmissing-prototy
+pes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-ext
+erns -Wunused -c printf-args.c  -fPIC -DPIC -o .libs/printf-args.o
+/bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -
+O2 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-funct
+ion-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -c -o printf-parse.lo pr
+intf-parse.c
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -g -O2 -Wall -Wstrict-prototypes -Wmissing-prototy
+pes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-ext
+erns -Wunused -c printf-parse.c  -fPIC -DPIC -o .libs/printf-parse.o
+/bin/sh ../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..     -g -
+O2 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-funct
+ion-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -c -o asnprintf.lo asnpr
+intf.c
+ gcc -DHAVE_CONFIG_H -I. -I. -I.. -g -O2 -Wall -Wstrict-prototypes -Wmissing-prototy
+pes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-ext
+erns -Wunused -c asnprintf.c  -fPIC -DPIC -o .libs/asnprintf.o
+/bin/sh ../libtool --tag=CC --mode=link gcc  -g -O2 -Wall -Wstrict-prototypes -Wmiss
+ing-prototypes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -
+Wnested-externs -Wunused   -o libmissing.la   strnlen1.lo mbchar.lo strcasecmp.lo va
+snprintf.lo printf-args.lo printf-parse.lo asnprintf.lo 
+ar cru .libs/libmissing.a .libs/strnlen1.o .libs/mbchar.o .libs/strcasecmp.o .libs/v
+asnprintf.o .libs/printf-args.o .libs/printf-parse.o .libs/asnprintf.o
+ranlib .libs/libmissing.a
+creating libmissing.la
+(cd .libs &#38;&#38; rm -f libmissing.la &#38;&#38; ln -s ../libmissing.la libmissing.la)
+maker3: Leaving directory @/usr/src/security/prelude-manager-0.9.3/libmissing'
+maker2: Leaving directory @/usr/src/security/prelude-manager-0.9.3/libmissing'
+Making all in plugins
+maker2: Entering directory @/usr/src/security/prelude-manager-0.9.3/plugins'
+Making all in decodes
+maker3: Entering directory @/usr/src/security/prelude-manager-0.9.3/plugins/decodes
+'
+maker4: Entering directory @/usr/src/security/prelude-manager-0.9.3/plugins/decodes
+'
+maker4: Nothing to be done for @all-am'.
+maker4: Leaving directory @/usr/src/security/prelude-manager-0.9.3/plugins/decodes'
+maker3: Leaving directory @/usr/src/security/prelude-manager-0.9.3/plugins/decodes'
+Making all in filters
+maker3: Entering directory @/usr/src/security/prelude-manager-0.9.3/plugins/filters
+'
+Making all in idmef-criteria
+maker4: Entering directory @/usr/src/security/prelude-manager-0.9.3/plugins/filters
+/idmef-criteria'
+if /bin/sh ../../../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..
+/../..  -I../../../src/include -I../../../libmissing  -pthread -I/usr/local/servers/
+security/libprelude-0.9.6.1/include -DPRELUDE_CONFIG_DIR=\"/usr/local/servers/securi
+ty/libprelude-0.9.6.1/etc/prelude\"   -g -O2 -Wall -Wstrict-prototypes -Wmissing-pro
+totypes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested
+-externs -Wunused -MT idmef-criteria.lo -MD -MP -MF ".deps/idmef-criteria.Tpo" -c -o
+ idmef-criteria.lo idmef-criteria.c; \
+then mv -f ".deps/idmef-criteria.Tpo" ".deps/idmef-criteria.Plo"; else rm -f ".deps/
+idmef-criteria.Tpo"; exit 1; fi
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../.. -I../../../src/include -I../../../libmissing
+ -pthread -I/usr/local/servers/security/libprelude-0.9.6.1/include -DPRELUDE_CONFIG_
+DIR=\"/usr/local/servers/security/libprelude-0.9.6.1/etc/prelude\" -g -O2 -Wall -Wst
+rict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-function-cast -Wca
+st-qual -Wcast-align -Wnested-externs -Wunused -MT idmef-criteria.lo -MD -MP -MF .de
+ps/idmef-criteria.Tpo -c idmef-criteria.c  -fPIC -DPIC -o .libs/idmef-criteria.o
+/bin/sh ../../../libtool --tag=CC --mode=link gcc  -g -O2 -Wall -Wstrict-prototypes 
+-Wmissing-prototypes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-a
+lign -Wnested-externs -Wunused   -o idmef-criteria.la -rpath /usr/local/servers/secu
+rity/prelude-manager-0.9.3/lib/prelude-manager/filters -module -avoid-version idmef-
+criteria.lo  
+gcc -shared  .libs/idmef-criteria.o   -Wl,-soname -Wl,idmef-criteria.so -o .libs/idm
+ef-criteria.so
+creating idmef-criteria.la
+(cd .libs &#38;&#38; rm -f idmef-criteria.la &#38;&#38; ln -s ../idmef-criteria.la idmef-criteria.la
+)
+maker4: Leaving directory @/usr/src/security/prelude-manager-0.9.3/plugins/filters/
+idmef-criteria'
+maker4: Entering directory @/usr/src/security/prelude-manager-0.9.3/plugins/filters
+'
+maker4: Nothing to be done for @all-am'.
+maker4: Leaving directory @/usr/src/security/prelude-manager-0.9.3/plugins/filters'
+maker3: Leaving directory @/usr/src/security/prelude-manager-0.9.3/plugins/filters'
+Making all in reports
+maker3: Entering directory @/usr/src/security/prelude-manager-0.9.3/plugins/reports
+'
+Making all in db
+maker4: Entering directory @/usr/src/security/prelude-manager-0.9.3/plugins/reports
+/db'
+if /bin/sh ../../../libtool --tag=CC --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I..
+/../..  -I../../../src/include -I../../../libmissing  -pthread -I/usr/local/servers/
+security/libprelude-0.9.6.1/include -DPRELUDE_CONFIG_DIR=\"/usr/local/servers/securi
+ty/libprelude-0.9.6.1/etc/prelude\"   -g -O2 -Wall -Wstrict-prototypes -Wmissing-pro
+totypes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested
+-externs -Wunused -MT db.lo -MD -MP -MF ".deps/db.Tpo" -c -o db.lo db.c; \
+then mv -f ".deps/db.Tpo" ".deps/db.Plo"; else rm -f ".deps/db.Tpo"; exit 1; fi
+mkdir .libs
+ gcc -DHAVE_CONFIG_H -I. -I. -I../../.. -I../../../src/include -I../../../libmissing
+ -pthread -I/usr/local/servers/security/libprelude-0.9.6.1/include -DPRELUDE_CONFIG_
+DIR=\"/usr/local/servers/security/libprelude-0.9.6.1/etc/prelude\" -g -O2 -Wall -Wst
+rict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-function-cast -Wca
+st-qual -Wcast-align -Wnested-externs -Wunused -MT db.lo -MD -MP -MF .deps/db.Tpo -c
+ db.c  -fPIC -DPIC -o .libs/db.o
+db.c:39:49: error: libpreludedb/preludedb-sql-settings.h: No such file or directory
+db.c:40:40: error: libpreludedb/preludedb-sql.h: No such file or directory
+db.c:41:42: error: libpreludedb/preludedb-error.h: No such file or directory
+db.c:42:51: error: libpreludedb/preludedb-path-selection.h: No such file or director
+y
+db.c:43:36: error: libpreludedb/preludedb.h: No such file or directory
+db.c:67: error: syntax error before 'preludedb_t'
+db.c:67: warning: no semicolon at end of struct or union
+db.c:68: warning: type defaults to 'int' in declaration of 'db_plugin_t'
+db.c:68: warning: data definition has no type or storage class
+db.c: In function 'db_set_type':
+db.c:72: error: 'ptr' undeclared (first use in this function)
+db.c:72: error: (Each undeclared identifier is reported only once
+db.c:72: error: for each function it appears in.)
+db.c: In function 'db_get_type':
+db.c:72: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_set_log':
+db.c:73: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_get_log':
+db.c:73: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_set_host':
+db.c:74: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_get_host':
+db.c:74: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_set_port':
+db.c:75: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_get_port':
+db.c:75: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_set_name':
+db.c:76: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_get_name':
+db.c:76: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_set_user':
+db.c:77: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_get_user':
+db.c:77: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_set_pass':
+db.c:78: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_get_pass':
+db.c:78: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_set_file':
+db.c:79: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_get_file':
+db.c:79: error: 'ptr' undeclared (first use in this function)
+db.c: In function 'db_run':
+db.c:85: error: 'plugin' undeclared (first use in this function)
+db.c:87: warning: implicit declaration of function 'preludedb_insert_message'
+db.c:87: warning: nested extern declaration of 'preludedb_insert_message'
+db.c:89: warning: implicit declaration of function 'preludedb_strerror'
+db.c:89: warning: nested extern declaration of 'preludedb_strerror'
+db.c: In function 'db_destroy':
+db.c:98: error: 'plugin' undeclared (first use in this function)
+db.c:124: warning: implicit declaration of function 'preludedb_destroy'
+db.c:124: warning: nested extern declaration of 'preludedb_destroy'
+db.c: In function 'db_init':
+db.c:133: error: 'preludedb_t' undeclared (first use in this function)
+db.c:133: error: 'db' undeclared (first use in this function)
+db.c:134: error: 'preludedb_sql_t' undeclared (first use in this function)
+db.c:134: error: 'sql' undeclared (first use in this function)
+db.c:135: error: 'preludedb_sql_settings_t' undeclared (first use in this function)
+db.c:135: error: 'settings' undeclared (first use in this function)
+db.c:136: error: 'plugin' undeclared (first use in this function)
+db.c:138: warning: implicit declaration of function 'preludedb_sql_settings_new'
+db.c:138: warning: nested extern declaration of 'preludedb_sql_settings_new'
+db.c:143: warning: implicit declaration of function 'preludedb_sql_settings_set_host
+'
+db.c:143: warning: nested extern declaration of 'preludedb_sql_settings_set_host'
+db.c:146: warning: implicit declaration of function 'preludedb_sql_settings_set_file
+'
+db.c:146: warning: nested extern declaration of 'preludedb_sql_settings_set_file'
+db.c:149: warning: implicit declaration of function 'preludedb_sql_settings_set_port
+'
+db.c:149: warning: nested extern declaration of 'preludedb_sql_settings_set_port'
+db.c:152: warning: implicit declaration of function 'preludedb_sql_settings_set_user
+'
+db.c:152: warning: nested extern declaration of 'preludedb_sql_settings_set_user'
+db.c:155: warning: implicit declaration of function 'preludedb_sql_settings_set_pass
+'
+db.c:155: warning: nested extern declaration of 'preludedb_sql_settings_set_pass'
+db.c:158: warning: implicit declaration of function 'preludedb_sql_settings_set_name
+'
+db.c:158: warning: nested extern declaration of 'preludedb_sql_settings_set_name'
+db.c:160: warning: implicit declaration of function 'preludedb_sql_new'
+db.c:160: warning: nested extern declaration of 'preludedb_sql_new'
+db.c:163: warning: implicit declaration of function 'preludedb_sql_settings_destroy'
+db.c:163: warning: nested extern declaration of 'preludedb_sql_settings_destroy'
+db.c:168: warning: implicit declaration of function 'preludedb_sql_disable_query_log
+ging'
+db.c:168: warning: nested extern declaration of 'preludedb_sql_disable_query_logging
+'
+db.c:170: warning: implicit declaration of function 'preludedb_sql_enable_query_logg
+ing'
+db.c:170: warning: nested extern declaration of 'preludedb_sql_enable_query_logging'
+db.c:172: warning: implicit declaration of function 'preludedb_sql_destroy'
+db.c:172: warning: nested extern declaration of 'preludedb_sql_destroy'
+db.c:179: warning: implicit declaration of function 'preludedb_new'
+db.c:179: warning: nested extern declaration of 'preludedb_new'
+db.c: In function 'db_activate':
+db.c:198: error: 'new' undeclared (first use in this function)
+db.c: In function 'db_LTX_manager_plugin_init':
+db.c:225: warning: implicit declaration of function 'preludedb_init'
+db.c:225: warning: nested extern declaration of 'preludedb_init'
+db.c:249: error: 'PRELUDEDB_SQL_SETTING_HOST' undeclared (first use in this function
+)
+db.c:255: error: 'PRELUDEDB_SQL_SETTING_FILE' undeclared (first use in this function
+)
+db.c:261: error: 'PRELUDEDB_SQL_SETTING_PORT' undeclared (first use in this function
+)
+db.c:267: error: 'PRELUDEDB_SQL_SETTING_NAME' undeclared (first use in this function
+)
+db.c:273: error: 'PRELUDEDB_SQL_SETTING_USER' undeclared (first use in this function
+)
+db.c:279: error: 'PRELUDEDB_SQL_SETTING_PASS' undeclared (first use in this function
+)
+maker4: *** [db.lo] Error 1
+maker4: Leaving directory @/usr/src/security/prelude-manager-0.9.3/plugins/reports/
+db'
+maker3: *** [all-recursive] Error 1
+maker3: Leaving directory @/usr/src/security/prelude-manager-0.9.3/plugins/reports'
+maker2: *** [all-recursive] Error 1
+maker2: Leaving directory @/usr/src/security/prelude-manager-0.9.3/plugins'
+maker1: *** [all-recursive] Error 1
+maker1: Leaving directory @/usr/src/security/prelude-manager-0.9.3'
+make: *** [all] Error 2
+
+</pre>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-353" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="03/06/2006 10:59 PM" href="/projects/prelude-manager/activity?from=2006-03-06">over 18 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-354" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="03/08/2006 11:27 AM" href="/projects/prelude-manager/activity?from=2006-03-08">over 18 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-354-notes" class="wiki"><p>(In r8026) Add <code>LIBPRELUDEDB_CFLAGS</code> to the compilation flags. Fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: problem compiling prelude manager 0.9.3 (Closed)" href="/issues/138">#138</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1238" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:27 PM" href="/projects/prelude-manager/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prelude Manager</i></li>
+       <li><strong>Category</strong> deleted (<del><i>3</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/138.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/138.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

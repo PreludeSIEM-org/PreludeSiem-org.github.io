@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Feature #363: prelude-correlator: spamhaus drop plugin - Prelude Correlator - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Jwo69CZZKLYbhaFGWQNWl94SsNWEND2oPCRr6h3NnS40JVKb700lNZEvqbxESx/JolnBS54+ZObiqq96mc2pLQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin" href="http://www.prelude-siem.org/issues/363.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-correlator controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-correlator/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-correlator/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-correlator/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-correlator">Overview</a></li><li><a class="activity" href="/projects/prelude-correlator/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-correlator/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-correlator/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-correlator/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-correlator/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-correlator/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-correlator/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-correlator/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-correlator/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-correlator/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #363</h2>
+
+<div class="issue tracker-2 status-3 priority-3 priority-lowest closed details">
+    <div class="next-prev-links contextual">
+      <a title="#7" accesskey="p" href="/issues/7">« Previous</a> |
+        <span class="position">64 of 78</span> |
+      <a title="#203" accesskey="n" href="/issues/203">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>prelude-correlator: spamhaus drop plugin</h3></div>
+</div>
+        <p class="author">
+        Added by Anonymous <a title="09/10/2009 03:37 PM" href="/projects/prelude-correlator/activity?from=2009-09-10">about 15 years</a> ago.
+        Updated <a title="09/15/2009 08:52 AM" href="/projects/prelude-correlator/activity?from=2009-09-15">about 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Resolved</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Low</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a href="/versions/101">0.9.0</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value">09/10/2009</div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>this is a replica of the dshield plugin, but for the spamhaus drop list. it does require the use of some other python packages for CIDR lookup; so keep that in mind when merging (see attached patch).</p>
+
+
+	<p>double check the installation settings; this was my first attempt at that too.</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/191/0001-spamhaus-drop-list-plugin.patch">0001-spamhaus-drop-list-plugin.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/191/0001-spamhaus-drop-list-plugin.patch">View</a>
+  
+  <span class="size">(5.29 KB)</span>
+    <span class="author">Anonymous, 09/10/2009 03:37 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/192/spamhausdrop-patch.txt">spamhausdrop-patch.txt</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/192/spamhausdrop-patch.txt">View</a>
+   - second attempt
+  <span class="size">(4.57 KB)</span>
+    <span class="author">Anonymous, 09/13/2009 09:16 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/194/0001-added-spamhausdrop.py-to-plugins.patch">0001-added-spamhausdrop.py-to-plugins.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/194/0001-added-spamhausdrop.py-to-plugins.patch">View</a>
+  
+  <span class="size">(9.51 KB)</span>
+    <span class="author">Yoann VANDOORSELAERE, 09/14/2009 11:54 AM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <p><a title="Revision 6ee57df6" href="/projects/prelude-correlator/repository/revisions/6ee57df63e37d926055658c142dcff892e6fdcac">Revision 6ee57df6</a>
+        (<a href="/projects/prelude-correlator/repository/revisions/6ee57df63e37d926055658c142dcff892e6fdcac/diff">diff</a>)
+        <br />
+        <span class="author">Added by Wes Young  <a title="09/15/2009 08:50 AM" href="/projects/prelude-correlator/activity?from=2009-09-15">about 15 years</a> ago</span></p>
+    <div class="wiki">
+        <p>Initial SpamhausDrop plugin implementation (closes <a class="issue tracker-2 status-3 priority-3 priority-lowest closed" title="Feature: prelude-correlator: spamhaus drop plugin (Resolved)" href="/issues/363">#363</a>)</p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-1359" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/11/2009 11:30 AM" href="/projects/prelude-correlator/activity?from=2009-09-11">about 15 years</a> ago
+    </h4>
+
+    <div id="journal-1359-notes" class="wiki"><p>Hi Wes, thanks for the patch!</p>
+
+
+	<p>Here is a quick review:</p>
+
+
+	<p>- The NetCIDR modules have been deprecated in favor of the more widely available netaddr module, check <a class="external" href="http://oubiwann.blogspot.com/2008/08/netaddr-python-library.html">http://oubiwann.blogspot.com/2008/08/netaddr-python-library.html</a></p>
+
+
+	<p>- The __ipNormalize() function could be removed since it is now unused.</p>
+
+
+	<p>- Could you please add the Dshield plugin copyright, adding your contact to the author lists ?</p>
+
+
+	<p>This is a nice addition, thanks for the contribution! <br />Might you post an updated patch?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1361" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by Anonymous <a title="09/13/2009 09:16 PM" href="/projects/prelude-correlator/activity?from=2009-09-13">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/192/spamhausdrop-patch.txt">spamhausdrop-patch.txt</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/192/spamhausdrop-patch.txt">View</a> added</li>
+    </ul>
+    <div id="journal-1361-notes" class="wiki"><p>re-formulated. They don't have all the features in netaddr that NetCIDR had (at least that's what they said in the doc), but given that it's all but deprecated I just added a few lines using the new netaddr packages and tested it. Appears to work OK.</p>
+
+
+	<p>all the other stuff added as requested.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1362" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/14/2009 11:42 AM" href="/projects/prelude-correlator/activity?from=2009-09-14">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <i>0001-added-spamhausdrop.py-to-plugins.patch</i> added</li>
+    </ul>
+    <div id="journal-1362-notes" class="wiki"><p>Thanks for the update!</p>
+
+
+	<p>Attached is a modified version of your patch, that provides compatibility with earlier netaddr module version, use IPSet() in order to match addresses, and download the initial database on source distribution generation.</p>
+
+
+	<p>Could you please let me know if this modified patch doesn't break anything on your side?<br />Thanks!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1363" class="journal has-details">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/14/2009 11:54 AM" href="/projects/prelude-correlator/activity?from=2009-09-14">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/194/0001-added-spamhausdrop.py-to-plugins.patch">0001-added-spamhausdrop.py-to-plugins.patch</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/194/0001-added-spamhausdrop.py-to-plugins.patch">View</a> added</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-1364" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/14/2009 11:54 AM" href="/projects/prelude-correlator/activity?from=2009-09-14">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> deleted (<del><i>0001-added-spamhausdrop.py-to-plugins.patch</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-1365" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by Anonymous <a title="09/14/2009 03:49 PM" href="/projects/prelude-correlator/activity?from=2009-09-14">about 15 years</a> ago
+    </h4>
+
+    <div id="journal-1365-notes" class="wiki"><p>Just tested it in our QA environment; looks OK to me.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1367" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/15/2009 08:49 AM" href="/projects/prelude-correlator/activity?from=2009-09-15">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prelude Correlator</i></li>
+       <li><strong>Category</strong> deleted (<del><i>generic</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-1368" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/15/2009 08:52 AM" href="/projects/prelude-correlator/activity?from=2009-09-15">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Resolved</i></li>
+       <li><strong>Assignee</strong> set to <i>Yoann VANDOORSELAERE</i></li>
+       <li><strong>Target version</strong> set to <i>0.9.0</i></li>
+    </ul>
+    <div id="journal-1368-notes" class="wiki"><p>Thanks! Plugin checked into the GIT repository.</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/363.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/363.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>prelude-msgbuf</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libprelude Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libprelude-idmef-message-print.html" title="idmef-message-print">
+<link rel="next" href="libprelude-idmef-message-write.html" title="idmef-message-write">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libprelude-idmef-message-print.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libprelude Reference Manual</th>
+<td><a accesskey="n" href="libprelude-idmef-message-write.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libprelude-prelude-msgbuf.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libprelude-prelude-msgbuf.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="prelude-msgbuf">
+<a name="libprelude-prelude-msgbuf"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libprelude-prelude-msgbuf.top_of_page"></a>prelude-msgbuf</span></h2>
+<p>prelude-msgbuf</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libprelude-prelude-msgbuf.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+typedef             prelude_msgbuf_t;
+enum                prelude_msgbuf_flags_t;
+int                 prelude_msgbuf_new                  (prelude_msgbuf_t **msgbuf);
+void                prelude_msgbuf_destroy              (prelude_msgbuf_t *msgbuf);
+void                prelude_msgbuf_mark_end             (prelude_msgbuf_t *msgbuf);
+int                 prelude_msgbuf_set                  (prelude_msgbuf_t *msgbuf,
+                                                         uint8_t tag,
+                                                         uint32_t len,
+                                                         const void *data);
+prelude_msg_t *     prelude_msgbuf_get_msg              (prelude_msgbuf_t *msgbuf);
+void                prelude_msgbuf_set_callback         (prelude_msgbuf_t *msgbuf,
+                                                         int (send_msgprelude_msgbuf_t *msgbuf, prelude_msg_t *msg) ());
+void                prelude_msgbuf_set_data             (prelude_msgbuf_t *msgbuf,
+                                                         void *data);
+void *              prelude_msgbuf_get_data             (prelude_msgbuf_t *msgbuf);
+void                prelude_msgbuf_set_flags            (prelude_msgbuf_t *msgbuf,
+                                                         prelude_msgbuf_flags_t flags);
+prelude_msgbuf_flags_t  prelude_msgbuf_get_flags        (prelude_msgbuf_t *msgbuf);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libprelude-prelude-msgbuf.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libprelude-prelude-msgbuf.details"></a><h2>Details</h2>
+<div class="refsect2" title="prelude_msgbuf_t">
+<a name="prelude-msgbuf-t"></a><h3>prelude_msgbuf_t</h3>
+<pre class="programlisting">typedef struct prelude_msgbuf prelude_msgbuf_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum prelude_msgbuf_flags_t">
+<a name="prelude-msgbuf-flags-t"></a><h3>enum prelude_msgbuf_flags_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_MSGBUF_FLAGS_ASYNC = 0x01
+} prelude_msgbuf_flags_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_new ()">
+<a name="prelude-msgbuf-new"></a><h3>prelude_msgbuf_new ()</h3>
+<pre class="programlisting">int                 prelude_msgbuf_new                  (prelude_msgbuf_t **msgbuf);</pre>
+<p>
+Create a new <span class="type">prelude_msgbuf_t</span> object and store it into <em class="parameter"><code>msgbuf</code></em>.
+You can then write data to <em class="parameter"><code>msgbuf</code></em> using the <code class="function">prelude_msgbuf_set()</code> function.
+</p>
+<p>
+When the message buffer is full, the message will be flushed using the
+user provided callback.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td> Pointer where to store the created <span class="type">prelude_msgbuf_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, or a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_destroy ()">
+<a name="prelude-msgbuf-destroy"></a><h3>prelude_msgbuf_destroy ()</h3>
+<pre class="programlisting">void                prelude_msgbuf_destroy              (prelude_msgbuf_t *msgbuf);</pre>
+<p>
+Destroy <em class="parameter"><code>msgbuf</code></em>, all data remaining will be flushed.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td> Pointer on a <span class="type">prelude_msgbuf_t</span> object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_mark_end ()">
+<a name="prelude-msgbuf-mark-end"></a><h3>prelude_msgbuf_mark_end ()</h3>
+<pre class="programlisting">void                prelude_msgbuf_mark_end             (prelude_msgbuf_t *msgbuf);</pre>
+<p>
+This function should be called to tell the msgbuf subsystem
+that you finished writing your message.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td> Pointer on <span class="type">prelude_msgbuf_t</span> object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_set ()">
+<a name="prelude-msgbuf-set"></a><h3>prelude_msgbuf_set ()</h3>
+<pre class="programlisting">int                 prelude_msgbuf_set                  (prelude_msgbuf_t *msgbuf,
+                                                         uint8_t tag,
+                                                         uint32_t len,
+                                                         const void *data);</pre>
+<p>
+<code class="function">prelude_msgbuf_set()</code> append <em class="parameter"><code>len</code></em> bytes of data from the <em class="parameter"><code>data</code></em> buffer
+to the <em class="parameter"><code>msgbuf</code></em> object representing a message. The data is tagged with <em class="parameter"><code>tag</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td> Pointer on a <span class="type">prelude_msgbuf_t</span> object to store the data to.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tag</code></em> :</span></p></td>
+<td> 8 bits unsigned integer describing the kind of data.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
+<td> len of the data chunk.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td> Pointer to the data.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_get_msg ()">
+<a name="prelude-msgbuf-get-msg"></a><h3>prelude_msgbuf_get_msg ()</h3>
+<pre class="programlisting">prelude_msg_t *     prelude_msgbuf_get_msg              (prelude_msgbuf_t *msgbuf);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td> Pointer on a <span class="type">prelude_msgbuf_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> This function return the current message associated with
+the message buffer.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_set_callback ()">
+<a name="prelude-msgbuf-set-callback"></a><h3>prelude_msgbuf_set_callback ()</h3>
+<pre class="programlisting">void                prelude_msgbuf_set_callback         (prelude_msgbuf_t *msgbuf,
+                                                         int (send_msgprelude_msgbuf_t *msgbuf, prelude_msg_t *msg) ());</pre>
+<p>
+Associate an application specific callback to this <em class="parameter"><code>msgbuf</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td> Pointer on a <span class="type">prelude_msgbuf_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>send_msg</code></em> :</span></p></td>
+<td> Pointer to a function for sending a message.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_set_data ()">
+<a name="prelude-msgbuf-set-data"></a><h3>prelude_msgbuf_set_data ()</h3>
+<pre class="programlisting">void                prelude_msgbuf_set_data             (prelude_msgbuf_t *msgbuf,
+                                                         void *data);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_get_data ()">
+<a name="prelude-msgbuf-get-data"></a><h3>prelude_msgbuf_get_data ()</h3>
+<pre class="programlisting">void *              prelude_msgbuf_get_data             (prelude_msgbuf_t *msgbuf);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_set_flags ()">
+<a name="prelude-msgbuf-set-flags"></a><h3>prelude_msgbuf_set_flags ()</h3>
+<pre class="programlisting">void                prelude_msgbuf_set_flags            (prelude_msgbuf_t *msgbuf,
+                                                         prelude_msgbuf_flags_t flags);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_msgbuf_get_flags ()">
+<a name="prelude-msgbuf-get-flags"></a><h3>prelude_msgbuf_get_flags ()</h3>
+<pre class="programlisting">prelude_msgbuf_flags_t  prelude_msgbuf_get_flags        (prelude_msgbuf_t *msgbuf);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

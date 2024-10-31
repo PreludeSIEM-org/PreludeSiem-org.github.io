@@ -1,0 +1,13 @@
+=== prewikka/CheetahFilters.py
+==================================================================
+--- prewikka/CheetahFilters.py	(revision 7534)
++++ prewikka/CheetahFilters.py	(local)
+@@ -29,5 +29,7 @@
+     def filter(self, val, **kw):        
+         if val:
+             val = utils.escape_html_string(val)
+-
++        else:
++            val = ""
++            
+         return val

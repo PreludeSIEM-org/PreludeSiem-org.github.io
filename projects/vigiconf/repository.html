@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>/ - Repository - Vigiconf - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="LPhVHlQP3wnRURsDIdqiRKpCtnb+rOuIELUuLkR6YS4/1z1xnRvSilv7E/k8kusa1gnH6OSmssbOO+q+wHpVLQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+  <script src="/javascripts/repository_navigation.js"></script>
+  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.prelude-siem.org/projects/vigiconf/repository/revisions.atom" />
+  <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" />
+</head>
+<body class="theme-Prelude project-vigiconf controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/vigiconf/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="changesets" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/vigiconf/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="changesets" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/vigiconf/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/vigiconf">Overview</a></li><li><a class="activity" href="/projects/vigiconf/activity">Activity</a></li><li><a class="repository selected" href="/projects/vigiconf/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+<div class="contextual">
+  
+<a class="icon icon-stats" href="/projects/vigiconf/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/vigiconf/repository" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />  <!-- Branches Dropdown -->
+    | Branch: 
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option>
+<option value="release-4.0">release-4.0</option>
+<option value="release-5.0">release-5.0</option>
+<option value="release-5.1">release-5.1</option>
+<option value="release-5.2">release-5.2</option>
+<option value="support/v3.5">support/v3.5</option></select>
+
+    | Tag: 
+    <select name="tag" id="tag"><option value="">&nbsp;</option>
+<option value="v3.5">v3.5</option>
+<option value="v3.5.1">v3.5.1</option>
+<option value="v3.6.0">v3.6.0</option>
+<option value="v3.6.0RC1">v3.6.0RC1</option>
+<option value="v3.6.0RC2">v3.6.0RC2</option>
+<option value="v3.6.0RC3">v3.6.0RC3</option>
+<option value="v3.6.0RC4">v3.6.0RC4</option>
+<option value="v4.0">v4.0</option>
+<option value="v4.0.1">v4.0.1</option>
+<option value="v4.0.1rc1">v4.0.1rc1</option>
+<option value="v4.0.3">v4.0.3</option>
+<option value="v4.0.4">v4.0.4</option>
+<option value="v4.0.5">v4.0.5</option>
+<option value="v4.0.6">v4.0.6</option>
+<option value="v4.0rc1">v4.0rc1</option>
+<option value="v4.0rc2">v4.0rc2</option>
+<option value="v4.0rc3">v4.0rc3</option>
+<option value="v4.1.0">v4.1.0</option>
+<option value="v4.1.0rc1">v4.1.0rc1</option>
+<option value="v4.1.0rc2">v4.1.0rc2</option>
+<option value="v4.1.0rc3">v4.1.0rc3</option>
+<option value="v5.0.0">v5.0.0</option>
+<option value="v5.0.0rc1">v5.0.0rc1</option>
+<option value="v5.0.0rc2">v5.0.0rc2</option>
+<option value="v5.0.1">v5.0.1</option>
+<option value="v5.0.2">v5.0.2</option>
+<option value="v5.0.3">v5.0.3</option>
+<option value="v5.0.4">v5.0.4</option>
+<option value="v5.0.5">v5.0.5</option>
+<option value="v5.0.6">v5.0.6</option>
+<option value="v5.1.0">v5.1.0</option>
+<option value="v5.1.0a1">v5.1.0a1</option>
+<option value="v5.1.0a2">v5.1.0a2</option>
+<option value="v5.1.0a3">v5.1.0a3</option>
+<option value="v5.1.0b1">v5.1.0b1</option>
+<option value="v5.1.1">v5.1.1</option>
+<option value="v5.1.2">v5.1.2</option>
+<option value="v5.1.3">v5.1.3</option>
+<option value="v5.1.4">v5.1.4</option>
+<option value="v5.1.5">v5.1.5</option>
+<option value="v5.2.0">v5.2.0</option>
+<option value="v5.2.0b1">v5.2.0b1</option>
+<option value="v5.2.0b2">v5.2.0b2</option>
+<option value="v5.2.0rc1">v5.2.0rc1</option>
+<option value="v5.2.0rc2">v5.2.0rc2</option></select>
+
+    | Revision: 
+    <input type="text" name="rev" id="rev" value="master" size="8" />
+</form>
+</div>
+
+<h2><a href="/projects/vigiconf/repository/revisions/master/show">vigiconf</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr id="9a09b4dfda82e3e665e31092d1c3ec8d" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('9a09b4dfda82e3e665e31092d1c3ec8d', '/projects/vigiconf/repository/revisions/master/show/doc?depth=1&amp;parent_id=9a09b4dfda82e3e665e31092d1c3ec8d');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigiconf/repository/revisions/master/show/doc">doc</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="db85c0ea4d2e69c8abaefa875ba77c51" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('db85c0ea4d2e69c8abaefa875ba77c51', '/projects/vigiconf/repository/revisions/master/show/i18n?depth=1&amp;parent_id=db85c0ea4d2e69c8abaefa875ba77c51');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigiconf/repository/revisions/master/show/i18n">i18n</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a46a1bce0b67c45bec8f435bd5390a54" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('a46a1bce0b67c45bec8f435bd5390a54', '/projects/vigiconf/repository/revisions/master/show/pkg?depth=1&amp;parent_id=a46a1bce0b67c45bec8f435bd5390a54');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigiconf/repository/revisions/master/show/pkg">pkg</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="25d902c24283ab8cfbac54dfa101ad31" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('25d902c24283ab8cfbac54dfa101ad31', '/projects/vigiconf/repository/revisions/master/show/src?depth=1&amp;parent_id=25d902c24283ab8cfbac54dfa101ad31');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigiconf/repository/revisions/master/show/src">src</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="6f1f859c6ca5c4cae7310924786cf661" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigiconf/repository/changes/.coveragerc?rev=master">.coveragerc</a>
+</td>
+<td class="size">531 Bytes</td>
+</tr>
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigiconf/repository/changes/.gitignore?rev=master">.gitignore</a>
+</td>
+<td class="size">328 Bytes</td>
+</tr>
+<tr id="21c55fa400e4d25aed3a755371e32151" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigiconf/repository/changes/COPYING.txt?rev=master">COPYING.txt</a>
+</td>
+<td class="size">17.7 KB</td>
+</tr>
+<tr id="97c91a104c431d0c365565d3ac03ac13" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigiconf/repository/changes/MANIFEST.in?rev=master">MANIFEST.in</a>
+</td>
+<td class="size">454 Bytes</td>
+</tr>
+<tr id="b67911656ef5d18c4ae36cb6741b7965" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigiconf/repository/changes/Makefile?rev=master">Makefile</a>
+</td>
+<td class="size">1.98 KB</td>
+</tr>
+<tr id="26fd799ea07494916e9da9b91b2aac64" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigiconf/repository/changes/README.txt?rev=master">README.txt</a>
+</td>
+<td class="size">2.15 KB</td>
+</tr>
+<tr id="a91efb528777d13c9f105798a9c5673b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigiconf/repository/changes/buildenv?rev=master">buildenv</a>
+</td>
+<td class="size">11 Bytes</td>
+</tr>
+<tr id="a55fc4e553af13234f26342646b88e19" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigiconf/repository/changes/buildout.cfg?rev=master">buildout.cfg</a>
+</td>
+<td class="size">330 Bytes</td>
+</tr>
+<tr id="0c89a7a8d68709f76b53b680895bcb35" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigiconf/repository/changes/settings.ini.in?rev=master">settings.ini.in</a>
+</td>
+<td class="size">2.5 KB</td>
+</tr>
+<tr id="ef837a71e980bb23dd22743fa3012057" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigiconf/repository/changes/settings_tests.ini?rev=master">settings_tests.ini</a>
+</td>
+<td class="size">1.15 KB</td>
+</tr>
+<tr id="380c6a8ebbbce17d55d50ef17d3cf906" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigiconf/repository/changes/setup.cfg?rev=master">setup.cfg</a>
+</td>
+<td class="size">701 Bytes</td>
+</tr>
+<tr id="2eeaed663bd0d25b7e608891384b7298" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-x-python" href="/projects/vigiconf/repository/changes/setup.py?rev=master">setup.py</a>
+</td>
+<td class="size">4.98 KB</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"5810ce2c2598c638d2c083398357a61a22f1e6de":{"parent_scmids":["21ffb251f29cd67db3d268b5f0056abfc6f67a92"],"rdmid":0,"refs":null,"scmid":"5810ce2c2598c638d2c083398357a61a22f1e6de","href":"/projects/vigiconf/repository/revisions/5810ce2c2598c638d2c083398357a61a22f1e6de","space":1},"80095203436159160c3a4adb6d9452001365a259":{"parent_scmids":["9538455582b96d890ba10d827fb345ae2ebd3789","5810ce2c2598c638d2c083398357a61a22f1e6de"],"rdmid":1,"refs":null,"scmid":"80095203436159160c3a4adb6d9452001365a259","href":"/projects/vigiconf/repository/revisions/80095203436159160c3a4adb6d9452001365a259","space":1},"f89f67d2aa92f93173c5b32fb7cd9743bcb1a55f":{"parent_scmids":["9538455582b96d890ba10d827fb345ae2ebd3789"],"rdmid":2,"refs":null,"scmid":"f89f67d2aa92f93173c5b32fb7cd9743bcb1a55f","href":"/projects/vigiconf/repository/revisions/f89f67d2aa92f93173c5b32fb7cd9743bcb1a55f","space":0},"94e52c39c3e0fa6c485bff0bf93a80fb59fbdb92":{"parent_scmids":["f89f67d2aa92f93173c5b32fb7cd9743bcb1a55f","80095203436159160c3a4adb6d9452001365a259"],"rdmid":3,"refs":null,"scmid":"94e52c39c3e0fa6c485bff0bf93a80fb59fbdb92","href":"/projects/vigiconf/repository/revisions/94e52c39c3e0fa6c485bff0bf93a80fb59fbdb92","space":0},"5c6e020ee14bfcf349896f35e9dc94ec1090cd3f":{"parent_scmids":["94e52c39c3e0fa6c485bff0bf93a80fb59fbdb92"],"rdmid":4,"refs":null,"scmid":"5c6e020ee14bfcf349896f35e9dc94ec1090cd3f","href":"/projects/vigiconf/repository/revisions/5c6e020ee14bfcf349896f35e9dc94ec1090cd3f","space":0},"bd1dba24d3b8a83ba57962cfa5c8956329629fb1":{"parent_scmids":["5c6e020ee14bfcf349896f35e9dc94ec1090cd3f"],"rdmid":5,"refs":null,"scmid":"bd1dba24d3b8a83ba57962cfa5c8956329629fb1","href":"/projects/vigiconf/repository/revisions/bd1dba24d3b8a83ba57962cfa5c8956329629fb1","space":0},"03e7f958a1997d13b5c9de53a468a27b7089dedd":{"parent_scmids":["bd1dba24d3b8a83ba57962cfa5c8956329629fb1"],"rdmid":6,"refs":null,"scmid":"03e7f958a1997d13b5c9de53a468a27b7089dedd","href":"/projects/vigiconf/repository/revisions/03e7f958a1997d13b5c9de53a468a27b7089dedd","space":0},"f8466fe211243930bcddd633fc81320f0fc41560":{"parent_scmids":["03e7f958a1997d13b5c9de53a468a27b7089dedd"],"rdmid":7,"refs":null,"scmid":"f8466fe211243930bcddd633fc81320f0fc41560","href":"/projects/vigiconf/repository/revisions/f8466fe211243930bcddd633fc81320f0fc41560","space":0},"eefe65c7ca2eba6c54fd51014de41784fb102618":{"parent_scmids":["f8466fe211243930bcddd633fc81320f0fc41560"],"rdmid":8,"refs":null,"scmid":"eefe65c7ca2eba6c54fd51014de41784fb102618","href":"/projects/vigiconf/repository/revisions/eefe65c7ca2eba6c54fd51014de41784fb102618","space":0},"714c2a85e119c1dd2f1e63660d85ca8bb20c8494":{"parent_scmids":["eefe65c7ca2eba6c54fd51014de41784fb102618"],"rdmid":9,"refs":"master release-5.2","scmid":"714c2a85e119c1dd2f1e63660d85ca8bb20c8494","href":"/projects/vigiconf/repository/revisions/714c2a85e119c1dd2f1e63660d85ca8bb20c8494","space":0}},
+    2
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"></div>
+
+
+<form action="/projects/vigiconf/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 714c2a85" href="/projects/vigiconf/repository/revisions/714c2a85e119c1dd2f1e63660d85ca8bb20c8494">714c2a85</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-1" value="714c2a85e119c1dd2f1e63660d85ca8bb20c8494" onclick="$(&#39;#cbto-2&#39;).prop(&#39;checked&#39;,true);" checked="checked" /></td>
+<td class="checkbox"></td>
+<td class="committed_on">09/10/2020 01:38 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0</p>
+
+
+	<p>Change-Id: Ifed5281ba8059ca1019d3e3944457f70f4473c47</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision eefe65c7" href="/projects/vigiconf/repository/revisions/eefe65c7ca2eba6c54fd51014de41784fb102618">eefe65c7</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-2" value="eefe65c7ca2eba6c54fd51014de41784fb102618" onclick="$(&#39;#cbto-3&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-2" value="eefe65c7ca2eba6c54fd51014de41784fb102618" onclick="if ($(&#39;#cb-2&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-1&#39;).prop(&#39;checked&#39;,true);}" checked="checked" /></td>
+<td class="committed_on">08/20/2020 03:04 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0rc2</p>
+
+
+	<p>Change-Id: I471c21901c6a51df5ba13d8e4b83d53188bd0689</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision f8466fe2" href="/projects/vigiconf/repository/revisions/f8466fe211243930bcddd633fc81320f0fc41560">f8466fe2</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-3" value="f8466fe211243930bcddd633fc81320f0fc41560" onclick="$(&#39;#cbto-4&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-3" value="f8466fe211243930bcddd633fc81320f0fc41560" onclick="if ($(&#39;#cb-3&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-2&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">08/17/2020 03:49 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2021] Elimination de code mort</p>
+
+
+	<p>Change-Id: Ibbe4d7a6c3af8859d44a804c264849ba35dcb935<br />Refs: #2021</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 03e7f958" href="/projects/vigiconf/repository/revisions/03e7f958a1997d13b5c9de53a468a27b7089dedd">03e7f958</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-4" value="03e7f958a1997d13b5c9de53a468a27b7089dedd" onclick="$(&#39;#cbto-5&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-4" value="03e7f958a1997d13b5c9de53a468a27b7089dedd" onclick="if ($(&#39;#cb-4&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-3&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">08/03/2020 08:53 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0rc1</p>
+
+
+	<p>Change-Id: I4863411dfd2960f91c6d88b7f5e354a46e288d90</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision bd1dba24" href="/projects/vigiconf/repository/revisions/bd1dba24d3b8a83ba57962cfa5c8956329629fb1">bd1dba24</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-5" value="bd1dba24d3b8a83ba57962cfa5c8956329629fb1" onclick="$(&#39;#cbto-6&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-5" value="bd1dba24d3b8a83ba57962cfa5c8956329629fb1" onclick="if ($(&#39;#cb-5&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-4&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/09/2020 04:18 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2033] Message lorsqu'il manque des arguments</p>
+
+
+	<p>Améliore le message d'erreur dans le cas où il manque des arguments<br />obligatoires mais que les arguments déjà passés sont corrects.</p>
+
+
+	<p>Change-Id: I8854342a43b084353072ab83a03af6b6a7f64dab<br />Refs: #2033</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 5c6e020e" href="/projects/vigiconf/repository/revisions/5c6e020ee14bfcf349896f35e9dc94ec1090cd3f">5c6e020e</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-6" value="5c6e020ee14bfcf349896f35e9dc94ec1090cd3f" onclick="$(&#39;#cbto-7&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-6" value="5c6e020ee14bfcf349896f35e9dc94ec1090cd3f" onclick="if ($(&#39;#cb-6&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-5&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/09/2020 03:13 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2033] Messages d'erreur plus clairs</p>
+
+
+	<p>Améliore le message d'erreur lorsqu'un argument non valide est passé<br />à un test, en précisant les arguments non-valides reçus, les arguments<br />qui sont acceptés par le test, ainsi que leur nature (obligatoire<br />ou optionnel)....</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 94e52c39" href="/projects/vigiconf/repository/revisions/94e52c39c3e0fa6c485bff0bf93a80fb59fbdb92">94e52c39</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-7" value="94e52c39c3e0fa6c485bff0bf93a80fb59fbdb92" onclick="$(&#39;#cbto-8&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-7" value="94e52c39c3e0fa6c485bff0bf93a80fb59fbdb92" onclick="if ($(&#39;#cb-7&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-6&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/07/2020 03:19 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Merge "Merge commit '5810ce2c'"</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision f89f67d2" href="/projects/vigiconf/repository/revisions/f89f67d2aa92f93173c5b32fb7cd9743bcb1a55f">f89f67d2</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-8" value="f89f67d2aa92f93173c5b32fb7cd9743bcb1a55f" onclick="$(&#39;#cbto-9&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-8" value="f89f67d2aa92f93173c5b32fb7cd9743bcb1a55f" onclick="if ($(&#39;#cb-8&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-7&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/03/2020 01:54 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b2</p>
+
+
+	<p>Change-Id: Ia88101542d38e6454a0dba194264bde8b98582de</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 80095203" href="/projects/vigiconf/repository/revisions/80095203436159160c3a4adb6d9452001365a259">80095203</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-9" value="80095203436159160c3a4adb6d9452001365a259" onclick="$(&#39;#cbto-10&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-9" value="80095203436159160c3a4adb6d9452001365a259" onclick="if ($(&#39;#cb-9&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-8&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/01/2020 10:47 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Merge commit '5810ce2c'</p>
+
+
+	<p>Change-Id: Icc180fcf660aed2a01cde3e3941d348dbdac0192</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 5810ce2c" href="/projects/vigiconf/repository/revisions/5810ce2c2598c638d2c083398357a61a22f1e6de">5810ce2c</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-10" value="5810ce2c2598c638d2c083398357a61a22f1e6de" onclick="if ($(&#39;#cb-10&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-9&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/01/2020 09:16 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2029] Support d'enable/disable pour localhost</p>
+
+
+	<p>Change-Id: I24c3ea13ad6bdba690522bba5c9c797f2db04079<br />Refs: #2029</p></td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="View differences" />
+</form></div>
+
+  <p>
+    <a href="/projects/vigiconf/repository/revisions">View all revisions</a>
+    |
+    <a href="/projects/vigiconf/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="/projects/vigiconf/repository/revisions.atom">Atom</a></span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #350: Agents tab: list index out of range - Prewikka - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="kuhOpsASXLI38QLpMT8tkYLsz+A4H5hagh0B/XcKYQqBxybJCQZRMb1bChMsd2TP/qe+fiIVwRRck8Vt8wpVCQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prewikka - Bug #350: Agents tab: list index out of range" href="http://www.prelude-siem.org/issues/350.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prewikka controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prewikka/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prewikka">Overview</a></li><li><a class="activity" href="/projects/prewikka/activity">Activity</a></li><li><a class="roadmap" href="/projects/prewikka/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prewikka/issues">Issues</a></li><li><a class="gantt" href="/projects/prewikka/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prewikka/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prewikka/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prewikka/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prewikka/issues/report">Summary</a></li>
+
+<li><a href="/projects/prewikka/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prewikka/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #350</h2>
+
+<div class="issue tracker-1 status-3 priority-4 priority-default closed details">
+
+  
+
+<div class="subject">
+<div><h3>Agents tab: list index out of range</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="/users/231">Vitaly Tskhovrebov</a> <a title="05/20/2009 01:46 PM" href="/projects/prewikka/activity?from=2009-05-20">over 15 years</a> ago.
+        Updated <a title="06/10/2009 12:54 PM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Resolved</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="06/10/2009" href="/versions/99">0.9.15</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value">05/20/2009</div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-100"><tr><td style="width: 100%;" class="closed" title="100%"></td></tr></table><p class="percent">100%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <ul>
+	<li> app-admin/prelude-manager<br />      Latest version installed: 0.9.14.2</li>
+		<li> dev-libs/libprelude<br />      Latest version installed: 0.9.22</li>
+		<li> dev-libs/libpreludedb<br />      Latest version installed: 0.9.15.1</li>
+		<li> net-analyzer/prewikka<br />      Latest version installed: 0.9.14</li>
+	</ul>
+
+
+	<p>Traceback (most recent call last):<br />  File "/usr/lib/python2.6/site-packages/prewikka/Core.py", line 333, in process<br />    getattr(view_object, view["handler"])()<br />  File "/usr/lib/python2.6/site-packages/prewikka/views/sensor.py", line 115, in render<br />    analyzerid = analyzer_path[-1]<br />IndexError: list index out of range</p>
+
+
+	<p>Please, help.<br />Other tabs Prewikka works good.</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/180/pre.tar.bz2">pre.tar.bz2</a>  
+  <span class="size">(12.4 KB)</span>
+    <span class="author">Vitaly Tskhovrebov, 06/05/2009 12:28 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/181/prewikka-debug.diff">prewikka-debug.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/181/prewikka-debug.diff">View</a>
+  
+  <span class="size">(739 Bytes)</span>
+    <span class="author">Yoann VANDOORSELAERE, 06/09/2009 11:15 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/182/prewikka.diff">prewikka.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/182/prewikka.diff">View</a>
+  
+  <span class="size">(22.7 KB)</span>
+    <span class="author">Yoann VANDOORSELAERE, 06/09/2009 12:40 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/183/prewikka.diff">prewikka.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/183/prewikka.diff">View</a>
+  
+  <span class="size">(38.7 KB)</span>
+    <span class="author">Yoann VANDOORSELAERE, 06/10/2009 11:08 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/184/prewikka.PNG">prewikka.PNG</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/184/prewikka.PNG">View</a>
+  
+  <span class="size">(21.3 KB)</span>
+    <span class="author">Vitaly Tskhovrebov, 06/10/2009 12:18 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <p><a title="Revision 78826d2f" href="/projects/prewikka/repository/revisions/78826d2f202eed44ee222353ead7d13ec5b9ef0b">Revision 78826d2f</a>
+        (<a href="/projects/prewikka/repository/revisions/78826d2f202eed44ee222353ead7d13ec5b9ef0b/diff">diff</a>)
+        <br />
+        <span class="author">Added by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/10/2009 12:51 PM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago</span></p>
+    <div class="wiki">
+        <p>Analyzer retrieval fixes and speedup.</p>
+
+
+	<p>Make the database requests used to generate the agents view simpler,<br />which should provide a minor speedup. Make the getAnalyzer() function<br />simpler. Prevent failure in case an analyzer has no analyzerID set.</p>
+
+
+	<p>Fixes <a class="issue tracker-1 status-3 priority-4 priority-default closed" title="Bug: Agents tab: list index out of range (Resolved)" href="/issues/350">#350</a>.</p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-1301" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/04/2009 11:56 AM" href="/projects/prewikka/activity?from=2009-06-04">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1301-notes" class="wiki"><p>Could you please enable SQL query logging, and report the error logs here ?</p>
+
+
+	<p>You can do this by editing the <strong>[idmef_database]</strong> section in the prewikka.conf configuration file, adding:<br /><pre>
+log: /tmp/prewikka.log
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-1302" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/04/2009 11:56 AM" href="/projects/prewikka/activity?from=2009-06-04">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Feedback</i></li>
+       <li><strong>Assignee</strong> set to <i>Yoann VANDOORSELAERE</i></li>
+       <li><strong>Target version</strong> set to <i>0.9.15</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-1304" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/231">Vitaly Tskhovrebov</a> <a title="06/05/2009 12:28 PM" href="/projects/prewikka/activity?from=2009-06-05">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/180/pre.tar.bz2">pre.tar.bz2</a> added</li>
+    </ul>
+    <div id="journal-1304-notes" class="wiki"><p>Here it is.</p>
+
+
+	<p>Explanation - log turned on, then i've gone to the prewikka's homepage, then Agents.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1307" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/09/2009 11:15 AM" href="/projects/prewikka/activity?from=2009-06-09">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/181/prewikka-debug.diff">prewikka-debug.diff</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/181/prewikka-debug.diff">View</a> added</li>
+    </ul>
+    <div id="journal-1307-notes" class="wiki"><p>For one reason or another, there seem to be an analyzer with an empty ID.<br />In order to confirm this, could you please apply the attached patch, and report the prewikka-httpd output when going to the agent view?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1308" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/231">Vitaly Tskhovrebov</a> <a title="06/09/2009 12:13 PM" href="/projects/prewikka/activity?from=2009-06-09">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1308-notes" class="wiki"><p>I believe you're right, because there was one agent incorrectly added. But there's no option anywere to remove agents, and i didn't find any solutions to remove it directly.</p>
+
+
+	<p>The traceback now is the same:<br />Traceback (most recent call last):<br />  File "/usr/lib/python2.6/site-packages/prewikka/Core.py", line 333, in process<br />    getattr(view_object, view["handler"])()<br />  File "/usr/lib/python2.6/site-packages/prewikka/views/sensor.py", line 115, in render<br />    analyzerid = analyzer_path[-1]<br />IndexError: list index out of range</p>
+
+
+	<p>I have an access to pgsql directly, so please tell me the right place to look for misconfigured agent?</p>
+
+
+	<p>Anyway, prewikka should not lock up on this issue. :-)</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1309" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/09/2009 12:40 PM" href="/projects/prewikka/activity?from=2009-06-09">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/182/prewikka.diff">prewikka.diff</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/182/prewikka.diff">View</a> added</li>
+    </ul>
+    <div id="journal-1309-notes" class="wiki"><p>The attached patch should fixes the problem, as well as making the agents view load a little faster.</p>
+
+
+Once the patch is applied, please let me know:
+	<ul>
+	<li>Whether you can see the offending analyzer in the generated agent list.</li>
+		<li>Whether deleting this analyzer succeed.</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-1310" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/231">Vitaly Tskhovrebov</a> <a title="06/09/2009 01:12 PM" href="/projects/prewikka/activity?from=2009-06-09">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1310-notes" class="wiki"><p>The Show Must go on, Yoann.</p>
+
+
+	<p>Traceback (most recent call last):<br />  File "/usr/lib/python2.6/site-packages/prewikka/Core.py", line 333, in process<br />    getattr(view_object, view["handler"])()<br />  File "/usr/lib/python2.6/site-packages/prewikka/views/sensor.py", line 114, in render<br />    analyzer = self.env.idmef_db.getAnalyzer(analyzerid)<br />  File "/usr/lib/python2.6/site-packages/prewikka/IDMEFDatabase.py", line 539, in getAnalyzer<br />    analyzerd[column] = analyzer[column]<br />TypeError: 'NoneType' object is unsubscriptable</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1311" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/09/2009 01:58 PM" href="/projects/prewikka/activity?from=2009-06-09">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1311-notes" class="wiki"><p>Thanks for the quick feedback,</p>
+
+
+	<p>On line 526, immediately after:<br /><pre>
+        for analyzer in heartbeat["analyzer"]:
+</pre></p>
+
+
+	<p>Could you please insert:<br /><pre>
+            print "A=", analyzer
+            print "N=", analyzer["name"]
+            print "I=", analyzer["analyzerid"]
+</pre></p>
+
+
+	<p>And provides the prewikka-httpd output?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1312" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/231">Vitaly Tskhovrebov</a> <a title="06/09/2009 01:59 PM" href="/projects/prewikka/activity?from=2009-06-09">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1312-notes" class="wiki"><p>We will continue tomorrow, Yoann. Thanks for your support!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1313" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/231">Vitaly Tskhovrebov</a> <a title="06/10/2009 08:19 AM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1313-notes" class="wiki"><p><code><br />Traceback (most recent call last):<br />  File "/usr/lib/python2.6/site-packages/prewikka/Core.py", line 333, in process<br />    getattr(view_object, view["handler"])()<br />  File "/usr/lib/python2.6/site-packages/prewikka/views/sensor.py", line 114, in render<br />    analyzer = self.env.idmef_db.getAnalyzer(analyzerid)<br />  File "/usr/lib/python2.6/site-packages/prewikka/IDMEFDatabase.py", line 542, in getAnalyzer<br />    analyzerd[column] = analyzer[column]<br />TypeError: 'NoneType' object is unsubscriptable</code></p></div>
+    </div>
+  </div>
+  
+  <div id="change-1314" class="journal has-notes has-details">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/10/2009 11:08 AM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/183/prewikka.diff">prewikka.diff</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/183/prewikka.diff">View</a> added</li>
+    </ul>
+    <div id="journal-1314-notes" class="wiki"><p>Updated patch attached. This should at least allow you to get a working agent view (although deleting an Agent with an empty ID will require manual database operation at the moment).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1315" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by <a class="user active" href="/users/231">Vitaly Tskhovrebov</a> <a title="06/10/2009 11:19 AM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1315-notes" class="wiki"><p>I haven't any *.tmpl files. Cannot apply patch correctly.</p>
+
+
+<pre>
+spbsec02 templates # pwd
+/usr/lib/python2.6/site-packages/prewikka/templates
+spbsec02 templates # ls -l
+total 364
+-rw-r--r-- 1 root root 17386 May 15 17:33 About.py
+-rw-r--r-- 1 root root 69668 May 15 17:33 AlertListing.py
+-rw-r--r-- 1 root root 15392 May 15 17:33 ClassicLayout.py
+-rw-r--r-- 1 root root  5314 May 15 17:33 Command.py
+-rw-r--r-- 1 root root 11105 May 15 17:33 ErrorTemplate.py
+-rw-r--r-- 1 root root 15985 May 15 17:33 FilterEdition.py
+-rw-r--r-- 1 root root  6703 May 15 17:33 HTMLDocument.py
+-rw-r--r-- 1 root root  9888 May 15 17:33 HeartbeatAnalyze.py
+-rw-r--r-- 1 root root 13817 May 15 17:33 HeartbeatListing.py
+-rw-r--r-- 1 root root  7908 May 15 17:33 LoginPasswordForm.py
+-rw-r--r-- 1 root root  8503 May 15 17:33 MessageDetails.py
+-rw-r--r-- 1 root root 37675 May 15 17:33 MessageListing.py
+-rw-r--r-- 1 root root 15901 May 15 17:33 MessageSummary.py
+-rw-r--r-- 1 root root  7879 May 15 17:33 PropertiesChangeForm.py
+-rw-r--r-- 1 root root  5478 May 15 17:33 SensorAlertListing.py
+-rw-r--r-- 1 root root  5504 May 15 17:33 SensorHeartbeatListing.py
+-rw-r--r-- 1 root root 30105 May 15 17:33 SensorListing.py
+-rw-r--r-- 1 root root  7182 May 15 17:33 TopLayout.py
+-rw-r--r-- 1 root root  9337 May 15 17:33 UserListing.py
+-rw-r--r-- 1 root root 16593 May 15 17:33 UserSettings.py
+-rw-r--r-- 1 root root     0 Mar  4  2008 __init__.py
+-rw-r--r-- 1 root root  7891 May 15 17:33 utils.py
+
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-1316" class="journal has-notes">
+    <div id="note-13">
+    <h4><a href="#note-13" class="journal-link">#13</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/10/2009 11:21 AM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1316-notes" class="wiki"><p>Vitaly Tskhovrebov wrote:</p>
+
+
+<blockquote>
+
+	<p>I haven't any *.tmpl files. Cannot apply patch correctly.</p>
+
+
+</blockquote>
+
+	<p>You should apply the patch on top of a Prewikka-0.9.14 source tree, then run:<br /><pre>
+python setup.py install
+</pre></p>
+
+
+	<p>So that the patched source base is installed.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1317" class="journal has-notes has-details">
+    <div id="note-14">
+    <h4><a href="#note-14" class="journal-link">#14</a>
+    
+    Updated by <a class="user active" href="/users/231">Vitaly Tskhovrebov</a> <a title="06/10/2009 12:18 PM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/184/prewikka.PNG">prewikka.PNG</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/184/prewikka.PNG">View</a> added</li>
+    </ul>
+    <div id="journal-1317-notes" class="wiki"><p>Ok, i've got a picture of some misconfigured analyzers. How to remove them?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1318" class="journal has-notes">
+    <div id="note-15">
+    <h4><a href="#note-15" class="journal-link">#15</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/10/2009 12:50 PM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago
+    </h4>
+
+    <div id="journal-1318-notes" class="wiki"><p>Vitaly Tskhovrebov wrote:</p>
+
+
+<blockquote>
+
+	<p>Ok, i've got a picture of some misconfigured analyzers. How to remove them?</p>
+
+
+</blockquote>
+
+<pre>
+preludedb-admin delete heartbeat "type=mysql user=prelude pass=prelude name=prelude" --criteria '! heartbeat.analyzer.analyzerid'
+</pre>
+
+	<p>Note: do this only for heartbeat. Doing it for alert will delete LML events. <br />Note</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1319" class="journal has-notes has-details">
+    <div id="note-16">
+    <h4><a href="#note-16" class="journal-link">#16</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/10/2009 12:54 PM" href="/projects/prewikka/activity?from=2009-06-10">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Feedback</i> to <i>Resolved</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>100</i></li>
+    </ul>
+    <div id="journal-1319-notes" class="wiki"><p>Applied in changeset <a class="changeset" title="Analyzer retrieval fixes and speedup. Make the database requests used to generate the agents vie..." href="/projects/prewikka/repository/revisions/78826d2f202eed44ee222353ead7d13ec5b9ef0b">78826d2f202eed44ee222353ead7d13ec5b9ef0b</a>.</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/350.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/350.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

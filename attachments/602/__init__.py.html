@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>__init__.py - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="VDpH617JFY8DEPJZNhuxWxr8rk34BznFNP7oyZMBTcFHFS+El90YDIm6+qMrU/gFZrff0+INYIvqcCxZFwF5wg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-prelude controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>__init__.py</h2>
+
+<div class="attachments">
+<p>
+   <span class="author"><a class="user active" href="/users/527">hacen bani</a>, 05/09/2016 02:10 AM</span></p>
+<p><a href="/attachments/download/602/__init__.py">Download</a>   <span class="size">(2.42 KB)</span></p>
+</div>
+
+  &nbsp;
+  <div class="autoscroll">
+<table class="filecontent syntaxhl">
+<tbody>
+  <tr id="L1">
+    <th class="line-num">
+      <a href="#L1">1</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">A basic inventory plugin</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L2">
+    <th class="line-num">
+      <a href="#L2">2</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">from</span> <span class="include">pkg_resources</span> <span class="keyword">import</span> <span class="include">resource_filename</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L3">
+    <th class="line-num">
+      <a href="#L3">3</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">from</span> <span class="include">prewikka</span> <span class="keyword">import</span> <span class="include">database</span>, <span class="include">env</span>, <span class="include">utils</span>, <span class="include">view</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L4">
+    <th class="line-num">
+      <a href="#L4">4</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">from</span> <span class="include">inventory</span> <span class="keyword">import</span> <span class="include">templates</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L5">
+    <th class="line-num">
+      <a href="#L5">5</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L6">
+    <th class="line-num">
+      <a href="#L6">6</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">class</span> <span class="class">Inventory</span>(view.View):
+</pre>
+    </td>
+  </tr>
+  <tr id="L7">
+    <th class="line-num">
+      <a href="#L7">7</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">The main Inventory view</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L8">
+    <th class="line-num">
+      <a href="#L8">8</a>
+    </th>
+    <td class="line-code">
+      <pre>    plugin_name = <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory</span><span class="delimiter">&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L9">
+    <th class="line-num">
+      <a href="#L9">9</a>
+    </th>
+    <td class="line-code">
+      <pre>    plugin_description = <span class="string"><span class="delimiter">&quot;</span><span class="content">A basic inventory plugin</span><span class="delimiter">&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L10">
+    <th class="line-num">
+      <a href="#L10">10</a>
+    </th>
+    <td class="line-code">
+      <pre>    plugin_version = <span class="string"><span class="delimiter">&quot;</span><span class="content">1.0.0</span><span class="delimiter">&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L11">
+    <th class="line-num">
+      <a href="#L11">11</a>
+    </th>
+    <td class="line-code">
+      <pre>    view_name = <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory</span><span class="delimiter">&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L12">
+    <th class="line-num">
+      <a href="#L12">12</a>
+    </th>
+    <td class="line-code">
+      <pre>    view_section = <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory</span><span class="delimiter">&quot;</span></span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L13">
+    <th class="line-num">
+      <a href="#L13">13</a>
+    </th>
+    <td class="line-code">
+      <pre>    plugin_database_version = <span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L14">
+    <th class="line-num">
+      <a href="#L14">14</a>
+    </th>
+    <td class="line-code">
+      <pre>    view_template = templates.inventory
+</pre>
+    </td>
+  </tr>
+  <tr id="L15">
+    <th class="line-num">
+      <a href="#L15">15</a>
+    </th>
+    <td class="line-code">
+      <pre>    view_parameters = InventoryParameters
+</pre>
+    </td>
+  </tr>
+  <tr id="L16">
+    <th class="line-num">
+      <a href="#L16">16</a>
+    </th>
+    <td class="line-code">
+      <pre>    plugin_htdocs = ((<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory</span><span class="delimiter">&quot;</span></span>, resource_filename(__name__, <span class="string"><span class="delimiter">&quot;</span><span class="content">htdocs</span><span class="delimiter">&quot;</span></span>)),)
+</pre>
+    </td>
+  </tr>
+  <tr id="L17">
+    <th class="line-num">
+      <a href="#L17">17</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L18">
+    <th class="line-num">
+      <a href="#L18">18</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="predefined-constant">self</span>):
+</pre>
+    </td>
+  </tr>
+  <tr id="L19">
+    <th class="line-num">
+      <a href="#L19">19</a>
+    </th>
+    <td class="line-code">
+      <pre>        view.View.__init__(<span class="predefined-constant">self</span>)
+</pre>
+    </td>
+  </tr>
+  <tr id="L20">
+    <th class="line-num">
+      <a href="#L20">20</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="predefined-constant">self</span>._config = <span class="predefined">getattr</span>(env.config, <span class="string"><span class="delimiter">&quot;</span><span class="content">inventory</span><span class="delimiter">&quot;</span></span>, {})
+</pre>
+    </td>
+  </tr>
+  <tr id="L21">
+    <th class="line-num">
+      <a href="#L21">21</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="predefined-constant">self</span>._db = InventoryDatabase() 
+</pre>
+    </td>
+  </tr>
+  <tr id="L22">
+    <th class="line-num">
+      <a href="#L22">22</a>
+    </th>
+    <td class="line-code">
+      <pre>        env.hookmgr.declare_once(<span class="string"><span class="delimiter">&quot;</span><span class="content">HOOK_LINK</span><span class="delimiter">&quot;</span></span>)
+</pre>
+    </td>
+  </tr>
+  <tr id="L23">
+    <th class="line-num">
+      <a href="#L23">23</a>
+    </th>
+    <td class="line-code">
+      <pre>        env.hookmgr.register(<span class="string"><span class="delimiter">&quot;</span><span class="content">HOOK_LINK</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">self</span>._get_inventory_link)
+</pre>
+    </td>
+  </tr>
+  <tr id="L24">
+    <th class="line-num">
+      <a href="#L24">24</a>
+    </th>
+    <td class="line-code">
+      <pre>          
+</pre>
+    </td>
+  </tr>
+  <tr id="L25">
+    <th class="line-num">
+      <a href="#L25">25</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="keyword">def</span> <span class="function">_get_inventory_link</span>(<span class="predefined-constant">self</span>, value):
+</pre>
+    </td>
+  </tr>
+  <tr id="L26">
+    <th class="line-num">
+      <a href="#L26">26</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">Create a link to the inventory to be displayed in the alert view</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L27">
+    <th class="line-num">
+      <a href="#L27">27</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="keyword">return</span> (<span class="string"><span class="delimiter">&quot;</span><span class="content">host</span><span class="delimiter">&quot;</span></span>,
+</pre>
+    </td>
+  </tr>
+  <tr id="L28">
+    <th class="line-num">
+      <a href="#L28">28</a>
+    </th>
+    <td class="line-code">
+      <pre>                <span class="string"><span class="delimiter">&quot;</span><span class="content">Search in inventory</span><span class="delimiter">&quot;</span></span>,
+</pre>
+    </td>
+  </tr>
+  <tr id="L29">
+    <th class="line-num">
+      <a href="#L29">29</a>
+    </th>
+    <td class="line-code">
+      <pre>                utils.create_link(<span class="predefined-constant">self</span>.view_path, {<span class="string"><span class="delimiter">&quot;</span><span class="content">search</span><span class="delimiter">&quot;</span></span>: value}),
+</pre>
+    </td>
+  </tr>
+  <tr id="L30">
+    <th class="line-num">
+      <a href="#L30">30</a>
+    </th>
+    <td class="line-code">
+      <pre>                <span class="predefined-constant">False</span>)
+</pre>
+    </td>
+  </tr>
+  <tr id="L31">
+    <th class="line-num">
+      <a href="#L31">31</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L32">
+    <th class="line-num">
+      <a href="#L32">32</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="keyword">def</span> <span class="function">render</span>(<span class="predefined-constant">self</span>):
+</pre>
+    </td>
+  </tr>
+  <tr id="L33">
+    <th class="line-num">
+      <a href="#L33">33</a>
+    </th>
+    <td class="line-code">
+      <pre>        params = <span class="predefined-constant">self</span>.parameters
+</pre>
+    </td>
+  </tr>
+  <tr id="L34">
+    <th class="line-num">
+      <a href="#L34">34</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="keyword">if</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">hostname</span><span class="delimiter">&quot;</span></span> <span class="keyword">in</span> params:
+</pre>
+    </td>
+  </tr>
+  <tr id="L35">
+    <th class="line-num">
+      <a href="#L35">35</a>
+    </th>
+    <td class="line-code">
+      <pre>            <span class="predefined-constant">self</span>._db.add_host(params.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">hostname</span><span class="delimiter">&quot;</span></span>),
+</pre>
+    </td>
+  </tr>
+  <tr id="L36">
+    <th class="line-num">
+      <a href="#L36">36</a>
+    </th>
+    <td class="line-code">
+      <pre>                              params.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">address</span><span class="delimiter">&quot;</span></span>),
+</pre>
+    </td>
+  </tr>
+  <tr id="L37">
+    <th class="line-num">
+      <a href="#L37">37</a>
+    </th>
+    <td class="line-code">
+      <pre>                              params.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">os</span><span class="delimiter">&quot;</span></span>))
+</pre>
+    </td>
+  </tr>
+  <tr id="L38">
+    <th class="line-num">
+      <a href="#L38">38</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="predefined-constant">self</span>.dataset[<span class="string"><span class="delimiter">&quot;</span><span class="content">inventory</span><span class="delimiter">&quot;</span></span>] = <span class="predefined-constant">self</span>._db.get_hosts(params.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">search</span><span class="delimiter">&quot;</span></span>))
+</pre>
+    </td>
+  </tr>
+  <tr id="L39">
+    <th class="line-num">
+      <a href="#L39">39</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="predefined-constant">self</span>.dataset[<span class="string"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>] = <span class="predefined-constant">self</span>._config.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Inventory</span><span class="delimiter">&quot;</span></span>)     
+</pre>
+    </td>
+  </tr>
+  <tr id="L40">
+    <th class="line-num">
+      <a href="#L40">40</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L41">
+    <th class="line-num">
+      <a href="#L41">41</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">class</span> <span class="class">InventoryDatabase</span>(database.DatabaseHelper):
+</pre>
+    </td>
+  </tr>
+  <tr id="L42">
+    <th class="line-num">
+      <a href="#L42">42</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">Handle database queries related to the inventory</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L43">
+    <th class="line-num">
+      <a href="#L43">43</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L44">
+    <th class="line-num">
+      <a href="#L44">44</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="keyword">def</span> <span class="function">get_hosts</span>(<span class="predefined-constant">self</span>, keyword=<span class="predefined-constant">None</span>):
+</pre>
+    </td>
+  </tr>
+  <tr id="L45">
+    <th class="line-num">
+      <a href="#L45">45</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">Return all hosts in the inventory database matching the keyword</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L46">
+    <th class="line-num">
+      <a href="#L46">46</a>
+    </th>
+    <td class="line-code">
+      <pre>        query = <span class="string"><span class="delimiter">&quot;</span><span class="content">SELECT hostname, address, os FROM Prewikka_Inventory</span><span class="delimiter">&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L47">
+    <th class="line-num">
+      <a href="#L47">47</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="keyword">if</span> keyword:
+</pre>
+    </td>
+  </tr>
+  <tr id="L48">
+    <th class="line-num">
+      <a href="#L48">48</a>
+    </th>
+    <td class="line-code">
+      <pre>            query += (<span class="string"><span class="delimiter">&quot;</span><span class="content"> WHERE hostname = %(keyword)s</span><span class="delimiter">&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L49">
+    <th class="line-num">
+      <a href="#L49">49</a>
+    </th>
+    <td class="line-code">
+      <pre>                      <span class="string"><span class="delimiter">&quot;</span><span class="content"> OR address = %(keyword)s</span><span class="delimiter">&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L50">
+    <th class="line-num">
+      <a href="#L50">50</a>
+    </th>
+    <td class="line-code">
+      <pre>                      <span class="string"><span class="delimiter">&quot;</span><span class="content"> OR os = %(keyword)s</span><span class="delimiter">&quot;</span></span> %
+</pre>
+    </td>
+  </tr>
+  <tr id="L51">
+    <th class="line-num">
+      <a href="#L51">51</a>
+    </th>
+    <td class="line-code">
+      <pre>                      {<span class="string"><span class="delimiter">&quot;</span><span class="content">keyword</span><span class="delimiter">&quot;</span></span>: <span class="predefined-constant">self</span>.escape(keyword)})
+</pre>
+    </td>
+  </tr>
+  <tr id="L52">
+    <th class="line-num">
+      <a href="#L52">52</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="keyword">return</span> <span class="predefined-constant">self</span>.query(query)
+</pre>
+    </td>
+  </tr>
+  <tr id="L53">
+    <th class="line-num">
+      <a href="#L53">53</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L54">
+    <th class="line-num">
+      <a href="#L54">54</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="keyword">def</span> <span class="function">add_host</span>(<span class="predefined-constant">self</span>, hostname, address, os):
+</pre>
+    </td>
+  </tr>
+  <tr id="L55">
+    <th class="line-num">
+      <a href="#L55">55</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="docstring"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">Add a host to the inventory database</span><span class="delimiter">&quot;&quot;&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L56">
+    <th class="line-num">
+      <a href="#L56">56</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="predefined-constant">self</span>.query(<span class="string"><span class="delimiter">&quot;</span><span class="content">INSERT INTO Prewikka_Inventory (hostname, address, os) </span><span class="delimiter">&quot;</span></span> 
+</pre>
+    </td>
+  </tr>
+  <tr id="L57">
+    <th class="line-num">
+      <a href="#L57">57</a>
+    </th>
+    <td class="line-code">
+      <pre>                   <span class="string"><span class="delimiter">&quot;</span><span class="content">VALUES (%s, %s, %s)</span><span class="delimiter">&quot;</span></span> % (<span class="predefined-constant">self</span>.escape(hostname),
+</pre>
+    </td>
+  </tr>
+  <tr id="L58">
+    <th class="line-num">
+      <a href="#L58">58</a>
+    </th>
+    <td class="line-code">
+      <pre>                                            <span class="predefined-constant">self</span>.escape(address),
+</pre>
+    </td>
+  </tr>
+  <tr id="L59">
+    <th class="line-num">
+      <a href="#L59">59</a>
+    </th>
+    <td class="line-code">
+      <pre>                                            <span class="predefined-constant">self</span>.escape(os)))
+</pre>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

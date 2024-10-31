@@ -1,0 +1,1235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>preludedb-plugin-sql</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libpreludedb Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libpreludedb-preludedb-sql.html" title="preludedb-sql">
+<link rel="next" href="libpreludedb-preludedb-sql-settings.html" title="preludedb-sql-settings">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libpreludedb-preludedb-sql.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libpreludedb Reference Manual</th>
+<td><a accesskey="n" href="libpreludedb-preludedb-sql-settings.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libpreludedb-preludedb-plugin-sql.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libpreludedb-preludedb-plugin-sql.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="preludedb-plugin-sql">
+<a name="libpreludedb-preludedb-plugin-sql"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libpreludedb-preludedb-plugin-sql.top_of_page"></a>preludedb-plugin-sql</span></h2>
+<p>preludedb-plugin-sql</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libpreludedb-preludedb-plugin-sql.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+typedef             preludedb_plugin_sql_t;
+const char *        (*preludedb_plugin_sql_get_column_name_func_t)
+                                                        (void *session,
+                                                         preludedb_sql_table_t *table,
+                                                         unsigned int column_num);
+const char *        (*preludedb_plugin_sql_get_operator_string_func_t)
+                                                        (idmef_criterion_operator_t operator);
+int                 (*preludedb_plugin_sql_build_constraint_string_func_t)
+                                                        (prelude_string_t *out,
+                                                         const char *field,
+                                                         idmef_criterion_operator_t operator,
+                                                         const char *value);
+int                 (*preludedb_plugin_sql_unescape_binary_func_t)
+                                                        (void *session,
+                                                         const char *input,
+                                                         unsigned char **output,
+                                                         size_t *output_size);
+int                 (*preludedb_plugin_sql_escape_binary_func_t)
+                                                        (void *session,
+                                                         unsigned char *input,
+                                                         size_t input_size,
+                                                         char **output);
+int                 (*preludedb_plugin_sql_query_func_t)
+                                                        (void *session,
+                                                         const char *query,
+                                                         preludedb_sql_table_t **res);
+int                 (*preludedb_plugin_sql_get_column_num_func_t)
+                                                        (void *session,
+                                                         preludedb_sql_table_t *table,
+                                                         const char *column_name);
+int                 (*preludedb_plugin_sql_build_timestamp_string_func_t)
+                                                        (const struct tm *t,
+                                                         char *out,
+                                                         size_t size);
+int                 (*preludedb_plugin_sql_build_limit_offset_string_func_t)
+                                                        (void *session,
+                                                         int limit,
+                                                         int offset,
+                                                         prelude_string_t *output);
+void                preludedb_plugin_sql_set_build_timestamp_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_timestamp_string_func_t func);
+int                 (*preludedb_plugin_sql_build_time_interval_string_func_t)
+                                                        (prelude_string_t *output,
+                                                         const char *field,
+                                                         const char *value,
+                                                         preludedb_selected_object_interval_t unit);
+int                 (*preludedb_plugin_sql_open_func_t) (preludedb_sql_settings_t *settings,
+                                                         void **session);
+int                 (*preludedb_plugin_sql_fetch_field_func_t)
+                                                        (void *session,
+                                                         preludedb_sql_table_t *table,
+                                                         preludedb_sql_row_t *row,
+                                                         unsigned int column_num,
+                                                         preludedb_sql_field_t **field);
+void                preludedb_plugin_sql_set_get_operator_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_operator_string_func_t func);
+void                (*preludedb_plugin_sql_close_func_t)
+                                                        (void *session);
+int                 (*preludedb_plugin_sql_build_time_constraint_string_func_t)
+                                                        (prelude_string_t *output,
+                                                         const char *field,
+                                                         preludedb_sql_time_constraint_type_t type,
+                                                         idmef_criterion_operator_t operator,
+                                                         int value,
+                                                         int gmt_offset);
+int                 (*preludedb_plugin_sql_escape_func_t)
+                                                        (void *session,
+                                                         const char *input,
+                                                         size_t input_size,
+                                                         char **output);
+int                 (*preludedb_plugin_sql_fetch_row_func_t)
+                                                        (void *session,
+                                                         preludedb_sql_table_t *table,
+                                                         unsigned int row_index,
+                                                         preludedb_sql_row_t **row);
+int                 preludedb_plugin_sql_new            (preludedb_plugin_sql_t **plugin);
+void                preludedb_plugin_sql_set_open_func  (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_open_func_t func);
+void                preludedb_plugin_sql_set_close_func (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_close_func_t func);
+void                preludedb_plugin_sql_set_escape_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_escape_func_t func);
+void                preludedb_plugin_sql_set_escape_binary_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_escape_binary_func_t func);
+void                preludedb_plugin_sql_set_unescape_binary_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_unescape_binary_func_t func);
+void                preludedb_plugin_sql_set_query_func (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_query_func_t func);
+void                preludedb_plugin_sql_set_get_column_count_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_column_count_func_t func);
+void                preludedb_plugin_sql_set_get_row_count_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_row_count_func_t func);
+void                preludedb_plugin_sql_set_get_column_name_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_column_name_func_t func);
+void                preludedb_plugin_sql_set_get_column_num_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_column_num_func_t func);
+void                preludedb_plugin_sql_set_fetch_row_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_fetch_row_func_t func);
+void                preludedb_plugin_sql_set_fetch_field_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_fetch_field_func_t func);
+void                preludedb_plugin_sql_set_build_time_constraint_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_time_constraint_string_func_t func);
+void                preludedb_plugin_sql_set_build_time_interval_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_time_interval_string_func_t func);
+void                preludedb_plugin_sql_set_build_limit_offset_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_limit_offset_string_func_t func);
+void                preludedb_plugin_sql_set_build_constraint_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_constraint_string_func_t func);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libpreludedb-preludedb-plugin-sql.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libpreludedb-preludedb-plugin-sql.details"></a><h2>Details</h2>
+<div class="refsect2" title="preludedb_plugin_sql_t">
+<a name="preludedb-plugin-sql-t"></a><h3>preludedb_plugin_sql_t</h3>
+<pre class="programlisting">typedef struct preludedb_plugin_sql preludedb_plugin_sql_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_get_column_name_func_t ()">
+<a name="preludedb-plugin-sql-get-column-name-func-t"></a><h3>preludedb_plugin_sql_get_column_name_func_t ()</h3>
+<pre class="programlisting">const char *        (*preludedb_plugin_sql_get_column_name_func_t)
+                                                        (void *session,
+                                                         preludedb_sql_table_t *table,
+                                                         unsigned int column_num);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column_num</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_get_operator_string_func_t ()">
+<a name="preludedb-plugin-sql-get-operator-string-func-t"></a><h3>preludedb_plugin_sql_get_operator_string_func_t ()</h3>
+<pre class="programlisting">const char *        (*preludedb_plugin_sql_get_operator_string_func_t)
+                                                        (idmef_criterion_operator_t operator);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operator</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_build_constraint_string_func_t ()">
+<a name="preludedb-plugin-sql-build-constraint-string-func-t"></a><h3>preludedb_plugin_sql_build_constraint_string_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_build_constraint_string_func_t)
+                                                        (prelude_string_t *out,
+                                                         const char *field,
+                                                         idmef_criterion_operator_t operator,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operator</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_unescape_binary_func_t ()">
+<a name="preludedb-plugin-sql-unescape-binary-func-t"></a><h3>preludedb_plugin_sql_unescape_binary_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_unescape_binary_func_t)
+                                                        (void *session,
+                                                         const char *input,
+                                                         unsigned char **output,
+                                                         size_t *output_size);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output_size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_escape_binary_func_t ()">
+<a name="preludedb-plugin-sql-escape-binary-func-t"></a><h3>preludedb_plugin_sql_escape_binary_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_escape_binary_func_t)
+                                                        (void *session,
+                                                         unsigned char *input,
+                                                         size_t input_size,
+                                                         char **output);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input_size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_query_func_t ()">
+<a name="preludedb-plugin-sql-query-func-t"></a><h3>preludedb_plugin_sql_query_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_query_func_t)
+                                                        (void *session,
+                                                         const char *query,
+                                                         preludedb_sql_table_t **res);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>query</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_get_column_num_func_t ()">
+<a name="preludedb-plugin-sql-get-column-num-func-t"></a><h3>preludedb_plugin_sql_get_column_num_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_get_column_num_func_t)
+                                                        (void *session,
+                                                         preludedb_sql_table_t *table,
+                                                         const char *column_name);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column_name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_build_timestamp_string_func_t ()">
+<a name="preludedb-plugin-sql-build-timestamp-string-func-t"></a><h3>preludedb_plugin_sql_build_timestamp_string_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_build_timestamp_string_func_t)
+                                                        (const struct tm *t,
+                                                         char *out,
+                                                         size_t size);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>t</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_build_limit_offset_string_func_t ()">
+<a name="preludedb-plugin-sql-build-limit-offset-string-func-t"></a><h3>preludedb_plugin_sql_build_limit_offset_string_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_build_limit_offset_string_func_t)
+                                                        (void *session,
+                                                         int limit,
+                                                         int offset,
+                                                         prelude_string_t *output);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_build_timestamp_string_func ()">
+<a name="preludedb-plugin-sql-set-build-timestamp-string-func"></a><h3>preludedb_plugin_sql_set_build_timestamp_string_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_build_timestamp_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_timestamp_string_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_build_time_interval_string_func_t ()">
+<a name="preludedb-plugin-sql-build-time-interval-string-func-t"></a><h3>preludedb_plugin_sql_build_time_interval_string_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_build_time_interval_string_func_t)
+                                                        (prelude_string_t *output,
+                                                         const char *field,
+                                                         const char *value,
+                                                         preludedb_selected_object_interval_t unit);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>unit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_open_func_t ()">
+<a name="preludedb-plugin-sql-open-func-t"></a><h3>preludedb_plugin_sql_open_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_open_func_t) (preludedb_sql_settings_t *settings,
+                                                         void **session);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_fetch_field_func_t ()">
+<a name="preludedb-plugin-sql-fetch-field-func-t"></a><h3>preludedb_plugin_sql_fetch_field_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_fetch_field_func_t)
+                                                        (void *session,
+                                                         preludedb_sql_table_t *table,
+                                                         preludedb_sql_row_t *row,
+                                                         unsigned int column_num,
+                                                         preludedb_sql_field_t **field);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column_num</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_get_operator_string_func ()">
+<a name="preludedb-plugin-sql-set-get-operator-string-func"></a><h3>preludedb_plugin_sql_set_get_operator_string_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_get_operator_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_operator_string_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_close_func_t ()">
+<a name="preludedb-plugin-sql-close-func-t"></a><h3>preludedb_plugin_sql_close_func_t ()</h3>
+<pre class="programlisting">void                (*preludedb_plugin_sql_close_func_t)
+                                                        (void *session);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_build_time_constraint_string_func_t ()">
+<a name="preludedb-plugin-sql-build-time-constraint-string-func-t"></a><h3>preludedb_plugin_sql_build_time_constraint_string_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_build_time_constraint_string_func_t)
+                                                        (prelude_string_t *output,
+                                                         const char *field,
+                                                         preludedb_sql_time_constraint_type_t type,
+                                                         idmef_criterion_operator_t operator,
+                                                         int value,
+                                                         int gmt_offset);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>operator</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gmt_offset</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_escape_func_t ()">
+<a name="preludedb-plugin-sql-escape-func-t"></a><h3>preludedb_plugin_sql_escape_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_escape_func_t)
+                                                        (void *session,
+                                                         const char *input,
+                                                         size_t input_size,
+                                                         char **output);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input_size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_fetch_row_func_t ()">
+<a name="preludedb-plugin-sql-fetch-row-func-t"></a><h3>preludedb_plugin_sql_fetch_row_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_sql_fetch_row_func_t)
+                                                        (void *session,
+                                                         preludedb_sql_table_t *table,
+                                                         unsigned int row_index,
+                                                         preludedb_sql_row_t **row);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>session</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row_index</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_new ()">
+<a name="preludedb-plugin-sql-new"></a><h3>preludedb_plugin_sql_new ()</h3>
+<pre class="programlisting">int                 preludedb_plugin_sql_new            (preludedb_plugin_sql_t **plugin);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_open_func ()">
+<a name="preludedb-plugin-sql-set-open-func"></a><h3>preludedb_plugin_sql_set_open_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_open_func  (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_open_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_close_func ()">
+<a name="preludedb-plugin-sql-set-close-func"></a><h3>preludedb_plugin_sql_set_close_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_close_func (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_close_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_escape_func ()">
+<a name="preludedb-plugin-sql-set-escape-func"></a><h3>preludedb_plugin_sql_set_escape_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_escape_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_escape_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_escape_binary_func ()">
+<a name="preludedb-plugin-sql-set-escape-binary-func"></a><h3>preludedb_plugin_sql_set_escape_binary_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_escape_binary_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_escape_binary_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_unescape_binary_func ()">
+<a name="preludedb-plugin-sql-set-unescape-binary-func"></a><h3>preludedb_plugin_sql_set_unescape_binary_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_unescape_binary_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_unescape_binary_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_query_func ()">
+<a name="preludedb-plugin-sql-set-query-func"></a><h3>preludedb_plugin_sql_set_query_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_query_func (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_query_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_get_column_count_func ()">
+<a name="preludedb-plugin-sql-set-get-column-count-func"></a><h3>preludedb_plugin_sql_set_get_column_count_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_get_column_count_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_column_count_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_get_row_count_func ()">
+<a name="preludedb-plugin-sql-set-get-row-count-func"></a><h3>preludedb_plugin_sql_set_get_row_count_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_get_row_count_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_row_count_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_get_column_name_func ()">
+<a name="preludedb-plugin-sql-set-get-column-name-func"></a><h3>preludedb_plugin_sql_set_get_column_name_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_get_column_name_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_column_name_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_get_column_num_func ()">
+<a name="preludedb-plugin-sql-set-get-column-num-func"></a><h3>preludedb_plugin_sql_set_get_column_num_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_get_column_num_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_get_column_num_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_fetch_row_func ()">
+<a name="preludedb-plugin-sql-set-fetch-row-func"></a><h3>preludedb_plugin_sql_set_fetch_row_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_fetch_row_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_fetch_row_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_fetch_field_func ()">
+<a name="preludedb-plugin-sql-set-fetch-field-func"></a><h3>preludedb_plugin_sql_set_fetch_field_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_fetch_field_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_fetch_field_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_build_time_constraint_string_func ()">
+<a name="preludedb-plugin-sql-set-build-time-constraint-string-func"></a><h3>preludedb_plugin_sql_set_build_time_constraint_string_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_build_time_constraint_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_time_constraint_string_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_build_time_interval_string_func ()">
+<a name="preludedb-plugin-sql-set-build-time-interval-string-func"></a><h3>preludedb_plugin_sql_set_build_time_interval_string_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_build_time_interval_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_time_interval_string_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_build_limit_offset_string_func ()">
+<a name="preludedb-plugin-sql-set-build-limit-offset-string-func"></a><h3>preludedb_plugin_sql_set_build_limit_offset_string_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_build_limit_offset_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_limit_offset_string_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_sql_set_build_constraint_string_func ()">
+<a name="preludedb-plugin-sql-set-build-constraint-string-func"></a><h3>preludedb_plugin_sql_set_build_constraint_string_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_sql_set_build_constraint_string_func
+                                                        (preludedb_plugin_sql_t *plugin,
+                                                         preludedb_plugin_sql_build_constraint_string_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

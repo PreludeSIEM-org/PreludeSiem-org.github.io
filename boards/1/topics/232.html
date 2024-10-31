@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Prewikka 5.1.1 issues - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="YLjO5NJFnwJjPR+cIdbM+VGJ3NzG83a0MlVZi25UZ4Zzl6aLG1GSgemXF2Y8noWnLcKtQtz5L/rs250b6lRThQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>Prewikka 5.1.1 issues</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/1189">milan P</a> <a title="10/18/2019 09:35 AM" href="/projects/prelude/activity?from=2019-10-18">about 5 years</a> ago</span></p>
+<div class="wiki">
+<p>Hello,</p>
+
+
+	<p>I installed every components by compiling them from sources but i still have issues with Prewikka.<br />I spent time to debug before coming here to open this thread. <br />When prewikka is starting, it loads some plugins. Some of them are failing, resulting (i think) in an inapropriate interface/user experience.</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="integer">2019</span>-<span class="integer">10</span>-<span class="integer">18</span> <span class="integer">11</span>:<span class="integer">21</span>:<span class="integer">31</span>,<span class="integer">399</span> prewikka (pid:<span class="integer">27005</span>) prewikka.pluginmanager ERROR: prewikka.views.datasearch.threat: cannot <span class="keyword">import</span> <span class="include">name</span> <span class="include">grammar</span>
+Traceback (most recent call last):
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/prewikka/pluginmanager.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">101</span>, <span class="keyword">in</span> iter_plugins
+    plugin_class = i.load()
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">2411</span>, <span class="keyword">in</span> load
+    <span class="keyword">return</span> <span class="predefined-constant">self</span>.resolve()
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/lib/python2.7/dist-packages/pkg_resources/__init__.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">2417</span>, <span class="keyword">in</span> resolve
+    module = <span class="predefined">__import__</span>(<span class="predefined-constant">self</span>.module_name, fromlist=[<span class="string"><span class="delimiter">'</span><span class="content">__name__</span><span class="delimiter">'</span></span>], level=<span class="integer">0</span>)
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/prewikka/views/datasearch/threat.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">30</span>, <span class="keyword">in</span> &lt;module&gt;
+    <span class="keyword">from</span> . import alert, datasearch
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/prewikka/views/datasearch/alert.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">30</span>, <span class="keyword">in</span> &lt;module&gt;
+    <span class="keyword">from</span> . import idmef
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/prewikka/views/datasearch/idmef.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">28</span>, <span class="keyword">in</span> &lt;module&gt;
+    <span class="keyword">from</span> . import datasearch
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/prewikka/views/datasearch/datasearch.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">38</span>, <span class="keyword">in</span> &lt;module&gt;
+    <span class="keyword">from</span> <span class="include">prewikka.dataprovider.parsers</span> <span class="keyword">import</span> <span class="include">criteria</span>, <span class="include">lucene</span>
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/prewikka/dataprovider/parsers/criteria/__init__.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">27</span>, <span class="keyword">in</span> &lt;module&gt;
+    <span class="keyword">from</span> . import grammar
+<span class="exception">ImportError</span>: cannot <span class="keyword">import</span> <span class="include">name</span> <span class="include">grammar</span>
+</span></code></pre>
+
+	<p>This issue happens on these plugins :</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="integer">2019</span>-<span class="integer">10</span>-<span class="integer">18</span> <span class="integer">11</span>:<span class="integer">27</span>:<span class="integer">48</span>,<span class="octal">010</span> prewikka (pid:<span class="integer">27043</span>) prewikka.pluginmanager ERROR: prewikka.views.datasearch.threat: cannot <span class="keyword">import</span> <span class="include">name</span> <span class="include">grammar</span>
+<span class="integer">2019</span>-<span class="integer">10</span>-<span class="integer">18</span> <span class="integer">11</span>:<span class="integer">27</span>:<span class="integer">48</span>,<span class="octal">011</span> prewikka (pid:<span class="integer">27042</span>) prewikka.pluginmanager ERROR: prewikka.views.datasearch.heartbeat: cannot <span class="keyword">import</span> <span class="include">name</span> <span class="include">grammar</span>
+<span class="integer">2019</span>-<span class="integer">10</span>-<span class="integer">18</span> <span class="integer">11</span>:<span class="integer">27</span>:<span class="integer">48</span>,<span class="octal">013</span> prewikka (pid:<span class="integer">27044</span>) prewikka.pluginmanager ERROR: prewikka.views.datasearch.threat: cannot <span class="keyword">import</span> <span class="include">name</span> <span class="include">grammar</span>
+<span class="integer">2019</span>-<span class="integer">10</span>-<span class="integer">18</span> <span class="integer">11</span>:<span class="integer">27</span>:<span class="integer">48</span>,<span class="octal">015</span> prewikka (pid:<span class="integer">27044</span>) prewikka.pluginmanager ERROR: prewikka.views.datasearch.heartbeat: cannot <span class="keyword">import</span> <span class="include">name</span> <span class="include">grammar</span>
+
+</span></code></pre>
+
+	<p>I tried to troubleshoot the code but i didn't find the issue. It looks like a bug with the lark parser, but i am not sure.</p>
+
+
+	<p><ins>For info:</ins></p>
+
+
+	<p>*python2.7</p>
+
+
+	<p>lark-parser        0.7.7*</p>
+
+
+	<p>Can you help me ?</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (4)</h3>
+  <div class="message reply" id="message-233">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/232?r=233#message-233">RE: Prewikka 5.1.1 issues</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/18/2019 02:47 PM" href="/projects/prelude/activity?from=2019-10-18">about 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hi,</p>
+
+
+	<p>This is rather strange.</p>
+
+
+	<ul>
+	<li>Does the <code>/usr/local/lib/python2.7/dist-packages/prewikka/dataprovider/parsers/criteria/grammar.py</code> file exist and have appropriate permissions?</li>
+		<li>Does your Python Path contain the <code>/usr/local/lib/python2.7/dist-packages</code> directory?</li>
+		<li>Does the same error occur when directly importing the module in a Python console?</li>
+	</ul>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">&gt;&gt;&gt; <span class="keyword">from</span> <span class="include">prewikka.dataprovider.parsers</span> <span class="keyword">import</span> <span class="include">criteria</span>
+</span></code></pre>
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-234">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/232?r=234#message-234">RE: Prewikka 5.1.1 issues</a>
+    -
+    Added by <a class="user active" href="/users/1189">milan P</a> <a title="10/21/2019 08:54 AM" href="/projects/prelude/activity?from=2019-10-21">about 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>Thanks for your reply:</p>
+
+
+	<p><ins>grammar.py exists :</ins></p>
+
+
+	<p><code>ls  -al /usr/local/lib/python2.7/dist-packages/prewikka/dataprovider/parsers/criteria/grammar.py<br />-rw-r--r-- 1 root staff 2117 oct.   8 12:39 /usr/local/lib/python2.7/dist-packages/prewikka/dataprovider/parsers/criteria/grammar.py</code></p>
+
+
+	<p><ins>PYTHONPATH:</ins></p>
+
+
+	<p>I tried to force it :</p>
+
+
+	<p><code>PYTHONPATH=/usr/local/lib/python2.7/dist-packages prewikka-httpd -p 80</code></p>
+
+
+	<p>or via export PYTHONPATH but the same errors.</p>
+
+
+	<p><ins>From Console:</ins></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">Python <span class="float">2.7</span><span class="float">.16</span> (default, Apr  <span class="integer">6</span> <span class="integer">2019</span>, <span class="octal">01</span>:<span class="integer">42</span>:<span class="integer">57</span>)
+[GCC <span class="float">8.3</span><span class="float">.0</span>] on linux2
+Type <span class="string"><span class="delimiter">&quot;</span><span class="content">help</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">copyright</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">credits</span><span class="delimiter">&quot;</span></span> <span class="keyword">or</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">license</span><span class="delimiter">&quot;</span></span> <span class="keyword">for</span> more information.
+&gt;&gt;&gt; <span class="keyword">from</span> <span class="include">prewikka.dataprovider.parsers</span> <span class="keyword">import</span> <span class="include">criteria</span>
+Traceback (most recent call last):
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;stdin&gt;</span><span class="delimiter">&quot;</span></span>, line <span class="integer">1</span>, <span class="keyword">in</span> &lt;module&gt;
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/prewikka/dataprovider/parsers/criteria/__init__.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">30</span>, <span class="keyword">in</span> &lt;module&gt;
+    _grammar = Lark(grammar.GRAMMAR, start=<span class="string"><span class="delimiter">&quot;</span><span class="content">criteria</span><span class="delimiter">&quot;</span></span>, parser=<span class="string"><span class="delimiter">&quot;</span><span class="content">lalr</span><span class="delimiter">&quot;</span></span>)
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/lark/lark.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">231</span>, <span class="keyword">in</span> __init__
+    <span class="predefined-constant">self</span>.parser = <span class="predefined-constant">self</span>._build_parser()
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/lark/lark.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">250</span>, <span class="keyword">in</span> _build_parser
+    parser_conf = ParserConf(<span class="predefined-constant">self</span>.rules, <span class="predefined-constant">self</span>._callbacks, <span class="predefined-constant">self</span>.options.start)
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">/usr/local/lib/python2.7/dist-packages/lark/common.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">23</span>, <span class="keyword">in</span> __init__
+    <span class="keyword">assert</span> <span class="predefined">isinstance</span>(start, <span class="predefined">list</span>)
+<span class="exception">AssertionError</span>
+</span></code></pre></div>
+  
+  </div>
+  <div class="message reply" id="message-235">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/232?r=235#message-235">RE: Prewikka 5.1.1 issues</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/21/2019 02:59 PM" href="/projects/prelude/activity?from=2019-10-21">about 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>You may want to either:</p>
+
+
+	<ul>
+	<li>downgrade lark-parser to 0.7.1</li>
+		<li>change the test in lark-parser:<br /><pre><code class="diff syntaxhl"><span class="CodeRay"><span class="line comment">diff --git a/lark/lark.py b/lark/lark.py</span>
+<span class="line comment">index c27f534..2635a5d 100644</span>
+<span class="line head"><span class="head">--- </span><span class="filename">a/lark/lark.py</span></span>
+<span class="line head"><span class="head">+++ </span><span class="filename">b/lark/lark.py</span></span>
+<span class="change"><span class="change">@@</span> -86,7 +86,7 <span class="change">@@</span></span> <span class="keyword">class</span> <span class="class">LarkOptions</span>(Serialize):
+
+             options[name] = value
+
+<span class="line delete"><span class="delete">-</span>        <span class="keyword">if</span> <span class="predefined">isinstance</span>(options[<span class="string"><span class="delimiter">'</span><span class="content">start</span><span class="delimiter">'</span></span>], <span class="eyecatcher"><span class="predefined">str</span>):</span></span>
+<span class="line insert"><span class="insert">+</span>        <span class="keyword">if</span> <span class="predefined">isinstance</span>(options[<span class="string"><span class="delimiter">'</span><span class="content">start</span><span class="delimiter">'</span></span>], <span class="eyecatcher">(<span class="predefined">str</span>, <span class="predefined">unicode</span>)):  <span class="comment"># this won't work with Python3</span></span></span>
+             options[<span class="string"><span class="delimiter">'</span><span class="content">start</span><span class="delimiter">'</span></span>] = [options[<span class="string"><span class="delimiter">'</span><span class="content">start</span><span class="delimiter">'</span></span>]]
+
+         <span class="predefined-constant">self</span>.__dict__[<span class="string"><span class="delimiter">'</span><span class="content">options</span><span class="delimiter">'</span></span>] = options
+</span></code></pre></li>
+		<li>or change the call in prewikka:<br /><pre><code class="diff syntaxhl"><span class="CodeRay"><span class="line comment">diff --git a/prewikka/dataprovider/parsers/criteria/__init__.py b/prewikka/dataprovider/parsers/criteria/__init__.py</span>
+<span class="line comment">index 7fcfbee..1865462 100644</span>
+<span class="line head"><span class="head">--- </span><span class="filename">a/prewikka/dataprovider/parsers/criteria/__init__.py</span></span>
+<span class="line head"><span class="head">+++ </span><span class="filename">b/prewikka/dataprovider/parsers/criteria/__init__.py</span></span>
+<span class="change"><span class="change">@@</span> -27,7 +27,7 <span class="change">@@</span></span> <span class="keyword">from</span> <span class="include">prewikka.dataprovider</span> <span class="keyword">import</span> <span class="include">Criterion</span>, <span class="include">ParserError</span>
+ <span class="keyword">from</span> . import grammar
+
+<span class="line delete"><span class="delete">-</span>_grammar = Lark(grammar.GRAMMAR, start=<span class="string"></span><span class="eyecatcher"><span class="string"><span class="delimiter">&quot;</span><span class="content">criteria</span><span class="delimiter">&quot;</span></span></span>, parser=<span class="string"><span class="delimiter">&quot;</span><span class="content">lalr</span><span class="delimiter">&quot;</span></span>)</span>
+<span class="line insert"><span class="insert">+</span>_grammar = Lark(grammar.GRAMMAR, start=<span class="eyecatcher">[<span class="string"><span class="delimiter">&quot;</span><span class="content">criteria</span><span class="delimiter">&quot;</span></span>]</span>, parser=<span class="string"><span class="delimiter">&quot;</span><span class="content">lalr</span><span class="delimiter">&quot;</span></span>)</span>
+
+ <span class="keyword">class</span> <span class="class">CommonTransformer</span>(Transformer):
+</span></code></pre></li>
+	</ul>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-236">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/232?r=236#message-236">RE: Prewikka 5.1.1 issues</a>
+    -
+    Added by <a class="user active" href="/users/1189">milan P</a> <a title="10/22/2019 08:18 AM" href="/projects/prelude/activity?from=2019-10-22">about 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello Antoine,</p>
+
+
+	<p>I downgraded lark to 0.7.1 and it fixed the issue.<br />Thanks very much for your help !</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-4/4)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

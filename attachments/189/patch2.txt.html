@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>patch2.txt - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Ey8tzFXT70xcFaPHbsgBp/dDgSIphv1LbOOuU13UczoAAEWjnMfiz9a/qz1zgEj5iwjwvDOMpAWybWrD2dRHOQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-libprelude controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>patch2.txt</h2>
+
+<div class="attachments">
+<p>
+   <span class="author">Anonymous, 09/02/2009 05:25 PM</span></p>
+<p><a href="/attachments/download/189/patch2.txt">Download</a>   <span class="size">(6.5 KB)</span></p>
+</div>
+
+  &nbsp;
+  <div class="autoscroll">
+<table class="filecontent syntaxhl">
+<tbody>
+  <tr id="L1">
+    <th class="line-num">
+      <a href="#L1">1</a>
+    </th>
+    <td class="line-code">
+      <pre>---
+</pre>
+    </td>
+  </tr>
+  <tr id="L2">
+    <th class="line-num">
+      <a href="#L2">2</a>
+    </th>
+    <td class="line-code">
+      <pre>bindings/java/Makefile.am          |   42 +++++++++++++++++++++++++++++++++++
+</pre>
+    </td>
+  </tr>
+  <tr id="L3">
+    <th class="line-num">
+      <a href="#L3">3</a>
+    </th>
+    <td class="line-code">
+      <pre>bindings/java/build.xml            |   23 +++++++++++++++++++
+</pre>
+    </td>
+  </tr>
+  <tr id="L4">
+    <th class="line-num">
+      <a href="#L4">4</a>
+    </th>
+    <td class="line-code">
+      <pre>bindings/java/libpreludecpp-java.i |   43 ++++++++++++++++++++++++++++++++++++
+</pre>
+    </td>
+  </tr>
+  <tr id="L5">
+    <th class="line-num">
+      <a href="#L5">5</a>
+    </th>
+    <td class="line-code">
+      <pre>bindings/java/rebuild.sh           |   10 ++++++++
+</pre>
+    </td>
+  </tr>
+  <tr id="L6">
+    <th class="line-num">
+      <a href="#L6">6</a>
+    </th>
+    <td class="line-code">
+      <pre>bindings/java/testapp/build.sh     |    2 +
+</pre>
+    </td>
+  </tr>
+  <tr id="L7">
+    <th class="line-num">
+      <a href="#L7">7</a>
+    </th>
+    <td class="line-code">
+      <pre>bindings/java/testapp/run.sh       |    2 +
+</pre>
+    </td>
+  </tr>
+  <tr id="L8">
+    <th class="line-num">
+      <a href="#L8">8</a>
+    </th>
+    <td class="line-code">
+      <pre>bindings/java/testapp/test.java    |   34 ++++++++++++++++++++++++++++
+</pre>
+    </td>
+  </tr>
+  <tr id="L9">
+    <th class="line-num">
+      <a href="#L9">9</a>
+    </th>
+    <td class="line-code">
+      <pre>7 files changed, 156 insertions(+), 0 deletions(-)
+</pre>
+    </td>
+  </tr>
+  <tr id="L10">
+    <th class="line-num">
+      <a href="#L10">10</a>
+    </th>
+    <td class="line-code">
+      <pre>create mode 100644 bindings/java/Makefile.am
+</pre>
+    </td>
+  </tr>
+  <tr id="L11">
+    <th class="line-num">
+      <a href="#L11">11</a>
+    </th>
+    <td class="line-code">
+      <pre>create mode 100644 bindings/java/build.xml
+</pre>
+    </td>
+  </tr>
+  <tr id="L12">
+    <th class="line-num">
+      <a href="#L12">12</a>
+    </th>
+    <td class="line-code">
+      <pre>create mode 100644 bindings/java/libpreludecpp-java.i
+</pre>
+    </td>
+  </tr>
+  <tr id="L13">
+    <th class="line-num">
+      <a href="#L13">13</a>
+    </th>
+    <td class="line-code">
+      <pre>create mode 100644 bindings/java/rebuild.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L14">
+    <th class="line-num">
+      <a href="#L14">14</a>
+    </th>
+    <td class="line-code">
+      <pre>create mode 100755 bindings/java/testapp/build.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L15">
+    <th class="line-num">
+      <a href="#L15">15</a>
+    </th>
+    <td class="line-code">
+      <pre>create mode 100755 bindings/java/testapp/run.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L16">
+    <th class="line-num">
+      <a href="#L16">16</a>
+    </th>
+    <td class="line-code">
+      <pre>create mode 100644 bindings/java/testapp/test.java
+</pre>
+    </td>
+  </tr>
+  <tr id="L17">
+    <th class="line-num">
+      <a href="#L17">17</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L18">
+    <th class="line-num">
+      <a href="#L18">18</a>
+    </th>
+    <td class="line-code">
+      <pre>diff --git a/bindings/java/Makefile.am b/bindings/java/Makefile.am
+</pre>
+    </td>
+  </tr>
+  <tr id="L19">
+    <th class="line-num">
+      <a href="#L19">19</a>
+    </th>
+    <td class="line-code">
+      <pre>new file mode 100644
+</pre>
+    </td>
+  </tr>
+  <tr id="L20">
+    <th class="line-num">
+      <a href="#L20">20</a>
+    </th>
+    <td class="line-code">
+      <pre>index 0000000..c5b6819
+</pre>
+    </td>
+  </tr>
+  <tr id="L21">
+    <th class="line-num">
+      <a href="#L21">21</a>
+    </th>
+    <td class="line-code">
+      <pre>--- /dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L22">
+    <th class="line-num">
+      <a href="#L22">22</a>
+    </th>
+    <td class="line-code">
+      <pre>+++ b/bindings/java/Makefile.am
+</pre>
+    </td>
+  </tr>
+  <tr id="L23">
+    <th class="line-num">
+      <a href="#L23">23</a>
+    </th>
+    <td class="line-code">
+      <pre>@@ -0,0 +1,42 @@
+</pre>
+    </td>
+  </tr>
+  <tr id="L24">
+    <th class="line-num">
+      <a href="#L24">24</a>
+    </th>
+    <td class="line-code">
+      <pre>+if HAVE_EASY_BINDINGS
+</pre>
+    </td>
+  </tr>
+  <tr id="L25">
+    <th class="line-num">
+      <a href="#L25">25</a>
+    </th>
+    <td class="line-code">
+      <pre>+if HAVE_JAVA
+</pre>
+    </td>
+  </tr>
+  <tr id="L26">
+    <th class="line-num">
+      <a href="#L26">26</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L27">
+    <th class="line-num">
+      <a href="#L27">27</a>
+    </th>
+    <td class="line-code">
+      <pre>+EXTRA_DIST = libpreludecpp-java.i PreludeEasy.cxx
+</pre>
+    </td>
+  </tr>
+  <tr id="L28">
+    <th class="line-num">
+      <a href="#L28">28</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L29">
+    <th class="line-num">
+      <a href="#L29">29</a>
+    </th>
+    <td class="line-code">
+      <pre>+all-am: java-build
+</pre>
+    </td>
+  </tr>
+  <tr id="L30">
+    <th class="line-num">
+      <a href="#L30">30</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L31">
+    <th class="line-num">
+      <a href="#L31">31</a>
+    </th>
+    <td class="line-code">
+      <pre>+java-build: PreludeEasy.cxx  PreludeEasy.o
+</pre>
+    </td>
+  </tr>
+  <tr id="L32">
+    <th class="line-num">
+      <a href="#L32">32</a>
+    </th>
+    <td class="line-code">
+      <pre>+	$(JAVAC) com/prelude/easy/*.java
+</pre>
+    </td>
+  </tr>
+  <tr id="L33">
+    <th class="line-num">
+      <a href="#L33">33</a>
+    </th>
+    <td class="line-code">
+      <pre>+	ant compile &amp;&amp; ant jar
+</pre>
+    </td>
+  </tr>
+  <tr id="L34">
+    <th class="line-num">
+      <a href="#L34">34</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L35">
+    <th class="line-num">
+      <a href="#L35">35</a>
+    </th>
+    <td class="line-code">
+      <pre>+install-exec-hook:
+</pre>
+    </td>
+  </tr>
+  <tr id="L36">
+    <th class="line-num">
+      <a href="#L36">36</a>
+    </th>
+    <td class="line-code">
+      <pre>+	cp libpreludejava.so /usr/local/lib
+</pre>
+    </td>
+  </tr>
+  <tr id="L37">
+    <th class="line-num">
+      <a href="#L37">37</a>
+    </th>
+    <td class="line-code">
+      <pre>+	ldconfig
+</pre>
+    </td>
+  </tr>
+  <tr id="L38">
+    <th class="line-num">
+      <a href="#L38">38</a>
+    </th>
+    <td class="line-code">
+      <pre>+	cp build/jar/PreludeEasy.jar /usr/share/java
+</pre>
+    </td>
+  </tr>
+  <tr id="L39">
+    <th class="line-num">
+      <a href="#L39">39</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L40">
+    <th class="line-num">
+      <a href="#L40">40</a>
+    </th>
+    <td class="line-code">
+      <pre>+uninstall-hook:
+</pre>
+    </td>
+  </tr>
+  <tr id="L41">
+    <th class="line-num">
+      <a href="#L41">41</a>
+    </th>
+    <td class="line-code">
+      <pre>+	rm -f /usr/local/lib/libpreludejava.so
+</pre>
+    </td>
+  </tr>
+  <tr id="L42">
+    <th class="line-num">
+      <a href="#L42">42</a>
+    </th>
+    <td class="line-code">
+      <pre>+	ldconfig
+</pre>
+    </td>
+  </tr>
+  <tr id="L43">
+    <th class="line-num">
+      <a href="#L43">43</a>
+    </th>
+    <td class="line-code">
+      <pre>+	rm -f /usr/share/java/PreludeEasy.jar
+</pre>
+    </td>
+  </tr>
+  <tr id="L44">
+    <th class="line-num">
+      <a href="#L44">44</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L45">
+    <th class="line-num">
+      <a href="#L45">45</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L46">
+    <th class="line-num">
+      <a href="#L46">46</a>
+    </th>
+    <td class="line-code">
+      <pre>+PreludeEasy.o: PreludeEasy.cxx 
+</pre>
+    </td>
+  </tr>
+  <tr id="L47">
+    <th class="line-num">
+      <a href="#L47">47</a>
+    </th>
+    <td class="line-code">
+      <pre>+	$(CXX) -I $(top_srcdir)/bindings/c++/include -c -I $(top_srcdir)/src/include/ -I $(top_srcdir)/src/libprelude-error/ -I$(top_srcdir) -I $(top_srcdir)/libmissing/ -fPIC PreludeEasy.cxx 
+</pre>
+    </td>
+  </tr>
+  <tr id="L48">
+    <th class="line-num">
+      <a href="#L48">48</a>
+    </th>
+    <td class="line-code">
+      <pre>+	$(CXX) -shared PreludeEasy.o $(top_srcdir)/bindings/c++/.libs/libpreludecpp.so -o libpreludejava.so
+</pre>
+    </td>
+  </tr>
+  <tr id="L49">
+    <th class="line-num">
+      <a href="#L49">49</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L50">
+    <th class="line-num">
+      <a href="#L50">50</a>
+    </th>
+    <td class="line-code">
+      <pre>+PreludeEasy.cxx: $(top_srcdir)/bindings/c++/include/*.hxx $(top_srcdir)/bindings/libpreludecpp.i libpreludecpp-java.i 
+</pre>
+    </td>
+  </tr>
+  <tr id="L51">
+    <th class="line-num">
+      <a href="#L51">51</a>
+    </th>
+    <td class="line-code">
+      <pre>+if HAVE_SWIG
+</pre>
+    </td>
+  </tr>
+  <tr id="L52">
+    <th class="line-num">
+      <a href="#L52">52</a>
+    </th>
+    <td class="line-code">
+      <pre>+	$(SWIG) -c++ -I$(top_srcdir)/bindings -I$(top_srcdir)/bindings/c++/include -I$(top_srcdir)/src/include -I$(top_srcdir)/src/libprelude-error -java -package com.prelude.easy -outdir com/prelude/easy -o $@ ../libpreludecpp.i
+</pre>
+    </td>
+  </tr>
+  <tr id="L53">
+    <th class="line-num">
+      <a href="#L53">53</a>
+    </th>
+    <td class="line-code">
+      <pre>+endif
+</pre>
+    </td>
+  </tr>
+  <tr id="L54">
+    <th class="line-num">
+      <a href="#L54">54</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L55">
+    <th class="line-num">
+      <a href="#L55">55</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L56">
+    <th class="line-num">
+      <a href="#L56">56</a>
+    </th>
+    <td class="line-code">
+      <pre>+clean-local:
+</pre>
+    </td>
+  </tr>
+  <tr id="L57">
+    <th class="line-num">
+      <a href="#L57">57</a>
+    </th>
+    <td class="line-code">
+      <pre>+	rm -f com/prelude/easy/*.class com/prelude/easy/*.java
+</pre>
+    </td>
+  </tr>
+  <tr id="L58">
+    <th class="line-num">
+      <a href="#L58">58</a>
+    </th>
+    <td class="line-code">
+      <pre>+	rm -f PreludeEasy.o libpreludejava.so PreludeEasy.cxx
+</pre>
+    </td>
+  </tr>
+  <tr id="L59">
+    <th class="line-num">
+      <a href="#L59">59</a>
+    </th>
+    <td class="line-code">
+      <pre>+	rm -f Makefile.old
+</pre>
+    </td>
+  </tr>
+  <tr id="L60">
+    <th class="line-num">
+      <a href="#L60">60</a>
+    </th>
+    <td class="line-code">
+      <pre>+	ant clean
+</pre>
+    </td>
+  </tr>
+  <tr id="L61">
+    <th class="line-num">
+      <a href="#L61">61</a>
+    </th>
+    <td class="line-code">
+      <pre>+	rm -f testapp/*.class
+</pre>
+    </td>
+  </tr>
+  <tr id="L62">
+    <th class="line-num">
+      <a href="#L62">62</a>
+    </th>
+    <td class="line-code">
+      <pre>+endif
+</pre>
+    </td>
+  </tr>
+  <tr id="L63">
+    <th class="line-num">
+      <a href="#L63">63</a>
+    </th>
+    <td class="line-code">
+      <pre>+endif
+</pre>
+    </td>
+  </tr>
+  <tr id="L64">
+    <th class="line-num">
+      <a href="#L64">64</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L65">
+    <th class="line-num">
+      <a href="#L65">65</a>
+    </th>
+    <td class="line-code">
+      <pre>+-include $(top_srcdir)/git.mk
+</pre>
+    </td>
+  </tr>
+  <tr id="L66">
+    <th class="line-num">
+      <a href="#L66">66</a>
+    </th>
+    <td class="line-code">
+      <pre>diff --git a/bindings/java/build.xml b/bindings/java/build.xml
+</pre>
+    </td>
+  </tr>
+  <tr id="L67">
+    <th class="line-num">
+      <a href="#L67">67</a>
+    </th>
+    <td class="line-code">
+      <pre>new file mode 100644
+</pre>
+    </td>
+  </tr>
+  <tr id="L68">
+    <th class="line-num">
+      <a href="#L68">68</a>
+    </th>
+    <td class="line-code">
+      <pre>index 0000000..2067063
+</pre>
+    </td>
+  </tr>
+  <tr id="L69">
+    <th class="line-num">
+      <a href="#L69">69</a>
+    </th>
+    <td class="line-code">
+      <pre>--- /dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L70">
+    <th class="line-num">
+      <a href="#L70">70</a>
+    </th>
+    <td class="line-code">
+      <pre>+++ b/bindings/java/build.xml
+</pre>
+    </td>
+  </tr>
+  <tr id="L71">
+    <th class="line-num">
+      <a href="#L71">71</a>
+    </th>
+    <td class="line-code">
+      <pre>@@ -0,0 +1,23 @@
+</pre>
+    </td>
+  </tr>
+  <tr id="L72">
+    <th class="line-num">
+      <a href="#L72">72</a>
+    </th>
+    <td class="line-code">
+      <pre>+&lt;project&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L73">
+    <th class="line-num">
+      <a href="#L73">73</a>
+    </th>
+    <td class="line-code">
+      <pre>+    &lt;target name=&quot;clean&quot;&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L74">
+    <th class="line-num">
+      <a href="#L74">74</a>
+    </th>
+    <td class="line-code">
+      <pre>+        &lt;delete dir=&quot;build&quot;/&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L75">
+    <th class="line-num">
+      <a href="#L75">75</a>
+    </th>
+    <td class="line-code">
+      <pre>+    &lt;/target&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L76">
+    <th class="line-num">
+      <a href="#L76">76</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L77">
+    <th class="line-num">
+      <a href="#L77">77</a>
+    </th>
+    <td class="line-code">
+      <pre>+    &lt;target name=&quot;compile&quot;&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L78">
+    <th class="line-num">
+      <a href="#L78">78</a>
+    </th>
+    <td class="line-code">
+      <pre>+        &lt;mkdir dir=&quot;build/classes&quot;/&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L79">
+    <th class="line-num">
+      <a href="#L79">79</a>
+    </th>
+    <td class="line-code">
+      <pre>+        &lt;javac srcdir=&quot;./com&quot; destdir=&quot;build/classes&quot; debug=&quot;on&quot; debuglevel=&quot;lines,vars,source&quot; /&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L80">
+    <th class="line-num">
+      <a href="#L80">80</a>
+    </th>
+    <td class="line-code">
+      <pre>+    &lt;/target&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L81">
+    <th class="line-num">
+      <a href="#L81">81</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L82">
+    <th class="line-num">
+      <a href="#L82">82</a>
+    </th>
+    <td class="line-code">
+      <pre>+    &lt;target name=&quot;jar&quot;&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L83">
+    <th class="line-num">
+      <a href="#L83">83</a>
+    </th>
+    <td class="line-code">
+      <pre>+        &lt;mkdir dir=&quot;build/jar&quot;/&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L84">
+    <th class="line-num">
+      <a href="#L84">84</a>
+    </th>
+    <td class="line-code">
+      <pre>+        &lt;jar destfile=&quot;build/jar/PreludeEasy.jar&quot; basedir=&quot;build/classes&quot;&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L85">
+    <th class="line-num">
+      <a href="#L85">85</a>
+    </th>
+    <td class="line-code">
+      <pre>+            &lt;manifest&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L86">
+    <th class="line-num">
+      <a href="#L86">86</a>
+    </th>
+    <td class="line-code">
+      <pre>+            &lt;/manifest&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L87">
+    <th class="line-num">
+      <a href="#L87">87</a>
+    </th>
+    <td class="line-code">
+      <pre>+        &lt;/jar&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L88">
+    <th class="line-num">
+      <a href="#L88">88</a>
+    </th>
+    <td class="line-code">
+      <pre>+    &lt;/target&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L89">
+    <th class="line-num">
+      <a href="#L89">89</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L90">
+    <th class="line-num">
+      <a href="#L90">90</a>
+    </th>
+    <td class="line-code">
+      <pre>+    &lt;target name=&quot;run&quot;&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L91">
+    <th class="line-num">
+      <a href="#L91">91</a>
+    </th>
+    <td class="line-code">
+      <pre>+        &lt;java jar=&quot;build/jar/PreludeEasy.jar&quot; fork=&quot;true&quot;/&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L92">
+    <th class="line-num">
+      <a href="#L92">92</a>
+    </th>
+    <td class="line-code">
+      <pre>+    &lt;/target&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L93">
+    <th class="line-num">
+      <a href="#L93">93</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L94">
+    <th class="line-num">
+      <a href="#L94">94</a>
+    </th>
+    <td class="line-code">
+      <pre>+&lt;/project&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L95">
+    <th class="line-num">
+      <a href="#L95">95</a>
+    </th>
+    <td class="line-code">
+      <pre>diff --git a/bindings/java/libpreludecpp-java.i b/bindings/java/libpreludecpp-java.i
+</pre>
+    </td>
+  </tr>
+  <tr id="L96">
+    <th class="line-num">
+      <a href="#L96">96</a>
+    </th>
+    <td class="line-code">
+      <pre>new file mode 100644
+</pre>
+    </td>
+  </tr>
+  <tr id="L97">
+    <th class="line-num">
+      <a href="#L97">97</a>
+    </th>
+    <td class="line-code">
+      <pre>index 0000000..e0a4c37
+</pre>
+    </td>
+  </tr>
+  <tr id="L98">
+    <th class="line-num">
+      <a href="#L98">98</a>
+    </th>
+    <td class="line-code">
+      <pre>--- /dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L99">
+    <th class="line-num">
+      <a href="#L99">99</a>
+    </th>
+    <td class="line-code">
+      <pre>+++ b/bindings/java/libpreludecpp-java.i
+</pre>
+    </td>
+  </tr>
+  <tr id="L100">
+    <th class="line-num">
+      <a href="#L100">100</a>
+    </th>
+    <td class="line-code">
+      <pre>@@ -0,0 +1,43 @@
+</pre>
+    </td>
+  </tr>
+  <tr id="L101">
+    <th class="line-num">
+      <a href="#L101">101</a>
+    </th>
+    <td class="line-code">
+      <pre>+%module preludejava 
+</pre>
+    </td>
+  </tr>
+  <tr id="L102">
+    <th class="line-num">
+      <a href="#L102">102</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L103">
+    <th class="line-num">
+      <a href="#L103">103</a>
+    </th>
+    <td class="line-code">
+      <pre>+%rename (String) *::operator const std::string() const;
+</pre>
+    </td>
+  </tr>
+  <tr id="L104">
+    <th class="line-num">
+      <a href="#L104">104</a>
+    </th>
+    <td class="line-code">
+      <pre>+%rename (String) *::operator const char*;
+</pre>
+    </td>
+  </tr>
+  <tr id="L105">
+    <th class="line-num">
+      <a href="#L105">105</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L106">
+    <th class="line-num">
+      <a href="#L106">106</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator int() const;
+</pre>
+    </td>
+  </tr>
+  <tr id="L107">
+    <th class="line-num">
+      <a href="#L107">107</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator double() const;
+</pre>
+    </td>
+  </tr>
+  <tr id="L108">
+    <th class="line-num">
+      <a href="#L108">108</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator long() const;
+</pre>
+    </td>
+  </tr>
+  <tr id="L109">
+    <th class="line-num">
+      <a href="#L109">109</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator &gt;&gt; const;
+</pre>
+    </td>
+  </tr>
+  <tr id="L110">
+    <th class="line-num">
+      <a href="#L110">110</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator &lt;;
+</pre>
+    </td>
+  </tr>
+  <tr id="L111">
+    <th class="line-num">
+      <a href="#L111">111</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator &gt;;
+</pre>
+    </td>
+  </tr>
+  <tr id="L112">
+    <th class="line-num">
+      <a href="#L112">112</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator ==;
+</pre>
+    </td>
+  </tr>
+  <tr id="L113">
+    <th class="line-num">
+      <a href="#L113">113</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator &lt;=;
+</pre>
+    </td>
+  </tr>
+  <tr id="L114">
+    <th class="line-num">
+      <a href="#L114">114</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator &gt;=;
+</pre>
+    </td>
+  </tr>
+  <tr id="L115">
+    <th class="line-num">
+      <a href="#L115">115</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator !=;
+</pre>
+    </td>
+  </tr>
+  <tr id="L116">
+    <th class="line-num">
+      <a href="#L116">116</a>
+    </th>
+    <td class="line-code">
+      <pre>+%ignore *::operator =;
+</pre>
+    </td>
+  </tr>
+  <tr id="L117">
+    <th class="line-num">
+      <a href="#L117">117</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L118">
+    <th class="line-num">
+      <a href="#L118">118</a>
+    </th>
+    <td class="line-code">
+      <pre>+%typemap(throws, throws=&quot;java.io.IOException&quot;) Prelude::PreludeError {
+</pre>
+    </td>
+  </tr>
+  <tr id="L119">
+    <th class="line-num">
+      <a href="#L119">119</a>
+    </th>
+    <td class="line-code">
+      <pre>+  jclass excep = jenv-&gt;FindClass(&quot;java/io/IOException&quot;);
+</pre>
+    </td>
+  </tr>
+  <tr id="L120">
+    <th class="line-num">
+      <a href="#L120">120</a>
+    </th>
+    <td class="line-code">
+      <pre>+  if (excep)
+</pre>
+    </td>
+  </tr>
+  <tr id="L121">
+    <th class="line-num">
+      <a href="#L121">121</a>
+    </th>
+    <td class="line-code">
+      <pre>+    jenv-&gt;ThrowNew(excep, $1.what());
+</pre>
+    </td>
+  </tr>
+  <tr id="L122">
+    <th class="line-num">
+      <a href="#L122">122</a>
+    </th>
+    <td class="line-code">
+      <pre>+  return $null;
+</pre>
+    </td>
+  </tr>
+  <tr id="L123">
+    <th class="line-num">
+      <a href="#L123">123</a>
+    </th>
+    <td class="line-code">
+      <pre>+}
+</pre>
+    </td>
+  </tr>
+  <tr id="L124">
+    <th class="line-num">
+      <a href="#L124">124</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L125">
+    <th class="line-num">
+      <a href="#L125">125</a>
+    </th>
+    <td class="line-code">
+      <pre>+%fragment(&quot;TransitionFunc&quot;, &quot;header&quot;) {
+</pre>
+    </td>
+  </tr>
+  <tr id="L126">
+    <th class="line-num">
+      <a href="#L126">126</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L127">
+    <th class="line-num">
+      <a href="#L127">127</a>
+    </th>
+    <td class="line-code">
+      <pre>+static ssize_t _cb_java_read(prelude_io_t *fd, void *buf, size_t size)
+</pre>
+    </td>
+  </tr>
+  <tr id="L128">
+    <th class="line-num">
+      <a href="#L128">128</a>
+    </th>
+    <td class="line-code">
+      <pre>+{
+</pre>
+    </td>
+  </tr>
+  <tr id="L129">
+    <th class="line-num">
+      <a href="#L129">129</a>
+    </th>
+    <td class="line-code">
+      <pre>+        ssize_t ret;
+</pre>
+    </td>
+  </tr>
+  <tr id="L130">
+    <th class="line-num">
+      <a href="#L130">130</a>
+    </th>
+    <td class="line-code">
+      <pre>+        FILE *f = (FILE *) prelude_io_get_fdptr(fd);
+</pre>
+    </td>
+  </tr>
+  <tr id="L131">
+    <th class="line-num">
+      <a href="#L131">131</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L132">
+    <th class="line-num">
+      <a href="#L132">132</a>
+    </th>
+    <td class="line-code">
+      <pre>+        ret = fread(buf, 1, size, f);
+</pre>
+    </td>
+  </tr>
+  <tr id="L133">
+    <th class="line-num">
+      <a href="#L133">133</a>
+    </th>
+    <td class="line-code">
+      <pre>+        if ( ret &lt; 0 )
+</pre>
+    </td>
+  </tr>
+  <tr id="L134">
+    <th class="line-num">
+      <a href="#L134">134</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ret = prelude_error_from_errno(errno);
+</pre>
+    </td>
+  </tr>
+  <tr id="L135">
+    <th class="line-num">
+      <a href="#L135">135</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L136">
+    <th class="line-num">
+      <a href="#L136">136</a>
+    </th>
+    <td class="line-code">
+      <pre>+        else if ( ret == 0 )
+</pre>
+    </td>
+  </tr>
+  <tr id="L137">
+    <th class="line-num">
+      <a href="#L137">137</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ret = prelude_error(PRELUDE_ERROR_EOF);
+</pre>
+    </td>
+  </tr>
+  <tr id="L138">
+    <th class="line-num">
+      <a href="#L138">138</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L139">
+    <th class="line-num">
+      <a href="#L139">139</a>
+    </th>
+    <td class="line-code">
+      <pre>+        return ret;
+</pre>
+    </td>
+  </tr>
+  <tr id="L140">
+    <th class="line-num">
+      <a href="#L140">140</a>
+    </th>
+    <td class="line-code">
+      <pre>+}
+</pre>
+    </td>
+  </tr>
+  <tr id="L141">
+    <th class="line-num">
+      <a href="#L141">141</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L142">
+    <th class="line-num">
+      <a href="#L142">142</a>
+    </th>
+    <td class="line-code">
+      <pre>+}
+</pre>
+    </td>
+  </tr>
+  <tr id="L143">
+    <th class="line-num">
+      <a href="#L143">143</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L144">
+    <th class="line-num">
+      <a href="#L144">144</a>
+    </th>
+    <td class="line-code">
+      <pre>diff --git a/bindings/java/rebuild.sh b/bindings/java/rebuild.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L145">
+    <th class="line-num">
+      <a href="#L145">145</a>
+    </th>
+    <td class="line-code">
+      <pre>new file mode 100644
+</pre>
+    </td>
+  </tr>
+  <tr id="L146">
+    <th class="line-num">
+      <a href="#L146">146</a>
+    </th>
+    <td class="line-code">
+      <pre>index 0000000..e5626f5
+</pre>
+    </td>
+  </tr>
+  <tr id="L147">
+    <th class="line-num">
+      <a href="#L147">147</a>
+    </th>
+    <td class="line-code">
+      <pre>--- /dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L148">
+    <th class="line-num">
+      <a href="#L148">148</a>
+    </th>
+    <td class="line-code">
+      <pre>+++ b/bindings/java/rebuild.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L149">
+    <th class="line-num">
+      <a href="#L149">149</a>
+    </th>
+    <td class="line-code">
+      <pre>@@ -0,0 +1,10 @@
+</pre>
+    </td>
+  </tr>
+  <tr id="L150">
+    <th class="line-num">
+      <a href="#L150">150</a>
+    </th>
+    <td class="line-code">
+      <pre>+#!/bin/bash -x
+</pre>
+    </td>
+  </tr>
+  <tr id="L151">
+    <th class="line-num">
+      <a href="#L151">151</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L152">
+    <th class="line-num">
+      <a href="#L152">152</a>
+    </th>
+    <td class="line-code">
+      <pre>+make clean
+</pre>
+    </td>
+  </tr>
+  <tr id="L153">
+    <th class="line-num">
+      <a href="#L153">153</a>
+    </th>
+    <td class="line-code">
+      <pre>+rm PreludeEasy.cxx PreludeEasy.so PreludeEasy.o preludejava.o
+</pre>
+    </td>
+  </tr>
+  <tr id="L154">
+    <th class="line-num">
+      <a href="#L154">154</a>
+    </th>
+    <td class="line-code">
+      <pre>+make
+</pre>
+    </td>
+  </tr>
+  <tr id="L155">
+    <th class="line-num">
+      <a href="#L155">155</a>
+    </th>
+    <td class="line-code">
+      <pre>+g++ -I ../c++/include -c -I ../../src/include/ -I ../../src/libprelude-error/ -I../../ -I ../../libmissing/ -fPIC PreludeEasy.cxx 
+</pre>
+    </td>
+  </tr>
+  <tr id="L156">
+    <th class="line-num">
+      <a href="#L156">156</a>
+    </th>
+    <td class="line-code">
+      <pre>+g++ -shared /usr/local/lib/libpreludecpp.so PreludeEasy.o preludejava.o -o libpreludejava.so
+</pre>
+    </td>
+  </tr>
+  <tr id="L157">
+    <th class="line-num">
+      <a href="#L157">157</a>
+    </th>
+    <td class="line-code">
+      <pre>+sudo cp libpreludejava.so /usr/local/lib/
+</pre>
+    </td>
+  </tr>
+  <tr id="L158">
+    <th class="line-num">
+      <a href="#L158">158</a>
+    </th>
+    <td class="line-code">
+      <pre>+sudo ldconfig
+</pre>
+    </td>
+  </tr>
+  <tr id="L159">
+    <th class="line-num">
+      <a href="#L159">159</a>
+    </th>
+    <td class="line-code">
+      <pre>+cp build/jar/PreludeEasy.jar ~/
+</pre>
+    </td>
+  </tr>
+  <tr id="L160">
+    <th class="line-num">
+      <a href="#L160">160</a>
+    </th>
+    <td class="line-code">
+      <pre>diff --git a/bindings/java/testapp/build.sh b/bindings/java/testapp/build.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L161">
+    <th class="line-num">
+      <a href="#L161">161</a>
+    </th>
+    <td class="line-code">
+      <pre>new file mode 100755
+</pre>
+    </td>
+  </tr>
+  <tr id="L162">
+    <th class="line-num">
+      <a href="#L162">162</a>
+    </th>
+    <td class="line-code">
+      <pre>index 0000000..3013d97
+</pre>
+    </td>
+  </tr>
+  <tr id="L163">
+    <th class="line-num">
+      <a href="#L163">163</a>
+    </th>
+    <td class="line-code">
+      <pre>--- /dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L164">
+    <th class="line-num">
+      <a href="#L164">164</a>
+    </th>
+    <td class="line-code">
+      <pre>+++ b/bindings/java/testapp/build.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L165">
+    <th class="line-num">
+      <a href="#L165">165</a>
+    </th>
+    <td class="line-code">
+      <pre>@@ -0,0 +1,2 @@
+</pre>
+    </td>
+  </tr>
+  <tr id="L166">
+    <th class="line-num">
+      <a href="#L166">166</a>
+    </th>
+    <td class="line-code">
+      <pre>+#!/bin/sh -x
+</pre>
+    </td>
+  </tr>
+  <tr id="L167">
+    <th class="line-num">
+      <a href="#L167">167</a>
+    </th>
+    <td class="line-code">
+      <pre>+javac -cp /usr/share/java/PreludeEasy.jar test.java
+</pre>
+    </td>
+  </tr>
+  <tr id="L168">
+    <th class="line-num">
+      <a href="#L168">168</a>
+    </th>
+    <td class="line-code">
+      <pre>diff --git a/bindings/java/testapp/run.sh b/bindings/java/testapp/run.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L169">
+    <th class="line-num">
+      <a href="#L169">169</a>
+    </th>
+    <td class="line-code">
+      <pre>new file mode 100755
+</pre>
+    </td>
+  </tr>
+  <tr id="L170">
+    <th class="line-num">
+      <a href="#L170">170</a>
+    </th>
+    <td class="line-code">
+      <pre>index 0000000..bb9bc32
+</pre>
+    </td>
+  </tr>
+  <tr id="L171">
+    <th class="line-num">
+      <a href="#L171">171</a>
+    </th>
+    <td class="line-code">
+      <pre>--- /dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L172">
+    <th class="line-num">
+      <a href="#L172">172</a>
+    </th>
+    <td class="line-code">
+      <pre>+++ b/bindings/java/testapp/run.sh
+</pre>
+    </td>
+  </tr>
+  <tr id="L173">
+    <th class="line-num">
+      <a href="#L173">173</a>
+    </th>
+    <td class="line-code">
+      <pre>@@ -0,0 +1,2 @@
+</pre>
+    </td>
+  </tr>
+  <tr id="L174">
+    <th class="line-num">
+      <a href="#L174">174</a>
+    </th>
+    <td class="line-code">
+      <pre>+#!/bin/bash
+</pre>
+    </td>
+  </tr>
+  <tr id="L175">
+    <th class="line-num">
+      <a href="#L175">175</a>
+    </th>
+    <td class="line-code">
+      <pre>+java -cp /usr/share/java/PreludeEasy.jar:. test
+</pre>
+    </td>
+  </tr>
+  <tr id="L176">
+    <th class="line-num">
+      <a href="#L176">176</a>
+    </th>
+    <td class="line-code">
+      <pre>diff --git a/bindings/java/testapp/test.java b/bindings/java/testapp/test.java
+</pre>
+    </td>
+  </tr>
+  <tr id="L177">
+    <th class="line-num">
+      <a href="#L177">177</a>
+    </th>
+    <td class="line-code">
+      <pre>new file mode 100644
+</pre>
+    </td>
+  </tr>
+  <tr id="L178">
+    <th class="line-num">
+      <a href="#L178">178</a>
+    </th>
+    <td class="line-code">
+      <pre>index 0000000..b2058b1
+</pre>
+    </td>
+  </tr>
+  <tr id="L179">
+    <th class="line-num">
+      <a href="#L179">179</a>
+    </th>
+    <td class="line-code">
+      <pre>--- /dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L180">
+    <th class="line-num">
+      <a href="#L180">180</a>
+    </th>
+    <td class="line-code">
+      <pre>+++ b/bindings/java/testapp/test.java
+</pre>
+    </td>
+  </tr>
+  <tr id="L181">
+    <th class="line-num">
+      <a href="#L181">181</a>
+    </th>
+    <td class="line-code">
+      <pre>@@ -0,0 +1,34 @@
+</pre>
+    </td>
+  </tr>
+  <tr id="L182">
+    <th class="line-num">
+      <a href="#L182">182</a>
+    </th>
+    <td class="line-code">
+      <pre>+import com.prelude.easy.ClientEasy;
+</pre>
+    </td>
+  </tr>
+  <tr id="L183">
+    <th class="line-num">
+      <a href="#L183">183</a>
+    </th>
+    <td class="line-code">
+      <pre>+import com.prelude.easy.IDMEF;
+</pre>
+    </td>
+  </tr>
+  <tr id="L184">
+    <th class="line-num">
+      <a href="#L184">184</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L185">
+    <th class="line-num">
+      <a href="#L185">185</a>
+    </th>
+    <td class="line-code">
+      <pre>+public class test {
+</pre>
+    </td>
+  </tr>
+  <tr id="L186">
+    <th class="line-num">
+      <a href="#L186">186</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L187">
+    <th class="line-num">
+      <a href="#L187">187</a>
+    </th>
+    <td class="line-code">
+      <pre>+  static {
+</pre>
+    </td>
+  </tr>
+  <tr id="L188">
+    <th class="line-num">
+      <a href="#L188">188</a>
+    </th>
+    <td class="line-code">
+      <pre>+    try {
+</pre>
+    </td>
+  </tr>
+  <tr id="L189">
+    <th class="line-num">
+      <a href="#L189">189</a>
+    </th>
+    <td class="line-code">
+      <pre>+      System.loadLibrary(&quot;preludejava&quot;);
+</pre>
+    </td>
+  </tr>
+  <tr id="L190">
+    <th class="line-num">
+      <a href="#L190">190</a>
+    </th>
+    <td class="line-code">
+      <pre>+    } catch (UnsatisfiedLinkError e) {
+</pre>
+    </td>
+  </tr>
+  <tr id="L191">
+    <th class="line-num">
+      <a href="#L191">191</a>
+    </th>
+    <td class="line-code">
+      <pre>+      System.err.println(&quot;Native code library failed to load. &quot; + e);
+</pre>
+    </td>
+  </tr>
+  <tr id="L192">
+    <th class="line-num">
+      <a href="#L192">192</a>
+    </th>
+    <td class="line-code">
+      <pre>+      System.exit(1);
+</pre>
+    </td>
+  </tr>
+  <tr id="L193">
+    <th class="line-num">
+      <a href="#L193">193</a>
+    </th>
+    <td class="line-code">
+      <pre>+    }
+</pre>
+    </td>
+  </tr>
+  <tr id="L194">
+    <th class="line-num">
+      <a href="#L194">194</a>
+    </th>
+    <td class="line-code">
+      <pre>+  }
+</pre>
+    </td>
+  </tr>
+  <tr id="L195">
+    <th class="line-num">
+      <a href="#L195">195</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L196">
+    <th class="line-num">
+      <a href="#L196">196</a>
+    </th>
+    <td class="line-code">
+      <pre>+	private static ClientEasy c;
+</pre>
+    </td>
+  </tr>
+  <tr id="L197">
+    <th class="line-num">
+      <a href="#L197">197</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L198">
+    <th class="line-num">
+      <a href="#L198">198</a>
+    </th>
+    <td class="line-code">
+      <pre>+	public static void main(String argv[]){
+</pre>
+    </td>
+  </tr>
+  <tr id="L199">
+    <th class="line-num">
+      <a href="#L199">199</a>
+    </th>
+    <td class="line-code">
+      <pre>+		com.prelude.easy.PreludeEasy.prelude_init();
+</pre>
+    </td>
+  </tr>
+  <tr id="L200">
+    <th class="line-num">
+      <a href="#L200">200</a>
+    </th>
+    <td class="line-code">
+      <pre>+		c= new ClientEasy(&quot;prelude-java-agent&quot;);
+</pre>
+    </td>
+  </tr>
+  <tr id="L201">
+    <th class="line-num">
+      <a href="#L201">201</a>
+    </th>
+    <td class="line-code">
+      <pre>+		try {
+</pre>
+    </td>
+  </tr>
+  <tr id="L202">
+    <th class="line-num">
+      <a href="#L202">202</a>
+    </th>
+    <td class="line-code">
+      <pre>+			c.Start();
+</pre>
+    </td>
+  </tr>
+  <tr id="L203">
+    <th class="line-num">
+      <a href="#L203">203</a>
+    </th>
+    <td class="line-code">
+      <pre>+			System.out.println(&quot;Creating IDMEF msg&quot;);
+</pre>
+    </td>
+  </tr>
+  <tr id="L204">
+    <th class="line-num">
+      <a href="#L204">204</a>
+    </th>
+    <td class="line-code">
+      <pre>+			IDMEF msg = new IDMEF();		
+</pre>
+    </td>
+  </tr>
+  <tr id="L205">
+    <th class="line-num">
+      <a href="#L205">205</a>
+    </th>
+    <td class="line-code">
+      <pre>+			System.out.println(&quot;Setting attribs...&quot;);
+</pre>
+    </td>
+  </tr>
+  <tr id="L206">
+    <th class="line-num">
+      <a href="#L206">206</a>
+    </th>
+    <td class="line-code">
+      <pre>+			msg.Set(&quot;alert.source(0).node.address(0).address&quot;,&quot;192.168.1.1&quot;);		
+</pre>
+    </td>
+  </tr>
+  <tr id="L207">
+    <th class="line-num">
+      <a href="#L207">207</a>
+    </th>
+    <td class="line-code">
+      <pre>+			msg.Set(&quot;alert.target(0).node.address(0).address&quot;,&quot;192.168.1.2&quot;);
+</pre>
+    </td>
+  </tr>
+  <tr id="L208">
+    <th class="line-num">
+      <a href="#L208">208</a>
+    </th>
+    <td class="line-code">
+      <pre>+			System.out.println(&quot;Sending msg...&quot;);
+</pre>
+    </td>
+  </tr>
+  <tr id="L209">
+    <th class="line-num">
+      <a href="#L209">209</a>
+    </th>
+    <td class="line-code">
+      <pre>+			c.SendIDMEF(msg);
+</pre>
+    </td>
+  </tr>
+  <tr id="L210">
+    <th class="line-num">
+      <a href="#L210">210</a>
+    </th>
+    <td class="line-code">
+      <pre>+		} catch (Exception exception){
+</pre>
+    </td>
+  </tr>
+  <tr id="L211">
+    <th class="line-num">
+      <a href="#L211">211</a>
+    </th>
+    <td class="line-code">
+      <pre>+			System.out.println(exception.toString());
+</pre>
+    </td>
+  </tr>
+  <tr id="L212">
+    <th class="line-num">
+      <a href="#L212">212</a>
+    </th>
+    <td class="line-code">
+      <pre>+			exception.printStackTrace();
+</pre>
+    </td>
+  </tr>
+  <tr id="L213">
+    <th class="line-num">
+      <a href="#L213">213</a>
+    </th>
+    <td class="line-code">
+      <pre>+		}
+</pre>
+    </td>
+  </tr>
+  <tr id="L214">
+    <th class="line-num">
+      <a href="#L214">214</a>
+    </th>
+    <td class="line-code">
+      <pre>+	}
+</pre>
+    </td>
+  </tr>
+  <tr id="L215">
+    <th class="line-num">
+      <a href="#L215">215</a>
+    </th>
+    <td class="line-code">
+      <pre>+}
+</pre>
+    </td>
+  </tr>
+  <tr id="L216">
+    <th class="line-num">
+      <a href="#L216">216</a>
+    </th>
+    <td class="line-code">
+      <pre>-- 
+</pre>
+    </td>
+  </tr>
+  <tr id="L217">
+    <th class="line-num">
+      <a href="#L217">217</a>
+    </th>
+    <td class="line-code">
+      <pre>1.6.3.3
+</pre>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

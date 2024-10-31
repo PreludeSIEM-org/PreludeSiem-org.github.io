@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Feature #91: Development of sancp sensor - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="afoZsLohfpD2OQrJM/TdwuE5AcyvC0bZkulCCfu2tt561XHfczVzE3yTAjMuvJScnXJwUrUBH5dMZ4aZf7aC3Q==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="PRELUDE SIEM - Feature #91: Development of sancp sensor" href="http://www.prelude-siem.org/issues/91.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude/issues/report">Summary</a></li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #91</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#326" accesskey="p" href="/issues/326">« Previous</a> |
+        <span class="position">21 of 78</span> |
+      <a title="#177" accesskey="n" href="/issues/177">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>Development of sancp sensor</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="07/17/2005 05:19 PM" href="/projects/prelude/activity?from=2005-07-17">over 19 years</a> ago.
+        Updated <a title="08/22/2007 10:44 AM" href="/projects/prelude/activity?from=2007-08-22">about 17 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value">-</div></div><div class="category attribute"><div class="label">Category:</div><div class="value">Sensor development/review</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>It would be nice to have a sancp sensor for prelude. Sancp is a program which monitors network traffic and reports all connections it sees. Of course, there is a configuration file which defines what network traffic should not be reported. This way a security officer can detect network traffic which could be suspicious. This is mostly used for outgoing traffic since firewalls will not allow suspicious connection to be created inward at all.</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/17/sancp-1.6.1-prelude.diff">sancp-1.6.1-prelude.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/17/sancp-1.6.1-prelude.diff">View</a>
+  
+  <span class="size">(17.6 KB)</span>
+    <span class="author">, 09/01/2005 04:53 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/15/sancp-1.6.1-prelude-2.diff">sancp-1.6.1-prelude-2.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/15/sancp-1.6.1-prelude-2.diff">View</a>
+   - version 2 of the patch
+  <span class="size">(19.3 KB)</span>
+    <span class="author">, 09/19/2005 02:18 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/16/sancp-1.6.1-prelude-3.diff">sancp-1.6.1-prelude-3.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/16/sancp-1.6.1-prelude-3.diff">View</a>
+   - Hopeful the official patch
+  <span class="size">(24.3 KB)</span>
+    <span class="author">, 03/30/2006 09:25 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/14/prelude-sancp-support.patch">prelude-sancp-support.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/14/prelude-sancp-support.patch">View</a>
+   - Working version
+  <span class="size">(23.1 KB)</span>
+    <span class="author">Sebastien Tricaud, 08/02/2007 05:37 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-171" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by  <a title="07/17/2005 05:21 PM" href="/projects/prelude/activity?from=2005-07-17">over 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    <div id="journal-171-notes" class="wiki"><p>I created an initial version of this sensor, I'll post the patches to the mailinglists soon.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-172" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="07/17/2005 05:21 PM" href="/projects/prelude/activity?from=2005-07-17">over 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>New</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-173" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by  <a title="09/01/2005 04:54 PM" href="/projects/prelude/activity?from=2005-09-01">about 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-173-notes" class="wiki"><p>Created initial support</p></div>
+    </div>
+  </div>
+  
+  <div id="change-174" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by  <a title="09/01/2005 05:09 PM" href="/projects/prelude/activity?from=2005-09-01">about 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Closed</i> to <i>Feedback</i></li>
+       <li><strong>Resolution</strong> deleted (<del><i>fixed</i></del>)</li>
+    </ul>
+    <div id="journal-174-notes" class="wiki"><p>Sample alert:</p>
+
+
+<pre>
+alert:
+        messageid: 4834358039543085281
+        analyzer(0): 
+                analyzerid: 427242992195544
+                name: prelude-manager
+                manufacturer: http://www.prelude-ids.com
+                model: Prelude Manager
+                version: 0.9.0-rc6
+                class: Concentrator
+                ostype: [[FreeBSD]]
+                osversion: 5.4-RELEASE
+                node:
+                        category: unknown (0)
+                        location: frank
+                        name: elianne
+                        address(0): 
+                                category: unknown (0)
+                                address: 10.0.4.2
+                process:
+                        name: prelude-manager
+                        pid: 52622
+                        path: /usr/local/bin
+        analyzer(1): 
+                analyzerid: 797580842778343
+                name: sancp
+                ostype: [[FreeBSD]]
+                osversion: 5.4-RELEASE
+                node:
+                        category: unknown (0)
+                        location: frank
+                        name: elianne
+                        address(0): 
+                                category: unknown (0)
+                                address: 10.0.4.2
+                process:
+                        name: sancp
+                        pid: 18414
+                        path: /usr/local/src/prelude-sancp/sancp-1.6.1
+        create_time: 01/09/2005 17:05:42.243576 +02:00
+        classification:
+                text: Unauthorized network connectivity
+        detect_time: 01/09/2005 16:58:14.0 +02:00
+        analyzer_time: 01/09/2005 17:05:42.248771 +02:00
+        source(0): 
+                spoofed: unknown (0)
+                node:
+                        category: unknown (0)
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 10.0.3.2
+                        address(1): 
+                                category: mac (4)
+                                address: 0:8:c7:25:ad:dd
+                service:
+                        ip_version: 4
+                        iana_protocol_number: 6
+                        iana_protocol_name: tcp
+                        port: 65072
+                        protocol: tcp
+        target(0): 
+                decoy: unknown (0)
+                node:
+                        category: unknown (0)
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 194.246.101.65
+                        address(1): 
+                                category: mac (4)
+                                address: 0:e:e8:8:17:76
+                service:
+                        ip_version: 4
+                        iana_protocol_number: 6
+                        iana_protocol_name: tcp
+                        port: 443
+                        protocol: tcp
+        assessment:
+                impact:
+                        severity: medium (3)
+                        completion: succeeded (2)
+                        type: other (0)
+                confidence:
+                        rating: high (3)
+                        confidence: 0.000000
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-175" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/01/2005 05:36 PM" href="/projects/prelude/activity?from=2005-09-01">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-175-notes" class="wiki"><p>The sample alert seem very good already! It would be nice to add some more information in the Analyzer object, namely:</p>
+
+
+	<p>- Analyzer->model<br />- Analyzer->class<br />- Analyzer->manufacturer<br />- Analyzer->version</p></div>
+    </div>
+  </div>
+  
+  <div id="change-176" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="09/03/2005 01:32 AM" href="/projects/prelude/activity?from=2005-09-03">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-176-notes" class="wiki"><p>Hi,<br />I applied the patch to sancp. Which is the exact procedure to register Sancp sensor in the Prelude framework?</p>
+
+
+	<p>Thanks,</p>
+
+
+	<p>Roberto SL</p></div>
+    </div>
+  </div>
+  
+  <div id="change-177" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by  <a title="09/05/2005 12:36 PM" href="/projects/prelude/activity?from=2005-09-05">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-177-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>You can use the following command and it should work:<br /><pre>
+prelude-adduser register sancp "idmef:w admin:r" &lt;manager address&gt;
+</pre></p>
+
+
+	<p>Frank</p></div>
+    </div>
+  </div>
+  
+  <div id="change-178" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/05/2005 01:04 PM" href="/projects/prelude/activity?from=2005-09-05">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-178-notes" class="wiki"><p>Would be a good idea to add a configuration hook for the profile name. It's often regarded as more usable than --prelude --profile command line option that can be used to set another profile name.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-179" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/1">admin admin</a> <a title="09/07/2005 10:59 AM" href="/projects/prelude/activity?from=2005-09-07">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-179-notes" class="wiki"><p>Hi,<br />I downloaded Sancp and decompressed it. Then I run the following command:</p>
+
+
+	<p>patch -p0 < sancp-1.6.1-prelude.diff</p>
+
+
+	<p>This is the output:</p>
+
+
+	<p>patching file sancp-1.6.1/Makefile<br />patching file sancp-1.6.1/add_pass.sh<br />patching file sancp-1.6.1/build_acl.cc<br />patching file sancp-1.6.1/gvars.h<br />patching file sancp-1.6.1/sancp.cc<br />patching file sancp-1.6.1/sancp.h<br />patching file sancp-1.6.1/statefull_logging.cc</p>
+
+
+	<p>cd sancp-1.6.1/</p>
+
+
+	<p>I run:</p>
+
+
+	<p>make</p>
+
+
+	<p>This is the output:</p>
+
+
+	<p>make<br />if [ ! -f build_acl.o -o build_acl.cc -nt build_acl.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c build_acl.cc -o build_acl.o; fi<br />if [ ! -f misc_functs.o -o misc_functs.cc -nt misc_functs.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c misc_functs.cc -o misc_functs.o; fi<br />if [ ! -f outputFileHandle.o -o outputFileHandle.cc -nt outputFileHandle.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c outputFileHandle.cc -o outputFileHandle.o; fi<br />if [ ! -f apply_rule.o -o apply_rule.cc -nt apply_rule.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c apply_rule.cc -o apply_rule.o; fi<br />if [ ! -f decode.o -o decode.cc -nt decode.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c decode.cc -o decode.o; fi<br />if [ ! -f fileHandle.o -o fileHandle.cc -nt fileHandle.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c fileHandle.cc -o fileHandle.o; fi<br />if [ ! -f <a class="wiki-page new" href="/projects/prelude/wiki/MemoryPool">MemoryPool</a>.o -o <a class="wiki-page new" href="/projects/prelude/wiki/MemoryPool">MemoryPool</a>.cc -nt <a class="wiki-page new" href="/projects/prelude/wiki/MemoryPool">MemoryPool</a>.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c <a class="wiki-page new" href="/projects/prelude/wiki/MemoryPool">MemoryPool</a>.cc -o <a class="wiki-page new" href="/projects/prelude/wiki/MemoryPool">MemoryPool</a>.o; fi<br />if [ ! -f pcapFileHandle.o -o pcapFileHandle.cc -nt pcapFileHandle.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c pcapFileHandle.cc -o pcapFileHandle.o; fi<br />if [ ! -f sancp.o -o sancp.cc -nt sancp.o ]; then       g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c sancp.cc -o sancp.o; fi<br />if [ ! -f pcap_functions.o -o pcap_functions.c -nt pcap_functions.o ]; then     gcc -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.2 <code>libprelude-config --cflags</code> -c pcap_functions.c -o pcap_functions.o; fi<br />pcap_functions.c: In function</p></div>
+    </div>
+  </div>
+  
+  <div id="change-180" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by  <a title="09/07/2005 12:36 PM" href="/projects/prelude/activity?from=2005-09-07">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-180-notes" class="wiki"><p>You use:</p>
+
+
+<pre>
+prelude-adduser registration-server sancp
+</pre>
+
+	<p>I think this should be:</p>
+
+
+<pre>
+prelude-adduser registration-server prelude-manager
+</pre>
+
+	<p>Frank</p></div>
+    </div>
+  </div>
+  
+  <div id="change-181" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/1">admin admin</a> <a title="09/08/2005 06:42 AM" href="/projects/prelude/activity?from=2005-09-08">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-181-notes" class="wiki"><p>Hi Frank,<br />Now it works, thanks!</p>
+
+
+	<p>Roberto SL</p>
+
+
+	<p>PS: Yoann if you want to create another page in the Prelude documentation (as you done for Samhain) you can take all my steps and just replace the correction provided by Franc.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-182" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by  <a title="09/19/2005 02:19 PM" href="/projects/prelude/activity?from=2005-09-19">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-182-notes" class="wiki"><p>Patch version 2:</p>
+
+
+	<p>Added:<br /><pre>
+- Analyzer-&gt;model
+- Analyzer-&gt;class
+- Analyzer-&gt;manufacturer
+- Analyzer-&gt;version
+- prelude_profile config variable
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-183" class="journal has-notes">
+    <div id="note-13">
+    <h4><a href="#note-13" class="journal-link">#13</a>
+    
+    Updated by  <a title="10/25/2005 05:29 PM" href="/projects/prelude/activity?from=2005-10-25">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-183-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>I am trying to patch sancp version 1.61 (donwloaded here <a class="external" href="http://www.metre.net/sancp.html">http://www.metre.net/sancp.html</a>) with the patch version 2 but the patch is not working correctly.</p>
+
+
+	<p>Here is the result of the patch :</p>
+
+
+	<p>snort-prelude:~# patch <del>p0 < sancp-1.6.1-prelude.diff<br />patching file sancp-1.6.1/Makefile<br />patching file sancp-1.6.1/add_pass.sh<br />patching file sancp-1.6.1/build_acl.cc<br />Hunk <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: libpreludedb doesn&#39;t install mysql.sql (Closed)" href="/issues/1">#1</a> succeeded at 1168 with fuzz 1.<br />patching file sancp-1.6.1/gvars.h<br />patching file sancp-1.6.1/sancp.cc<br />Hunk <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: IDMEF API inconsistency: idmef_send_message / idmef_recv_message (Closed)" href="/issues/3">#3</a> FAILED at 104.<br />1 out of 6 hunks FAILED -</del> saving rejects to file sancp-1.6.1/sancp.cc.rej<br />patching file sancp-1.6.1/sancp.h<br />Hunk <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: libpreludedb doesn&#39;t install mysql.sql (Closed)" href="/issues/1">#1</a> succeeded at 47 with fuzz 1.<br />patching file sancp-1.6.1/statefull_logging.cc<br />Hunk <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: libpreludedb doesn&#39;t install mysql.sql (Closed)" href="/issues/1">#1</a> succeeded at 183 with fuzz 1.<br />Hunk <a class="issue tracker-2 status-5 priority-3 priority-lowest closed" title="Feature: Implement a new database creation/update method (Closed)" href="/issues/2">#2</a> succeeded at 402 with fuzz 2.</p>
+
+
+	<p>the snap.cc.rej file contains :</p>
+
+
+<hr />
+	<ul>
+	<li>102,107 <strong>**</strong><br />        gVars.stdout_delimiter=DEFAULT_DELIMITER;<br />        gVars.stdout_eor=DEFAULT_EOR;
+
+	<p>for(cKey=0; cKey&lt;HASH_KEYS; cKey++)
+{<br />                gVars.cnx_head[cKey]=NULL;<br />--- 104,115 ----<br />        gVars.stdout_delimiter=DEFAULT_DELIMITER;<br />        gVars.stdout_eor=DEFAULT_EOR;</p></li>
+	</ul>
+
+
+	<p>+       gVars.prelude_impact_severity=PRELUDE_IMPACT_SEVERITY;<br />+       gVars.prelude_impact_completion=PRELUDE_IMPACT_COMPLETION;<br />+       gVars.prelude_impact_type=PRELUDE_IMPACT_TYPE;<br />+       gVars.prelude_confidence_rating=PRELUDE_CONFIDENCE_RATING;<br /><ins><br /></ins><br />        for(cKey=0; cKey&lt;HASH_KEYS; cKey++)
+        {<br />                gVars.cnx_head[cKey]=NULL;</p></div>
+    </div>
+  </div>
+  
+  <div id="change-184" class="journal has-notes">
+    <div id="note-14">
+    <h4><a href="#note-14" class="journal-link">#14</a>
+    
+    Updated by  <a title="12/26/2005 06:45 PM" href="/projects/prelude/activity?from=2005-12-26">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-184-notes" class="wiki"><p>- sancp-1.6.1-prelude-2.diff works fine. <br />- Note: you have to apply the two patches provided from <a class="external" href="http://www.metre.net">http://www.metre.net</a> (fix200511.a.patch, fix200511.b.patch) before you can apply the prelude patch...</p></div>
+    </div>
+  </div>
+  
+  <div id="change-185" class="journal has-notes">
+    <div id="note-15">
+    <h4><a href="#note-15" class="journal-link">#15</a>
+    
+    Updated by  <a title="02/13/2006 11:43 AM" href="/projects/prelude/activity?from=2006-02-13">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-185-notes" class="wiki"><p>Hello Frank,</p>
+
+
+	<p>I can't compile SANCP with the latest libprelude library (0.9.5). I have applied both SANCP patches and you one (sancp-1.6.1-prelude-2.diff)</p>
+
+
+<pre>
+$ make
+if [ ! -f build_acl.o -o build_acl.cc -nt build_acl.o ]; then g++ -Wall -g -O3 -s -I/usr/include/pcap -L/usr/lib/libpcap.so.0.6.3 -I/usr/local/include -c build_acl.cc -o build_acl.o; fi
+In file included from /usr/local/include/libprelude/prelude.h:41,
+                 from sancp.h:50,
+                 from build_acl.cc:2:
+/usr/local/include/libprelude/prelude-error.h: In function @prelude_bool_t prelude_error_is_verbose(prelude_error_t)':
+/usr/local/include/libprelude/prelude-error.h:405: error: invalid conversion from @int' to @prelude_bool_t'
+*** Error code 1
+
+Stop in /tmp/sancp-1.6.1.
+</pre>
+
+	<p>Do you already have a sollution?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-186" class="journal has-notes">
+    <div id="note-16">
+    <h4><a href="#note-16" class="journal-link">#16</a>
+    
+    Updated by  <a title="03/30/2006 09:26 AM" href="/projects/prelude/activity?from=2006-03-30">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-186-notes" class="wiki"><p>Attached is now the newest patch, this adds the possibility to specify options on a per rule base</p></div>
+    </div>
+  </div>
+  
+  <div id="change-187" class="journal has-notes">
+    <div id="note-17">
+    <h4><a href="#note-17" class="journal-link">#17</a>
+    
+    Updated by  <a title="05/26/2006 02:59 AM" href="/projects/prelude/activity?from=2006-05-26">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-187-notes" class="wiki"><p>Thanks for the patch works great !</p></div>
+    </div>
+  </div>
+  
+  <div id="change-188" class="journal has-notes">
+    <div id="note-18">
+    <h4><a href="#note-18" class="journal-link">#18</a>
+    
+    Updated by <a class="user active" href="/users/19">Sebastien Tricaud</a> <a title="08/02/2007 05:43 PM" href="/projects/prelude/activity?from=2007-08-02">about 17 years</a> ago
+    </h4>
+
+    <div id="journal-188-notes" class="wiki"><p>This patch makes sancp work with prelude. Compile stuff are fixed and it applies to sancp-1.6.2-candidate.C.</p>
+
+
+	<p>Thanks for your contribution. I'll send an email to the project maintainer.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-189" class="journal has-notes has-details">
+    <div id="note-19">
+    <h4><a href="#note-19" class="journal-link">#19</a>
+    
+    Updated by <a class="user active" href="/users/19">Sebastien Tricaud</a> <a title="08/22/2007 10:44 AM" href="/projects/prelude/activity?from=2007-08-22">about 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Feedback</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-189-notes" class="wiki"><p>That patch has been accepted upstream.</p>
+
+
+	<p>This is now fixed in development version 1.6.2 (beta), that you can download at <a class="external" href="http://metre.net/files/sancp-1.6.2-candidate.C.2.tar.gz">http://metre.net/files/sancp-1.6.2-candidate.C.2.tar.gz</a> .</p>
+
+
+	<p>Thank you for your contribution, I least that made me discover sancp <img src="/plugin_assets/redmine_wiki_extensions/images/wink.png" alt=";)"></p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/91.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/91.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

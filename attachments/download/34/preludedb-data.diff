@@ -1,0 +1,44 @@
+=== classic-insert.c
+==================================================================
+--- classic-insert.c	(revision 8185)
++++ classic-insert.c	(local)
+@@ -56,15 +56,12 @@
+ static inline int get_data(preludedb_sql_t *sql, idmef_data_t *data, char **output)
+ {
+ 	switch ( idmef_data_get_type(data) ) {
+-	case IDMEF_DATA_TYPE_BYTE: case IDMEF_DATA_TYPE_BYTE_STRING:
+-		return preludedb_sql_escape_binary(sql, idmef_data_get_data(data), idmef_data_get_len(data), output);
+-
+-	case IDMEF_DATA_TYPE_CHAR:
+-		return preludedb_sql_escape_fast(sql, idmef_data_get_data(data), 1, output);
+-
+-	case IDMEF_DATA_TYPE_CHAR_STRING:
+-		return preludedb_sql_escape_fast(sql, idmef_data_get_data(data), idmef_data_get_len(data) - 1, output);
+-
++        case IDMEF_DATA_TYPE_BYTE:
++        case IDMEF_DATA_TYPE_BYTE_STRING:
++        case IDMEF_DATA_TYPE_CHAR_STRING:
++        case IDMEF_DATA_TYPE_CHAR:
++                return preludedb_sql_escape_binary(sql, idmef_data_get_data(data), idmef_data_get_len(data), output);
++		
+ 	default: {
+ 		prelude_string_t *string;
+ 		int ret;
+@@ -79,7 +76,7 @@
+ 			return ret;
+ 		}
+ 
+-		ret = preludedb_sql_escape(sql, prelude_string_get_string(string), output);
++		ret = preludedb_sql_escape_binary(sql, prelude_string_get_string(string), prelude_string_get_len(string), output);
+ 
+ 		prelude_string_destroy(string);
+ 
+@@ -1398,7 +1395,7 @@
+                 free(type);
+                 return ret;
+         }
+-
++        
+ 	ret = get_data(sql, idmef_additional_data_get_data(additional_data), &data);
+ 	if ( ret < 0 ) {
+ 		free(type);

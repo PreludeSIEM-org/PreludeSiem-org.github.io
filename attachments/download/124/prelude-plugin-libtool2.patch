@@ -1,0 +1,13 @@
+diff --git a/src/include/prelude-plugin.h b/src/include/prelude-plugin.h
+index a2b5421..ba095fc 100644
+--- a/src/include/prelude-plugin.h
++++ b/src/include/prelude-plugin.h
+@@ -56,6 +56,8 @@ typedef struct {
+  * Hack for plugin preloading,
+  * without having the end program depend on ltdl.
+  */
++#define lt_preloaded_symbols lt__PROGRAM__LTX_preloaded_symbols
++
+ extern const void *lt_preloaded_symbols[];
+ 
+ #define PRELUDE_PLUGIN_SET_PRELOADED_SYMBOLS()                     \

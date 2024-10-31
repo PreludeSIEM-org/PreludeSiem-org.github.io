@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #84: make problem - samhain with prelude on FreeBSD - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="T7rn+EuNcrandI361JPArS+h2JNJGZCMwxeipc+kfq9clY+Xgpl/NS3ehQDJ24nzU+qpDVMTycIdmWY1S6RKrA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="PRELUDE SIEM - Bug #84: make problem - samhain with prelude on FreeBSD" href="http://www.prelude-siem.org/issues/84.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude/issues/report">Summary</a></li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #84</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#103" accesskey="p" href="/issues/103">« Previous</a> |
+        <span class="position">42 of 45</span> |
+      <a title="#44" accesskey="n" href="/issues/44">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>make problem - samhain with prelude on FreeBSD</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="06/30/2005 02:40 PM" href="/projects/prelude/activity?from=2005-06-30">over 19 years</a> ago.
+        Updated <a title="07/03/2005 05:36 PM" href="/projects/prelude/activity?from=2005-07-03">over 19 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="category attribute"><div class="label">Category:</div><div class="value">samhain</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>I have found a problem in compiling samhain with prelude support. It seems to be a problem in configure stage. I had to put "-cflags=-pthread" in configure to solve this issue.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-152" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/30/2005 03:05 PM" href="/projects/prelude/activity?from=2005-06-30">over 19 years</a> ago
+    </h4>
+
+    <div id="journal-152-notes" class="wiki"><pre>
+# ./configure --with-prelude
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether make sets $(MAKE)... yes
+checking build system type... i386-unknown-freebsd5.4
+checking host system type... i386-unknown-freebsd5.4
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables...
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking how to run the C preprocessor... gcc -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln -s works... no, using
+checking for gawk... no
+checking for mawk... no
+checking for nawk... nawk
+checking for hostname... /bin/hostname
+checking whether gcc accepts -fstack-protector... no
+checking for egrep... grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/msg.h usability... yes
+checking sys/msg.h presence... yes
+checking for sys/msg.h... yes
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for host-specific issues... none
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether sys/types.h defines makedev... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether stat file-mode macros are broken... no
+checking whether sys_siglist is declared... yes
+checking for stddef.h... yes
+checking for libgen.h... yes
+checking for sched.h... yes
+checking for sys/vfs.h... no
+checking for sys/select.h... yes
+checking for sys/socket.h... yes
+checking for netinet/in.h... yes
+checking for regex.h... yes
+checking for glob.h... yes
+checking for linux/ext2_fs.h... no
+checking for ext2fs/ext2_fs.h... no
+checking for paths.h... yes
+checking for arpa/nameser.h... yes
+checking for arpa/nameser_compat.h... yes
+checking utmpx.h usability... no
+checking utmpx.h presence... no
+checking for utmpx.h... no
+checking for struct statfs.f_flags... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for _LARGE_FILES value needed for large files... no
+checking whether _POSIX_SOURCE is necessary... no
+checking for strftime... yes
+checking for memcmp... yes
+checking for memcpy... yes
+checking for memmove... yes
+checking for memset... yes
+checking for getpwent... yes
+checking for endpwent... yes
+checking for gettimeofday... yes
+checking for strlcat... yes
+checking for strlcpy... yes
+checking for strstr... yes
+checking for strchr... yes
+checking for strerror... yes
+checking for strsignal... yes
+checking for seteuid... yes
+checking for setreuid... yes
+checking for setresuid... yes
+checking for lstat... yes
+checking for getwd... yes
+checking for getcwd... yes
+checking for ptrace... yes
+checking for usleep... yes
+checking for setpriority... yes
+checking for getpeereid... yes
+checking for nanosleep... yes
+checking for strptime... yes
+checking for basename... yes
+checking for sched_yield... yes
+checking for inet_aton... yes
+checking for gethostbyname... yes
+checking for setutent... no
+checking for setrlimit... yes
+checking for gethostname... yes
+checking for uname... yes
+checking for initgroups... yes
+checking for getpagesize... yes
+checking for ttyname... yes
+checking for fchmod... yes
+checking for statfs... yes
+checking for va_copy()... yes
+checking for +va_copy()... no
+checking whether va_lists can be copied by value... yes
+checking for vsnprintf... yes
+checking for working vsnprintf... (cached) yes
+checking for mlock... yes
+checking whether mlock is broken... no
+checking how to get filesystem type... 4.4BSD/OSF
+checking for gethostbyname in -lnsl... no
+checking for socket in -lsocket... no
+checking for gethostbyname in -lnsl... (cached) no
+checking for res_search in -lsocket... no
+checking for res_search in -lresolv... no
+checking for dn_skipname in -lresolv... no
+checking for +dn_skipname in -lresolv... no
+checking for working long double with more range or precision than double... yes
+checking for long long typedef... yes
+checking for ptrdiff_t... yes
+checking for size_t... yes
+checking for char *... yes
+checking size of char *... 4
+checking for size_t... (cached) yes
+checking size of size_t... 4
+checking for unsigned long... yes
+checking size of unsigned long... 4
+checking for unsigned int ... yes
+checking size of unsigned int ... 4
+checking for unsigned short... yes
+checking size of unsigned short... 2
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking whether struct stat has a st_flags field... yes
+checking whether st_flags field is useful... yes
+checking for struct cmsgcred... yes
+checking for struct fcred... no
+checking for struct sockcred... no
+checking for SO_PEERCRED... no
+checking for inline... inline
+checking for an ANSI C-conforming const... yes
+checking whether byte ordering is bigendian... no
+checking signal.h usability... yes
+checking signal.h presence... yes
+checking for signal.h... yes
+checking for SI_USER in signal.h... yes
+checking for SA_SIGINFO in signal.h... yes
+checking whether sa_sigaction is supported... no
+checking for +gmpz_init in -lgmp... no
+checking for mpz_init in -lgmp... no
+checking gmp.h usability... no
+checking gmp.h presence... no
+checking for gmp.h... no
+checking whether to use libwrap... no
+checking whether to use prelude... yes
+checking for libprelude-config... /usr/local/bin/libprelude-config
+checking for libprelude - version &gt;= 0.9.0... yes
+checking which random module to use... default
+checking whether /dev/random exists... yes
+checking for user samhain... no
+checking for user daemon... yes
+checking base key setting .. collecting entropy... 277151606 545865727
+checking key position... 7
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating samhain-install.sh
+config.status: creating init/samhain.startLSB
+config.status: creating init/samhain.startLinux
+config.status: creating init/samhain.startGentoo
+config.status: creating init/samhain.startFreeBSD
+config.status: creating init/samhain.startSolaris
+config.status: creating init/samhain.startHPUX
+config.status: creating init/samhain.startIRIX
+config.status: creating samhain.spec
+config.status: creating rules.deb
+config.status: creating rules.deb-light
+config.status: creating hp_ux.psf
+config.status: creating scripts/samhain.spec
+config.status: creating scripts/redhat_i386.client.spec
+config.status: creating scripts/samhain.ebuild
+config.status: creating scripts/samhain.ebuild-light
+config.status: creating scripts/samhainadmin.pl
+config.status: creating scripts/check_samhain.pl
+config.status: creating deploy.sh
+config.status: creating config.h
+config.status: executing default commands
+
+ samhain has been configured as follows:
+     System binaries: /usr/local/sbin
+  Configuration file: /etc/samhainrc
+        Manual pages: /usr/local/man
+                Data: /var/lib/samhain
+            PID file: /var/run/samhain.pid
+            Log file: /var/log/samhain_log
+            Base key: 277151606,545865727
+
+    Selected rc file: samhainrc.freebsd
+#
+#
+#
+# make
+(...)
+
+gcc  -DHAVE_CONFIG_H -I. -I./include   -O2 -I/usr/local/include -Wall -W  -fno-strength-reduce -fno-omit-frame-pointer -DSH_STANDALONE -o sh_entropy.o -c x_sh_entropy.c
+./encode 0 ./src/sh_forward.c --&gt; x_sh_forward.c
+gcc  -DHAVE_CONFIG_H -I. -I./include   -O2 -I/usr/local/include -Wall -W  -fno-strength-reduce -fno-omit-frame-pointer -DSH_STANDALONE -o sh_forward.o -c x_sh_forward.c
+./encode 0 ./src/sh_modules.c --&gt; x_sh_modules.c
+gcc  -DHAVE_CONFIG_H -I. -I./include   -O2 -I/usr/local/include -Wall -W  -fno-strength-reduce -fno-omit-frame-pointer -DSH_STANDALONE -o sh_modules.o -c x_sh_modules.c
+./encode 0 ./src/sh_utmp.c --&gt; x_sh_utmp.c
+gcc  -DHAVE_CONFIG_H -I. -I./include   -O2 -I/usr/local/include -Wall -W  -fno-strength-reduce -fno-omit-frame-pointer -DSH_STANDALONE -o sh_utmp.o -c x_sh_utmp.c
+gcc  -DHAVE_CONFIG_H -I. -I./include   -O2 -I/usr/local/include -Wall -W  -fno-strength-reduce -fno-omit-frame-pointer -DSYSTEMMAP="/boot/System.map" -o kern_head ./src/kern_head.c -L/usr/local/lib -lprelude -L/usr/local/lib -lgnutls -L/usr/local/lib -lgcrypt -L/usr/local/lib -lgpg-error -lz
+/usr/local/lib/libprelude.so: undefined reference to @pthread_create'
+/usr/local/lib/libprelude.so: undefined reference to @pthread_exit'
+/usr/local/lib/libprelude.so: undefined reference to @pthread_atfork'
+/usr/local/lib/libprelude.so: undefined reference to @pthread_join'
+/usr/local/lib/libprelude.so: undefined reference to @pthread_cond_timedwait'
+*** Error code 1
+
+Stop in /home/arisjr/samhain-2.0.7.
+
+# ./configure --with-prelude --with-cflags=-pthread
+(...)
+# make
+(ok)
+# make install
+(ok)
+
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-153" class="journal has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/30/2005 03:06 PM" href="/projects/prelude/activity?from=2005-06-30">over 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-154" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/30/2005 03:14 PM" href="/projects/prelude/activity?from=2005-06-30">over 19 years</a> ago
+    </h4>
+
+    <div id="journal-154-notes" class="wiki"><p>Fix commited in r6695. Rainer, can you sync that fix in your own repository ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-155" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/03/2005 05:36 PM" href="/projects/prelude/activity?from=2005-07-03">over 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-155-notes" class="wiki"><p>Fixed, Samhain 2.0.8 released including the fix.</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/84.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/84.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

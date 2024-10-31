@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>prelude-client-argv.patch - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="m3W/qDJlshpocIN1InSN4FRL0lStIhLHgOKPzVwJqEKIWtfH+3G/meLai48/PMS+KACjyrcoS4lebEtd2AmcQQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-libprelude controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>prelude-client-argv.patch</h2>
+
+<div class="attachments">
+<p>untested patch! - 
+   <span class="author">, 06/29/2007 05:34 PM</span></p>
+<p><a href="/attachments/download/97/prelude-client-argv.patch">Download</a>   <span class="size">(5.56 KB)</span></p>
+</div>
+
+  <form action="/attachments/97/prelude-client-argv.patch" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      src/prelude-client.c	(copie de travail)
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1106</th>
+  <th class="line-num">1106</th>
+  <td class="line-code ">
+    <pre>        int ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1107</th>
+  <th class="line-num">1107</th>
+  <td class="line-code ">
+    <pre>        prelude_string_t *err;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1108</th>
+  <th class="line-num">1108</th>
+  <td class="line-code ">
+    <pre>        prelude_option_warning_t old_warnings;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1109</th>
+  <td class="line-code diff_in">
+    <pre>        char *program;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1109</th>
+  <th class="line-num">1110</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1110</th>
+  <th class="line-num">1111</th>
+  <td class="line-code ">
+    <pre>        prelude_return_val_if_fail(client, -1);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1111</th>
+  <th class="line-num">1112</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">1123</th>
+  <th class="line-num">1124</th>
+  <td class="line-code ">
+    <pre>        if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1124</th>
+  <th class="line-num">1125</th>
+  <td class="line-code ">
+    <pre>                return handle_client_error(client, ret);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1125</th>
+  <th class="line-num">1126</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1126</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        ret = fill_client_infos(client, _prelude_internal_argv[0]);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1127</th>
+  <td class="line-code diff_in">
+    <pre>        if (0 &lt; _prelude_internal_argc)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1128</th>
+  <td class="line-code diff_in">
+    <pre>                program = _prelude_internal_argv[0];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1129</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1130</th>
+  <td class="line-code diff_in">
+    <pre>                program = NULL;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1131</th>
+  <td class="line-code diff_in">
+    <pre>        ret = fill_client_infos(client, program);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1127</th>
+  <th class="line-num">1132</th>
+  <td class="line-code ">
+    <pre>        if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1128</th>
+  <th class="line-num">1133</th>
+  <td class="line-code ">
+    <pre>                return handle_client_error(client, ret);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1129</th>
+  <th class="line-num">1134</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      INSTALL	(copie de travail)
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1</th>
+  <th class="line-num">1</th>
+  <td class="line-code ">
+    <pre>Installation Instructions</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">2</th>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre>*************************</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Copyright (C) 1994, 1995, 1996, 1999, 2000, 2001, 2002, 2004, 2005<span> Free</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre><span></span>Software Foundation, Inc.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre>Copyright (C) 1994, 1995, 1996, 1999, 2000, 2001, 2002, 2004, 2005<span>,</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre><span>2006 Free </span>Software Foundation, Inc.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">6</th>
+  <th class="line-num">6</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">7</th>
+  <th class="line-num">7</th>
+  <td class="line-code ">
+    <pre>This file is free documentation; the Free Software Foundation gives</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">8</th>
+  <th class="line-num">8</th>
+  <td class="line-code ">
+    <pre>unlimited permission to copy, distribute and modify it.</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">10</th>
+  <th class="line-num">10</th>
+  <td class="line-code ">
+    <pre>Basic Installation</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">11</th>
+  <th class="line-num">11</th>
+  <td class="line-code ">
+    <pre>==================</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">12</th>
+  <th class="line-num">12</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">13</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>These are generic installation instructions.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre>Briefly, the shell commands `./configure; make; make install&#39; should</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre>configure, build, and install this package.  The following</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>more-detailed instructions are generic; see the `README&#39; file for</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre>instructions specific to this package.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">14</th>
+  <th class="line-num">17</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">15</th>
+  <th class="line-num">18</th>
+  <td class="line-code ">
+    <pre>   The `configure&#39; shell script attempts to guess correct values for</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">16</th>
+  <th class="line-num">19</th>
+  <td class="line-code ">
+    <pre>various system-dependent variables used during compilation.  It uses</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">23</th>
+  <th class="line-num">26</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">24</th>
+  <th class="line-num">27</th>
+  <td class="line-code ">
+    <pre>   It can also use an optional file (typically called `config.cache&#39;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">25</th>
+  <th class="line-num">28</th>
+  <td class="line-code ">
+    <pre>and enabled with `--cache-file=config.cache&#39; or simply `-C&#39;) that saves</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">26</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>the results of its tests to speed up reconfiguring.  <span>(</span>Caching is</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">29</th>
+  <td class="line-code diff_in">
+    <pre>the results of its tests to speed up reconfiguring.  <span></span>Caching is</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">27</th>
+  <th class="line-num">30</th>
+  <td class="line-code ">
+    <pre>disabled by default to prevent problems with accidental use of stale</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">28</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>cache files.<span>)</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">31</th>
+  <td class="line-code diff_in">
+    <pre>cache files.<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">29</th>
+  <th class="line-num">32</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">30</th>
+  <th class="line-num">33</th>
+  <td class="line-code ">
+    <pre>   If you need to do unusual things to compile the package, please try</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">31</th>
+  <th class="line-num">34</th>
+  <td class="line-code ">
+    <pre>to figure out how `configure&#39; could check whether to do them, and mail</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">35</th>
+  <th class="line-num">38</th>
+  <td class="line-code ">
+    <pre>may remove or edit it.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">36</th>
+  <th class="line-num">39</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">37</th>
+  <th class="line-num">40</th>
+  <td class="line-code ">
+    <pre>   The file `configure.ac&#39; (or `configure.in&#39;) is used to create</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">38</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>`configure&#39; by a program called `autoconf&#39;.  You <span>only need</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">39</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>`configure.ac&#39; if you want to change it or regenerate `configure&#39; using</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">40</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre><span>a newer version </span>of `autoconf&#39;.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre>`configure&#39; by a program called `autoconf&#39;.  You <span>need `configure.ac&#39; if</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">42</th>
+  <td class="line-code diff_in">
+    <pre>you want to change it or regenerate `configure&#39; using a newer version</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">43</th>
+  <td class="line-code diff_in">
+    <pre><span></span>of `autoconf&#39;.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">41</th>
+  <th class="line-num">44</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">42</th>
+  <th class="line-num">45</th>
+  <td class="line-code ">
+    <pre>The simplest way to compile this package is:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">43</th>
+  <th class="line-num">46</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">44</th>
+  <th class="line-num">47</th>
+  <td class="line-code ">
+    <pre>  1. `cd&#39; to the directory containing the package&#39;s source code and type</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">45</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>     `./configure&#39; to configure the package for your system.  If you&#39;re</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">46</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>     using `csh&#39; on an old version of System V, you might need to type</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">47</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>     `sh ./configure&#39; instead to prevent `csh&#39; from trying to execute</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">48</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>     `configure&#39; itself.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">48</th>
+  <td class="line-code diff_in">
+    <pre>     `./configure&#39; to configure the package for your system.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">49</th>
+  <th class="line-num">49</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">50</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>     Running `configure&#39; <span>takes awhile.  While running, it prints some</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">51</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>     <span></span>messages telling which features it is checking for.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">50</th>
+  <td class="line-code diff_in">
+    <pre>     Running `configure&#39; <span>might take a while.  While running, it prints</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">51</th>
+  <td class="line-code diff_in">
+    <pre>     <span>some </span>messages telling which features it is checking for.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">52</th>
+  <th class="line-num">52</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">53</th>
+  <th class="line-num">53</th>
+  <td class="line-code ">
+    <pre>  2. Type `make&#39; to compile the package.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">54</th>
+  <th class="line-num">54</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">78</th>
+  <th class="line-num">78</th>
+  <td class="line-code ">
+    <pre>by setting variables in the command line or in the environment.  Here</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">79</th>
+  <th class="line-num">79</th>
+  <td class="line-code ">
+    <pre>is an example:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">80</th>
+  <th class="line-num">80</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">81</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>     ./configure CC=c<span>89 CFLAGS=-O2</span> LIBS=-lposix</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">81</th>
+  <td class="line-code diff_in">
+    <pre>     ./configure CC=c<span>99 CFLAGS=-g</span> LIBS=-lposix</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">82</th>
+  <th class="line-num">82</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">83</th>
+  <th class="line-num">83</th>
+  <td class="line-code ">
+    <pre>   *Note Defining Variables::, for more details.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">84</th>
+  <th class="line-num">84</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">87</th>
+  <th class="line-num">87</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">88</th>
+  <th class="line-num">88</th>
+  <td class="line-code ">
+    <pre>You can compile the package for more than one kind of computer at the</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">89</th>
+  <th class="line-num">89</th>
+  <td class="line-code ">
+    <pre>same time, by placing the object files for each architecture in their</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">90</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>own directory.  To do this, you must use a version of `make&#39; that</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">91</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>supports the `VPATH&#39; variable, such as GNU `make&#39;.  `cd&#39; to the</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">90</th>
+  <td class="line-code diff_in">
+    <pre>own directory.  To do this, you can use GNU `make&#39;.  `cd&#39; to the</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">92</th>
+  <th class="line-num">91</th>
+  <td class="line-code ">
+    <pre>directory where you want the object files and executables to go and run</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">93</th>
+  <th class="line-num">92</th>
+  <td class="line-code ">
+    <pre>the `configure&#39; script.  `configure&#39; automatically checks for the</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">94</th>
+  <th class="line-num">93</th>
+  <td class="line-code ">
+    <pre>source code in the directory that `configure&#39; is in and in `..&#39;.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">95</th>
+  <th class="line-num">94</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">96</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>   If you have to use a `make&#39; that does not support the `VPATH&#39;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">97</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>variable, you have to compile the package for one architecture at a</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">98</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>time in the source code directory.  After you have installed the</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">99</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>package for one architecture, use `make distclean&#39; before reconfiguring</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">100</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>for another architecture.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">95</th>
+  <td class="line-code diff_in">
+    <pre>   With a non-GNU `make&#39;, it is safer to compile the package for one</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre>architecture at a time in the source code directory.  After you have</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>installed the package for one architecture, use `make distclean&#39; before</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">98</th>
+  <td class="line-code diff_in">
+    <pre>reconfiguring for another architecture.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">101</th>
+  <th class="line-num">99</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">102</th>
+  <th class="line-num">100</th>
+  <td class="line-code ">
+    <pre>Installation Names</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">103</th>
+  <th class="line-num">101</th>
+  <td class="line-code ">
+    <pre>==================</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">190</th>
+  <th class="line-num">188</th>
+  <td class="line-code ">
+    <pre>     ./configure CC=/usr/local2/bin/gcc</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">191</th>
+  <th class="line-num">189</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">192</th>
+  <th class="line-num">190</th>
+  <td class="line-code ">
+    <pre>causes the specified `gcc&#39; to be used as the C compiler (unless it is</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">193</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>overridden in the site shell script).<span>  Here is a another example:</span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">191</th>
+  <td class="line-code diff_in">
+    <pre>overridden in the site shell script).<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">194</th>
+  <th class="line-num">192</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">195</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>     /bin/bash ./configure CONFIG_SHELL=/bin/bash</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">193</th>
+  <td class="line-code diff_in">
+    <pre>Unfortunately, this technique does not work for `CONFIG_SHELL&#39; due to</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">194</th>
+  <td class="line-code diff_in">
+    <pre>an Autoconf bug.  Until the bug is fixed you can use this workaround:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">196</th>
+  <th class="line-num">195</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">197</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>Here the `CONFIG_SHELL=/bin/bash&#39; operand causes subsequent</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">198</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>configuration-related scripts to be executed by `/bin/bash&#39;.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">196</th>
+  <td class="line-code diff_in">
+    <pre>     CONFIG_SHELL=/bin/bash /bin/bash ./configure CONFIG_SHELL=/bin/bash</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">199</th>
+  <th class="line-num">197</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">200</th>
+  <th class="line-num">198</th>
+  <td class="line-code ">
+    <pre>`configure&#39; Invocation</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">201</th>
+  <th class="line-num">199</th>
+  <td class="line-code ">
+    <pre>======================</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>/ - Repository - VigiRRD - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="8nimNWDOJWf4blfF9H+fCLq87XOPignTHVjSopmnyGnhV85aqdoo5HLEXz/pN9ZWxvec7ZWAUJ3D1hYyHaf8ag==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+  <script src="/javascripts/repository_navigation.js"></script>
+  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.prelude-siem.org/projects/vigirrd/repository/revisions.atom" />
+  <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" />
+</head>
+<body class="theme-Prelude project-vigirrd controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/vigirrd/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="changesets" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/vigirrd/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="changesets" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/vigirrd/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/vigirrd">Overview</a></li><li><a class="activity" href="/projects/vigirrd/activity">Activity</a></li><li><a class="repository selected" href="/projects/vigirrd/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+<div class="contextual">
+  
+<a class="icon icon-stats" href="/projects/vigirrd/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/vigirrd/repository" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />  <!-- Branches Dropdown -->
+    | Branch: 
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option>
+<option value="release-4.0">release-4.0</option>
+<option value="release-5.0">release-5.0</option>
+<option value="release-5.1">release-5.1</option>
+<option value="release-5.2">release-5.2</option>
+<option value="support/v3.5">support/v3.5</option></select>
+
+    | Tag: 
+    <select name="tag" id="tag"><option value="">&nbsp;</option>
+<option value="v3.5">v3.5</option>
+<option value="v3.5.1">v3.5.1</option>
+<option value="v3.6.0">v3.6.0</option>
+<option value="v3.6.0RC1">v3.6.0RC1</option>
+<option value="v3.6.0RC2">v3.6.0RC2</option>
+<option value="v3.6.0RC3">v3.6.0RC3</option>
+<option value="v3.6.0RC4">v3.6.0RC4</option>
+<option value="v4.0">v4.0</option>
+<option value="v4.0.1">v4.0.1</option>
+<option value="v4.0.1rc1">v4.0.1rc1</option>
+<option value="v4.0rc1">v4.0rc1</option>
+<option value="v4.0rc2">v4.0rc2</option>
+<option value="v4.0rc3">v4.0rc3</option>
+<option value="v4.1.0">v4.1.0</option>
+<option value="v4.1.0rc1">v4.1.0rc1</option>
+<option value="v4.1.0rc2">v4.1.0rc2</option>
+<option value="v4.1.0rc3">v4.1.0rc3</option>
+<option value="v5.0.0">v5.0.0</option>
+<option value="v5.0.0rc1">v5.0.0rc1</option>
+<option value="v5.0.0rc2">v5.0.0rc2</option>
+<option value="v5.0.1">v5.0.1</option>
+<option value="v5.1.0">v5.1.0</option>
+<option value="v5.1.0a1">v5.1.0a1</option>
+<option value="v5.1.0a2">v5.1.0a2</option>
+<option value="v5.1.0a3">v5.1.0a3</option>
+<option value="v5.1.0b1">v5.1.0b1</option>
+<option value="v5.1.1">v5.1.1</option>
+<option value="v5.2.0">v5.2.0</option>
+<option value="v5.2.0b1">v5.2.0b1</option>
+<option value="v5.2.0b2">v5.2.0b2</option>
+<option value="v5.2.0rc1">v5.2.0rc1</option></select>
+
+    | Revision: 
+    <input type="text" name="rev" id="rev" value="master" size="8" />
+</form>
+</div>
+
+<h2><a href="/projects/vigirrd/repository/revisions/master/show">vigirrd</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr id="3a8e4c06e471595f6eb262bb9b5582d9" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('3a8e4c06e471595f6eb262bb9b5582d9', '/projects/vigirrd/repository/revisions/master/show/conf?depth=1&amp;parent_id=3a8e4c06e471595f6eb262bb9b5582d9');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirrd/repository/revisions/master/show/conf">conf</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="06e5c0d0f9eabd9525e5f9dc4f6f37cf" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('06e5c0d0f9eabd9525e5f9dc4f6f37cf', '/projects/vigirrd/repository/revisions/master/show/deployment?depth=1&amp;parent_id=06e5c0d0f9eabd9525e5f9dc4f6f37cf');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirrd/repository/revisions/master/show/deployment">deployment</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="9a09b4dfda82e3e665e31092d1c3ec8d" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('9a09b4dfda82e3e665e31092d1c3ec8d', '/projects/vigirrd/repository/revisions/master/show/doc?depth=1&amp;parent_id=9a09b4dfda82e3e665e31092d1c3ec8d');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirrd/repository/revisions/master/show/doc">doc</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="80f11bb270993a8ef821454522b0e628" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('80f11bb270993a8ef821454522b0e628', '/projects/vigirrd/repository/revisions/master/show/ez_setup?depth=1&amp;parent_id=80f11bb270993a8ef821454522b0e628');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirrd/repository/revisions/master/show/ez_setup">ez_setup</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a46a1bce0b67c45bec8f435bd5390a54" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('a46a1bce0b67c45bec8f435bd5390a54', '/projects/vigirrd/repository/revisions/master/show/pkg?depth=1&amp;parent_id=a46a1bce0b67c45bec8f435bd5390a54');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirrd/repository/revisions/master/show/pkg">pkg</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="0164f93761d4fe691aeeb920013b7160" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('0164f93761d4fe691aeeb920013b7160', '/projects/vigirrd/repository/revisions/master/show/vigirrd?depth=1&amp;parent_id=0164f93761d4fe691aeeb920013b7160');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirrd/repository/revisions/master/show/vigirrd">vigirrd</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirrd/repository/changes/.gitignore?rev=master">.gitignore</a>
+</td>
+<td class="size">332 Bytes</td>
+</tr>
+<tr id="21c55fa400e4d25aed3a755371e32151" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirrd/repository/changes/COPYING.txt?rev=master">COPYING.txt</a>
+</td>
+<td class="size">17.7 KB</td>
+</tr>
+<tr id="97c91a104c431d0c365565d3ac03ac13" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirrd/repository/changes/MANIFEST.in?rev=master">MANIFEST.in</a>
+</td>
+<td class="size">301 Bytes</td>
+</tr>
+<tr id="b67911656ef5d18c4ae36cb6741b7965" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirrd/repository/changes/Makefile?rev=master">Makefile</a>
+</td>
+<td class="size">2.31 KB</td>
+</tr>
+<tr id="26fd799ea07494916e9da9b91b2aac64" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirrd/repository/changes/README.txt?rev=master">README.txt</a>
+</td>
+<td class="size">1.15 KB</td>
+</tr>
+<tr id="2106010aaac9a112b9493a06e8efe1be" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-x-python" href="/projects/vigirrd/repository/changes/app_cfg.py?rev=master">app_cfg.py</a>
+</td>
+<td class="size">2.27 KB</td>
+</tr>
+<tr id="a91efb528777d13c9f105798a9c5673b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirrd/repository/changes/buildenv?rev=master">buildenv</a>
+</td>
+<td class="size">11 Bytes</td>
+</tr>
+<tr id="a55fc4e553af13234f26342646b88e19" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirrd/repository/changes/buildout.cfg?rev=master">buildout.cfg</a>
+</td>
+<td class="size">98 Bytes</td>
+</tr>
+<tr id="fd5844eabfcf3340fd063669386fcd6b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirrd/repository/changes/development.ini?rev=master">development.ini</a>
+</td>
+<td class="size">4.44 KB</td>
+</tr>
+<tr id="380c6a8ebbbce17d55d50ef17d3cf906" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirrd/repository/changes/setup.cfg?rev=master">setup.cfg</a>
+</td>
+<td class="size">640 Bytes</td>
+</tr>
+<tr id="2eeaed663bd0d25b7e608891384b7298" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-x-python" href="/projects/vigirrd/repository/changes/setup.py?rev=master">setup.py</a>
+</td>
+<td class="size">2.26 KB</td>
+</tr>
+<tr id="665e705a52de0ff0b2064b25d1da195d" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirrd/repository/changes/test.ini?rev=master">test.ini</a>
+</td>
+<td class="size">986 Bytes</td>
+</tr>
+<tr id="eef7dbba4dc02fa3e9f0729ab301e719" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirrd/repository/changes/test32.ini?rev=master">test32.ini</a>
+</td>
+<td class="size">823 Bytes</td>
+</tr>
+<tr id="7a6c90240d1cf7cb44d1b91916b2aa6f" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirrd/repository/changes/test64.ini?rev=master">test64.ini</a>
+</td>
+<td class="size">823 Bytes</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"a7ceeb11bac039355e9c8950ca3152831d1f33c0":{"parent_scmids":["c91e91e20a10207c2eeb0f54a00d6cc5d368adfc","fde63534b2e8bcf6fe7e5884e8445e518d49adeb"],"rdmid":0,"refs":null,"scmid":"a7ceeb11bac039355e9c8950ca3152831d1f33c0","href":"/projects/vigirrd/repository/revisions/a7ceeb11bac039355e9c8950ca3152831d1f33c0","space":0},"4660f3c34619af92c4c7b4d8049d2836135b1f82":{"parent_scmids":["c007d141415c883b2b86776874f6bc960043e0cb"],"rdmid":1,"refs":null,"scmid":"4660f3c34619af92c4c7b4d8049d2836135b1f82","href":"/projects/vigirrd/repository/revisions/4660f3c34619af92c4c7b4d8049d2836135b1f82","space":1},"452264fa4df6bd21d5f6e37de1a33cc8f8db3867":{"parent_scmids":["a7ceeb11bac039355e9c8950ca3152831d1f33c0","4660f3c34619af92c4c7b4d8049d2836135b1f82"],"rdmid":2,"refs":null,"scmid":"452264fa4df6bd21d5f6e37de1a33cc8f8db3867","href":"/projects/vigirrd/repository/revisions/452264fa4df6bd21d5f6e37de1a33cc8f8db3867","space":0},"c738134163ac7de58cd748f7331bfacef9c8ad76":{"parent_scmids":["452264fa4df6bd21d5f6e37de1a33cc8f8db3867"],"rdmid":3,"refs":null,"scmid":"c738134163ac7de58cd748f7331bfacef9c8ad76","href":"/projects/vigirrd/repository/revisions/c738134163ac7de58cd748f7331bfacef9c8ad76","space":0},"15860731142826bdcdb0a56c8e6c5587cd2f59ed":{"parent_scmids":["c738134163ac7de58cd748f7331bfacef9c8ad76"],"rdmid":4,"refs":null,"scmid":"15860731142826bdcdb0a56c8e6c5587cd2f59ed","href":"/projects/vigirrd/repository/revisions/15860731142826bdcdb0a56c8e6c5587cd2f59ed","space":0},"f26844429db096a0ba6e4ef4352591eba730a758":{"parent_scmids":["15860731142826bdcdb0a56c8e6c5587cd2f59ed"],"rdmid":5,"refs":null,"scmid":"f26844429db096a0ba6e4ef4352591eba730a758","href":"/projects/vigirrd/repository/revisions/f26844429db096a0ba6e4ef4352591eba730a758","space":0},"ef5cda8c1e1f06253e90271a830c1fbf1b36c97c":{"parent_scmids":["f26844429db096a0ba6e4ef4352591eba730a758"],"rdmid":6,"refs":null,"scmid":"ef5cda8c1e1f06253e90271a830c1fbf1b36c97c","href":"/projects/vigirrd/repository/revisions/ef5cda8c1e1f06253e90271a830c1fbf1b36c97c","space":0},"a0ef1c2bd0c885db3f2a6cb13cc1eb6c62dbf7c7":{"parent_scmids":["ef5cda8c1e1f06253e90271a830c1fbf1b36c97c"],"rdmid":7,"refs":null,"scmid":"a0ef1c2bd0c885db3f2a6cb13cc1eb6c62dbf7c7","href":"/projects/vigirrd/repository/revisions/a0ef1c2bd0c885db3f2a6cb13cc1eb6c62dbf7c7","space":0},"62ea01fa98f8ee10ec9295b932bc3cc1d4171a5d":{"parent_scmids":["a0ef1c2bd0c885db3f2a6cb13cc1eb6c62dbf7c7"],"rdmid":8,"refs":null,"scmid":"62ea01fa98f8ee10ec9295b932bc3cc1d4171a5d","href":"/projects/vigirrd/repository/revisions/62ea01fa98f8ee10ec9295b932bc3cc1d4171a5d","space":0},"869f53d67fa18dc9dd2bd2f8de0370c4c02bb379":{"parent_scmids":["62ea01fa98f8ee10ec9295b932bc3cc1d4171a5d"],"rdmid":9,"refs":"master release-5.2","scmid":"869f53d67fa18dc9dd2bd2f8de0370c4c02bb379","href":"/projects/vigirrd/repository/revisions/869f53d67fa18dc9dd2bd2f8de0370c4c02bb379","space":0}},
+    2
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"></div>
+
+
+<form action="/projects/vigirrd/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 869f53d6" href="/projects/vigirrd/repository/revisions/869f53d67fa18dc9dd2bd2f8de0370c4c02bb379">869f53d6</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-1" value="869f53d67fa18dc9dd2bd2f8de0370c4c02bb379" onclick="$(&#39;#cbto-2&#39;).prop(&#39;checked&#39;,true);" checked="checked" /></td>
+<td class="checkbox"></td>
+<td class="committed_on">09/10/2020 01:39 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0</p>
+
+
+	<p>Change-Id: Ia6576da18823c862526273ff8568ff1393f70ab0</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 62ea01fa" href="/projects/vigirrd/repository/revisions/62ea01fa98f8ee10ec9295b932bc3cc1d4171a5d">62ea01fa</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-2" value="62ea01fa98f8ee10ec9295b932bc3cc1d4171a5d" onclick="$(&#39;#cbto-3&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-2" value="62ea01fa98f8ee10ec9295b932bc3cc1d4171a5d" onclick="if ($(&#39;#cb-2&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-1&#39;).prop(&#39;checked&#39;,true);}" checked="checked" /></td>
+<td class="committed_on">08/03/2020 08:54 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0rc1</p>
+
+
+	<p>Change-Id: I0ae6954573c2f10345486cdd474193a1397f3e58</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision a0ef1c2b" href="/projects/vigirrd/repository/revisions/a0ef1c2bd0c885db3f2a6cb13cc1eb6c62dbf7c7">a0ef1c2b</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-3" value="a0ef1c2bd0c885db3f2a6cb13cc1eb6c62dbf7c7" onclick="$(&#39;#cbto-4&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-3" value="a0ef1c2bd0c885db3f2a6cb13cc1eb6c62dbf7c7" onclick="if ($(&#39;#cb-3&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-2&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/03/2020 01:55 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b2</p>
+
+
+	<p>Change-Id: I522a2d28aadea9d84f0e96cfdbdc40b1e7e80d60</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision ef5cda8c" href="/projects/vigirrd/repository/revisions/ef5cda8c1e1f06253e90271a830c1fbf1b36c97c">ef5cda8c</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-4" value="ef5cda8c1e1f06253e90271a830c1fbf1b36c97c" onclick="$(&#39;#cbto-5&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-4" value="ef5cda8c1e1f06253e90271a830c1fbf1b36c97c" onclick="if ($(&#39;#cb-4&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-3&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/01/2020 07:43 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2027] Logs vers STDERR pour la tâche cron</p>
+
+
+	<p>Modifie la commande "vigirrd-cleanup-cache" pour que les logs soient<br />envoyés vers STDERR afin d'éviter tout risque de mauvais libellé pour<br />les fichiers de logs.</p>
+
+
+	<p>Change-Id: Id5cb454649c3ec296a86ec1a5940546708b3da3f...</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision f2684442" href="/projects/vigirrd/repository/revisions/f26844429db096a0ba6e4ef4352591eba730a758">f2684442</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-5" value="f26844429db096a0ba6e4ef4352591eba730a758" onclick="$(&#39;#cbto-6&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-5" value="f26844429db096a0ba6e4ef4352591eba730a758" onclick="if ($(&#39;#cb-5&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-4&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 03:09 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2026] Changement de dénomination sociale</p>
+
+
+	<p>Change-Id: I5348d17ecc3cdb78232d7847f2b32c4722bf0710</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 15860731" href="/projects/vigirrd/repository/revisions/15860731142826bdcdb0a56c8e6c5587cd2f59ed">15860731</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-6" value="15860731142826bdcdb0a56c8e6c5587cd2f59ed" onclick="$(&#39;#cbto-7&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-6" value="15860731142826bdcdb0a56c8e6c5587cd2f59ed" onclick="if ($(&#39;#cb-6&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-5&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 09:43 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2026] Changement de dénomination sociale</p>
+
+
+	<p>Change-Id: Iec5a685562441ff52daecc9f4a8ced5d303b30a2<br />Refs: #2026</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision c7381341" href="/projects/vigirrd/repository/revisions/c738134163ac7de58cd748f7331bfacef9c8ad76">c7381341</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-7" value="c738134163ac7de58cd748f7331bfacef9c8ad76" onclick="$(&#39;#cbto-8&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-7" value="c738134163ac7de58cd748f7331bfacef9c8ad76" onclick="if ($(&#39;#cb-7&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-6&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/23/2020 09:52 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b1</p>
+
+
+	<p>Change-Id: I942c2a6be4615d61e17743b0c36b4e7482180c73</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 452264fa" href="/projects/vigirrd/repository/revisions/452264fa4df6bd21d5f6e37de1a33cc8f8db3867">452264fa</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-8" value="452264fa4df6bd21d5f6e37de1a33cc8f8db3867" onclick="$(&#39;#cbto-9&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-8" value="452264fa4df6bd21d5f6e37de1a33cc8f8db3867" onclick="if ($(&#39;#cb-8&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-7&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">01/31/2020 10:09 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Merge commit '4660f3c3'</p>
+
+
+	<p>Change-Id: Ie213fa391cc991b8906c603f2977d298a20ef85d</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 4660f3c3" href="/projects/vigirrd/repository/revisions/4660f3c34619af92c4c7b4d8049d2836135b1f82">4660f3c3</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-9" value="4660f3c34619af92c4c7b4d8049d2836135b1f82" onclick="$(&#39;#cbto-10&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-9" value="4660f3c34619af92c4c7b4d8049d2836135b1f82" onclick="if ($(&#39;#cb-9&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-8&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">01/30/2020 12:36 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#1991] Corrections liées à l'export CSV</p>
+
+
+	<p>Change-Id: Ic522a3443917fe676ce134313a435bc977324e6b<br />Refs: #1991</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision a7ceeb11" href="/projects/vigirrd/repository/revisions/a7ceeb11bac039355e9c8950ca3152831d1f33c0">a7ceeb11</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-10" value="a7ceeb11bac039355e9c8950ca3152831d1f33c0" onclick="if ($(&#39;#cb-10&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-9&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">01/30/2020 10:17 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Merge branch 'release-5.0'</p>
+
+
+	<p>Change-Id: Ie4c0196f1e3c11c46166e6647b6b228ff691ea50</p></td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="View differences" />
+</form></div>
+
+  <p>
+    <a href="/projects/vigirrd/repository/revisions">View all revisions</a>
+    |
+    <a href="/projects/vigirrd/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="/projects/vigirrd/repository/revisions.atom">Atom</a></span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

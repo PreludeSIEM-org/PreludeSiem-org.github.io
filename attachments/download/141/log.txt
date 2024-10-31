@@ -1,0 +1,18 @@
+==2824== Invalid read of size 8
+==2824==    at 0x4E5DA78: prelude_client_profile_get_profile_dirname (in /usr/lib64/libprelude.so.2.17.0)
+==2824==    by 0x408E06: list_cmd (prelude-admin.c:2020)
+==2824==    by 0x40854A: main (prelude-admin.c:2212)
+==2824==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
+==2824== 
+==2824== Process terminating with default action of signal 11 (SIGSEGV)
+==2824==  Access not within mapped region at address 0x10
+==2824==    at 0x4E5DA78: prelude_client_profile_get_profile_dirname (in /usr/lib64/libprelude.so.2.17.0)
+==2824==    by 0x408E06: list_cmd (prelude-admin.c:2020)
+==2824==    by 0x40854A: main (prelude-admin.c:2212)
+==2824== 
+==2824== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 1)
+==2824== malloc/free: in use at exit: 118,538 bytes in 4,068 blocks.
+==2824== malloc/free: 5,510 allocs, 1,442 frees, 144,714 bytes allocated.
+==2824== For counts of detected errors, rerun with: -v
+==2824== searching for pointers to 4,068 not-freed blocks.
+==2824== checked 314,744 bytes.

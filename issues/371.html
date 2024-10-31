@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #371: opening events in new window/tab - Prewikka - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="KWLBJaWVLHd3tH8nZ6IqT3QCxpw5FicEIwIfKEI7fc46TalKbIEh9P0ed9166mMRCEm3AiMcfkr9jNu4xjtJzQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prewikka - Bug #371: opening events in new window/tab" href="http://www.prelude-siem.org/issues/371.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prewikka controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prewikka/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prewikka">Overview</a></li><li><a class="activity" href="/projects/prewikka/activity">Activity</a></li><li><a class="roadmap" href="/projects/prewikka/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prewikka/issues">Issues</a></li><li><a class="gantt" href="/projects/prewikka/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prewikka/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prewikka/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prewikka/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prewikka/issues/report">Summary</a></li>
+
+<li><a href="/projects/prewikka/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prewikka/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #371</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#369" accesskey="p" href="/issues/369">« Previous</a> |
+        <span class="position">4 of 4</span> |
+      Next »
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>opening events in new window/tab</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="/users/258">Tom Bicer</a> <a title="02/12/2010 07:20 PM" href="/projects/prewikka/activity?from=2010-02-12">over 14 years</a> ago.
+        Updated <a title="11/08/2015 12:07 PM" href="/projects/prewikka/activity?from=2015-11-08">almost 9 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value">-</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a href="/versions/131">PRELUDE SIEM - Prelude OSS 1.0.0</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value">02/12/2010</div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-100"><tr><td style="width: 100%;" class="closed" title="100%"></td></tr></table><p class="percent">100%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Opening events in new window or tab is inconsistent.<br />Unable to open events occurring only once in new window, this applies to medium and high warnings.<br />Events occurring more than once open in new window but with out any information, this applies to medium and high warnings.<br />Events with low warning open in new window and with information related to the warning<br />Prelude console version 1.0.0rc3</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <p><a title="Revision 830ec9fb" href="/projects/prewikka/repository/revisions/830ec9fbe0bf8d121dc93bcb57f7d7f3a5344536">Revision 830ec9fb</a>
+        (<a href="/projects/prewikka/repository/revisions/830ec9fbe0bf8d121dc93bcb57f7d7f3a5344536/diff">diff</a>)
+        <br />
+        <span class="author">Added by Yoann Vandoorselaere  <a title="02/24/2010 10:16 AM" href="/projects/prewikka/activity?from=2010-02-24">over 14 years</a> ago</span></p>
+    <div class="wiki">
+        <p>Fix inline filtering problem for event name with start/ending space</p>
+
+
+	<p>When performing an exact comparison of the filter input, do not strip<br />space from the start and the end of the input, since it happen that<br />some sensor put a space at the end of the string. Closes <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: opening events in new window/tab (Closed)" href="/issues/371">#371</a>.</p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-1392" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/258">Tom Bicer</a> <a title="02/12/2010 07:25 PM" href="/projects/prewikka/activity?from=2010-02-12">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1392-notes" class="wiki"><p>Correction to low warning events: single occurring event do not open in new window.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1393" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="02/16/2010 10:21 AM" href="/projects/prewikka/activity?from=2010-02-16">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1393-notes" class="wiki"><p>Hi Tom,</p>
+
+
+	<p>When there is a serie of events aggregated (example: 10 x TCP packet dropped):</p>
+
+
+	<p>- clicking on the event name will trigger a filter on this event name.<br />- clicking on the number before the events name will list all events aggregated.</p>
+
+
+	<p>When there is only one events (example: TCP packet dropped):</p>
+
+
+	<p>- clicking on the event will trigger a CSS popup from which there are two links:<br />  - one to see the alert details<br />  - the second, to add a filter on the event name</p>
+
+
+	<p>The problem is most probably that you are trying to open a non existing link (the CSS popup, instead of opening the popup, then activating the link) in a new Windows.</p>
+
+
+	<p>Could you confirm whether this is what is happening?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1396" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/258">Tom Bicer</a> <a title="02/17/2010 07:55 PM" href="/projects/prewikka/activity?from=2010-02-17">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1396-notes" class="wiki"><ul>
+	<li>Aggregated event, high severity (x2)<br />- Clicking on the event name: No results are shown.<br />- Clicking on the number before the event name: No results are shown. Removing filter on Classification column shows events</li>
+	</ul>
+
+
+	<p>Above with severity low somewhat works. Clicking on event name shows just that event name with number beside it, from here event name doesn't link anymore, just the number.</p>
+
+
+	<ul>
+	<li>One event<br />- Clicking on the event name, see alert details: Results are shown.<br />- Clicking on the event name, add filter on the event name: No results are shown.</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-1397" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="02/18/2010 10:24 AM" href="/projects/prewikka/activity?from=2010-02-18">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1397-notes" class="wiki"><p>Tom Bicer wrote:</p>
+
+
+<blockquote>
+
+	<ul>
+	<li>Aggregated event, high severity (x2)<br />- Clicking on the event name: No results are shown.<br />- Clicking on the number before the event name: No results are shown. Removing filter on Classification column shows events</li>
+	</ul>
+
+
+	<p>Above with severity low somewhat works. Clicking on event name shows just that event name with number beside it, from here event name doesn't link anymore, just the number.</p>
+
+
+	<ul>
+	<li>One event<br />- Clicking on the event name, see alert details: Results are shown.<br />- Clicking on the event name, add filter on the event name: No results are shown.</li>
+	</ul>
+
+
+</blockquote>
+
+	<p>Filtering on classification.text seems broken for you. Could you please provides a screenshot of the empty view, after you click on the event name, with the inline filter box for classification open?</p>
+
+
+	<p>Regards,</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1398" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/258">Tom Bicer</a> <a title="02/18/2010 03:12 PM" href="/projects/prewikka/activity?from=2010-02-18">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1398-notes" class="wiki"><p>Can't send screenshot, web server responsed with:</p>
+
+
+	<p>Internal error</p>
+
+
+	<p>An error occurred on the page you were trying to access.<br />If you continue to experience problems please contact your redMine administrator for assistance.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1399" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/258">Tom Bicer</a> <a title="02/18/2010 03:24 PM" href="/projects/prewikka/activity?from=2010-02-18">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1399-notes" class="wiki"><p>Tom Bicer wrote:</p>
+
+
+<blockquote>
+
+	<p>Can't send screenshot, web server responsed with:</p>
+
+
+	<p>Internal error</p>
+
+
+	<p>An error occurred on the page you were trying to access.<br />If you continue to experience problems please contact your redMine administrator for assistance.</p>
+
+
+</blockquote>
+
+	<p>Perhaps this may help. Changing filter condition on the event name to regular expression "~" works. However "=" on low warnings works just fine.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1400" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="02/18/2010 03:32 PM" href="/projects/prewikka/activity?from=2010-02-18">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1400-notes" class="wiki"><p>Could you please let us know what is the event name where this happened? <br />I suspect there might be some whitespace / escapping problem</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1401" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/258">Tom Bicer</a> <a title="02/18/2010 04:50 PM" href="/projects/prewikka/activity?from=2010-02-18">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1401-notes" class="wiki"><p>Yoann Vandoorselaere wrote:</p>
+
+
+<blockquote>
+
+	<p>Could you please let us know what is the event name where this happened? <br />I suspect there might be some whitespace / escapping problem</p>
+
+
+</blockquote>
+
+	<p>Happens in all of them. Examples:<br />ET TROJAN Oficla Checkin (1)<br />SQL Microsoft SQL Server 2000 Server hello buffer overflow attempt<br />ET WEB_CLIENT Possible HTTP 404 XSS Attempt (External Source)</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1402" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="02/18/2010 05:59 PM" href="/projects/prewikka/activity?from=2010-02-18">over 14 years</a> ago
+    </h4>
+
+    <div id="journal-1402-notes" class="wiki"><p>I'm unable to reproduce this issue, could you please provides your libprelude and libpreludedb version? <br />Additionally, would it be possible to access the Prewikka instance where this problem is occuring?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1403" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by Anonymous <a title="02/24/2010 10:58 AM" href="/projects/prewikka/activity?from=2010-02-24">over 14 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Resolved</i></li>
+       <li><strong>% Done</strong> changed from <i>0</i> to <i>100</i></li>
+    </ul>
+    <div id="journal-1403-notes" class="wiki"><p>Applied in changeset <a class="changeset" title="Fix inline filtering problem for event name with start/ending space When performing an exact com..." href="/projects/prewikka/repository/revisions/830ec9fbe0bf8d121dc93bcb57f7d7f3a5344536">830ec9fbe0bf8d121dc93bcb57f7d7f3a5344536</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2438" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/301">Thomas </a> <a title="11/08/2015 12:07 PM" href="/projects/prewikka/activity?from=2015-11-08">almost 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Resolved</i> to <i>Closed</i></li>
+       <li><strong>Target version</strong> changed from <i>109</i> to <i>Prelude OSS 1.0.0</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/371.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/371.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/116.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2005-12-20T18:19:04Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Libprelude - Bug #116: libprelude modifies argv value which causes SIGHUP to malfunction</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/116"/>
+    <id>http://www.prelude-siem.org/issues/116?journal_id=273</id>
+    <updated>2005-12-20T18:19:04Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #116: libprelude modifies argv value which causes SIGHUP to malfunction</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/116"/>
+    <id>http://www.prelude-siem.org/issues/116?journal_id=274</id>
+    <updated>2006-01-02T22:31:49Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Experimental patch attached. Could you please try and report whether it break things or solve your issues with existing Prelude module ?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #116: libprelude modifies argv value which causes SIGHUP to malfunction</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/116"/>
+    <id>http://www.prelude-siem.org/issues/116?journal_id=275</id>
+    <updated>2006-01-05T01:40:48Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;fixed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Fixed in r7562&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #116: libprelude modifies argv value which causes SIGHUP to malfunction</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/116"/>
+    <id>http://www.prelude-siem.org/issues/116?journal_id=1191</id>
+    <updated>2009-04-29T12:26:12Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Libprelude&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;1&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;0.9.2&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

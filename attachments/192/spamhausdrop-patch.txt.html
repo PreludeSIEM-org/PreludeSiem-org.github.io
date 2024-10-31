@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>spamhausdrop-patch.txt - Prelude Correlator - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="05HIaiJKLhJZHxPCfP0SZ7BIWuveK7FfDjlvXfmmw8PAvqAF614jkdO1GzhhtVs5zAMrdcQh6BHQt6vNfab3wA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-prelude-correlator controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-correlator/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-correlator/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-correlator/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-correlator">Overview</a></li><li><a class="activity" href="/projects/prelude-correlator/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-correlator/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude-correlator/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-correlator/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-correlator/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-correlator/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>spamhausdrop-patch.txt</h2>
+
+<div class="attachments">
+<p>second attempt - 
+   <span class="author">Anonymous, 09/13/2009 09:16 PM</span></p>
+<p><a href="/attachments/download/192/spamhausdrop-patch.txt">Download</a>   <span class="size">(4.57 KB)</span></p>
+</div>
+
+  &nbsp;
+  <div class="autoscroll">
+<table class="filecontent syntaxhl">
+<tbody>
+  <tr id="L1">
+    <th class="line-num">
+      <a href="#L1">1</a>
+    </th>
+    <td class="line-code">
+      <pre>From cb97e817ad50190e322b73f5a8dad30701b5a774 Mon Sep 17 00:00:00 2001
+</pre>
+    </td>
+  </tr>
+  <tr id="L2">
+    <th class="line-num">
+      <a href="#L2">2</a>
+    </th>
+    <td class="line-code">
+      <pre>From: Wes Young &lt;wes@barely3am.com&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L3">
+    <th class="line-num">
+      <a href="#L3">3</a>
+    </th>
+    <td class="line-code">
+      <pre>Date: Sun, 13 Sep 2009 19:12:04 +0000
+</pre>
+    </td>
+  </tr>
+  <tr id="L4">
+    <th class="line-num">
+      <a href="#L4">4</a>
+    </th>
+    <td class="line-code">
+      <pre>Subject: [PATCH] added spamhausdrop.py to plugins
+</pre>
+    </td>
+  </tr>
+  <tr id="L5">
+    <th class="line-num">
+      <a href="#L5">5</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L6">
+    <th class="line-num">
+      <a href="#L6">6</a>
+    </th>
+    <td class="line-code">
+      <pre>---
+</pre>
+    </td>
+  </tr>
+  <tr id="L7">
+    <th class="line-num">
+      <a href="#L7">7</a>
+    </th>
+    <td class="line-code">
+      <pre> PreludeCorrelator/plugins/spamhausdrop.py |  103 +++++++++++++++++++++++++++++
+</pre>
+    </td>
+  </tr>
+  <tr id="L8">
+    <th class="line-num">
+      <a href="#L8">8</a>
+    </th>
+    <td class="line-code">
+      <pre> 1 files changed, 103 insertions(+), 0 deletions(-)
+</pre>
+    </td>
+  </tr>
+  <tr id="L9">
+    <th class="line-num">
+      <a href="#L9">9</a>
+    </th>
+    <td class="line-code">
+      <pre> create mode 100644 PreludeCorrelator/plugins/spamhausdrop.py
+</pre>
+    </td>
+  </tr>
+  <tr id="L10">
+    <th class="line-num">
+      <a href="#L10">10</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L11">
+    <th class="line-num">
+      <a href="#L11">11</a>
+    </th>
+    <td class="line-code">
+      <pre>diff --git a/PreludeCorrelator/plugins/spamhausdrop.py b/PreludeCorrelator/plugins/spamhausdrop.py
+</pre>
+    </td>
+  </tr>
+  <tr id="L12">
+    <th class="line-num">
+      <a href="#L12">12</a>
+    </th>
+    <td class="line-code">
+      <pre>new file mode 100644
+</pre>
+    </td>
+  </tr>
+  <tr id="L13">
+    <th class="line-num">
+      <a href="#L13">13</a>
+    </th>
+    <td class="line-code">
+      <pre>index 0000000..0692cf9
+</pre>
+    </td>
+  </tr>
+  <tr id="L14">
+    <th class="line-num">
+      <a href="#L14">14</a>
+    </th>
+    <td class="line-code">
+      <pre>--- /dev/null
+</pre>
+    </td>
+  </tr>
+  <tr id="L15">
+    <th class="line-num">
+      <a href="#L15">15</a>
+    </th>
+    <td class="line-code">
+      <pre>+++ b/PreludeCorrelator/plugins/spamhausdrop.py
+</pre>
+    </td>
+  </tr>
+  <tr id="L16">
+    <th class="line-num">
+      <a href="#L16">16</a>
+    </th>
+    <td class="line-code">
+      <pre>@@ -0,0 +1,103 @@
+</pre>
+    </td>
+  </tr>
+  <tr id="L17">
+    <th class="line-num">
+      <a href="#L17">17</a>
+    </th>
+    <td class="line-code">
+      <pre>+# Copyright (C) 2009 PreludeIDS Technologies. All Rights Reserved.
+</pre>
+    </td>
+  </tr>
+  <tr id="L18">
+    <th class="line-num">
+      <a href="#L18">18</a>
+    </th>
+    <td class="line-code">
+      <pre>+# Author: Yoann Vandoorselaere &lt;yoann.v@prelude-ids.com&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L19">
+    <th class="line-num">
+      <a href="#L19">19</a>
+    </th>
+    <td class="line-code">
+      <pre>+# Author: Wes Young &lt;wes@barely3am.com&gt;
+</pre>
+    </td>
+  </tr>
+  <tr id="L20">
+    <th class="line-num">
+      <a href="#L20">20</a>
+    </th>
+    <td class="line-code">
+      <pre>+#
+</pre>
+    </td>
+  </tr>
+  <tr id="L21">
+    <th class="line-num">
+      <a href="#L21">21</a>
+    </th>
+    <td class="line-code">
+      <pre>+# This file is part of the Prelude-Correlator program.
+</pre>
+    </td>
+  </tr>
+  <tr id="L22">
+    <th class="line-num">
+      <a href="#L22">22</a>
+    </th>
+    <td class="line-code">
+      <pre>+#
+</pre>
+    </td>
+  </tr>
+  <tr id="L23">
+    <th class="line-num">
+      <a href="#L23">23</a>
+    </th>
+    <td class="line-code">
+      <pre>+# This program is free software; you can redistribute it and/or modify
+</pre>
+    </td>
+  </tr>
+  <tr id="L24">
+    <th class="line-num">
+      <a href="#L24">24</a>
+    </th>
+    <td class="line-code">
+      <pre>+# it under the terms of the GNU General Public License as published by
+</pre>
+    </td>
+  </tr>
+  <tr id="L25">
+    <th class="line-num">
+      <a href="#L25">25</a>
+    </th>
+    <td class="line-code">
+      <pre>+# the Free Software Foundation; either version 2, or (at your option)
+</pre>
+    </td>
+  </tr>
+  <tr id="L26">
+    <th class="line-num">
+      <a href="#L26">26</a>
+    </th>
+    <td class="line-code">
+      <pre>+# any later version.
+</pre>
+    </td>
+  </tr>
+  <tr id="L27">
+    <th class="line-num">
+      <a href="#L27">27</a>
+    </th>
+    <td class="line-code">
+      <pre>+#
+</pre>
+    </td>
+  </tr>
+  <tr id="L28">
+    <th class="line-num">
+      <a href="#L28">28</a>
+    </th>
+    <td class="line-code">
+      <pre>+# This program is distributed in the hope that it will be useful,
+</pre>
+    </td>
+  </tr>
+  <tr id="L29">
+    <th class="line-num">
+      <a href="#L29">29</a>
+    </th>
+    <td class="line-code">
+      <pre>+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+</pre>
+    </td>
+  </tr>
+  <tr id="L30">
+    <th class="line-num">
+      <a href="#L30">30</a>
+    </th>
+    <td class="line-code">
+      <pre>+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+</pre>
+    </td>
+  </tr>
+  <tr id="L31">
+    <th class="line-num">
+      <a href="#L31">31</a>
+    </th>
+    <td class="line-code">
+      <pre>+# GNU General Public License for more details.
+</pre>
+    </td>
+  </tr>
+  <tr id="L32">
+    <th class="line-num">
+      <a href="#L32">32</a>
+    </th>
+    <td class="line-code">
+      <pre>+#
+</pre>
+    </td>
+  </tr>
+  <tr id="L33">
+    <th class="line-num">
+      <a href="#L33">33</a>
+    </th>
+    <td class="line-code">
+      <pre>+# You should have received a copy of the GNU General Public License
+</pre>
+    </td>
+  </tr>
+  <tr id="L34">
+    <th class="line-num">
+      <a href="#L34">34</a>
+    </th>
+    <td class="line-code">
+      <pre>+# along with this program; see the file COPYING.  If not, write to
+</pre>
+    </td>
+  </tr>
+  <tr id="L35">
+    <th class="line-num">
+      <a href="#L35">35</a>
+    </th>
+    <td class="line-code">
+      <pre>+# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+</pre>
+    </td>
+  </tr>
+  <tr id="L36">
+    <th class="line-num">
+      <a href="#L36">36</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L37">
+    <th class="line-num">
+      <a href="#L37">37</a>
+    </th>
+    <td class="line-code">
+      <pre>+import os, httplib, time
+</pre>
+    </td>
+  </tr>
+  <tr id="L38">
+    <th class="line-num">
+      <a href="#L38">38</a>
+    </th>
+    <td class="line-code">
+      <pre>+from PreludeCorrelator import require
+</pre>
+    </td>
+  </tr>
+  <tr id="L39">
+    <th class="line-num">
+      <a href="#L39">39</a>
+    </th>
+    <td class="line-code">
+      <pre>+from PreludeCorrelator.idmef import IDMEF
+</pre>
+    </td>
+  </tr>
+  <tr id="L40">
+    <th class="line-num">
+      <a href="#L40">40</a>
+    </th>
+    <td class="line-code">
+      <pre>+from PreludeCorrelator.pluginmanager import Plugin
+</pre>
+    </td>
+  </tr>
+  <tr id="L41">
+    <th class="line-num">
+      <a href="#L41">41</a>
+    </th>
+    <td class="line-code">
+      <pre>+from PreludeCorrelator.context import Context, Timer
+</pre>
+    </td>
+  </tr>
+  <tr id="L42">
+    <th class="line-num">
+      <a href="#L42">42</a>
+    </th>
+    <td class="line-code">
+      <pre>+from netaddr import IPAddress, IPNetwork
+</pre>
+    </td>
+  </tr>
+  <tr id="L43">
+    <th class="line-num">
+      <a href="#L43">43</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L44">
+    <th class="line-num">
+      <a href="#L44">44</a>
+    </th>
+    <td class="line-code">
+      <pre>+class SpamhausDropPlugin(Plugin):
+</pre>
+    </td>
+  </tr>
+  <tr id="L45">
+    <th class="line-num">
+      <a href="#L45">45</a>
+    </th>
+    <td class="line-code">
+      <pre>+    RELOAD = 7 * 24 * 60 * 60
+</pre>
+    </td>
+  </tr>
+  <tr id="L46">
+    <th class="line-num">
+      <a href="#L46">46</a>
+    </th>
+    <td class="line-code">
+      <pre>+    SERVER = &quot;www.spamhaus.org&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L47">
+    <th class="line-num">
+      <a href="#L47">47</a>
+    </th>
+    <td class="line-code">
+      <pre>+    URI = &quot;/drop/drop.lasso&quot;
+</pre>
+    </td>
+  </tr>
+  <tr id="L48">
+    <th class="line-num">
+      <a href="#L48">48</a>
+    </th>
+    <td class="line-code">
+      <pre>+    TIMEOUT = 10
+</pre>
+    </td>
+  </tr>
+  <tr id="L49">
+    <th class="line-num">
+      <a href="#L49">49</a>
+    </th>
+    <td class="line-code">
+      <pre>+    FILENAME = require.get_data_filename(__name__, &quot;spamhaus_drop.dat&quot;)
+</pre>
+    </td>
+  </tr>
+  <tr id="L50">
+    <th class="line-num">
+      <a href="#L50">50</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L51">
+    <th class="line-num">
+      <a href="#L51">51</a>
+    </th>
+    <td class="line-code">
+      <pre>+    def __loadData(self, age=0):
+</pre>
+    </td>
+  </tr>
+  <tr id="L52">
+    <th class="line-num">
+      <a href="#L52">52</a>
+    </th>
+    <td class="line-code">
+      <pre>+        for line in open(self.__filename, &quot;r&quot;):
+</pre>
+    </td>
+  </tr>
+  <tr id="L53">
+    <th class="line-num">
+      <a href="#L53">53</a>
+    </th>
+    <td class="line-code">
+      <pre>+            if line[0] == &#39;;&#39;:
+</pre>
+    </td>
+  </tr>
+  <tr id="L54">
+    <th class="line-num">
+      <a href="#L54">54</a>
+    </th>
+    <td class="line-code">
+      <pre>+                continue
+</pre>
+    </td>
+  </tr>
+  <tr id="L55">
+    <th class="line-num">
+      <a href="#L55">55</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L56">
+    <th class="line-num">
+      <a href="#L56">56</a>
+    </th>
+    <td class="line-code">
+      <pre>+            ip, sbl = line.split(&#39;;&#39;)
+</pre>
+    </td>
+  </tr>
+  <tr id="L57">
+    <th class="line-num">
+      <a href="#L57">57</a>
+    </th>
+    <td class="line-code">
+      <pre>+            ip = IPNetwork(ip.strip())
+</pre>
+    </td>
+  </tr>
+  <tr id="L58">
+    <th class="line-num">
+      <a href="#L58">58</a>
+    </th>
+    <td class="line-code">
+      <pre>+            self.__mynets.append(ip)
+</pre>
+    </td>
+  </tr>
+  <tr id="L59">
+    <th class="line-num">
+      <a href="#L59">59</a>
+    </th>
+    <td class="line-code">
+      <pre>+        
+</pre>
+    </td>
+  </tr>
+  <tr id="L60">
+    <th class="line-num">
+      <a href="#L60">60</a>
+    </th>
+    <td class="line-code">
+      <pre>+        if self.__reload &gt; 0:
+</pre>
+    </td>
+  </tr>
+  <tr id="L61">
+    <th class="line-num">
+      <a href="#L61">61</a>
+    </th>
+    <td class="line-code">
+      <pre>+            Timer(self.__reload - age, self.__retrieveData).start()
+</pre>
+    </td>
+  </tr>
+  <tr id="L62">
+    <th class="line-num">
+      <a href="#L62">62</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L63">
+    <th class="line-num">
+      <a href="#L63">63</a>
+    </th>
+    <td class="line-code">
+      <pre>+    def __downloadData(self):
+</pre>
+    </td>
+  </tr>
+  <tr id="L64">
+    <th class="line-num">
+      <a href="#L64">64</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.info(&quot;Downloading host list, this might take some time...&quot;)
+</pre>
+    </td>
+  </tr>
+  <tr id="L65">
+    <th class="line-num">
+      <a href="#L65">65</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L66">
+    <th class="line-num">
+      <a href="#L66">66</a>
+    </th>
+    <td class="line-code">
+      <pre>+        try:
+</pre>
+    </td>
+  </tr>
+  <tr id="L67">
+    <th class="line-num">
+      <a href="#L67">67</a>
+    </th>
+    <td class="line-code">
+      <pre>+            con = httplib.HTTPConnection(self.__server, timeout=self.__timeout)
+</pre>
+    </td>
+  </tr>
+  <tr id="L68">
+    <th class="line-num">
+      <a href="#L68">68</a>
+    </th>
+    <td class="line-code">
+      <pre>+        except TypeError:
+</pre>
+    </td>
+  </tr>
+  <tr id="L69">
+    <th class="line-num">
+      <a href="#L69">69</a>
+    </th>
+    <td class="line-code">
+      <pre>+            con = httplib.HTTPConnection(self.__server)
+</pre>
+    </td>
+  </tr>
+  <tr id="L70">
+    <th class="line-num">
+      <a href="#L70">70</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L71">
+    <th class="line-num">
+      <a href="#L71">71</a>
+    </th>
+    <td class="line-code">
+      <pre>+        con.request(&quot;GET&quot;, self.__uri)
+</pre>
+    </td>
+  </tr>
+  <tr id="L72">
+    <th class="line-num">
+      <a href="#L72">72</a>
+    </th>
+    <td class="line-code">
+      <pre>+        r = con.getresponse()
+</pre>
+    </td>
+  </tr>
+  <tr id="L73">
+    <th class="line-num">
+      <a href="#L73">73</a>
+    </th>
+    <td class="line-code">
+      <pre>+        if r.status != 200:
+</pre>
+    </td>
+  </tr>
+  <tr id="L74">
+    <th class="line-num">
+      <a href="#L74">74</a>
+    </th>
+    <td class="line-code">
+      <pre>+            raise Exception, &quot;Could not download spamhaus DROP list, error %d&quot; % r.status
+</pre>
+    </td>
+  </tr>
+  <tr id="L75">
+    <th class="line-num">
+      <a href="#L75">75</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L76">
+    <th class="line-num">
+      <a href="#L76">76</a>
+    </th>
+    <td class="line-code">
+      <pre>+        fd = open(self.__filename, &quot;w&quot;)
+</pre>
+    </td>
+  </tr>
+  <tr id="L77">
+    <th class="line-num">
+      <a href="#L77">77</a>
+    </th>
+    <td class="line-code">
+      <pre>+        fd.write(r.read())
+</pre>
+    </td>
+  </tr>
+  <tr id="L78">
+    <th class="line-num">
+      <a href="#L78">78</a>
+    </th>
+    <td class="line-code">
+      <pre>+        fd.close()
+</pre>
+    </td>
+  </tr>
+  <tr id="L79">
+    <th class="line-num">
+      <a href="#L79">79</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L80">
+    <th class="line-num">
+      <a href="#L80">80</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.info(&quot;Downloading done, processing data.&quot;)
+</pre>
+    </td>
+  </tr>
+  <tr id="L81">
+    <th class="line-num">
+      <a href="#L81">81</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L82">
+    <th class="line-num">
+      <a href="#L82">82</a>
+    </th>
+    <td class="line-code">
+      <pre>+    def __retrieveData(self, timer=None):
+</pre>
+    </td>
+  </tr>
+  <tr id="L83">
+    <th class="line-num">
+      <a href="#L83">83</a>
+    </th>
+    <td class="line-code">
+      <pre>+        try:
+</pre>
+    </td>
+  </tr>
+  <tr id="L84">
+    <th class="line-num">
+      <a href="#L84">84</a>
+    </th>
+    <td class="line-code">
+      <pre>+            st = os.stat(self.__filename)
+</pre>
+    </td>
+  </tr>
+  <tr id="L85">
+    <th class="line-num">
+      <a href="#L85">85</a>
+    </th>
+    <td class="line-code">
+      <pre>+            if self.__reload &lt;= 0 or time.time() - st.st_mtime &lt; self.__reload:
+</pre>
+    </td>
+  </tr>
+  <tr id="L86">
+    <th class="line-num">
+      <a href="#L86">86</a>
+    </th>
+    <td class="line-code">
+      <pre>+                return self.__loadData(time.time() - st.st_mtime)
+</pre>
+    </td>
+  </tr>
+  <tr id="L87">
+    <th class="line-num">
+      <a href="#L87">87</a>
+    </th>
+    <td class="line-code">
+      <pre>+        except OSError:
+</pre>
+    </td>
+  </tr>
+  <tr id="L88">
+    <th class="line-num">
+      <a href="#L88">88</a>
+    </th>
+    <td class="line-code">
+      <pre>+            pass
+</pre>
+    </td>
+  </tr>
+  <tr id="L89">
+    <th class="line-num">
+      <a href="#L89">89</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L90">
+    <th class="line-num">
+      <a href="#L90">90</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__downloadData()
+</pre>
+    </td>
+  </tr>
+  <tr id="L91">
+    <th class="line-num">
+      <a href="#L91">91</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__loadData()
+</pre>
+    </td>
+  </tr>
+  <tr id="L92">
+    <th class="line-num">
+      <a href="#L92">92</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L93">
+    <th class="line-num">
+      <a href="#L93">93</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L94">
+    <th class="line-num">
+      <a href="#L94">94</a>
+    </th>
+    <td class="line-code">
+      <pre>+    def __init__(self, env):
+</pre>
+    </td>
+  </tr>
+  <tr id="L95">
+    <th class="line-num">
+      <a href="#L95">95</a>
+    </th>
+    <td class="line-code">
+      <pre>+        Plugin.__init__(self, env)
+</pre>
+    </td>
+  </tr>
+  <tr id="L96">
+    <th class="line-num">
+      <a href="#L96">96</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L97">
+    <th class="line-num">
+      <a href="#L97">97</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__mynets = []
+</pre>
+    </td>
+  </tr>
+  <tr id="L98">
+    <th class="line-num">
+      <a href="#L98">98</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__reload = self.getConfigValue(&quot;reload&quot;, self.RELOAD, type=int)
+</pre>
+    </td>
+  </tr>
+  <tr id="L99">
+    <th class="line-num">
+      <a href="#L99">99</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__filename = self.getConfigValue(&quot;filename&quot;, self.FILENAME)
+</pre>
+    </td>
+  </tr>
+  <tr id="L100">
+    <th class="line-num">
+      <a href="#L100">100</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__server = self.getConfigValue(&quot;server&quot;, self.SERVER)
+</pre>
+    </td>
+  </tr>
+  <tr id="L101">
+    <th class="line-num">
+      <a href="#L101">101</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__uri = self.getConfigValue(&quot;uri&quot;, self.URI)
+</pre>
+    </td>
+  </tr>
+  <tr id="L102">
+    <th class="line-num">
+      <a href="#L102">102</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__timeout = self.getConfigValue(&quot;timeout&quot;, self.TIMEOUT, type=float)
+</pre>
+    </td>
+  </tr>
+  <tr id="L103">
+    <th class="line-num">
+      <a href="#L103">103</a>
+    </th>
+    <td class="line-code">
+      <pre>+        self.__retrieveData()
+</pre>
+    </td>
+  </tr>
+  <tr id="L104">
+    <th class="line-num">
+      <a href="#L104">104</a>
+    </th>
+    <td class="line-code">
+      <pre>+
+</pre>
+    </td>
+  </tr>
+  <tr id="L105">
+    <th class="line-num">
+      <a href="#L105">105</a>
+    </th>
+    <td class="line-code">
+      <pre>+    def run(self, idmef):
+</pre>
+    </td>
+  </tr>
+  <tr id="L106">
+    <th class="line-num">
+      <a href="#L106">106</a>
+    </th>
+    <td class="line-code">
+      <pre>+        for source in idmef.Get(&quot;alert.source(*).node.address(*).address&quot;):
+</pre>
+    </td>
+  </tr>
+  <tr id="L107">
+    <th class="line-num">
+      <a href="#L107">107</a>
+    </th>
+    <td class="line-code">
+      <pre>+            src = IPAddress(source)
+</pre>
+    </td>
+  </tr>
+  <tr id="L108">
+    <th class="line-num">
+      <a href="#L108">108</a>
+    </th>
+    <td class="line-code">
+      <pre>+            InNet = 0
+</pre>
+    </td>
+  </tr>
+  <tr id="L109">
+    <th class="line-num">
+      <a href="#L109">109</a>
+    </th>
+    <td class="line-code">
+      <pre>+            for net in self.__mynets:
+</pre>
+    </td>
+  </tr>
+  <tr id="L110">
+    <th class="line-num">
+      <a href="#L110">110</a>
+    </th>
+    <td class="line-code">
+      <pre>+                if src in net:
+</pre>
+    </td>
+  </tr>
+  <tr id="L111">
+    <th class="line-num">
+      <a href="#L111">111</a>
+    </th>
+    <td class="line-code">
+      <pre>+                    InNet = 1
+</pre>
+    </td>
+  </tr>
+  <tr id="L112">
+    <th class="line-num">
+      <a href="#L112">112</a>
+    </th>
+    <td class="line-code">
+      <pre>+            if InNet:
+</pre>
+    </td>
+  </tr>
+  <tr id="L113">
+    <th class="line-num">
+      <a href="#L113">113</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ca = IDMEF()
+</pre>
+    </td>
+  </tr>
+  <tr id="L114">
+    <th class="line-num">
+      <a href="#L114">114</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ca.addAlertReference(idmef)
+</pre>
+    </td>
+  </tr>
+  <tr id="L115">
+    <th class="line-num">
+      <a href="#L115">115</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ca.Set(&quot;alert.classification.text&quot;, &quot;IP source matching Spamhaus DROP dataset&quot;)
+</pre>
+    </td>
+  </tr>
+  <tr id="L116">
+    <th class="line-num">
+      <a href="#L116">116</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ca.Set(&quot;alert.correlation_alert.name&quot;, &quot;IP source matching Spamhaus DROP dataset&quot;)
+</pre>
+    </td>
+  </tr>
+  <tr id="L117">
+    <th class="line-num">
+      <a href="#L117">117</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ca.Set(&quot;alert.assessment.impact.description&quot;, &quot;Spamhaus gathered this IP address in their DROP list - %s&quot; % (source))
+</pre>
+    </td>
+  </tr>
+  <tr id="L118">
+    <th class="line-num">
+      <a href="#L118">118</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ca.Set(&quot;alert.assessment.impact.severity&quot;, &quot;medium&quot;)
+</pre>
+    </td>
+  </tr>
+  <tr id="L119">
+    <th class="line-num">
+      <a href="#L119">119</a>
+    </th>
+    <td class="line-code">
+      <pre>+                ca.alert()
+</pre>
+    </td>
+  </tr>
+  <tr id="L120">
+    <th class="line-num">
+      <a href="#L120">120</a>
+    </th>
+    <td class="line-code">
+      <pre>-- 
+</pre>
+    </td>
+  </tr>
+  <tr id="L121">
+    <th class="line-num">
+      <a href="#L121">121</a>
+    </th>
+    <td class="line-code">
+      <pre>1.5.6.5
+</pre>
+    </td>
+  </tr>
+  <tr id="L122">
+    <th class="line-num">
+      <a href="#L122">122</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

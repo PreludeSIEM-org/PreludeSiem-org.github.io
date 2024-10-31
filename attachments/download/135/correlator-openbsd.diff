@@ -1,0 +1,12 @@
+diff --git a/src/prelude-correlator.c b/src/prelude-correlator.c
+index 1dcba88..80ff171 100644
+--- a/src/prelude-correlator.c
++++ b/src/prelude-correlator.c
+@@ -25,6 +25,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <signal.h>
+ 
+ #include <libprelude/prelude.h>
+ #include <libprelude/prelude-log.h>

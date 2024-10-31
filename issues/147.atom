@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/147.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2006-04-20T17:24:24Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prewikka - Bug #147: empty __init__.py[co] created in $PYTHON_SITELIBDIR when installing Prewikka</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/147"/>
+    <id>http://www.prelude-siem.org/issues/147?journal_id=387</id>
+    <updated>2006-04-20T17:24:24Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #147: empty __init__.py[co] created in $PYTHON_SITELIBDIR when installing Prewikka</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/147"/>
+    <id>http://www.prelude-siem.org/issues/147?journal_id=388</id>
+    <updated>2006-04-24T14:04:51Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;invalid&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This appear to be the expected behavior:&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;em&gt;The &lt;img src="+init" alt="" /&gt;&lt;ins&gt;.py files are required to make Python treat the directories as containing packages; this is done to prevent directories with a common name, such as "string", from unintentionally hiding valid modules that occur later on the module search path. In the simplest case, &lt;img src="+init" alt="" /&gt;&lt;/ins&gt;.py can just be an empty file, but it can also execute initialization code for the package or set the &lt;img src="+all" alt="" /&gt;+ variable, described later.&lt;/em&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a class="external" href="http://docs.python.org/tut/node8.html"&gt;http://docs.python.org/tut/node8.html&lt;/a&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #147: empty __init__.py[co] created in $PYTHON_SITELIBDIR when installing Prewikka</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/147"/>
+    <id>http://www.prelude-siem.org/issues/147?journal_id=389</id>
+    <updated>2006-05-04T09:40:23Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;I've misunderstood the ticket description at first: fixed in r8180.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #147: empty __init__.py[co] created in $PYTHON_SITELIBDIR when installing Prewikka</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/147"/>
+    <id>http://www.prelude-siem.org/issues/147?journal_id=1096</id>
+    <updated>2009-04-29T12:24:25Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Prewikka&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;5&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;0.9.5&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

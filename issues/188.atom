@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/188.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2007-01-03T12:03:51Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prewikka - Bug #188: building RPM from .spec file fails</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/188"/>
+    <id>http://www.prelude-siem.org/issues/188?journal_id=476</id>
+    <updated>2007-01-03T12:03:51Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Edit summary for readability.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #188: building RPM from .spec file fails</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/188"/>
+    <id>http://www.prelude-siem.org/issues/188?journal_id=1036</id>
+    <updated>2009-04-29T12:21:41Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Prewikka&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;5&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #188: building RPM from .spec file fails</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/188"/>
+    <id>http://www.prelude-siem.org/issues/188?journal_id=1555</id>
+    <updated>2012-04-19T14:35:57Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; changed from &lt;i&gt;Yoann VANDOORSELAERE&lt;/i&gt; to &lt;i&gt;Jean-Charles ROGEZ&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;111&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;We now provide spec files for RHEL and CentOS 6. CentOS 4 is no longer supported.&lt;/p&gt;
+
+
+	&lt;p&gt;Ticket closed.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #188: building RPM from .spec file fails</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/188"/>
+    <id>http://www.prelude-siem.org/issues/188?journal_id=2430</id>
+    <updated>2015-11-08T12:03:34Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;111&lt;/i&gt; to &lt;i&gt;Prelude OSS 1.0.1&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

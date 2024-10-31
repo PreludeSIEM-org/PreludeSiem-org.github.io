@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PRELUDE SIEM: User</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/prelude/boards/1.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/prelude/boards/1"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2023-01-27T19:29:00Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>User: Reverse DNS records </title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/287"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/287</id>
+    <updated>2023-01-27T19:29:00Z</updated>
+    <author>
+      <name>Andrew Goldy</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;I've set up DNS resolving in Prewikka, it works fine the resolved name mapped to "Node name (resolved)".&lt;br /&gt;How can I integrate into prelude-manager email template this field to show the internal host names in the email alerts not just the IP?&lt;br /&gt;Is it possible?&lt;br /&gt;Many thanks!&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: [Prewikka] Error "Origin check failed" when using a TLS termination reverse proxy</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/279?r=286#message-286"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/279?r=286#message-286</id>
+    <updated>2021-11-04T09:08:59Z</updated>
+    <author>
+      <name>Christophe D.</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello and thank you François. I will keep you posted.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: [Prewikka] Error "Origin check failed" when using a TLS termination reverse proxy</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/279?r=285#message-285"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/279?r=285#message-285</id>
+    <updated>2021-11-03T15:59:44Z</updated>
+    <author>
+      <name>Francois </name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;I finally had time to test a similar setup (with nginx).&lt;br /&gt;From my investigation, when prewikka-httpd is used to run Prewikka, the application only sees the request made to prewikka-httpd and uses that to check the requests' origin. That is to say, it is not meant to be run through a reverse proxy.&lt;/p&gt;
+
+
+I see two possible solutions:
+	&lt;ol&gt;
+	&lt;li&gt;Do not run prewikka-httpd behind a reverse proxy.
+	&lt;ul&gt;
+	&lt;li&gt;You could either expose prewikka-httpd directly (it supports TLS certificates through the &lt;code&gt;--key&lt;/code&gt; and &lt;code&gt;--cert&lt;/code&gt; option), though I would recommend against it for performance reasons.&lt;/li&gt;
+		&lt;li&gt;Instead, you could also run Prewikka through &lt;code&gt;mod_wsgi&lt;/code&gt;. This is usually the recommended approach. See &lt;a class="wiki-page" href="http://www.prelude-siem.org/projects/prelude/wiki/InstallingPreludePrewikka#Apache-WSGI-setup-with-VirtualHost"&gt;this page&lt;/a&gt; for more information.&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+		&lt;li&gt;If you really want to use prewikka-httpd with a reverse proxy, you will need to rewrite the original &lt;code&gt;Origin&lt;/code&gt; and &lt;code&gt;Referer&lt;/code&gt; HTTP headers to match the origin expected by Prewikka, &lt;strong&gt;but only when the original value matches the expected value/prefix&lt;/strong&gt; (this is necessary to prevent potential security issues). For nginx, this can be done with a configuration similar to the following inside a &lt;code&gt;location&lt;/code&gt; block: &lt;pre&gt;
+                set $new_origin $http_origin;
+                if ($http_origin = "https://prelude.example.com") {
+                        set $new_origin "http://127.0.0.1:8000";
+                }
+                proxy_set_header        Origin          $new_origin;
+
+                set $new_referer $http_referer;
+                if ($http_referer ~ "^https://prelude\.example\.com(.*)$") {
+                        set $new_referer "http://127.0.0.1:8000$1";
+                }
+                proxy_set_header        Referer         $new_referer;
+&lt;/pre&gt; In this example, nginx is listening for HTTPS requests on the vhost &lt;code&gt;prelude.example.com&lt;/code&gt;, while prewikka-httpd is listening for HTTP requests on 127.0.0.1:8000. I think a similar configuration can be defined for Apache: &lt;pre&gt;
+# This requires mod_headers
+RequestHeader edit* Origin "^https://prelude\.example\.com" "http://127.0.0.1:8000" 
+RequestHeader edit* Referer "^https://prelude\.example\.com" "http://127.0.0.1:8000" 
+&lt;/pre&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+
+
+	&lt;p&gt;Best regards,&lt;br /&gt;François&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: [Prewikka] Error "Origin check failed" when using a TLS termination reverse proxy</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/279?r=284#message-284"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/279?r=284#message-284</id>
+    <updated>2021-10-22T05:10:27Z</updated>
+    <author>
+      <name>Christophe D.</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;Tested (ie. ProxyPassReverseCookieDomain &amp;#38; ProxyPassReverseCookiePath) but unsuccessful. As stated in my previous message, I do not get this error when I use the same setup but without the TLS configured on the Apache reverse proxy.&lt;/p&gt;
+
+
+	&lt;p&gt;Any idea is welcome.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: Plan to use python3 instead of python2</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/277?r=283#message-283"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/277?r=283#message-283</id>
+    <updated>2021-10-21T14:50:58Z</updated>
+    <author>
+      <name>Francois </name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;I think the installation instructions haven't been updated yet, but the code should work on Python 3, just give it a try.&lt;br /&gt;Also, unless you have good reasons not to, I would recommend using the official Debian packages. That way it is easier to keep track of updates, dependencies, etc.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards,&lt;br /&gt;François&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: Plan to use python3 instead of python2</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/277?r=282#message-282"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/277?r=282#message-282</id>
+    <updated>2021-10-21T14:38:23Z</updated>
+    <author>
+      <name>Andrew Goldy</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;After upgrading from debian 10 to debian 11 which drops off python2, prewikka is not working anymore.&lt;br /&gt;Prewikka version 5.2 was built from source, not from the repo. &lt;br /&gt;The install file says&lt;/p&gt;
+
+
+	&lt;p&gt;Build requires:&lt;/p&gt;
+
+
+	&lt;p&gt;- python &gt;= 2.7 (&lt;ins&gt;not python 3.x&lt;/ins&gt;)&lt;br /&gt;- python-babel&lt;br /&gt;- python-lesscpy&lt;br /&gt;- python-setuptools&lt;/p&gt;
+
+
+	&lt;p&gt;Correlator also not working with python3.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: [Prewikka] Error "Origin check failed" when using a TLS termination reverse proxy</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/279?r=281#message-281"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/279?r=281#message-281</id>
+    <updated>2021-10-21T14:30:18Z</updated>
+    <author>
+      <name>Christophe D.</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Thank you François. I will try that and keep you posted.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: [Prewikka] Error "Origin check failed" when using a TLS termination reverse proxy</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/279?r=280#message-280"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/279?r=280#message-280</id>
+    <updated>2021-10-21T14:20:15Z</updated>
+    <author>
+      <name>Francois </name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;Prewikka uses cookies bound to the application's host/path to prevent Cross-Site Request Forgery (CSRF) attacks.&lt;br /&gt;Apache does not rewrite the cookies in HTTP requests/responses by default, hence the error.&lt;br /&gt;See the &lt;code&gt;ProxyPassReverseCookieDomain&lt;/code&gt; and &lt;code&gt;ProxyPassReverseCookiePath&lt;/code&gt; options inside Apache's documentation for more information on how to rewrite the cookies' host &amp;#38; path.&lt;/p&gt;
+
+
+	&lt;p&gt;In addition, you should not set headers manually as it may interfere with functionalities of the HTTP protocol or your Internet browser (e.g. CORS).&lt;/p&gt;
+
+
+	&lt;p&gt;Best regards,&lt;br /&gt;François&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: [Prewikka] Error "Origin check failed" when using a TLS termination reverse proxy</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/279"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/279</id>
+    <updated>2021-10-21T14:06:45Z</updated>
+    <author>
+      <name>Christophe D.</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+First of all, let me share a few information regarding the context:
+	&lt;ul&gt;
+	&lt;li&gt;The OS:&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;# hostnamectl | grep -i system
+  Operating System: CentOS Linux 7 (Core)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;Prewikka was installed with the package manager (&lt;em&gt;yum&lt;/em&gt;):&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;# rpm -qa | grep -i prewik
+prewikka-5.2.0-4.el7.x86_64
+python2-prewikka-5.2.0-4.el7.x86_64
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+		&lt;li&gt;How Prewikka is started using the systemd service script:&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;# grep -i execstart /usr/lib/systemd/system/prewikka.service
+ExecStart=/usr/sbin/prewikka-httpd -a 127.0.0.1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+		&lt;li&gt;Apache version:&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;# httpd -v | grep -i version
+Server version: Apache/2.4.6 (CentOS)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+		&lt;li&gt;Apache configuration file for Prewikka:&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;# cat /etc/httpd/conf.d/prewikka.conf 
+&amp;lt;VirtualHost *:80&amp;gt;
+    ServerName xxxxxxxxxxxxx
+    DocumentRoot/var/www/html/
+    RewriteEngineOn
+    RewriteCond%{HTTPS} !=on
+    RewriteRule^(.*)$ https://%{HTTP_HOST}$1 [R=301,L]
+&amp;lt;/VirtualHost&amp;gt;
+
+&amp;lt;VirtualHost *:443&amp;gt;
+    ServerName xxxxxxxxxxxxx
+    DocumentRoot /var/www/html
+    Header always edit Set-Cookie &amp;quot;(?i)^((?:(?!;\s?secure).)+)$&amp;quot; &amp;quot;$1; secure&amp;quot; 
+    Header onsuccess edit Set-Cookie &amp;quot;(?i)^((?:(?!;\s?secure).)+)$&amp;quot; &amp;quot;$1; secure&amp;quot; 
+    ProxyPass / http://127.0.0.1:8000/
+    ProxyPassReverse / http://127.0.0.1:8000/
+    ProxyPreserveHost Off
+    ProxyRequests Off
+    ProxyTimeout 600
+    RequestHeader set Origin &amp;quot;127.0.0.1:8000&amp;quot; 
+    RequestHeader set Host &amp;quot;127.0.0.1:8000&amp;quot; 
+    RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; 
+    RequestHeader set Referer &amp;quot;&amp;quot; 
+    SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt
+    SSLCertificateKeyFile /etc/ssl/certs/apache-selfsigned.key
+    SSLCipherSuite ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20
+    -POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
+    SSLCompression Off
+    SSLEngine On
+    SSLHonorCipherOrder On
+    SSLProtocol All -SSLv2 -SSLv3 -TLSv1 -TLSv1.1
+    Timeout 360
+    UseCanonicalName on
+&amp;lt;/VirtualHost&amp;gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;Now, when I access Prewikka using &lt;a class="external" href="https://xxxxxxxxxxxxx"&gt;https://xxxxxxxxxxxxx&lt;/a&gt;, using the TLS termination reverse proxy installed and configured locally (ie. on the same machine as Prewikka), I get the below error message for some actions:&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;Error: Origin check failed
+Details:
+except Exception as err: raise autherr or err if view_object.view_require_session and autherr:
+/usr/lib/python2.7/site-packages/prewikka/main.py, line 285:
+raise autherr or err
+/usr/lib/python2.7/site-packages/prewikka/main.py, line 301:
+response = self._process_static(webreq) or self._process_dynamic(webreq)
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+The actions are, for instance:
+	&lt;ul&gt;
+	&lt;li&gt;Update the password of an existing user&lt;/li&gt;
+		&lt;li&gt;Create a new user&lt;/li&gt;
+		&lt;li&gt;Change the period of the alerts I would like to display&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;I tried with Apache configured without TLS and I did not get this error. Any idea?&lt;/p&gt;
+
+
+	&lt;p&gt;Thank you in advance for your help.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: Plan to use python3 instead of python2</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/277?r=278#message-278"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/277?r=278#message-278</id>
+    <updated>2021-10-11T07:42:11Z</updated>
+    <author>
+      <name>Francois </name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;prewikka &amp;#38; prelude-correlator already support Python 3 since version 5.2.&lt;br /&gt;Most Linux distributions already ship this version and so, unless you are using an uncommon distribution or an old version, it should already be possible to use Prelude with Python 3 on your system.&lt;/p&gt;
+
+
+	&lt;p&gt;However please note that some distributions provide the Python 3 packages under a different name (e.g. the Python 3 package for Prewikka is called "python3-prewikka" rather than "prewikka" on CentOS 8), so make sure to check your distribution's repositories for the proper name to use.&lt;/p&gt;
+
+
+	&lt;p&gt;Best regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: Plan to use python3 instead of python2</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/277"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/277</id>
+    <updated>2021-10-02T08:29:48Z</updated>
+    <author>
+      <name>Andrew Goldy</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello!&lt;/p&gt;
+
+
+	&lt;p&gt;Do you plan to use python3 in prewikka&amp;#38;prelude-correlator in the future?&lt;br /&gt;Python2 is dropped off almost every OS, therefore prewikka becomes unusable.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: Suricata 6 dropped prelude support?</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/275?r=276#message-276"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/275?r=276#message-276</id>
+    <updated>2021-04-19T22:32:58Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;There is this PR for quite long time, that wait for Suricata Team to validate it : &lt;a class="external" href="https://github.com/OISF/suricata/pull/5518"&gt;https://github.com/OISF/suricata/pull/5518&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;As Victor said : "I think for 6 (master-6.0.x) we can accept this approach, but for the suricata 7 side (master) I would like to get rid of it."&lt;/p&gt;
+
+
+	&lt;p&gt;So it should be OK when this PR will be approuved.&lt;/p&gt;
+
+
+	&lt;p&gt;IF it is urgent for you, you can compile Suricata 6 with this PR include.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: Suricata 6 dropped prelude support?</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/275"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/275</id>
+    <updated>2021-04-19T17:10:24Z</updated>
+    <author>
+      <name>Andrew Goldy</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello Guys!&lt;/p&gt;
+
+
+	&lt;p&gt;As I wanted to upgrade my 5th version of suricata to version 6, the compile fails when prelude output was configured.&lt;br /&gt;I've opened a request to suricata about this for long months, but seems the problem still exist.&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;a class="external" href="https://forum.suricata.io/t/suricata-6-0-compile-issue-with-prelude-support/696"&gt;https://forum.suricata.io/t/suricata-6-0-compile-issue-with-prelude-support/696&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;What could be the workaround to use prelude with suricata version 6+?&lt;/p&gt;
+
+
+	&lt;p&gt;Thanks!&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: Prelude Error: Origin check failed</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/270?r=274#message-274"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/270?r=274#message-274</id>
+    <updated>2021-04-05T18:32:55Z</updated>
+    <author>
+      <name>Денис Хижниченко</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Thank you, it helped.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>User: RE: Prelude Error: Origin check failed</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/boards/1/topics/270?r=273#message-273"/>
+    <id>http://www.prelude-siem.org/boards/1/topics/270?r=273#message-273</id>
+    <updated>2021-03-18T13:22:56Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;p&gt;You could try with this configuration:&lt;/p&gt;
+
+
+&lt;pre&gt;
+location / {
+  proxy_pass http://127.0.0.1:8111;
+  proxy_set_header origin http://127.0.0.1:8111;
+}
+&lt;/pre&gt;    </content>
+  </entry>
+</feed>

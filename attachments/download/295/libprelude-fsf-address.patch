@@ -1,0 +1,2403 @@
+diff -r -u libprelude-1.0.1-old/bindings/c++/idmef-criteria.cxx libprelude-1.0.1/bindings/c++/idmef-criteria.cxx
+--- libprelude-1.0.1-old/bindings/c++/idmef-criteria.cxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/idmef-criteria.cxx	2012-08-07 15:34:30.540265288 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/idmef-path.cxx libprelude-1.0.1/bindings/c++/idmef-path.cxx
+--- libprelude-1.0.1-old/bindings/c++/idmef-path.cxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/idmef-path.cxx	2012-08-07 15:34:30.533265351 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/idmef-time.cxx libprelude-1.0.1/bindings/c++/idmef-time.cxx
+--- libprelude-1.0.1-old/bindings/c++/idmef-time.cxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/idmef-time.cxx	2012-08-07 15:34:30.554265163 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/idmef-value.cxx libprelude-1.0.1/bindings/c++/idmef-value.cxx
+--- libprelude-1.0.1-old/bindings/c++/idmef-value.cxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/idmef-value.cxx	2012-08-07 15:34:30.547265226 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/idmef-criteria.hxx libprelude-1.0.1/bindings/c++/include/idmef-criteria.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/idmef-criteria.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/idmef-criteria.hxx	2012-08-07 15:34:30.559265118 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/idmef-path.hxx libprelude-1.0.1/bindings/c++/include/idmef-path.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/idmef-path.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/idmef-path.hxx	2012-08-07 15:34:30.569265029 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/idmef-time.hxx libprelude-1.0.1/bindings/c++/include/idmef-time.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/idmef-time.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/idmef-time.hxx	2012-08-07 15:34:30.557265136 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/idmef-value.hxx libprelude-1.0.1/bindings/c++/include/idmef-value.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/idmef-value.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/idmef-value.hxx	2012-08-07 15:34:30.570265020 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/prelude-connection.hxx libprelude-1.0.1/bindings/c++/include/prelude-connection.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/prelude-connection.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/prelude-connection.hxx	2012-08-07 15:34:30.567265047 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/prelude-connection-pool.hxx libprelude-1.0.1/bindings/c++/include/prelude-connection-pool.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/prelude-connection-pool.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/prelude-connection-pool.hxx	2012-08-07 15:34:30.561265101 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/prelude-error.hxx libprelude-1.0.1/bindings/c++/include/prelude-error.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/prelude-error.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/prelude-error.hxx	2012-08-07 15:34:30.563265083 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/prelude.hxx libprelude-1.0.1/bindings/c++/include/prelude.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/prelude.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/prelude.hxx	2012-08-07 15:34:30.565265065 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/include/prelude-log.hxx libprelude-1.0.1/bindings/c++/include/prelude-log.hxx
+--- libprelude-1.0.1-old/bindings/c++/include/prelude-log.hxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/include/prelude-log.hxx	2012-08-07 15:34:30.572265002 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/prelude-connection.cxx libprelude-1.0.1/bindings/c++/prelude-connection.cxx
+--- libprelude-1.0.1-old/bindings/c++/prelude-connection.cxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/prelude-connection.cxx	2012-08-07 15:34:30.543265262 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/prelude-connection-pool.cxx libprelude-1.0.1/bindings/c++/prelude-connection-pool.cxx
+--- libprelude-1.0.1-old/bindings/c++/prelude-connection-pool.cxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/prelude-connection-pool.cxx	2012-08-07 15:34:30.545265244 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/prelude.cxx libprelude-1.0.1/bindings/c++/prelude.cxx
+--- libprelude-1.0.1-old/bindings/c++/prelude.cxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/prelude.cxx	2012-08-07 15:34:30.538265306 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/c++/prelude-error.cxx libprelude-1.0.1/bindings/c++/prelude-error.cxx
+--- libprelude-1.0.1-old/bindings/c++/prelude-error.cxx	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/c++/prelude-error.cxx	2012-08-07 15:34:30.537265315 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/libpreludecpp.i libprelude-1.0.1/bindings/libpreludecpp.i
+--- libprelude-1.0.1-old/bindings/libpreludecpp.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/libpreludecpp.i	2012-08-07 15:34:30.503265620 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/low-level/idmef-value-class-mapping.i libprelude-1.0.1/bindings/low-level/idmef-value-class-mapping.i
+--- libprelude-1.0.1-old/bindings/low-level/idmef-value-class-mapping.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/low-level/idmef-value-class-mapping.i	2012-08-07 15:34:30.498265664 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/low-level/libprelude.i libprelude-1.0.1/bindings/low-level/libprelude.i
+--- libprelude-1.0.1-old/bindings/low-level/libprelude.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/low-level/libprelude.i	2012-08-07 15:34:30.276267651 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/low-level/perl/libprelude_perl.i libprelude-1.0.1/bindings/low-level/perl/libprelude_perl.i
+--- libprelude-1.0.1-old/bindings/low-level/perl/libprelude_perl.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/low-level/perl/libprelude_perl.i	2012-08-07 15:34:30.391266622 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/low-level/perl/Makefile.PL.in libprelude-1.0.1/bindings/low-level/perl/Makefile.PL.in
+--- libprelude-1.0.1-old/bindings/low-level/perl/Makefile.PL.in	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/low-level/perl/Makefile.PL.in	2012-08-07 15:34:30.389266640 -0300
+@@ -14,9 +14,9 @@
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+-# You should have received a copy of the GNU General Public License
+-# along with this program; see the file COPYING.  If not, write to
+-# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++# You should have received a copy of the GNU General Public License along
++# with this program; if not, write to the Free Software Foundation, Inc.,
++# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ use Config;
+ use ExtUtils::MakeMaker;
+diff -r -u libprelude-1.0.1-old/bindings/low-level/perl/Prelude.pm libprelude-1.0.1/bindings/low-level/perl/Prelude.pm
+--- libprelude-1.0.1-old/bindings/low-level/perl/Prelude.pm	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/low-level/perl/Prelude.pm	2012-08-07 15:34:30.387266658 -0300
+@@ -13,9 +13,9 @@
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+-# You should have received a copy of the GNU General Public License
+-# along with this program; see the file COPYING.  If not, write to
+-# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++# You should have received a copy of the GNU General Public License along
++# with this program; if not, write to the Free Software Foundation, Inc.,
++# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ require XSLoader;
+ XSLoader::load('Prelude');
+diff -r -u libprelude-1.0.1-old/bindings/low-level/python/libprelude-python.i libprelude-1.0.1/bindings/low-level/python/libprelude-python.i
+--- libprelude-1.0.1-old/bindings/low-level/python/libprelude-python.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/low-level/python/libprelude-python.i	2012-08-07 15:34:30.396266577 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/low-level/python/prelude.py libprelude-1.0.1/bindings/low-level/python/prelude.py
+--- libprelude-1.0.1-old/bindings/low-level/python/prelude.py	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/low-level/python/prelude.py	2012-08-07 15:34:30.398266559 -0300
+@@ -14,9 +14,9 @@
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+-# You should have received a copy of the GNU General Public License
+-# along with this program; see the file COPYING.  If not, write to
+-# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++# You should have received a copy of the GNU General Public License along
++# with this program; if not, write to the Free Software Foundation, Inc.,
++# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ from _prelude import *
+ 
+diff -r -u libprelude-1.0.1-old/bindings/low-level/python/setup.py.in libprelude-1.0.1/bindings/low-level/python/setup.py.in
+--- libprelude-1.0.1-old/bindings/low-level/python/setup.py.in	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/low-level/python/setup.py.in	2012-08-07 15:34:30.493265709 -0300
+@@ -14,9 +14,9 @@
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+-# You should have received a copy of the GNU General Public License
+-# along with this program; see the file COPYING.  If not, write to
+-# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++# You should have received a copy of the GNU General Public License along
++# with this program; if not, write to the Free Software Foundation, Inc.,
++# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ import sys, os
+ from os.path import abspath, exists
+diff -r -u libprelude-1.0.1-old/bindings/lua/libpreludecpp-lua.i libprelude-1.0.1/bindings/lua/libpreludecpp-lua.i
+--- libprelude-1.0.1-old/bindings/lua/libpreludecpp-lua.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/lua/libpreludecpp-lua.i	2012-08-07 15:34:30.524265432 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/perl/libpreludecpp-perl.i libprelude-1.0.1/bindings/perl/libpreludecpp-perl.i
+--- libprelude-1.0.1-old/bindings/perl/libpreludecpp-perl.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/perl/libpreludecpp-perl.i	2012-08-07 15:34:30.499265655 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/perl/Makefile.PL.in libprelude-1.0.1/bindings/perl/Makefile.PL.in
+--- libprelude-1.0.1-old/bindings/perl/Makefile.PL.in	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/perl/Makefile.PL.in	2012-08-07 15:34:30.501265637 -0300
+@@ -14,9 +14,9 @@
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+-# You should have received a copy of the GNU General Public License
+-# along with this program; see the file COPYING.  If not, write to
+-# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++# You should have received a copy of the GNU General Public License along
++# with this program; if not, write to the Free Software Foundation, Inc.,
++# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ use Config;
+ use ExtUtils::MakeMaker;
+diff -r -u libprelude-1.0.1-old/bindings/python/libpreludecpp-python.i libprelude-1.0.1/bindings/python/libpreludecpp-python.i
+--- libprelude-1.0.1-old/bindings/python/libpreludecpp-python.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/python/libpreludecpp-python.i	2012-08-07 15:34:30.578264948 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/bindings/python/setup.py.in libprelude-1.0.1/bindings/python/setup.py.in
+--- libprelude-1.0.1-old/bindings/python/setup.py.in	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/python/setup.py.in	2012-08-07 15:34:30.579264939 -0300
+@@ -14,9 +14,9 @@
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+-# You should have received a copy of the GNU General Public License
+-# along with this program; see the file COPYING.  If not, write to
+-# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++# You should have received a copy of the GNU General Public License along
++# with this program; if not, write to the Free Software Foundation, Inc.,
++# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ 
+ import sys, os
+diff -r -u libprelude-1.0.1-old/bindings/ruby/libpreludecpp-ruby.i libprelude-1.0.1/bindings/ruby/libpreludecpp-ruby.i
+--- libprelude-1.0.1-old/bindings/ruby/libpreludecpp-ruby.i	2012-06-01 12:12:00.000000000 -0300
++++ libprelude-1.0.1/bindings/ruby/libpreludecpp-ruby.i	2012-08-07 15:34:30.271267696 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/prelude-admin/prelude-admin.c libprelude-1.0.1/prelude-admin/prelude-admin.c
+--- libprelude-1.0.1-old/prelude-admin/prelude-admin.c	2012-06-01 12:12:22.000000000 -0300
++++ libprelude-1.0.1/prelude-admin/prelude-admin.c	2012-08-07 15:34:30.996261208 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/prelude-admin/server.c libprelude-1.0.1/prelude-admin/server.c
+--- libprelude-1.0.1-old/prelude-admin/server.c	2012-06-01 12:12:22.000000000 -0300
++++ libprelude-1.0.1/prelude-admin/server.c	2012-08-07 15:34:31.001261163 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/prelude-admin/server.h libprelude-1.0.1/prelude-admin/server.h
+--- libprelude-1.0.1-old/prelude-admin/server.h	2012-06-01 12:12:22.000000000 -0300
++++ libprelude-1.0.1/prelude-admin/server.h	2012-08-07 15:34:31.002261154 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/prelude-admin/tls-register.c libprelude-1.0.1/prelude-admin/tls-register.c
+--- libprelude-1.0.1-old/prelude-admin/tls-register.c	2012-06-12 13:07:49.000000000 -0300
++++ libprelude-1.0.1/prelude-admin/tls-register.c	2012-08-07 15:34:30.988261279 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/prelude-admin/tls-register.h libprelude-1.0.1/prelude-admin/tls-register.h
+--- libprelude-1.0.1-old/prelude-admin/tls-register.h	2012-06-01 12:12:22.000000000 -0300
++++ libprelude-1.0.1/prelude-admin/tls-register.h	2012-08-07 15:34:30.991261253 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/common.c libprelude-1.0.1/src/common.c
+--- libprelude-1.0.1-old/src/common.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/common.c	2012-08-07 15:34:30.675264080 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/config-engine.c libprelude-1.0.1/src/config-engine.c
+--- libprelude-1.0.1-old/src/config-engine.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/config-engine.c	2012-08-07 15:34:30.621264564 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/daemonize.c libprelude-1.0.1/src/daemonize.c
+--- libprelude-1.0.1-old/src/daemonize.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/daemonize.c	2012-08-07 15:34:30.656264250 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-additional-data.c libprelude-1.0.1/src/idmef-additional-data.c
+--- libprelude-1.0.1-old/src/idmef-additional-data.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/idmef-additional-data.c	2012-08-07 15:34:30.624264537 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-class.c libprelude-1.0.1/src/idmef-class.c
+--- libprelude-1.0.1-old/src/idmef-class.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-class.c	2012-08-07 15:34:30.618264590 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-criteria.c libprelude-1.0.1/src/idmef-criteria.c
+--- libprelude-1.0.1-old/src/idmef-criteria.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/idmef-criteria.c	2012-08-07 15:34:30.651264295 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-criteria-string.lex.c libprelude-1.0.1/src/idmef-criteria-string.lex.c
+--- libprelude-1.0.1-old/src/idmef-criteria-string.lex.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/idmef-criteria-string.lex.c	2012-08-07 15:34:30.749263418 -0300
+@@ -547,9 +547,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ #line 26 "idmef-criteria-string.lex.l"
+diff -r -u libprelude-1.0.1-old/src/idmef-criteria-string.lex.l libprelude-1.0.1/src/idmef-criteria-string.lex.l
+--- libprelude-1.0.1-old/src/idmef-criteria-string.lex.l	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-criteria-string.lex.l	2012-08-07 15:34:30.873262309 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-criteria-string.yac.y libprelude-1.0.1/src/idmef-criteria-string.yac.y
+--- libprelude-1.0.1-old/src/idmef-criteria-string.yac.y	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-criteria-string.yac.y	2012-08-07 15:34:30.755263365 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-criterion-value.c libprelude-1.0.1/src/idmef-criterion-value.c
+--- libprelude-1.0.1-old/src/idmef-criterion-value.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-criterion-value.c	2012-08-07 15:34:30.678264054 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-data.c libprelude-1.0.1/src/idmef-data.c
+--- libprelude-1.0.1-old/src/idmef-data.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/idmef-data.c	2012-08-07 15:34:30.616264608 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-message-helpers.c libprelude-1.0.1/src/idmef-message-helpers.c
+--- libprelude-1.0.1-old/src/idmef-message-helpers.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-message-helpers.c	2012-08-07 15:34:30.773263203 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-message-print.c libprelude-1.0.1/src/idmef-message-print.c
+--- libprelude-1.0.1-old/src/idmef-message-print.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-message-print.c	2012-08-07 15:34:30.779263150 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-message-read.c libprelude-1.0.1/src/idmef-message-read.c
+--- libprelude-1.0.1-old/src/idmef-message-read.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-message-read.c	2012-08-07 15:34:30.871262326 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-message-write.c libprelude-1.0.1/src/idmef-message-write.c
+--- libprelude-1.0.1-old/src/idmef-message-write.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-message-write.c	2012-08-07 15:34:30.648264322 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-path.c libprelude-1.0.1/src/idmef-path.c
+--- libprelude-1.0.1-old/src/idmef-path.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-path.c	2012-08-07 15:34:30.663264188 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-time.c libprelude-1.0.1/src/idmef-time.c
+--- libprelude-1.0.1-old/src/idmef-time.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-time.c	2012-08-07 15:34:30.627264510 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-tree-wrap.c libprelude-1.0.1/src/idmef-tree-wrap.c
+--- libprelude-1.0.1-old/src/idmef-tree-wrap.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-tree-wrap.c	2012-08-07 15:34:30.743263472 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-value.c libprelude-1.0.1/src/idmef-value.c
+--- libprelude-1.0.1-old/src/idmef-value.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-value.c	2012-08-07 15:34:30.684264000 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/idmef-value-type.c libprelude-1.0.1/src/idmef-value-type.c
+--- libprelude-1.0.1-old/src/idmef-value-type.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/idmef-value-type.c	2012-08-07 15:34:30.666264161 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/common.h libprelude-1.0.1/src/include/common.h
+--- libprelude-1.0.1-old/src/include/common.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/common.h	2012-08-07 15:34:30.798262980 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/config-engine.h libprelude-1.0.1/src/include/config-engine.h
+--- libprelude-1.0.1-old/src/include/config-engine.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/config-engine.h	2012-08-07 15:34:30.840262604 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/daemonize.h libprelude-1.0.1/src/include/daemonize.h
+--- libprelude-1.0.1-old/src/include/daemonize.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/daemonize.h	2012-08-07 15:34:30.860262425 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-additional-data.h libprelude-1.0.1/src/include/idmef-additional-data.h
+--- libprelude-1.0.1-old/src/include/idmef-additional-data.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-additional-data.h	2012-08-07 15:34:30.804262926 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-class.h libprelude-1.0.1/src/include/idmef-class.h
+--- libprelude-1.0.1-old/src/include/idmef-class.h	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-class.h	2012-08-07 15:34:30.810262872 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-criteria.h libprelude-1.0.1/src/include/idmef-criteria.h
+--- libprelude-1.0.1-old/src/include/idmef-criteria.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-criteria.h	2012-08-07 15:34:30.795263007 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-criterion-value.h libprelude-1.0.1/src/include/idmef-criterion-value.h
+--- libprelude-1.0.1-old/src/include/idmef-criterion-value.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-criterion-value.h	2012-08-07 15:34:30.843262577 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-data.h libprelude-1.0.1/src/include/idmef-data.h
+--- libprelude-1.0.1-old/src/include/idmef-data.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-data.h	2012-08-07 15:34:30.793263024 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef.h libprelude-1.0.1/src/include/idmef.h
+--- libprelude-1.0.1-old/src/include/idmef.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef.h	2012-08-07 15:34:30.788263069 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-message-helpers.h libprelude-1.0.1/src/include/idmef-message-helpers.h
+--- libprelude-1.0.1-old/src/include/idmef-message-helpers.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-message-helpers.h	2012-08-07 15:34:30.801262953 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-message-print.h libprelude-1.0.1/src/include/idmef-message-print.h
+--- libprelude-1.0.1-old/src/include/idmef-message-print.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-message-print.h	2012-08-07 15:34:30.813262845 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-message-read.h libprelude-1.0.1/src/include/idmef-message-read.h
+--- libprelude-1.0.1-old/src/include/idmef-message-read.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-message-read.h	2012-08-07 15:34:30.846262550 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-message-write.h libprelude-1.0.1/src/include/idmef-message-write.h
+--- libprelude-1.0.1-old/src/include/idmef-message-write.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-message-write.h	2012-08-07 15:34:30.785263096 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-path.h libprelude-1.0.1/src/include/idmef-path.h
+--- libprelude-1.0.1-old/src/include/idmef-path.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-path.h	2012-08-07 15:34:30.852262496 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-time.h libprelude-1.0.1/src/include/idmef-time.h
+--- libprelude-1.0.1-old/src/include/idmef-time.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-time.h	2012-08-07 15:34:30.838262622 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-tree-wrap.h libprelude-1.0.1/src/include/idmef-tree-wrap.h
+--- libprelude-1.0.1-old/src/include/idmef-tree-wrap.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-tree-wrap.h	2012-08-07 15:34:30.829262702 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-value.h libprelude-1.0.1/src/include/idmef-value.h
+--- libprelude-1.0.1-old/src/include/idmef-value.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-value.h	2012-08-07 15:34:30.830262693 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/idmef-value-type.h libprelude-1.0.1/src/include/idmef-value-type.h
+--- libprelude-1.0.1-old/src/include/idmef-value-type.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/idmef-value-type.h	2012-08-07 15:34:30.807262899 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/libmissing.h libprelude-1.0.1/src/include/libmissing.h
+--- libprelude-1.0.1-old/src/include/libmissing.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/libmissing.h	2012-08-07 15:34:30.783263114 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-async.h libprelude-1.0.1/src/include/prelude-async.h
+--- libprelude-1.0.1-old/src/include/prelude-async.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-async.h	2012-08-07 15:34:30.839262613 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-client.h libprelude-1.0.1/src/include/prelude-client.h
+--- libprelude-1.0.1-old/src/include/prelude-client.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-client.h	2012-08-07 15:34:30.800262962 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-client-profile.h libprelude-1.0.1/src/include/prelude-client-profile.h
+--- libprelude-1.0.1-old/src/include/prelude-client-profile.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-client-profile.h	2012-08-07 15:34:30.821262774 -0300
+@@ -16,9 +16,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-connection.h libprelude-1.0.1/src/include/prelude-connection.h
+--- libprelude-1.0.1-old/src/include/prelude-connection.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-connection.h	2012-08-07 15:34:30.809262881 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-connection-pool.h libprelude-1.0.1/src/include/prelude-connection-pool.h
+--- libprelude-1.0.1-old/src/include/prelude-connection-pool.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-connection-pool.h	2012-08-07 15:34:30.812262854 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-extract.h libprelude-1.0.1/src/include/prelude-extract.h
+--- libprelude-1.0.1-old/src/include/prelude-extract.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-extract.h	2012-08-07 15:34:30.790263051 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-failover.h libprelude-1.0.1/src/include/prelude-failover.h
+--- libprelude-1.0.1-old/src/include/prelude-failover.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-failover.h	2012-08-07 15:34:30.819262792 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude.h libprelude-1.0.1/src/include/prelude.h
+--- libprelude-1.0.1-old/src/include/prelude.h	2012-06-05 06:12:47.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude.h	2012-08-07 15:34:30.784263105 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-hash.h libprelude-1.0.1/src/include/prelude-hash.h
+--- libprelude-1.0.1-old/src/include/prelude-hash.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-hash.h	2012-08-07 15:34:30.835262649 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude.h.in libprelude-1.0.1/src/include/prelude.h.in
+--- libprelude-1.0.1-old/src/include/prelude.h.in	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude.h.in	2012-08-07 15:34:30.861262416 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-ident.h libprelude-1.0.1/src/include/prelude-ident.h
+--- libprelude-1.0.1-old/src/include/prelude-ident.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-ident.h	2012-08-07 15:34:30.842262586 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-inttypes.h.in libprelude-1.0.1/src/include/prelude-inttypes.h.in
+--- libprelude-1.0.1-old/src/include/prelude-inttypes.h.in	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-inttypes.h.in	2012-08-07 15:34:30.817262810 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-io.h libprelude-1.0.1/src/include/prelude-io.h
+--- libprelude-1.0.1-old/src/include/prelude-io.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-io.h	2012-08-07 15:34:30.815262828 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-linked-object.h libprelude-1.0.1/src/include/prelude-linked-object.h
+--- libprelude-1.0.1-old/src/include/prelude-linked-object.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-linked-object.h	2012-08-07 15:34:30.851262505 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-list.h libprelude-1.0.1/src/include/prelude-list.h
+--- libprelude-1.0.1-old/src/include/prelude-list.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-list.h	2012-08-07 15:34:30.781263132 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-log.h libprelude-1.0.1/src/include/prelude-log.h
+--- libprelude-1.0.1-old/src/include/prelude-log.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-log.h	2012-08-07 15:34:30.864262389 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-message-id.h libprelude-1.0.1/src/include/prelude-message-id.h
+--- libprelude-1.0.1-old/src/include/prelude-message-id.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-message-id.h	2012-08-07 15:34:30.845262559 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-msgbuf.h libprelude-1.0.1/src/include/prelude-msgbuf.h
+--- libprelude-1.0.1-old/src/include/prelude-msgbuf.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-msgbuf.h	2012-08-07 15:34:30.847262541 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-msg.h libprelude-1.0.1/src/include/prelude-msg.h
+--- libprelude-1.0.1-old/src/include/prelude-msg.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-msg.h	2012-08-07 15:34:30.803262935 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-option.h libprelude-1.0.1/src/include/prelude-option.h
+--- libprelude-1.0.1-old/src/include/prelude-option.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-option.h	2012-08-07 15:34:30.863262398 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-option-wide.h libprelude-1.0.1/src/include/prelude-option-wide.h
+--- libprelude-1.0.1-old/src/include/prelude-option-wide.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-option-wide.h	2012-08-07 15:34:30.806262908 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-plugin.h libprelude-1.0.1/src/include/prelude-plugin.h
+--- libprelude-1.0.1-old/src/include/prelude-plugin.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-plugin.h	2012-08-07 15:34:30.787263078 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-string.h libprelude-1.0.1/src/include/prelude-string.h
+--- libprelude-1.0.1-old/src/include/prelude-string.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-string.h	2012-08-07 15:34:30.849262523 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-thread.h libprelude-1.0.1/src/include/prelude-thread.h
+--- libprelude-1.0.1-old/src/include/prelude-thread.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-thread.h	2012-08-07 15:34:30.822262765 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/prelude-timer.h libprelude-1.0.1/src/include/prelude-timer.h
+--- libprelude-1.0.1-old/src/include/prelude-timer.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/prelude-timer.h	2012-08-07 15:34:30.833262667 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/tls-auth.h libprelude-1.0.1/src/include/tls-auth.h
+--- libprelude-1.0.1-old/src/include/tls-auth.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/tls-auth.h	2012-08-07 15:34:30.792263033 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/tls-util.h libprelude-1.0.1/src/include/tls-util.h
+--- libprelude-1.0.1-old/src/include/tls-util.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/tls-util.h	2012-08-07 15:34:30.796262998 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/include/variable.h libprelude-1.0.1/src/include/variable.h
+--- libprelude-1.0.1-old/src/include/variable.h	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/include/variable.h	2012-08-07 15:34:30.832262675 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Written by Yoann Vandoorselaere <yoann@prelude-ids.org>
+ *
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/prelude-error.h libprelude-1.0.1/src/libprelude-error/prelude-error.h
+--- libprelude-1.0.1-old/src/libprelude-error/prelude-error.h	2012-06-05 06:44:12.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/prelude-error.h	2012-08-07 15:34:30.631264474 -0300
+@@ -17,9 +17,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/prelude-error.h.in libprelude-1.0.1/src/libprelude-error/prelude-error.h.in
+--- libprelude-1.0.1-old/src/libprelude-error/prelude-error.h.in	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/prelude-error.h.in	2012-08-07 15:34:30.633264456 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-async.c libprelude-1.0.1/src/prelude-async.c
+--- libprelude-1.0.1-old/src/prelude-async.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/prelude-async.c	2012-08-07 15:34:30.705263812 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude.c libprelude-1.0.1/src/prelude.c
+--- libprelude-1.0.1-old/src/prelude.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude.c	2012-08-07 15:34:30.757263347 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-client.c libprelude-1.0.1/src/prelude-client.c
+--- libprelude-1.0.1-old/src/prelude-client.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-client.c	2012-08-07 15:34:30.877262273 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-client-profile.c libprelude-1.0.1/src/prelude-client-profile.c
+--- libprelude-1.0.1-old/src/prelude-client-profile.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-client-profile.c	2012-08-07 15:34:30.880262246 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-connection.c libprelude-1.0.1/src/prelude-connection.c
+--- libprelude-1.0.1-old/src/prelude-connection.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-connection.c	2012-08-07 15:34:30.703263830 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-connection-pool.c libprelude-1.0.1/src/prelude-connection-pool.c
+--- libprelude-1.0.1-old/src/prelude-connection-pool.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/prelude-connection-pool.c	2012-08-07 15:34:30.698263875 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-failover.c libprelude-1.0.1/src/prelude-failover.c
+--- libprelude-1.0.1-old/src/prelude-failover.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/prelude-failover.c	2012-08-07 15:34:30.761263311 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-hash.c libprelude-1.0.1/src/prelude-hash.c
+--- libprelude-1.0.1-old/src/prelude-hash.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-hash.c	2012-08-07 15:34:30.753263382 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-ident.c libprelude-1.0.1/src/prelude-ident.c
+--- libprelude-1.0.1-old/src/prelude-ident.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-ident.c	2012-08-07 15:34:30.654264268 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-io.c libprelude-1.0.1/src/prelude-io.c
+--- libprelude-1.0.1-old/src/prelude-io.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-io.c	2012-08-07 15:34:30.669264134 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-log.c libprelude-1.0.1/src/prelude-log.c
+--- libprelude-1.0.1-old/src/prelude-log.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/prelude-log.c	2012-08-07 15:34:30.700263857 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-msgbuf.c libprelude-1.0.1/src/prelude-msgbuf.c
+--- libprelude-1.0.1-old/src/prelude-msgbuf.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/prelude-msgbuf.c	2012-08-07 15:34:30.673264098 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-msg.c libprelude-1.0.1/src/prelude-msg.c
+--- libprelude-1.0.1-old/src/prelude-msg.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-msg.c	2012-08-07 15:34:30.687263973 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-option.c libprelude-1.0.1/src/prelude-option.c
+--- libprelude-1.0.1-old/src/prelude-option.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/prelude-option.c	2012-08-07 15:34:30.694263910 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-option-wide.c libprelude-1.0.1/src/prelude-option-wide.c
+--- libprelude-1.0.1-old/src/prelude-option-wide.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/prelude-option-wide.c	2012-08-07 15:34:30.671264116 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-plugin.c libprelude-1.0.1/src/prelude-plugin.c
+--- libprelude-1.0.1-old/src/prelude-plugin.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/prelude-plugin.c	2012-08-07 15:34:30.681264027 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-string.c libprelude-1.0.1/src/prelude-string.c
+--- libprelude-1.0.1-old/src/prelude-string.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-string.c	2012-08-07 15:34:30.767263257 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-thread.c libprelude-1.0.1/src/prelude-thread.c
+--- libprelude-1.0.1-old/src/prelude-thread.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-thread.c	2012-08-07 15:34:30.688263964 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/prelude-timer.c libprelude-1.0.1/src/prelude-timer.c
+--- libprelude-1.0.1-old/src/prelude-timer.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/prelude-timer.c	2012-08-07 15:34:30.751263400 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/tls-auth.c libprelude-1.0.1/src/tls-auth.c
+--- libprelude-1.0.1-old/src/tls-auth.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/tls-auth.c	2012-08-07 15:34:30.658264233 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/tls-util.c libprelude-1.0.1/src/tls-util.c
+--- libprelude-1.0.1-old/src/tls-util.c	2012-06-01 12:12:30.000000000 -0300
++++ libprelude-1.0.1/src/tls-util.c	2012-08-07 15:34:30.653264277 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+diff -r -u libprelude-1.0.1-old/src/variable.c libprelude-1.0.1/src/variable.c
+--- libprelude-1.0.1-old/src/variable.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/variable.c	2012-08-07 15:34:30.690263946 -0300
+@@ -15,9 +15,9 @@
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+-* You should have received a copy of the GNU General Public License
+-* along with this program; see the file COPYING.  If not, write to
+-* the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
++* You should have received a copy of the GNU General Public License along
++* with this program; if not, write to the Free Software Foundation, Inc.,
++* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ *****/
+ 
+--- libprelude-1.0.1-old/COPYING	2012-06-01 12:03:59.000000000 -0300
++++ libprelude-1.0.1/COPYING	2010-03-23 20:34:05.000000000 -0300
+@@ -1,12 +1,12 @@
+-		    GNU GENERAL PUBLIC LICENSE
+-		       Version 2, June 1991
++                    GNU GENERAL PUBLIC LICENSE
++                       Version 2, June 1991
+ 
+- Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+-     59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++ Copyright (C) 1989, 1991 Free Software Foundation, Inc.,
++ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+  Everyone is permitted to copy and distribute verbatim copies
+  of this license document, but changing it is not allowed.
+ 
+-			    Preamble
++                            Preamble
+ 
+   The licenses for most software are designed to take away your
+ freedom to share and change it.  By contrast, the GNU General Public
+@@ -15,7 +15,7 @@
+ General Public License applies to most of the Free Software
+ Foundation's software and to any other program whose authors commit to
+ using it.  (Some other Free Software Foundation software is covered by
+-the GNU Library General Public License instead.)  You can apply it to
++the GNU Lesser General Public License instead.)  You can apply it to
+ your programs, too.
+ 
+   When we speak of free software, we are referring to freedom, not
+@@ -55,8 +55,8 @@
+ 
+   The precise terms and conditions for copying, distribution and
+ modification follow.
+-
+-		    GNU GENERAL PUBLIC LICENSE
++
++                    GNU GENERAL PUBLIC LICENSE
+    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+ 
+   0. This License applies to any program or other work which contains
+@@ -110,7 +110,7 @@
+     License.  (Exception: if the Program itself is interactive but
+     does not normally print such an announcement, your work based on
+     the Program is not required to print an announcement.)
+-
++
+ These requirements apply to the modified work as a whole.  If
+ identifiable sections of that work are not derived from the Program,
+ and can be reasonably considered independent and separate works in
+@@ -168,7 +168,7 @@
+ access to copy the source code from the same place counts as
+ distribution of the source code, even though third parties are not
+ compelled to copy the source along with the object code.
+-
++
+   4. You may not copy, modify, sublicense, or distribute the Program
+ except as expressly provided under this License.  Any attempt
+ otherwise to copy, modify, sublicense or distribute the Program is
+@@ -225,7 +225,7 @@
+ 
+ This section is intended to make thoroughly clear what is believed to
+ be a consequence of the rest of this License.
+-
++
+   8. If the distribution and/or use of the Program is restricted in
+ certain countries either by patents or by copyrighted interfaces, the
+ original copyright holder who places the Program under this License
+@@ -255,7 +255,7 @@
+ of preserving the free status of all derivatives of our free software and
+ of promoting the sharing and reuse of software generally.
+ 
+-			    NO WARRANTY
++                            NO WARRANTY
+ 
+   11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+ FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
+@@ -277,9 +277,9 @@
+ PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGES.
+ 
+-		     END OF TERMS AND CONDITIONS
+-
+-	    How to Apply These Terms to Your New Programs
++                     END OF TERMS AND CONDITIONS
++
++            How to Apply These Terms to Your New Programs
+ 
+   If you develop a new program, and you want it to be of the greatest
+ possible use to the public, the best way to achieve this is to make it
+@@ -303,17 +303,16 @@
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+ 
+-    You should have received a copy of the GNU General Public License
+-    along with this program; if not, write to the Free Software
+-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+-
++    You should have received a copy of the GNU General Public License along
++    with this program; if not, write to the Free Software Foundation, Inc.,
++    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ 
+ Also add information on how to contact you by electronic and paper mail.
+ 
+ If the program is interactive, make it output a short notice like this
+ when it starts in an interactive mode:
+ 
+-    Gnomovision version 69, Copyright (C) year  name of author
++    Gnomovision version 69, Copyright (C) year name of author
+     Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+     This is free software, and you are welcome to redistribute it
+     under certain conditions; type `show c' for details.
+@@ -336,5 +335,5 @@
+ This General Public License does not permit incorporating your program into
+ proprietary programs.  If your program is a subroutine library, you may
+ consider it more useful to permit linking proprietary applications with the
+-library.  If this is what you want to do, use the GNU Library General
++library.  If this is what you want to do, use the GNU Lesser General
+ Public License instead of this License.
+diff -r -u libprelude-1.0.1-old/libmissing/ftw.c libprelude-1.0.1/libmissing/ftw.c
+--- libprelude-1.0.1-old/libmissing/ftw.c	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/libmissing/ftw.c	2012-08-07 16:21:40.185943426 -0300
+@@ -13,7 +13,7 @@
+  *
+  * You should have received a copy of the GNU Lesser General Public
+  * License along with this file; if not, write to the Free Software
+- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301,
+  * USA.
+  */
+ 
+diff -r -u libprelude-1.0.1-old/libmissing/ftw_.h libprelude-1.0.1/libmissing/ftw_.h
+--- libprelude-1.0.1-old/libmissing/ftw_.h	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/libmissing/ftw_.h	2012-08-07 16:21:40.121943999 -0300
+@@ -13,7 +13,7 @@
+  *
+  * You should have received a copy of the GNU Lesser General Public
+  * License along with this file; if not, write to the Free Software
+- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301,
+  * USA.
+  */
+ 
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/err-codes.h libprelude-1.0.1/src/libprelude-error/err-codes.h
+--- libprelude-1.0.1-old/src/libprelude-error/err-codes.h	2012-06-05 06:44:13.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/err-codes.h	2012-08-07 16:21:40.689938916 -0300
+@@ -15,9 +15,9 @@
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+  
+-   You should have received a copy of the GNU General Public
+-   License along with libgpg-error; if not, write to the Free
+-   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
++   You should have received a copy of the GNU General Public License
++   along with libgpg-error; if not, write to the Free Software
++   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02111-1307, USA.  */
+ 
+ 
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/err-codes.h.in libprelude-1.0.1/src/libprelude-error/err-codes.h.in
+--- libprelude-1.0.1-old/src/libprelude-error/err-codes.h.in	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/err-codes.h.in	2012-08-07 16:21:40.686938943 -0300
+@@ -14,9 +14,9 @@
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+  
+-   You should have received a copy of the GNU General Public
+-   License along with libgpg-error; if not, write to the Free
+-   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
++   You should have received a copy of the GNU General Public License
++   along with libgpg-error; if not, write to the Free Software
++   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02111-1307, USA.  */
+ 
+ # Everything up to the first line that starts with a number in the
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/errnos.in libprelude-1.0.1/src/libprelude-error/errnos.in
+--- libprelude-1.0.1-old/src/libprelude-error/errnos.in	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/errnos.in	2012-08-07 16:21:40.663939149 -0300
+@@ -14,9 +14,9 @@
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+  
+-   You should have received a copy of the GNU General Public
+-   License along with libgpg-error; if not, write to the Free
+-   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
++   You should have received a copy of the GNU General Public License
++   along with libgpg-error; if not, write to the Free Software
++   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02111-1307, USA.  */
+ 
+ # Everything up to the first line that starts with a number in the
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/err-sources.h libprelude-1.0.1/src/libprelude-error/err-sources.h
+--- libprelude-1.0.1-old/src/libprelude-error/err-sources.h	2012-06-05 06:44:12.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/err-sources.h	2012-08-07 16:21:40.665939131 -0300
+@@ -15,9 +15,9 @@
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+  
+-   You should have received a copy of the GNU General Public
+-   License along with libgpg-error; if not, write to the Free
+-   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
++   You should have received a copy of the GNU General Public License
++   along with libgpg-error; if not, write to the Free Software
++   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02111-1307, USA.  */
+ 
+ 
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/err-sources.h.in libprelude-1.0.1/src/libprelude-error/err-sources.h.in
+--- libprelude-1.0.1-old/src/libprelude-error/err-sources.h.in	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/err-sources.h.in	2012-08-07 16:21:40.679939005 -0300
+@@ -14,9 +14,9 @@
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+  
+-   You should have received a copy of the GNU General Public
+-   License along with libgpg-error; if not, write to the Free
+-   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
++   You should have received a copy of the GNU General Public License
++   along with libgpg-error; if not, write to the Free Software
++   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02111-1307, USA.  */
+ 
+ # Everything up to the first line that starts with a number in the
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/mkerrcodes1.awk libprelude-1.0.1/src/libprelude-error/mkerrcodes1.awk
+--- libprelude-1.0.1-old/src/libprelude-error/mkerrcodes1.awk	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/mkerrcodes1.awk	2012-08-07 16:21:40.681938987 -0300
+@@ -13,7 +13,7 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
++# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ #
+ # As a special exception, g10 Code GmbH gives unlimited permission to
+ # copy, distribute and modify the C source files that are the output
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/mkerrcodes2.awk libprelude-1.0.1/src/libprelude-error/mkerrcodes2.awk
+--- libprelude-1.0.1-old/src/libprelude-error/mkerrcodes2.awk	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/mkerrcodes2.awk	2012-08-07 16:21:40.682938979 -0300
+@@ -13,7 +13,7 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
++# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ #
+ # As a special exception, g10 Code GmbH gives unlimited permission to
+ # copy, distribute and modify the C source files that are the output
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/mkerrcodes.awk libprelude-1.0.1/src/libprelude-error/mkerrcodes.awk
+--- libprelude-1.0.1-old/src/libprelude-error/mkerrcodes.awk	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/mkerrcodes.awk	2012-08-07 16:21:40.698938835 -0300
+@@ -13,7 +13,7 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
++# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ #
+ # As a special exception, g10 Code GmbH gives unlimited permission to
+ # copy, distribute and modify the C source files that are the output
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/mkerrcodes.c libprelude-1.0.1/src/libprelude-error/mkerrcodes.c
+--- libprelude-1.0.1-old/src/libprelude-error/mkerrcodes.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/mkerrcodes.c	2012-08-07 16:21:40.688938925 -0300
+@@ -13,9 +13,9 @@
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+  
+-   You should have received a copy of the GNU General Public
+-   License along with libgpg-error; if not, write to the Free
+-   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
++   You should have received a copy of the GNU General Public License
++   along with libgpg-error; if not, write to the Free Software
++   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02111-1307, USA.  */
+ 
+ /* This file must not include config.h, as that is for the host
+@@ -40,9 +40,9 @@
+ "   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n"
+ "   Lesser General Public License for more details.\n"
+ "\n"
+-"   You should have received a copy of the GNU General Public\n"
+-"   License along with libgpg-error; if not, write to the Free\n"
+-"   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA\n"
++"   You should have received a copy of the GNU General Public License\n"
++"   along with libgpg-error; if not, write to the Free Software\n"
++"   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+ "   02111-1307, USA.  */\n"
+ "\n";
+ 
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/mkerrnos.awk libprelude-1.0.1/src/libprelude-error/mkerrnos.awk
+--- libprelude-1.0.1-old/src/libprelude-error/mkerrnos.awk	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/mkerrnos.awk	2012-08-07 16:21:40.684938961 -0300
+@@ -13,7 +13,7 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
++# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ #
+ # As a special exception, g10 Code GmbH gives unlimited permission to
+ # copy, distribute and modify the C source files that are the output
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/mkheader.awk libprelude-1.0.1/src/libprelude-error/mkheader.awk
+--- libprelude-1.0.1-old/src/libprelude-error/mkheader.awk	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/mkheader.awk	2012-08-07 16:21:40.675939041 -0300
+@@ -13,7 +13,7 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
++# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ #
+ # As a special exception, g10 Code GmbH gives unlimited permission to
+ # copy, distribute and modify the C source files that are the output
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/mkstrtable.awk libprelude-1.0.1/src/libprelude-error/mkstrtable.awk
+--- libprelude-1.0.1-old/src/libprelude-error/mkstrtable.awk	2012-04-02 06:41:15.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/mkstrtable.awk	2012-08-07 16:21:40.695938862 -0300
+@@ -13,7 +13,7 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.
++# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ #
+ # As a special exception, g10 Code GmbH gives unlimited permission to
+ # copy, distribute and modify the C source files that are the output
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/strerror.c libprelude-1.0.1/src/libprelude-error/strerror.c
+--- libprelude-1.0.1-old/src/libprelude-error/strerror.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/strerror.c	2012-08-07 16:21:40.673939059 -0300
+@@ -13,9 +13,9 @@
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+  
+-   You should have received a copy of the GNU General Public
+-   License along with libgpg-error; if not, write to the Free
+-   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
++   You should have received a copy of the GNU General Public License
++   along with libgpg-error; if not, write to the Free Software
++   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02111-1307, USA.  */
+ 
+ #include "config.h"
+diff -r -u libprelude-1.0.1-old/src/libprelude-error/strsource.c libprelude-1.0.1/src/libprelude-error/strsource.c
+--- libprelude-1.0.1-old/src/libprelude-error/strsource.c	2012-06-01 12:12:31.000000000 -0300
++++ libprelude-1.0.1/src/libprelude-error/strsource.c	2012-08-07 16:21:40.677939023 -0300
+@@ -13,9 +13,9 @@
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+  
+-   You should have received a copy of the GNU General Public
+-   License along with libgpg-error; if not, write to the Free
+-   Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
++   You should have received a copy of the GNU General Public License
++   along with libgpg-error; if not, write to the Free Software
++   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02111-1307, USA.  */
+ 
+ 

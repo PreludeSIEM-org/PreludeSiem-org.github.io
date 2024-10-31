@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>/ - Repository - Nagios plugins - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="s8jHVQDUkoemHqozeruHmrqf1LNcYASl008sDU3rLuSg5686ycCfBCy0osln887ExtSlLUZqXesNweidyesa5w==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+  <script src="/javascripts/repository_navigation.js"></script>
+  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.prelude-siem.org/projects/nagios-plugins/repository/revisions.atom" />
+  <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" />
+</head>
+<body class="theme-Prelude project-nagios-plugins controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/nagios-plugins/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="changesets" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/nagios-plugins/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="changesets" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/nagios-plugins/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/nagios-plugins">Overview</a></li><li><a class="activity" href="/projects/nagios-plugins/activity">Activity</a></li><li><a class="repository selected" href="/projects/nagios-plugins/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+<div class="contextual">
+  
+<a class="icon icon-stats" href="/projects/nagios-plugins/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/nagios-plugins/repository" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />  <!-- Branches Dropdown -->
+    | Branch: 
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option>
+<option value="release-4.0">release-4.0</option>
+<option value="release-5.0">release-5.0</option>
+<option value="release-5.1">release-5.1</option>
+<option value="release-5.2">release-5.2</option>
+<option value="support/v3.5">support/v3.5</option></select>
+
+    | Tag: 
+    <select name="tag" id="tag"><option value="">&nbsp;</option>
+<option value="v3.5">v3.5</option>
+<option value="v3.5.1">v3.5.1</option>
+<option value="v3.6.0">v3.6.0</option>
+<option value="v3.6.0RC1">v3.6.0RC1</option>
+<option value="v3.6.0RC2">v3.6.0RC2</option>
+<option value="v3.6.0RC3">v3.6.0RC3</option>
+<option value="v3.6.0RC4">v3.6.0RC4</option>
+<option value="v4.0">v4.0</option>
+<option value="v4.0.1">v4.0.1</option>
+<option value="v4.0.1rc1">v4.0.1rc1</option>
+<option value="v4.0rc1">v4.0rc1</option>
+<option value="v4.0rc2">v4.0rc2</option>
+<option value="v4.0rc3">v4.0rc3</option>
+<option value="v4.1.0">v4.1.0</option>
+<option value="v4.1.0rc1">v4.1.0rc1</option>
+<option value="v4.1.0rc2">v4.1.0rc2</option>
+<option value="v4.1.0rc3">v4.1.0rc3</option>
+<option value="v5.0.0">v5.0.0</option>
+<option value="v5.0.0rc1">v5.0.0rc1</option>
+<option value="v5.0.0rc2">v5.0.0rc2</option>
+<option value="v5.1.0">v5.1.0</option>
+<option value="v5.1.0a1">v5.1.0a1</option>
+<option value="v5.1.0b1">v5.1.0b1</option>
+<option value="v5.2.0">v5.2.0</option>
+<option value="v5.2.0b1">v5.2.0b1</option>
+<option value="v5.2.0b2">v5.2.0b2</option>
+<option value="v5.2.0rc1">v5.2.0rc1</option>
+<option value="v5.2.1">v5.2.1</option></select>
+
+    | Revision: 
+    <input type="text" name="rev" id="rev" value="master" size="8" />
+</form>
+</div>
+
+<h2><a href="/projects/nagios-plugins/repository/revisions/master/show">nagios-plugins</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr id="3a8e4c06e471595f6eb262bb9b5582d9" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('3a8e4c06e471595f6eb262bb9b5582d9', '/projects/nagios-plugins/repository/revisions/master/show/conf?depth=1&amp;parent_id=3a8e4c06e471595f6eb262bb9b5582d9');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/nagios-plugins/repository/revisions/master/show/conf">conf</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="7c0b3e6cb1f202796bb60528e017a994" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('7c0b3e6cb1f202796bb60528e017a994', '/projects/nagios-plugins/repository/revisions/master/show/handlers?depth=1&amp;parent_id=7c0b3e6cb1f202796bb60528e017a994');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/nagios-plugins/repository/revisions/master/show/handlers">handlers</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a46a1bce0b67c45bec8f435bd5390a54" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('a46a1bce0b67c45bec8f435bd5390a54', '/projects/nagios-plugins/repository/revisions/master/show/pkg?depth=1&amp;parent_id=a46a1bce0b67c45bec8f435bd5390a54');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/nagios-plugins/repository/revisions/master/show/pkg">pkg</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="63dc9087c660611bdf3fcb1a1257247a" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('63dc9087c660611bdf3fcb1a1257247a', '/projects/nagios-plugins/repository/revisions/master/show/plugins?depth=1&amp;parent_id=63dc9087c660611bdf3fcb1a1257247a');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/nagios-plugins/repository/revisions/master/show/plugins">plugins</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="f97cff8cc7a7e091b3e7f0ac667b1a25" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('f97cff8cc7a7e091b3e7f0ac667b1a25', '/projects/nagios-plugins/repository/revisions/master/show/selinux?depth=1&amp;parent_id=f97cff8cc7a7e091b3e7f0ac667b1a25');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/nagios-plugins/repository/revisions/master/show/selinux">selinux</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/nagios-plugins/repository/changes/.gitignore?rev=master">.gitignore</a>
+</td>
+<td class="size">328 Bytes</td>
+</tr>
+<tr id="21c55fa400e4d25aed3a755371e32151" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/nagios-plugins/repository/changes/COPYING.txt?rev=master">COPYING.txt</a>
+</td>
+<td class="size">17.7 KB</td>
+</tr>
+<tr id="b67911656ef5d18c4ae36cb6741b7965" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/nagios-plugins/repository/changes/Makefile?rev=master">Makefile</a>
+</td>
+<td class="size">2.8 KB</td>
+</tr>
+<tr id="26fd799ea07494916e9da9b91b2aac64" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/nagios-plugins/repository/changes/README.txt?rev=master">README.txt</a>
+</td>
+<td class="size">2.3 KB</td>
+</tr>
+<tr id="780b48c08acd302f35338634f56df2ae" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/nagios-plugins/repository/changes/VERSION.txt?rev=master">VERSION.txt</a>
+</td>
+<td class="size">6 Bytes</td>
+</tr>
+<tr id="a91efb528777d13c9f105798a9c5673b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/nagios-plugins/repository/changes/buildenv?rev=master">buildenv</a>
+</td>
+<td class="size">11 Bytes</td>
+</tr>
+<tr id="a55fc4e553af13234f26342646b88e19" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/nagios-plugins/repository/changes/buildout.cfg?rev=master">buildout.cfg</a>
+</td>
+<td class="size">107 Bytes</td>
+</tr>
+<tr id="225a77e5d9fbda115f2a9a771ee2e653" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/nagios-plugins/repository/changes/nagios-plugin-commands.cfg.in?rev=master">nagios-plugin-commands.cfg.in</a>
+</td>
+<td class="size">13.1 KB</td>
+</tr>
+<tr id="4bc179b9dc1d4969929d66e3efa94ccc" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-x-sh" href="/projects/nagios-plugins/repository/changes/nagios-restart.sh?rev=master">nagios-restart.sh</a>
+</td>
+<td class="size">863 Bytes</td>
+</tr>
+<tr id="0c8e1f729ab8414cb75b08e61d55b853" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/nagios-plugins/repository/changes/nrpe.cfg.in?rev=master">nrpe.cfg.in</a>
+</td>
+<td class="size">1.08 KB</td>
+</tr>
+<tr id="22f909371524deedfefa9aae45b9b8ff" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/nagios-plugins/repository/changes/vigilo-commands.cfg.in?rev=master">vigilo-commands.cfg.in</a>
+</td>
+<td class="size">1.95 KB</td>
+</tr>
+<tr id="8d9eed257dbbb30d071739c7a8c898cb" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/nagios-plugins/repository/changes/vigilo.cfg.in?rev=master">vigilo.cfg.in</a>
+</td>
+<td class="size">14.5 KB</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"eb4f531bb2d81078aba9c9521295c2955acd63d0":{"parent_scmids":["4e513c7ff649ec51fe2441a6ad6ae05607e6912d"],"rdmid":0,"refs":null,"scmid":"eb4f531bb2d81078aba9c9521295c2955acd63d0","href":"/projects/nagios-plugins/repository/revisions/eb4f531bb2d81078aba9c9521295c2955acd63d0","space":0},"9909b3b0520e7ff68ba7044d6dc6b078231005c7":{"parent_scmids":["eb4f531bb2d81078aba9c9521295c2955acd63d0"],"rdmid":1,"refs":null,"scmid":"9909b3b0520e7ff68ba7044d6dc6b078231005c7","href":"/projects/nagios-plugins/repository/revisions/9909b3b0520e7ff68ba7044d6dc6b078231005c7","space":0},"bce8b87b71073e89410be0a6da8d6a9cb5664d97":{"parent_scmids":["9909b3b0520e7ff68ba7044d6dc6b078231005c7"],"rdmid":2,"refs":null,"scmid":"bce8b87b71073e89410be0a6da8d6a9cb5664d97","href":"/projects/nagios-plugins/repository/revisions/bce8b87b71073e89410be0a6da8d6a9cb5664d97","space":0},"31adc09f119a633a28da5e74f731aac36cbd253c":{"parent_scmids":["bce8b87b71073e89410be0a6da8d6a9cb5664d97"],"rdmid":3,"refs":null,"scmid":"31adc09f119a633a28da5e74f731aac36cbd253c","href":"/projects/nagios-plugins/repository/revisions/31adc09f119a633a28da5e74f731aac36cbd253c","space":0},"1f64abc3efd79bc2af773734b7acb72ea417cd25":{"parent_scmids":["31adc09f119a633a28da5e74f731aac36cbd253c"],"rdmid":4,"refs":null,"scmid":"1f64abc3efd79bc2af773734b7acb72ea417cd25","href":"/projects/nagios-plugins/repository/revisions/1f64abc3efd79bc2af773734b7acb72ea417cd25","space":0},"b93a3a9ed10427bdecc76ed3a4a282972f00f15c":{"parent_scmids":["1f64abc3efd79bc2af773734b7acb72ea417cd25"],"rdmid":5,"refs":null,"scmid":"b93a3a9ed10427bdecc76ed3a4a282972f00f15c","href":"/projects/nagios-plugins/repository/revisions/b93a3a9ed10427bdecc76ed3a4a282972f00f15c","space":0},"5338be20294fe19c4c35eef0ffa17333e418e184":{"parent_scmids":["b93a3a9ed10427bdecc76ed3a4a282972f00f15c"],"rdmid":6,"refs":null,"scmid":"5338be20294fe19c4c35eef0ffa17333e418e184","href":"/projects/nagios-plugins/repository/revisions/5338be20294fe19c4c35eef0ffa17333e418e184","space":0},"95b86eed300604bfebee793760b57ba31b169298":{"parent_scmids":["5338be20294fe19c4c35eef0ffa17333e418e184"],"rdmid":7,"refs":null,"scmid":"95b86eed300604bfebee793760b57ba31b169298","href":"/projects/nagios-plugins/repository/revisions/95b86eed300604bfebee793760b57ba31b169298","space":0},"af207bca2a6791b995696bc6d7f66d5ac74960dc":{"parent_scmids":["95b86eed300604bfebee793760b57ba31b169298"],"rdmid":8,"refs":null,"scmid":"af207bca2a6791b995696bc6d7f66d5ac74960dc","href":"/projects/nagios-plugins/repository/revisions/af207bca2a6791b995696bc6d7f66d5ac74960dc","space":0},"0266e8d0dff13fd63cffa619a3411dcd0ccb3755":{"parent_scmids":["af207bca2a6791b995696bc6d7f66d5ac74960dc"],"rdmid":9,"refs":"master","scmid":"0266e8d0dff13fd63cffa619a3411dcd0ccb3755","href":"/projects/nagios-plugins/repository/revisions/0266e8d0dff13fd63cffa619a3411dcd0ccb3755","space":0}},
+    0
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"></div>
+
+
+<form action="/projects/nagios-plugins/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 0266e8d0" href="/projects/nagios-plugins/repository/revisions/0266e8d0dff13fd63cffa619a3411dcd0ccb3755">0266e8d0</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-1" value="0266e8d0dff13fd63cffa619a3411dcd0ccb3755" onclick="$(&#39;#cbto-2&#39;).prop(&#39;checked&#39;,true);" checked="checked" /></td>
+<td class="checkbox"></td>
+<td class="committed_on">10/02/2020 07:48 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2072] Règles SELinux pour sondes personnalisées</p>
+
+
+	<p>Change-Id: I118fd9ae27bd07c1adcc55c04aa63c8d9cfa4496<br />Refs: #2072</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision af207bca" href="/projects/nagios-plugins/repository/revisions/af207bca2a6791b995696bc6d7f66d5ac74960dc">af207bca</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-2" value="af207bca2a6791b995696bc6d7f66d5ac74960dc" onclick="$(&#39;#cbto-3&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-2" value="af207bca2a6791b995696bc6d7f66d5ac74960dc" onclick="if ($(&#39;#cb-2&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-1&#39;).prop(&#39;checked&#39;,true);}" checked="checked" /></td>
+<td class="committed_on">09/10/2020 01:37 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0</p>
+
+
+	<p>Change-Id: I25c8e382191857b64b2df334b51219d08d211055</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 95b86eed" href="/projects/nagios-plugins/repository/revisions/95b86eed300604bfebee793760b57ba31b169298">95b86eed</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-3" value="95b86eed300604bfebee793760b57ba31b169298" onclick="$(&#39;#cbto-4&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-3" value="95b86eed300604bfebee793760b57ba31b169298" onclick="if ($(&#39;#cb-3&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-2&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">08/03/2020 08:52 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0rc1</p>
+
+
+	<p>Change-Id: I8ae6ae74e5b7c0c9ba079871f12719a0b1665103</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 5338be20" href="/projects/nagios-plugins/repository/revisions/5338be20294fe19c4c35eef0ffa17333e418e184">5338be20</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-4" value="5338be20294fe19c4c35eef0ffa17333e418e184" onclick="$(&#39;#cbto-5&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-4" value="5338be20294fe19c4c35eef0ffa17333e418e184" onclick="if ($(&#39;#cb-4&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-3&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/31/2020 04:25 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Suppression astérisque dans sujets des emails</p>
+
+
+	<p>Certains serveurs de messagerie bloquent les emails silencieusement<br />quand ils détectent ces caractères.</p>
+
+
+	<p>Change-Id: I1f4ef30d37764b8b8a967a85eade14d7396c121b</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision b93a3a9e" href="/projects/nagios-plugins/repository/revisions/b93a3a9ed10427bdecc76ed3a4a282972f00f15c">b93a3a9e</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-5" value="b93a3a9ed10427bdecc76ed3a4a282972f00f15c" onclick="$(&#39;#cbto-6&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-5" value="b93a3a9ed10427bdecc76ed3a4a282972f00f15c" onclick="if ($(&#39;#cb-5&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-4&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/29/2020 02:10 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2042] Avertissement de Perl concernant "return"</p>
+
+
+	<p>Evite l'erreur Perl suivante dans les journaux de Nagios :<br />  Can't return outside a subroutine at ... line ...</p>
+
+
+	<p>Change-Id: I1dc7b1df9f55f625de6cc1a458cc4c6ffde7a486<br />Refs: #2042</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 1f64abc3" href="/projects/nagios-plugins/repository/revisions/1f64abc3efd79bc2af773734b7acb72ea417cd25">1f64abc3</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-6" value="1f64abc3efd79bc2af773734b7acb72ea417cd25" onclick="$(&#39;#cbto-7&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-6" value="1f64abc3efd79bc2af773734b7acb72ea417cd25" onclick="if ($(&#39;#cb-6&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-5&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/10/2020 12:15 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2039] Correction pour import de utils_vigilo</p>
+
+
+	<p>Change-Id: I02d40f349c97b0fdac356c7b76c7c6e6c4bc6f0b<br />Refs: #2039</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 31adc09f" href="/projects/nagios-plugins/repository/revisions/31adc09f119a633a28da5e74f731aac36cbd253c">31adc09f</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-7" value="31adc09f119a633a28da5e74f731aac36cbd253c" onclick="$(&#39;#cbto-8&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-7" value="31adc09f119a633a28da5e74f731aac36cbd253c" onclick="if ($(&#39;#cb-7&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-6&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/08/2020 04:55 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Ecriture dans la socket de vigilo-connector-nagios</p>
+
+
+	<p>Autorise nagios et vigilo-collector à écrire dans la socket d'écoute<br />de vigilo-connector-nagios.</p>
+
+
+	<p>Change-Id: I3034075c4ea7850214c0b03b7b8aff884c2f0304<br />Refs: #2023</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision bce8b87b" href="/projects/nagios-plugins/repository/revisions/bce8b87b71073e89410be0a6da8d6a9cb5664d97">bce8b87b</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-8" value="bce8b87b71073e89410be0a6da8d6a9cb5664d97" onclick="$(&#39;#cbto-9&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-8" value="bce8b87b71073e89410be0a6da8d6a9cb5664d97" onclick="if ($(&#39;#cb-8&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-7&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/06/2020 07:36 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Nettoyage</p>
+
+
+	<p>Change-Id: I9846e4886e11ba982da9dc507c7e3f458b38a591</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:20px">
+  <a title="Revision 9909b3b0" href="/projects/nagios-plugins/repository/revisions/9909b3b0520e7ff68ba7044d6dc6b078231005c7">9909b3b0</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-9" value="9909b3b0520e7ff68ba7044d6dc6b078231005c7" onclick="$(&#39;#cbto-10&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-9" value="9909b3b0520e7ff68ba7044d6dc6b078231005c7" onclick="if ($(&#39;#cb-9&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-8&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/06/2020 06:29 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2023] Labels SELinux pour /dev/shm/nagios</p>
+
+
+	<p>Change-Id: Ifbe7e5b0d5e867967d505daf50b3d23598c97068<br />Refs: #2023</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:20px">
+  <a title="Revision eb4f531b" href="/projects/nagios-plugins/repository/revisions/eb4f531bb2d81078aba9c9521295c2955acd63d0">eb4f531b</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-10" value="eb4f531bb2d81078aba9c9521295c2955acd63d0" onclick="if ($(&#39;#cb-10&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-9&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/06/2020 05:31 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2023] Encore des règles SELinux pour Nagios</p>
+
+
+	<p>Change-Id: I476dde33107b73cdab746b0033c7275286bf9042<br />Refs: #2023</p></td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="View differences" />
+</form></div>
+
+  <p>
+    <a href="/projects/nagios-plugins/repository/revisions">View all revisions</a>
+    |
+    <a href="/projects/nagios-plugins/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="/projects/nagios-plugins/repository/revisions.atom">Atom</a></span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

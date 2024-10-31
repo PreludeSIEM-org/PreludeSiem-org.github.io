@@ -1,0 +1,29 @@
+=== prewikka/views/messagelisting.py
+==================================================================
+--- prewikka/views/messagelisting.py	(revision 7285)
++++ prewikka/views/messagelisting.py	(local)
+@@ -69,7 +69,23 @@
+         t = time.localtime(self._t)
+         t = list(t)
+         t[self._index] += value
+-        t = time.mktime(t)
++
++        try:
++            t = time.mktime(t)
++            
++        # Implementation specific: mktime might trigger an OverflowError
++        # if the year member is out of range. If this happen, we adjust
++        # the setting to a year known to work.
++        except OverflowError:
++            if t[0] >= 2038:
++                t = time.mktime([2038, 1, 19, 3, 14, 7, 1, 19, 0])
++
++            elif t[0] <= 1901:
++                t = time.mktime([1901, 12, 13, 20, 45, 52, 4, 347, 0])
++
++            else:
++                raise OverflowError
++        
+         return _MyTime(t)
+ 
+     def __sub__(self, value):

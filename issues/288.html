@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #288: gcc:gcc: unrecognized option `-KPIC&#39; - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TVjLd7WVThws25Il0N3xYttYFfmq/av0NqR9rRr9Y1ped6MYfIFDn6Zxmt/Nlbg8pxNkZ7D38rroKrk9nv1XWQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Libprelude - Bug #288: gcc:gcc: unrecognized option `-KPIC&#39;" href="http://www.prelude-siem.org/issues/288.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-libprelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/libprelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/libprelude/issues/report">Summary</a></li>
+
+<li><a href="/projects/libprelude/issues/calendar">Calendar</a></li>
+<li><a href="/projects/libprelude/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #288</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#290" accesskey="p" href="/issues/290">« Previous</a> |
+        <span class="position">16 of 362</span> |
+      <a title="#287" accesskey="n" href="/issues/287">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>gcc:gcc: unrecognized option `-KPIC&#39;</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="05/08/2008 01:39 PM" href="/projects/libprelude/activity?from=2008-05-08">over 16 years</a> ago.
+        Updated <a title="05/29/2016 04:45 PM" href="/projects/libprelude/activity?from=2016-05-29">over 8 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/301">Thomas </a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>I am trying to compile libprelude on Solaris 10 (Sparc) i can configure but when i make its gives me following error. CAn you help please</p>
+
+
+<pre>
+gcc -c  -I../.. -I../../src/include -I../../src/include -I../../src/libprelude-error -D_REENTRANT -pthreads  -D_REENTRANT -xO3 -xtarget=ultra -xarch=v8 -I/opt/csw/bdb44/include -I/opt/csw/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -xO3 -xtarget=ultra -xarch=v8    -DVERSION=\"\"  -DXS_VERSION=\"\" -KPIC "-I/opt/csw/lib/perl/5.8.8/CORE"   Prelude.c
+gcc: unrecognized option @-KPIC'
+gcc: language arch=v8 not recognized
+gcc: Prelude.c: linker input file unused because linking not done
+rm -f blib/arch/auto/Prelude/Prelude.so
+LD_RUN_PATH="" cc  -L../../src/.libs -D_REENTRANT -pthreads -G -L/opt/csw/bdb44/lib -L/opt/csw/lib -L/usr/lib -L/usr/ccs/lib -L/opt/SUNWspro/prod/lib/v8plus -L/opt/SUNWspro/prod/lib -L/lib Prelude.o  -o blib/arch/auto/Prelude/Prelude.so    \
+   -L/root/IDS/prelude/libprelude-0.9.17.2/bindings/perl/../../src/.libs -lprelude      \
+
+sh: cc: not found
+*** Error code 1
+make: Fatal error: Command failed for target @blib/arch/auto/Prelude/Prelude.so'
+Current working directory /root/IDS/prelude/libprelude-0.9.17.2/bindings/perl
+*** Error code 1
+make: Fatal error: Command failed for target @perl-build'
+Current working directory /root/IDS/prelude/libprelude-0.9.17.2/bindings
+*** Error code 1
+The following command caused the error:
+failcom='exit 1'; \
+for f in x $MAKEFLAGS; do \
+  case $f in \
+    *=* | --[!k]*);; \
+    *k*) failcom='fail=yes';; \
+  esac; \
+done; \
+dot_seen=no; \
+target=@echo all-recursive | sed s/-recursive//@; \
+list='libltdl libmissing m4 src prelude-admin bindings docs'; for subdir in $list; do \
+  echo "Making $target in $subdir"; \
+  if test "$subdir" = "."; then \
+    dot_seen=yes; \
+    local_target="$target-am"; \
+  else \
+    local_target="$target"; \
+  fi; \
+  (cd $subdir &#38;&#38; make  $local_target) \
+  || eval $failcom; \
+done; \
+if test "$dot_seen" = "no"; then \
+  make  "$target-am" || exit 1; \
+fi; test -z "$fail" 
+make: Fatal error: Command failed for target @all-recursive'
+Current working directory /root/IDS/prelude/libprelude-0.9.17.2
+*** Error code 1
+make: Fatal error: Command failed for target @all'
+</pre>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/120/Makefile_1st">Makefile_1st</a>  
+  <span class="size">(26.9 KB)</span>
+    <span class="author">, 05/13/2008 02:49 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/121/Makefiles.zip">Makefiles.zip</a>  
+  <span class="size">(14.1 KB)</span>
+    <span class="author">, 05/13/2008 02:55 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-758" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="05/13/2008 02:41 PM" href="/projects/libprelude/activity?from=2008-05-13">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-758-notes" class="wiki"><p>Could you please provides the generated Makefile, as it is in bindings/perl/Makefile.<br />Additionally, please generate and provide a second, manually generated Makefile:</p>
+
+
+<pre>
+cd bindings/perl/
+rm -f Makefile
+perl Makefile.PL INSTALLDIRS=site
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-759" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="05/13/2008 02:57 PM" href="/projects/libprelude/activity?from=2008-05-13">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-759-notes" class="wiki"><p>I have uploaded both Makefile in zip form. Makefile_1st is ./configure/make generated and other i have generated as you asked.</p>
+
+
+	<p>Thanks</p></div>
+    </div>
+  </div>
+  
+  <div id="change-760" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="05/13/2008 03:03 PM" href="/projects/libprelude/activity?from=2008-05-13">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-760-notes" class="wiki"><p>Thanks! <br />Using the newly generated Makefile, does the build fail if you goes to the bindings/perl directory and run make?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-761" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/108">Pierre Chifflier</a> <a title="05/13/2008 03:53 PM" href="/projects/libprelude/activity?from=2008-05-13">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-761-notes" class="wiki"><p>Some interesting comments for the exact same problem here:<br />[<a class="external" href="http://cpan.org/modules/by-module/Compress/Compress-Raw-Bzip2-2.004.readme">http://cpan.org/modules/by-module/Compress/Compress-Raw-Bzip2-2.004.readme</a>]</p>
+
+
+	<p>Quoting the text:</p>
+
+
+	<a name="Solaris-build-fails-with-gcc-unrecognized-option-KPIC"></a>
+<h3 >Solaris build fails with "gcc: unrecognized option @-KPIC'"<a href="#Solaris-build-fails-with-gcc-unrecognized-option-KPIC" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You are running Solaris and you get an error like this when you try to<br />build this Perl module</p>
+
+
+<pre>
+gcc: unrecognized option @-KPIC'
+</pre>
+
+	<p>This symptom usually means that you are using a Perl binary that has been<br />built with the Sun C compiler, but you are using gcc to build this module.</p>
+
+
+	<p>When Perl builds modules that need a C compiler, it will attempt to use<br />the same C compiler and command line options that was used to build perl<br />itself. In this case "-KPIC" is a valid option for the Sun C compiler,<br />but not for gcc. The equivalent option for gcc is "-fPIC".</p>
+
+
+	<p>The solution is either:</p>
+
+
+	<pre><code>1. Build both Perl and this module with the same C compiler, either<br />       by using the Sun C compiler for both or gcc for both.</code></pre>
+
+
+	<pre><code>2. Try generating the Makefile for this module like this perl</code></pre>
+
+
+<pre>
+perl Makefile.PL CC=gcc CCCDLFLAGS=-fPIC OPTIMIZE=" " LD=gcc
+make test
+</pre>
+
+       This second option seems to work when mixing a Perl binary built<br />       with the Sun C compiler and this module built with gcc. Your<br />       mileage may vary.</div>
+    </div>
+  </div>
+  
+  <div id="change-762" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/18/2008 11:21 AM" href="/projects/libprelude/activity?from=2008-07-18">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-762-notes" class="wiki"><p>Would you be able to try a test tarball, to see if it automatically fixes your issue?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-954" class="journal has-details">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:04 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Libprelude</i></li>
+       <li><strong>Category</strong> deleted (<del><i>1</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>92</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-1270" class="journal has-details">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/30/2009 01:22 PM" href="/projects/libprelude/activity?from=2009-04-30">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Target version</strong> set to <i>0.9.22</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-1287" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="05/04/2009 11:23 AM" href="/projects/libprelude/activity?from=2009-05-04">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Target version</strong> changed from <i>0.9.22</i> to <i>0.9.23</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-1305" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="06/08/2009 02:39 PM" href="/projects/libprelude/activity?from=2009-06-08">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Target version</strong> deleted (<del><i>0.9.23</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-3256" class="journal has-notes has-details">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/301">Thomas </a> <a title="05/29/2016 04:45 PM" href="/projects/libprelude/activity?from=2016-05-29">over 8 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Assignee</strong> set to <i>Thomas </i></li>
+    </ul>
+    <div id="journal-3256-notes" class="wiki"><p>No activity</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/288.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/288.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

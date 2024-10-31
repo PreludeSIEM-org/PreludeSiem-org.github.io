@@ -1,0 +1,150 @@
+Prelude OSS 5.2.0
+=================
+
+* 2020-09-09, libprelude-5.2.0
+------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Proper escaping of substr/regex criterion
+- Implement prelude_msg_clone()
+- Properly check for EINTR
+- Update libprelude-error for GAWK 5.0
+- Fix for system that does not implement PATH_MAX
+- Various IDMEF criteria improvements
+    - Fix substring unit tests
+    - Raw string support
+    - Fix regexp comparison with NULL IDMEF value
+    - Proper escaping of IDMEF criteria
+    - Use PCRE when available for criteria matching
+    - Substring match is now handled using fnmatch
+- Prefix Flex/Yacc public symbol
+
+Author: Antoine Luong
+
+- Switch license to LGPL
+- Add Python 3.7/3.8 support
+- Update to SWIG 4.0.1
+- Fix LIBPRELUDECPP_SONAME
+
+Author: Francois 
+
+- Remove superfluous brackets in AC_INIT
+
+* 2020-09-09, libpreludedb-5.2.0
+--------------------------------
+
+Author: Francois 
+
+- Remove superfluous brackets in AC_INIT
+
+Author: Antoine Luong
+
+- Python 3.7/3.8 support
+- Update to SWIG 4.0.1
+
+Author: Yoann Vandoorselaere
+
+- Escaping fixes with LIKE operator
+
+* 2020-09-09, prelude-correlator-5.2.0
+--------------------------------------
+
+Author: Antoine Luong
+
+- Take timeout into account for CTI data
+- Fix DownloadCache initialization
+- Add SELinux rule for service startup
+- Fix grouping option with listed path
+- Avoid undefined analyzerid when referencing alerts
+
+Author: Camille Gardet
+
+- Add 'CTI' in CTI related alerts
+
+Author: Thomas 
+
+- Change 300s to 20s for CTI correlation rules
+
+* 2020-09-09, prelude-lml-5.2.0
+-------------------------------
+
+Author: Antoine Luong
+
+- Fix max-rotation-size-offset parsing
+- Document the log-max-length option
+
+* 2020-09-09, prelude-lml-rules-5.2.0
+-------------------------------------
+
+No new changes.
+
+* 2020-09-09, prelude-manager-5.2.0
+-----------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Add relaying and reverse relaying plugin
+- Add script execution plugin
+- Use a bufpool for reverse relaying
+- Properly restore buffer pool state
+- Fix possible deadlock with multiple thread evicting
+
+Author: Francois 
+
+- Add SNMP traps plugin
+
+* 2020-09-09, prewikka-5.2.0
+----------------------------
+
+Author: Prelude Team
+
+- Add new plugins
+    - Local DB authentication
+    - Dataprovider and view for logs
+    - Statistics pages
+    - Risk overview
+    - External website embedding
+
+Author: Antoine Luong
+
+- Evolutions
+    - Deprecate apps requiring deprecated apps
+    - Add HOOK_WIDGET_CATEGORIES and HOOK_PLUGINS_PARTIAL_RELOAD
+    - Add position to HOOK_DATASEARCH_EXTRA_COLUMN
+    - Add a system for reloading failed plugins
+    - Minor improvements of scheduled tasks
+    - Compatibility with Elasticsearch 7
+    - Use Bootstrap popovers for context links
+    - Allow indexed paths in filters
+    - Allow binary file import in prewikka-cli
+    - Improve DataSearch aggregation page
+    - Add JSON and text representations in IDMEF details
+    - Support multi-column sorting in DataSearch
+- Bugfixes
+    - Handle NOT in Criterion.flatten()
+    - Allow periodic deletion of no-severity alerts
+    - Handle slashes in object names
+    - Set explicit bounds for number inputs
+    - Fix cookie deletion
+    - Update database schemas in proper order
+    - Fix completion in prewikka-cli
+    - Fix possible error with deprecated plugins
+    - Reduce FOUC effect in control menu
+    - Support non-ASCII characters in YAML menu
+    - Fix multi-step migration process
+    - Fix various issues in DataSearch
+    - Fix a scheduling issue after updating apps
+    - Use the correct hook in heartbeat detail
+    - Reload plugins if needed in prewikka-crontab
+
+Author: Thomas 
+
+- Alert board: Try to find a value for source and target
+
+Author: Yoann Vandoorselaere
+
+- Properly handle escaped character in query
+- Ability to disable session redirection mechanism
+- CSRF verification fail when prewikka-httpd use https
+- Ability to disable CSRF protection for specific route

@@ -1,0 +1,30 @@
+From 0f1abc3f6b6506ab80e75988d486158ba2935a6a Mon Sep 17 00:00:00 2001
+From: Yoann Vandoorselaere <yoann.v@prelude-technologies.com>
+Date: Mon, 2 Aug 2010 17:37:52 +0200
+Subject: [PATCH] Prevent infinite loop
+
+An infinite loop was possible on insertion of an event in the processing
+queue in case the event len was higher than the 'on disk threshold' value.
+
+Thanks Friedrich Delgado <delgado@pre-sense.de> for reporting the problem,
+and the useful debug information!
+---
+ src/bufpool.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/bufpool.c b/src/bufpool.c
+index f6ce180..89f747a 100644
+--- a/src/bufpool.c
++++ b/src/bufpool.c
+@@ -224,7 +224,7 @@ int bufpool_add_message(bufpool_t *bp, prelude_msg_t *msg)
+ 
+         while ( get_total_mem() + len >= on_disk_threshold ) {
+                 evicted = evict_from_memory();
+-                if ( evicted == bp )
++                if ( evicted == NULL || evicted == bp )
+                         break;
+         }
+ 
+-- 
+1.7.2
+

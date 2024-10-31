@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LibpreludeDB: Issues</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/libpreludedb/issues.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/libpreludedb/issues"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2017-08-18T20:44:49Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>Bug #898 (New): Add pkg-config file</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/898"/>
+    <id>http://www.prelude-siem.org/issues/898</id>
+    <updated>2017-08-18T20:44:49Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;as libprelude, please add pkg-config file&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #867 (New): libpreludedb : missing -lpreludecpp when linking</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/867"/>
+    <id>http://www.prelude-siem.org/issues/867</id>
+    <updated>2017-01-11T08:24:33Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;With rpmlint, I got this :&lt;br /&gt;&lt;pre&gt;
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 typeinfo for Prelude::PreludeError
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::PreludeError::what() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::isNull() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::~IDMEFValue()
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::operator idmef_value*() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::toString[abi:cxx11]() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEF::operator idmef_object*() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::IDMEFValue(idmef_value*)
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::PreludeError::PreludeError()
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 vtable for Prelude::PreludeError
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::getType() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFPath::operator idmef_path*() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEF::IDMEF(idmef_object*)
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFCriteria::operator idmef_criteria*() const
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;This is because, in bindings/c++/Makefile, the variable "libpreludedbcpp_la_LDFLAGS" is missing "-lpreludecpp"&lt;/p&gt;
+
+
+	&lt;p&gt;Also, it seems that libprelude-config never provide -lpreludecpp&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #866 (New): libpreludedb : manpages warning</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/866"/>
+    <id>http://www.prelude-siem.org/issues/866</id>
+    <updated>2017-01-11T08:22:05Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;When running rpmlint, I got this :&lt;br /&gt;&lt;pre&gt;
+libpreludedb-devel.x86_64: W: manual-page-warning /usr/share/man/man1/libpreludedb-config.1.gz 23: a special character is not allowed in a name
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Patch :&lt;br /&gt;&lt;pre&gt;
+--- ./docs/manpages/libpreludedb-config.1       2016-09-15 08:49:14.234000884 +0200
++++ ./docs/manpages/libpreludedb-config.1       2017-01-10 08:22:39.280448484 +0100
+@@ -20,7 +20,7 @@
+ .B \-\-libs
+ options.
+ This option must be specified before any
+-.B\-\-libs
++.B \-\-libs
+ or
+ .B \-\-cflags
+ options. This
+&lt;/pre&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #392 (Assigned): Potential security risc in preludedb-admin?</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/392"/>
+    <id>http://www.prelude-siem.org/issues/392</id>
+    <updated>2011-01-15T15:37:50Z</updated>
+    <author>
+      <name>Paul Buetow</name>
+      <email>prelude@mx.buetow.org</email>
+    </author>
+    <content type="html">
+&lt;p&gt;Hi!&lt;/p&gt;
+
+
+	&lt;p&gt;I wanted to ask a question regarding preludedb-admin.&lt;/p&gt;
+
+
+	&lt;p&gt;I am using 0.9.14.1-2 (Debian GNU/Linux Lenny). There is no way not to&lt;br /&gt;define the database password (e.g. mysql password) NOT in the command&lt;br /&gt;line argument. The password shows up in plain text in the system&lt;br /&gt;process list while using preludedb-admin.&lt;/p&gt;
+
+
+	&lt;p&gt;It should be possible to "pipe" the arguments to preludedb-admin&lt;/p&gt;
+
+
+	&lt;p&gt;The current way:&lt;/p&gt;
+
+
+	&lt;p&gt;preludedb-admin delete alert "type=mysql name=prelude user=prelude&lt;br /&gt;pass=prelude" --criteria "alert.create_time &lt; $DATE"&lt;/p&gt;
+
+
+	&lt;p&gt;"Better way":&lt;/p&gt;
+
+
+	&lt;p&gt;some-script-generating-arguments | preludedb-admin&lt;/p&gt;
+
+
+	&lt;p&gt;(Alternatively just pipe the "type=mysql name=prelude user=prelude" &lt;br /&gt;part)&lt;/p&gt;
+
+
+	&lt;p&gt;And / Or:&lt;/p&gt;
+
+
+	&lt;p&gt;preludedb-admin --args filename&lt;/p&gt;
+
+
+	&lt;p&gt;(Alternatively just read the "type=mysql name=prelude user=prelude" &lt;br /&gt;part from file)&lt;/p&gt;
+
+
+	&lt;p&gt;And / Or:&lt;/p&gt;
+
+
+	&lt;p&gt;Read password from an environment variable:&lt;/p&gt;
+
+
+	&lt;p&gt;#/bin/sh&lt;/p&gt;
+
+
+	&lt;p&gt;export PRELUDE_PASS=prelude&lt;br /&gt;exec preludedb-admin delete alert "type=mysql name=prelude&lt;br /&gt;user=prelude" --criteria "alert.create_time &lt; $DATE"&lt;/p&gt;
+
+
+	&lt;p&gt;And / Or:&lt;/p&gt;
+
+
+	&lt;p&gt;Read password from stdin if missing in the argument.&lt;/p&gt;
+
+
+	&lt;p&gt;Hope you got my point &lt;img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Thanks a lot and best regards,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #337 (New): Fake result number of deleted records in preludedb-admin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/337"/>
+    <id>http://www.prelude-siem.org/issues/337</id>
+    <updated>2008-12-08T17:16:54Z</updated>
+    <content type="html">
+&lt;p&gt;The output of preludedb-admin was:&lt;/p&gt;
+
+
+	&lt;p&gt;delete event failed: Lost connection to [[MySQL]] server during query.&lt;/p&gt;
+
+
+	&lt;p&gt;Error at transaction 448000. Use --offset 874000 to resume operation.&lt;/p&gt;
+
+
+	&lt;p&gt;2152124949 'delete' events processed in 2783.401760 seconds (0.000001 seconds/events - 773199.535880 delete/sec average).&lt;/p&gt;
+
+
+	&lt;p&gt;2152124949 events processed in 2783.401760 seconds (0.000001 seconds/events - 773199.535880 events/sec average).&lt;/p&gt;
+
+
+	&lt;p&gt;2152124949 is the fake as '--offset 874000' says where it stopped.&lt;/p&gt;    </content>
+  </entry>
+</feed>

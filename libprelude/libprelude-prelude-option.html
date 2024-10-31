@@ -1,0 +1,1840 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>prelude-option</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libprelude Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libprelude-prelude-msg.html" title="prelude-msg">
+<link rel="next" href="libprelude-prelude-connection.html" title="prelude-connection">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libprelude-prelude-msg.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libprelude Reference Manual</th>
+<td><a accesskey="n" href="libprelude-prelude-connection.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libprelude-prelude-option.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libprelude-prelude-option.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="prelude-option">
+<a name="libprelude-prelude-option"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libprelude-prelude-option.top_of_page"></a>prelude-option</span></h2>
+<p>prelude-option</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libprelude-prelude-option.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                prelude_option_type_t;
+enum                prelude_option_input_type_t;
+typedef             prelude_option_t;
+typedef             prelude_option_context_t;
+int                 (*prelude_option_destroy_callback_t)
+                                                        (prelude_option_t *opt,
+                                                         prelude_string_t *out,
+                                                         void *context);
+int                 (*prelude_option_commit_callback_t) (prelude_option_t *opt,
+                                                         prelude_string_t *out,
+                                                         void *context);
+int                 (*prelude_option_get_callback_t)    (prelude_option_t *opt,
+                                                         prelude_string_t *out,
+                                                         void *context);
+int                 (*prelude_option_set_callback_t)    (prelude_option_t *opt,
+                                                         const char *optarg,
+                                                         prelude_string_t *err,
+                                                         void *context);
+enum                prelude_option_argument_t;
+enum                prelude_option_priority_t;
+enum                prelude_option_warning_t;
+void                prelude_option_set_priority         (prelude_option_t *option,
+                                                         prelude_option_priority_t priority);
+void                prelude_option_print                (prelude_option_t *opt,
+                                                         prelude_option_type_t type,
+                                                         int descoff,
+                                                         FILE *fd);
+int                 prelude_option_wide_send_msg        (prelude_msgbuf_t *msgbuf,
+                                                         void *context);
+void                prelude_option_destroy              (prelude_option_t *option);
+int                 prelude_option_read                 (prelude_option_t *option,
+                                                         const char **filename,
+                                                         int *argc,
+                                                         char **argv,
+                                                         prelude_string_t **err,
+                                                         void *context);
+int                 prelude_option_add                  (prelude_option_t *parent,
+                                                         prelude_option_t **retopt,
+                                                         prelude_option_type_t type,
+                                                         char shortopt,
+                                                         const char *longopt,
+                                                         const char *desc,
+                                                         prelude_option_argument_t has_arg,
+                                                         int (setprelude_option_t *opt, const char *optarg, prelude_string_t *err, void *context) (),
+                                                         int (getprelude_option_t *opt, prelude_string_t *out, void *context) ());
+void                prelude_option_set_type             (prelude_option_t *opt,
+                                                         prelude_option_type_t type);
+prelude_option_type_t  prelude_option_get_type          (prelude_option_t *opt);
+void                prelude_option_set_warnings         (prelude_option_warning_t new_warnings,
+                                                         prelude_option_warning_t *old_warnings);
+char                prelude_option_get_shortname        (prelude_option_t *opt);
+const char *        prelude_option_get_longname         (prelude_option_t *opt);
+void                prelude_option_set_data             (prelude_option_t *opt,
+                                                         void *data);
+void *              prelude_option_get_data             (prelude_option_t *opt);
+void *              prelude_option_context_get_data     (prelude_option_context_t *oc);
+void                prelude_option_context_set_data     (prelude_option_context_t *oc,
+                                                         void *data);
+int                 prelude_option_invoke_commit        (prelude_option_t *opt,
+                                                         const char *ctname,
+                                                         prelude_string_t *value,
+                                                         void *context);
+int                 prelude_option_invoke_set           (prelude_option_t *opt,
+                                                         const char *ctname,
+                                                         prelude_string_t *value,
+                                                         void **context);
+int                 prelude_option_invoke_get           (prelude_option_t *opt,
+                                                         const char *ctname,
+                                                         prelude_string_t *value,
+                                                         void *context);
+int                 prelude_option_invoke_destroy       (prelude_option_t *opt,
+                                                         const char *ctname,
+                                                         prelude_string_t *value,
+                                                         void *context);
+int                 prelude_option_new_root             (prelude_option_t **retopt);
+int                 prelude_option_new                  (prelude_option_t *parent,
+                                                         prelude_option_t **retopt);
+void                prelude_option_set_longopt          (prelude_option_t *opt,
+                                                         const char *longopt);
+const char *        prelude_option_get_longopt          (prelude_option_t *opt);
+void                prelude_option_set_description      (prelude_option_t *opt,
+                                                         const char *description);
+const char *        prelude_option_get_description      (prelude_option_t *opt);
+void                prelude_option_set_has_arg          (prelude_option_t *opt,
+                                                         prelude_option_argument_t has_arg);
+prelude_option_argument_t  prelude_option_get_has_arg   (prelude_option_t *opt);
+void                prelude_option_set_value            (prelude_option_t *opt,
+                                                         const char *value);
+const char *        prelude_option_get_value            (prelude_option_t *opt);
+void                prelude_option_set_help             (prelude_option_t *opt,
+                                                         const char *help);
+const char *        prelude_option_get_help             (prelude_option_t *opt);
+void                prelude_option_set_input_validation_regex
+                                                        (prelude_option_t *opt,
+                                                         const char *regex);
+const char *        prelude_option_get_input_validation_regex
+                                                        (prelude_option_t *opt);
+void                prelude_option_set_input_type       (prelude_option_t *opt,
+                                                         prelude_option_input_type_t input_type);
+prelude_option_input_type_t  prelude_option_get_input_type
+                                                        (prelude_option_t *opt);
+prelude_list_t *    prelude_option_get_optlist          (prelude_option_t *opt);
+prelude_option_t *  prelude_option_get_next             (prelude_option_t *start,
+                                                         prelude_option_t *cur);
+prelude_bool_t      prelude_option_has_optlist          (prelude_option_t *opt);
+prelude_option_t *  prelude_option_get_parent           (prelude_option_t *opt);
+void                prelude_option_set_destroy_callback (prelude_option_t *opt,
+                                                         prelude_option_destroy_callback_t destroy);
+prelude_option_destroy_callback_t  prelude_option_get_destroy_callback
+                                                        (prelude_option_t *opt);
+void                prelude_option_set_set_callback     (prelude_option_t *opt,
+                                                         prelude_option_set_callback_t set);
+prelude_option_set_callback_t  prelude_option_get_set_callback
+                                                        (prelude_option_t *opt);
+void                prelude_option_set_get_callback     (prelude_option_t *opt,
+                                                         int (getprelude_option_t *opt, prelude_string_t *out, void *context) ());
+prelude_option_get_callback_t  prelude_option_get_get_callback
+                                                        (prelude_option_t *opt);
+void                prelude_option_set_commit_callback  (prelude_option_t *opt,
+                                                         prelude_option_commit_callback_t commit);
+prelude_option_commit_callback_t  prelude_option_get_commit_callback
+                                                        (prelude_option_t *opt);
+void                prelude_option_set_default_context  (prelude_option_t *opt,
+                                                         void *context);
+int                 prelude_option_new_context          (prelude_option_t *opt,
+                                                         prelude_option_context_t **ctx,
+                                                         const char *name,
+                                                         void *data);
+void                prelude_option_context_destroy      (prelude_option_context_t *oc);
+prelude_option_t *  prelude_option_search               (prelude_option_t *parent,
+                                                         const char *name,
+                                                         prelude_option_type_t type,
+                                                         prelude_bool_t walk_children);
+prelude_option_context_t * prelude_option_search_context
+                                                        (prelude_option_t *opt,
+                                                         const char *name);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libprelude-prelude-option.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libprelude-prelude-option.details"></a><h2>Details</h2>
+<div class="refsect2" title="enum prelude_option_type_t">
+<a name="prelude-option-type-t"></a><h3>enum prelude_option_type_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_OPTION_TYPE_CLI  = 0x01,
+        PRELUDE_OPTION_TYPE_CFG  = 0x02,
+        PRELUDE_OPTION_TYPE_WIDE = 0x04,
+        PRELUDE_OPTION_TYPE_CONTEXT = 0x08,
+        PRELUDE_OPTION_TYPE_ROOT    = 0x10,
+        PRELUDE_OPTION_TYPE_DESTROY = 0x20
+} prelude_option_type_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum prelude_option_input_type_t">
+<a name="prelude-option-input-type-t"></a><h3>enum prelude_option_input_type_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_OPTION_INPUT_TYPE_STRING   = 1,
+        PRELUDE_OPTION_INPUT_TYPE_INTEGER  = 2,
+        PRELUDE_OPTION_INPUT_TYPE_BOOLEAN  = 3
+} prelude_option_input_type_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_t">
+<a name="prelude-option-t"></a><h3>prelude_option_t</h3>
+<pre class="programlisting">typedef struct prelude_option prelude_option_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_context_t">
+<a name="prelude-option-context-t"></a><h3>prelude_option_context_t</h3>
+<pre class="programlisting">typedef struct prelude_option_context prelude_option_context_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_destroy_callback_t ()">
+<a name="prelude-option-destroy-callback-t"></a><h3>prelude_option_destroy_callback_t ()</h3>
+<pre class="programlisting">int                 (*prelude_option_destroy_callback_t)
+                                                        (prelude_option_t *opt,
+                                                         prelude_string_t *out,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_commit_callback_t ()">
+<a name="prelude-option-commit-callback-t"></a><h3>prelude_option_commit_callback_t ()</h3>
+<pre class="programlisting">int                 (*prelude_option_commit_callback_t) (prelude_option_t *opt,
+                                                         prelude_string_t *out,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_callback_t ()">
+<a name="prelude-option-get-callback-t"></a><h3>prelude_option_get_callback_t ()</h3>
+<pre class="programlisting">int                 (*prelude_option_get_callback_t)    (prelude_option_t *opt,
+                                                         prelude_string_t *out,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>out</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_callback_t ()">
+<a name="prelude-option-set-callback-t"></a><h3>prelude_option_set_callback_t ()</h3>
+<pre class="programlisting">int                 (*prelude_option_set_callback_t)    (prelude_option_t *opt,
+                                                         const char *optarg,
+                                                         prelude_string_t *err,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>optarg</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="enum prelude_option_argument_t">
+<a name="prelude-option-argument-t"></a><h3>enum prelude_option_argument_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_OPTION_ARGUMENT_REQUIRED = 1,
+        PRELUDE_OPTION_ARGUMENT_OPTIONAL = 2,
+        PRELUDE_OPTION_ARGUMENT_NONE     = 3
+} prelude_option_argument_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum prelude_option_priority_t">
+<a name="prelude-option-priority-t"></a><h3>enum prelude_option_priority_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_OPTION_PRIORITY_IMMEDIATE = -2,
+        PRELUDE_OPTION_PRIORITY_FIRST     = -1,
+        PRELUDE_OPTION_PRIORITY_NONE      =  0,
+        PRELUDE_OPTION_PRIORITY_LAST      =  2
+} prelude_option_priority_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum prelude_option_warning_t">
+<a name="prelude-option-warning-t"></a><h3>enum prelude_option_warning_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_OPTION_WARNING_OPTION    = 0x1,
+        PRELUDE_OPTION_WARNING_ARG       = 0x2
+} prelude_option_warning_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_priority ()">
+<a name="prelude-option-set-priority"></a><h3>prelude_option_set_priority ()</h3>
+<pre class="programlisting">void                prelude_option_set_priority         (prelude_option_t *option,
+                                                         prelude_option_priority_t priority);</pre>
+<p>
+<code class="function">prelude_option_set_priority()</code> can be used to associate a priority
+with an option. This can be used to solve dependancies problem within
+differents options.
+</p>
+<p>
+A priority of -1 mean an option will always be executed last (with
+all other option with a -1 priority).
+</p>
+<p>
+The default priority for an option is 0, the caller is responssible
+for the way it assign priority (knowing that highest priority are always
+executed first).</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>option</code></em> :</span></p></td>
+<td> Pointer on an option object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>priority</code></em> :</span></p></td>
+<td> Priority of the option object.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_print ()">
+<a name="prelude-option-print"></a><h3>prelude_option_print ()</h3>
+<pre class="programlisting">void                prelude_option_print                (prelude_option_t *opt,
+                                                         prelude_option_type_t type,
+                                                         int descoff,
+                                                         FILE *fd);</pre>
+<p>
+Dump option available in <em class="parameter"><code>opt</code></em> and hooked to the given types.
+If <em class="parameter"><code>opt</code></em> is NULL, then the root of the option list is used.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td> Option(s) to print out.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td> Only option with specified types will be printed.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>descoff</code></em> :</span></p></td>
+<td> offset from the begining of the line where the description should start.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fd</code></em> :</span></p></td>
+<td> File descriptor where the option should be dumped.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_wide_send_msg ()">
+<a name="prelude-option-wide-send-msg"></a><h3>prelude_option_wide_send_msg ()</h3>
+<pre class="programlisting">int                 prelude_option_wide_send_msg        (prelude_msgbuf_t *msgbuf,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msgbuf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_destroy ()">
+<a name="prelude-option-destroy"></a><h3>prelude_option_destroy ()</h3>
+<pre class="programlisting">void                prelude_option_destroy              (prelude_option_t *option);</pre>
+<p>
+Destroy a <span class="type">prelude_option_t</span> object and all data associated
+with it (including all suboption).</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>option</code></em> :</span></p></td>
+<td> Pointer on an option object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_read ()">
+<a name="prelude-option-read"></a><h3>prelude_option_read ()</h3>
+<pre class="programlisting">int                 prelude_option_read                 (prelude_option_t *option,
+                                                         const char **filename,
+                                                         int *argc,
+                                                         char **argv,
+                                                         prelude_string_t **err,
+                                                         void *context);</pre>
+<p>
+<code class="function">prelude_option_read()</code>, parse the given argument and try to
+match them against option in <em class="parameter"><code>option</code></em>. If an option match, it's associated
+callback function is called with the eventual option argument if any.
+</p>
+<p>
+Option not matched on the command line are searched in the configuration file
+specified by <em class="parameter"><code>filename</code></em>.
+</p>
+<p>
+if <em class="parameter"><code>option</code></em> is NULL, all system option will be matched against argc, and argv.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>option</code></em> :</span></p></td>
+<td> A pointer on an option (list).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td> Pointer to the config filename.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>argc</code></em> :</span></p></td>
+<td> Number of argument.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>argv</code></em> :</span></p></td>
+<td> Argument list.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>err</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_string_t</span> object where to store an error string.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td> Pointer to an optional option context.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The index of the first unhandled parameter if option parsing succeeded,
+or a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_add ()">
+<a name="prelude-option-add"></a><h3>prelude_option_add ()</h3>
+<pre class="programlisting">int                 prelude_option_add                  (prelude_option_t *parent,
+                                                         prelude_option_t **retopt,
+                                                         prelude_option_type_t type,
+                                                         char shortopt,
+                                                         const char *longopt,
+                                                         const char *desc,
+                                                         prelude_option_argument_t has_arg,
+                                                         int (setprelude_option_t *opt, const char *optarg, prelude_string_t *err, void *context) (),
+                                                         int (getprelude_option_t *opt, prelude_string_t *out, void *context) ());</pre>
+<p>
+<code class="function">prelude_option_add()</code> create a new option. The option is set to be the child
+of <em class="parameter"><code>parent</code></em>, unless it is NULL. In this case the option is a root option.
+</p>
+<p>
+The <em class="parameter"><code>type</code></em> parameters can be set to PRELUDE_OPTION_TYPE_CLI (telling the
+option may be searched on the command line), PRELUDE_OPTION_TYPE_CFG (telling
+the option may be searched in the configuration file) or both.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td> Pointer on a parent option.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>retopt</code></em> :</span></p></td>
+<td> Pointer where to store the created option.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td> bitfields.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>shortopt</code></em> :</span></p></td>
+<td> Short option name.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>longopt</code></em> :</span></p></td>
+<td> Long option name.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>desc</code></em> :</span></p></td>
+<td> Description of the option.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>has_arg</code></em> :</span></p></td>
+<td> Define if the option has argument.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>set</code></em> :</span></p></td>
+<td> Callback to be called when the value for this option change.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>get</code></em> :</span></p></td>
+<td> Callback to be called to get the value for this option.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Pointer on the option object, or NULL if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_type ()">
+<a name="prelude-option-set-type"></a><h3>prelude_option_set_type ()</h3>
+<pre class="programlisting">void                prelude_option_set_type             (prelude_option_t *opt,
+                                                         prelude_option_type_t type);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_type ()">
+<a name="prelude-option-get-type"></a><h3>prelude_option_get_type ()</h3>
+<pre class="programlisting">prelude_option_type_t  prelude_option_get_type          (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_warnings ()">
+<a name="prelude-option-set-warnings"></a><h3>prelude_option_set_warnings ()</h3>
+<pre class="programlisting">void                prelude_option_set_warnings         (prelude_option_warning_t new_warnings,
+                                                         prelude_option_warning_t *old_warnings);</pre>
+<p>
+Set current warnings flags to <em class="parameter"><code>new_warnings</code></em>.
+</p>
+<p>
+Uppon return, if not NULL, the pointer to <em class="parameter"><code>old_warnings</code></em> is updated
+to contain the old warnings.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_warnings</code></em> :</span></p></td>
+<td> bitwise OR of <span class="type">prelude_option_warning_t</span>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_warnings</code></em> :</span></p></td>
+<td> Pointer where to store the old <span class="type">prelude_option_warning_t</span> to.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_shortname ()">
+<a name="prelude-option-get-shortname"></a><h3>prelude_option_get_shortname ()</h3>
+<pre class="programlisting">char                prelude_option_get_shortname        (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_longname ()">
+<a name="prelude-option-get-longname"></a><h3>prelude_option_get_longname ()</h3>
+<pre class="programlisting">const char *        prelude_option_get_longname         (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_data ()">
+<a name="prelude-option-set-data"></a><h3>prelude_option_set_data ()</h3>
+<pre class="programlisting">void                prelude_option_set_data             (prelude_option_t *opt,
+                                                         void *data);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_data ()">
+<a name="prelude-option-get-data"></a><h3>prelude_option_get_data ()</h3>
+<pre class="programlisting">void *              prelude_option_get_data             (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_context_get_data ()">
+<a name="prelude-option-context-get-data"></a><h3>prelude_option_context_get_data ()</h3>
+<pre class="programlisting">void *              prelude_option_context_get_data     (prelude_option_context_t *oc);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>oc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_context_set_data ()">
+<a name="prelude-option-context-set-data"></a><h3>prelude_option_context_set_data ()</h3>
+<pre class="programlisting">void                prelude_option_context_set_data     (prelude_option_context_t *oc,
+                                                         void *data);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>oc</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_invoke_commit ()">
+<a name="prelude-option-invoke-commit"></a><h3>prelude_option_invoke_commit ()</h3>
+<pre class="programlisting">int                 prelude_option_invoke_commit        (prelude_option_t *opt,
+                                                         const char *ctname,
+                                                         prelude_string_t *value,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ctname</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_invoke_set ()">
+<a name="prelude-option-invoke-set"></a><h3>prelude_option_invoke_set ()</h3>
+<pre class="programlisting">int                 prelude_option_invoke_set           (prelude_option_t *opt,
+                                                         const char *ctname,
+                                                         prelude_string_t *value,
+                                                         void **context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ctname</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_invoke_get ()">
+<a name="prelude-option-invoke-get"></a><h3>prelude_option_invoke_get ()</h3>
+<pre class="programlisting">int                 prelude_option_invoke_get           (prelude_option_t *opt,
+                                                         const char *ctname,
+                                                         prelude_string_t *value,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ctname</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_invoke_destroy ()">
+<a name="prelude-option-invoke-destroy"></a><h3>prelude_option_invoke_destroy ()</h3>
+<pre class="programlisting">int                 prelude_option_invoke_destroy       (prelude_option_t *opt,
+                                                         const char *ctname,
+                                                         prelude_string_t *value,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ctname</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_new_root ()">
+<a name="prelude-option-new-root"></a><h3>prelude_option_new_root ()</h3>
+<pre class="programlisting">int                 prelude_option_new_root             (prelude_option_t **retopt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>retopt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_new ()">
+<a name="prelude-option-new"></a><h3>prelude_option_new ()</h3>
+<pre class="programlisting">int                 prelude_option_new                  (prelude_option_t *parent,
+                                                         prelude_option_t **retopt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>retopt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_longopt ()">
+<a name="prelude-option-set-longopt"></a><h3>prelude_option_set_longopt ()</h3>
+<pre class="programlisting">void                prelude_option_set_longopt          (prelude_option_t *opt,
+                                                         const char *longopt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>longopt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_longopt ()">
+<a name="prelude-option-get-longopt"></a><h3>prelude_option_get_longopt ()</h3>
+<pre class="programlisting">const char *        prelude_option_get_longopt          (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_description ()">
+<a name="prelude-option-set-description"></a><h3>prelude_option_set_description ()</h3>
+<pre class="programlisting">void                prelude_option_set_description      (prelude_option_t *opt,
+                                                         const char *description);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>description</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_description ()">
+<a name="prelude-option-get-description"></a><h3>prelude_option_get_description ()</h3>
+<pre class="programlisting">const char *        prelude_option_get_description      (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_has_arg ()">
+<a name="prelude-option-set-has-arg"></a><h3>prelude_option_set_has_arg ()</h3>
+<pre class="programlisting">void                prelude_option_set_has_arg          (prelude_option_t *opt,
+                                                         prelude_option_argument_t has_arg);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>has_arg</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_has_arg ()">
+<a name="prelude-option-get-has-arg"></a><h3>prelude_option_get_has_arg ()</h3>
+<pre class="programlisting">prelude_option_argument_t  prelude_option_get_has_arg   (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_value ()">
+<a name="prelude-option-set-value"></a><h3>prelude_option_set_value ()</h3>
+<pre class="programlisting">void                prelude_option_set_value            (prelude_option_t *opt,
+                                                         const char *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_value ()">
+<a name="prelude-option-get-value"></a><h3>prelude_option_get_value ()</h3>
+<pre class="programlisting">const char *        prelude_option_get_value            (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_help ()">
+<a name="prelude-option-set-help"></a><h3>prelude_option_set_help ()</h3>
+<pre class="programlisting">void                prelude_option_set_help             (prelude_option_t *opt,
+                                                         const char *help);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>help</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_help ()">
+<a name="prelude-option-get-help"></a><h3>prelude_option_get_help ()</h3>
+<pre class="programlisting">const char *        prelude_option_get_help             (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_input_validation_regex ()">
+<a name="prelude-option-set-input-validation-regex"></a><h3>prelude_option_set_input_validation_regex ()</h3>
+<pre class="programlisting">void                prelude_option_set_input_validation_regex
+                                                        (prelude_option_t *opt,
+                                                         const char *regex);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>regex</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_input_validation_regex ()">
+<a name="prelude-option-get-input-validation-regex"></a><h3>prelude_option_get_input_validation_regex ()</h3>
+<pre class="programlisting">const char *        prelude_option_get_input_validation_regex
+                                                        (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_input_type ()">
+<a name="prelude-option-set-input-type"></a><h3>prelude_option_set_input_type ()</h3>
+<pre class="programlisting">void                prelude_option_set_input_type       (prelude_option_t *opt,
+                                                         prelude_option_input_type_t input_type);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input_type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_input_type ()">
+<a name="prelude-option-get-input-type"></a><h3>prelude_option_get_input_type ()</h3>
+<pre class="programlisting">prelude_option_input_type_t  prelude_option_get_input_type
+                                                        (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_optlist ()">
+<a name="prelude-option-get-optlist"></a><h3>prelude_option_get_optlist ()</h3>
+<pre class="programlisting">prelude_list_t *    prelude_option_get_optlist          (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_next ()">
+<a name="prelude-option-get-next"></a><h3>prelude_option_get_next ()</h3>
+<pre class="programlisting">prelude_option_t *  prelude_option_get_next             (prelude_option_t *start,
+                                                         prelude_option_t *cur);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>start</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cur</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_has_optlist ()">
+<a name="prelude-option-has-optlist"></a><h3>prelude_option_has_optlist ()</h3>
+<pre class="programlisting">prelude_bool_t      prelude_option_has_optlist          (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_parent ()">
+<a name="prelude-option-get-parent"></a><h3>prelude_option_get_parent ()</h3>
+<pre class="programlisting">prelude_option_t *  prelude_option_get_parent           (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_destroy_callback ()">
+<a name="prelude-option-set-destroy-callback"></a><h3>prelude_option_set_destroy_callback ()</h3>
+<pre class="programlisting">void                prelude_option_set_destroy_callback (prelude_option_t *opt,
+                                                         prelude_option_destroy_callback_t destroy);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroy</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_destroy_callback ()">
+<a name="prelude-option-get-destroy-callback"></a><h3>prelude_option_get_destroy_callback ()</h3>
+<pre class="programlisting">prelude_option_destroy_callback_t  prelude_option_get_destroy_callback
+                                                        (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_set_callback ()">
+<a name="prelude-option-set-set-callback"></a><h3>prelude_option_set_set_callback ()</h3>
+<pre class="programlisting">void                prelude_option_set_set_callback     (prelude_option_t *opt,
+                                                         prelude_option_set_callback_t set);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>set</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_set_callback ()">
+<a name="prelude-option-get-set-callback"></a><h3>prelude_option_get_set_callback ()</h3>
+<pre class="programlisting">prelude_option_set_callback_t  prelude_option_get_set_callback
+                                                        (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_get_callback ()">
+<a name="prelude-option-set-get-callback"></a><h3>prelude_option_set_get_callback ()</h3>
+<pre class="programlisting">void                prelude_option_set_get_callback     (prelude_option_t *opt,
+                                                         int (getprelude_option_t *opt, prelude_string_t *out, void *context) ());</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>get</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_get_callback ()">
+<a name="prelude-option-get-get-callback"></a><h3>prelude_option_get_get_callback ()</h3>
+<pre class="programlisting">prelude_option_get_callback_t  prelude_option_get_get_callback
+                                                        (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_commit_callback ()">
+<a name="prelude-option-set-commit-callback"></a><h3>prelude_option_set_commit_callback ()</h3>
+<pre class="programlisting">void                prelude_option_set_commit_callback  (prelude_option_t *opt,
+                                                         prelude_option_commit_callback_t commit);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_get_commit_callback ()">
+<a name="prelude-option-get-commit-callback"></a><h3>prelude_option_get_commit_callback ()</h3>
+<pre class="programlisting">prelude_option_commit_callback_t  prelude_option_get_commit_callback
+                                                        (prelude_option_t *opt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_set_default_context ()">
+<a name="prelude-option-set-default-context"></a><h3>prelude_option_set_default_context ()</h3>
+<pre class="programlisting">void                prelude_option_set_default_context  (prelude_option_t *opt,
+                                                         void *context);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>context</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_new_context ()">
+<a name="prelude-option-new-context"></a><h3>prelude_option_new_context ()</h3>
+<pre class="programlisting">int                 prelude_option_new_context          (prelude_option_t *opt,
+                                                         prelude_option_context_t **ctx,
+                                                         const char *name,
+                                                         void *data);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ctx</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_context_destroy ()">
+<a name="prelude-option-context-destroy"></a><h3>prelude_option_context_destroy ()</h3>
+<pre class="programlisting">void                prelude_option_context_destroy      (prelude_option_context_t *oc);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>oc</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_search ()">
+<a name="prelude-option-search"></a><h3>prelude_option_search ()</h3>
+<pre class="programlisting">prelude_option_t *  prelude_option_search               (prelude_option_t *parent,
+                                                         const char *name,
+                                                         prelude_option_type_t type,
+                                                         prelude_bool_t walk_children);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>parent</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>walk_children</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_option_search_context ()">
+<a name="prelude-option-search-context"></a><h3>prelude_option_search_context ()</h3>
+<pre class="programlisting">prelude_option_context_t * prelude_option_search_context
+                                                        (prelude_option_t *opt,
+                                                         const char *name);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>opt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

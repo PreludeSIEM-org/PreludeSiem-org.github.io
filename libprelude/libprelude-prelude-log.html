@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>prelude-log</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libprelude Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libprelude-prelude-io.html" title="prelude-io">
+<link rel="next" href="libprelude-prelude-msg.html" title="prelude-msg">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libprelude-prelude-io.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libprelude Reference Manual</th>
+<td><a accesskey="n" href="libprelude-prelude-msg.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libprelude-prelude-log.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libprelude-prelude-log.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="prelude-log">
+<a name="libprelude-prelude-log"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libprelude-prelude-log.top_of_page"></a>prelude-log</span></h2>
+<p>prelude-log</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libprelude-prelude-log.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                prelude_log_t;
+enum                prelude_log_flags_t;
+void                prelude_log                         (prelude_log_t level,
+                                                         const char *fmt);
+void                prelude_log_debug                   (prelude_log_t level,
+                                                         const char *fmt);
+#define             prelude_log_v                       (level, fmt, ap)
+#define             prelude_log_debug_v                 (level, fmt, ap)
+void                prelude_log_set_level               (prelude_log_t level);
+void                prelude_log_set_debug_level         (int level);
+prelude_log_flags_t  prelude_log_get_flags              (void);
+void                prelude_log_set_flags               (prelude_log_flags_t flags);
+char *              prelude_log_get_prefix              (void);
+void                prelude_log_set_prefix              (char *prefix);
+void                prelude_log_set_callback            ();
+int                 prelude_log_set_logfile             (const char *filename);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libprelude-prelude-log.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libprelude-prelude-log.details"></a><h2>Details</h2>
+<div class="refsect2" title="enum prelude_log_t">
+<a name="prelude-log-t"></a><h3>enum prelude_log_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_LOG_CRIT  = -1,
+        PRELUDE_LOG_ERR   =  0,
+        PRELUDE_LOG_WARN  =  1,
+        PRELUDE_LOG_INFO  =  2,
+        PRELUDE_LOG_DEBUG  = 3
+} prelude_log_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum prelude_log_flags_t">
+<a name="prelude-log-flags-t"></a><h3>enum prelude_log_flags_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_LOG_FLAGS_QUIET  = 0x01, /* Drop PRELUDE_LOG_PRIORITY_INFO */
+        PRELUDE_LOG_FLAGS_SYSLOG = 0x02
+} prelude_log_flags_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log ()">
+<a name="prelude-log"></a><h3>prelude_log ()</h3>
+<pre class="programlisting">void                prelude_log                         (prelude_log_t level,
+                                                         const char *fmt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>level</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_debug ()">
+<a name="prelude-log-debug"></a><h3>prelude_log_debug ()</h3>
+<pre class="programlisting">void                prelude_log_debug                   (prelude_log_t level,
+                                                         const char *fmt);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>level</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_v()">
+<a name="prelude-log-v"></a><h3>prelude_log_v()</h3>
+<pre class="programlisting">#define             prelude_log_v(level, fmt, ap)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>level</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ap</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_debug_v()">
+<a name="prelude-log-debug-v"></a><h3>prelude_log_debug_v()</h3>
+<pre class="programlisting">#define             prelude_log_debug_v(level, fmt, ap)</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>level</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fmt</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ap</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_set_level ()">
+<a name="prelude-log-set-level"></a><h3>prelude_log_set_level ()</h3>
+<pre class="programlisting">void                prelude_log_set_level               (prelude_log_t level);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>level</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_set_debug_level ()">
+<a name="prelude-log-set-debug-level"></a><h3>prelude_log_set_debug_level ()</h3>
+<pre class="programlisting">void                prelude_log_set_debug_level         (int level);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>level</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_get_flags ()">
+<a name="prelude-log-get-flags"></a><h3>prelude_log_get_flags ()</h3>
+<pre class="programlisting">prelude_log_flags_t  prelude_log_get_flags              (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_set_flags ()">
+<a name="prelude-log-set-flags"></a><h3>prelude_log_set_flags ()</h3>
+<pre class="programlisting">void                prelude_log_set_flags               (prelude_log_flags_t flags);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_get_prefix ()">
+<a name="prelude-log-get-prefix"></a><h3>prelude_log_get_prefix ()</h3>
+<pre class="programlisting">char *              prelude_log_get_prefix              (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_set_prefix ()">
+<a name="prelude-log-set-prefix"></a><h3>prelude_log_set_prefix ()</h3>
+<pre class="programlisting">void                prelude_log_set_prefix              (char *prefix);</pre>
+<p>
+Tell the Prelude standard logger to add <em class="parameter"><code>prefix</code></em> before logging
+a line.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>prefix</code></em> :</span></p></td>
+<td> Pointer to the prefix to use.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_set_callback ()">
+<a name="prelude-log-set-callback"></a><h3>prelude_log_set_callback ()</h3>
+<pre class="programlisting">void                prelude_log_set_callback            ();</pre>
+<p>
+@<code class="function">log_cb()</code> will be called in place of the prelude function usally
+used for loging.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>log_cb</code></em> :</span></p></td>
+<td> Callback function.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_log_set_logfile ()">
+<a name="prelude-log-set-logfile"></a><h3>prelude_log_set_logfile ()</h3>
+<pre class="programlisting">int                 prelude_log_set_logfile             (const char *filename);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

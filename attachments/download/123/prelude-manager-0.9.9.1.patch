@@ -1,0 +1,13 @@
+diff --git a/src/prelude-manager.c b/src/prelude-manager.c
+index 71062c1..c9964ec 100644
+--- a/src/prelude-manager.c
++++ b/src/prelude-manager.c
+@@ -32,6 +32,7 @@
+ #include <signal.h>
+ #include <assert.h>
+ #include <pthread.h>
++#include "ltdl.h"
+ 
+ #include <libprelude/prelude.h>
+ #include <libprelude/prelude-log.h>
+

@@ -1,0 +1,334 @@
+=== htdocs/js/functions.js
+==================================================================
+--- htdocs/js/functions.js	(revision 9685)
++++ htdocs/js/functions.js	(local)
+@@ -1,11 +1,15 @@
+ var cur_visible = null;
++var autorefresh_enabled = true;
+ 
++
+ function toggleVisibility(section_id) {
+ 	section = document.getElementById(section_id);
+ 	
+ 	if ( section.style.display != 'block' ) {
++		autorefresh_enabled = false;
+ 		section.style.display = 'block';
+ 	} else {
++		autorefresh_enabled = true;
+ 		section.style.display = 'none';
+ 	}
+ }
+@@ -19,6 +23,7 @@
+ 	section = document.getElementById(section_id);
+ 	if ( cur_visible == section ) {
+ 		cur_visible = null;
++		autorefresh_enabled = true;
+ 		return;
+ 	}
+ 
+@@ -32,21 +37,7 @@
+ 
+ 
+ function toggleFilteredColumnVisibility(column_id) {
+-	columns = new Array("classification", "source", "target", "analyzer");
+-
+-	for ( var i=0; i < columns.length; i++ ) {
+-		popup = document.getElementById(columns[i]);
+-
+-		if ( column_id == columns[i] ) {
+-			if ( popup.style.display != 'block' ) {
+-				popup.style.display = 'block';
+-			} else {
+-				popup.style.display = 'none';
+-			}
+-		} else {
+-			popup.style.display = 'none';
+-		}
+-	}
++	toggleVisibilityUnique(column_id);
+ }
+ 
+ function checkBoxByName(name, value) {
+=== prewikka/templates/MessageListing.tmpl
+==================================================================
+--- prewikka/templates/MessageListing.tmpl	(revision 9685)
++++ prewikka/templates/MessageListing.tmpl	(local)
+@@ -2,7 +2,144 @@
+ #extends prewikka.templates.ClassicLayout
+ 
+ #def layout_start_hook
+-<form method="post" action="?">
++<script type="text/javascript">
++
++<!--
++
++var second_reload  = 0;
++var second_count   = 0;
++
++
++function enableAutoRefresh() {
++        document.viewfilter.auto_apply_value.disabled = ! document.viewfilter.auto_apply_value.disabled;
++        if ( document.viewfilter.auto_apply_value.disabled == true )
++                autorefresh_enabled = false;
++        else
++                autorefresh_enabled = true;
++}
++
++function inputFocus() {
++        autorefresh_enabled = false;
++}
++
++
++function inputBlur() {
++        if ( second_reload <= second_count )
++                second_count = 0;
++
++        autorefresh_enabled = true
++}
++
++function pad(number) 
++{
++        if ( number < 10 )
++            return "0" + number
++        else
++            return number;
++}
++
++function autoApplyTime() {
++        if ( document.viewfilter.auto_apply_value.value )
++                var rawtime = document.viewfilter.auto_apply_value.value;
++        else
++                var rawtime = "0:00";
++
++        var old = second_reload;
++        var parselimit = rawtime.split(":");
++
++        if ( parselimit[0] && parselimit[1] && parselimit[2] )
++                second_reload = parselimit[0] * 3600 + parselimit[1] * 60 + parselimit[2] * 1;
++
++        else if ( parselimit[0] && parselimit[1] )
++                second_reload = parselimit[0] * 60 + parselimit[1] * 1;
++
++        else
++                second_reload = rawtime
++        
++        if ( second_reload != old ) {
++                secound_count = 0;
++                document.viewfilter.auto_apply_hidden.value = rawtime;
++        }
++}
++
++
++function autoApplyCounter() {
++        autoApplyTime();
++
++        if ( autorefresh_enabled == false || second_reload == 0 ) {
++                setTimeout("autoApplyCounter()", 1000);
++                return;
++        }
++
++        second_count += 1
++        status = document.getElementById("auto_apply_current")
++        status.innerHTML = Math.floor(second_count / 60) + ":" + pad((second_count % 60))
++
++        if ( second_count != second_reload )
++                setTimeout("autoApplyCounter()", 1000);
++        
++        else if ( second_count == second_reload ) {
++                second_count = 0;
++                
++                var yaxis = 0;
++                if ( window.pageYOffset )
++                        yaxis = window.pageYOffset;
++
++                else if ( window.documentElement && window.documentElement.scrollTop )
++                        yaxis = window.documentElement.scrollTop;
++
++                else if ( document.body.scrollTop )
++                        yaxis = window.body.scrollTop;
++
++                document.viewfilter.y.value = yaxis;
++                document.viewfilter.submit("Apply");
++        }
++}
++
++
++function setScrollBar() {
++        if ( document.viewfilter.y.value ) {
++                window.scrollTo('0', document.viewfilter.y.value) ;
++                document.viewfilter.y.value = 0;
++        }
++}
++
++
++function stopTimerOnClick() {
++        autorefresh_enabled = false;
++        alert("clicked stop timer");
++}
++
++
++function beginAutoApply() {
++#if $auto_apply_enable
++        autorefresh_enabled = true;
++#else
++        autorefresh_enabled = false;
++#end if
++    
++        setScrollBar();
++        autoApplyCounter();
++        
++        var i;
++        
++        for ( i = 0; i < document.links.length; i++ ) {
++                if ( document.links[i].onclick == null )
++                        document.links[i].onclick = stopTimerOnClick;
++        }
++        
++        for ( i = 0; i < document.viewfilter.elements.length; i++ ) {
++                var elem = document.viewfilter.elements[i];
++                
++                if ( elem.type == "submit" )
++                        elem.onclick = stopTimerOnClick;
++        }
++}
++
++
++
++//--></script>
++<form name="viewfilter" method="post" action="?">
+ #for $name, $value in $hidden_parameters
+   <input type="hidden" name="$name" value="$value"/>
+ #end for
+@@ -99,6 +236,25 @@
+    </td>
+   </tr>
+ 
++  <tr>
++    <th id="auto_apply_label">$_("Refresh")</th>
++
++    <td colspan="2">
++    #if $auto_apply_enable
++        #set $enabled="checked=\"checked\""
++        #set $disabled=""
++    #else:
++        #set $enabled=""
++        #set $disabled="disabled=\"disabled\""
++    #end if
++
++     <input type="hidden" name="auto_apply_hidden" value="$auto_apply_hidden">
++     
++     <span id="auto_apply_current">0:00</span>/<input type="text" size="2" name="auto_apply_value" value="$auto_apply_hidden" onFocus="javascript:inputFocus()" onBlur="javascript:inputBlur()" $disabled />
++     <input style="margin-top:0; margin-left: 0; margin-bottom: 0; padding-top: 0; padding-left: 0; padding-bottom: 0;" type="checkbox" name="auto_apply_enable" "$enabled" onclick="javascript:enableAutoRefresh();">Enable</input>
++    </td>
++  </tr>
++
+   <tr style="text-align: center;">
+       <td colspan=3><input type="submit" name="apply" value="$_("Apply")" />
+       <input type="submit" name="_save" value="$_("Save")" /></td>
+@@ -171,3 +327,16 @@
+ #filter Filter
+ #end filter
+ #end block menu_extra_content
++
++#block body
++<body class="$body_class" onload="beginAutoApply()">
++        <div id="top_view">
++                <div id="top_view_header">
++                        <div id="top_view_header_software">$prewikka.software</div>
++                        <div id="top_view_header_place">$prewikka.place</div>
++                        <div id="top_view_header_title">$prewikka.title</div>
++                </div>
++                $toplayout_content
++        </div>
++</body>
++#end block body
+=== prewikka/views/alertlisting.py
+==================================================================
+--- prewikka/views/alertlisting.py	(revision 9685)
++++ prewikka/views/alertlisting.py	(local)
+@@ -1059,6 +1059,8 @@
+         self.dataset["analyzer_aggregations"] = ANALYZER_AGGREGATIONS
+ 
+     def render(self):
++        MessageListing.render(self)
++    
+         self._deleteMessages()
+         self._setDatasetConstants()
+         
+=== prewikka/views/heartbeatlisting.py
+==================================================================
+--- prewikka/views/heartbeatlisting.py	(revision 9685)
++++ prewikka/views/heartbeatlisting.py	(local)
+@@ -106,6 +106,8 @@
+         self.env.idmef_db.deleteHeartbeat(ident)
+ 
+     def render(self):
++        MessageListing.render(self)
++
+         self._deleteMessages()
+         criteria = [ ]
+         start = end = None
+=== prewikka/views/messagelisting.py
+==================================================================
+--- prewikka/views/messagelisting.py	(revision 9685)
++++ prewikka/views/messagelisting.py	(local)
+@@ -109,6 +109,10 @@
+         self.optional("delete", list, [ ])
+         self.optional("apply", str)
+         
++        self.optional("auto_apply_hidden", str, default="0:00", save=True)
++        self.optional("auto_apply_enable", str, save=True)
++        self.optional("auto_apply_value", str)
++        
+         # submit with an image passes the x and y coordinate values
+         # where the image was clicked
+         self.optional("x", int)
+@@ -132,13 +136,9 @@
+         if not self["timezone"] in ("frontend_localtime", "sensor_localtime", "utc"):
+             raise view.InvalidValueError("timezone", self["timezone"])
+         
+-        # remove the bulshit
+-        try:
+-            del self["x"]
+-            del self["y"]
+-        except KeyError:
+-            pass
+-        
++        if not self.has_key("auto_apply_enable"):
++            user.delConfigValue(view_name, "auto_apply_enable")
++            
+         return do_load
+ 
+ 
+@@ -211,11 +211,29 @@
+     def _adjustCriteria(self, criteria):
+         pass
+     
++    def render(self):
++        self.dataset["auto_apply_hidden"] = self.parameters.get("auto_apply_hidden", "0:00")
++        self.dataset["auto_apply_enable"] = self.parameters.get("auto_apply_enable", None)
++        
++        # We need to remove x/y from parameters, so that they aren't used for link.
++        self.dataset["hidden_parameters"] = [ ]
++        
++        if self.parameters.has_key("x"): 
++            self.dataset["hidden_parameters"].append( ("x", self.parameters.pop("x")) )
++        else:
++            self.dataset["hidden_parameters"].append( ("x", "") )
++        
++        if self.parameters.has_key("y"):
++            self.dataset["hidden_parameters"].append( ("y", self.parameters.pop("y")) )
++        else:
++            self.dataset["hidden_parameters"].append( ("y", "") )
++
+     def _setHiddenParameters(self):
+-        self.dataset["hidden_parameters"] = [ [ "view", self.view_name ] ]
++        self.dataset["hidden_parameters"].append( ("view", self.view_name) )
++        
+         if self.parameters.has_key("timeline_end"):
+             self.dataset["hidden_parameters"].append(("timeline_end", self.parameters["timeline_end"]))
+-
++        
+     def _setTimelineNext(self, next):
+         parameters = self.parameters - [ "offset" ] + { "timeline_end": int(next) }
+         self.dataset["timeline.next"] = utils.create_link(self.view_name, parameters)

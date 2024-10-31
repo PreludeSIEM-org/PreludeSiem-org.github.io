@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Prewikka: Issues</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/prewikka/issues.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/prewikka/issues"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2019-11-07T18:40:10Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>Support #1153 (Assigned): Suricata changes the output from version 4</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1153"/>
+    <id>http://www.prelude-siem.org/issues/1153</id>
+    <updated>2019-11-07T18:40:10Z</updated>
+    <author>
+      <name>Andrew Goldy</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello Guys!&lt;/p&gt;
+
+
+	&lt;p&gt;Suricata might has changed? the default prelude-alert output, because comparing to the old release 3.x the alert text was the alert name for example "ET POLICY Self Signed SSL Certificate (SomeOrganizationalUnit)", and now the alert text is swapped to description for example "Potential Corporate Privacy Violation".&lt;br /&gt;Moreover comparing to snort its confirmed something was wrong with the alerting output at least in case of prelude in suricata.&lt;/p&gt;
+
+
+	&lt;p&gt;Below the real world examples with the same alert from snort and suricata aspects. Both outputs are natively forwarded to prelude. &lt;br /&gt;I've contacted suricata for months but still no answer... Is there any workaround to swap the two columns regarding suricata?&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src="http://www.prelude-siem.org/attachments/download/1184/tempsnip.png" alt="" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Suricata:&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src="http://www.prelude-siem.org/attachments/download/1186/jzff.PNG" alt="" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Snort:&lt;/p&gt;
+
+
+	&lt;p&gt;&lt;img src="http://www.prelude-siem.org/attachments/download/1185/ftzfztfztd.PNG" alt="" /&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Many thanks! &lt;img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Support #1031 (Assigned): Authentication error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1031"/>
+    <id>http://www.prelude-siem.org/issues/1031</id>
+    <updated>2019-01-06T17:29:51Z</updated>
+    <author>
+      <name>Robin IRLINGER</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hi,&lt;/p&gt;
+
+
+	&lt;p&gt;I've a trouble with Auth in Prewikka. It's impossible to enable [auth loginpassword] in /etc/prewikka/prewikka.conf:  "Cannot use auth mode 'loginpassword', please contact your local administrator". (cf. print screen)&lt;/p&gt;
+
+
+	&lt;p&gt;Do you have any suggestions ?&lt;/p&gt;
+
+
+	&lt;p&gt;Thanks.&lt;/p&gt;
+
+
+	&lt;p&gt;Robin&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Feature #260 (New): IDMEF XML View in Prewikka</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/260"/>
+    <id>http://www.prelude-siem.org/issues/260</id>
+    <updated>2007-09-08T18:04:30Z</updated>
+    <content type="html">
+&lt;p&gt;Hey there,&lt;/p&gt;
+
+
+	&lt;p&gt;I would suggest the following feature for prewikka: In the detailed alert view&lt;/p&gt;
+
+
+	&lt;p&gt;/?view=alert_summary&amp;#38;origin=alert_listing&amp;#38;messageid=$alert.messageid&lt;/p&gt;
+
+
+	&lt;p&gt;there should be the possibility to view this event in pure IDMEF XML, too. This would make it easier to get an IDMEF overview and indepth view, as well as it makes it easier to create rules/filters on IDMEF criteria, i.e. if using the smtp plugin or just some other custom filters&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Feature #240 (New): [PATCH] - SSL Client Certificate Authentification module</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/240"/>
+    <id>http://www.prelude-siem.org/issues/240</id>
+    <updated>2007-06-18T16:58:01Z</updated>
+    <content type="html">
+&lt;p&gt;Hi&lt;/p&gt;
+
+
+	&lt;p&gt;Here is a patch to use a SSL Client certificate to authenticate user. The username should be equal to the user certificate CN (the full DN is too long to be used, login field is limited to 32 char)&lt;/p&gt;
+
+
+Limitations:
+	&lt;ul&gt;
+	&lt;li&gt;Currently only tested in a SSL mod_python setup&lt;/li&gt;
+		&lt;li&gt;Need SSLOptions +StdEnvVars&lt;/li&gt;
+		&lt;li&gt;Used with python 2.3&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;p&gt;In prewikka.conf&lt;/p&gt;
+
+
+&lt;pre&gt;
+[auth ssl]
+&lt;/pre&gt;
+
+	&lt;p&gt;And this file in a new directory &lt;em&gt;prewikka/modules/auth/ssl/&lt;/em&gt;&lt;br /&gt;&lt;pre&gt;
+# Copyright (C) 2006 [[PreludeIDS]] Technologies. All Rights Reserved.
+# Author: Francois Harvey &amp;lt;fharvey+prelude at securiweb dot net&amp;gt;
+#
+# This file is part of the Prewikka program.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to
+# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+
+import os
+
+from prewikka import Auth, User, Database
+
+# Use the SSL_CLIENT_S_DN_CN from a SSL x509 Certificate to map the user
+class SSLAuth(Auth.Auth):
+    def getUser(self, request):
+        if not request._req.subprocess_env['HTTPS']:
+                raise Auth.AuthError(message=_("SSL Authentication failed: Not in a SSL session."))
+        user = request._req.subprocess_env['SSL_CLIENT_S_DN_CN']
+        if not user:
+            raise Auth.AuthError(message=_("SSL Authentication failed: no user specified (hint: look at the certificate CN)."))
+
+        return User.User(self.db, user, self.db.getLanguage(user), User.ALL_PERMISSIONS, self.db.getConfiguration(user))
+
+def load(env, config):
+    return SSLAuth(env)
+
+&lt;/pre&gt;&lt;/p&gt;    </content>
+  </entry>
+</feed>

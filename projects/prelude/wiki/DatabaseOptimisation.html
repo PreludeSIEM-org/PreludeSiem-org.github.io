@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>DatabaseOptimisation - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="qfPtGRE5L19k810lhvLKlffSECLRe7shA4fTuUCiE1+63IV22C0i3O5ZVd+buoPLi5lhvMtx4m/dCRcpxKInXA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/prelude/wiki/ManualUser">ManualUser</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Database-Optimisation"></a>
+<h1 >Database Optimisation<a href="#Database-Optimisation" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="MySQL-performance"></a>
+<h2 ><a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=DatabaseOptimisation">MySQL</a> performance<a href="#MySQL-performance" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>First, ensure yourself that <em>/var/lib/mysql</em> is a separate partition, mounted with <strong>noatime</strong>.</p>
+
+
+	<p>On many linux distributions, the default <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=DatabaseOptimisation">MySQL</a> config is suited for a very low-end machine (32 MB of RAM). You have to configure it in <em>/etc/mysql/my.cnf</em>, for ex:<br /><pre>
+innodb_data_home_dir=/db/disk2/data
+innodb_data_file_path=ibdata1:10240M;ibdata2:10240M;ibdata3:10240M;ibdata4:10240M;ibdata5:10M:autoextend
+innodb_log_group_home_dir=/var/log/mysql
+innodb_log_arch_dir=/var/log/mysql
+innodb_table_locks=0
+innodb_buffer_pool_size=1800M # USE ALL MEMORY AVAILABLE
+#innodb_log_buffer_size=8M # Lowered from 32M according to [[MySQL]]
+innodb_additional_mem_pool_size=20M
+</pre></p>
+
+
+	<p>Disable binary logs, unless you have a good reason to keep them (like using replication or PITR). Just comment the line in the config file:<br /><pre>
+log_bin = /var/log/mysql/mysql-bin.log
+</pre></p>
+
+
+Important things:
+	<ul>
+	<li>When removing data, remember that <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=DatabaseOptimisation">MySQL</a> <strong>does not delete anything from disk</strong> from an <a class="wiki-page new" href="/projects/prelude/wiki/InnoDB?parent=DatabaseOptimisation">InnoDB</a> partition, and that you can't reclaim free space ! Problem is known, but nothing was done to fix it (See comments in <a class="external" href="http://bugs.mysql.com/bug.php?id=1287">http://bugs.mysql.com/bug.php?id=1287</a> and <a class="external" href="http://bugs.mysql.com/bug.php?id=1341">http://bugs.mysql.com/bug.php?id=1341</a> )</li>
+		<li>There is no vacuum in <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=DatabaseOptimisation">MySQL</a>, but you can use the <em>OPTIMIZE TABLE</em> command to do the same. However, remember this command <strong>will lock the table</strong> during its execution, and can take some time.</li>
+	</ul>
+
+
+See
+	<ul>
+	<li><a class="external" href="http://www.mysqlperformanceblog.com/2006/05/30/innodb-memory-usage/">http://www.mysqlperformanceblog.com/2006/05/30/innodb-memory-usage/</a></li>
+		<li><a class="external" href="http://www.mysqlperformanceblog.com/2007/11/03/choosing-innodb_buffer_pool_size/">http://www.mysqlperformanceblog.com/2007/11/03/choosing-innodb_buffer_pool_size/</a></li>
+	</ul>
+
+
+	<a name="PostgreSQL-performance"></a>
+<h2 ><a class="wiki-page new" href="/projects/prelude/wiki/PostgreSQL?parent=DatabaseOptimisation">PostgreSQL</a> performance<a href="#PostgreSQL-performance" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>First, ensure yourself that <em>/var/lib/postgresql</em> is a separate partition, mounted with <strong>noatime</strong>.</p>
+
+
+Here's some tips for performance:
+	<ul>
+	<li><strong>shared_buffers</strong>: this is the most important parameter. On a dedicated server, raise it to 75-80% of the total RAM (you may need to change the <em>shmmax</em> sysctl value).</li>
+		<li><strong>work_mem</strong>: this is the amount of memory used for internal operations like sorting and hashing. The default is <em>1MB</em>, you can raise it a bit (between 32MB and 64MB). Note that each connexion can use this amount of memory, so do not set the value too high.</li>
+		<li>Raise <strong>default_statistics_target</strong> to something like 100 (it must be between 1 and 1000, default is 10). This parameter controls how the query planner will decide to choose a plan or another, and can lead to serious performance problems if too low</li>
+		<li><strong>join_collapse_limit</strong>: this parameters controls how deep the query planner will search and try to reorder JOIN instructions. Prelude uses many JOINs, so you should raise this to 12 or 15 (default is 8)</li>
+		<li>remember to vacuum regularly !</li>
+		<li>Depending on your data, you may need to change <strong>max_fsm_relations</strong> and <strong>max_fsm_pages</strong></li>
+	</ul>
+
+
+See
+	<ul>
+	<li><a class="external" href="http://www.postgresql.org/docs/8.3/static/runtime-config-resource.html">http://www.postgresql.org/docs/8.3/static/runtime-config-resource.html</a></li>
+		<li><a class="external" href="http://www.desknow.com/kb/idx/0/061/article/">http://www.desknow.com/kb/idx/0/061/article/</a></li>
+		<li><a class="external" href="http://wiki.postgresql.org/wiki/Performance_Optimization">http://wiki.postgresql.org/wiki/Performance_Optimization</a></li>
+	</ul>
+
+
+	<a name="Remove-heartbeats"></a>
+<h2 >Remove heartbeats<a href="#Remove-heartbeats" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Heartbeats are logged for every sensor, and there are <em>tons</em> of them. This can completely cripple performances (especially when using Prewikka) of the database, so you should remove them. Writing a simple shell script, executed by a cron job every day, is a trivial task:<br /><pre>
+#!/bin/sh
+
+set -e
+
+DB_TYPE="pgsql" 
+DB_HOST="localhost" 
+DB_USER="prelude" 
+DB_PASS="xxxxxx" 
+
+KEEP_INTERVAL="2 month" 
+
+DATE=$(date -d "now - $KEEP_INTERVAL" +%Y-%m-%d)
+
+preludedb-admin delete heartbeat --criteria "heartbeat.create_time &lt;= $DATE" "type=$DB_TYPE host=$DB_HOST user=$DB_USER pass=$DB_PASS" 
+</pre></p>
+
+
+	<a name="Clean-up-old-alerts"></a>
+<h2 >Clean up old alerts<a href="#Clean-up-old-alerts" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><em>Note</em>: Be careful ! Deleting old entries may remove important data.</p>
+
+
+	<p>The <em>preludedb-admin</em> command can be used to suppress alerts, based on some conditions (called criteria).</p>
+
+
+<pre>
+# preludedb-admin delete --alert-criteria "alert.create_time &lt;= 2007-06-15" "type=pgsql user=prelude pass=&lt;db_password&gt;" 
+</pre>
+
+	<p>With recent versions, the syntax has changed:<br /><pre>
+# preludedb-admin delete alert --criteria "alert.create_time &lt;= 2007-08-15" "type=mysql user=prelude pass=&lt;db_password&gt;" 
+</pre></p>
+
+
+	<p>This command will delete all alerts prior to 2007-06-15</p>
+
+
+	<p>If you are using <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=DatabaseOptimisation">MySQL</a> and got the following error:<br /><pre>
+retrieving alert ident failed: The total number of locks exceeds the lock table size.
+</pre><br />Then edit <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=DatabaseOptimisation">MySQL</a> configuration file and try increasing <em>innodb_buffer_pool_size</em>.</p>
+
+
+	<p>See <a class="external" href="http://mrothouse.wordpress.com/2006/10/20/mysql-error-1206/">http://mrothouse.wordpress.com/2006/10/20/mysql-error-1206/</a> for some details.</p>
+
+
+	<a name="Replicating-a-database-to-another"></a>
+<h2 >Replicating a database to another<a href="#Replicating-a-database-to-another" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The <em>preludedb-admin</em> tool has a <em>copy</em> mode.</p>
+
+
+<pre>
+# preludedb-admin copy alert "type=pgsql name=prelude user=prelude pass=***** host=192.168.1.101" "type=mysql name=prelude user=prelude pass=****** host=192.168.1.104" 
+# preludedb-admin copy heartbeat "type=pgsql name=prelude user=prelude pass=***** host=192.168.1.101" "type=mysql name=prelude user=prelude pass=****** host=192.168.1.104" 
+</pre>
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

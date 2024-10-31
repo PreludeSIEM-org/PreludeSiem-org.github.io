@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #164: libsafe support - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="pIqv1RmHiDt5Z2E26LPgjf7+WpC+ZXzNHQqR03EVGUm3pce60JOFuPPNacz1+6nTgrUrDqRvJYPDhFVD9RUtSg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="PRELUDE SIEM - Bug #164: libsafe support" href="http://www.prelude-siem.org/issues/164.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude/issues/report">Summary</a></li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #164</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#640" accesskey="p" href="/issues/640">« Previous</a> |
+        <span class="position">126 of 390</span> |
+      <a title="#646" accesskey="n" href="/issues/646">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>libsafe support</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="07/14/2006 07:24 PM" href="/projects/prelude/activity?from=2006-07-14">over 18 years</a> ago.
+        Updated <a title="11/13/2015 09:02 PM" href="/projects/prelude/activity?from=2015-11-13">almost 9 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="category attribute"><div class="label">Category:</div><div class="value">Sensor development/review</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Hi,</p>
+
+
+	<p>Trying to get libsafe to compile with support for prelude and not getting anywhere. Is there anything I am missing? I see on <a href="http://prelude-ids.org/rubrique.php3?id_rubrique=6" class="external">this</a> page that you mention libsafe version 2.11, while the latest libsafe I could find <a href="http://www.research.avayalabs.com/gcm/usa/en-us/initiatives/all/nsr.htm&#38;Filter=ProjectTitle:Libsafe&#38;Wrapper=LabsProjectDetails&#38;View=LabsProjectDetails" class="external">here</a> is 2.0.16. Any better pointers?</p>
+
+
+	<p>BTW, I already emailed the avayalabs address mentionned on their webpage to no effect.</p>
+
+
+<pre>
+# make
+cd src; make
+maker1: Entering directory @/usr/local/src/libsafe-2.0-16/src'
+gcc -M  util.c intercept.c &gt; dep
+gcc -c -o util.o -O2 -Wall -fPIC -DLIBSAFE_VERSION=\"2.0.16\" -I/usr/local/include -DHAVE_LIBPRELUDE util.c
+util.c:1006:29: error: libprelude/list.h: No such file or directory
+util.c:1007:35: error: libprelude/idmef-tree.h: No such file or directory
+util.c:1008:40: error: libprelude/idmef-tree-func.h: No such file or directory
+util.c:1010:40: error: libprelude/prelude-message.h: No such file or directory
+util.c:1011:49: error: libprelude/prelude-message-buffered.h: No such file or directory
+util.c:1012:39: error: libprelude/idmef-msg-send.h: No such file or directory
+util.c:1014:31: error: libprelude/sensor.h: No such file or directory
+util.c:1048: error: expected �)� before �*� token
+util.c:1120: error: expected �)� before �*� token
+util.c: In function �prelude_alert�:
+util.c:1158: error: �idmef_user_t� undeclared (first use in this function)
+util.c:1158: error: (Each undeclared identifier is reported only once
+util.c:1158: error: for each function it appears in.)
+util.c:1158: error: �user� undeclared (first use in this function)
+util.c:1159: error: �idmef_alert_t� undeclared (first use in this function)
+util.c:1159: error: �alert� undeclared (first use in this function)
+util.c:1161: error: �idmef_message_t� undeclared (first use in this function)
+util.c:1161: error: �idmef� undeclared (first use in this function)
+util.c:1162: error: �idmef_target_t� undeclared (first use in this function)
+util.c:1162: error: �target� undeclared (first use in this function)
+util.c:1163: error: �idmef_process_t� undeclared (first use in this function)
+util.c:1163: error: �process� undeclared (first use in this function)
+util.c:1164: error: �prelude_msgbuf_t� undeclared (first use in this function)
+util.c:1164: error: �msgbuf� undeclared (first use in this function)
+util.c:1166: error: �idmef_additional_data_t� undeclared (first use in this function)
+util.c:1166: error: �data� undeclared (first use in this function)
+util.c:1167: error: �idmef_classification_t� undeclared (first use in this function)
+util.c:1167: error: �classification� undeclared (first use in this function)
+util.c:1170: warning: implicit declaration of function �prelude_sensor_init�
+util.c:1187: warning: implicit declaration of function �idmef_message_new�
+util.c:1194: warning: implicit declaration of function �idmef_alert_new�
+util.c:1196: warning: implicit declaration of function �idmef_alert_assessment_new�
+util.c:1198: warning: implicit declaration of function �fill_assessment�
+util.c:1200: warning: implicit declaration of function �idmef_string_set_constant�
+util.c:1208: warning: implicit declaration of function �idmef_analyzer_process_new�
+util.c:1210: warning: implicit declaration of function �idmef_string_set�
+util.c:1223: warning: implicit declaration of function �idmef_analyzer_node_new�
+util.c:1230: warning: implicit declaration of function �idmef_alert_target_new�
+util.c:1234: warning: implicit declaration of function �idmef_target_user_new�
+util.c:1238: error: �application� undeclared (first use in this function)
+util.c:1240: warning: implicit declaration of function �set_user_infos�
+util.c:1244: warning: implicit declaration of function �idmef_target_process_new�
+util.c:1252: warning: implicit declaration of function �idmef_alert_classification_new�
+util.c:1262: warning: implicit declaration of function �idmef_alert_additional_data_new�
+util.c:1266: error: �string� undeclared (first use in this function)
+util.c:1268: warning: implicit declaration of function �idmef_additional_data_set_data�
+util.c:1273: warning: implicit declaration of function �prelude_msgbuf_new�
+util.c:1277: warning: implicit declaration of function �idmef_msg_send�
+util.c:1277: error: �PRELUDE_MSG_PRIORITY_HIGH� undeclared (first use in this function)
+util.c:1278: warning: implicit declaration of function �idmef_message_free�
+util.c:1279: warning: implicit declaration of function �prelude_msgbuf_close�
+maker1: *** [util.o] Error 1
+maker1: Leaving directory @/usr/local/src/libsafe-2.0-16/src'
+make: *** [libsafe] Error 2
+</pre>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-2494" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/301">Thomas </a> <a title="11/13/2015 09:02 PM" href="/projects/prelude/activity?from=2015-11-13">almost 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Description</strong> updated (<a title="View differences" href="/journals/2494/diff?detail_id=2754">diff</a>)</li>
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+    </ul>
+    <div id="journal-2494-notes" class="wiki"><p>Libsafe is not yet supported</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/164.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/164.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

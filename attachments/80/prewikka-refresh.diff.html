@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>prewikka-refresh.diff - Prewikka - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="73PrQTHPJp0zwyanGvhFmbjQsJzYzp90yShLZa7v0tX8XIMu+NsrHrlpLl0HsAzHxJvBAsLExjoXpo/1Ku/m1g==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-prewikka controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prewikka/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prewikka">Overview</a></li><li><a class="activity" href="/projects/prewikka/activity">Activity</a></li><li><a class="roadmap" href="/projects/prewikka/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prewikka/issues">Issues</a></li><li><a class="gantt" href="/projects/prewikka/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prewikka/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prewikka/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>prewikka-refresh.diff</h2>
+
+<div class="attachments">
+<p>Second version of the modified Prewikka refresh patch - 
+   <span class="author"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a>, 07/16/2007 01:36 PM</span></p>
+<p><a href="/attachments/download/80/prewikka-refresh.diff">Download</a>   <span class="size">(10.4 KB)</span></p>
+</div>
+
+  <form action="/attachments/80/prewikka-refresh.diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      htdocs/js/functions.js	(local)
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1</th>
+  <th class="line-num">1</th>
+  <td class="line-code ">
+    <pre>var cur_visible = null;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">2</th>
+  <td class="line-code diff_in">
+    <pre>var autorefresh_enabled = true;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">2</th>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">4</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <th class="line-num">5</th>
+  <td class="line-code ">
+    <pre>function toggleVisibility(section_id) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <th class="line-num">6</th>
+  <td class="line-code ">
+    <pre>	section = document.getElementById(section_id);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <th class="line-num">7</th>
+  <td class="line-code ">
+    <pre>	</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">6</th>
+  <th class="line-num">8</th>
+  <td class="line-code ">
+    <pre>	if ( section.style.display != &#39;block&#39; ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>		autorefresh_enabled = false;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">7</th>
+  <th class="line-num">10</th>
+  <td class="line-code ">
+    <pre>		section.style.display = &#39;block&#39;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">8</th>
+  <th class="line-num">11</th>
+  <td class="line-code ">
+    <pre>	} else {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre>		autorefresh_enabled = true;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">9</th>
+  <th class="line-num">13</th>
+  <td class="line-code ">
+    <pre>		section.style.display = &#39;none&#39;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">10</th>
+  <th class="line-num">14</th>
+  <td class="line-code ">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">11</th>
+  <th class="line-num">15</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">19</th>
+  <th class="line-num">23</th>
+  <td class="line-code ">
+    <pre>	section = document.getElementById(section_id);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">20</th>
+  <th class="line-num">24</th>
+  <td class="line-code ">
+    <pre>	if ( cur_visible == section ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">21</th>
+  <th class="line-num">25</th>
+  <td class="line-code ">
+    <pre>		cur_visible = null;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">26</th>
+  <td class="line-code diff_in">
+    <pre>		autorefresh_enabled = true;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">22</th>
+  <th class="line-num">27</th>
+  <td class="line-code ">
+    <pre>		return;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">23</th>
+  <th class="line-num">28</th>
+  <td class="line-code ">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">24</th>
+  <th class="line-num">29</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">32</th>
+  <th class="line-num">37</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">33</th>
+  <th class="line-num">38</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">34</th>
+  <th class="line-num">39</th>
+  <td class="line-code ">
+    <pre>function toggleFilteredColumnVisibility(column_id) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">35</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>	columns = new Array(&quot;classification&quot;, &quot;source&quot;, &quot;target&quot;, &quot;analyzer&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">36</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">37</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>	for ( var i=0; i &lt; columns.length; i++ ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">38</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>		popup = document.getElementById(columns[i]);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">39</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">40</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>		if ( column_id == columns[i] ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">41</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>			if ( popup.style.display != &#39;block&#39; ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">42</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>				popup.style.display = &#39;block&#39;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">43</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>			} else {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">44</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>				popup.style.display = &#39;none&#39;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">45</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>			}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">46</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>		} else {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">47</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>			popup.style.display = &#39;none&#39;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">48</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>		}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">49</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>	}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre>	toggleVisibilityUnique(column_id);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">50</th>
+  <th class="line-num">41</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">51</th>
+  <th class="line-num">42</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">52</th>
+  <th class="line-num">43</th>
+  <td class="line-code ">
+    <pre>function checkBoxByName(name, value) {</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/templates/MessageListing.tmpl	(local)
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">2</th>
+  <th class="line-num">2</th>
+  <td class="line-code ">
+    <pre>#extends prewikka.templates.ClassicLayout</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">3</th>
+  <th class="line-num">3</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">4</th>
+  <th class="line-num">4</th>
+  <td class="line-code ">
+    <pre>#def layout_start_hook</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">5</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>&lt;form method=&quot;post&quot; action=&quot;?&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">5</th>
+  <td class="line-code diff_in">
+    <pre>&lt;script type=&quot;text/javascript&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">6</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">7</th>
+  <td class="line-code diff_in">
+    <pre>&lt;!--</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">8</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">9</th>
+  <td class="line-code diff_in">
+    <pre>var second_reload  = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">10</th>
+  <td class="line-code diff_in">
+    <pre>var second_count   = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">11</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">12</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">13</th>
+  <td class="line-code diff_in">
+    <pre>function enableAutoRefresh() {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">14</th>
+  <td class="line-code diff_in">
+    <pre>        document.viewfilter.auto_apply_value.disabled = ! document.viewfilter.auto_apply_value.disabled;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">15</th>
+  <td class="line-code diff_in">
+    <pre>        if ( document.viewfilter.auto_apply_value.disabled == true )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">16</th>
+  <td class="line-code diff_in">
+    <pre>                autorefresh_enabled = false;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">17</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">18</th>
+  <td class="line-code diff_in">
+    <pre>                autorefresh_enabled = true;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">19</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">20</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">21</th>
+  <td class="line-code diff_in">
+    <pre>function inputFocus() {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">22</th>
+  <td class="line-code diff_in">
+    <pre>        autorefresh_enabled = false;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">23</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">24</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">25</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">26</th>
+  <td class="line-code diff_in">
+    <pre>function inputBlur() {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">27</th>
+  <td class="line-code diff_in">
+    <pre>        if ( second_reload &lt;= second_count )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">28</th>
+  <td class="line-code diff_in">
+    <pre>                second_count = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">29</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">30</th>
+  <td class="line-code diff_in">
+    <pre>        autorefresh_enabled = true</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">31</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">32</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">33</th>
+  <td class="line-code diff_in">
+    <pre>function pad(number) </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">34</th>
+  <td class="line-code diff_in">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">35</th>
+  <td class="line-code diff_in">
+    <pre>        if ( number &lt; 10 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">36</th>
+  <td class="line-code diff_in">
+    <pre>            return &quot;0&quot; + number</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">37</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre>            return number;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">39</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre>function autoApplyTime() {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">42</th>
+  <td class="line-code diff_in">
+    <pre>        if ( document.viewfilter.auto_apply_value.value )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">43</th>
+  <td class="line-code diff_in">
+    <pre>                var rawtime = document.viewfilter.auto_apply_value.value;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">44</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">45</th>
+  <td class="line-code diff_in">
+    <pre>                var rawtime = &quot;0:00&quot;;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">46</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">47</th>
+  <td class="line-code diff_in">
+    <pre>        var old = second_reload;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">48</th>
+  <td class="line-code diff_in">
+    <pre>        var parselimit = rawtime.split(&quot;:&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">49</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">50</th>
+  <td class="line-code diff_in">
+    <pre>        if ( parselimit[0] &amp;&amp; parselimit[1] &amp;&amp; parselimit[2] )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">51</th>
+  <td class="line-code diff_in">
+    <pre>                second_reload = parselimit[0] * 3600 + parselimit[1] * 60 + parselimit[2] * 1;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">52</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">53</th>
+  <td class="line-code diff_in">
+    <pre>        else if ( parselimit[0] &amp;&amp; parselimit[1] )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">54</th>
+  <td class="line-code diff_in">
+    <pre>                second_reload = parselimit[0] * 60 + parselimit[1] * 1;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">55</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">56</th>
+  <td class="line-code diff_in">
+    <pre>        else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">57</th>
+  <td class="line-code diff_in">
+    <pre>                second_reload = rawtime</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">58</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">59</th>
+  <td class="line-code diff_in">
+    <pre>        if ( second_reload != old ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">60</th>
+  <td class="line-code diff_in">
+    <pre>                secound_count = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">61</th>
+  <td class="line-code diff_in">
+    <pre>                document.viewfilter.auto_apply_hidden.value = rawtime;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">62</th>
+  <td class="line-code diff_in">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">63</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">64</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">65</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">66</th>
+  <td class="line-code diff_in">
+    <pre>function autoApplyCounter() {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">67</th>
+  <td class="line-code diff_in">
+    <pre>        autoApplyTime();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">68</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">69</th>
+  <td class="line-code diff_in">
+    <pre>        if ( autorefresh_enabled == false || second_reload == 0 ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">70</th>
+  <td class="line-code diff_in">
+    <pre>                setTimeout(&quot;autoApplyCounter()&quot;, 1000);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">71</th>
+  <td class="line-code diff_in">
+    <pre>                return;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">72</th>
+  <td class="line-code diff_in">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">73</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">74</th>
+  <td class="line-code diff_in">
+    <pre>        second_count += 1</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">75</th>
+  <td class="line-code diff_in">
+    <pre>        status = document.getElementById(&quot;auto_apply_current&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">76</th>
+  <td class="line-code diff_in">
+    <pre>        status.innerHTML = Math.floor(second_count / 60) + &quot;:&quot; + pad((second_count % 60))</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">77</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">78</th>
+  <td class="line-code diff_in">
+    <pre>        if ( second_count != second_reload )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">79</th>
+  <td class="line-code diff_in">
+    <pre>                setTimeout(&quot;autoApplyCounter()&quot;, 1000);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">80</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">81</th>
+  <td class="line-code diff_in">
+    <pre>        else if ( second_count == second_reload ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">82</th>
+  <td class="line-code diff_in">
+    <pre>                second_count = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">83</th>
+  <td class="line-code diff_in">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">84</th>
+  <td class="line-code diff_in">
+    <pre>                var yaxis = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">85</th>
+  <td class="line-code diff_in">
+    <pre>                if ( window.pageYOffset )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">86</th>
+  <td class="line-code diff_in">
+    <pre>                        yaxis = window.pageYOffset;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">87</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">88</th>
+  <td class="line-code diff_in">
+    <pre>                else if ( window.documentElement &amp;&amp; window.documentElement.scrollTop )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">89</th>
+  <td class="line-code diff_in">
+    <pre>                        yaxis = window.documentElement.scrollTop;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">90</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">91</th>
+  <td class="line-code diff_in">
+    <pre>                else if ( document.body.scrollTop )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">92</th>
+  <td class="line-code diff_in">
+    <pre>                        yaxis = window.body.scrollTop;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">93</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">94</th>
+  <td class="line-code diff_in">
+    <pre>                document.viewfilter.y.value = yaxis;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">95</th>
+  <td class="line-code diff_in">
+    <pre>                document.viewfilter.submit(&quot;Apply&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">96</th>
+  <td class="line-code diff_in">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">97</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">98</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">99</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">100</th>
+  <td class="line-code diff_in">
+    <pre>function setScrollBar() {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">101</th>
+  <td class="line-code diff_in">
+    <pre>        if ( document.viewfilter.y.value ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">102</th>
+  <td class="line-code diff_in">
+    <pre>                window.scrollTo(&#39;0&#39;, document.viewfilter.y.value) ;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">103</th>
+  <td class="line-code diff_in">
+    <pre>                document.viewfilter.y.value = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">104</th>
+  <td class="line-code diff_in">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">106</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">107</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">108</th>
+  <td class="line-code diff_in">
+    <pre>function stopTimerOnClick() {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">109</th>
+  <td class="line-code diff_in">
+    <pre>        autorefresh_enabled = false;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">110</th>
+  <td class="line-code diff_in">
+    <pre>        alert(&quot;clicked stop timer&quot;);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">111</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">113</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">114</th>
+  <td class="line-code diff_in">
+    <pre>function beginAutoApply() {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">115</th>
+  <td class="line-code diff_in">
+    <pre>#if $auto_apply_enable</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">116</th>
+  <td class="line-code diff_in">
+    <pre>        autorefresh_enabled = true;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">117</th>
+  <td class="line-code diff_in">
+    <pre>#else</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">118</th>
+  <td class="line-code diff_in">
+    <pre>        autorefresh_enabled = false;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">119</th>
+  <td class="line-code diff_in">
+    <pre>#end if</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">120</th>
+  <td class="line-code diff_in">
+    <pre>    </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">121</th>
+  <td class="line-code diff_in">
+    <pre>        setScrollBar();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">122</th>
+  <td class="line-code diff_in">
+    <pre>        autoApplyCounter();</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">123</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">124</th>
+  <td class="line-code diff_in">
+    <pre>        var i;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">125</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">126</th>
+  <td class="line-code diff_in">
+    <pre>        for ( i = 0; i &lt; document.links.length; i++ ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">127</th>
+  <td class="line-code diff_in">
+    <pre>                if ( document.links[i].onclick == null )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">128</th>
+  <td class="line-code diff_in">
+    <pre>                        document.links[i].onclick = stopTimerOnClick;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">129</th>
+  <td class="line-code diff_in">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">130</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">131</th>
+  <td class="line-code diff_in">
+    <pre>        for ( i = 0; i &lt; document.viewfilter.elements.length; i++ ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">132</th>
+  <td class="line-code diff_in">
+    <pre>                var elem = document.viewfilter.elements[i];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">133</th>
+  <td class="line-code diff_in">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">134</th>
+  <td class="line-code diff_in">
+    <pre>                if ( elem.type == &quot;submit&quot; )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">135</th>
+  <td class="line-code diff_in">
+    <pre>                        elem.onclick = stopTimerOnClick;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">136</th>
+  <td class="line-code diff_in">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">137</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">138</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">139</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">140</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">141</th>
+  <td class="line-code diff_in">
+    <pre>//--&gt;&lt;/script&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">142</th>
+  <td class="line-code diff_in">
+    <pre>&lt;form name=&quot;viewfilter&quot; method=&quot;post&quot; action=&quot;?&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">6</th>
+  <th class="line-num">143</th>
+  <td class="line-code ">
+    <pre>#for $name, $value in $hidden_parameters</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">7</th>
+  <th class="line-num">144</th>
+  <td class="line-code ">
+    <pre>  &lt;input type=&quot;hidden&quot; name=&quot;$name&quot; value=&quot;$value&quot;/&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">8</th>
+  <th class="line-num">145</th>
+  <td class="line-code ">
+    <pre>#end for</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">99</th>
+  <th class="line-num">236</th>
+  <td class="line-code ">
+    <pre>   &lt;/td&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">100</th>
+  <th class="line-num">237</th>
+  <td class="line-code ">
+    <pre>  &lt;/tr&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">101</th>
+  <th class="line-num">238</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">239</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;tr&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">240</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;th id=&quot;auto_apply_label&quot;&gt;$_(&quot;Refresh&quot;)&lt;/th&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">241</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">242</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;td colspan=&quot;2&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">243</th>
+  <td class="line-code diff_in">
+    <pre>    #if $auto_apply_enable</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">244</th>
+  <td class="line-code diff_in">
+    <pre>        #set $enabled=&quot;checked=\&quot;checked\&quot;&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">245</th>
+  <td class="line-code diff_in">
+    <pre>        #set $disabled=&quot;&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">246</th>
+  <td class="line-code diff_in">
+    <pre>    #else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">247</th>
+  <td class="line-code diff_in">
+    <pre>        #set $enabled=&quot;&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">248</th>
+  <td class="line-code diff_in">
+    <pre>        #set $disabled=&quot;disabled=\&quot;disabled\&quot;&quot;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">249</th>
+  <td class="line-code diff_in">
+    <pre>    #end if</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">250</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">251</th>
+  <td class="line-code diff_in">
+    <pre>     &lt;input type=&quot;hidden&quot; name=&quot;auto_apply_hidden&quot; value=&quot;$auto_apply_hidden&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">252</th>
+  <td class="line-code diff_in">
+    <pre>     </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">253</th>
+  <td class="line-code diff_in">
+    <pre>     &lt;span id=&quot;auto_apply_current&quot;&gt;0:00&lt;/span&gt;/&lt;input type=&quot;text&quot; size=&quot;2&quot; name=&quot;auto_apply_value&quot; value=&quot;$auto_apply_hidden&quot; onFocus=&quot;javascript:inputFocus()&quot; onBlur=&quot;javascript:inputBlur()&quot; $disabled /&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">254</th>
+  <td class="line-code diff_in">
+    <pre>     &lt;input style=&quot;margin-top:0; margin-left: 0; margin-bottom: 0; padding-top: 0; padding-left: 0; padding-bottom: 0;&quot; type=&quot;checkbox&quot; name=&quot;auto_apply_enable&quot; &quot;$enabled&quot; onclick=&quot;javascript:enableAutoRefresh();&quot;&gt;Enable&lt;/input&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">255</th>
+  <td class="line-code diff_in">
+    <pre>    &lt;/td&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">256</th>
+  <td class="line-code diff_in">
+    <pre>  &lt;/tr&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">257</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">102</th>
+  <th class="line-num">258</th>
+  <td class="line-code ">
+    <pre>  &lt;tr style=&quot;text-align: center;&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">103</th>
+  <th class="line-num">259</th>
+  <td class="line-code ">
+    <pre>      &lt;td colspan=3&gt;&lt;input type=&quot;submit&quot; name=&quot;apply&quot; value=&quot;$_(&quot;Apply&quot;)&quot; /&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">104</th>
+  <th class="line-num">260</th>
+  <td class="line-code ">
+    <pre>      &lt;input type=&quot;submit&quot; name=&quot;_save&quot; value=&quot;$_(&quot;Save&quot;)&quot; /&gt;&lt;/td&gt;</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">171</th>
+  <th class="line-num">327</th>
+  <td class="line-code ">
+    <pre>#filter Filter</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">172</th>
+  <th class="line-num">328</th>
+  <td class="line-code ">
+    <pre>#end filter</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">173</th>
+  <th class="line-num">329</th>
+  <td class="line-code ">
+    <pre>#end block menu_extra_content</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">330</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">331</th>
+  <td class="line-code diff_in">
+    <pre>#block body</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">332</th>
+  <td class="line-code diff_in">
+    <pre>&lt;body class=&quot;$body_class&quot; onload=&quot;beginAutoApply()&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">333</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;div id=&quot;top_view&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">334</th>
+  <td class="line-code diff_in">
+    <pre>                &lt;div id=&quot;top_view_header&quot;&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">335</th>
+  <td class="line-code diff_in">
+    <pre>                        &lt;div id=&quot;top_view_header_software&quot;&gt;$prewikka.software&lt;/div&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">336</th>
+  <td class="line-code diff_in">
+    <pre>                        &lt;div id=&quot;top_view_header_place&quot;&gt;$prewikka.place&lt;/div&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">337</th>
+  <td class="line-code diff_in">
+    <pre>                        &lt;div id=&quot;top_view_header_title&quot;&gt;$prewikka.title&lt;/div&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">338</th>
+  <td class="line-code diff_in">
+    <pre>                &lt;/div&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">339</th>
+  <td class="line-code diff_in">
+    <pre>                $toplayout_content</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">340</th>
+  <td class="line-code diff_in">
+    <pre>        &lt;/div&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">341</th>
+  <td class="line-code diff_in">
+    <pre>&lt;/body&gt;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">342</th>
+  <td class="line-code diff_in">
+    <pre>#end block body</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/views/alertlisting.py	(local)
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">1059</th>
+  <th class="line-num">1059</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;analyzer_aggregations&quot;] = ANALYZER_AGGREGATIONS</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1060</th>
+  <th class="line-num">1060</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1061</th>
+  <th class="line-num">1061</th>
+  <td class="line-code ">
+    <pre>    def render(self):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1062</th>
+  <td class="line-code diff_in">
+    <pre>        MessageListing.render(self)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">1063</th>
+  <td class="line-code diff_in">
+    <pre>    </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1062</th>
+  <th class="line-num">1064</th>
+  <td class="line-code ">
+    <pre>        self._deleteMessages()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1063</th>
+  <th class="line-num">1065</th>
+  <td class="line-code ">
+    <pre>        self._setDatasetConstants()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">1064</th>
+  <th class="line-num">1066</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/views/heartbeatlisting.py	(local)
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">106</th>
+  <th class="line-num">106</th>
+  <td class="line-code ">
+    <pre>        self.env.idmef_db.deleteHeartbeat(ident)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">107</th>
+  <th class="line-num">107</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">108</th>
+  <th class="line-num">108</th>
+  <td class="line-code ">
+    <pre>    def render(self):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">109</th>
+  <td class="line-code diff_in">
+    <pre>        MessageListing.render(self)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">110</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">109</th>
+  <th class="line-num">111</th>
+  <td class="line-code ">
+    <pre>        self._deleteMessages()</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">110</th>
+  <th class="line-num">112</th>
+  <td class="line-code ">
+    <pre>        criteria = [ ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">111</th>
+  <th class="line-num">113</th>
+  <td class="line-code ">
+    <pre>        start = end = None</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      prewikka/views/messagelisting.py	(local)
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">109</th>
+  <th class="line-num">109</th>
+  <td class="line-code ">
+    <pre>        self.optional(&quot;delete&quot;, list, [ ])</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">110</th>
+  <th class="line-num">110</th>
+  <td class="line-code ">
+    <pre>        self.optional(&quot;apply&quot;, str)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">111</th>
+  <th class="line-num">111</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">112</th>
+  <td class="line-code diff_in">
+    <pre>        self.optional(&quot;auto_apply_hidden&quot;, str, default=&quot;0:00&quot;, save=True)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">113</th>
+  <td class="line-code diff_in">
+    <pre>        self.optional(&quot;auto_apply_enable&quot;, str, save=True)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">114</th>
+  <td class="line-code diff_in">
+    <pre>        self.optional(&quot;auto_apply_value&quot;, str)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">115</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">112</th>
+  <th class="line-num">116</th>
+  <td class="line-code ">
+    <pre>        # submit with an image passes the x and y coordinate values</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">113</th>
+  <th class="line-num">117</th>
+  <td class="line-code ">
+    <pre>        # where the image was clicked</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">114</th>
+  <th class="line-num">118</th>
+  <td class="line-code ">
+    <pre>        self.optional(&quot;x&quot;, int)</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">132</th>
+  <th class="line-num">136</th>
+  <td class="line-code ">
+    <pre>        if not self[&quot;timezone&quot;] in (&quot;frontend_localtime&quot;, &quot;sensor_localtime&quot;, &quot;utc&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">133</th>
+  <th class="line-num">137</th>
+  <td class="line-code ">
+    <pre>            raise view.InvalidValueError(&quot;timezone&quot;, self[&quot;timezone&quot;])</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">134</th>
+  <th class="line-num">138</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">135</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        # remove the bulshit</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">136</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        try:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">137</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>            del self[&quot;x&quot;]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">138</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>            del self[&quot;y&quot;]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">139</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        except KeyError:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">140</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>            pass</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">141</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">139</th>
+  <td class="line-code diff_in">
+    <pre>        if not self.has_key(&quot;auto_apply_enable&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">140</th>
+  <td class="line-code diff_in">
+    <pre>            user.delConfigValue(view_name, &quot;auto_apply_enable&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">141</th>
+  <td class="line-code diff_in">
+    <pre>            </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">142</th>
+  <th class="line-num">142</th>
+  <td class="line-code ">
+    <pre>        return do_load</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">143</th>
+  <th class="line-num">143</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">144</th>
+  <th class="line-num">144</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">211</th>
+  <th class="line-num">211</th>
+  <td class="line-code ">
+    <pre>    def _adjustCriteria(self, criteria):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">212</th>
+  <th class="line-num">212</th>
+  <td class="line-code ">
+    <pre>        pass</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">213</th>
+  <th class="line-num">213</th>
+  <td class="line-code ">
+    <pre>    </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">214</th>
+  <td class="line-code diff_in">
+    <pre>    def render(self):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">215</th>
+  <td class="line-code diff_in">
+    <pre>        self.dataset[&quot;auto_apply_hidden&quot;] = self.parameters.get(&quot;auto_apply_hidden&quot;, &quot;0:00&quot;)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">216</th>
+  <td class="line-code diff_in">
+    <pre>        self.dataset[&quot;auto_apply_enable&quot;] = self.parameters.get(&quot;auto_apply_enable&quot;, None)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">217</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">218</th>
+  <td class="line-code diff_in">
+    <pre>        # We need to remove x/y from parameters, so that they aren&#39;t used for link.</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">219</th>
+  <td class="line-code diff_in">
+    <pre>        self.dataset[&quot;hidden_parameters&quot;] = [ ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">220</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">221</th>
+  <td class="line-code diff_in">
+    <pre>        if self.parameters.has_key(&quot;x&quot;): </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">222</th>
+  <td class="line-code diff_in">
+    <pre>            self.dataset[&quot;hidden_parameters&quot;].append( (&quot;x&quot;, self.parameters.pop(&quot;x&quot;)) )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">223</th>
+  <td class="line-code diff_in">
+    <pre>        else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">224</th>
+  <td class="line-code diff_in">
+    <pre>            self.dataset[&quot;hidden_parameters&quot;].append( (&quot;x&quot;, &quot;&quot;) )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">225</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">226</th>
+  <td class="line-code diff_in">
+    <pre>        if self.parameters.has_key(&quot;y&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">227</th>
+  <td class="line-code diff_in">
+    <pre>            self.dataset[&quot;hidden_parameters&quot;].append( (&quot;y&quot;, self.parameters.pop(&quot;y&quot;)) )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">228</th>
+  <td class="line-code diff_in">
+    <pre>        else:</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">229</th>
+  <td class="line-code diff_in">
+    <pre>            self.dataset[&quot;hidden_parameters&quot;].append( (&quot;y&quot;, &quot;&quot;) )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">230</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">214</th>
+  <th class="line-num">231</th>
+  <td class="line-code ">
+    <pre>    def _setHiddenParameters(self):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">215</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        self.dataset[&quot;hidden_parameters&quot;] = [ [ &quot;view&quot;, self.view_name ] ]</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">232</th>
+  <td class="line-code diff_in">
+    <pre>        self.dataset[&quot;hidden_parameters&quot;].append( (&quot;view&quot;, self.view_name) )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">233</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">216</th>
+  <th class="line-num">234</th>
+  <td class="line-code ">
+    <pre>        if self.parameters.has_key(&quot;timeline_end&quot;):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">217</th>
+  <th class="line-num">235</th>
+  <td class="line-code ">
+    <pre>            self.dataset[&quot;hidden_parameters&quot;].append((&quot;timeline_end&quot;, self.parameters[&quot;timeline_end&quot;]))</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">218</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">236</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">219</th>
+  <th class="line-num">237</th>
+  <td class="line-code ">
+    <pre>    def _setTimelineNext(self, next):</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">220</th>
+  <th class="line-num">238</th>
+  <td class="line-code ">
+    <pre>        parameters = self.parameters - [ &quot;offset&quot; ] + { &quot;timeline_end&quot;: int(next) }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">221</th>
+  <th class="line-num">239</th>
+  <td class="line-code ">
+    <pre>        self.dataset[&quot;timeline.next&quot;] = utils.create_link(self.view_name, parameters)</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

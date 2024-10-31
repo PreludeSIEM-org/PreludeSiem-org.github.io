@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>/ - Repository - Connector syncevents - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="kUxFB0VZvg29jGN8+MKawsKJKtnow0gha6pOPQfxpviCYy1ojE2zjjcma4blitOcvsJbR/LJEW+1JIqtg/GS+w==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+  <script src="/javascripts/repository_navigation.js"></script>
+  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.prelude-siem.org/projects/connector-syncevents/repository/revisions.atom" />
+  <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" />
+</head>
+<body class="theme-Prelude project-connector-syncevents controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/connector-syncevents/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="changesets" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/connector-syncevents/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="changesets" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/connector-syncevents/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/connector-syncevents">Overview</a></li><li><a class="activity" href="/projects/connector-syncevents/activity">Activity</a></li><li><a class="repository selected" href="/projects/connector-syncevents/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+<div class="contextual">
+  
+<a class="icon icon-stats" href="/projects/connector-syncevents/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/connector-syncevents/repository" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />  <!-- Branches Dropdown -->
+    | Branch: 
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option>
+<option value="release-4.0">release-4.0</option>
+<option value="release-5.0">release-5.0</option>
+<option value="release-5.1">release-5.1</option>
+<option value="release-5.2">release-5.2</option>
+<option value="support/v3.5">support/v3.5</option></select>
+
+    | Tag: 
+    <select name="tag" id="tag"><option value="">&nbsp;</option>
+<option value="v3.5">v3.5</option>
+<option value="v3.5.1">v3.5.1</option>
+<option value="v3.6.0">v3.6.0</option>
+<option value="v3.6.0RC1">v3.6.0RC1</option>
+<option value="v3.6.0RC2">v3.6.0RC2</option>
+<option value="v3.6.0RC3">v3.6.0RC3</option>
+<option value="v3.6.0RC4">v3.6.0RC4</option>
+<option value="v4.0">v4.0</option>
+<option value="v4.0.1">v4.0.1</option>
+<option value="v4.0.1rc1">v4.0.1rc1</option>
+<option value="v4.0rc1">v4.0rc1</option>
+<option value="v4.0rc2">v4.0rc2</option>
+<option value="v4.0rc3">v4.0rc3</option>
+<option value="v4.1.0">v4.1.0</option>
+<option value="v4.1.0rc1">v4.1.0rc1</option>
+<option value="v4.1.0rc2">v4.1.0rc2</option>
+<option value="v4.1.0rc3">v4.1.0rc3</option>
+<option value="v5.0.0">v5.0.0</option>
+<option value="v5.0.0rc1">v5.0.0rc1</option>
+<option value="v5.0.0rc2">v5.0.0rc2</option>
+<option value="v5.1.0">v5.1.0</option>
+<option value="v5.1.0a1">v5.1.0a1</option>
+<option value="v5.1.0a2">v5.1.0a2</option>
+<option value="v5.1.0b1">v5.1.0b1</option>
+<option value="v5.2.0">v5.2.0</option>
+<option value="v5.2.0b1">v5.2.0b1</option>
+<option value="v5.2.0b2">v5.2.0b2</option>
+<option value="v5.2.0rc1">v5.2.0rc1</option></select>
+
+    | Revision: 
+    <input type="text" name="rev" id="rev" value="master" size="8" />
+</form>
+</div>
+
+<h2><a href="/projects/connector-syncevents/repository/revisions/master/show">connector-syncevents</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr id="9a09b4dfda82e3e665e31092d1c3ec8d" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('9a09b4dfda82e3e665e31092d1c3ec8d', '/projects/connector-syncevents/repository/revisions/master/show/doc?depth=1&amp;parent_id=9a09b4dfda82e3e665e31092d1c3ec8d');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/connector-syncevents/repository/revisions/master/show/doc">doc</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="db85c0ea4d2e69c8abaefa875ba77c51" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('db85c0ea4d2e69c8abaefa875ba77c51', '/projects/connector-syncevents/repository/revisions/master/show/i18n?depth=1&amp;parent_id=db85c0ea4d2e69c8abaefa875ba77c51');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/connector-syncevents/repository/revisions/master/show/i18n">i18n</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a46a1bce0b67c45bec8f435bd5390a54" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('a46a1bce0b67c45bec8f435bd5390a54', '/projects/connector-syncevents/repository/revisions/master/show/pkg?depth=1&amp;parent_id=a46a1bce0b67c45bec8f435bd5390a54');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/connector-syncevents/repository/revisions/master/show/pkg">pkg</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="25d902c24283ab8cfbac54dfa101ad31" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('25d902c24283ab8cfbac54dfa101ad31', '/projects/connector-syncevents/repository/revisions/master/show/src?depth=1&amp;parent_id=25d902c24283ab8cfbac54dfa101ad31');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/connector-syncevents/repository/revisions/master/show/src">src</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/connector-syncevents/repository/changes/.gitignore?rev=master">.gitignore</a>
+</td>
+<td class="size">328 Bytes</td>
+</tr>
+<tr id="21c55fa400e4d25aed3a755371e32151" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/connector-syncevents/repository/changes/COPYING.txt?rev=master">COPYING.txt</a>
+</td>
+<td class="size">17.7 KB</td>
+</tr>
+<tr id="97c91a104c431d0c365565d3ac03ac13" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/connector-syncevents/repository/changes/MANIFEST.in?rev=master">MANIFEST.in</a>
+</td>
+<td class="size">240 Bytes</td>
+</tr>
+<tr id="b67911656ef5d18c4ae36cb6741b7965" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/connector-syncevents/repository/changes/Makefile?rev=master">Makefile</a>
+</td>
+<td class="size">1.11 KB</td>
+</tr>
+<tr id="a91efb528777d13c9f105798a9c5673b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/connector-syncevents/repository/changes/buildenv?rev=master">buildenv</a>
+</td>
+<td class="size">11 Bytes</td>
+</tr>
+<tr id="a55fc4e553af13234f26342646b88e19" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/connector-syncevents/repository/changes/buildout.cfg?rev=master">buildout.cfg</a>
+</td>
+<td class="size">111 Bytes</td>
+</tr>
+<tr id="8228e1469ce874d99adad6441463f503" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/connector-syncevents/repository/changes/settings.ini?rev=master">settings.ini</a>
+</td>
+<td class="size">4.29 KB</td>
+</tr>
+<tr id="ef837a71e980bb23dd22743fa3012057" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/connector-syncevents/repository/changes/settings_tests.ini?rev=master">settings_tests.ini</a>
+</td>
+<td class="size">945 Bytes</td>
+</tr>
+<tr id="380c6a8ebbbce17d55d50ef17d3cf906" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/connector-syncevents/repository/changes/setup.cfg?rev=master">setup.cfg</a>
+</td>
+<td class="size">752 Bytes</td>
+</tr>
+<tr id="2eeaed663bd0d25b7e608891384b7298" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-x-python" href="/projects/connector-syncevents/repository/changes/setup.py?rev=master">setup.py</a>
+</td>
+<td class="size">2.64 KB</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"41e45100811be161bbaf2130597acbdbfc155aca":{"parent_scmids":["aadc9bbbba4283736f987b7c654da02890343ff6"],"rdmid":0,"refs":null,"scmid":"41e45100811be161bbaf2130597acbdbfc155aca","href":"/projects/connector-syncevents/repository/revisions/41e45100811be161bbaf2130597acbdbfc155aca","space":0},"816ae5ab69ce21573e2368aeacb8f8255ba57b38":{"parent_scmids":["41e45100811be161bbaf2130597acbdbfc155aca"],"rdmid":1,"refs":"release-5.1","scmid":"816ae5ab69ce21573e2368aeacb8f8255ba57b38","href":"/projects/connector-syncevents/repository/revisions/816ae5ab69ce21573e2368aeacb8f8255ba57b38","space":0},"e2b5f564a160de00966b741d1babcf461a728535":{"parent_scmids":["816ae5ab69ce21573e2368aeacb8f8255ba57b38"],"rdmid":2,"refs":null,"scmid":"e2b5f564a160de00966b741d1babcf461a728535","href":"/projects/connector-syncevents/repository/revisions/e2b5f564a160de00966b741d1babcf461a728535","space":0},"79eaea567ebf8addec955bcf0e9dae4bded1e49e":{"parent_scmids":["e2b5f564a160de00966b741d1babcf461a728535"],"rdmid":3,"refs":null,"scmid":"79eaea567ebf8addec955bcf0e9dae4bded1e49e","href":"/projects/connector-syncevents/repository/revisions/79eaea567ebf8addec955bcf0e9dae4bded1e49e","space":0},"1d015b256b0d329c04b90627904bfd637663be5b":{"parent_scmids":["79eaea567ebf8addec955bcf0e9dae4bded1e49e"],"rdmid":4,"refs":null,"scmid":"1d015b256b0d329c04b90627904bfd637663be5b","href":"/projects/connector-syncevents/repository/revisions/1d015b256b0d329c04b90627904bfd637663be5b","space":0},"6e84134a8f6049feed3d5df68cbe00f628f32cc3":{"parent_scmids":["1d015b256b0d329c04b90627904bfd637663be5b"],"rdmid":5,"refs":null,"scmid":"6e84134a8f6049feed3d5df68cbe00f628f32cc3","href":"/projects/connector-syncevents/repository/revisions/6e84134a8f6049feed3d5df68cbe00f628f32cc3","space":0},"dd745edd20bd74b2e70bec3ed32c37acda91423d":{"parent_scmids":["6e84134a8f6049feed3d5df68cbe00f628f32cc3"],"rdmid":6,"refs":null,"scmid":"dd745edd20bd74b2e70bec3ed32c37acda91423d","href":"/projects/connector-syncevents/repository/revisions/dd745edd20bd74b2e70bec3ed32c37acda91423d","space":0},"ccf939af48453ceddca0bf394e02c5043a82976e":{"parent_scmids":["dd745edd20bd74b2e70bec3ed32c37acda91423d"],"rdmid":7,"refs":null,"scmid":"ccf939af48453ceddca0bf394e02c5043a82976e","href":"/projects/connector-syncevents/repository/revisions/ccf939af48453ceddca0bf394e02c5043a82976e","space":0},"89ddff0446e670e2af64225d597ad24d694d1a0b":{"parent_scmids":["ccf939af48453ceddca0bf394e02c5043a82976e"],"rdmid":8,"refs":null,"scmid":"89ddff0446e670e2af64225d597ad24d694d1a0b","href":"/projects/connector-syncevents/repository/revisions/89ddff0446e670e2af64225d597ad24d694d1a0b","space":0},"32a03a18b9958713a52d67c7474ff8d63265daf8":{"parent_scmids":["89ddff0446e670e2af64225d597ad24d694d1a0b"],"rdmid":9,"refs":"master release-5.2","scmid":"32a03a18b9958713a52d67c7474ff8d63265daf8","href":"/projects/connector-syncevents/repository/revisions/32a03a18b9958713a52d67c7474ff8d63265daf8","space":0}},
+    2
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"></div>
+
+
+<form action="/projects/connector-syncevents/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 32a03a18" href="/projects/connector-syncevents/repository/revisions/32a03a18b9958713a52d67c7474ff8d63265daf8">32a03a18</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-1" value="32a03a18b9958713a52d67c7474ff8d63265daf8" onclick="$(&#39;#cbto-2&#39;).prop(&#39;checked&#39;,true);" checked="checked" /></td>
+<td class="checkbox"></td>
+<td class="committed_on">09/10/2020 01:37 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0</p>
+
+
+	<p>Change-Id: I9c260fd58dc845b813271575526c666acd84ac9a</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 89ddff04" href="/projects/connector-syncevents/repository/revisions/89ddff0446e670e2af64225d597ad24d694d1a0b">89ddff04</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-2" value="89ddff0446e670e2af64225d597ad24d694d1a0b" onclick="$(&#39;#cbto-3&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-2" value="89ddff0446e670e2af64225d597ad24d694d1a0b" onclick="if ($(&#39;#cb-2&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-1&#39;).prop(&#39;checked&#39;,true);}" checked="checked" /></td>
+<td class="committed_on">08/03/2020 08:51 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0rc1</p>
+
+
+	<p>Change-Id: I99c3bb80ebb20cf6395a4e3d09642f48811d2c5a</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision ccf939af" href="/projects/connector-syncevents/repository/revisions/ccf939af48453ceddca0bf394e02c5043a82976e">ccf939af</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-3" value="ccf939af48453ceddca0bf394e02c5043a82976e" onclick="$(&#39;#cbto-4&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-3" value="ccf939af48453ceddca0bf394e02c5043a82976e" onclick="if ($(&#39;#cb-3&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-2&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/03/2020 01:54 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b2</p>
+
+
+	<p>Change-Id: Icd66a4e5feb8a44a2a99631b171a29df9e65053a</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision dd745edd" href="/projects/connector-syncevents/repository/revisions/dd745edd20bd74b2e70bec3ed32c37acda91423d">dd745edd</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-4" value="dd745edd20bd74b2e70bec3ed32c37acda91423d" onclick="$(&#39;#cbto-5&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-4" value="dd745edd20bd74b2e70bec3ed32c37acda91423d" onclick="if ($(&#39;#cb-4&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-3&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 03:07 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2026] Changement de dénomination sociale</p>
+
+
+	<p>Change-Id: Ibd67e1df1bd7000fd5b5302382880533d5310243</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 6e84134a" href="/projects/connector-syncevents/repository/revisions/6e84134a8f6049feed3d5df68cbe00f628f32cc3">6e84134a</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-5" value="6e84134a8f6049feed3d5df68cbe00f628f32cc3" onclick="$(&#39;#cbto-6&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-5" value="6e84134a8f6049feed3d5df68cbe00f628f32cc3" onclick="if ($(&#39;#cb-5&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-4&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 09:12 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2026] Changement de dénomination sociale</p>
+
+
+	<p>Change-Id: Ib9b6d536e0b97d307c728a8fa6c61035c078a15f<br />Refs: #2026</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 1d015b25" href="/projects/connector-syncevents/repository/revisions/1d015b256b0d329c04b90627904bfd637663be5b">1d015b25</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-6" value="1d015b256b0d329c04b90627904bfd637663be5b" onclick="$(&#39;#cbto-7&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-6" value="1d015b256b0d329c04b90627904bfd637663be5b" onclick="if ($(&#39;#cb-6&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-5&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/26/2020 05:36 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Màj settings.ini pour l'auto-supervision</p>
+
+
+	<p>Change-Id: Ia51435f4626709862a7cfcb7028076c47cebcaa8</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 79eaea56" href="/projects/connector-syncevents/repository/revisions/79eaea567ebf8addec955bcf0e9dae4bded1e49e">79eaea56</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-7" value="79eaea567ebf8addec955bcf0e9dae4bded1e49e" onclick="$(&#39;#cbto-8&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-7" value="79eaea567ebf8addec955bcf0e9dae4bded1e49e" onclick="if ($(&#39;#cb-7&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-6&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/23/2020 09:50 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b1</p>
+
+
+	<p>Change-Id: I4facb3d851493533c57002a7343ddace2eac163c</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision e2b5f564" href="/projects/connector-syncevents/repository/revisions/e2b5f564a160de00966b741d1babcf461a728535">e2b5f564</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-8" value="e2b5f564a160de00966b741d1babcf461a728535" onclick="$(&#39;#cbto-9&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-8" value="e2b5f564a160de00966b741d1babcf461a728535" onclick="if ($(&#39;#cb-8&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-7&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">01/06/2020 01:22 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Mise à jour des copyrights</p>
+
+
+	<p>Change-Id: Idab2cff3d3fb60a15a11772ea58eb12188fb61cc</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 816ae5ab" href="/projects/connector-syncevents/repository/revisions/816ae5ab69ce21573e2368aeacb8f8255ba57b38">816ae5ab</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-9" value="816ae5ab69ce21573e2368aeacb8f8255ba57b38" onclick="$(&#39;#cbto-10&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-9" value="816ae5ab69ce21573e2368aeacb8f8255ba57b38" onclick="if ($(&#39;#cb-9&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-8&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">09/13/2019 12:22 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.1.0</p>
+
+
+	<p>Change-Id: Icf0dab976eee0349c9ba91788a5add1f2f9719d1</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 41e45100" href="/projects/connector-syncevents/repository/revisions/41e45100811be161bbaf2130597acbdbfc155aca">41e45100</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-10" value="41e45100811be161bbaf2130597acbdbfc155aca" onclick="if ($(&#39;#cb-10&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-9&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">08/16/2019 09:12 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.1.0b1</p>
+
+
+	<p>Change-Id: I676e31da0384423f23b4880f0e08288e10e84f92<br />BuildBot: no-build</p></td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="View differences" />
+</form></div>
+
+  <p>
+    <a href="/projects/connector-syncevents/repository/revisions">View all revisions</a>
+    |
+    <a href="/projects/connector-syncevents/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="/projects/connector-syncevents/repository/revisions.atom">Atom</a></span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

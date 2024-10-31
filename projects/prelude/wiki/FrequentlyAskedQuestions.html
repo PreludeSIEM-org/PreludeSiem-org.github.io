@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>FrequentlyAskedQuestions - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="uo8GTYRAVnci0CyFF2dyD5CCuF9pPzezNOOBwOFfllupoG4iTVRb9Kh6JH8KLztR7MnJwXM1bv3qbUVQZV+iWA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Prelude-FAQ"></a>
+<h1 >Prelude FAQ<a href="#Prelude-FAQ" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Here you can find answers to some of the most frequently asked questions about Prelude. If you have a question not answered on this page, you can ask it on the <a href="https://www.prelude-siem.org/lists" class="external">Mailing Lists</a> or in the <a class="wiki-page new" href="/projects/prelude/wiki/IrcChannel?parent=FrequentlyAskedQuestions">IrcChannel</a>.</p>
+
+
+<hr />
+
+
+	<ul class="toc"><li><a href="#Prelude-FAQ">Prelude FAQ</a></li><li><a href="#Basics">Basics</a><ul><li><a href="#What-is-Prelude">What is Prelude?</a><ul><li><a href="#Who-is-Prelude">Who is Prelude?</a></li><li><a href="#How-do-I-get-Prelude">How do I get Prelude?</a></li><li><a href="#How-do-I-get-help-with-Prelude">How do I get help with Prelude?</a></li></ul>
+</li><li><a href="#About-Prelude">About Prelude</a><ul><li><a href="#What-is-the-current-front-end-for-Prelude">What is the current front-end for Prelude?</a></li><li><a href="#What-are-the-differences-between-Prelude-and-Snort">What are the differences between Prelude and Snort?</a></li></ul>
+</li><li><a href="#Prelude-Components">Prelude Components</a><ul><li><a href="#What-is-Prelude-Manager">What is Prelude-Manager?</a></li><li><a href="#What-is-Libprelude">What is Libprelude?</a></li><li><a href="#What-is-LibpreludeDB">What is LibpreludeDB?</a></li><li><a href="#What-is-Prelude-LML">What is Prelude-LML?</a></li><li><a href="#What-is-Prelude-Correlator">What is Prelude-Correlator?</a></li><li><a href="#What-is-Prewikka">What is Prewikka?</a></li><li><a href="#What-is-Prelude-PFLogger">What is Prelude-PFLogger?</a></li><li><a href="#What-is-Prelude-NIDS">What is Prelude-NIDS?</a></li></ul>
+</li><li><a href="#Installation-Help">Installation Help</a><ul><li><a href="#Can-I-run-the-prelude-suite-on-other-UNICES">Can I run the prelude suite on other UNICES?</a></li><li><a href="#Through-which-communication-port-sensors-communicate-with-the-manager">Through which communication port sensors communicate with the manager?</a></li></ul>
+</li><li><a href="#Agents-registration">Agents registration</a><ul><li><a href="#Generating-certificates-can-take-hours">Generating certificates can take hours!</a></li><li><a href="#Getting-the-TLS-server-certificate-is-NOT-trusted-error">Getting the "TLS server certificate is NOT trusted" error</a></li><li><a href="#How-can-I-validate-an-IDMEF-message-">How can I validate an IDMEF message ?</a></li></ul>
+</li><li><a href="#Prelude-Manager">Prelude-Manager</a><ul><li><a href="#I-have-the-error-could-not-insert-message-into-database-Query-error-The-table-Prelude_Heartbeat-is-full">I have the error: "could not insert message into database: Query error: The table 'Prelude_Heartbeat' is full.</a></li><li><a href="#I-have-the-error-error-verifying-certificate-The-peer-did-not-send-any-certificate-TLS-fatal-alert-from-peer-Certificate-is-bad">I have the error: "error verifying certificate: The peer did not send any certificate. TLS fatal alert from peer: Certificate is bad"</a></li></ul>
+</li><li><a href="#Libprelude">Libprelude</a><ul><li><a href="#How-do-I-enable-debugging-output-for-Libprelude-or-Prelude-programs">How do I enable debugging output for Libprelude, or Prelude programs?</a></li></ul>
+</li><li><a href="#Prelude-LML">Prelude-LML</a><ul><li><a href="#I-get-an-error-concerning-authlog-when-starting-prelude-LML">I get an error concerning auth.log when starting prelude-LML?</a></li><li><a href="#I-get-an-error-End-from-FAM-server-connection-after-some-time-and-no-more-alert-are-sent">I get an error "End from FAM server connection" after some time, and no more alert are sent?</a></li><li><a href="#Prelude-LML-warn-that-it-could-not-match-prefix-against-log-entry-or-that-there-is-no-appropriate-format-defined-for-log-entry">Prelude-LML warn that it could not match prefix against log entry or that there is no appropriate format defined for log entry</a></li></ul>
+</li><li><a href="#Prewikka">Prewikka</a><ul><li><a href="#I-get-an-error-Prelude-Database-schema-version-too-old">I get an error "Prelude Database schema version too old"</a></li><li><a href="#I-have-issues-with-Prelude-and-Apache-configuration-since-I-want-Prewikka-in-a-sub-directory">I have issues with Prelude and Apache configuration since I want Prewikka in a sub-directory</a></li><li><a href="#Abnormal-Offline-Agents-and-MySQL-table-Prelude_Analyzer-is-full">Abnormal Offline Agents and MySQL table 'Prelude_Analyzer' is full</a></li><li><a href="#What-can-I-do-if-I-forgot-the-Prewikka-admin-password">What can I do if I forgot the Prewikka "admin" password?</a></li><li><a href="#Sensors-are-running-but-I-see-no-events-and-agents-in-Prewikka">Sensors are running, but I see no events and agents in Prewikka?</a></li><li><a href="#Why-cant-I-see-alerts-older-than-one-hour-in-Prewikka-I-know-there-are-in-the-database">Why can't I see alerts older than one hour in Prewikka. I know there are in the database.</a></li></ul>
+</li><li><a href="#Virtual-Machines">Virtual Machines</a><ul><li><a href="#I-have-a-VMware-Server-running-Linux-with-various-Linux-guests-and-all-the-clocks-are-all-over-the-place-as-far-as-keeping-time">I have a VMware Server running Linux with various Linux guests, and all the clocks are all over the place as far as keeping time?</a></li></ul></li></ul></li></ul>
+
+
+<hr />
+
+
+	<a name="Basics"></a>
+<h1 >Basics<a href="#Basics" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="What-is-Prelude"></a>
+<h2 >What is Prelude?<a href="#What-is-Prelude" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Prelude is a Universal "Security Information Management" (SIM) system. Prelude collects, normalizes, sorts, aggregates, correlates and reports all security-related events independently of the product brand or license giving rise to such events; Prelude is "agentless".</p>
+
+
+	<p>As well as being capable of recovering any type of log (system logs, syslog, flat files, etc.), Prelude benefits from a native support with a number of systems dedicated to enriching information even further (snort, samhain, ossec, auditd, etc.).</p>
+
+
+	<p>Security events are normalized thanks to a single format, called the "Intrusion Detection Message Exchange Format" (IDMEF), which is an international standard created upon the initiative of IETF along with the participation of Prelude teams to enable interacting with the various security tools currently available on the market.</p>
+
+
+	<p>Prelude permits alert collection to WAN scale, whether its scope covers a city, a country, a continent or the world.</p>
+
+
+	<ul>
+	<li>See the <a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a> to learn more about Prelude <strong>development history</strong>.</li>
+		<li>See the <a class="wiki-page" href="/projects/prelude/wiki/PreludeSpecifications">Prelude Specification</a> page to learn more about <strong>Prelude specs</strong>.</li>
+		<li>See the <a href="http://www.prelude-siem.com/index.php/uk/products/" class="external">Prelude Universal SIEM System</a> page to learn more about <strong>Prelude functionality</strong>.</li>
+	</ul>
+
+
+	<a name="Who-is-Prelude"></a>
+<h3 >Who is Prelude?<a href="#Who-is-Prelude" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You can find all the contributers to Prelude on the <a href="http://www.prelude-siem.com/index.php/uk/community/welcome" class="external">Prelude Community Page</a>.</p>
+
+
+	<a name="How-do-I-get-Prelude"></a>
+<h3 >How do I get Prelude?<a href="#How-do-I-get-Prelude" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You can download Prelude on the <a href="http://www.prelude-siem.com/index.php/uk/community/download" class="external">Prelude Download Page</a>.</p>
+
+
+	<a name="How-do-I-get-help-with-Prelude"></a>
+<h3 >How do I get help with Prelude?<a href="#How-do-I-get-help-with-Prelude" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>You can read the <a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Prelude User Manual</a></li>
+		<li>You can subscribe to the <a href="http://www.prelude-siem.com/index.php/uk/community/welcome" class="external">Forums</a> or find help on IRC via <strong>irc.freenode.net #prelude</strong></li>
+	</ul>
+
+
+	<a name="About-Prelude"></a>
+<h2 >About Prelude<a href="#About-Prelude" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="What-is-the-current-front-end-for-Prelude"></a>
+<h3 >What is the current front-end for Prelude?<a href="#What-is-the-current-front-end-for-Prelude" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Prewikka is the official front-end, written in Python.</p>
+
+
+	<p>To learn more about Prewikka read the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a>.</p>
+
+
+	<a name="What-are-the-differences-between-Prelude-and-Snort"></a>
+<h3 >What are the differences between Prelude and Snort?<a href="#What-are-the-differences-between-Prelude-and-Snort" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Snort is a Network Intrusion Detection System (NIDS). Prelude is a Security Information Management (SIM) system. Snort is part of the Prelude suite.</p>
+
+
+	<p>We believe that if it is easy for a malicious user to evade the detection of a single IDS (NIDS, HIDS, etc.), it becomes exponentially more difficult to get around the defences when there are multiple protection mechanisms.</p>
+
+
+	<p>Prelude comes with a large set of sensors, each of them monitoring different kinds of events.</p>
+
+
+	<p>To learn more about Prelude compatibility, see the <a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility Page</a>.</p>
+
+
+	<a name="Prelude-Components"></a>
+<h2 >Prelude Components<a href="#Prelude-Components" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="What-is-Prelude-Manager"></a>
+<h3 >What is Prelude-Manager?<a href="#What-is-Prelude-Manager" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Prelude-Manager is a high availability server.</p>
+
+
+	<p>Read the Prelude-Manager description on the <a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents#PreludeManager">Prelude Components</a> page.</p>
+
+
+	<a name="What-is-Libprelude"></a>
+<h3 >What is Libprelude?<a href="#What-is-Libprelude" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Libprelude is the Prelude library.</p>
+
+
+	<p>Read the Libprelude description on the <a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents#Libprelude">Prelude Components</a> page.</p>
+
+
+	<a name="What-is-LibpreludeDB"></a>
+<h3 >What is <a class="wiki-page new" href="/projects/prelude/wiki/LibpreludeDB?parent=FrequentlyAskedQuestions">LibpreludeDB</a>?<a href="#What-is-LibpreludeDB" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><a class="wiki-page new" href="/projects/prelude/wiki/LibpreludeDB?parent=FrequentlyAskedQuestions">LibpreludeDB</a> is the Prelude DataBase library.</p>
+
+
+	<p>Read the <a class="wiki-page new" href="/projects/prelude/wiki/LibpreludeDB?parent=FrequentlyAskedQuestions">LibpreludeDB</a> description on the <a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents#LibpreludeDB">Prelude Components</a> page.</p>
+
+
+	<a name="What-is-Prelude-LML"></a>
+<h3 >What is Prelude-LML?<a href="#What-is-Prelude-LML" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Prelude-LML is a log analyser.</p>
+
+
+	<p>Read the Prelude-LML description on the <a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents#Prelude-LML">Prelude Components</a> page.</p>
+
+
+	<a name="What-is-Prelude-Correlator"></a>
+<h3 >What is Prelude-Correlator?<a href="#What-is-Prelude-Correlator" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Prelude-Correlator is a rule-based correlation engine.</p>
+
+
+	<p>Read the Prelude-Correlator description on the <a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents#Prelude-Correlator">Prelude Components</a> page.</p>
+
+
+	<a name="What-is-Prewikka"></a>
+<h3 >What is Prewikka?<a href="#What-is-Prewikka" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Prewikka is the Official Prelude web Graphical User Interface (GUI).</p>
+
+
+	<p>Read the Prewikka description on the <a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents#PrewikkaInterface">Prelude Components</a> page.</p>
+
+
+	<p>Read the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></p>
+
+
+	<a name="What-is-Prelude-PFLogger"></a>
+<h3 >What is Prelude-PFLogger?<a href="#What-is-Prelude-PFLogger" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Read the Prelude-PFLogger description on the <a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents#Prelude-PFLogger">Prelude Components</a> page.</p>
+
+
+	<a name="What-is-Prelude-NIDS"></a>
+<h3 >What is Prelude-NIDS?<a href="#What-is-Prelude-NIDS" class="wiki-anchor">&para;</a></h3>
+
+
+Prelude-NIDS was the Prelude Network Intrusion Detection System and has been deprecated. You should use Snort instead.
+	<ul>
+	<li><a href="http://www.snort.org" class="external">Snort Official Website</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdpartySnort">Installing Snort</a> with Prelude</li>
+	</ul>
+
+
+	<a name="Installation-Help"></a>
+<h2 >Installation Help<a href="#Installation-Help" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Can-I-run-the-prelude-suite-on-other-UNICES"></a>
+<h3 >Can I run the prelude suite on other UNICES?<a href="#Can-I-run-the-prelude-suite-on-other-UNICES" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Prelude programs has successully been tested under a wide range of architecture, such as, but not limited to: AIX, Tru64, Digital-Unix, <a class="wiki-page new" href="/projects/prelude/wiki/MacOSX?parent=FrequentlyAskedQuestions">MacOSX</a>, Linux, <a class="wiki-page new" href="/projects/prelude/wiki/FreeBSD?parent=FrequentlyAskedQuestions">FreeBSD</a>, <a class="wiki-page new" href="/projects/prelude/wiki/NetBSD?parent=FrequentlyAskedQuestions">NetBSD</a>, <a class="wiki-page new" href="/projects/prelude/wiki/OpenBSD?parent=FrequentlyAskedQuestions">OpenBSD</a>. If you encounter any problem, please contact us and report the problem.</p>
+
+
+	<a name="Through-which-communication-port-sensors-communicate-with-the-manager"></a>
+<h3 >Through which communication port sensors communicate with the manager?<a href="#Through-which-communication-port-sensors-communicate-with-the-manager" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>IANA assigned port 4690 for Prelude-IDS Sensors<->Manager communication. See "Prior to this assignment, Prelude used port 5554.</p>
+
+
+	<p>[[BR":http://www.iana.org/assignments/port-numbers].]</p>
+
+
+	<a name="Agents-registration"></a>
+<h2 >Agents registration<a href="#Agents-registration" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Generating-certificates-can-take-hours"></a>
+<h3 >Generating certificates can take hours!<a href="#Generating-certificates-can-take-hours" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Your system is lacking entropy. <a class="wiki-page new" href="/projects/prelude/wiki/GnuTLS?parent=FrequentlyAskedQuestions">GnuTLS</a> use the random generator to gather random data to generate certificates, and on some systems the generation of random data can be very so (a few bytes per second).</p>
+
+
+	<p>See the <a class="wiki-page" href="/projects/prelude/wiki/MiscEntropy">Entropy Page</a> for a possible solution on Linux.</p>
+
+
+	<a name="Getting-the-TLS-server-certificate-is-NOT-trusted-error"></a>
+<h3 >Getting the "TLS server certificate is NOT trusted" error<a href="#Getting-the-TLS-server-certificate-is-NOT-trusted-error" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You most probably used the "sensor analyzer profile" instead of the "receiving analyzer profile" on the registration-server command line. You can find more information about your problem here: "Typical case: When you register a sensor, don't register it to the sensor itself!<br /><pre>
+sudo prelude-admin register NAME ...
+sudo prelude-admin registration-server NAME
+</pre><br />But register it to your prelude-manager, example:<br /><pre>
+sudo prelude-admin register NAME ...
+sudo prelude-admin registration-server prelude-manager
+</pre></p>
+
+
+	<a name="How-can-I-validate-an-IDMEF-message-"></a>
+<h3 >How can I validate an IDMEF message ?<a href="#How-can-I-validate-an-IDMEF-message-" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>First run Prelude-Manager with XMLmod and activate the DTD validation option. Then, generate an exhaustive list of alerts supported by the sensor and correct any error. Open a bug on the ticket system, and ask a review of the alert dumped by the debug plugin.</p>
+
+
+	<p>[[BR":http://thread.gmane.org/gmane.comp.security.ids.prelude.user/1926/focus=1927]]</p>
+
+
+	<a name="Prelude-Manager"></a>
+<h2 >Prelude-Manager<a href="#Prelude-Manager" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="I-have-the-error-could-not-insert-message-into-database-Query-error-The-table-Prelude_Heartbeat-is-full"></a>
+<h3 >I have the error: "could not insert message into database: Query error: The table 'Prelude_Heartbeat' is full.<a href="#I-have-the-error-could-not-insert-message-into-database-Query-error-The-table-Prelude_Heartbeat-is-full" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Some <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=FrequentlyAskedQuestions">MySQL</a> distributions come with a default mysql Innodb setting that limits the maximum table expension. However, Prelude database table might get very big, especially for table storing alert AdditionalData like NIDS attack payload.</p>
+
+
+	<p>Edit your <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=FrequentlyAskedQuestions">MySQL</a> configuration file, and change the innodb_data_file_path settings from:</p>
+
+
+<pre>
+innodb_data_file_path = ibdata1:10M:autoextend:max:128M
+</pre>
+
+	<p>(or similar) to:</p>
+
+
+<pre>
+innodb_data_file_path = ibdata1:10M:autoextend
+</pre>
+
+	<p>To remove the table size limitation.</p>
+
+
+	<a name="I-have-the-error-error-verifying-certificate-The-peer-did-not-send-any-certificate-TLS-fatal-alert-from-peer-Certificate-is-bad"></a>
+<h3 >I have the error: "error verifying certificate: The peer did not send any certificate. TLS fatal alert from peer: Certificate is bad"<a href="#I-have-the-error-error-verifying-certificate-The-peer-did-not-send-any-certificate-TLS-fatal-alert-from-peer-Certificate-is-bad" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>It looks like you ran the prelude-admin registration-server with wrong parameters. On the Prelude-manager side you need to run:<br /><pre>
+prelude-admin registration-server prelude-manager
+</pre></p>
+
+
+	<a name="Libprelude"></a>
+<h2 >Libprelude<a href="#Libprelude" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="How-do-I-enable-debugging-output-for-Libprelude-or-Prelude-programs"></a>
+<h3 >How do I enable debugging output for Libprelude, or Prelude programs?<a href="#How-do-I-enable-debugging-output-for-Libprelude-or-Prelude-programs" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You can set the LIBPRELUDE_DEBUG environment variable to the wanted debug level (the higher the more verbose).<br /><pre>
+$ export LIBPRELUDE_DEBUG=10
+</pre></p>
+
+
+	<a name="Prelude-LML"></a>
+<h2 >Prelude-LML<a href="#Prelude-LML" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="I-get-an-error-concerning-authlog-when-starting-prelude-LML"></a>
+<h3 >I get an error concerning auth.log when starting prelude-LML?<a href="#I-get-an-error-concerning-authlog-when-starting-prelude-LML" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>This is due to some systems using authlog or secure for the same purpose. To remedy this issue just edit prelude-lml.conf to point to the correct auth log depending on your system.</p>
+
+
+	<a name="I-get-an-error-End-from-FAM-server-connection-after-some-time-and-no-more-alert-are-sent"></a>
+<h3 >I get an error "End from FAM server connection" after some time, and no more alert are sent?<a href="#I-get-an-error-End-from-FAM-server-connection-after-some-time-and-no-more-alert-are-sent" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>This is due to FAM, the best way to get prelude-LML working correctly is by recompiling the prelude-lml without FAM (./configure --disable-fam). FAM just help getting files checked when there are modifications, without FAM, prelude-LML will check files modification every second.</p>
+
+
+	<a name="Prelude-LML-warn-that-it-could-not-match-prefix-against-log-entry-or-that-there-is-no-appropriate-format-defined-for-log-entry"></a>
+<h3 >Prelude-LML warn that it <em>could not match prefix against log entry</em> or that there is <em>no appropriate format defined for log entry</em><a href="#Prelude-LML-warn-that-it-could-not-match-prefix-against-log-entry-or-that-there-is-no-appropriate-format-defined-for-log-entry" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>This warning means that Prelude-LML was unable to find a matching <strong>format</strong> (defined in the Prelude-LML configuration file) for the input log.</p>
+
+
+	<p>The log entry will still be processed by the signature engine, but Prelude-LML won't have access to the following information:</p>
+
+
+	<ul>
+	<li>The log entry timestamp (Bound to the DetectTime information of an IDMEF Alert).</li>
+		<li>The log entry hostname (Bound to the Target node information in an IDMEF Alert).</li>
+		<li>The log entry process (Bound to the Target process name in an IDMEF Alert).</li>
+		<li>The log entry pid (Bound to the Target process pid in an IDMEF Alert).</li>
+	</ul>
+
+
+	<p>In order to fix this problem, you need to configure an appropriate <strong>format</strong> section in the configuration file that instruct Prelude-LML how to parse a given log format. Information concerning <strong>format</strong> configuration is available on the <a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a> page.</p>
+
+
+	<a name="Prewikka"></a>
+<h2 >Prewikka<a href="#Prewikka" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="I-get-an-error-Prelude-Database-schema-version-too-old"></a>
+<h3 >I get an error "Prelude Database schema version too old"<a href="#I-get-an-error-Prelude-Database-schema-version-too-old" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You must change the <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=FrequentlyAskedQuestions">MySQL</a> schema using a pre-made script :</p>
+
+
+<pre>
+&gt;mysql -u prelude prelude -p &lt; /usr/share/libpreludedb/classic/mysql-update-14-1.sql
+syntaxe : mysql -u &lt;login&gt; &lt;password&gt; -p &lt; /usr/share/libpreludedb/classic/mysql-update-14-1.sql
+</pre>
+
+	<p><em>NOTE</em>: Sometimes the path would be /usr/local/share/. . .</p>
+
+
+	<a name="I-have-issues-with-Prelude-and-Apache-configuration-since-I-want-Prewikka-in-a-sub-directory"></a>
+<h3 >I have issues with Prelude and Apache configuration since I want Prewikka in a sub-directory<a href="#I-have-issues-with-Prelude-and-Apache-configuration-since-I-want-Prewikka-in-a-sub-directory" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You are already using your web server for something else and you want to have an access using !http://www.mycompany.xx/prelude:</p>
+
+
+<pre>
+Alias /prelude/prewikka /usr/share/prewikka/htdocs/
+[[ScriptAlias]] /prelude/ /usr/share/prewikka/cgi-bin/prewikka.cgi
+&lt;Directory "/usr/share/prewikka/htdocs/"&gt;
+        [[AllowOverride]] None
+        Options [[ExecCGI]]
+
+        &lt;IfModule mod_mime.c&gt;
+                [[AddHandler]] cgi-script .cgi
+        &lt;/IfModule&gt;
+
+        Order allow,deny
+        Allow from all
+&lt;/Directory&gt;
+</pre>
+
+	<a name="Abnormal-Offline-Agents-and-MySQL-table-Prelude_Analyzer-is-full"></a>
+<h3 >Abnormal Offline Agents and <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=FrequentlyAskedQuestions">MySQL</a> table 'Prelude_Analyzer' is full<a href="#Abnormal-Offline-Agents-and-MySQL-table-Prelude_Analyzer-is-full" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>If checking the <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=FrequentlyAskedQuestions">MySQL</a> log show you that:</p>
+
+
+<pre>
+[[MySQL]] Query error: The table 'Prelude_Analyzer' is full
+</pre>
+
+	<p>Then you may need to alter a setting in my.cnf (maybe back it up first)</p>
+
+
+	<p>So find the line:<br /><pre>
+innodb_data_file_path = ibdata1:10M:autoextend:max:128M
+</pre><br />and try changing it to read:<br /><pre>
+innodb_data_file_path = ibdata1:10M:autoextend
+</pre><br />After a restart of <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=FrequentlyAskedQuestions">MySQL</a>, Prelude-Manager, Prelude-LML etc., hopefully this will bring your Prewikka back online.</p>
+
+
+	<a name="What-can-I-do-if-I-forgot-the-Prewikka-admin-password"></a>
+<h3 >What can I do if I forgot the Prewikka "admin" password?<a href="#What-can-I-do-if-I-forgot-the-Prewikka-admin-password" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>With the <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=FrequentlyAskedQuestions">MySQL</a> console, you can change the MD5 password by resetting the <em>Prewikka_User</em> field in the <em>prewikka</em> table. Notice the use of <strong>MD5</strong> in this sentence :</p>
+
+
+<pre>
+mysql -u &lt;database username&gt; -p prewikka
+&lt;password&gt;
+
+mysql&gt; UPDATE Prewikka_User SET password = MD5('my_new_password') WHERE login = 'admin';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+</pre>
+
+	<a name="Sensors-are-running-but-I-see-no-events-and-agents-in-Prewikka"></a>
+<h3 >Sensors are running, but I see no events and agents in Prewikka?<a href="#Sensors-are-running-but-I-see-no-events-and-agents-in-Prewikka" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Make sure that the Prelude-Manager <strong>db</strong> (database) plugin is enabled. Prelude-Manager should report the following upon start:</p>
+
+
+<pre>
+- Subscribing db[default] to active reporting plugins.
+</pre>
+
+	<p>If you get an error when enabling the plugin, make sure Prelude-Manager was compiled with libpreludedb support.</p>
+
+
+	<p>Finally, if database reporting is enabled but you still can not get any information in Prewikka, try to run Prelude-Manager in the foreground with the <em>--debug -l stderr</em> command line argument, to check whether it is receiving sensors alerts and heartbeats.</p>
+
+
+	<a name="Why-cant-I-see-alerts-older-than-one-hour-in-Prewikka-I-know-there-are-in-the-database"></a>
+<h3 >Why can't I see alerts older than one hour in Prewikka. I know there are in the database.<a href="#Why-cant-I-see-alerts-older-than-one-hour-in-Prewikka-I-know-there-are-in-the-database" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Prewikka will show all alerts within the last hour by default. If you want to see all alerts from the very beginning you can choose "Unlimited" in the Step part of the bottom left panel. Beware it can take a long time loading all data.</p>
+
+
+	<a name="Virtual-Machines"></a>
+<h2 >Virtual Machines<a href="#Virtual-Machines" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="I-have-a-VMware-Server-running-Linux-with-various-Linux-guests-and-all-the-clocks-are-all-over-the-place-as-far-as-keeping-time"></a>
+<h3 >I have a VMware Server running Linux with various Linux guests, and all the clocks are all over the place as far as keeping time?<a href="#I-have-a-VMware-Server-running-Linux-with-various-Linux-guests-and-all-the-clocks-are-all-over-the-place-as-far-as-keeping-time" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>This is an issue with guests utilizing 2.6 kernel versions.</p>
+
+
+	<p>Sometimes guests with 2.6 kernels have clock skew.  Appending "clock=pit nosmp noapic nolapic" to the kernel line in grub.conf and rebooting can alleviate this issue.  For more information: <a class="external" href="http://rextang.net/blogs/work/archive/2006/12/21/4516.aspx">http://rextang.net/blogs/work/archive/2006/12/21/4516.aspx</a></p>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

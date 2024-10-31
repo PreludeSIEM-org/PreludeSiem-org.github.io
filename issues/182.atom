@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/182.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2006-10-27T18:38:10Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Libprelude - Bug #182: Problem with Prelude and Mandriva 2007</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/182"/>
+    <id>http://www.prelude-siem.org/issues/182?journal_id=459</id>
+    <updated>2006-10-27T18:38:10Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Thanks for reporting this, are perl development headers installed ?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #182: Problem with Prelude and Mandriva 2007</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/182"/>
+    <id>http://www.prelude-siem.org/issues/182?journal_id=460</id>
+    <updated>2006-12-21T10:06:39Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;fixed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;(In r8708) Small Perl/Python detection improvement. Fix &lt;a class="issue tracker-1 status-5 priority-5 priority-high3 closed" title="Bug: Problem with Prelude and Mandriva 2007 (Closed)" href="http://www.prelude-siem.org/issues/182"&gt;#182&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #182: Problem with Prelude and Mandriva 2007</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/182"/>
+    <id>http://www.prelude-siem.org/issues/182?journal_id=1152</id>
+    <updated>2009-04-29T12:25:57Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Libprelude&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;1&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;0.9.12.1&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

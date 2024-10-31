@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/305.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2008-08-19T16:38:01Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>LibpreludeDB - Bug #305: Unable to delete huge amount of heartbeats with single preludedb-admin query</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/305"/>
+    <id>http://www.prelude-siem.org/issues/305?journal_id=849</id>
+    <updated>2008-08-19T16:38:01Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;duplicate&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This is a duplicate of &lt;a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: preludedb-admin fails to retrieve alert ident (Closed)" href="http://www.prelude-siem.org/issues/220"&gt;#220&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>LibpreludeDB - Bug #305: Unable to delete huge amount of heartbeats with single preludedb-admin query</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/305"/>
+    <id>http://www.prelude-siem.org/issues/305?journal_id=850</id>
+    <updated>2008-08-19T16:41:58Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;(In r10879) Add a count command, printing the result of a &lt;abbr title=""&gt;COUNT&lt;/abbr&gt; on the database.&lt;/p&gt;
+
+
+	&lt;p&gt;Do not fetch more than 'events-per-transaction' idents at once, work&lt;br /&gt;in a loop (fix &lt;a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: preludedb-admin fails to retrieve alert ident (Closed)" href="http://www.prelude-siem.org/issues/220"&gt;#220&lt;/a&gt;, refs &lt;a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: Unable to delete huge amount of heartbeats with single preludedb-admin query (Closed)" href="http://www.prelude-siem.org/issues/305"&gt;#305&lt;/a&gt;).&lt;/p&gt;
+
+
+	&lt;p&gt;Code cleanup, improved handling of interrupted transaction.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>LibpreludeDB - Bug #305: Unable to delete huge amount of heartbeats with single preludedb-admin query</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/305"/>
+    <id>http://www.prelude-siem.org/issues/305?journal_id=1080</id>
+    <updated>2009-04-29T12:23:24Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;LibpreludeDB&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;2&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;0.9.15&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

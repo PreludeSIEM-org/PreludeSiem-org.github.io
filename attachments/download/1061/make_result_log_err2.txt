@@ -1,0 +1,81 @@
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+ar: `u' modifier ignored since `D' is the default (see `U')
+common.c: In function 'prelude_simple_strtod':
+common.c:683:25: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+                 *endptr = s;
+                         ^
+prelude-client.c: In function 'prelude_client_init':
+prelude-client.c:1357:61: warning: to be safe all intermediate pointers in cast from 'char **' to 'const char **' must be 'const' qualified [-Wcast-qual]
+         ret = prelude_option_read(_prelude_generic_optlist, (const char **)&client->config_filename,
+                                                             ^
+prelude-option-wide.c: In function 'read_option_request':
+prelude-option-wide.c:280:63: warning: to be safe all intermediate pointers in cast from 'char **' to 'const char **' must be 'const' qualified [-Wcast-qual]
+                         ret = prelude_extract_characters_safe((const char **) &request, buf, len);
+                                                               ^
+prelude-option-wide.c: In function 'prelude_option_process_request':
+prelude-option-wide.c:293:29: warning: 'request' may be used uninitialized in this function [-Wmaybe-uninitialized]
+                         ret = parse_request(client, type, request, out);
+                         ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+prelude-option-wide.c:245:15: note: 'request' was declared here
+         char *request;
+               ^~~~~~~
+idmef-class.c: In function 'idmef_class_get_child_attributes':
+idmef-class.c:164:24: warning: return makes pointer from integer without a cast [-Wint-conversion]
+                 return ret;
+                        ^~~
+idmef-criteria-string.yac.c: In function 'yyparse':
+idmef-criteria-string.yac.c:1732:18: warning: passing argument 1 of 'yyerror' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+         yyerror (yymsgp);
+                  ^~~~~~
+idmef-criteria-string.yac.y:64:13: note: expected 'char *' but argument is of type 'const char *'
+ static void yyerror(char *s);
+             ^~~~~~~
+idmef-criteria-string.lex.c:1942:16: warning: 'yy_top_state' defined but not used [-Wunused-function]
+     static int yy_top_state  (void)
+                ^~~~~~~~~~~~
+idmef-tree-wrap.c: In function 'idmef_confidence_copy':
+idmef-tree-wrap.c:17994:13: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+         int ret;
+             ^~~
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+Warning: -L../../src/.libs changed to -L/home/diane/Téléchargements/libprelude-5.0.0/bindings/perl/../../src/.libs
+Warning: -L../../bindings/c++/.libs changed to -L/home/diane/Téléchargements/libprelude-5.0.0/bindings/perl/../../bindings/c++/.libs
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00c3}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+"\x{00a9}" does not map to ascii at /usr/share/perl/5.24/ExtUtils/MakeMaker.pm line 1185.
+In file included from Prelude.cxx:11:0:
+../../config.h:1608:0: warning: "VERSION" redefined
+ #define VERSION "5.0.0"
+ 
+<command-line>:0:0: note: this is the location of the previous definition
+/usr/bin/ld: warning: -z now,-rpath ignored.
+/usr/bin/ld : ne peut trouver -lpreludecpp
+collect2: error: ld returned 1 exit status
+make[4]: *** [blib/arch/auto/Prelude/Prelude.so] Erreur 1
+make[3]: *** [perl-build] Erreur 2
+make[2]: *** [all-recursive] Erreur 1
+make[1]: *** [all-recursive] Erreur 1
+make: *** [all] Erreur 2

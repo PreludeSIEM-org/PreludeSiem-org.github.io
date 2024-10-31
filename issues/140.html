@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #140: Prewikka heartbeat problem - Prewikka - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="8chWWNssxIDWGWlVqOkW8qsBr+uH7VW9Ln05xxv3Fu3i5z43EjjJA1yzYa+1oV+s10redZ3nDPPw8/1Xn/ci7g==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prewikka - Bug #140: Prewikka heartbeat problem" href="http://www.prelude-siem.org/issues/140.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prewikka controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prewikka/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prewikka">Overview</a></li><li><a class="activity" href="/projects/prewikka/activity">Activity</a></li><li><a class="roadmap" href="/projects/prewikka/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prewikka/issues">Issues</a></li><li><a class="gantt" href="/projects/prewikka/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prewikka/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prewikka/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prewikka/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prewikka/issues/report">Summary</a></li>
+
+<li><a href="/projects/prewikka/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prewikka/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #140</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#59" accesskey="p" href="/issues/59">« Previous</a> |
+        <span class="position">52 of 84</span> |
+      <a title="#123" accesskey="n" href="/issues/123">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>Prewikka heartbeat problem</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="03/28/2006 12:53 PM" href="/projects/prewikka/activity?from=2006-03-28">over 18 years</a> ago.
+        Updated <a title="02/08/2012 08:07 PM" href="/projects/prewikka/activity?from=2012-02-08">over 12 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Hi,</p>
+
+
+	<p>When i try to enter in "Agent" link or in "Heartbeat" tab i recive the following "Unknow Generic Error":</p>
+
+
+<pre>
+Traceback (most recent call last):
+  File "/usr/lib/python2.3/site-packages/prewikka/Core.py", line 306, in process
+    getattr(view[[object"] view["handler]])()
+  File "/usr/lib/python2.3/site-packages/prewikka/views/messagelisting.py", line 1213, in render
+    self._setMessages(criteria)
+  File "/usr/lib/python2.3/site-packages/prewikka/views/messagelisting.py", line 1170, in _setMessages
+    message = self.env.idmef_db.getHeartbeat(ident)
+  File "/usr/lib/python2.3/site-packages/prewikka/IDMEFDatabase.py", line 310, in getHeartbeat
+    return Heartbeat(preludedb_get_heartbeat(self._db, ident))
+[[PreludeDBError]]: Unknown generic error
+</pre>
+
+	<p>System info:<br />Debian<br />Apache/2.0.55<br />mod_chroot/0.5 <br />mod_python/3.1.3 <br />Python/2.3.5 <br />PHP/4.4.2-1<br />Cheetah 1.0</p>
+
+
+	<p>Using CGI configuration for apache.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-356" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/07/2006 11:31 AM" href="/projects/prewikka/activity?from=2006-04-07">over 18 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    <div id="journal-356-notes" class="wiki"><p>Could you please provide the version information concerning libprelude, libpreludedb and Prewikka ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-357" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="04/07/2006 12:18 PM" href="/projects/prewikka/activity?from=2006-04-07">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-357-notes" class="wiki"><p>Ok:</p>
+
+
+	<p>libprelude-0.9.7.2<br />libpreludedb-0.9.7<br />prewikka-0.9.3</p>
+
+
+	<p>If i delete all the heartbeat and alert records it works but its empty</p></div>
+    </div>
+  </div>
+  
+  <div id="change-358" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/07/2006 12:25 PM" href="/projects/prewikka/activity?from=2006-04-07">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-358-notes" class="wiki"><p>In order to do the step ahead, please upgrade to libpreludedb 0.9.7.1.</p>
+
+
+	<p>Once you are done, please edit your <strong>prewikka.conf</strong> configuration file, and under the <em>[idmef_database]</em> section, add the following setting:</p>
+
+
+<pre>
+log: /tmp/prewikka.log
+</pre>
+
+	<p>Restart Prewikka and start watching the logfile. <br />Reproduce the problem, and get the last query available from the log before the issue arise. Copy it here.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-359" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by  <a title="04/07/2006 12:39 PM" href="/projects/prewikka/activity?from=2006-04-07">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-359-notes" class="wiki"><p>Hi,</p>
+
+
+<pre>
+0.000846s SELECT name, version from _format
+0.005377s SELECT t0.analyzerid FROM Prelude_Heartbeat AS top_table LEFT JOIN Prelude_Analyzer AS t0 ON (t0._parent_type='H' AND t0._message_ident=top_table._ident AND t0._index = -1) GROUP BY 1
+0.003533s SELECT DISTINCT(top_table._ident), t0.time, t0.gmtoff, t0.usec FROM Prelude_Heartbeat AS top_table LEFT JOIN Prelude_CreateTime AS t0 ON (t0._parent_type='H' AND t0._message_ident=top_table._ident) LEFT JOIN Prelude_Analyzer AS t1 ON (t1._parent_type='H' AND t1._message_ident=top_table._ident AND t1._index = -1) WHERE t1.analyzerid = '2518527016165437' ORDER BY 2 DESC LIMIT 1
+0.000530s SELECT messageid, heartbeat_interval FROM Prelude_Heartbeat WHERE _ident = 1
+0.001615s SELECT analyzerid, name, manufacturer, model, version, class, ostype, osversion FROM Prelude_Analyzer WHERE _parent_type = 'H' AND _message_ident = 1 AND _index != -1 ORDER BY _index ASC
+0.001147s SELECT ident, category, location, name FROM Prelude_Node WHERE _parent_type = 'H' AND _message_ident = 1 AND _parent0_index = 0
+0.000910s SELECT ident, name, pid, path FROM Prelude_Process WHERE _parent_type = 'H' AND _message_ident = 1 AND _parent0_index = 0
+0.000904s SELECT arg FROM Prelude_ProcessArg WHERE _parent_type = 'H' AND _message_ident = 1 AND _parent0_index = 0 AND _index != -1 ORDER BY _index ASC
+0.000859s SELECT env FROM Prelude_ProcessEnv WHERE _parent_type = 'H' AND _message_ident = 1 AND _parent0_index = 0 AND _index != -1 ORDER BY _index ASC
+0.000519s SELECT time, gmtoff, usec FROM Prelude_CreateTime WHERE _parent_type = 'H' AND _message_ident = 1
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-360" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/07/2006 12:46 PM" href="/projects/prewikka/activity?from=2006-04-07">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-360-notes" class="wiki"><p>Please start the database command line client, and manually run the query in order to get the error.</p>
+
+
+<pre>
+ mysql -u username -p database_name
+ SELECT time, gmtoff, usec FROM Prelude_CreateTime WHERE _parent_type = 'H' AND _message_ident = 1;
+</pre>
+
+	<p>Assuming it is always the same query that fail (please double check).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-361" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="04/07/2006 12:53 PM" href="/projects/prewikka/activity?from=2006-04-07">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-361-notes" class="wiki"><p>Here is:</p>
+
+
+<pre>
+time    gmtoff    usec
+2006-04-07 10:35:36 7200 682945
+</pre>
+
+	<p>This queries return me empty query</p>
+
+
+<pre>
+SELECT arg FROM Prelude_ProcessArg WHERE _parent_type = 'H' AND _message_ident = 1 AND _parent0_index = 0 AND _index != -1 ORDER BY _index ASC
+SELECT env FROM Prelude_ProcessEnv WHERE _parent_type = 'H' AND _message_ident = 1 AND _parent0_index = 0 AND _index != -1 ORDER BY _index ASC
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-362" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/07/2006 12:57 PM" href="/projects/prewikka/activity?from=2006-04-07">over 18 years</a> ago
+    </h4>
+
+    <div id="journal-362-notes" class="wiki"><p>It is okay for both query to return no value.</p>
+
+
+	<p>I'm affraid in the current state of things, I'll need you to add assertion in the libpreludedb classic plugin code in order to trace where the problem happen. You might want to join <em>irc.freenode.net, #prelude</em> - so I can provide you with instruction for debugging the issue.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-363" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/10/2006 02:33 PM" href="/projects/prewikka/activity?from=2006-04-10">over 18 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-363-notes" class="wiki"><p>(In r8129) Upon connection to the database, set default date style to ISO (SET DATESTYLE TO 'ISO').<br />This is needed since libpreludedb assume ISO format to parse database timestamp.</p>
+
+
+	<p>Not doing this resulted in error when trying to read data from postgreSQL database<br />if the user used specific lc_time setting in postgresql.conf.</p>
+
+
+	<p>Fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: Prewikka heartbeat problem (Closed)" href="/issues/140">#140</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1094" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:24 PM" href="/projects/prewikka/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prewikka</i></li>
+       <li><strong>Category</strong> deleted (<del><i>5</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.8</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-1444" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/298">Thomas GIRARD</a> <a title="02/08/2012 08:07 PM" href="/projects/prewikka/activity?from=2012-02-08">over 12 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Target version</strong> deleted (<del><i>0.9.8</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/140.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/140.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

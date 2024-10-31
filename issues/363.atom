@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/363.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2009-09-11T11:30:46Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/363"/>
+    <id>http://www.prelude-siem.org/issues/363?journal_id=1359</id>
+    <updated>2009-09-11T11:30:46Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Hi Wes, thanks for the patch!&lt;/p&gt;
+
+
+	&lt;p&gt;Here is a quick review:&lt;/p&gt;
+
+
+	&lt;p&gt;- The NetCIDR modules have been deprecated in favor of the more widely available netaddr module, check &lt;a class="external" href="http://oubiwann.blogspot.com/2008/08/netaddr-python-library.html"&gt;http://oubiwann.blogspot.com/2008/08/netaddr-python-library.html&lt;/a&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;- The __ipNormalize() function could be removed since it is now unused.&lt;/p&gt;
+
+
+	&lt;p&gt;- Could you please add the Dshield plugin copyright, adding your contact to the author lists ?&lt;/p&gt;
+
+
+	&lt;p&gt;This is a nice addition, thanks for the contribution! &lt;br /&gt;Might you post an updated patch?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/363"/>
+    <id>http://www.prelude-siem.org/issues/363?journal_id=1361</id>
+    <updated>2009-09-13T21:16:00Z</updated>
+    <author>
+      <name>Anonymous</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/192/spamhausdrop-patch.txt"&gt;spamhausdrop-patch.txt&lt;/a&gt; &lt;a class="icon-only icon-magnifier" title="View" href="/attachments/192/spamhausdrop-patch.txt"&gt;View&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;re-formulated. They don't have all the features in netaddr that NetCIDR had (at least that's what they said in the doc), but given that it's all but deprecated I just added a few lines using the new netaddr packages and tested it. Appears to work OK.&lt;/p&gt;
+
+
+	&lt;p&gt;all the other stuff added as requested.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/363"/>
+    <id>http://www.prelude-siem.org/issues/363?journal_id=1362</id>
+    <updated>2009-09-14T11:42:31Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;i&gt;0001-added-spamhausdrop.py-to-plugins.patch&lt;/i&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Thanks for the update!&lt;/p&gt;
+
+
+	&lt;p&gt;Attached is a modified version of your patch, that provides compatibility with earlier netaddr module version, use IPSet() in order to match addresses, and download the initial database on source distribution generation.&lt;/p&gt;
+
+
+	&lt;p&gt;Could you please let me know if this modified patch doesn't break anything on your side?&lt;br /&gt;Thanks!&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/363"/>
+    <id>http://www.prelude-siem.org/issues/363?journal_id=1363</id>
+    <updated>2009-09-14T11:54:52Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/194/0001-added-spamhausdrop.py-to-plugins.patch"&gt;0001-added-spamhausdrop.py-to-plugins.patch&lt;/a&gt; &lt;a class="icon-only icon-magnifier" title="View" href="/attachments/194/0001-added-spamhausdrop.py-to-plugins.patch"&gt;View&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/363"/>
+    <id>http://www.prelude-siem.org/issues/363?journal_id=1364</id>
+    <updated>2009-09-14T11:54:58Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;0001-added-spamhausdrop.py-to-plugins.patch&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/363"/>
+    <id>http://www.prelude-siem.org/issues/363?journal_id=1365</id>
+    <updated>2009-09-14T15:49:12Z</updated>
+    <author>
+      <name>Anonymous</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Just tested it in our QA environment; looks OK to me.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/363"/>
+    <id>http://www.prelude-siem.org/issues/363?journal_id=1367</id>
+    <updated>2009-09-15T08:49:10Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Prelude Correlator&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;generic&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Correlator - Feature #363: prelude-correlator: spamhaus drop plugin</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/363"/>
+    <id>http://www.prelude-siem.org/issues/363?journal_id=1368</id>
+    <updated>2009-09-15T08:52:04Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Yoann VANDOORSELAERE&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.9.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Thanks! Plugin checked into the GIT repository.&lt;/p&gt;    </content>
+  </entry>
+</feed>

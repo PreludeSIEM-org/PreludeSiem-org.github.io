@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Creating a more advanced plugin - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="xe5ov6mtaRjxFedSm5gswYK4PluqE+uLEy2hK553QaHWwQDQYLlkm3u/76iG0GWf/vNPxbAZssXNo2W7Gnd1og==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/2">Devel</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>Creating a more advanced plugin</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/527">hacen bani</a> <a title="05/09/2016 02:11 AM" href="/projects/prelude/activity?from=2016-05-09">over 8 years</a> ago</span></p>
+<div class="wiki">
+<p>Bonjour,</p>
+
+
+	<p>lorsque j'ai suivi le lien suivant: <a class="external" href="https://www.prelude-siem.org/projects/prelude/wiki/How_to_create_a_plugin_-_Part_2_Inventory">https://www.prelude-siem.org/projects/prelude/wiki/How_to_create_a_plugin_-_Part_2_Inventory</a><br />pour dÃ©velopper un module d'inventaire sur l'interface Prewikka, j'ai eu l'erreur suivant :</p>
+
+
+	<p>File "build/bdist.linux-x86_64/egg/inventory/__init__.py", line 6, in &lt;module&gt;<br />NameError: name 'view' is not defined</p>
+
+
+	<p>j'ai suivi la documentation de site plusieurs fois, normalement "View" est prÃ©s dÃ©fini par les api de prelude</p>
+
+
+	<p>mais toujours le mÃªme erreur et pas de bouton Inventory au niveau de l'interface prewikka<br />voila le fichier init.py</p>
+
+
+	<p>Merci,<br />Cordialement</p>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/602/__init__.py">__init__.py</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/602/__init__.py">View</a>
+  
+  <span class="size">(2.42 KB)</span>
+  </p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (9)</h3>
+  <div class="message reply" id="message-58">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=58#message-58">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/301">Thomas </a> <a title="05/09/2016 08:01 AM" href="/projects/prelude/activity?from=2016-05-09">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello</p>
+
+
+	<p>This is a english board, thank you to write in english.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-59">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=59#message-59">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/527">hacen bani</a> <a title="05/09/2016 11:12 AM" href="/projects/prelude/activity?from=2016-05-09">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>when I followed the link : <a class="external" href="https://www.prelude-siem.org/projects/prelude/wiki/How_to_create_a_plugin_-_Part_2_Inventory">https://www.prelude-siem.org/projects/prelude/wiki/How_to_create_a_plugin_-_Part_2_Inventory</a><br />to develop an inventory module on Prewikka interface, I got the following error:</p>
+
+
+	<p>File "build / bdist.linux-x86_64 / egg / inventory / <em>_ init</em>_.py", line 6, in &lt;module&gt;<br />NameError: name 'view' is not defined</p>
+
+
+	<p>I followed the documentation site several times</p>
+
+
+	<p>but still the same error and no Inventory button at the  prewikka interface<br />here is the file init.py</p>
+
+
+	<p>thank you,<br />cordially</p></div>
+  <div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/603/__init__.py">__init__.py</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/603/__init__.py">View</a>
+  
+  <span class="size">(2.42 KB)</span>
+  </p>
+</div>
+
+  </div>
+  <div class="message reply" id="message-60">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=60#message-60">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="05/11/2016 02:21 PM" href="/projects/prelude/activity?from=2016-05-11">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>We can't reproduce your problem. Can you check if the installed init file is the same as the one you attached?</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-61">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=61#message-61">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/527">hacen bani</a> <a title="05/11/2016 04:51 PM" href="/projects/prelude/activity?from=2016-05-11">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,<br />thank you for your reply</p>
+
+
+	<p>I review the init file installed, yes it is the same file that I joined and the same error still  exists.<br />Is what we need to create the inventory folder in a specific location or any location?<br />Because I created the inventory folder under the python2.7 folder of my system and I created all the files mentioned in the documentation by the same architecture.<br />May what I have already done be the source of the problem ?</p>
+
+
+	<p>Thank you<br />Cordially.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-62">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=62#message-62">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="05/11/2016 05:44 PM" href="/projects/prelude/activity?from=2016-05-11">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>You can create your inventory folder wherever you like (e.g. in your /home), and you need to install it through the "python setup.py install" command.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-63">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=63#message-63">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/527">hacen bani</a> <a title="05/12/2016 03:00 PM" href="/projects/prelude/activity?from=2016-05-12">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,<br />I repeated the same approach, I put the inventory folder under / home and I run the command "python setup.py install" <br />but when I boot the prewikka service command "Service prewikka restart" to get the Inventory Module I got the following error:</p>
+
+
+	<p>Stop Prewikka ...- e [OK]<br />Starting Prewikka ...- e [OK]<br />root @ ubuntu: / home / hacen # 1:51:02 p.m. root (pid: 9736) WARNING: Asynchronous DNS resolution disabled: twisted.names and twisted.internet required: No Module named names<br />1:51:02 p.m. prewikka.pluginmanager (pid: 9736) ERROR: Inventory: name 'view' is not defined<br />Traceback (most recent call last):<br />  File "/usr/local/lib/python2.7/dist-packages/prewikka/pluginmanager.py", line 153, in <i>init</i><br />    plugin_class i.load = ()<br />  File "/usr/lib/python2.7/dist-packages/pkg_resources.py", line 2088 in load<br />    <i>import entry = <em>_ (self.module_name, globals (), globals () [ '</em>_name</i>'])<br />  File "build / bdist.linux-x86_64 / egg / inventory / <em>_ init</em>_.py", line 6, in &lt;module&gt;<br />NameError: name 'view' is not defined</p>
+
+
+	<p>Help me please <br />Thank you<br />Cordially.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-64">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=64#message-64">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="05/17/2016 10:11 AM" href="/projects/prelude/activity?from=2016-05-17">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>Do you get the same behavior when using view.View in the Python console?</p>
+
+
+<pre>
+&gt;&gt;&gt; from prewikka import view
+&gt;&gt;&gt; view.View
+</pre>
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-65">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=65#message-65">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/527">hacen bani</a> <a title="05/18/2016 02:13 PM" href="/projects/prelude/activity?from=2016-05-18">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>thank you for the response , <br />well , when I run it from python console I get this :</p>
+
+
+<pre>
+&gt;&gt;&gt; from prewikka import view
+&gt;&gt;&gt; 
+&gt;&gt;&gt; view.View
+&lt;class 'prewikka.view.View'&gt;
+&gt;&gt;&gt; 
+</pre>
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-66">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/2/topics/57?r=66#message-66">RE: Creating a more advanced plugin</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="05/20/2016 12:38 PM" href="/projects/prelude/activity?from=2016-05-20">over 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Can we see the output of the "python setup.py install" command?</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-9/9)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

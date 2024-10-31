@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/940.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2018-03-09T17:05:29Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prelude-LML - Bug #940: Missing prelude-lml services on cross-compiled device</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/940"/>
+    <id>http://www.prelude-siem.org/issues/940?journal_id=4419</id>
+    <updated>2018-03-09T17:05:29Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Antoine LUONG&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;It is normal that the init file is not present if you installed prelude-lml from the sources (we put it in the packaging, not the repository). The same goes with the rules, which have their own repository.&lt;/p&gt;
+
+
+	&lt;p&gt;Can you try launching directly the "prelude-lml" command (without the service) and see if it works correctly?&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Bug #940: Missing prelude-lml services on cross-compiled device</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/940"/>
+    <id>http://www.prelude-siem.org/issues/940?journal_id=4420</id>
+    <updated>2018-03-12T10:02:35Z</updated>
+    <author>
+      <name>Sebastian K</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;thank you for the fast reply. I guess I installed it from sources with buildroot, as I specified the path to the github repository in my make-files. That's a relief as it has nothing to do with the buildroot make process.&lt;/p&gt;
+
+
+	&lt;p&gt;Concerning the prelude-lml issue: after registering the sensor on Machine B (address 192.168.0.1) to my server machine A (address 192.168.0.10) via the command &lt;code&gt;prelude-admin register "prelude-lml" "idmef:w" 192.168.0.10 --gid 0 --uid 0&lt;/code&gt; and running the registration-server on A, I tried to run &lt;code&gt;prelude-lml&lt;/code&gt; on B. The output says&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;# prelude-lml 
+31 Dec 21:19:01 (process:710) INFO: PCRE plugin loaded 460 rules.
+31 Dec 21:19:02 (process:710) INFO: Connecting to 192.168.0.10:4690 prelude Manager server.
+31 Dec 21:19:02 (process:710) WARNING: prelude-client: error starting prelude-client: TLS server certificate not yet activated.
+
+In order to register this sensor, please run:
+prelude-admin register prelude-lml &amp;quot;idmef:w&amp;quot; 192.168.0.10 --uid 0 --gid 0
+
+Profile 'prelude-lml' does not exist. In order to create it, please run:
+prelude-admin register &amp;quot;prelude-lml&amp;quot; &amp;quot;idmef:w&amp;quot; &amp;lt;manager address&amp;gt; --uid 0 --gid 0.
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;I don't really know what to do with these messages. It says it can connect to the server but when I check for the prelude-lml process I can't find one. So I guess it has something to do with the warning?&lt;/p&gt;
+
+
+	&lt;p&gt;Best regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Bug #940: Missing prelude-lml services on cross-compiled device</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/940"/>
+    <id>http://www.prelude-siem.org/issues/940?journal_id=4421</id>
+    <updated>2018-03-14T14:09:06Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;It may be a misconfiguration issue when registering prelude-lml. Please post the output of the "prelude-admin list -l" command on both hosts.&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Bug #940: Missing prelude-lml services on cross-compiled device</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/940"/>
+    <id>http://www.prelude-siem.org/issues/940?journal_id=4422</id>
+    <updated>2018-03-14T14:42:54Z</updated>
+    <author>
+      <name>Sebastian K</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Here the output of machine A (server):&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;root@cba-VirtualBox:/home/cba# prelude-admin list -l
+Profile         UID     GID     AnalyzerID       Permission      Issuer AnalyzerID
+----------------------------------------------------------------------------------
+prelude-lml     root    root    3520212549068940 idmef:w admin:r 3947566089915782
+prelude-manager prelude prelude 3947566089915782 n/a             n/a
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;and of machine B (client):&lt;br /&gt;&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;# prelude-admin list -l
+Profile     UID  GID  AnalyzerID       Permission Issuer AnalyzerID
+----------------------------------------------------------------
+prelude-lml root root 3155595597106119 idmef:w 3947566089915782
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Regards,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Bug #940: Missing prelude-lml services on cross-compiled device</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/940"/>
+    <id>http://www.prelude-siem.org/issues/940?journal_id=4423</id>
+    <updated>2018-03-14T14:52:21Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;The configuration is OK, but it seems your machine B has an incorrect date defined:&lt;/p&gt;
+
+
+&lt;pre&gt;31 Dec 21:19:01 (process:710) INFO: PCRE plugin loaded 460 rules.&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Bug #940: Missing prelude-lml services on cross-compiled device</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/940"/>
+    <id>http://www.prelude-siem.org/issues/940?journal_id=4425</id>
+    <updated>2018-03-15T10:03:25Z</updated>
+    <author>
+      <name>Sebastian K</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;setting the date via &lt;code&gt;date -s&lt;/code&gt; on the client resolved the issue. That's the last thing I would have suspected, but it makes sense somehow.&lt;/p&gt;
+
+
+	&lt;p&gt;Thanks for the great support!&lt;/p&gt;
+
+
+	&lt;p&gt;Regards,&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Bug #940: Missing prelude-lml services on cross-compiled device</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/940"/>
+    <id>http://www.prelude-siem.org/issues/940?journal_id=4426</id>
+    <updated>2018-03-15T10:11:36Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

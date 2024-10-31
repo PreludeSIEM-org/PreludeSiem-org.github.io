@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>[libprelude] Unable to import prelude module in Python session - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="tw+eYB4KVPv57brfrIdIe8Z/xonrpT1dSVSTEyb64HKkIPYP1x5ZeHNHsiWxzwElujS3F/GvZBOX2leDovrUcQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>[libprelude] Unable to import prelude module in Python session</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/1065">Sebastian K</a> <a title="03/25/2019 02:57 PM" href="/projects/prelude/activity?from=2019-03-25">over 5 years</a> ago</span></p>
+<div class="wiki">
+<p>Hello there,</p>
+
+
+	<p>I am trying to use prelude within a Python script to generate alarms. For this I only need libprelude, which - according to your tutorial here ([[<a class="external" href="https://www.prelude-siem.org/projects/prelude/wiki/InstallingPreludeRequirement]]">https://www.prelude-siem.org/projects/prelude/wiki/InstallingPreludeRequirement]]</a>) - only requires GnuTLS and Python. I installed GnuTLS from source and Python via aptitude. Then I installed libprelude-5.0.0 from the tarball libprelude-5.0.0.tar.gz. In neither of these I got an error.</p>
+
+
+	<p>If I have not misread something here ([[<a class="external" href="https://www.prelude-siem.org/projects/prelude/wiki/DevelAgentBuilding]]">https://www.prelude-siem.org/projects/prelude/wiki/DevelAgentBuilding]]</a>), I should be able to import this in a Python interactive session via</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">import</span> <span class="include">prelude</span>
+</span></code></pre>
+
+	<p>Apparently, this doesn't work neither with Python 2.7 nor Python 3.6. I get an 'ImportError'.</p>
+
+
+	<p>My system is Ubuntu 16.04 LTS. I am not using any environment managers like virtualenv or conda. Before doing the installs, I updated my system via</p>
+
+
+<pre><code class="text syntaxhl"><span class="CodeRay">sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+</span></code></pre>
+
+	<p>I appreciate any help on this issue. I am sure I missed something, like changing my PYTHONPATH.</p>
+
+
+	<p>Thanks!</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (5)</h3>
+  <div class="message reply" id="message-213">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/212?r=213#message-213">RE: [libprelude] Unable to import prelude module in Python session</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="03/25/2019 04:06 PM" href="/projects/prelude/activity?from=2019-03-25">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>You probably miss setting the LD_LIBRARY_PATH environment variable to /usr/local/lib (or wherever the libprelude was installed).</p>
+
+
+	<p>See <a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary#Post-Installation-Setup">InstallingPreludeLibrary</a>.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-214">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/212?r=214#message-214">RE: [libprelude] Unable to import prelude module in Python session</a>
+    -
+    Added by <a class="user active" href="/users/1065">Sebastian K</a> <a title="03/25/2019 04:35 PM" href="/projects/prelude/activity?from=2019-03-25">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello Antoine,</p>
+
+
+	<p>thank you for the quick response. I set the variable and the error changed from "ImportError" to "ModuleNotFoundError".</p>
+
+
+	<p>What I noticed, however, was that I did not enable the Python bindings beforehand. So I tried to rebuild libprelude with this command:</p>
+
+
+<pre><code class="text syntaxhl"><span class="CodeRay">./configure --enable-easy-bindings --with-python=/usr/bin/python3.6
+</span></code></pre>
+
+	<p>After running this, I get this output:</p>
+
+
+<pre><code class="text syntaxhl"><span class="CodeRay">configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating client.conf
+config.status: creating global.conf
+config.status: creating idmef-client.conf
+config.status: creating libprelude-config
+config.status: creating libltdl/Makefile
+config.status: creating libmissing/Makefile
+config.status: creating libmissing/tests/Makefile
+config.status: creating m4/Makefile
+config.status: creating src/Makefile
+config.status: creating src/libprelude.pc
+config.status: creating src/libprelude-error/Makefile
+config.status: creating src/jsmn/Makefile
+config.status: creating src/include/Makefile
+config.status: creating src/include/prelude.h
+config.status: creating src/include/prelude-inttypes.h
+config.status: creating prelude-admin/prelude-adduser
+config.status: creating prelude-admin/Makefile
+config.status: creating docs/Makefile
+config.status: creating docs/api/Makefile
+config.status: creating docs/manpages/Makefile
+config.status: creating bindings/Makefile
+config.status: creating bindings/c++/Makefile
+config.status: creating bindings/c++/include/Makefile
+config.status: creating bindings/lua/Makefile
+config.status: creating bindings/perl/Makefile.PL
+config.status: creating bindings/python/Makefile
+config.status: creating bindings/python/setup.py
+config.status: creating bindings/ruby/Makefile
+config.status: creating tests/Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default commands
+configure: WARNING: unrecognized options: --with-python
+
+*** Dumping configuration ***
+    - Generate documentation   : no
+    - LUA binding              : no
+    - Perl binding             : yes
+    - Python2.x binding        : no
+    - Python3.x binding        : no
+    - Ruby binding             : no
+    - Easy bindings            : yes
+
+</span></code></pre>
+
+	<p>The result is the same if I do not use the --with-python option. I think that I would be able to import the module now, but somehow I can't enable Python bindings.</p>
+
+
+	<p>Can you give me another tip, please?</p></div>
+  
+  </div>
+  <div class="message reply" id="message-215">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/212?r=215#message-215">RE: [libprelude] Unable to import prelude module in Python session</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="03/25/2019 04:51 PM" href="/projects/prelude/activity?from=2019-03-25">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>You also need to install the development package (e.g. python-dev) in order to enable the bindings.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-217">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/212?r=217#message-217">RE: [libprelude] Unable to import prelude module in Python session</a>
+    -
+    Added by <a class="user active" href="/users/1065">Sebastian K</a> <a title="03/26/2019 10:08 AM" href="/projects/prelude/activity?from=2019-03-26">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello Antoine,</p>
+
+
+	<p>thanks again, I got it to work this way with Python 3.5 and 2.7 .</p>
+
+
+	<p>I installed python-dev and python3.6-dev, but somehow it binds it to Python 3.5. Is there a way to change the configuration to bind it to 3.6 instead?</p>
+
+
+	<p>Thanks in advance!</p></div>
+  
+  </div>
+  <div class="message reply" id="message-224">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/212?r=224#message-224">RE: [libprelude] Unable to import prelude module in Python session</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="03/29/2019 09:53 AM" href="/projects/prelude/activity?from=2019-03-29">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Did you try the --with-python3=[...] option?</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-5/5)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

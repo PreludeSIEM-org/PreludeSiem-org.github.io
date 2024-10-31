@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/349.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2009-06-04T09:32:20Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>PRELUDE SIEM - Bug #349: SANCP - problem on install</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/349"/>
+    <id>http://www.prelude-siem.org/issues/349?journal_id=1289</id>
+    <updated>2009-06-04T09:32:20Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Sebastien Tricaud&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>PRELUDE SIEM - Bug #349: SANCP - problem on install</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/349"/>
+    <id>http://www.prelude-siem.org/issues/349?journal_id=2872</id>
+    <updated>2016-03-02T14:01:34Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;Sebastien Tricaud&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

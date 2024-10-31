@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Prelude Correlator: Issues</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/prelude-correlator/issues.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/prelude-correlator/issues"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2010-04-06T19:40:57Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>Feature #375 (Assigned): Prelude Correlator upper event limit</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/375"/>
+    <id>http://www.prelude-siem.org/issues/375</id>
+    <updated>2010-04-06T19:40:57Z</updated>
+    <author>
+      <name>James Chapple</name>
+      <email>heatgod@verizon.net</email>
+    </author>
+    <content type="html">
+&lt;p&gt;When a corrleated event such as Eventscan or Eventstorm contains large numbers of events, the Prewikka GUI times out and is unable to display the event details.  On several test systems available to me, the threshold seemed to be around 5K events.  This was discovered during a Nessus scan of monitored systems, where Nessus is scanning every port.  Iptables is logging every blocked port, potentially generating many thousands of events during the window.&lt;/p&gt;
+
+
+	&lt;p&gt;The ability to specify an upper limit in the Correlator rules for a given correlated event would be useful to prevent excessive messages in a single event.&lt;/p&gt;    </content>
+  </entry>
+</feed>

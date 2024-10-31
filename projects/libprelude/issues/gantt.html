@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Gantt - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="9BQ6f4iG5kCwUg5VI6a6M5KArwioIPgfhrJIRMnDJo7nO1IQQZLrwzr4Bq8+7vNt7svelrIqoVFYPIzUTcMSjQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+<script>
+//<![CDATA[
+var datepickerOptions={dateFormat: 'yy-mm-dd', firstDay: 0, showOn: 'button', buttonImageOnly: true, buttonImage: '/images/calendar.png', showButtonPanel: true, showWeek: true, showOtherMonths: true, selectOtherMonths: true, changeMonth: true, changeYear: true, beforeShow: beforeShowDatePicker};
+//]]>
+</script>  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/gantt.js"></script>
+</head>
+<body class="theme-Prelude project-libprelude controller-gantts action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt selected" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/libprelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/libprelude/issues/report">Summary</a></li>
+
+<li><a href="/projects/libprelude/issues/calendar">Calendar</a></li>
+<li><a href="/projects/libprelude/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+</div>
+
+<h2>Gantt</h2>
+
+<form id="query_form" action="/projects/libprelude/issues/gantt" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="set_filter" id="set_filter" value="1" />
+<input type="hidden" name="gantt" id="gantt" value="1" />
+<fieldset id="filters" class="collapsible ">
+  <legend onclick="toggleFieldset(this);">Filters</legend>
+  <div style="">
+    <script>
+//<![CDATA[
+
+var operatorLabels = {"=":"is","!":"is not","o":"open","c":"closed","!*":"none","*":"any","\u003e=":"\u003e=","\u003c=":"\u003c=","\u003e\u003c":"between","\u003ct+":"in less than","\u003et+":"in more than","\u003e\u003ct+":"in the next","t+":"in","t":"today","ld":"yesterday","w":"this week","lw":"last week","l2w":"last 2 weeks","m":"this month","lm":"last month","y":"this year","\u003et-":"less than days ago","\u003ct-":"more than days ago","\u003e\u003ct-":"in the past","t-":"days ago","~":"contains","!~":"doesn't contain","=p":"any issues in project","=!p":"any issues not in project","!p":"no issues in project","*o":"any open issues","!o":"no open issues"};
+var operatorByType = {"list":["=","!"],"list_status":["o","=","!","c","*"],"list_optional":["=","!","!*","*"],"list_subprojects":["*","!*","="],"date":["=","\u003e=","\u003c=","\u003e\u003c","\u003ct+","\u003et+","\u003e\u003ct+","t+","t","ld","w","lw","l2w","m","lm","y","\u003et-","\u003ct-","\u003e\u003ct-","t-","!*","*"],"date_past":["=","\u003e=","\u003c=","\u003e\u003c","\u003et-","\u003ct-","\u003e\u003ct-","t-","t","ld","w","lw","l2w","m","lm","y","!*","*"],"string":["=","~","!","!~","!*","*"],"text":["~","!~","!*","*"],"integer":["=","\u003e=","\u003c=","\u003e\u003c","!*","*"],"float":["=","\u003e=","\u003c=","\u003e\u003c","!*","*"],"relation":["=","=p","=!p","!p","*o","!o","!*","*"],"tree":["=","~","!*","*"]};
+var availableFilters = {"status_id":{"type":"list_status","name":"Status","values":[["New","1"],["Assigned","2"],["Resolved","3"],["Feedback","4"],["Closed","5"],["Rejected","6"]]},"tracker_id":{"type":"list","name":"Tracker","values":[["Bug","1"],["Feature","2"],["Support","3"]]},"priority_id":{"type":"list","name":"Priority","values":[["Low","3"],["Normal","4"],["High","5"],["Urgent","6"],["Immediate","7"]]},"author_id":{"type":"list","name":"Author","values":[["Abdeljalil RAJOUL","1232"],["Anthony MICHEL","2220"],["Antoine LUONG","309"],["Camille GARDET","397"],["Francois ","297"],["Gilles ","299"],["julian CHAMBRIER","2219"],["Lam HUYNH","302"],["Song TRAN","335"],["Yoann VANDOORSELAERE","6"]]},"assigned_to_id":{"type":"list_optional","name":"Assignee","values":[["Abdeljalil RAJOUL","1232"],["Anthony MICHEL","2220"],["Antoine LUONG","309"],["Camille GARDET","397"],["Francois ","297"],["Gilles ","299"],["julian CHAMBRIER","2219"],["Lam HUYNH","302"],["Song TRAN","335"],["Yoann VANDOORSELAERE","6"]]},"member_of_group":{"type":"list_optional","name":"Assignee's group","values":[["CS","305"]]},"assigned_to_role":{"type":"list_optional","name":"Assignee's role","values":[["Manager","3"],["Developer","4"],["Reporter","5"],["Reader","6"]]},"fixed_version_id":{"type":"list_optional","name":"Target version","values":[["Libprelude - 0.9.1","3"],["Libprelude - 0.9.2","11"],["Libprelude - 0.9.3","12"],["Libprelude - 0.9.4","13"],["Libprelude - 0.9.5","16"],["Libprelude - 0.9.6","19"],["Libprelude - 0.9.7","24"],["Libprelude - 0.9.8","27"],["Libprelude - 0.9.9","31"],["Libprelude - 0.9.10","33"],["Libprelude - 0.9.11","37"],["Libprelude - 0.9.12","44"],["Libprelude - 0.9.12.1","49"],["Libprelude - 0.9.13","50"],["Libprelude - 0.9.13.1","52"],["Libprelude - 0.9.14","54"],["Libprelude - 0.9.15","59"],["Libprelude - 0.9.15.2","68"],["Libprelude - 0.9.16","67"],["Libprelude - 0.9.16.1","69"],["Libprelude - 0.9.16.2","72"],["Libprelude - 0.9.17","76"],["Libprelude - 0.9.18","83"],["Libprelude - 0.9.19","86"],["Libprelude - 0.9.20","87"],["Libprelude - 0.9.21","90"],["Libprelude - 0.9.22","96"],["Libprelude - 0.9.23","100"],["PRELUDE SIEM - Prelude OSS 1.0.1","128"],["PRELUDE SIEM - Prelude OSS 1.1.0","132"],["PRELUDE SIEM - Prelude OSS 1.2.5","133"],["PRELUDE SIEM - Prelude OSS 1.2.6","134"],["PRELUDE SIEM - Prelude OSS 3.0.0","129"],["PRELUDE SIEM - Prelude OSS 3.1.0","135"],["PRELUDE SIEM - Prelude OSS 4.0.0","136"],["PRELUDE SIEM - Prelude OSS 4.1.0","137"],["PRELUDE SIEM - Prelude OSS 5.0.0","138"],["PRELUDE SIEM - Prelude OSS 5.1.0","139"],["PRELUDE SIEM - Prelude OSS 5.2.0","141"],["Libprelude - 0.9.24","102"],["PRELUDE SIEM - Prelude OSS 1.0.0","131"],["PRELUDE SIEM - Prelude OSS 1.0.2","130"]]},"category_id":{"type":"list_optional","name":"Category","values":[]},"subject":{"type":"text","name":"Subject"},"description":{"type":"text","name":"Description"},"created_on":{"type":"date_past","name":"Created"},"updated_on":{"type":"date_past","name":"Updated"},"closed_on":{"type":"date_past","name":"Closed"},"start_date":{"type":"date","name":"Start date"},"due_date":{"type":"date","name":"Due date"},"estimated_hours":{"type":"float","name":"Estimated time"},"done_ratio":{"type":"integer","name":"% Done"},"cf_1":{"type":"list_optional","name":"Resolution","values":["fixed","invalid","wontfix","duplicate","worksforme"]},"relates":{"type":"relation","name":"Related to"},"duplicates":{"type":"relation","name":"Duplicates"},"duplicated":{"type":"relation","name":"Duplicated by"},"blocks":{"type":"relation","name":"Blocks"},"blocked":{"type":"relation","name":"Blocked by"},"precedes":{"type":"relation","name":"Precedes"},"follows":{"type":"relation","name":"Follows"},"copied_to":{"type":"relation","name":"Copied to"},"copied_from":{"type":"relation","name":"Copied from"},"parent_id":{"type":"tree","name":"Parent task"},"child_id":{"type":"tree","name":"Subtasks"},"issue_id":{"type":"integer","name":"Issue"}};
+var labelDayPlural = "days";
+var allProjects = [["PRELUDE SIEM","1"],["-- IDMEF Draft","16"],["-- Libprelude","2"],["-- LibpreludeDB","4"],["-- Prelude Correlator","7"],["-- Prelude Correlator rules","84"],["-- Prelude Handbook","20"],["-- Prelude-LML","6"],["-- Prelude Manager","5"],["-- Prelude-LML-Rules","35"],["-- Prewikka","3"],["VIGILO NMS","109"],["-- Buildenv","111"],["-- Collector","112"],["-- Common","113"],["-- Connector","114"],["-- Connector Metro","115"],["-- Connector Nagios","116"],["-- Connector syncevents","117"],["-- GLPI","118"],["-- Models","119"],["-- Nagios plugins","120"],["-- Perfdata2vigilo","121"],["-- Setup","122"],["-- Themes (default)","123"],["-- TurboGears","124"],["-- Vigiboard","125"],["-- Vigiconf","126"],["-- Vigiconf Local","127"],["-- Vigigraph","128"],["-- VigiRRD","129"],["-- Vigirules","130"]];
+$(document).ready(function(){
+  initFilters();
+  addFilter("status_id", "o", [""]);
+});
+
+//]]>
+</script>
+<table id="filters-table">
+</table>
+
+<div class="add-filter">
+<label for="add_filter_select">Add filter</label>
+<select id="add_filter_select"><option value="">&nbsp;</option>
+<option value="status_id">Status</option>
+<option value="tracker_id">Tracker</option>
+<option value="priority_id">Priority</option>
+<option value="author_id">Author</option>
+<option value="assigned_to_id">Assignee</option>
+<option value="fixed_version_id">Target version</option>
+<option value="category_id">Category</option>
+<option value="subject">Subject</option>
+<option value="description">Description</option>
+<option value="estimated_hours">Estimated time</option>
+<option value="done_ratio">% Done</option>
+<option value="cf_1">Resolution</option>
+<option value="issue_id">Issue</option><optgroup label="Assignee"><option value="member_of_group">Assignee&#39;s group</option>
+<option value="assigned_to_role">Assignee&#39;s role</option></optgroup><optgroup label="Date"><option value="created_on">Created</option>
+<option value="updated_on">Updated</option>
+<option value="closed_on">Closed</option>
+<option value="start_date">Start date</option>
+<option value="due_date">Due date</option></optgroup><optgroup label="Relations"><option value="relates">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option>
+<option value="parent_id">Parent task</option>
+<option value="child_id">Subtasks</option></optgroup></select>
+</div>
+
+<input type="hidden" name="f[]" id="f_" value="" />
+
+  </div>
+</fieldset>
+<fieldset id="options" class="collapsible collapsed">
+  <legend onclick="toggleFieldset(this);">Options</legend>
+  <div style="display: none;">
+    <table>
+      <tr>
+        <td>
+          <fieldset>
+            <legend>Related issues</legend>
+            <label for="draw_relations">
+              <input name="query[draw_relations]" type="hidden" value="0" /><input id="draw_relations" type="checkbox" value="1" checked="checked" name="query[draw_relations]" />
+                <span style="background-color: #F34F4F">&nbsp;&nbsp;&nbsp;</span>
+                Blocks
+                <span style="background-color: #628FEA">&nbsp;&nbsp;&nbsp;</span>
+                Precedes
+            </label>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset>
+            <legend>Progress line</legend>
+            <label for="draw_progress_line">
+              <input name="query[draw_progress_line]" type="hidden" value="0" /><input id="draw_progress_line" type="checkbox" value="1" name="query[draw_progress_line]" />
+              Display
+            </label>
+          </fieldset>
+        </td>
+      </tr>
+    </table>
+  </div>
+</fieldset>
+
+<p class="contextual">
+  <a class="icon icon-zoom-in" href="/projects/libprelude/issues/gantt?month=10&amp;months=6&amp;year=2024&amp;zoom=3">Zoom in</a>
+  <a class="icon icon-zoom-out" href="/projects/libprelude/issues/gantt?month=10&amp;months=6&amp;year=2024&amp;zoom=1">Zoom out</a>
+</p>
+
+<p class="buttons">
+<input type="text" name="months" id="months" value="6" size="2" />
+months from
+<select id="month" name="month">
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10" selected="selected">October</option>
+<option value="11">November</option>
+<option value="12">December</option>
+</select>
+
+<select id="year" name="year">
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024" selected="selected">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028</option>
+<option value="2029">2029</option>
+</select>
+
+<input type="hidden" name="zoom" id="zoom" value="2" />
+
+<a href="#" onclick="$(&quot;#query_form&quot;).submit(); return false;" class="icon icon-checked">Apply</a>
+<a class="icon icon-reload" href="/projects/libprelude/issues/gantt?set_filter=1">Clear</a>
+</p>
+</form>
+
+
+
+<table style="width:100%; border:0; border-collapse: collapse;">
+<tr>
+<td style="width:330px; padding:0px;">
+  <div style="position:relative;height: 510px;width: 331px;">
+    <div style="right:-2px;width: 330px;height: 36px;background: #eee;" class="gantt_hdr"></div>
+    <div style="right:-2px;width: 330px;height: 486px;border-left: 1px solid #c0c0c0;overflow: hidden;" class="gantt_hdr"></div>
+    <div class="gantt_subjects">
+      <div style="position: absolute;top:44px;left:4px;width:326px;" class="project-name"><span class="icon icon-projects project-overdue"><a href="/projects/prelude">PRELUDE SIEM</a></span></div><div style="position: absolute;top:64px;left:24px;width:306px;" class="project-name"><span class="icon icon-projects project-overdue"><a href="/projects/libprelude">Libprelude</a></span></div><div style="position: absolute;top:84px;left:44px;width:286px;" id="issue-879" class="issue-subject" title="M4 for Ruby on Debian 9 not working"><span class=" icon icon-issue"><a class="issue tracker-1 status-1 priority-4 priority-default" href="/issues/879">Bug #879</a>: M4 for Ruby on Debian 9 not working</span></div><div style="position: absolute;top:104px;left:44px;width:286px;" id="issue-885" class="issue-subject" title="Segfault with atfork on arm64, armhf and ppc64el"><span class=" icon icon-issue"><a class="issue tracker-1 status-1 priority-4 priority-default" href="/issues/885">Bug #885</a>: Segfault with atfork on arm64, armhf and ppc64el</span></div><div style="position: absolute;top:124px;left:44px;width:286px;" id="issue-886" class="issue-subject" title="Sometimes, test-lock from libmissing wont works"><span class=" icon icon-issue"><a class="issue tracker-1 status-1 priority-4 priority-default" href="/issues/886">Bug #886</a>: Sometimes, test-lock from libmissing wont works</span></div><div style="position: absolute;top:144px;left:44px;width:286px;" id="issue-887" class="issue-subject" title="Timer tests on slow system"><span class=" icon icon-issue"><a class="issue tracker-1 status-1 priority-4 priority-default" href="/issues/887">Bug #887</a>: Timer tests on slow system</span></div><div style="position: absolute;top:164px;left:44px;width:286px;" id="issue-893" class="issue-subject" title="libprelude-errors failed compile on hhurd-i386"><span class=" icon icon-issue"><a class="issue tracker-1 status-1 priority-4 priority-default" href="/issues/893">Bug #893</a>: libprelude-errors failed compile on hhurd-i386</span></div><div style="position: absolute;top:184px;left:44px;width:286px;" id="version-139" class="version-name"><span class="icon icon-package version-behind-schedule version-overdue behind-start-date"><a title="09/01/2019" href="/versions/139">PRELUDE SIEM - Prelude OSS 5.1.0</a></span></div><div style="position: absolute;top:204px;left:64px;width:266px;" id="issue-860" class="issue-subject" title="Fedora : ruby sitearchdir need to be vendorarchdir"><span class=" icon icon-issue behind-start-date"><a class="issue tracker-1 status-2 priority-4 priority-default" href="/issues/860">Bug #860</a>: Fedora : ruby sitearchdir need to be vendorarchdir</span></div>
+</div></div></td>
+
+<td>
+<div style="position:relative;height:510px;overflow:auto;" id="gantt_area">
+<div style="width: 727px;height: 36px;background: #eee;" class="gantt_hdr">&nbsp;</div>
+
+  <div style="left: 0px;width: 123px;height: 18px;" class="gantt_hdr">
+    <a title="October 2024" href="/projects/libprelude/issues/gantt?month=10&amp;months=6&amp;year=2024&amp;zoom=2">2024-10</a>
+</div>  <div style="left: 124px;width: 119px;height: 18px;" class="gantt_hdr">
+    <a title="November 2024" href="/projects/libprelude/issues/gantt?month=11&amp;months=6&amp;year=2024&amp;zoom=2">2024-11</a>
+</div>  <div style="left: 244px;width: 123px;height: 18px;" class="gantt_hdr">
+    <a title="December 2024" href="/projects/libprelude/issues/gantt?month=12&amp;months=6&amp;year=2024&amp;zoom=2">2024-12</a>
+</div>  <div style="left: 368px;width: 123px;height: 18px;" class="gantt_hdr">
+    <a title="January 2025" href="/projects/libprelude/issues/gantt?month=1&amp;months=6&amp;year=2025&amp;zoom=2">2025-1</a>
+</div>  <div style="left: 492px;width: 111px;height: 18px;" class="gantt_hdr">
+    <a title="February 2025" href="/projects/libprelude/issues/gantt?month=2&amp;months=6&amp;year=2025&amp;zoom=2">2025-2</a>
+</div>  <div style="left: 604px;width: 123px;height: 18px;" class="gantt_hdr">
+    <a title="March 2025" href="/projects/libprelude/issues/gantt?month=3&amp;months=6&amp;year=2025&amp;zoom=2">2025-3</a>
+</div>
+    <div style="left: 0px;top: 19px;width: 23px;height: 467px;" class="gantt_hdr">&nbsp;</div>
+    <div style="left: 24px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        41
+</small></div>    <div style="left: 52px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        42
+</small></div>    <div style="left: 80px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        43
+</small></div>    <div style="left: 108px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        44
+</small></div>    <div style="left: 136px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        45
+</small></div>    <div style="left: 164px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        46
+</small></div>    <div style="left: 192px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        47
+</small></div>    <div style="left: 220px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        48
+</small></div>    <div style="left: 248px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        49
+</small></div>    <div style="left: 276px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        50
+</small></div>    <div style="left: 304px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        51
+</small></div>    <div style="left: 332px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        52
+</small></div>    <div style="left: 360px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        1
+</small></div>    <div style="left: 388px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        2
+</small></div>    <div style="left: 416px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        3
+</small></div>    <div style="left: 444px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        4
+</small></div>    <div style="left: 472px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        5
+</small></div>    <div style="left: 500px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        6
+</small></div>    <div style="left: 528px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        7
+</small></div>    <div style="left: 556px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        8
+</small></div>    <div style="left: 584px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        9
+</small></div>    <div style="left: 612px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        10
+</small></div>    <div style="left: 640px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        11
+</small></div>    <div style="left: 668px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        12
+</small></div>    <div style="left: 696px;top: 19px;width: 27px;height: 467px;" class="gantt_hdr">
+      <small>
+        13
+</small></div>    <div style="left: 724px;top: 19px;width: 3px;height: 467px;" class="gantt_hdr">
+      <small>
+</small></div>
+
+
+<div style="top:44px;left:8px;width:15px;" class="task project label">PRELUDE SIEM</div><div style="top:64px;left:8px;width:15px;" class="task project label">Libprelude</div><div style="top:184px;left:8px;width:15px;" class="task version label">PRELUDE SIEM -Prelude OSS 5.1.0 0%</div><div style="top:204px;left:8px;width:15px;" class="task leaf label">Assigned 0%</div>
+
+  <div style="position: absolute;height: 450px;top: 37px;left: 119px;width:10px;border-left: 1px dashed red;" id="today_line">&nbsp;</div>
+<div style="position: absolute;height: 450px;top: 37px;left: 0px;width: 727px;" id="gantt_draw_area"></div>
+</div>
+</td>
+</tr>
+</table>
+
+<table style="width:100%">
+<tr>
+  <td style="text-align:left;">
+    <a accesskey="p" href="/projects/libprelude/issues/gantt?month=4&amp;months=6&amp;year=2024&amp;zoom=2">« Previous</a>
+  </td>
+  <td style="text-align:right;">
+    <a accesskey="n" href="/projects/libprelude/issues/gantt?month=4&amp;months=6&amp;year=2025&amp;zoom=2">Next »</a>
+  </td>
+</tr>
+</table>
+
+<p class="other-formats">Also available in:  <span><a class="pdf" rel="nofollow" href="/projects/libprelude/issues/gantt.pdf?month=10&amp;months=6&amp;year=2024&amp;zoom=2">PDF</a></span>
+  <span><a class="png" rel="nofollow" href="/projects/libprelude/issues/gantt.png?month=10&amp;months=6&amp;year=2024&amp;zoom=2">PNG</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+
+  var issue_relation_type = {"blocks":{"landscape_margin":16,"color":"#F34F4F"},"precedes":{"landscape_margin":20,"color":"#628FEA"}};
+  $(document).ready(drawGanttHandler);
+  $(window).resize(drawGanttHandler);
+  $(function() {
+    $("#draw_relations").change(drawGanttHandler);
+    $("#draw_progress_line").change(drawGanttHandler);
+  });
+
+//]]>
+</script>
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

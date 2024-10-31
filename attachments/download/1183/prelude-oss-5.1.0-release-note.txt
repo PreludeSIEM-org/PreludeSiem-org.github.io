@@ -1,0 +1,194 @@
+Prelude OSS 5.1.0
+=================
+
+* 2019-09-13, libprelude-5.1.0
+------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Update to SWIG 4
+- Fix possible crash on invalid unicode string
+- Fix various JSON parser errors
+- Add optional IDMEFPath argument to IDMEFValue() constructor
+- Fix incorrect string export of IDMEFTime microseconds
+- Fix py3 pickle error
+- Properly implement Criterion NOT operator, fix operator precedence
+- More environment variable to ease debugging
+
+* 2019-09-13, libpreludedb-5.1.0
+--------------------------------
+
+Author: Antoine Luong
+
+- Add binding for preludedb_sql_unescape_binary
+- Support AVG function on integer fields
+- Support the SUM function
+
+Author: Yoann Vandoorselaere
+
+- Rewrite preludedb-admin in python, multiprocess compatible
+- Update to SWIG 4
+- Implement DB::get_sql()
+- Provide bindings for DB object transaction
+- Make db->connect() and db->close() API public
+- Classic is now multiprocess safe
+- get_last_insert_ident support for sqlite3
+- Fix invalid free with NULL selection
+- Fix overflow for selection with > 65535 rows
+- Add missing =*, !=* operators
+- Support NOT criterion
+
+* 2019-09-13, prelude-correlator-5.1.0
+--------------------------------------
+
+Author: Antoine Luong
+
+- Add metadata for rules
+- Add a correlation grouping option
+- Fix meta-correlation
+- Fix context constructor signature
+- Replace optparse with argparse
+
+Author: Song Tran
+
+- Document the 'filename' option for CTI rules
+- Update default CTI data
+
+Author: Yoann Vandoorselaere
+
+- Do not reset timer on update by default
+- Fix python 3 compatibility
+
+* 2019-09-13, prelude-lml-5.1.0
+-------------------------------
+
+Author: Antoine Luong
+
+- Correctly handle one-digit syslog priorities
+
+Author: Yoann Vandoorselaere
+
+- Prevent partial AdditionalData in case of empty match
+
+Author: Song Tran
+
+- Update SELinux policies
+
+* 2019-09-13, prelude-lml-rules-5.1.0
+-------------------------------------
+
+Author: Song Tran
+
+- Modify ModSecurity rules
+
+* 2019-09-13, prelude-manager-5.1.0
+-----------------------------------
+
+Author: Antoine Luong
+
+- Remove unused SELinux rules
+
+Author: Yoann Vandoorselaere
+
+- Revert "Correct AdditionalData output"
+
+* 2019-09-13, prewikka-5.1.0
+----------------------------
+
+Author: Antoine Luong
+
+- Tweak the 'create' CLI command
+- Add an option to format numbers as bits
+- Support file sizes in configuration
+- Fix resetting user properties
+- Add __repr__ method for users/groups
+- Fix auto-reload of the Scheduling page
+- Ignore return value for non-list CLI commands
+- Handle integer-indexed elements in parameters
+- Rename the 'init' CLI command to 'sync'
+- Separate dataprovider backend and instance
+- Fix DataSearch exporting entries with chevrons
+- Fix mainmenu auto-refresh
+- Implement support for time-spanning data
+- Add past periods to the control menu
+- Add utilities for file inputs
+- Fix parameters in crontab request
+- Implement an administration command-line tool
+- Use the filter ID in the listing
+- Fix modal autofocus
+- Add an option for reloading grids periodically
+- Support autofocus fields
+- Stop passing the whole DataSearch row to ajax_infos
+- Allow linking charts to user
+- JS libraries upgrade
+- Make the 'distinct' parameter a boolean in dataprovider
+- Avoid error with wrong help configuration
+- Hide menus in case of missing permission
+- Correctly handle dates/bytes in Datasearch details
+- Restrict the operators for IDMEF byte data
+- Remove IDMEF_VIEW requirement for filters
+- Force datatype in aggregation pages
+- Fix recursion of ResultObject subclasses
+- Correctly handle timedeltas in criteria
+- Use YAML safe_load() instead of load()
+- Propagate option classes to select2 items
+- Add a categorization for filters
+- Improve the 'Group by' label in DataSearch
+- Escape backslashes in Lucene search
+- Add localization.format_value()
+- Support the timedelta type in dataprovider
+- Use select2 in prewikka_autocomplete
+- Make the IDMEF substring operator consistent
+- Fix DataSearch grouping by time fields
+- Add comparison operators for additional data
+- Make the Database class generic
+- Various improvements in the chart API
+- Remove special case for Enter key in modals
+- DataSearch improvements
+- Automatically convert booleans for SQL queries
+- Allow more complex branch migrations
+- Handle clipboard copying with multiple tracebacks
+- Fix various issues in DataSearch
+- Fix display of falsy additional data
+- Fix Edge incompatibility
+- Handle incomplete log config sections
+- Fix PostgreSQL database cleanup in tests
+- Fix cronjob scheduling
+- Remove double ampersand encoding
+- Add 'This week' period in control menu
+
+Author: Camille Gardet
+
+- Negative duration makes notifications persistent
+- Improve readability of errors
+- Use select2 for user timezone selection
+- Trigger the submit-complete event in Datasearch
+- Add EventSource pool
+- Support the upload of binary files
+- Remove the search icon when the view uses a searchbar
+
+Author: Francois 
+
+- YAML menu relative to main config file
+
+Author: Yoann Vandoorselaere
+
+- Implement usergroup.ACTIVE_PERMISSIONS
+- Deprecate the old view render system
+- Evolutions around paths and criteria
+- Make sure path supports the operator
+- Proper rewriting of ambiguous path using the (*) notation
+- Parse path using the (*) notation
+- Better Lucene coverage
+- Criteria NOT, fix operator precedence
+- Criterion now uses an enumeration as the operator storage
+- Python3 compatibility fixes
+- Dataprovider get_types() rework
+- Summary rework
+- Improve hookmanager API
+
+Author: Thomas 
+
+- Be able to hide options in select2
+- Update prelude-siem.com URLs
+- Fix HTTP status texts

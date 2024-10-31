@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Prewikka Scheduled Jobs - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="FzikOC8Mu9oh0IaadNUPrJuN3SeYkoSKRf3O+bS3KzcEF8xX5hi2Wat6jmBpnUby58asuYKY3cSbcwppMLcfNA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>Prewikka Scheduled Jobs</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/1083">Rudolf Spring</a> <a title="07/28/2018 08:04 AM" href="/projects/prelude/activity?from=2018-07-28">over 6 years</a> ago</span></p>
+<div class="wiki">
+<p>I'm running Prelude 4.1.5 on Gentoo 4.17.10. Everything works except Scheduled Jobs in Prewikka. In the GUI the default jobs (Search history deletion/Hourly - Alert deletion/Daily - Heartbeat deletion/Daily) are listed as executed and scheduled for next execution. But all 3 jobs don't do anything. I'm running Prewikka with wsgi and uid:guid apache:apache prewikka-crontab runs with the same uid:gid. Any ideas ?</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (10)</h3>
+  <div class="message reply" id="message-144">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=144#message-144">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="07/30/2018 08:36 AM" href="/projects/prelude/activity?from=2018-07-30">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello, did you configure the [cron] sections in prewikka.conf? This is necessary for the alert/heartbeat deletion.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-145">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=145#message-145">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/1083">Rudolf Spring</a> <a title="07/30/2018 02:44 PM" href="/projects/prelude/activity?from=2018-07-30">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>I configured the 3 cron sections in prewikka.conf.</p>
+
+
+	<p>[cron alert]<br />age: 1</p>
+
+
+	<p>[cron heartbeat]<br />age: 1</p>
+
+
+	<p>[cron search_history]<br />size: 10</p></div>
+  
+  </div>
+  <div class="message reply" id="message-146">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=146#message-146">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="07/30/2018 04:54 PM" href="/projects/prelude/activity?from=2018-07-30">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>Did you restart the prewikka-crontab service after modifying the configuration? Are there any errors in the logs?</p></div>
+  
+  </div>
+  <div class="message reply" id="message-147">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=147#message-147">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="07/30/2018 05:59 PM" href="/projects/prelude/activity?from=2018-07-30">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>It may be a bug with the prewikka-crontab executable currently not working with Python3. Can you apply the following patch?</p>
+
+
+<pre><code class="diff syntaxhl"><span class="CodeRay"><span class="line comment">diff --git a/scripts/prewikka-crontab b/scripts/prewikka-crontab</span>
+<span class="line comment">index 9d90fd5..41d03c5 100644</span>
+<span class="line head"><span class="head">--- </span><span class="filename">a/scripts/prewikka-crontab</span></span>
+<span class="line head"><span class="head">+++ </span><span class="filename">b/scripts/prewikka-crontab</span></span>
+<span class="change"><span class="change">@@</span> -71,7 +71,7 <span class="change">@@</span></span> def _daemonize(options):
+         getattr(sys, i).close()
+         setattr(sys, i, nd)
+
+<span class="line delete"><span class="delete">-</span>    os.umask(027)</span>
+<span class="line insert"><span class="insert">+</span>    os.umask(0<span class="eyecatcher">o</span>27)</span>
+     os.chdir('/')
+
+     _LOCKFD.write('%s\n' % (os.getpid()))
+</span></code></pre></div>
+  
+  </div>
+  <div class="message reply" id="message-148">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=148#message-148">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/1083">Rudolf Spring</a> <a title="07/30/2018 08:00 PM" href="/projects/prelude/activity?from=2018-07-30">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>prewikka-crontab runs as:</p>
+
+
+	<p>apache   27784  9.6  0.6 211816 54908 ?        Ss   20:23   0:00 /usr/bin/python2.7 /usr/lib/python-exec/python2.7/prewikka-crontab</p>
+
+
+	<p>I'm not sure if the patch would help. For testing i applied it.</p>
+
+
+	<p>If i select in the GUI under Apps Update/Confirm and return to Scheduled Jobs I have an error for Search history deletion: Scheduled job with invalid extension type 'search_history'. But only in this order. Normally i don't have this error. Maybe not related to my problem.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-149">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=149#message-149">RE: RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="07/31/2018 08:38 AM" href="/projects/prelude/activity?from=2018-07-31">about 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>No, that's unrelated (it was fixed in version 4.1.8).</p></div>
+  
+  </div>
+  <div class="message reply" id="message-150">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=150#message-150">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/1083">Rudolf Spring</a> <a title="08/01/2018 10:06 AM" href="/projects/prelude/activity?from=2018-08-01">about 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>I changed my openrc init script to:</p>
+
+
+	<p>start-stop-daemon --start --make-pidfile --pidfile /var/run/prewikka-crontab --user=apache:apache --exec /usr/bin/prewikka-crontab -- <del>d -</del> -c /etc/prewikka/prewikka.conf</p>
+
+
+	<p>New with the -c and -d options. Lockfile /tmp/prewikka-crontab-xxxxxxxxxxxxxxxxxx.lock created now with correct uid:gid.</p>
+
+
+	<p>The Prewikka_Crontab table:</p>
+
+
+	<p><ins><del>--</del></ins>-------------------------+--------+------------+----------------+--------+---------------------+---------+--------+-------+
+| id | name                    | userid | schedule   | ext_type       | ext_id | base                | enabled | runcnt | error |<br /><ins><del>--</del></ins>-------------------------+--------+------------+----------------+--------+---------------------+---------+--------+-------+
+|  1 | Search history deletion | NULL   | 0 * * * *  | search_history |   NULL | 2018-08-01 09:00:04 |       1 |     95 | NULL  |
+|  2 | Alert deletion          | NULL   | 0 23 * * * | alert          |   NULL | 2018-08-01 09:20:21 |       1 |      8 | NULL  |
+|  3 | Heartbeat deletion      | NULL   | 0 23 * * * | heartbeat      |   NULL | 2018-08-01 09:20:21 |       1 |      8 | NULL  |<br /><ins><del>--</del></ins>-------------------------+--------+------------+----------------+--------+---------------------+---------+--------+-------+</p>
+
+
+	<p>No userid ? Timezone support doesn't work properly. Scheduled jobs are executed one hour later as scheduled. 09:20 was actually 10:20. TZ is Atlantic/Canary in GUI/Admin/Preferences.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-151">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=151#message-151">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/1083">Rudolf Spring</a> <a title="08/03/2018 08:20 AM" href="/projects/prelude/activity?from=2018-08-03">about 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>Cronjobs are working now. Problem was TZ. Machine is suspended after 01:00. With default cronjob time the jobs where never really executed because 00:00 is actually 01:00 with my TZ setting. Maybe you can fix the TZ behaviour in a future release.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-155">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=155#message-155">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/301">Thomas </a> <a title="08/04/2018 09:53 AM" href="/projects/prelude/activity?from=2018-08-04">about 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>What is your version of python-croniter ?</p></div>
+  
+  </div>
+  <div class="message reply" id="message-160">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/143?r=160#message-160">RE: Prewikka Scheduled Jobs</a>
+    -
+    Added by <a class="user active" href="/users/1083">Rudolf Spring</a> <a title="08/04/2018 10:18 AM" href="/projects/prelude/activity?from=2018-08-04">about 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>dev-python/croniter-0.3.17::gentoo  USE="{-test}" PYTHON_TARGETS="python2_7 python3_6 -python3_4 -python3_5"</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-10/10)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

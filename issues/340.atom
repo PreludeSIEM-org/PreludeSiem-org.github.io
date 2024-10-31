@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/340.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2009-01-27T13:39:42Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prelude-LML - Feature #340: New ruleset for PPP/PPTPD/L2TP</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/340"/>
+    <id>http://www.prelude-siem.org/issues/340?journal_id=936</id>
+    <updated>2009-01-27T13:39:42Z</updated>
+    <author>
+      <name>Pierre Chifflier</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Overall looks good, just a few comments:&lt;/p&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;The line preceding the rule should use the following format:&lt;br /&gt;&lt;pre&gt;
+#LOG: Dec  4 23:01:36 beorc pppr24796: tun2: Phase: Chap Input: RESPONSE (49 bytes from afonyashin)
+&lt;/pre&gt;&lt;br /&gt;instead of&lt;br /&gt;&lt;pre&gt;
+#Dec  4 23:01:36 beorc pppr24796: tun2: Phase: Chap Input: RESPONSE (49 bytes from afonyashin)
+&lt;/pre&gt;&lt;br /&gt;This allows automated tools to run tests (and check that signature really matches the line)&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;in rule 2, you have the following:&lt;br /&gt;&lt;pre&gt;
+ assessment.impact.completion=succeeded; \
+ assessment.impact.description=Authenticated successfully; \
+&lt;/pre&gt;&lt;br /&gt;This is redundant. You should use something like 'Authentication attempt' in description, the completion will tell the result by itself&lt;/li&gt;
+	&lt;/ul&gt;
+
+
+	&lt;ul&gt;
+	&lt;li&gt;not all your rules have an 'id' field&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Feature #340: New ruleset for PPP/PPTPD/L2TP</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/340"/>
+    <id>http://www.prelude-siem.org/issues/340?journal_id=937</id>
+    <updated>2009-01-27T13:45:27Z</updated>
+    <author>
+      <name>Pierre Chifflier</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;One more point:
+	&lt;ul&gt;
+	&lt;li&gt;impact.description can be set in first rule, since it is generic, so you assign the description when creating the context, and the status (success/failed) when you get the result.&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Feature #340: New ruleset for PPP/PPTPD/L2TP</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/340"/>
+    <id>http://www.prelude-siem.org/issues/340?journal_id=938</id>
+    <updated>2009-04-09T12:25:42Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;fixed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;(In r11135) New PPP/PPTPD/L2TP ruleset, by Alexander Afonyashin &amp;lt;&lt;a class="email" href="mailto:firm@iname.com"&gt;firm@iname.com&lt;/a&gt;&amp;gt;,&lt;br /&gt;with slight modification from Pierre Chifflier &amp;lt;&lt;a class="email" href="mailto:p.chifflier@inl.fr"&gt;p.chifflier@inl.fr&lt;/a&gt;&amp;gt;.&lt;br /&gt;Close &lt;a class="issue tracker-2 status-5 priority-4 priority-default closed" title="Feature: New ruleset for PPP/PPTPD/L2TP (Closed)" href="http://www.prelude-siem.org/issues/340"&gt;#340&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude-LML - Feature #340: New ruleset for PPP/PPTPD/L2TP</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/340"/>
+    <id>http://www.prelude-siem.org/issues/340?journal_id=1032</id>
+    <updated>2009-04-29T12:21:15Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Prelude-LML&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;4&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;93&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

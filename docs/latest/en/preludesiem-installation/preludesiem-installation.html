@@ -1,0 +1,2117 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Prelude SIEM &mdash; Prelude Documentation 5.2</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Prelude Documentation 5.2" href="../index.html"/>
+        <link rel="prev" title="Prelude SIEM" href="../preludesiem-configuration/preludesiem-configuration.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Prelude Documentation
+          
+
+          
+            
+            <img src="../_static/Logo-prelude-oss-blanc.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                5.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Utilisation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-user-guide/preludesiem-user-guide.html#introduction">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-user-guide/preludesiem-user-guide.html#prelude-siem-la-supervision-de-securite">Prelude SIEM: The security monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-user-guide/preludesiem-user-guide.html#l-interface-graphique-de-prelude-siem">The Prelude SIEM graphical interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-user-guide/preludesiem-user-guide.html#tableaux-de-traitements-et-d-analyse">Tables for processing and analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-user-guide/preludesiem-user-guide.html#description-des-menus-de-prelude-gui">Prelude GUI menus description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-user-guide/preludesiem-user-guide.html#glossaire-et-abreviations">Glossary and abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-user-guide/preludesiem-user-guide.html#annexe-criteres-et-chemins">Annex: Criteria and paths</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#introduction">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#prelude-siem-la-supervision-de-securite">Prelude SIEM: The security monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#configuration-du-bus-prelude-siem">Prelude SIEM bus configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#configuration-des-modules-prelude-siem">Prelude SIEM modules configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#glossaire-et-abreviations">Glossary &amp; abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#annexe-criteres-et-chemins-idmef">Annex: IDMEF criteria and paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#annexe-fichiers-de-configuration">Annex: Configuration files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preludesiem-configuration/preludesiem-configuration.html#annexe-aide-de-prelude-siem">Annex: Prelude SIEM help</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objet">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#domaine-d-application-de-ce-document">Scope of this document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#audience-pour-ce-document">Audience for this document</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#prelude-siem-la-supervision-de-securite">Prelude SIEM: The security monitoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#les-modules-prelude-siem">The Prelude SIEM modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#presentation-generale">Quick Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modele-de-fichier-de-configuration">Configuration file template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prelude-admin">Prelude-Admin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#presentation">Presentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creer-un-profil">Creating a profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#suppression-d-un-profil">Removing a profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lister-les-profils">Listing profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#enregistrement-des-agents">Registering agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enregistrement-d-un-agent">Registering an agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#serveur-d-enregistrement">Registration server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#procedure-d-enregistrement">Registration procedure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-d-inscription-de-l-agent">Agent registration example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#commandes-particulieres-d-installation">Particular commands for installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sur-centos-redhat">On CentOS/RedHat</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#demarrage-automatique-des-services">Automatic startup of services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">On CentOS/RedHat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#installation-de-la-base-de-donnees-prelude-siem">Initialize the Prelude SIEM database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-libpreludedb">LibpreludeDB installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">LibpreludeDB installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-postgresql">PostgreSQL installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-du-serveur-postgresql">PostgreSQL server installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-du-plugin-libpreludedb-pgsql">Installing the libpreludedb-pgsql plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-de-demarrage-de-postgresql">PostgreSQL startup configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-de-l-acces-aux-bases-de-donnees">Configuring access to databases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#installation-de-prelude-siem">Prelude SIEM installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-libprelude">Libprelude installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-prelude-manager">Prelude Manager installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-du-module">Installing the module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6">On CentOS/Redhat</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-de-plugins">Installing plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creation-et-initialisation-de-la-base-de-donnees">Creating and initializing the database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#avec-postgresql">With PostgreSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-de-l-acces-a-la-base-de-donnees">Configuring the database access.</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id7">With PostgreSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creation-du-profil-du-manager-prelude">Creating the Prelude Manager profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reglage-du-niveau-d-execution">Setting the run level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demarrage-du-manager">Running the manager</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-prelude-lml">Prelude LML installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Installing the module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-des-regles-lml">Installing the LML rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#definition-des-parametres-prelude-lml">Setting the Prelude LML parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enregistrement-de-l-agent">Registering the agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activation-du-demarrage-automatique">Activating the automatic startup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demarrage-de-prelude-lml">Running Prelude LML</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-prelude-correlator">Prelude Correlator installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Installing the module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-du-paquet-prelude-correlator">Installing the Prelude Correlator package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Registering the agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Activating the automatic startup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execution-de-prelude-correlator">Running Prelude Correlator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-de-l-interface-graphique-de-prelude">Prelude GUI installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">Installing the module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation-du-paquet">Installing the package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Creating and initializing the database</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">With PostgreSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">Configuring the database access.</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id16">With PostgreSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#demarrage-de-prelude-gui">Running Prelude GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#installation-du-serveur-web">Web server installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#lancer-prelude-gui-avec-le-serveur-apache">Launch Prelude GUI with the Apache server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-du-serveur-web-apache">Apache web server installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-d-apache">Configuring Apache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-du-pare-feu-local">Configuring the local firewall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id17">On CentOS/Redhat</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Running Prelude GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#affichage-de-prelude-gui">Displaying Prelude GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#affichage-de-prelude-gui-avec-le-serveur-http-integre-pour-le-debogage">Display Prelude GUI with the embedded HTTP server (for debugging)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Running Prelude GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Displaying Prelude GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modification-des-parametres-d-authentification-par-defaut">Modification of the default authentication parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#activation-de-toutes-les-apps-de-prelude">Activating all APPS of Prelude</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#glossaire-et-abreviations">Glossary &amp; abbreviations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#glossaire">Glossary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#abbreviations">Abbreviations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#liste-des-noms-de-paquets">List of package names</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#liste-des-noms-des-paquets-avec-depot">List of package names with repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-des-noms-des-paquets-sur-centos-redhat-sans-depot">List of package names on CentOS/Redhat without a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-des-noms-de-paquets-sur-debian-sans-depot">List of package names on Debian without a repository</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#sauvegarde">Backup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sauvegarde-des-fichiers-de-configuration-de-prelude-siem">Backup of the Prelude SIEM configuration files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sauvegarde-des-bases-de-donnees-de-prelude-siem">Backup of the Prelude SIEM databases</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Prelude Documentation</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Prelude SIEM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>PUBLICATION HISTORY</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Version</th>
+<th class="head">Date</th>
+<th class="head">Modification</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>V 5.1</td>
+<td>13/09/2019</td>
+<td>Updates to take changes in Prelude 5.1 into account</td>
+</tr>
+<tr class="row-odd"><td>V 5.0</td>
+<td>07/09/2018</td>
+<td>Updates to take changes in Prelude 5.0 into account</td>
+</tr>
+<tr class="row-even"><td>V 4.1</td>
+<td>21/07/2017</td>
+<td>Updates to take changes in Prelude 4.1 into account</td>
+</tr>
+<tr class="row-odd"><td>V 4.0</td>
+<td>27/02/2017</td>
+<td>Updates to take changes in Prelude 4.0 into account</td>
+</tr>
+<tr class="row-even"><td>V 3.1</td>
+<td>14/09/2016</td>
+<td>Updates to take changes in Prelude 3.1 into account</td>
+</tr>
+<tr class="row-odd"><td>V 3.0</td>
+<td>20/05/2016</td>
+<td>Updates to take changes in Prelude 3.0 into account</td>
+</tr>
+<tr class="row-even"><td>V 2.1</td>
+<td>21/08/2015</td>
+<td>Updates to take changes in Prelude 2.1 into account</td>
+</tr>
+<tr class="row-odd"><td>V 2.0</td>
+<td>20/10/2014</td>
+<td>Initial version</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objet">
+<h2>Object<a class="headerlink" href="#objet" title="Permalink to this headline">¶</a></h2>
+<p>This guide presents:</p>
+<ul class="simple">
+<li>The <strong>Prelude SIEM</strong> product;</li>
+<li>The steps to install the product:<ul>
+<li>Modules installation: Prelude Manager and Prelude GUI;</li>
+<li>Agents installation: Prelude LML, Prelude Correlator;</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="domaine-d-application-de-ce-document">
+<h2>Scope of this document<a class="headerlink" href="#domaine-d-application-de-ce-document" title="Permalink to this headline">¶</a></h2>
+<p>This document is applicable to:</p>
+<ul class="simple">
+<li>Prelude SIEM version 5.2;</li>
+<li>Operating systems:<ul>
+<li>CentOS/Redhat version 7 - 64 bits.</li>
+</ul>
+</li>
+<li>Databases:<ul>
+<li>PostgreSQL version 9.6 and newer;</li>
+</ul>
+</li>
+<li>External sensors:<ul>
+<li>Suricata version 2.0 and newer;</li>
+<li>Samhain version 3.1 and newer;</li>
+<li>OSSEC version 2.7 and newer.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="audience-pour-ce-document">
+<h2>Audience for this document<a class="headerlink" href="#audience-pour-ce-document" title="Permalink to this headline">¶</a></h2>
+<p>This document is mainly dedicated to the following teams:</p>
+<ul class="simple">
+<li>The Prelude SIEM integration team;</li>
+<li>The Prelude SIEM support and deployment team;</li>
+<li>The Prelude SIEM administration team;</li>
+<li>The Prelude SIEM users.</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>This section gives links for the web page of the Prelude product, databases, external sensors and operating systems:</p>
+<ul class="simple">
+<li>Prelude SIEM: <a class="reference external" href="https://www.prelude-siem.com">https://www.prelude-siem.com</a> and <a class="reference external" href="https://www.prelude-siem.org">https://www.prelude-siem.org</a></li>
+<li>Databases:<ul>
+<li>PostgreSQL: <a class="reference external" href="http://www.postgresql.org">http://www.postgresql.org</a></li>
+</ul>
+</li>
+<li>External sensors:<ul>
+<li>Suricata: <a class="reference external" href="http://suricata-ids.org/">http://suricata-ids.org/</a></li>
+<li>Samhain: <a class="reference external" href="http://www.la-samhna.de/samhain">http://www.la-samhna.de/samhain</a></li>
+<li>OSSEC: <a class="reference external" href="http://ossec.github.io">http://ossec.github.io</a></li>
+</ul>
+</li>
+<li>Operating systems:<ul>
+<li>CentOS/Redhat: <a class="reference external" href="http://www.centos.org">http://www.centos.org</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="prelude-siem-la-supervision-de-securite">
+<h1>Prelude SIEM: The security monitoring<a class="headerlink" href="#prelude-siem-la-supervision-de-securite" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prelude SIEM</strong> is an open-source security monitoring solution. Its objective is to centralize all security events of an information system and to offer a homogeneous vision to the operators. <strong>Prelude SIEM</strong> collects, normalizes, sorts, aggregates, correlates and reports all security-related events independently of the product brand or license giving rise to such events.</p>
+<a class="reference internal image-reference" href="../_images/prelude_presentation2.png"><img alt="../_images/prelude_presentation2.png" class="align-center" src="../_images/prelude_presentation2.png" style="width: 15.4472cm; height: 12.7608cm;" /></a>
+<p class="centered">
+<strong>Figure: Features of Prelude SIEM</strong></p><p><strong>Prelude SIEM</strong> presents a specificity almost unique in the SIEM community: it implements the IDMEF format. This format is defined in an RFC since 2007 at the IETF and allows homogenizing the way a security alert is presented. Through the use of this format and its interconnection library, it is easy to make other tools communicate with <strong>Prelude SIEM</strong>. Beyond its capacity to analyze any type of log (system logs, log streams, flat files, etc.), <strong>Prelude SIEM</strong> also benefits from a native support with a number of HIDS and NIDS sensors; with the best known being Snort, Samhain, OSSEC and Suricata.</p>
+<p><strong>Prelude SIEM</strong> is available in three versions:</p>
+<ul class="simple">
+<li><strong>Prelude OSS</strong>: Free, public and open-source version, released under GPL V2 license. Prelude OSS implements the event management part of Prelude (SEM). Since version 5.2, Prelude OSS also makes it possible to store, display and analyze raw security information (SIM). This version is intended for small parks of limited size (&lt;10 machines), students, research organizations, as well as for testing by users interested in acquiring Prelude SIEM. The performance of Prelude OSS is highly limited by the volume of data analyzed.</li>
+<li><strong>Prelude SIEM</strong>: Professional version based on the open-source version <strong>Prelude OSS</strong> and that greatly enhances its performance. Prelude SIEM offers many additional features (ticket management, dynamic statistics, geolocation, archiving, etc.) and capabilities to be deployed and operated easily and efficiently on complex and large-scaled parks of machines.</li>
+<li><strong>Prelude SOC</strong>: Fully scaled version, mainly for Security Operational Center (SOC) usage. Necessary modules for an operational security center, in addition to Prelude SIEM, are: Prelude MAP (network topological representation), Prelude CTI (Cyber Threat Intelligence) and Prelude NOC (performance and availability monitoring).</li>
+</ul>
+<div class="section" id="les-modules-prelude-siem">
+<h2>The Prelude SIEM modules<a class="headerlink" href="#les-modules-prelude-siem" title="Permalink to this headline">¶</a></h2>
+<p>The following figure shows how Prelude SIEM’s modules communicate together:</p>
+<a class="reference internal image-reference" href="../_images/prelude_modules2.png"><img alt="../_images/prelude_modules2.png" class="align-center" src="../_images/prelude_modules2.png" style="width: 12.1768cm; height: 11.704cm;" /></a>
+<p class="centered">
+<strong>Figure: Event tracking between Prelude SIEM modules</strong></p><p>The path of an event between the different Prelude SIEM modules is as follows:</p>
+<ol class="arabic simple">
+<li>The application generates a log and sends it to Prelude LML (either under file form or through a Syslog connection);</li>
+<li>The log is analyzed by Prelude LML (thanks to its set of rules). If this log is considered suspicious, Prelude LML creates an IDMEF alert and sends it to its manager (Prelude Manager that can be chained to another Prelude Manager instance);</li>
+<li>Prelude Manager performs the filters and treatments that are configured and then inserts the event into the database;</li>
+<li>Prelude Correlator receives the alerts from Prelude Manager;</li>
+<li>If several raw alerts match a correlation scenario, a correlation alert is generated and sent to Prelude Manager;</li>
+<li>Prelude Manager also writes correlation alerts into the database;</li>
+<li>Prelude GUI connects to the database via LibPreludeDB in order to read information and sends it to a browser.</li>
+</ol>
+<p>In parallel, Prelude Manager can receive alerts from other sources:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>A third-party intrusion detection sensor sends its alerts to Prelude Manager (e.g. OSSEC, Samhain, Suricata, etc).</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="presentation-generale">
+<h1>Quick Overview<a class="headerlink" href="#presentation-generale" title="Permalink to this headline">¶</a></h1>
+<p>This chapter aims to present some significant aspects of <strong>Prelude SIEM</strong> for a proper installation functioning. It is important before installing the product to get acquainted with:</p>
+<ul class="simple">
+<li>The different parts of <strong>Prelude SIEM</strong>;</li>
+<li>The registration of an agent;</li>
+<li>The command lines to use for the installation.</li>
+</ul>
+<p>The available modules with <strong>Prelude SIEM</strong> are:</p>
+<ul class="simple">
+<li>Prelude Manager;</li>
+<li>Prelude LML;</li>
+<li>Prelude Correlator ;</li>
+<li>Other IDMEF compatible sensors.</li>
+</ul>
+<p>An agent profile contains:</p>
+<ul class="simple">
+<li>A unique sensor ID also named analyzer ID;</li>
+<li>A configuration file;</li>
+<li>A private key;</li>
+<li>X509 certificates for the remote agent links.</li>
+</ul>
+<p>Prelude admin is the main administration tool of the libprelude.</p>
+<p>This tool is used to:</p>
+<ul class="simple">
+<li>Register an agent to a manager;</li>
+<li>Manage the profile of the previously registered agent (ex: modification, removal, etc.).</li>
+</ul>
+<p>Prelude Manager is the core of Prelude.</p>
+<div class="section" id="id1">
+<h2>Introduction<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The following figure shows the communication of the three main parts of Prelude SIEM:</p>
+<p>Prelude is divided into three main parts:</p>
+<ul class="simple">
+<li>The Prelude SIEM components;</li>
+<li>The database;</li>
+<li>The Web server.</li>
+</ul>
+<p><a class="reference internal" href="../_images/prelude-modules.png"><img alt="images_prelude-modules_png" src="../_images/prelude-modules.png" style="width: 18.399cm; height: 12.741cm;" /></a></p>
+<p class="centered">
+<strong>Figure : Prelude modules to install</strong></p><p>Prelude being modular, the external sensors will be added after installing Prelude.</p>
+<p>The manager supports two databases which are MySQL and PostgreSQL. It connects to a database to store received alerts.</p>
+<p>Prelude GUI connects to the database in order to exploit these alerts by displaying them in a browser through an embedded web server or the Apache web server.</p>
+</div>
+<div class="section" id="modele-de-fichier-de-configuration">
+<h2>Configuration file template<a class="headerlink" href="#modele-de-fichier-de-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Each configuration file applies the following formalism:</p>
+<ul class="simple">
+<li>A tag, to indicate the beginning of a section: <em>[name]</em></li>
+<li>Configuration variables inside a section: <em>key = value</em> or <em>key</em></li>
+<li>A comment marker at the beginning of the line: <em>#</em></li>
+</ul>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">prelude</span><span class="p">]</span>
+<span class="c1"># Comment on the section</span>
+<span class="c1"># Comment on the command</span>
+<span class="n">tcp</span><span class="o">-</span><span class="n">keepalive</span><span class="o">-</span><span class="n">time</span> <span class="o">=</span> <span class="mi">7200</span>
+<span class="c1"># Comment on the command</span>
+<span class="n">tcp</span><span class="o">-</span><span class="n">keepalive</span><span class="o">-</span><span class="n">probes</span> <span class="o">=</span>
+<span class="c1"># Comment on the command</span>
+<span class="n">tcp</span><span class="o">-</span><span class="n">keepalive</span><span class="o">-</span><span class="n">intvl</span> <span class="o">=</span> <span class="mi">75</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="prelude-admin">
+<h2>Prelude-Admin<a class="headerlink" href="#prelude-admin" title="Permalink to this headline">¶</a></h2>
+<p>Each module from your Prelude installation must be registered with the manager which is in charge of communications between modules.</p>
+<div class="section" id="presentation">
+<h3>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h3>
+<p>An agent is a Prelude client, i.e. a program using libprelude. It can be an analyzer or a manager. Examples:</p>
+<ul class="simple">
+<li><em>prelude-lml</em> ;</li>
+<li><em>prelude-correlator</em>.</li>
+</ul>
+<p>An agent profile is identified by its name. When an agent is started, it will load the profile of the same name as the program itself, that is, if your agent is named <cite>prelude-lml</cite>, the agent will load the profile named <cite>prelude-lml</cite>.</p>
+<p>Prelude-admin can be used to perform various operations involving an agent profile.</p>
+<p>A profile is required for a Prelude agent to run and communicate correctly with other agents.</p>
+</div>
+<div class="section" id="creer-un-profil">
+<h3>Creating a profile<a class="headerlink" href="#creer-un-profil" title="Permalink to this headline">¶</a></h3>
+<p>The <em>add</em> command is used to create a new manager profile. The created profile will have the permissions of the user defined by their <em>uid</em> and <em>gid</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">profile_name</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">uid</span> <span class="o">&lt;</span><span class="n">uid</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">gid</span> <span class="o">&lt;</span><span class="n">gid</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils" id="parameters-for-profile-creation">
+<caption><span class="caption-text"><em>Parameters for profile creation</em></span><a class="headerlink" href="#parameters-for-profile-creation" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="19%" />
+<col width="64%" />
+<col width="18%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Parameters</td>
+<td>Explanations</td>
+<td>Example</td>
+</tr>
+<tr class="row-even"><td>&lt;profile name&gt;</td>
+<td>The name of the sensor you are installing.</td>
+<td>prelude-manager</td>
+</tr>
+<tr class="row-odd"><td>&lt;uid&gt;</td>
+<td>UID or user used to create the analyzer profile</td>
+<td>prelude-manager</td>
+</tr>
+<tr class="row-even"><td>&lt;gid&gt;</td>
+<td>GID or group used to create the analyzer profile</td>
+<td>prelude</td>
+</tr>
+</tbody>
+</table>
+<p><em>Example:</em></p>
+<p>Register the Prelude Manager profile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="n">add</span> <span class="n">prelude</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">uid</span> <span class="n">prelude</span><span class="o">-</span><span class="n">manager</span> <span class="o">--</span><span class="n">gid</span> <span class="n">prelude</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Private key generation might take a very long time. You can increase the system’s entropy to speed up the process, for example by moving the mouse, typing text with the keyboard, or sending network traffic to this machine.</p>
+</div>
+</div>
+<div class="section" id="suppression-d-un-profil">
+<h3>Removing a profile<a class="headerlink" href="#suppression-d-un-profil" title="Permalink to this headline">¶</a></h3>
+<p>The <em>del</em> command deletes the specified profile.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="k">del</span> <span class="o">&lt;</span><span class="n">profile_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="k">del</span> <span class="n">prelude</span><span class="o">-</span><span class="n">correlator</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lister-les-profils">
+<h3>Listing profiles<a class="headerlink" href="#lister-les-profils" title="Permalink to this headline">¶</a></h3>
+<p>The <em>list</em> command lists the available profiles on the system.</p>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p><em>Result:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Profile</span>            <span class="n">Permission</span> <span class="n">Issuer</span> <span class="n">AnalyzerID</span>
+<span class="o">-----------------------------------------------</span>
+<span class="n">prelude</span><span class="o">-</span><span class="n">lml</span>        <span class="n">idmef</span><span class="p">:</span><span class="n">w</span>    <span class="mi">4267880333605425</span>
+<span class="n">prelude</span><span class="o">-</span><span class="n">correlator</span> <span class="n">idmef</span><span class="p">:</span><span class="n">rw</span>   <span class="mi">4267880333605425</span>
+<span class="n">prelude</span><span class="o">-</span><span class="n">manager</span>    <span class="n">n</span><span class="o">/</span><span class="n">a</span>        <span class="n">n</span><span class="o">/</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>The ‘-l’ option prints the detailed listing, including UID, GID and profile analyzerID.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <em>prelude-admin list</em> command only lists local profiles on the system.</p>
+</div>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="nb">list</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p><em>Result:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Profile</span>            <span class="n">UID</span>                <span class="n">GID</span>     <span class="n">AnalyzerID</span>       <span class="n">Permission</span> <span class="n">Issuer</span> <span class="n">AnalyzerID</span>
+<span class="o">-------------------------------------------------------------------------------------------</span>
+<span class="n">prelude</span><span class="o">-</span><span class="n">lml</span>        <span class="n">prelude</span><span class="o">-</span><span class="n">lml</span>        <span class="n">prelude</span> <span class="mi">1968286123854203</span> <span class="n">idmef</span><span class="p">:</span><span class="n">w</span>    <span class="mi">4267880333605425</span>
+<span class="n">prelude</span><span class="o">-</span><span class="n">correlator</span> <span class="n">prelude</span><span class="o">-</span><span class="n">correlator</span> <span class="n">prelude</span> <span class="mi">1700890049940141</span> <span class="n">idmef</span><span class="p">:</span><span class="n">rw</span>   <span class="mi">4267880333605425</span>
+<span class="n">prelude</span><span class="o">-</span><span class="n">manager</span>    <span class="n">prelude</span><span class="o">-</span><span class="n">manager</span>    <span class="n">prelude</span> <span class="mi">4267880333605425</span> <span class="n">n</span><span class="o">/</span><span class="n">a</span>        <span class="n">n</span><span class="o">/</span><span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="enregistrement-des-agents">
+<h2>Registering agents<a class="headerlink" href="#enregistrement-des-agents" title="Permalink to this headline">¶</a></h2>
+<p>This section explains how to register an agent after its installation. In order for an agent to connect and communicate with a manager, it needs to be registered.</p>
+<div class="section" id="enregistrement-d-un-agent">
+<h3>Registering an agent<a class="headerlink" href="#enregistrement-d-un-agent" title="Permalink to this headline">¶</a></h3>
+<p>The agent registration process is driven by a single tool called prelude-admin.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="n">register</span> <span class="o">&lt;</span><span class="n">profile_name</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">requested_permissions</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">manager_address</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">uid</span> <span class="o">&lt;</span><span class="n">uid</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">gid</span> <span class="o">&lt;</span><span class="n">gid</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils" id="parameters-for-agent-registration">
+<caption><span class="caption-text"><em>Parameters for agent registration</em></span><a class="headerlink" href="#parameters-for-agent-registration" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="26%" />
+<col width="59%" />
+<col width="15%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Command line fields</strong></td>
+<td><strong>Explanations</strong></td>
+<td><strong>Value example</strong></td>
+</tr>
+<tr class="row-even"><td>&lt;profile name&gt;</td>
+<td>The name of the sensor you are installing.</td>
+<td>prelude-lml</td>
+</tr>
+<tr class="row-odd"><td>&lt;requested_permissions&gt;</td>
+<td>Both idmef and admin types can take read (r) and write (w) permissions. Usually, a sensor needs a permission for writing IDMEF messages to a manager, and optionally accept an administrative command sent to the sensors.</td>
+<td>“idmef:w”</td>
+</tr>
+<tr class="row-even"><td>&lt;manager_address&gt;</td>
+<td>The address where the Prelude Manager is registered, this can either be its IP address or its hostname. Typically, if you made a local installation, you can write localhost there.</td>
+<td>127.0.0.1</td>
+</tr>
+<tr class="row-odd"><td>&lt;uid&gt;</td>
+<td>UID or user used to create the analyzer profile</td>
+<td>prelude-lml</td>
+</tr>
+<tr class="row-even"><td>&lt;gid&gt;</td>
+<td>GID or group used to create the analyzer profile</td>
+<td>prelude</td>
+</tr>
+</tbody>
+</table>
+<p>The following command line allows to retrieve the uid and gid number of a user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="o">&lt;</span><span class="n">sensor_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="n">prelude</span><span class="o">-</span><span class="n">correlator</span>
+</pre></div>
+</div>
+<p><em>Result:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uid</span><span class="o">=</span><span class="mi">107</span><span class="p">(</span><span class="n">prelude</span><span class="o">-</span><span class="n">correlator</span><span class="p">)</span> <span class="n">gid</span><span class="o">=</span><span class="mi">999</span><span class="p">(</span><span class="n">prelude</span><span class="p">)</span> <span class="n">groupes</span><span class="o">=</span><span class="mi">999</span><span class="p">(</span><span class="n">prelude</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By default, the creation of the sensor profile uses the UID and GID of the user who launched the prelude-admin command. If you want the profile to be run by another set of permissions, use the –uid and –gid options.</p>
+</div>
+<p><em>Example of agent registration:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="n">register</span> <span class="n">prelude</span><span class="o">-</span><span class="n">lml</span> <span class="s2">&quot;idmef:w admin:r&quot;</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="o">--</span><span class="n">uid</span> <span class="n">prelude</span><span class="o">-</span><span class="n">lml</span> <span class="o">--</span><span class="n">gid</span> <span class="n">prelude</span>
+</pre></div>
+</div>
+<p>The following table shows the different fields’ values of the command line for agent registration:</p>
+<table border="1" class="docutils" id="id21">
+<caption><span class="caption-text"><em>Parameters for agent registration</em></span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Profile name</strong></th>
+<th class="head"><strong>Permissions</strong></th>
+<th class="head"><strong>uid</strong></th>
+<th class="head"><strong>gid</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>prelude-lml</td>
+<td>idmef:w admin:r</td>
+<td>&lt;id prelude-lml&gt;</td>
+<td>&lt;id prelude-lml&gt;</td>
+</tr>
+<tr class="row-odd"><td>prelude-correlator</td>
+<td>idmef:rw</td>
+<td>&lt;id prelude-correlator&gt;</td>
+<td>&lt;id prelude-correlator&gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="serveur-d-enregistrement">
+<h3>Registration server<a class="headerlink" href="#serveur-d-enregistrement" title="Permalink to this headline">¶</a></h3>
+<p>The <em>registration-server</em> command launches a registration server for the specified Prelude Manager profile. The profile will be created if it does not exist. The registered analyzers will be able to communicate with the Prelude Manager instance using this profile.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="n">registration</span><span class="o">-</span><span class="n">server</span> <span class="n">prelude</span><span class="o">-</span><span class="n">manager</span>
+</pre></div>
+</div>
+<div class="section" id="procedure-d-enregistrement">
+<h4>Registration procedure<a class="headerlink" href="#procedure-d-enregistrement" title="Permalink to this headline">¶</a></h4>
+<p>The agent registration process contains two steps and needs two terminals:</p>
+<ol class="arabic simple">
+<li>Register an agent in the first terminal;</li>
+<li>Launch a registration server in the second terminal;</li>
+</ol>
+<p>Copy the password that appears on the second terminal and paste it in the first terminal;</p>
+<p>Return to the second terminal and enter ‘y’ to approve the registration.</p>
+<p>Now, your agent is registered.</p>
+</div>
+<div class="section" id="exemple-d-inscription-de-l-agent">
+<h4>Agent registration example<a class="headerlink" href="#exemple-d-inscription-de-l-agent" title="Permalink to this headline">¶</a></h4>
+<p>Here is an example of registering the Prelude LML module to a Prelude Manager running on localhost:</p>
+<ol class="arabic simple">
+<li>In a terminal, enter the following command to register a Prelude LML agent:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="n">register</span> <span class="n">prelude</span><span class="o">-</span><span class="n">lml</span> <span class="s2">&quot;idmef:w admin:r&quot;</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="o">--</span><span class="n">uid</span> <span class="mi">0</span> <span class="o">--</span><span class="n">gid</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The first time an agent is registered, prelude-admin will need to create a private key for the agent.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The IP address in this command represents the address of the Prelude Manager server which the sensor registers to.</p>
+</div>
+<p>The following lines appear:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generating</span> <span class="mi">2048</span> <span class="n">bits</span> <span class="n">RSA</span> <span class="n">private</span> <span class="n">key</span><span class="o">...</span> <span class="n">This</span> <span class="n">might</span> <span class="n">take</span> <span class="n">a</span> <span class="n">very</span> <span class="n">long</span> <span class="n">time</span><span class="o">.</span>
+<span class="p">[</span><span class="n">Increasing</span> <span class="n">system</span> <span class="n">activity</span> <span class="n">will</span> <span class="n">speed</span><span class="o">-</span><span class="n">up</span> <span class="n">the</span> <span class="n">process</span><span class="p">]</span><span class="o">.</span>
+<span class="n">Generation</span> <span class="ow">in</span> <span class="n">progress</span><span class="o">...</span> <span class="o">+++++</span><span class="n">O</span><span class="o">......+++++</span><span class="n">O</span>
+<span class="n">You</span> <span class="n">now</span> <span class="n">need</span> <span class="n">to</span> <span class="n">start</span> <span class="s2">&quot;prelude-admin&quot;</span> <span class="n">registration</span><span class="o">-</span><span class="n">server</span> <span class="n">on</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span>
+<span class="n">example</span><span class="p">:</span> <span class="s2">&quot;prelude-admin registration-server prelude-manager&quot;</span>
+<span class="n">Enter</span> <span class="n">the</span> <span class="n">one</span><span class="o">-</span><span class="n">shot</span> <span class="n">password</span> <span class="n">provided</span> <span class="n">on</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>A password is required.</p>
+<ol class="arabic simple" start="2">
+<li>In a second terminal, enter the following command to generate a password:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prelude</span><span class="o">-</span><span class="n">admin</span> <span class="n">registration</span><span class="o">-</span><span class="n">server</span> <span class="n">prelude</span><span class="o">-</span><span class="n">manager</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">the <em>prelude-manager</em> profile here is the profile name of the prelude-manager module hosted on the registration server.</p>
+</div>
+<p>The following lines appear:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="s2">&quot;gn0zklcs&quot;</span> <span class="n">password</span> <span class="n">will</span> <span class="n">be</span> <span class="n">requested</span> <span class="n">by</span> <span class="s2">&quot;prelude-admin register&quot;</span>
+<span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">connect</span><span class="o">.</span> <span class="n">Please</span> <span class="n">remove</span> <span class="n">the</span> <span class="n">quotes</span> <span class="n">before</span> <span class="n">using</span> <span class="n">it</span><span class="o">.</span>
+<span class="n">Generating</span> <span class="mi">1024</span> <span class="n">bits</span> <span class="n">Diffie</span><span class="o">-</span><span class="n">Hellman</span> <span class="n">key</span> <span class="k">for</span> <span class="n">anonymous</span> <span class="n">authentication</span><span class="o">...</span>
+<span class="n">Waiting</span> <span class="k">for</span> <span class="n">peers</span> <span class="n">install</span> <span class="n">request</span> <span class="n">on</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mf">5553.</span><span class="o">..</span>
+<span class="n">Waiting</span> <span class="k">for</span> <span class="n">peers</span> <span class="n">install</span> <span class="n">request</span> <span class="n">on</span> <span class="p">:::</span><span class="mf">5553.</span><span class="o">..</span>
+</pre></div>
+</div>
+<p>A password is generated.</p>
+<ol class="arabic simple" start="3">
+<li>Copy and paste the password in the first terminal as requested;</li>
+<li>Copy again the password to confirm it.</li>
+</ol>
+<p>The following lines appear:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">one</span><span class="o">-</span><span class="n">shot</span> <span class="n">password</span> <span class="n">provided</span> <span class="n">on</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span>
+<span class="n">Confirm</span> <span class="n">the</span> <span class="n">one</span><span class="o">-</span><span class="n">shot</span> <span class="n">password</span> <span class="n">provided</span> <span class="n">on</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span>
+<span class="n">Connecting</span> <span class="n">to</span> <span class="n">registration</span> <span class="n">server</span> <span class="p">(</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5553</span><span class="p">)</span><span class="o">...</span> <span class="n">Authentication</span> <span class="n">succeeded</span><span class="o">.</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li>Return to the second terminal, and press the ‘y’ key, followed by the “Enter” key, to approve registration.</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Connection from 127.0.0.1:32846...
+Registration request for analyzerID=&quot;736730028094459&quot; permission=&quot;idmef:w&quot;.
+Approve registration? [y/n]: y
+127.0.0.1:32846 successfully registered.
+</pre></div>
+</div>
+<p>The operation was successful. You now have a running sensor.</p>
+</div>
+</div>
+</div>
+<div class="section" id="commandes-particulieres-d-installation">
+<h2>Particular commands for installation<a class="headerlink" href="#commandes-particulieres-d-installation" title="Permalink to this headline">¶</a></h2>
+<p>This section presents specific commands for Prelude SIEM installation. According to the operation system used, command lines will be different.</p>
+<p><a class="reference internal" href="../_images/prelude-siem-compatibility.png"><img alt="images_prelude-siem-compatibility_png" src="../_images/prelude-siem-compatibility.png" style="width: 18.399cm; height: 8.867cm;" /></a></p>
+<p class="centered">
+<strong>Figure : Prelude SIEM compatibility</strong></p><p>Throughout the document, the installation will be explained with the command lines using packages included in a repository.</p>
+<div class="section" id="sur-centos-redhat">
+<h3>On CentOS/RedHat<a class="headerlink" href="#sur-centos-redhat" title="Permalink to this headline">¶</a></h3>
+<p>Installation command with a repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">package_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="n">prelude</span><span class="o">-</span><span class="n">manager</span>
+</pre></div>
+</div>
+<p>Installation command without a repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">/&lt;</span><span class="n">path_to</span><span class="o">&gt;/&lt;</span><span class="n">package_name</span><span class="o">&gt;.</span><span class="n">rpm</span>
+</pre></div>
+</div>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">prelude</span><span class="o">-</span><span class="n">manager</span><span class="o">-&lt;</span><span class="n">version</span><span class="o">&gt;.</span><span class="n">rpm</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See <span class="xref std std-ref">List of package names</span> for the list of package names.</p>
+</div>
+</div>
+</div>
+<div class="section" id="demarrage-automatique-des-services">
+<span id="start-on-boot"></span><h2>Automatic startup of services<a class="headerlink" href="#demarrage-automatique-des-services" title="Permalink to this headline">¶</a></h2>
+<p>This section explains how to start automatically the service at the same time as the rest of the operating system. This configuration is optional, but is recommended in order to avoid starting services manually after each reboot.</p>
+<div class="section" id="id2">
+<h3>On CentOS/RedHat<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Activating the automatic startup for a service is done with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">enable</span> <span class="o">&lt;</span><span class="n">service_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="installation-de-la-base-de-donnees-prelude-siem">
+<h1>Initialize the Prelude SIEM database<a class="headerlink" href="#installation-de-la-base-de-donnees-prelude-siem" title="Permalink to this headline">¶</a></h1>
+<p>The database installation is a prerequisite to install <strong>Prelude</strong>.</p>
+<div class="section" id="id3">
+<h2>Introduction<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>The database installation will allow the manager to store alerts, which will be exploited by the Prelude GUI.</p>
+<p><strong>Prelude SIEM</strong> can interact with different databases which are:</p>
+<ul class="simple">
+<li>MySQL or MariaDB;</li>
+<li>PostgreSQL.</li>
+</ul>
+<p>The following figure shows the link between Prelude modules and databases:</p>
+<p><a class="reference internal" href="../_images/database-installation.png"><img alt="images_database-installation_png" src="../_images/database-installation.png" style="width: 18.399cm; height: 9.275cm;" /></a></p>
+<p class="centered">
+<strong>Figure: Database installation</strong></p><p>To interconnect the database with Prelude, it is essential to install LibpreludeDB.</p>
+<p>These next sections show how to install the databases with MySQL/MariaDB, PostgreSQL and LibpreludeDB.</p>
+</div>
+<div class="section" id="installation-de-libpreludedb">
+<h2>LibpreludeDB installation<a class="headerlink" href="#installation-de-libpreludedb" title="Permalink to this headline">¶</a></h2>
+<p>The LibpreludeDB library provides an abstraction layer upon the type and the format of the database used to store IDMEF alerts.</p>
+<p>The package name of the LibpreludeDB module is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>libpreludedb</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+<div class="section" id="id4">
+<h2>LibpreludeDB installation<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>The package name of the LibpreludeDB module is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>libpreludedb</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+<div class="section" id="installation-de-postgresql">
+<h2>PostgreSQL installation<a class="headerlink" href="#installation-de-postgresql" title="Permalink to this headline">¶</a></h2>
+<p>Proper installation of PostgreSQL consists of the following procedure:</p>
+<ul class="simple">
+<li>Installing the database server;</li>
+<li>Installing the libpreludedb-pgsql plugin;</li>
+<li>PostgreSQL startup configuration (optional).</li>
+</ul>
+<div class="section" id="installation-du-serveur-postgresql">
+<h3>PostgreSQL server installation<a class="headerlink" href="#installation-du-serveur-postgresql" title="Permalink to this headline">¶</a></h3>
+<p>The package name of the database server is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>postgresql-server</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+<div class="section" id="installation-du-plugin-libpreludedb-pgsql">
+<h3>Installing the libpreludedb-pgsql plugin<a class="headerlink" href="#installation-du-plugin-libpreludedb-pgsql" title="Permalink to this headline">¶</a></h3>
+<p>The package name is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>libpreludedb-pgsql</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+<div class="section" id="configuration-de-demarrage-de-postgresql">
+<h3>PostgreSQL startup configuration<a class="headerlink" href="#configuration-de-demarrage-de-postgresql" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the section <span class="xref std std-ref">Particular commands for installation</span>.</p>
+</div>
+</div>
+<div class="section" id="configuration-de-l-acces-aux-bases-de-donnees">
+<h2>Configuring access to databases<a class="headerlink" href="#configuration-de-l-acces-aux-bases-de-donnees" title="Permalink to this headline">¶</a></h2>
+<p>The configuration files of Prelude GUI (<code class="file docutils literal notranslate"><span class="pre">/etc/prewikka/prewikka.conf</span></code>) and Prelude Manager (<code class="file docutils literal notranslate"><span class="pre">/etc/prelude-manager/prelude-manager.conf</span></code>), contain a section that allows you to configure access to a database. This is done by initializing several variables present in the following table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="34%" />
+<col width="53%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Variables</strong></td>
+<td><strong>Explanations</strong></td>
+<td><strong>Example</strong></td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td>The type of database</td>
+<td>mysql (or pgsql)</td>
+</tr>
+<tr class="row-odd"><td>host</td>
+<td>The host on which the database listens</td>
+<td>localhost or another IP address</td>
+</tr>
+<tr class="row-even"><td>port</td>
+<td>The port number on which the database listens (3306 or 5432)</td>
+<td>3306: connection between the manager and the MySQL database 5432: connection between the manager and the PostgreSQL database</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>Name of the database</td>
+<td>The name of the database corresponding to that specified at creation</td>
+</tr>
+<tr class="row-even"><td>user</td>
+<td>Username to use to connect to the database</td>
+<td>The username corresponding to that specified when creating the database</td>
+</tr>
+<tr class="row-odd"><td>pass</td>
+<td>Password used to connect to the database</td>
+<td>The password corresponding to that specified when creating the database</td>
+</tr>
+</tbody>
+</table>
+<p>Each time a configuration file is modified, think to restart the module service.</p>
+</div>
+</div>
+<div class="section" id="installation-de-prelude-siem">
+<h1>Prelude SIEM installation<a class="headerlink" href="#installation-de-prelude-siem" title="Permalink to this headline">¶</a></h1>
+<p>This chapter explains in details the installation of <strong>Prelude SIEM</strong> with a repository.</p>
+<p>To install an external package, see the <span class="xref std std-ref">List of package names</span> for the package name and <span class="xref std std-ref">Particular commands for installation</span> for the command line installation.</p>
+<div class="section" id="id5">
+<h2>Introduction<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Prelude SIEM</strong> installation requires to install the following modules:</p>
+<ul class="simple">
+<li>Libprelude;</li>
+<li>LibpreludeDB;</li>
+<li>Prelude Manager;</li>
+<li>Prelude LML;</li>
+<li>Prelude Correlator ;</li>
+<li>Prelude GUI.</li>
+</ul>
+<p>The following figure shows the Prelude SIEM modules to install.</p>
+<p><a class="reference internal" href="../_images/prelude-modules-to-install.png"><img alt="images_prelude-modules-to-install_png" src="../_images/prelude-modules-to-install.png" style="width: 18.399cm; height: 9.511cm;" /></a></p>
+<p class="centered">
+<strong>Figure : Prelude SIEM modules to install</strong></p><p>Some modules require access to a database such as Prelude Manager and Prelude GUI.</p>
+<p>The database must be installed before configuring and initializing the connection to a database.</p>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install a database if not already done.</p>
+</div>
+<div class="section" id="installation-de-libprelude">
+<h2>Libprelude installation<a class="headerlink" href="#installation-de-libprelude" title="Permalink to this headline">¶</a></h2>
+<p>For multi-server installation, the libprelude package must be installed on each sever where a Prelude SIEM module will be used.</p>
+<p>The package name of the Libprelude module differs according to the operating system used:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>libprelude</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+<div class="section" id="installation-de-prelude-manager">
+<h2>Prelude Manager installation<a class="headerlink" href="#installation-de-prelude-manager" title="Permalink to this headline">¶</a></h2>
+<p>Proper installation of Prelude Manager module consists of the following procedure:</p>
+<ul class="simple">
+<li>Installing the module;</li>
+<li>Installing plugins as needed;</li>
+<li>Creating and initializing the database;</li>
+<li>Configuring the database access;</li>
+<li>Creating the Prelude Manager profile;</li>
+<li>Activating automatic startup (optional);</li>
+<li>Running the manager.</li>
+</ul>
+<div class="section" id="installation-du-module">
+<h3>Installing the module<a class="headerlink" href="#installation-du-module" title="Permalink to this headline">¶</a></h3>
+<p>The package name of the manager is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>prelude-manager</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+<div class="section" id="id6">
+<h4>On CentOS/Redhat<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p>The Prelude Manager Pro installation on CentOS/Redhat does not require additional manipulation.</p>
+</div>
+</div>
+<div class="section" id="installation-de-plugins">
+<h3>Installing plugins<a class="headerlink" href="#installation-de-plugins" title="Permalink to this headline">¶</a></h3>
+<p>A certain number of reporting plugins are available.</p>
+<p>The following table shows the package name for each of these plugins:</p>
+<table border="1" class="docutils" id="available-plugins-in-accordance-with-the-prelude-siem-user-needs">
+<caption><span class="caption-text"><em>Available plugins in accordance with the Prelude SIEM user needs.</em></span><a class="headerlink" href="#available-plugins-in-accordance-with-the-prelude-siem-user-needs" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Plugins</strong></th>
+<th class="head"><strong>Features</strong></th>
+<th class="head"><strong>Package name on CentOS/RedHat</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DB</td>
+<td>Insert alerts in database</td>
+<td>prelude-manager-db-plugin</td>
+</tr>
+<tr class="row-odd"><td>XML</td>
+<td>Export alerts in XML format (file or stderr)</td>
+<td>prelude-manager-xml-plugin</td>
+</tr>
+<tr class="row-even"><td>SMTP</td>
+<td>Send alerts in textual format by e-mail</td>
+<td>prelude-manager-smtp-plugin</td>
+</tr>
+<tr class="row-odd"><td>SNMP</td>
+<td>Send alerts through SNMP traps</td>
+<td>prelude-manager-snmp-plugin</td>
+</tr>
+<tr class="row-even"><td>Script</td>
+<td>Execute a customizable script based on the alerts fields</td>
+<td>prelude-manager-script-plugin</td>
+</tr>
+<tr class="row-odd"><td>Relaying</td>
+<td>Transfers alerts to another manager</td>
+<td>package included in the installation of the Prelude Manager package</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+<div class="section" id="creation-et-initialisation-de-la-base-de-donnees">
+<h3>Creating and initializing the database<a class="headerlink" href="#creation-et-initialisation-de-la-base-de-donnees" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="avec-postgresql">
+<h4>With PostgreSQL<a class="headerlink" href="#avec-postgresql" title="Permalink to this headline">¶</a></h4>
+<p>Only for the first CentOS/Redhat connection, initialize the PostgreSQL database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgresql</span><span class="o">-</span><span class="n">setup</span> <span class="n">initdb</span>
+</pre></div>
+</div>
+<p>Launch the PostgreSQL database in daemon mode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">postgresql</span> <span class="n">start</span>
+</pre></div>
+</div>
+<p>Authenticate with the ‘postgres’ user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="o">-</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>Access the PostgreSQL database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-bash-4.1$ psql -U postgres
+</pre></div>
+</div>
+<p>Create a database, a user and grant them all the privileges:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># CREATE USER &lt;user_name&gt; WITH PASSWORD &#39;&lt;user_password&gt;&#39;;</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># CREATE DATABASE &lt;database_name&gt; ;</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># GRANT ALL PRIVILEGES ON DATABASE &lt;database_name&gt; to &lt;user_name&gt;;</span>
+</pre></div>
+</div>
+<p>Quit the PostgreSQL environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># \q</span>
+<span class="n">exit</span>
+</pre></div>
+</div>
+<p>Open the configuration file named <code class="file docutils literal notranslate"><span class="pre">pg_hba.conf</span></code>. This file is located in a different place according to the system used:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>/var/lib/pgsql/data/pg_hba.conf</td>
+</tr>
+</tbody>
+</table>
+<p>Edit the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">host</span> <span class="nb">all</span> <span class="nb">all</span> <span class="n">ident</span>
+</pre></div>
+</div>
+<p>Replace it by the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">host</span> <span class="nb">all</span> <span class="nb">all</span> <span class="n">md5</span>
+</pre></div>
+</div>
+<p>Save the <code class="file docutils literal notranslate"><span class="pre">pg_hba.conf</span></code> configuration file.</p>
+<p>Restart the PostgreSQL service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">postgresql</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When the configuration file is modified, always restart the service.</p>
+</div>
+<p>Authenticate with the ‘postgres’ user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="o">-</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>Initialize the Prelude SIEM database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-bash-4.1$ psql -U &lt;user_name&gt; -d &lt;database_name&gt; -h &lt;IP@host&gt; -W -f \
+/usr/share/libpreludedb/pro-ng/pgsql.sql
+</pre></div>
+</div>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-bash-4.1$ psql -U prelude -d prelude_database -h 127.0.0.1 -W -f \
+/usr/share/libpreludedb/pro-ng/pgsql.sql
+</pre></div>
+</div>
+<p>Quit the PostgreSQL environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-bash-4.1$ exit
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="configuration-de-l-acces-a-la-base-de-donnees">
+<h3>Configuring the database access.<a class="headerlink" href="#configuration-de-l-acces-a-la-base-de-donnees" title="Permalink to this headline">¶</a></h3>
+<p>Configure access to the database where the manager will store alerts.</p>
+<div class="section" id="id7">
+<h4>With PostgreSQL<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<p>Open the <code class="file docutils literal notranslate"><span class="pre">/etc/prelude-manager/prelude-manager.conf</span></code> configuration file and modify the [db] section as follow :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">db</span><span class="p">]</span>
+<span class="c1"># The type of database: pgsql</span>
+<span class="nb">type</span> <span class="o">=</span> <span class="n">pgsql</span>
+<span class="c1"># Host the database is listening on.</span>
+<span class="n">host</span> <span class="o">=</span> <span class="n">localhost</span>
+<span class="c1"># Port the database is listening on.</span>
+<span class="n">port</span> <span class="o">=</span> <span class="mi">5432</span>
+<span class="c1"># Name of the database.</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">prelude</span>
+<span class="c1"># Username to be used to connect the database.</span>
+<span class="n">user</span> <span class="o">=</span> <span class="n">prelude</span>
+<span class="c1"># Password used to connect the database.</span>
+<span class="k">pass</span> <span class="o">=</span> <span class="n">prelude</span>
+</pre></div>
+</div>
+<p>Fill the fields with your information.</p>
+<p>Refer to the section <span class="xref std std-ref">Configuring access to databases</span> for more explanations on database configuration.</p>
+<p>Save the configuration file.</p>
+</div>
+</div>
+<div class="section" id="creation-du-profil-du-manager-prelude">
+<h3>Creating the Prelude Manager profile<a class="headerlink" href="#creation-du-profil-du-manager-prelude" title="Permalink to this headline">¶</a></h3>
+<p>To create the Prelude Manager profile, refer to the section <span class="xref std std-ref">Creating profile</span>.</p>
+</div>
+<div class="section" id="reglage-du-niveau-d-execution">
+<h3>Setting the run level<a class="headerlink" href="#reglage-du-niveau-d-execution" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the section <a class="reference internal" href="#start-on-boot"><span class="std std-ref">Automatic startup of services</span></a>.</p>
+</div>
+<div class="section" id="demarrage-du-manager">
+<h3>Running the manager<a class="headerlink" href="#demarrage-du-manager" title="Permalink to this headline">¶</a></h3>
+<p>Launch the Prelude Manager service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">prelude</span><span class="o">-</span><span class="n">manager</span> <span class="n">start</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installation-de-prelude-lml">
+<h2>Prelude LML installation<a class="headerlink" href="#installation-de-prelude-lml" title="Permalink to this headline">¶</a></h2>
+<p>Proper installation of Prelude LML module consists of the following procedure:</p>
+<ul class="simple">
+<li>Installing the module;</li>
+<li>Installing LML rules;</li>
+<li>Setting the Prelude LML configuration;</li>
+<li>Registering the agent;</li>
+<li>Activating automatic startup (optional);</li>
+<li>Running Prelude LML.</li>
+</ul>
+<div class="section" id="id8">
+<h3>Installing the module<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>The package name of Prelude LML is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>prelude-lml</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+<div class="section" id="installation-des-regles-lml">
+<h3>Installing the LML rules<a class="headerlink" href="#installation-des-regles-lml" title="Permalink to this headline">¶</a></h3>
+<p>The package name of LML rules is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>prelude-lml-rules</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+<div class="section" id="definition-des-parametres-prelude-lml">
+<h3>Setting the Prelude LML parameters<a class="headerlink" href="#definition-des-parametres-prelude-lml" title="Permalink to this headline">¶</a></h3>
+<p>Here is a basic configuration to parse logs and send them to the manager.</p>
+<p>Open the <code class="file docutils literal notranslate"><span class="pre">/etc/prelude-lml/prelude-lml.conf</span></code> configuration file:</p>
+<p>Modify, as follows, the [format=syslog] section:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">format</span><span class="o">=</span><span class="n">syslog</span><span class="p">]</span>
+<span class="n">time</span><span class="o">-</span><span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;%b </span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span>
+<span class="n">prefix</span><span class="o">-</span><span class="n">regex</span> <span class="o">=</span> <span class="s2">&quot;^(?P&lt;timestamp&gt;.</span><span class="si">{15}</span><span class="s2">) (?P&lt;hostname&gt;\S+) </span><span class="se">\</span>
+<span class="s2">(?:(?P&lt;process&gt;\S+?)(?:\[(?P&lt;pid&gt;[0-9]+)\])?: )?&quot;</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">messages</span>
+<span class="n">file</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">secure</span>
+<span class="n">file</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">auth</span><span class="o">.</span><span class="n">log</span>
+<span class="n">file</span> <span class="o">=</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">syslog</span>
+<span class="c1"># udp-server = 0.0.0.0</span>
+</pre></div>
+</div>
+<p>It is possible to configure a UDP server. Refer to the configuration manual for more explanations.</p>
+</div>
+<div class="section" id="enregistrement-de-l-agent">
+<h3>Registering the agent<a class="headerlink" href="#enregistrement-de-l-agent" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the section <span class="xref std std-ref">Registering agents</span> for the agent registration.</p>
+</div>
+<div class="section" id="activation-du-demarrage-automatique">
+<h3>Activating the automatic startup<a class="headerlink" href="#activation-du-demarrage-automatique" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the section <a class="reference internal" href="#start-on-boot"><span class="std std-ref">Automatic startup of services</span></a>.</p>
+</div>
+<div class="section" id="demarrage-de-prelude-lml">
+<h3>Running Prelude LML<a class="headerlink" href="#demarrage-de-prelude-lml" title="Permalink to this headline">¶</a></h3>
+<p>Launch the Prelude LML service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">start</span> <span class="n">prelude</span><span class="o">-</span><span class="n">lml</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installation-de-prelude-correlator">
+<h2>Prelude Correlator installation<a class="headerlink" href="#installation-de-prelude-correlator" title="Permalink to this headline">¶</a></h2>
+<p>Proper installation of Prelude Correlator module consists of the following procedure:</p>
+<ul class="simple">
+<li>Installing the module;</li>
+<li>Registering the agent;</li>
+<li>Activating automatic startup (optional);</li>
+<li>Running Prelude Correlator.</li>
+</ul>
+<div class="section" id="id9">
+<h3>Installing the module<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation-du-paquet-prelude-correlator">
+<h4>Installing the Prelude Correlator package<a class="headerlink" href="#installation-du-paquet-prelude-correlator" title="Permalink to this headline">¶</a></h4>
+<p>The package name of Prelude Correlator is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>prelude-correlator</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Registering the agent<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the section <span class="xref std std-ref">Registering agents</span> for the agent registration.</p>
+</div>
+<div class="section" id="id11">
+<h3>Activating the automatic startup<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Refer to the section <a class="reference internal" href="#start-on-boot"><span class="std std-ref">Automatic startup of services</span></a>.</p>
+</div>
+<div class="section" id="execution-de-prelude-correlator">
+<h3>Running Prelude Correlator<a class="headerlink" href="#execution-de-prelude-correlator" title="Permalink to this headline">¶</a></h3>
+<p>Launch the Prelude Correlator service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">start</span> <span class="n">prelude</span><span class="o">-</span><span class="n">correlator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installation-de-l-interface-graphique-de-prelude">
+<h2>Prelude GUI installation<a class="headerlink" href="#installation-de-l-interface-graphique-de-prelude" title="Permalink to this headline">¶</a></h2>
+<p>Proper installation of the Prelude GUI module consists of the following procedure:</p>
+<ul class="simple">
+<li>Installing the module;</li>
+<li>Creating and initializing the database;</li>
+<li>Configuring the database access;</li>
+<li>Running Prelude GUI.</li>
+</ul>
+<div class="section" id="id12">
+<h3>Installing the module<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation-du-paquet">
+<h4>Installing the package<a class="headerlink" href="#installation-du-paquet" title="Permalink to this headline">¶</a></h4>
+<p>The package name is:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>prewikka</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this package.</p>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>Creating and initializing the database<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>Prelude GUI accesses two databases:</p>
+<ul class="simple">
+<li>A database where Prelude GUI reads the stored alerts by Prelude Manager Pro. In this case, Prelude GUI and Prelude Manager interact with the same database. This database already exists and therefore does not need to be created.</li>
+<li>A user database, internal to Prelude GUI. This is the database that will be created.</li>
+</ul>
+<div class="section" id="id14">
+<h4>With PostgreSQL<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>Launch the PostgreSQL database in daemon mode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">start</span> <span class="n">postgresql</span>
+</pre></div>
+</div>
+<p>Authenticate with the ‘postgres’ user:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="o">-</span> <span class="n">postgres</span>
+</pre></div>
+</div>
+<p>Access the PostgreSQL database:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>-bash-4.1$ psql -U postgres
+</pre></div>
+</div>
+<p>Create the Prelude GUI database and a user with all privileges:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># CREATE USER &lt;user_name&gt; WITH PASSWORD &#39;&lt;user_password&gt;&#39;;</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># CREATE DATABASE &lt;database_name&gt; ;</span>
+<span class="n">postgres</span><span class="o">=</span><span class="c1"># GRANT ALL PRIVILEGES ON DATABASE &lt;database_name&gt; to &lt;user_name&gt;;</span>
+</pre></div>
+</div>
+<p>Quit the PostgreSQL environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">postgres</span><span class="o">=</span><span class="c1"># \q</span>
+<span class="n">exit</span>
+</pre></div>
+</div>
+<p>Open the configuration file named <code class="file docutils literal notranslate"><span class="pre">pg_hba.conf</span></code>. This file is located in a different place according to the system used:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>/var/lib/pgsql/data/pg_hba.conf</td>
+</tr>
+</tbody>
+</table>
+<p>Edit the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">host</span> <span class="nb">all</span> <span class="nb">all</span> <span class="n">ident</span>
+</pre></div>
+</div>
+<p>Replace it by the following line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">host</span> <span class="nb">all</span> <span class="nb">all</span> <span class="n">md5</span>
+</pre></div>
+</div>
+<p>Save the <code class="file docutils literal notranslate"><span class="pre">pg_hba.conf</span></code> configuration file.</p>
+<p>Restart the PostgreSQL service:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">postgresql</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When the configuration file is modified, always restart the service.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>Configuring the database access.<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>There are two databases to configure:</p>
+<ul class="simple">
+<li>The alerts database, configured in the [idmef_database] section. The configuration of alerts database is the same as the configuration made for Prelude Manager.</li>
+<li>The Prelude GUI database, configured in the [database] section.</li>
+</ul>
+<div class="section" id="id16">
+<h4>With PostgreSQL<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<p>Modify, as follows, both sections in the Prelude GUI configuration file in the path <code class="file docutils literal notranslate"><span class="pre">/etc/prewikka/prewikka.conf</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">idmef_database</span><span class="p">]</span>
+<span class="c1"># type: mysql | pgsql | sqlte3</span>
+<span class="nb">type</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Same</span> <span class="n">database</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Manager</span><span class="o">&gt;</span>
+<span class="n">host</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Same</span> <span class="n">database</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Manager</span><span class="o">&gt;</span>
+<span class="n">user</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Same</span> <span class="n">database</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Manager</span><span class="o">&gt;</span>
+<span class="k">pass</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Same</span> <span class="n">database</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Manager</span><span class="o">&gt;</span>
+<span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">Same</span> <span class="n">database</span> <span class="n">used</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Manager</span><span class="o">&gt;</span>
+
+<span class="c1">#This is the Prelude GUI user database you created above</span>
+<span class="p">[</span><span class="n">database</span><span class="p">]</span>
+<span class="c1"># type: mysql | pgsql | sqlte3</span>
+<span class="nb">type</span><span class="p">:</span> <span class="n">pgsql</span>
+<span class="n">host</span><span class="p">:</span> <span class="n">localhost</span>
+<span class="n">user</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>
+<span class="k">pass</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">database_password</span><span class="o">&gt;</span>
+<span class="n">name</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">database_name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Fill the fields with your information.</p>
+<p>Refer to the section <span class="xref std std-ref">Configuring access to databases</span> for more explanations on database configuration.</p>
+<p>Save the Prelude GUI configuration file.</p>
+</div>
+</div>
+<div class="section" id="demarrage-de-prelude-gui">
+<h3>Running Prelude GUI<a class="headerlink" href="#demarrage-de-prelude-gui" title="Permalink to this headline">¶</a></h3>
+<p>To launch Prelude GUI, refer to the section <span class="xref std std-ref">Web server installation</span>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="installation-du-serveur-web">
+<h1>Web server installation<a class="headerlink" href="#installation-du-serveur-web" title="Permalink to this headline">¶</a></h1>
+<p>You can run Prelude GUI from the Apache web server or run it from the embedded web server.</p>
+<p>The following sections explain the installation of Apache and how to run the Prelude GUI according to whether you use the Apache web server or the embedded web server.</p>
+<p>Once the Prelude GUI will be displayed, remember to execute steps of paragraphs 3 and 4 of this chapter.</p>
+<div class="section" id="lancer-prelude-gui-avec-le-serveur-apache">
+<h2>Launch Prelude GUI with the Apache server<a class="headerlink" href="#lancer-prelude-gui-avec-le-serveur-apache" title="Permalink to this headline">¶</a></h2>
+<p>Proper installation of Prelude GUI with the Apache server consists of the following procedure:</p>
+<ul class="simple">
+<li>Installing the Apache web server package;</li>
+<li>Configuring Apache;</li>
+<li>Running Apache;</li>
+<li>Displaying the Prelude GUI.</li>
+</ul>
+<div class="section" id="installation-du-serveur-web-apache">
+<h3>Apache web server installation<a class="headerlink" href="#installation-du-serveur-web-apache" title="Permalink to this headline">¶</a></h3>
+<p>Install the Apache web server and the WSGI plugin by using the packages:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>CentOS/RedHat</strong></td>
+</tr>
+<tr class="row-even"><td>httpd
+mod_wsgi</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the chapter <span class="xref std std-ref">Prelude SIEM database Installation</span> to install this packages.</p>
+</div>
+<div class="section" id="configuration-d-apache">
+<h3>Configuring Apache<a class="headerlink" href="#configuration-d-apache" title="Permalink to this headline">¶</a></h3>
+<p>Open the configuration file whose location differs depending on the operating system used:</p>
+<ul class="simple">
+<li>On CentOS/Redhat: <code class="file docutils literal notranslate"><span class="pre">/etc/httpd/conf.d/prelude.conf</span></code></li>
+</ul>
+<p>Enter the following script whatever the operating system used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">VirtualHost</span> <span class="o">*</span><span class="p">:</span><span class="mi">80</span><span class="o">&gt;</span>
+
+   <span class="n">ServerName</span> <span class="o">&lt;</span><span class="n">Your</span> <span class="n">server</span> <span class="n">name</span><span class="o">&gt;</span>
+   <span class="c1"># This is optional : handling is faster if this is done by Apache, but</span>
+   <span class="c1"># Prewikka WSGI module will handle it if not.</span>
+   <span class="c1">#</span>
+   <span class="c1">#&lt;Location /prelude&gt;</span>
+   <span class="c1"># SetHandler None</span>
+   <span class="c1">#&lt;/Location&gt;</span>
+   <span class="c1">#</span>
+   <span class="c1"># For inclusion of a non-default configuration file</span>
+   <span class="c1"># SetEnv PREWIKKA_CONFIG /etc/prewikka/prewikka.conf</span>
+   <span class="n">WSGIDaemonProcess</span> <span class="n">prewikka</span> <span class="n">user</span><span class="o">=</span><span class="nd">@HTTPD_USER</span><span class="o">@</span> <span class="n">group</span><span class="o">=</span><span class="nd">@HTTPD_GROUP</span><span class="o">@</span> <span class="n">processes</span><span class="o">=</span><span class="mi">4</span> <span class="n">threads</span><span class="o">=</span><span class="mi">1</span>
+   <span class="n">WSGIProcessGroup</span> <span class="n">prewikka</span>
+   <span class="n">WSGIApplicationGroup</span> <span class="o">%</span><span class="p">{</span><span class="n">GLOBAL</span><span class="p">}</span>
+   <span class="n">WSGIScriptAlias</span> <span class="o">/</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">prewikka</span><span class="o">/</span><span class="n">prewikka</span><span class="o">.</span><span class="n">wsgi</span>
+<span class="o">&lt;/</span><span class="n">VirtualHost</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Replace:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>&lt;Your server name&gt; with your server name;</dt>
+<dd><ul class="first simple">
+<li>Use the following command to know the ‘ServerName’:</li>
+</ul>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hostname</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">&lt;HTTPD_USER&gt; with the user of prewikka</p>
+</li>
+<li><p class="first">&lt;HTTPD_GROUP&gt; with the group “prelude”.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you use OAuth, it is necessary to add the following WSGI directive outside of the VirtualHost:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WSGIPassAuthorization</span> <span class="n">on</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you use Apache version 2.4 (available by default on CentOS 7), then you need to replace the &lt;Location&gt; section as follows:</p>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">Location</span> <span class="s2">&quot;/&quot;</span><span class="o">&gt;</span>
+   <span class="n">Require</span> <span class="nb">all</span> <span class="n">granted</span>
+<span class="o">&lt;/</span><span class="n">Location</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<p>Save and close the configuration file.</p>
+</div>
+<div class="section" id="configuration-du-pare-feu-local">
+<h3>Configuring the local firewall<a class="headerlink" href="#configuration-du-pare-feu-local" title="Permalink to this headline">¶</a></h3>
+<p>To accept HTTP connections we need to add a firewall rule and save it.</p>
+<div class="section" id="id17">
+<h4>On CentOS/Redhat<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<p>Enter the following command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">permanent</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">service</span><span class="o">=</span><span class="n">http</span>
+</pre></div>
+</div>
+<p>Save this new rule:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">iptables</span> <span class="n">save</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>Running Prelude GUI<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>On CentOS/Redhat, start the HTTP server daemon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="n">start</span> <span class="n">httpd</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="affichage-de-prelude-gui">
+<h3>Displaying Prelude GUI<a class="headerlink" href="#affichage-de-prelude-gui" title="Permalink to this headline">¶</a></h3>
+<p>Once everything is set up, you can use your browser to connect to the machine where Prelude GUI is installed.</p>
+<p>Enter the following URL to access Prelude GUI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">IP_address</span><span class="o">&gt;/</span>
+</pre></div>
+</div>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.25</span><span class="o">.</span><span class="mf">104.56</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>By default, the login and password to authenticate are “admin”: don’t forget to change them.</p>
+</div>
+</div>
+<div class="section" id="affichage-de-prelude-gui-avec-le-serveur-http-integre-pour-le-debogage">
+<h2>Display Prelude GUI with the embedded HTTP server (for debugging)<a class="headerlink" href="#affichage-de-prelude-gui-avec-le-serveur-http-integre-pour-le-debogage" title="Permalink to this headline">¶</a></h2>
+<p><em>Warning</em>: To not break file permissions, you have to run the following commands with your prewikka user.</p>
+<div class="section" id="id19">
+<h3>Running Prelude GUI<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>By default, the embedded HTTP server uses the port number 8000, but you can use another port number provided that specific ports in the range [0 - 1024] are not used.</p>
+<p><em>On CentOS/Redhat</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span> <span class="n">prewikka</span>
+
+<span class="n">prewikka</span><span class="o">-</span><span class="n">httpd</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">port_number</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>On  Debian</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prewikka</span><span class="o">-</span><span class="n">httpd</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">port_number</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>Example</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prewikka</span><span class="o">-</span><span class="n">httpd</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8081</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>Displaying Prelude GUI<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>Once everything is set up, you can use your browser to connect to the machine where Prelude GUI is installed.</p>
+<p>Enter the following URL to access Prelude GUI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">IP_address</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">port_number</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>Example:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">172.25</span><span class="o">.</span><span class="mf">104.56</span><span class="p">:</span><span class="mi">8081</span>
+</pre></div>
+</div>
+<p>By default, the login and password to authenticate are “admin”: don’t forget to change them.</p>
+</div>
+</div>
+<div class="section" id="modification-des-parametres-d-authentification-par-defaut">
+<h2>Modification of the default authentication parameters<a class="headerlink" href="#modification-des-parametres-d-authentification-par-defaut" title="Permalink to this headline">¶</a></h2>
+<p>By default, the login and password to authenticate to Prelude GUI are “admin”.</p>
+<ol class="arabic simple">
+<li>Connect to Prelude GUI with the login and password “admin”;</li>
+<li>Create a new user by giving them all rights. Create the user in the following tab: <span class="menuselection">ADMIN ‣ Access control ‣ Users</span>. Click on the <span class="guilabel">Create user</span> button, and fill at least the following fields:<ul>
+<li>Login: the login name;</li>
+<li>Name: The user name;</li>
+<li>Tick all the boxes in order to grant all rights to the user;</li>
+<li>Enter a password and confirm it again;</li>
+<li>Click on the <span class="guilabel">Save</span> button to add the user.</li>
+</ul>
+</li>
+<li>Connect with the new user recently created;</li>
+<li>Delete the “admin” user if necessary.</li>
+</ol>
+</div>
+<div class="section" id="activation-de-toutes-les-apps-de-prelude">
+<h2>Activating all APPS of Prelude<a class="headerlink" href="#activation-de-toutes-les-apps-de-prelude" title="Permalink to this headline">¶</a></h2>
+<p>It is advised to activate all apps of Prelude GUI for a wider range of features.</p>
+<p>The activation of apps is done in Prelude GUI by following this approach:</p>
+<ol class="arabic simple">
+<li>Go to the following tab: <span class="menuselection">? ‣ Apps</span>;</li>
+<li>Tick all apps;</li>
+<li>Confirm by clicking on the <span class="guilabel">Update</span> button.</li>
+</ol>
+<p>All apps are now enabled.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some apps add some permissions, go to the user page to check for this.</p>
+</div>
+</div>
+</div>
+<div class="section" id="glossaire-et-abreviations">
+<h1>Glossary &amp; abbreviations<a class="headerlink" href="#glossaire-et-abreviations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="glossaire">
+<h2>Glossary<a class="headerlink" href="#glossaire" title="Permalink to this headline">¶</a></h2>
+<p>List of terms used by <strong>Prelude SIEM</strong>. Several terms derive from the <strong>IDMEF</strong> standard.</p>
+<dl class="glossary docutils">
+<dt id="term-agent">Agent</dt>
+<dd>A software or equipment using the Libprelude able to directly generate IDMEF alerts and heartbeats. It can be an analyzer or a manager.</dd>
+<dt id="term-alerte">Alert</dt>
+<dd><p class="first">A data structure describing a security incident technically. It contains information about:</p>
+<ul class="simple">
+<li>Its classification;</li>
+<li>The sensor from which it originates;</li>
+<li>The time of detection/creation;</li>
+<li>Its source and its target;</li>
+<li>Its assessment (impact of the event).</li>
+</ul>
+<p class="last">It can be a simple alert or the grouping of related alerts into a “correlated alert”.</p>
+</dd>
+<dt id="term-analyseur-sonde">Analyzer / Sensor</dt>
+<dd><p class="first">The emission source of an alert message.</p>
+<p class="last">This definition can be extended to cover not only Prelude agents (Prelude LML, Prelude Correlator, Snort, Samhain, etc.) but also services (web server, PAM, ssh, antivirus, etc.) that write in logs instead of emitting alerts.</p>
+</dd>
+<dt id="term-chemin">Path</dt>
+<dd><p class="first">In Prelude SIEM, the paths correspond to a simple syntax that can be used to reference the value of a field in a data structure (IDMEF alert, log entry, incident ticket, etc.). With this mechanism you can update or retrieve the value the path points to.</p>
+<p class="last">In particular, all classes and attributes defined in the <span class="target" id="index-2"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc4765.html"><strong>IDMEF</strong></a> can be converted to paths usable by Prelude SIEM. For instance, the path <code class="docutils literal notranslate"><span class="pre">alert.classification.text</span></code> can be used to reference the <code class="docutils literal notranslate"><span class="pre">text</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">Classification</span></code> IDMEF class, the latter being an aggregated class of the <code class="docutils literal notranslate"><span class="pre">Alert</span></code> IDMEF class.</p>
+</dd>
+<dt id="term-jeu-de-regles">Ruleset</dt>
+<dd>A ruleset is a file containing a set of rules related to the same functional field (software, equipment, etc.).</dd>
+<dt id="term-libprelude">Libprelude</dt>
+<dd>Libprelude is a programming library that guarantees secure connections between Prelude analyzers (Prelude LML, Prelude Correlator, Snort, etc.) and the Prelude Manager. Libprelude provides an API for communication with Prelude sub-systems. It supplies the necessary functionality for generating and emitting IDMEF alerts and automates the saving and re-transmission of data in times of temporary interruption of one of the system’s components.</dd>
+<dt id="term-libpreludedb">LibpreludeDB</dt>
+<dd>The libpreludeDB programming library provides an abstraction layer upon the type and the format of the database used to store IDMEF alerts. It allows developers to use the Prelude SIEM database easily and efficiently without worrying about its type or storage format.</dd>
+<dt id="term-localisation">Location</dt>
+<dd><p class="first">The physical site of one or several nodes.</p>
+<p class="last">Example: Paris</p>
+</dd>
+<dt id="term-noeud">Node</dt>
+<dd><p class="first">An equipment that hosts one or several analyzers/managers, identified by a network address or a name.</p>
+<p class="last">Example: 192.168.2.1</p>
+</dd>
+<dt id="term-prelude-correlator">Prelude Correlator</dt>
+<dd>Prelude Correlator allows conducting multi-stream correlation thanks to a powerful programming language for writing correlation rules. It has the ability to connect and fetch alerts from a remote Prelude Manager, and correlate incoming alerts based on the provided ruleset. Upon successful correlation, IDMEF correlation alerts are raised.</dd>
+<dt id="term-prelude-gui">Prelude GUI</dt>
+<dd>Prelude GUI is the official graphical user interface for Prelude SIEM exploitation. Providing numerous features, it facilitates the work of operators and analysts, and also provides access to external tools.</dd>
+<dt id="term-prelude-lml">Prelude LML</dt>
+<dd>Prelude LML is a log analyzer allowing Prelude SIEM to collect and analyze information from all kinds of sources (applications or appliances) emitting logs or syslog messages, in order to detect suspicious activities and normalize them to IDMEF format.</dd>
+<dt id="term-prelude-manager">Prelude Manager</dt>
+<dd><p class="first">Prelude Manager is the heart of Prelude SIEM and is generally called <em>manager</em>. It concentrates all IDMEF messages from agents, be it alerts or heartbeats.</p>
+<p class="last">The manager processes the received data in real time by inserting them for example into a database. It can also act as a relay, i.e. forward the messages to another manager. It is also responsible of transmitting alerts to the correlator.</p>
+</dd>
+<dt id="term-pulsation">Heartbeat</dt>
+<dd><p class="first">A message sent in at regular intervals by agents to their attributed managers, in order to indicate their status (starting, running, stopping, etc).</p>
+<p class="last">The lack of some number of consecutive heartbeats indicates a failure of either the agent or its network connection.</p>
+</dd>
+<dt id="term-syslog">Syslog</dt>
+<dd>In computing, Syslog is a standard for message logging. It allows separation of the software that generates messages, the system that stores them, and the software that reports and analyzes them.</dd>
+</dl>
+</div>
+<div class="section" id="abbreviations">
+<h2>Abbreviations<a class="headerlink" href="#abbreviations" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils" id="definition-of-abbreviations">
+<caption><span class="caption-text">Definition of abbreviations</span><a class="headerlink" href="#definition-of-abbreviations" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Abbreviations</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>CTI</td>
+<td>Cyber Threat Intelligence</td>
+</tr>
+<tr class="row-odd"><td>HIDS</td>
+<td>Host Intrusion Detection System</td>
+</tr>
+<tr class="row-even"><td>IDMEF</td>
+<td>Intrusion Detection Message Exchange Format</td>
+</tr>
+<tr class="row-odd"><td>IDS</td>
+<td>Intrusion Detection System</td>
+</tr>
+<tr class="row-even"><td>IHM</td>
+<td>Interface Human to Machin</td>
+</tr>
+<tr class="row-odd"><td>LML</td>
+<td>Log Monitoring Lackey</td>
+</tr>
+<tr class="row-even"><td>N/A</td>
+<td>Not applicable</td>
+</tr>
+<tr class="row-odd"><td>NIDS</td>
+<td>Network Intrusion Detection System</td>
+</tr>
+<tr class="row-even"><td>PCRE</td>
+<td>Perl Compatible Regular Expression</td>
+</tr>
+<tr class="row-odd"><td>SIEM</td>
+<td>Security Information &amp; Event Management</td>
+</tr>
+<tr class="row-even"><td>SOC</td>
+<td>Security Operations Center</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="liste-des-noms-de-paquets">
+<h2>List of package names<a class="headerlink" href="#liste-des-noms-de-paquets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="liste-des-noms-des-paquets-avec-depot">
+<h3>List of package names with repository<a class="headerlink" href="#liste-des-noms-des-paquets-avec-depot" title="Permalink to this headline">¶</a></h3>
+<p>The following table shows Prelude OSS’s package names when installing using a repository:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="35%" />
+<col width="41%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Prelude components</strong></td>
+<td><strong>Package name on CentOS/RedHat</strong></td>
+<td><strong>Package name on Debian</strong></td>
+</tr>
+<tr class="row-even"><td>Libprelude</td>
+<td>libprelude</td>
+<td>libprelude2</td>
+</tr>
+<tr class="row-odd"><td>MySQL server</td>
+<td>mysql-server / mariadb-server</td>
+<td>mysql-server / mariadb-server</td>
+</tr>
+<tr class="row-even"><td>PostgreSQL server</td>
+<td>postgresql-server</td>
+<td>postgresql</td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><p class="first">LibpreludeDB</p>
+<p>&gt; MySQL plugin</p>
+<p class="last">&gt; PostgreSQL plugin</p>
+</td>
+<td>libpreludedb</td>
+<td>libpreludedb0</td>
+</tr>
+<tr class="row-even"><td>libpreludedb-mysql</td>
+<td>libpreludedb0-mysql</td>
+</tr>
+<tr class="row-odd"><td>libpreludedb-pgsql</td>
+<td>libpreludedb0-pgsql</td>
+</tr>
+<tr class="row-even"><td rowspan="7"><p class="first">Prelude Manager</p>
+<p>&gt; Database plugin</p>
+<p>&gt; XML plugin</p>
+<p>&gt; E-mail plugin</p>
+<p>&gt; SNMP plugin</p>
+<p>&gt; Script plugin</p>
+<p class="last">&gt; Relaying plugin</p>
+</td>
+<td>prelude-manager</td>
+<td>prelude-manager</td>
+</tr>
+<tr class="row-odd"><td>prelude-manager-db-plugin</td>
+<td><em>included in the prelude-manager package</em></td>
+</tr>
+<tr class="row-even"><td>prelude-manager-xml-plugin</td>
+<td><em>included in the prelude-manager package</em></td>
+</tr>
+<tr class="row-odd"><td>prelude-manager-smtp-plugin</td>
+<td><em>included in the prelude-manager package</em></td>
+</tr>
+<tr class="row-even"><td>prelude-manager-snmp-plugin</td>
+<td><em>included in the prelude-manager package</em></td>
+</tr>
+<tr class="row-odd"><td>prelude-manager-script-plugin</td>
+<td><em>included in the prelude-manager package</em></td>
+</tr>
+<tr class="row-even"><td><em>included in the prelude-manager package</em></td>
+<td><em>included in the prelude-manager package</em></td>
+</tr>
+<tr class="row-odd"><td>Prelude LML</td>
+<td>prelude-lml</td>
+<td>prelude-lml</td>
+</tr>
+<tr class="row-even"><td>Prelude Correlator</td>
+<td>prelude-correlator</td>
+<td>prelude-correlator</td>
+</tr>
+<tr class="row-odd"><td>Prelude GUI OSS</td>
+<td>prewikka</td>
+<td>prewikka</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="liste-des-noms-des-paquets-sur-centos-redhat-sans-depot">
+<h3>List of package names on CentOS/Redhat without a repository<a class="headerlink" href="#liste-des-noms-des-paquets-sur-centos-redhat-sans-depot" title="Permalink to this headline">¶</a></h3>
+<p>The following table shows Prelude OSS’s package names on CentOS/Redhat when installing without a repository:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Prelude components</strong></td>
+<td><strong>Package names on CentOS/RedHat 64 bits</strong></td>
+</tr>
+<tr class="row-even"><td>Libprelude</td>
+<td>libprelude-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-odd"><td>MySQL server</td>
+<td><em>Get the package on the official repository of your Linux distribution</em></td>
+</tr>
+<tr class="row-even"><td>PostgreSQL server</td>
+<td><em>Get the package on the official repository of your Linux distribution</em></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><p class="first">LibpreludeDB</p>
+<p>&gt; MySQL plugin</p>
+<p class="last">&gt; PostgreSQL plugin</p>
+</td>
+<td>libpreludedb-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-even"><td>libpreludedb-mysql-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-odd"><td>libpreludedb-pgsql-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-even"><td rowspan="6"><p class="first">Prelude Manager</p>
+<p>&gt; Database plugin</p>
+<p>&gt; XML plugin</p>
+<p>&gt; E-mail plugin</p>
+<p>&gt; SNMP plugin</p>
+<p class="last">&gt; Relaying plugin</p>
+</td>
+<td>prelude-manager-pro-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-odd"><td>prelude-manager-pro-db-plugin-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-even"><td>prelude-manager-pro-xml-plugin-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-odd"><td>prelude-manager-pro-smtp-plugin-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-even"><td>prelude-manager-pro-smtp-plugin-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-odd"><td><em>included in the Prelude Manager package</em></td>
+</tr>
+<tr class="row-even"><td>Prelude LML</td>
+<td>prelude-lml-5.2.0-1.el7.x86_64.rpm</td>
+</tr>
+<tr class="row-odd"><td>Prelude LML rules</td>
+<td>prelude-lml-rules-5.2.0-1.el7.noarch.rpm</td>
+</tr>
+<tr class="row-even"><td>Prelude Correlator</td>
+<td>prelude-correlator-5.2.0-1.el7.noarch.rpm</td>
+</tr>
+<tr class="row-odd"><td>Prelude GUI OSS</td>
+<td>prewikka-5.2.0-1.el7.noarch.rpm</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="liste-des-noms-de-paquets-sur-debian-sans-depot">
+<h3>List of package names on Debian without a repository<a class="headerlink" href="#liste-des-noms-de-paquets-sur-debian-sans-depot" title="Permalink to this headline">¶</a></h3>
+<p>The following table shows Prelude OSS’s package names on Debian when installing without a repository:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Prelude components</strong></td>
+<td><strong>Package name on Debian 64 bits</strong></td>
+</tr>
+<tr class="row-even"><td>Libprelude</td>
+<td>libprelude2_5.2.0-1_amd64.deb</td>
+</tr>
+<tr class="row-odd"><td>MySQL server</td>
+<td><em>Get the package on the official repository of your Linux distribution</em></td>
+</tr>
+<tr class="row-even"><td>PostgreSQL server</td>
+<td><em>Get the package on the official repository of your Linux distribution</em></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><p class="first">LibpreludeDB</p>
+<p>&gt; MySQL plugin</p>
+<p class="last">&gt; PostgreSQL plugin</p>
+</td>
+<td>libpreludedb0_5.2.0-1_amd64.deb</td>
+</tr>
+<tr class="row-even"><td>libpreludedb0-mysql_5.2.0-1_amd64.deb</td>
+</tr>
+<tr class="row-odd"><td>libpreludedb0-pgsql_5.2.0-1_amd64.deb</td>
+</tr>
+<tr class="row-even"><td>Prelude Manager</td>
+<td>prelude-manager-pro_5.2.0-1_amd64.deb</td>
+</tr>
+<tr class="row-odd"><td>Prelude LML</td>
+<td>prelude-lml_5.2.0-1_amd64.deb</td>
+</tr>
+<tr class="row-even"><td>Prelude Correlator</td>
+<td>prelude-correlator_5.2.0-1_all.deb</td>
+</tr>
+<tr class="row-odd"><td>Prelude GUI OSS</td>
+<td>prewikka_5.2.0-1_all.deb</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="sauvegarde">
+<h1>Backup<a class="headerlink" href="#sauvegarde" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sauvegarde-des-fichiers-de-configuration-de-prelude-siem">
+<h2>Backup of the Prelude SIEM configuration files<a class="headerlink" href="#sauvegarde-des-fichiers-de-configuration-de-prelude-siem" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">The files in the following folders should be saved:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="file docutils literal notranslate"><span class="pre">/etc/prelude-manager/</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">/etc/prelude-lml/</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">/etc/prelude-correlator/</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">/etc/prewikka/</span></code></li>
+<li><code class="file docutils literal notranslate"><span class="pre">/var/lib/prewikka/</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="sauvegarde-des-bases-de-donnees-de-prelude-siem">
+<h2>Backup of the Prelude SIEM databases<a class="headerlink" href="#sauvegarde-des-bases-de-donnees-de-prelude-siem" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">The following databases should be saved:</p>
+<blockquote>
+<div><ul class="simple">
+<li>prewikka: user database</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The connection information to these databases is available in the following files:</p>
+<ul class="simple">
+<li><code class="file docutils literal notranslate"><span class="pre">/etc/prewikka/prewikka.conf</span></code></li>
+</ul>
+<p>The ‘prelude’ database containing alerts can be saved, however its size can be important. The connection information to this database is available in the <code class="file docutils literal notranslate"><span class="pre">/etc/prelude-manager/prelude-manager.conf</span></code> file.</p>
+<div class="figure align-center">
+<img alt="../_images/cs-logo2.png" src="../_images/cs-logo2.png" />
+<div class="legend">
+<p><strong>CS GROUP - France</strong></p>
+<p>22, Avenue Galilée</p>
+<p>92350 Le Plessis-Robinson - France</p>
+<p>Tel: +33 (0)1 41 28 40 00</p>
+<p>Fax: +33 (0)1 41 28 40 40</p>
+<p><strong>www.csgroup.eu</strong></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../preludesiem-configuration/preludesiem-configuration.html" class="btn btn-neutral" title="Prelude SIEM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Prelude Team.
+      Last updated on 16 Sep 2020.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'5.2',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

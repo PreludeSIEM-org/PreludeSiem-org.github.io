@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>[Prelude-correlator] How to indicate prelude-correlator where to find rules? - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="hZ8gckIKqJh5nlo6eKaPHBY66XZ9+AgprkMKHlImLsuWsEgdix6lG/M0UsBl7sZCanGY6GfyUWdwzc6O1iYayA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>[Prelude-correlator] How to indicate prelude-correlator where to find rules?</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="02/07/2019 03:14 PM" href="/projects/prelude/activity?from=2019-02-07">over 5 years</a> ago</span></p>
+<div class="wiki">
+<p>Hello,</p>
+
+
+	<p>I'm new to Prelude, and I achieved to deploy a simple system composed of two computers (A and B). A is a sensor that sends alerts to the B's prelude-manager instance. I created a simple rule placed at /etc/prelude-correlator/rules/MyPlugin.py. I have extracted the code form prelude's oficial documentation:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">from</span> <span class="include">preludecorrelator.pluginmanager</span> <span class="keyword">import</span> <span class="include">Plugin</span>
+
+print(<span class="string"><span class="delimiter">&quot;</span><span class="content">*** Any global initialization code goes here</span><span class="delimiter">&quot;</span></span>)
+<span class="keyword">class</span> <span class="class">MyPlugin</span>(Plugin):
+
+        <span class="keyword">def</span> <span class="function">run</span>(<span class="predefined-constant">self</span>, idmef):
+                print(<span class="string"><span class="delimiter">&quot;</span><span class="content">*** This function is going to be called when Prelude-Correlator receives an IDMEF event</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>I launched correctly the prelude-manager and prelude-correlator instances, and they perform the TLS verification. When I sent and event from the sensor, the prelude-managers received it correcly and stores it in the DB. I sniffed the comunication with tcpdump and I can see that after the prelude-manager receives the whole event from A, it then start a comunication with itself (I supposed it is the prelude-manager sending the events to the prelude-correlator). But it seems that the MyPlugin rule is not being executed, at least I can't see any output.</p>
+
+
+<pre>
+prelude-correlator 
+07 Feb 15:08:49 prelude-correlator (process:4450) INFO: [BusinessHourPlugin]: disabled on user request
+07 Feb 15:08:49 prelude-correlator (process:4450) INFO: [FirewallPlugin]: disabled on user request
+07 Feb 15:08:49 prelude-correlator (process:4450) WARNING: SpamhausDropPlugin = PreludeCorrelator.plugins.spamhausdrop:SpamhausDropPlugin: No module named netaddr
+07 Feb 15:08:49 prelude-correlator (process:4450) INFO: [DshieldPlugin]: Downloading host list, this might take some time...
+07 Feb 15:08:49 prelude-correlator (process:4450) WARNING: [DshieldPlugin]: exception occurred while loading: Could not download DShield host list, error 301
+07 Feb 15:08:49 prelude-correlator (process:4450) INFO: 6 plugin have been loaded.
+07 Feb 15:08:49 prelude-correlator (process:4450) INFO: Connecting to &lt;prelude-manager_ip&gt;:4690 prelude Manager server.
+07 Feb 15:08:49 prelude-correlator (process:4450) INFO: TLS authentication succeed with Prelude Manager.
+</pre>
+
+	<p>I registered the prelude-correlator with idmef:rw permissions.</p>
+
+
+	<p>My config prelude-correlator.conf file is:</p>
+
+
+<pre>
+# This is a template configuration file for prelude-correlator
+#
+
+[include](!) 
+include = /etc/prelude/default/idmef-client.conf
+
+[MyPlugin](!) 
+disable = false
+
+# [BruteForcePlugin]
+# disable = false
+#
+
+# Disable BusinessHour correlation by default since it is very verbose
+[BusinessHourPlugin]
+disable = true
+
+#
+# [OpenSSHAuthPlugin]
+# disable = false
+#
+# [EventScanPlugin]
+# disable = false
+#
+# [EventStormPlugin]
+# disable = false
+#
+# [EventSweepPlugin]
+# disable = false
+#
+# [WormPlugin]
+# disable = false
+# repeat-target = 5
+#
+# [DshieldPlugin]
+# disable = false
+#
+# How often the Dshield database should be reloaded (download + reload)
+# (default: once a week). 0 to disable reloading.
+# reload  = 604800
+#
+# The server address where the Dshield database is loaded from:
+# server  = www.dshield.org
+#
+# URI used to retrive the dshield database:
+# uri     = /ipsascii.html?limit=10000
+#
+# Define the maximum allowed time for downloading the database
+# (only work with Python &gt;= 2.6, default is 10 seconds)
+# timeout = 10
+
+# This plugin will report CorrelationAlert for events / sets of events
+# that appear to have passed through a firewall known to protect the
+# target machine.
+#
+# If no firewall ever emit block concerning a given host, then this host
+# is considered un-protected, and there is no point in reporting
+# CorrelationAlert.
+#
+# The 'flush-protected-hosts' variable allow you to define how much
+# time a given target hosts should be considered as protected when a
+# firewall drop is noticed for this machine.
+#
+# The plugin is disabled by default since it tend to be very verbose
+
+[FirewallPlugin]
+disable = True
+flush-protected-hosts = 3600
+
+[python_rules](!) 
+# Python rules folder
+paths = /etc/prelude-correlator/rules
+
+##
+# Logging configuration might also be defined in this file:
+# http://docs.python.org/library/logging.html
+</pre>
+
+	<p>The fields marked with ( ! ) are the ones I added. But I can't figured out the correct way to specify the prelude-correlator where to find the rules to be used. I read the documentation and I don't see any reference to it.</p>
+
+
+	<p>Thank you for your help</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (6)</h3>
+  <div class="message reply" id="message-186">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/185?r=186#message-186">RE: [Prelude-correlator] How to indicate prelude-correlator where to find rules?</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="02/07/2019 03:36 PM" href="/projects/prelude/activity?from=2019-02-07">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>What version of prelude-correlator are you using?</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-187">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/185?r=187#message-187">RE: [Prelude-correlator] How to indicate prelude-correlator where to find rules?</a>
+    -
+    Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="02/07/2019 03:39 PM" href="/projects/prelude/activity?from=2019-02-07">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Antoine LUONG wrote:</p>
+
+
+<blockquote>
+
+	<p>Hello,</p>
+
+
+	<p>What version of prelude-correlator are you using?</p>
+
+
+	<p>Regards</p>
+
+
+</blockquote>
+
+	<p>The output of prelude-correlator --version says</p>
+
+
+	<p>prelude-correlator 1.0.0</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-188">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/185?r=188#message-188">RE: [Prelude-correlator] How to indicate prelude-correlator where to find rules?</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="02/07/2019 03:51 PM" href="/projects/prelude/activity?from=2019-02-07">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>This version is not supported anymore. Please upgrade to the latest version available on your distribution.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-189">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/185?r=189#message-189">RE: [Prelude-correlator] How to indicate prelude-correlator where to find rules?</a>
+    -
+    Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="02/07/2019 04:20 PM" href="/projects/prelude/activity?from=2019-02-07">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Antoine LUONG wrote:</p>
+
+
+<blockquote>
+
+	<p>This version is not supported anymore. Please upgrade to the latest version available on your distribution.</p>
+
+
+	<p>Regards</p>
+
+
+</blockquote>
+
+	<p>Thank you for your quick reply. Once updated, when I tried to start it, it says:</p>
+
+
+	<p>pkg_resources.DistributionNotFound: The 'prelude>=5.0.0' distribution was not found and is required by prelude-correlator</p>
+
+
+	<p>Which prelude is it talking about? Prelude-manager? Libprelude?...</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-190">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/185?r=190#message-190">RE: [Prelude-correlator] How to indicate prelude-correlator where to find rules?</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="02/07/2019 05:19 PM" href="/projects/prelude/activity?from=2019-02-07">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>It's the libprelude.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-191">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/185?r=191#message-191">RE: [Prelude-correlator] How to indicate prelude-correlator where to find rules?</a>
+    -
+    Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="02/08/2019 07:54 AM" href="/projects/prelude/activity?from=2019-02-08">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Thank you!</p>
+
+
+	<p>It's working now!<img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"></p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-6/6)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

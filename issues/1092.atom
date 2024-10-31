@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/1092.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2019-05-06T09:30:41Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>PRELUDE SIEM - Bug #1092: prelude-admin Segmentation Fault raspbian</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1092"/>
+    <id>http://www.prelude-siem.org/issues/1092?journal_id=5458</id>
+    <updated>2019-05-06T09:30:41Z</updated>
+    <author>
+      <name>Marc-Antoine delannoy</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;And if i run &lt;code&gt;make check&lt;/code&gt;&lt;br /&gt;I have 4 errors.&lt;br /&gt;the end of the output is:&lt;/p&gt;
+
+
+&lt;pre&gt;
+make  check-TESTS check-local
+make[3]: Entering directory '/home/suricata/libprelude-5.0.0/tests'
+make[4]: Entering directory '/home/suricata/libprelude-5.0.0/tests'
+../test-driver: line 95: 26741 Segmentation fault      "$@" &amp;gt; $log_file 2&amp;gt;&amp;#38;1
+FAIL: async-timer
+PASS: idmef
+../test-driver: line 95: 26789 Aborted                 "$@" &amp;gt; $log_file 2&amp;gt;&amp;#38;1
+FAIL: idmef-criteria
+PASS: idmef-message-helper
+PASS: idmef-path
+PASS: idmef-value
+../test-driver: line 95: 26885 Segmentation fault      "$@" &amp;gt; $log_file 2&amp;gt;&amp;#38;1
+FAIL: prelude-client
+PASS: prelude-string
+../test-driver: line 95: 26933 Segmentation fault      "$@" &amp;gt; $log_file 2&amp;gt;&amp;#38;1
+FAIL: prelude-timer
+make[5]: Entering directory '/home/suricata/libprelude-5.0.0/tests'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/suricata/libprelude-5.0.0/tests'
+============================================================================
+Testsuite summary for libprelude 5.0.0
+============================================================================
+# TOTAL: 9
+# PASS:  5
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  4
+# XPASS: 0
+# ERROR: 0
+============================================================================
+See tests/test-suite.log
+============================================================================
+Makefile:1881: recipe for target 'test-suite.log' failed
+make[4]: *** [test-suite.log] Error 1
+make[4]: Leaving directory '/home/suricata/libprelude-5.0.0/tests'
+Makefile:1987: recipe for target 'check-TESTS' failed
+make[3]: *** [check-TESTS] Error 2
+make[3]: Leaving directory '/home/suricata/libprelude-5.0.0/tests'
+Makefile:2117: recipe for target 'check-am' failed
+make[2]: *** [check-am] Error 2
+make[2]: Leaving directory '/home/suricata/libprelude-5.0.0/tests'
+Makefile:1669: recipe for target 'check-recursive' failed
+make[1]: *** [check-recursive] Error 1
+make[1]: Leaving directory '/home/suricata/libprelude-5.0.0'
+Makefile:1954: recipe for target 'check' failed
+make: *** [check] Error 2
+
+&lt;/pre&gt;    </content>
+  </entry>
+</feed>

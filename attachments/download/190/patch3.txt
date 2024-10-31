@@ -1,0 +1,22 @@
+From e0caa654cdec10a991f4717856a3e0f3f456e4b9 Mon Sep 17 00:00:00 2001
+From: wes <wes@homestarr.local>
+Date: Thu, 3 Sep 2009 08:50:03 -0400
+Subject: [PATCH 4/4] exposure of init function in c++
+
+---
+ bindings/c++/include/prelude.hxx |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/bindings/c++/include/prelude.hxx b/bindings/c++/include/prelude.hxx
+index 5674c05..5b83c73 100644
+--- a/bindings/c++/include/prelude.hxx
++++ b/bindings/c++/include/prelude.hxx
+@@ -37,5 +37,6 @@
+ #include "idmef-criteria.hxx"
+
+ const char *CheckVersion(const char *version = NULL);
++int prelude_init(int *argc = NULL, char **argv = NULL);
+
+ #endif
+--
+1.6.3.3

@@ -1,0 +1,23 @@
+diff --git a/prewikka/IDMEFDatabase.py b/prewikka/IDMEFDatabase.py
+index 83be2c2..88324ea 100644
+--- a/prewikka/IDMEFDatabase.py
++++ b/prewikka/IDMEFDatabase.py
+@@ -492,6 +492,7 @@ class IDMEFDatabase:
+             analyzerid = row[0]
+             analyzerids.append(analyzerid)
+ 
++	print "getAnalyzerids() = ", analyzerids
+         return analyzerids
+ 
+     def getAnalyzerPaths(self, criteria=None):
+@@ -509,8 +510,10 @@ class IDMEFDatabase:
+                     break
+                 path.append(analyzerid)
+                 index += 1
++	    print "append path = ", path
+             analyzer_paths.append(path)
+ 
++	print "return = ", analyzer_paths
+         return analyzer_paths            
+ 
+     def getAnalyzer(self, analyzerid):

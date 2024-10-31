@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #111: can&#39;t connect prelude-manager with a Segmentation fault from TLS - Prelude Manager - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="m1T/ckPPoeqK4y823IUQI7oa/BBrtyVtkZiRN+DZ3tWIe5cditusaQBJJ8zBzVl9xlGNjnG9fCNPFlWnZNnq1g==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude Manager - Bug #111: can&#39;t connect prelude-manager with a Segmentation fault from TLS" href="http://www.prelude-siem.org/issues/111.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-manager controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-manager/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-manager/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-manager/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-manager">Overview</a></li><li><a class="activity" href="/projects/prelude-manager/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-manager/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-manager/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-manager/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-manager/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-manager/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-manager/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-manager/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-manager/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-manager/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #111</h2>
+
+<div class="issue tracker-1 status-5 priority-6 priority-high2 closed details">
+    <div class="next-prev-links contextual">
+      <a title="#318" accesskey="p" href="/issues/318">« Previous</a> |
+        <span class="position">27 of 362</span> |
+      <a title="#75" accesskey="n" href="/issues/75">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>can&#39;t connect prelude-manager with a Segmentation fault from TLS</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="11/29/2005 03:41 PM" href="/projects/prelude-manager/activity?from=2005-11-29">almost 19 years</a> ago.
+        Updated <a title="04/29/2009 12:27 PM" href="/projects/prelude-manager/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Urgent</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">wontfix</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>When I try to connect the prelude-manager and a prelude-lml I obtain a seg fault from the prelude-manager.</p>
+
+
+<pre>
+#uname -a 
+Linux coruscant 2.6.8-debian-0.3 #1 Thu Nov 17 17:20:10 CET 2005 i686 GNU/Linux
+
+# libprelude-config --version
+0.9.0
+
+#libpreludedb-config --version
+0.9.1
+
+#prelude-manager --version
+prelude-manager 0.9.1
+</pre>
+
+	<p>I use gdb on the prelude-manager</p>
+
+
+<pre>
+(gdb) run
+Starting program: /usr/local/bin/prelude-manager
+[Thread debugging using libthread_db enabled]
+[New Thread 1076847264 (LWP 3476)]
+- server started (listening on 0.0.0.0 port 4690).
+- Subscribing db[default] to active reporting plugins.
+[New Thread 1088781232 (LWP 3480)]
+[New Thread 1097169840 (LWP 3482)]
+
+Program received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 1097169840 (LWP 3482)]
+0x40233eba in mallopt () from /lib/tls/libc.so.6
+(gdb) where
+#0  0x40233eba in mallopt () from /lib/tls/libc.so.6
+#1  0x40232dcb in free () from /lib/tls/libc.so.6
+#2  0x400c2d5f in _gnutls_free_datum_m () from /usr/local/lib/libgnutls.so.12
+#3  0x400bef56 in _gnutls_server_register_current_session () from /usr/local/lib/libgnutls.so.12
+#4  0x400b8510 in _gnutls_handshake_common () from /usr/local/lib/libgnutls.so.12
+#5  0x400b6ac7 in gnutls_handshake () from /usr/local/lib/libgnutls.so.12
+#6  0x0804fd47 in manager_auth_client (client=0x808ffa8, pio=0x8090228) at manager-auth.c:446
+#7  0x08052631 in authenticate_client (server=0x8062c28, client=0x808ffa8) at server-generic.c:140
+#8  0x08052832 in read_connection_cb (sdata=0x8062c28, ptr=0x808ffa8) at server-generic.c:218
+#9  0x080516e6 in handle_fd_event (set=0x808fdf8, cnx_key=0) at server-logic.c:342
+#10 0x080519e0 in poll_fd_set (set=0x808fdf8) at server-logic.c:399
+#11 0x08051c36 in child_reader (ptr=0x808fdf8) at server-logic.c:474
+#12 0x401b6b63 in start_thread () from /lib/tls/libpthread.so.0
+#13 0x4029918a in clone () from /lib/tls/libc.so.6
+(gdb)
+
+</pre>
+
+	<p>No error from the prelude-lml</p>
+
+
+<pre>
+On the prelude-lml
+
+coruscant:~# prelude-lml
+- Subscribing plugin pcre[default]
+- Monitoring /var/log/messages through pcre[default]
+- Monitoring /var/log/apache-ssl/access.log through pcre[default]
+- pcre plugin added 307 rules.
+- Connecting to 127.0.0.1:4690 prelude Manager server.
+- TLS certificate: server certificate is trusted.
+
+TLS authentication failed. Please run :
+prelude-adduser register prelude-lml "idmef:w" 127.0.0.1 --uid 0 --gid 0
+program on the sensor host to create an account for this sensor.
+
+prelude-io: connection error with 127.0.0.1:4690: Connection reset by peer. Failover enabled.
+- /var/log/apache-ssl/access.log: No metadata available.
+- /var/log/messages: Metadata available, starting log analyzis at offset 77355.
+</pre>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-254" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="11/29/2005 03:52 PM" href="/projects/prelude-manager/activity?from=2005-11-29">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-254-notes" class="wiki"><p>What [[GnuTLS]] version are you using ? <br />Could you please try with a newer version if available ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-255" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="11/29/2005 04:25 PM" href="/projects/prelude-manager/activity?from=2005-11-29">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-255-notes" class="wiki"><p>I use the gnutls 1.3.0 from <a class="external" href="ftp://gnutls.hellug.gr/pub/gnutls/gnutls-1.3.0.tar.bz2">ftp://gnutls.hellug.gr/pub/gnutls/gnutls-1.3.0.tar.bz2</a></p>
+
+
+<pre>
+coruscant:~# gnutls-serv -v
+GNU TLS test server, version 1.3.0. Libgnutls 1.3.0.
+coruscant:~# gnutls-cli -v
+GNU TLS test client, version 1.3.0. Libgnutls 1.3.0.
+</pre>
+
+	<p>It is the newest version.</p>
+
+
+	<p>Do you think that i try with a oldest version ?</p>
+
+
+	<p>What version do you recommend ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-256" class="journal has-notes has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="11/29/2005 05:30 PM" href="/projects/prelude-manager/activity?from=2005-11-29">almost 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>wontfix</i></li>
+    </ul>
+    <div id="journal-256-notes" class="wiki"><p>This is a [[GnuTLS]] specific issue.</p>
+
+
+	<p>[[GnuTLS]] 1.3.x is an experimental branch, which you should probably not use on a production system. I'd suggest downgrading to [[GnuTLS]] 1.2.x to get back to a working installation.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-257" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by  <a title="11/29/2005 06:27 PM" href="/projects/prelude-manager/activity?from=2005-11-29">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-257-notes" class="wiki"><p>I use the [[GnuTLS]] 1.2.9 lib and all this fine<br />Merci Yoann</p></div>
+    </div>
+  </div>
+  
+  <div id="change-258" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="11/29/2005 06:32 PM" href="/projects/prelude-manager/activity?from=2005-11-29">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-258-notes" class="wiki"><p>De nada :-)</p></div>
+    </div>
+  </div>
+  
+  <div id="change-259" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="01/07/2006 11:50 PM" href="/projects/prelude-manager/activity?from=2006-01-07">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-259-notes" class="wiki"><p>At <a class="external" href="https://trac.prelude-ids.org/changeset/7345">https://trac.prelude-ids.org/changeset/7345</a> you have code that says report this issue to bugzilla.redhat.com. Redhat has responded:</p>
+
+
+	<p><a class="external" href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=164148">https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=164148</a></p>
+
+
+	<p>"SRP is removed from gnutls due to potential patent issues."</p></div>
+    </div>
+  </div>
+  
+  <div id="change-260" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="01/08/2006 02:52 PM" href="/projects/prelude-manager/activity?from=2006-01-08">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-260-notes" class="wiki"><p>This is not a Prelude issue, however, we added a workaround that is available in r7576.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1235" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:27 PM" href="/projects/prelude-manager/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prelude Manager</i></li>
+       <li><strong>Category</strong> deleted (<del><i>3</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/111.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/111.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

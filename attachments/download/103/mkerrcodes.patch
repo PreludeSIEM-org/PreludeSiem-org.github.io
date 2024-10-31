@@ -1,0 +1,19 @@
+--- src/libprelude-error/mkerrcodes.awk	2007-04-17 09:09:51.000000000 +0200
++++ src/libprelude-error/mkerrcodes-inl.awk	2007-08-24 14:52:49.000000000 +0200
+@@ -54,7 +54,6 @@
+ # as is trailing whitespace.
+ 
+ BEGIN {
+-  FS="[ \t]+PRELUDE_ERROR_";
+   print "/* Output of mkerrcodes.awk.  DO NOT EDIT.  */";
+   print "";
+   header = 1;
+@@ -85,7 +84,7 @@
+   if (/^$/)
+     next;
+ 
+-    print "  { " $1 ", \"PRELUDE_ERROR_" $2 "\" },";
++  print "  { " $1 ", \"" $2 "\" },";
+ }
+ 
+ END {

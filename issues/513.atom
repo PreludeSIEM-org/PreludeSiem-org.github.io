@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/513.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2012-08-28T17:15:46Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Libprelude - Bug #513: libprelude ruby1.9 fix</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/513"/>
+    <id>http://www.prelude-siem.org/issues/513?journal_id=1655</id>
+    <updated>2012-08-28T17:15:46Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Libprelude&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;generic&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #513: libprelude ruby1.9 fix</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/513"/>
+    <id>http://www.prelude-siem.org/issues/513?journal_id=1715</id>
+    <updated>2013-09-23T11:17:49Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;116&lt;/i&gt; to &lt;i&gt;124&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #513: libprelude ruby1.9 fix</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/513"/>
+    <id>http://www.prelude-siem.org/issues/513?journal_id=1824</id>
+    <updated>2014-07-22T10:31:07Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Yoann VANDOORSELAERE&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;124&lt;/i&gt; to &lt;i&gt;126&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;fixed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Fixed in commit &lt;a class="changeset" title="Ruby high level bindings compilation fixes Make the Ruby binding code compatible with Ruby 1.9" href="http://www.prelude-siem.org/projects/libprelude/repository/revisions/21014aa487b6c66db0e1d93a05202151dc9ec00d"&gt;21014aa487b6c66db0e1d93a05202151dc9ec00d&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #513: libprelude ruby1.9 fix</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/513"/>
+    <id>http://www.prelude-siem.org/issues/513?journal_id=2453</id>
+    <updated>2015-11-08T14:56:29Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;126&lt;/i&gt; to &lt;i&gt;Prelude OSS 1.2.5&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

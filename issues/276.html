@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #276: intruduced in r10136: unable to import PreludeEasy in Python - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ZvI2BjTfrzeuKrBGEIu56swK1mIzWG8+ozqOYJH9b0R13V5p/cuitCSAuLwNw/C0sEGn/ClSNnB9tErwFf1bRw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Libprelude - Bug #276: intruduced in r10136: unable to import PreludeEasy in Python" href="http://www.prelude-siem.org/issues/276.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-libprelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/libprelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/libprelude/issues/report">Summary</a></li>
+
+<li><a href="/projects/libprelude/issues/calendar">Calendar</a></li>
+<li><a href="/projects/libprelude/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #276</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#287" accesskey="p" href="/issues/287">« Previous</a> |
+        <span class="position">169 of 362</span> |
+      <a title="#274" accesskey="n" href="/issues/274">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>intruduced in r10136: unable to import PreludeEasy in Python</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="02/01/2008 03:17 PM" href="/projects/libprelude/activity?from=2008-02-01">over 16 years</a> ago.
+        Updated <a title="04/29/2009 12:04 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Hello,</p>
+
+
+	<p>Since the easy-binding branch was reorganized in r10136, I'm unable to load PreludeEasy:<br /><pre>
+<code class="python syntaxhl"><span class="CodeRay">% python 
+Python <span class="float">2.4</span><span class="float">.4</span> (<span class="comment">#2, Jan  3 2008, 13:36:28) </span>
+[GCC <span class="float">4.2</span><span class="float">.3</span> <span class="integer">20071123</span> (prerelease) (Debian <span class="float">4.2</span><span class="float">.2</span>-<span class="integer">4</span>)] on linux2
+Type <span class="string"><span class="delimiter">&quot;</span><span class="content">help</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">copyright</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">credits</span><span class="delimiter">&quot;</span></span> <span class="keyword">or</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">license</span><span class="delimiter">&quot;</span></span> <span class="keyword">for</span> more information.
+&gt;&gt;&gt; <span class="keyword">import</span> [[PreludeEasy]]
+Traceback (most recent call last):
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;stdin&gt;</span><span class="delimiter">&quot;</span></span>, line <span class="integer">1</span>, <span class="keyword">in</span> <span class="error">?</span>
+  File <span class="string"><span class="delimiter">&quot;</span><span class="content">PreludeEasy.py</span><span class="delimiter">&quot;</span></span>, line <span class="integer">7</span>, <span class="keyword">in</span> <span class="error">?</span>
+    <span class="keyword">import</span> <span class="include">_PreludeEasy</span>
+[[<span class="exception">ImportError</span>]]: ./_PreludeEasy.so: undefined symbol: fire_callback
+&gt;&gt;&gt; 
+</span></code></pre></p>
+
+
+<pre>
+
+&lt;pre&gt;
+&lt;code class="diff"&gt;
+Index: python/Makefile.am
+===================================================================
+--- python/Makefile.am    (révision 10137)
++++ python/Makefile.am    (copie de travail)
+@@ -3,7 +3,7 @@
+ lib_LTLIBRARIES = libprelude_python.la
+
+ libprelude_python_ladir = ${prefix}/lib/python/
+-libprelude_python_la_SOURCES = ${EASY_SRCS} easy-idmef_wrap_python.cxx
++libprelude_python_la_SOURCES = ${EASY_SRCS} easy-idmef_wrap_python.cxx easy-python.cxx
+ libprelude_python_la_HEADERS = ${EASY_HDRS}
+ libprelude_python_la_LDFLAGS = -L@top_builddir@/src/.libs -lprelude @libprelude_libs@ @LIBADD_DL@ @PTHREAD_LIBS@ @python-config --ldflags@
+ libprelude_python_la_LIBADD = $(top_builddir)/bindings/c++/libprelude_easy.la
+&lt;/code&gt;</pre>
+
+	<p>I didn't check if the perl binding had the same problem.</p>
+
+
+	<p>Thanks,<br />Olivier;</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-720" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/108">Pierre Chifflier</a> <a title="02/01/2008 04:54 PM" href="/projects/libprelude/activity?from=2008-02-01">over 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-720-notes" class="wiki"><p>(In r10138) Remove perl and python code from C++ library.<br />Remove test code from bindings (Fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: intruduced in r10136: unable to import PreludeEasy in Python (Closed)" href="/issues/276">#276</a>)</p></div>
+    </div>
+  </div>
+  
+  <div id="change-721" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/24/2008 02:19 PM" href="/projects/libprelude/activity?from=2008-07-24">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-721-notes" class="wiki"><p>(In r10737) Squashed commit of the following:</p>
+
+
+	<p>commit 876984d7209d99a4fca597d443fd5e1e02fdfc27<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Jul 24 11:58:25 2008 +0000</p>
+
+
+	<pre><code>Add missing</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10736">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10736</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 08de6d98ea57671ad2223fefc58ddb8c82922e14<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Jul 24 11:58:21 2008 +0000</p>
+
+
+	<pre><code>Add missing</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10735">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10735</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit d5735641eb9efe4a3d26ed2a458dcf98cebcfe82<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Jul 24 08:00:04 2008 +0000</p>
+
+
+	<pre><code>Use autoconf AM_PATH_PYTHON(), implement AM_PATH_RUBY, based on<br />    AM_PATH_PYTHON(). Build Python/Ruby modules using the automake<br />    build system.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10731">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10731</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 939c55d77dd3717de3c71b9e25038260352b7bd1<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Jul 22 16:44:27 2008 +0000</p>
+
+
+	<pre><code>Disable ruby support for now, since we haven't been able to find<br />    a way to install these binding cleanly.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10726">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10726</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit fbb5d38873825af8315faa4e5c058bfd88944ef9<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Jul 22 13:45:11 2008 +0000</p>
+
+
+	<pre><code>Fix reference to an inexisting variable.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10712">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10712</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 26f9ee544d8e8746690a5813d653200bfe6d7c4d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Jun 25 14:48:25 2008 +0000</p>
+
+
+	<pre><code>Fix the profile name</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10607">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10607</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 10aa052077d33b3ceec87fc23c8c6c39cb6ee308<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Jun 25 14:45:30 2008 +0000</p>
+
+
+	<pre><code>Update pooling test to fit latest [[RecvIDMEF]] API changes.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10606">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10606</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit c1464ce1ffc35b4a1c04d237d5cc2ed654bbbe1d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon May 26 15:01:49 2008 +0000</p>
+
+
+	<pre><code>Modify [[RecvIDMEF]] prototype so that it might return information<br />    about whether or not a message was received.</code></pre>
+
+
+	<pre><code>Update alert_saver.py example.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10593">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10593</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 053d3f33f1c92d0a06755ec25cf63e360c9d6bd9<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon May 26 15:01:42 2008 +0000</p>
+
+
+	<pre><code>Remove confusing operator.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10592">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10592</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 116c684f4ce43e411b858afbf3162a03b7031a55<br />Author: toady &lt;toady@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sun May 25 22:17:59 2008 +0000</p>
+
+
+	<pre><code>uninstall target to remove ruby [[PreludeEasy]] library</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10591">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10591</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 4282aa16a50f2b509656c804fa292c00bab6b605<br />Author: toady &lt;toady@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon May 19 21:12:51 2008 +0000</p>
+
+
+	<pre><code>remove my dirty hack away from svn</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10590">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10590</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e69c1b357d4be2dbf50814000692b08e4a56e7bb<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon May 12 15:00:42 2008 +0000</p>
+
+
+	<pre><code>Update comments in ruby and lua examples</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10589">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10589</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit b2c876c6da0b07e2ffdce482d805eeba2f45f0df<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon May 12 14:54:24 2008 +0000</p>
+
+
+	<pre><code>Lua bindings: check if argument for Read/Write is a file, and throw an exception if not.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10588">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10588</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit f834fe45a7c9762bdf4c80c3fb07de2aceee1ad2<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon May 12 14:40:55 2008 +0000</p>
+
+
+	<pre><code>Fix Lua &gt;= 5.1 detection</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10587">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10587</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit ed1400545f14274d5f98f09489093fdfa0b60dd4<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon May 12 14:05:32 2008 +0000</p>
+
+
+	<pre><code>Python bindings: check if argument for Read/Write is a file, and throw an exception if not.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10586">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10586</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 858b1604c6c2fdd4ac524594d7795780f1e93a2f<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed May 7 13:00:44 2008 +0000</p>
+
+
+	<pre><code>Update examples for alert saving/replaying to current Easy bindings API.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10580">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10580</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit dcb45dbbc823d61963d69887b99db546fda4ac41<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed May 7 09:19:51 2008 +0000</p>
+
+
+	<pre><code>Include idmef-message-helpers.h, not idmef-message-helper.h</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10579">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10579</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 52fd7b2ce1d1f3daabefa8cb7aa041a427fc027d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed May 7 08:55:50 2008 +0000</p>
+
+
+	<pre><code>Cleanup.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10578">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10578</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e0486b17d2174ca7a9995a1a4f1fdd26363c69fb<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed May 7 07:51:44 2008 +0000</p>
+
+
+	<pre><code>Rename readIDMEF / writeIDMEF to Read() / Write().</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10576">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10576</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 26367d3ab6daae49a4ff95e6efc48bbcddb56f3d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed May 7 07:51:40 2008 +0000</p>
+
+
+	<pre><code>Helper is plural...</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10575">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10575</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit bd4bd43e827dc5b8d4a3d1b2a2873e5045017372<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed May 7 07:43:14 2008 +0000</p>
+
+
+	<pre><code>Implement a bunch of C IDMEF messages helpers functions:<br />    idmef_message_set_value(); idmef_message_get_value();<br />    idmef_message_set_string(); idmef_message_get_string();<br />    idmef_message_set_number(); idmef_message_get_number();<br />    idmef_message_set_data(); idmef_message_get_data();</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10574">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10574</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5e78cfb2d64e5ad3244c5650c3fddbd050b30cff<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed May 7 07:43:06 2008 +0000</p>
+
+
+	<pre><code>Ability to cast IDMEF value to string. Move casting to/from<br />    string to separate functions.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10573">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10573</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5f39a7e60f87ad0df7c1ecad787f2142b4e8ddad<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Apr 30 15:28:02 2008 +0000</p>
+
+
+	<pre><code>Implement _idmef_value_copy_internal(), that is able to make<br />    use of _idmef_value_cast() without modifying the input value.</code></pre>
+
+
+	<pre><code>Modify idmef_path_set() to use _idmef_value_copy_internal()<br />    in place of _idmef_value_cast(): avoid modifying the input<br />    value.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10563">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10563</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 0dd89971d2a8c42818155d2e5e35deed7bf039e4<br />Author: toady &lt;toady@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Apr 29 12:56:42 2008 +0000</p>
+
+
+	<pre><code>use the sed variable from autotools</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10560">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10560</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit efe2d5ea8f3072908fe11c1287133f7f9bcf410b<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Apr 29 12:40:49 2008 +0000</p>
+
+
+	<pre><code>Add missing.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10559">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10559</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 46ae22f69b7a557869d5c0861dc88728e85146bc<br />Author: toady &lt;toady@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Apr 29 12:39:26 2008 +0000</p>
+
+
+	<pre><code>handling ruby mkmf crap to have a clean install that respects the prefix</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10558">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10558</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 2b0be608b049893f2140250534ea606bf57829aa<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Apr 29 12:36:53 2008 +0000</p>
+
+
+	<pre><code>More prelude-easy -&gt; preludecpp renaming.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10557">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10557</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit abcd6d931831c09ff28f15188cd5e8b489a2e5d6<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Apr 29 12:36:20 2008 +0000</p>
+
+
+	<pre><code>Start renaming prelude-easy to preludecpp</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10556">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10556</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit be1823ef3160a675f08e4754a25097218410be26<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Apr 25 12:47:19 2008 +0000</p>
+
+
+	<pre><code>Remove unused [[PreludeIO]] wrapper. Start fixing distcheck.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10544">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10544</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 4e9c45ce1cd7a932ee42bcac8f72fe56fa0320b3<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Apr 25 09:23:05 2008 +0000</p>
+
+
+	<pre><code>Handle redirection operator.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10543">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10543</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit fbf996fe3086fa657edc8b0e74ed3353d165c702<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Apr 24 08:14:50 2008 +0000</p>
+
+
+	<pre><code>Remove debugging spew, fix coding style.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10533">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10533</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 86477c68ee5f246badc53b49e6a49900e2ec3f4a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Apr 24 08:14:20 2008 +0000</p>
+
+
+	<pre><code>Handle read/write error correctly.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10532">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10532</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5365c57bde7ab9c3f62bf0955712d486683df485<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Apr 23 12:22:00 2008 +0000</p>
+
+
+	<pre><code>Implement basic stream operator to set timeout when reading idmef object.<br />    Example: client &gt;&gt; [[SetRecvTimeout]](10) &gt;&gt; idmef;</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10518">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10518</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 17fdd2177974759c902ebcf6dacf4c5da7d806a6<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Apr 21 13:19:44 2008 +0000</p>
+
+
+	<pre><code>Test code for read/write IDMEF in lua, ruby, perl and python</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10508">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10508</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 4334a0fb491ee15830790278630ab553f1e0bf33<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Apr 21 13:13:06 2008 +0000</p>
+
+
+	<pre><code>Fix installation of ruby bindings (now respect )</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10507">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10507</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 652426c44525fd64377ae0ccc211e7a454610356<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Apr 21 12:06:31 2008 +0000</p>
+
+
+	<pre><code>Fix read/write functions: extract [[PerlIO]] object from SV</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10506">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10506</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 24cdee039978d0baa49205753865d73023d60a3e<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Apr 21 09:33:38 2008 +0000</p>
+
+
+	<pre><code>Fix invalid member function declaration.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10505">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10505</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit c064630ed223fb749b4d99a6af9963678abf06db<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Apr 21 08:54:53 2008 +0000</p>
+
+
+	<pre><code>Start modularizing of IDMEF read/write code.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10504">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10504</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 19d3d1d6225def9c62d476d9195d32a8ebaa159e<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sun Apr 20 13:55:36 2008 +0000</p>
+
+
+	<pre><code>Ruby bindings: add functions to read/write IDMEF files from/to Ruby IO objects.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10503">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10503</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 4dc6df114573099fff46be8b43ef9de29edbaf60<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sun Apr 20 12:52:47 2008 +0000</p>
+
+
+	<pre><code>LUA bindings: add functions to read/write IDMEF files from/to LUA IO objects.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10502">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10502</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 7ba9bd72b1e9107fd8ece944f78a2a9accf03e8c<br />Author: toady &lt;toady@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Apr 17 09:54:18 2008 +0000</p>
+
+
+	<pre><code>ruby workaround to cleanly install lib</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10496">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10496</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1e95b4c2252b50f1dc16ac5af8bf38619e5c1fc1<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Apr 17 08:03:34 2008 +0000</p>
+
+
+	<pre><code>Fix lua detection to work with version 5.0</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10492">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10492</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 9b4df0521d1b97b5a8c04687d9be50db1a8b8661<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Apr 16 19:26:59 2008 +0000</p>
+
+
+	<pre><code>Recent versions of lua (&gt;= 5.1) use pkg-config (and not the previous tool lua-config).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10491">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10491</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 11b70c8b9950c119f61627a7ac111cd6aa600db9<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Apr 16 18:51:01 2008 +0000</p>
+
+
+	<pre><code>Python bindings: add functions to read/write IDMEF files from/to Python IO objects.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10490">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10490</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 15649e060be4813f162ebf9707d6d76e9244c707<br />Author: pollux &lt;pollux@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Apr 16 18:50:07 2008 +0000</p>
+
+
+	<pre><code>Perl bindings: add functions to read/write IDMEF files from/to perl IO objects.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10489">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10489</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit d1da1a34feb08a5c307c77b67320adda02d3e560<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Apr 3 14:45:07 2008 +0000</p>
+
+
+	<pre><code>Fix a harmless race in the way we checked for global async_flags change.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10471">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10471</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit b3a86091420706ac99ead0ea0e5ec2fe49b0d75a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Apr 3 14:45:03 2008 +0000</p>
+
+
+	<pre><code>Remove old cross bindings initialization code, replaced with<br />    language specific call to prelude_init().</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10470">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10470</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 42b4b45b05505baec2f1383cbd38e1b7f2a73b71<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 27 16:59:55 2008 +0000</p>
+
+
+	<pre><code>When the module initialize, retrieve argc/argv from lua/perl/ruby/python,<br />    and use the result to call prelude_init().</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10446">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10446</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit f0eaef2e7b1c3afc50c9d92ce2f81481c066f936<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 13 18:01:02 2008 +0000</p>
+
+
+	<pre><code>Add idmef &lt;&lt; client, and client &gt;&gt; idmef operator for reading<br />    IDMEF messages.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10404">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10404</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 183ece0cb35a3c5773b04f461930e9fdeb95fde7<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 13 18:00:52 2008 +0000</p>
+
+
+	<pre><code>When casting a double/float to idmef_data_t, make sure we're not<br />    dealing with an integer value. If we are, set the resulting<br />    idmef_data_t to integer.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10403">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10403</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1a835e13d8f04c6a2ec547de7bb3947170bf336d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 13 18:00:48 2008 +0000</p>
+
+
+	<pre><code>data / time and enum are special types.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10402">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10402</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit d0c5607fd704f2341ff84fa76c48f07acec23f20<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 13 12:27:37 2008 +0000</p>
+
+
+	<pre><code>Fix check when casting double and float value. Compute the relative<br />    difference between the two values and then error out if it exceed<br />    a certain threshold.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10398">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10398</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 083ba414d1123e0b50e5ea519ff5a4d940928d75<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Mar 12 17:21:53 2008 +0000</p>
+
+
+	<pre><code>Remove home made implementation of [[RecvIDMEF]](), and wrap the new<br />    prelude_client_recv_idmef() API function as a Client class method.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10397">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10397</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit b942e0a32026ebea69815d4551966fd8dbc01a88<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Mar 12 17:21:43 2008 +0000</p>
+
+
+	<pre><code>Implement prelude_client_recv_msg() and prelude_client_recv_idmef().</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10396">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10396</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit f0b780d086f04267b3597d34f763bc7bd449ec32<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Mar 12 17:21:35 2008 +0000</p>
+
+
+	<pre><code>Use the provided timeout parameter.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10395">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10395</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit a4020b390583b98da854085dcb6e7f8f4d5aefbf<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 11 15:32:37 2008 +0000</p>
+
+
+	<pre><code>Return an empty list if _value is NULL.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10391">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10391</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit eab69d13e655acc4cf2ab93f33d7b311c6b21c95<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 11 14:08:07 2008 +0000</p>
+
+
+	<pre><code>Return _idmef_value_cast() error if any.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10389">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10389</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 8b52caf9f02d1fafda6a947cc869f926756f3130<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 11 14:08:00 2008 +0000</p>
+
+
+	<pre><code>When casting a value, appropriatly detect target value overflow and<br />    issue the appropriate error.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10388">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10388</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit f0943248cfe5804ca96cc613befa4eef1f465970<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Mar 10 11:44:37 2008 +0000</p>
+
+
+	<pre><code>Some cleanup, update for latest code.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10384">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10384</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 3791a4cd50884034e41826b778bffaba0cf80aab<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Mar 10 11:44:32 2008 +0000</p>
+
+
+	<pre><code>Pass IDMEF message by value, allow using pointer to an IDMEFValue<br />    instead of a reference (allow for NULL value).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10383">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10383</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 76e0081d51f6773f5ad659a198d144b09ad8c236<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Mar 10 11:44:25 2008 +0000</p>
+
+
+	<pre><code>Fix double declaration.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10382">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10382</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 30fceea065952bae2ba4f27add86f7664d01f61a<br />Author: Yoann Vandoorselaere &lt;yoann@arwen.(none)&gt;<br />Date:   Fri Mar 7 12:11:28 2008 +0100</p>
+
+
+	<pre><code>When we encounter a TLS fatal error on close, close the connection<br />    fd immediatly.</code></pre>
+
+
+	<p>commit afc21d31c516d33f956173ed852da85a10b3bfbc<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 16:24:24 2008 +0000</p>
+
+
+	<pre><code>Adapt to trunk build system modification.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10353">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10353</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 600d68b534f25612e6923659a3e51d6e2c599723<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 16:24:20 2008 +0000</p>
+
+
+	<pre><code>Adapt to trunk latest build fixes.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10352">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10352</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit d5a7144fac43a79b3a466b81f35a61b735b145fc<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 11:57:15 2008 +0000</p>
+
+
+	<pre><code>Revert "Revert "Merge ../libprelude""</code></pre>
+
+
+	<pre><code>This reverts commit 649250f27acfefab2271f2bddfabd024951e7c2e.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10345">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10345</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit a684d07ec9cbe604a18c94c7243a7b9a9376664c<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 11:57:01 2008 +0000</p>
+
+
+	<pre><code>Revert "Merge ../libprelude"</code></pre>
+
+
+	<pre><code>This reverts commit 396e763eb281266e37a7501f4f2ea084656435d0.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10344">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10344</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 21a42c7aba965cb5808b4e2c8f6cc626b557a207<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 11:56:52 2008 +0000</p>
+
+
+	<pre><code>Revert "Fix conflict."</code></pre>
+
+
+	<pre><code>This reverts commit 120920f7947aa65e739cd01a3eeb97684c26e465.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10343">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10343</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 14b9cfac90a19ea8f696b28c3939eb7786d99e22<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 11:56:38 2008 +0000</p>
+
+
+	<pre><code>Fix conflict.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10342">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10342</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 821f6be190aee6e4f7b0ceba996bd833482dec51<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 11:56:21 2008 +0000</p>
+
+
+	<pre><code>Fix retrieval of IDMEFTime (this actually will break retrieval of<br />    static IDMEF time within the tree - work in progress).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10340">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10340</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 0b7337ae8d229c2ac455fab40c1550b9ee66822d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 11:56:15 2008 +0000</p>
+
+
+	<pre><code>Reference connection before pushing it into the list.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10339">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10339</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 0ad844c2c7c24fce04afc788e7234709d69a8136<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Mar 6 11:56:10 2008 +0000</p>
+
+
+	<pre><code>Use reference on object copy. Implement Clone() method.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10338">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10338</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit b87c8f2b71553c6a6dd5bffb940a3ca80da233b2<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Mar 5 16:32:11 2008 +0000</p>
+
+
+	<pre><code>Use reference to object, and Clone() method to copy.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10335">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10335</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit d533456bb82fc47a48f5e3fb625c345ca09dd128<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 4 15:24:25 2008 +0000</p>
+
+
+	<pre><code>Fix possible [[ClientProfile]] leak.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10333">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10333</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 55f17201fd04b1cc3ac7b0a3e9b2ffe3e469f30b<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 4 14:56:13 2008 +0000</p>
+
+
+	<pre><code>Proper handling of [[ConnectionPool]] copy/reference. Reference<br />    connection before calling prelude_connection_pool_add_connection(),<br />    since it's not owned by prelude_connection_pool.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10332">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10332</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 4fbbcb84b67ddb5709d5baa2ce28ac0f6e4cd35a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 4 14:56:09 2008 +0000</p>
+
+
+	<pre><code>Implement prelude_connection_pool_ref(), necessary for<br />    proper handling of [[ConnectionPool]] class.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10331">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10331</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 47147c9690571099ed45c0fcec2e7608695c496c<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 4 14:56:05 2008 +0000</p>
+
+
+	<pre><code>Reference the connection where needed.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10330">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10330</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit a1d461e86066ec29a3d089831bda5bd6f22d2324<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 4 14:55:58 2008 +0000</p>
+
+
+	<pre><code>Handle AUTOCONFIG Client flags.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10329">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10329</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 3fbe98dc80b47a4f2edd1178729eadd18b866e0b<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 4 12:35:01 2008 +0000</p>
+
+
+	<pre><code>Add refcount support to prelude_connection_t API.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10323">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10323</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 7a446f171e73d73d5a05035ccc27110e80bf1df0<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Mar 4 12:34:55 2008 +0000</p>
+
+
+	<pre><code>Add refcount support to idmef_criteria_t API.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10322">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10322</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 75e43a10d4ba339258ffbd2df1906c6ca273604d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Mar 3 17:57:04 2008 +0000</p>
+
+
+	<pre><code>Link to libpelude.la, should fix build breakage experienced by<br />    certain users.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10319">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10319</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit bb06cfeecf3885b54909b1512789dee62699921d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Mar 3 17:14:16 2008 +0000</p>
+
+
+	<pre><code>Add support for --c++ command line option.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10318">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10318</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 323072028d109db690a58bdc7be3d120c60dbbb8<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Mar 3 16:56:05 2008 +0000</p>
+
+
+	<pre><code>Correct include path, and include install directory.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10317">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10317</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 6048e941d0c3f0315a5b79b1785307cf0d9a7955<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 27 11:42:18 2008 +0000</p>
+
+
+	<pre><code>Pass IDMEFTime() and IDMEFValue() by reference.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10296">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10296</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit de95b4535f3b06a1634c5afe47e7a4a77db06f39<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Feb 26 13:50:09 2008 +0000</p>
+
+
+	<pre><code>New sample test for LUA, Perl, Ruby, Python. Each test program<br />    demonstrate how to set and retrieved IDMEF fields, creating a<br />    client and sending the created IDMEF message to this client.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10295">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10295</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 0ed5547ccd9d339d7fb416e81d5ad0e08d041e0e<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Feb 26 13:45:35 2008 +0000</p>
+
+
+	<pre><code>Remove debugging code, use in-class [[ToString]]() declaration<br />    in place of renaming un-handled std::string operator.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10294">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10294</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e13bc89763a70ed89e1931614d1c1fea3c3e43a8<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Feb 26 13:45:32 2008 +0000</p>
+
+
+	<pre><code>Correctly automate printing of class with LUA.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10293">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10293</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 4b37406eb41b24e437e9c8a16c5104757c606be4<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Feb 26 13:45:28 2008 +0000</p>
+
+
+	<pre><code>Implement [[ToString]]() method, used by operator std::string().</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10292">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10292</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 8bbcc0691574d01b2c0db26ea7471de30e04e72a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Feb 26 12:33:47 2008 +0000</p>
+
+
+	<pre><code>Move language specific stuff to language specific typemaps. Kill<br />    most Swig warnings. Corrected implementation of Perl listed IDMEFValue<br />    retrieval.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10291">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10291</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit dc4588699f60a213283fadc021dfbc9b4c4009b2<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Feb 26 12:33:32 2008 +0000</p>
+
+
+	<pre><code>Consistency work on 'const' keyword use.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10290">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10290</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 7b0e628b079c9034fd95437837ddb968b9ca397a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Tue Feb 26 12:33:23 2008 +0000</p>
+
+
+	<pre><code>Fix a bug that prevented generation of Python swig generated code<br />    to be triggered in case easy_python.i changed.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10289">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10289</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 66a091afbdf721614b319e944d725c5c67682b80<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Feb 25 17:11:35 2008 +0000</p>
+
+
+	<pre><code>Update connection list on [[GetConnectionList]](), since the list might<br />    have been updated in the backend.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10288">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10288</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit fb24d374a0931a4a7e68bfad858526af334077d7<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Feb 25 17:11:22 2008 +0000</p>
+
+
+	<pre><code>Fix compilation error with certain GCC version.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10287">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10287</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit a76483c397db41e2dae266f3aa357d7449392712<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Feb 25 17:11:13 2008 +0000</p>
+
+
+	<pre><code>Make _profile member accessible from the Client class.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10286">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10286</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit beb77a02331b4fb2e59c45e731dc49cd8f3e22c1<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Feb 25 17:11:10 2008 +0000</p>
+
+
+	<pre><code>Make the Client class inherit from [[ClientProfile]]. Additionally,<br />    update the profile on Init() method call.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10285">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10285</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 79012e82948129655c6576472924542737048018<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Feb 25 17:11:04 2008 +0000</p>
+
+
+	<pre><code>Add missing include file dependencies.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10284">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10284</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit c7fe144077b04b26a4d553ba3a4f64026774e99a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Feb 25 16:29:55 2008 +0000</p>
+
+
+	<pre><code>Use redirection operator.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10283">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10283</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 2636216438a99c3b2f571a2cacdd49d15d848d63<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Mon Feb 25 16:07:44 2008 +0000</p>
+
+
+	<pre><code>Implement LUA and Ruby bindings. All bindings now feature retrieval<br />    of listed IDMEFValue (except Perl, still having problem).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10282">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10282</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit ae2579b5e2f8841eeb6a261e42cf158927773d2d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:32:21 2008 +0000</p>
+
+
+	<pre><code>Fix undefined reference.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10281">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10281</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 35218bd73c529383676045cce0edadf13e5426d5<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:28:30 2008 +0000</p>
+
+
+	<pre><code>More work on automatic cast, remove old accessors.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10280">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10280</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 7b9da50d9cc76d18881e05a79f3e2559b2c9f2a9<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:28:24 2008 +0000</p>
+
+
+	<pre><code>More automatic cast.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10279">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10279</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 85dbe62ffee478c8de6f244c54a38d88ccf980f1<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:28:20 2008 +0000</p>
+
+
+	<pre><code>Fix broken overload for [[AddConnection]]() method.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10278">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10278</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5f0e8157dfad4af4a36d36b290b6789603dea083<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:28:16 2008 +0000</p>
+
+
+	<pre><code>Implement some missing methods.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10277">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10277</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5423ff98e93d229285a2bd97ee87045ea02d6774<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:28:12 2008 +0000</p>
+
+
+	<pre><code>Rewrite bindings for prelude-connection-pool.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10276">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10276</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 2a6ea017255b68ccdaa718a8081400f1b2f39463<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:28:08 2008 +0000</p>
+
+
+	<pre><code>Automatic cast to prelude_connection_t.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10275">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10275</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit a2a2b6f90cf2a4cfb039658aa6a24825efbd7a02<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:28:04 2008 +0000</p>
+
+
+	<pre><code>Add the Connection class, bindings for prelude-connection.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10274">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10274</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 432449b32b55ea0122f4d25bab53697b6fc6177d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:27:59 2008 +0000</p>
+
+
+	<pre><code>Code cleanup, Start() has to be called by the user.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10273">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10273</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5443ae8805123934e64b428da8ac4cd0b9385734<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 23 10:27:27 2008 +0000</p>
+
+
+	<pre><code>Support copying of IDMEF object.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10272">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10272</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 589c766e6377a494580922c0694f19381847940c<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Feb 22 15:10:34 2008 +0000</p>
+
+
+	<pre><code>Minor cleanup, add &lt;&lt; and &gt;&gt; operator to IDMEF and Client<br />    class:<br />        - client &lt;&lt; idmef<br />        - idmef &gt;&gt; client</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10271">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10271</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1b9eb6a1e4aa742d4aa4b58ea5f13466290a9bd7<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Feb 22 15:10:11 2008 +0000</p>
+
+
+	<pre><code>Publicly inherit Prelude::Client, remove [[SendIDMEF]] method,<br />    use the parent method. Add code to handle option message on<br />    [[RecvIDMEF]]().</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10270">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10270</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 6e95a8d968aefa2bcc3120abf879a97fff70b031<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Feb 22 15:09:35 2008 +0000</p>
+
+
+	<pre><code>Add a new constructor, taking the profile name as argument,<br />    and a [[GetClientProfile]]() method.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10269">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10269</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 19b9975ca0d09fc37d668fbc8ed4528593d8f8bf<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 21 16:19:39 2008 +0000</p>
+
+
+	<pre><code>Encapsulate every class into the Prelude namespace.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10268">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10268</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit ae97c8a59c9f5e747e111e9c3f55eafd9ab7be48<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 21 14:20:44 2008 +0000</p>
+
+
+	<pre><code>Exception class improvements.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10267">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10267</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 6a7f345af76fa53b4d4d5b2f8ea43ea311292b89<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 21 13:44:22 2008 +0000</p>
+
+
+	<pre><code>Update test.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10266">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10266</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 4c73f94695f1ec4071848491080a155ff66d5be6<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 21 13:44:18 2008 +0000</p>
+
+
+	<pre><code>Update..</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10265">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10265</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 9ba90b2f7f721894ab6b08e786426e6f4917aa1b<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 21 13:40:42 2008 +0000</p>
+
+
+	<pre><code>Do not try to send a final heartbeat on prelude_client_destroy() if the client object was not at least at the starting status (fix possible assertion on destroy).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10264">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10264</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit bed1239acff5e297006a9cc690da276e0eff77a4<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 21 13:10:24 2008 +0000</p>
+
+
+	<pre><code>Implement [[ClientEasy]]() class, inheriting from the Client()<br />    class, and allowing easy implementation of a Prelude client.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10262">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10262</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit f458c885e6fb501431f9353bdf9759814240b9e5<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 21 13:10:19 2008 +0000</p>
+
+
+	<pre><code>Don't provide any helper in Client() bindings to [[PreludeClient]],<br />    wrap the interface in a strict fashion.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10261">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10261</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1e318df2e70939c2ddf73d4a31589accebd41868<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 21 11:41:19 2008 +0000</p>
+
+
+	<pre><code>Introduce prelude_msg_get_message_data(), that provide access to<br />    the whole message buffer. Modify IDMEF class so that it make use<br />    of this function in order to write a message to an ofstream.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10260">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10260</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1e519edf7fe0cb83680b826c39e9373d13d6dc55<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 17:58:37 2008 +0000</p>
+
+
+	<pre><code>Major rework, IDMEFValue is not returned as a pointer anymore.<br />    Reference to low level idmef_value_t are handled cleanly.<br />    The C++ code for retrieving listed idmef-value is in place.<br />    Major IDMEF class rework, implement &lt;&lt; and &gt;&gt; operator on<br />    ofstream and ifstream.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10259">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10259</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 3d55ee0345ff115b436b658de49bbd95addc4ffa<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 17:39:18 2008 +0000</p>
+
+
+	<pre><code>Cleanup.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10258">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10258</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit aca082c7b81cdea41ba0e5b3567391c6aab88f8f<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 16:32:45 2008 +0000</p>
+
+
+	<pre><code>Whitespace police.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10257">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10257</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 9976f32f03a6db186a5ef502e40cfaa16381bc8a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:39:09 2008 +0000</p>
+
+
+	<pre><code>[PATCH] Allow user to associate it's own callback function to a prelude_io_t object.</code></pre>
+
+
+	<pre><code>Implement:<br />     - prelude_io_set_write_callback()<br />     - prelude_io_set_read_callback()<br />     - prelude_io_set_pending_callback()<br />     - prelude_io_set_fdptr().</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10255">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10255</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit d53df1f86ca276041adcdf5c6cc0556b4bd32ace<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:20:32 2008 +0000</p>
+
+
+	<pre><code>Fix string translation of IDMEF_CRITERION_OPERATOR_(NOT_)NULL to string. Remove gratuitous space insertion when dumping criteria.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10253">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10253</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1543baddabb6e2eb65fdfe63914d67ef355b503d<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:20:23 2008 +0000</p>
+
+
+	<pre><code>Whitespace police.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10252">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10252</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit ecbfde59ff580c6499405c090d4f3b6547a6175c<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:20:18 2008 +0000</p>
+
+
+	<pre><code>In case of invalid enumeration value, print &amp;lt;invalid enum value&amp;gt;.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10251">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10251</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit bb0db770a8b3c044490ebdd2336dde7e9333c859<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:20:14 2008 +0000</p>
+
+
+	<pre><code>(bindings): for functions returning pointers to integers, dereference the<br />    pointer and return either the integer, or the native equivalent to NULL<br />    (None for Python, undef for Perl).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10250">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10250</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 302083efd0879aff28d62b3dfcd519480de1c718<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:19:59 2008 +0000</p>
+
+
+	<pre><code>Update NEWS, bump version number.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10249">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10249</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit db00d5721d4b26dd62a25340c3c6706605f1bbee<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:19:46 2008 +0000</p>
+
+
+	<pre><code>Update [[GnuLib]] code.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10248">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10248</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 70d612feda3534fa40a15ce359b9305c284ded2a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:19:17 2008 +0000</p>
+
+
+	<pre><code>SWIG bindings: add typemaps to arguments of <strong>_get_next</strong> functions,<br />    to allow NULL arguments, which are forbidden by default by SWIG<br />    (Fix #269)</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10247">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10247</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 7fdec558ecc252a3421922f9cced4cbe9f3cd92a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:19:12 2008 +0000</p>
+
+
+	<pre><code>[[FreeBSD]] compilation fix.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10246">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10246</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 62473da95bddc6916a0ecb8a26354d2e32968b05<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:18:57 2008 +0000</p>
+
+
+	<pre><code>Whitespace police.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10245">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10245</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 0acb1e511dacc9e0e46083184ab3bd4125f7b2ef<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:18:52 2008 +0000</p>
+
+
+	<pre><code>Update to newer acx_pthread.m4</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10244">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10244</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit f6fde960b5dc523763084cc32f549d0a9d908d1c<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:18:41 2008 +0000</p>
+
+
+	<pre><code>Solaris warnings fixes.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10243">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10243</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5925b970e442bf769c7821e2a1ff294d38c2daa6<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:18:29 2008 +0000</p>
+
+
+	<pre><code>Update NEWS, bump version number.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10242">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10242</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit d15000d45ebf673bb7eda8fb0d79f764f3a6cc70<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:18:10 2008 +0000</p>
+
+
+	<pre><code>Avoid warning while generating the documentation due to change<br />    in the way we named function argument for auto generated IDMEF<br />    functions.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10241">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10241</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1d887995620714dc70e29c09fd9da027d78a49c2<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:17:39 2008 +0000</p>
+
+
+	<pre><code>Update [[GnuLib]] code.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10240">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10240</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5629a11e5cc932eb9c4acea90f3967fb2f96eade<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:16:52 2008 +0000</p>
+
+
+	<pre><code>Improve error message in case of locking error.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10239">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10239</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit f3c4b7f5ab1828f4249d0db60efd762e95a39609<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:16:36 2008 +0000</p>
+
+
+	<pre><code>Fix invalid use of 'GNUTLS_X509_CRT_LIST_IMPORT_FAIL_IF_EXCEED' with<br />    early [[GnuTLS]] version (close #268).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10238">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10238</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1c508db0b07346390bd7b75bfce6a3c0e646b467<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:16:18 2008 +0000</p>
+
+
+	<pre><code>Small improvement to the way pthread_cond_timedwait() absolute<br />    time is computed.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10237">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10237</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 23601dc70afb42daebf2e021314046804a18bc70<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:15:56 2008 +0000</p>
+
+
+	<pre><code>Send heartbeat as high priority message.</code></pre>
+
+
+	<pre><code>It is important that heartbeat are delivred in time, since they give<br />    indication about the health of the system.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10236">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10236</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 05a8c3c98aca5d4c8f104a37fe076fc21849541b<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:15:44 2008 +0000</p>
+
+
+	<pre><code>Whitespace police.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10235">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10235</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 22c91712a43a79df5c4687cdd62777f86d8f7270<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:15:22 2008 +0000</p>
+
+
+	<pre><code>Patch from Pierre Chifflier &amp;lt;<a class="email" href="mailto:p.chifflier@inl.fr">p.chifflier@inl.fr</a>&amp;gt; to propagate CC variable when building bindings (fix #264).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10234">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10234</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e8dca7863e99cd34e677b1b4ca71a249c7b52bef<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:15:17 2008 +0000</p>
+
+
+	<pre><code>(enhancement): Improving assertion messages by separating variables check</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10233">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10233</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 07fb53105b257b616fe24ca35776bfb9170794eb<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:15:06 2008 +0000</p>
+
+
+	<pre><code>(bugfix): This assert should check the two values</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10232">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10232</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e05e1058d8b0790c031b2cd779d94389f3f9feb4<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:14:55 2008 +0000</p>
+
+
+	<pre><code>(enhancement): Improving assertion messages by separating variables check</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10231">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10231</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 0ec128392085e0fc39f2a899b443aebf54f6e5ec<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:14:38 2008 +0000</p>
+
+
+	<pre><code>Directory creation permissions fixes.</code></pre>
+
+
+	<pre><code>Specify our own umask() before creating any profile with prelude-admin,<br />    so that the created group will always have the correct permissions. Make<br />    the profile backup directory group writable. The profile directory itself<br />    remain group readable.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10230">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10230</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 56d3f8ac32591f21ab3f2f63fa4624bf2a656e3f<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:14:31 2008 +0000</p>
+
+
+	<pre><code>Revert "Mask group write / other all permissions before creating any files."</code></pre>
+
+
+	<pre><code>This reverts commit b0ce0a5e2a7604c9062fd463a37e4999a375994e.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10229">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10229</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 83dfab83c76cc63bfdfcee4fd18e523f098fb027<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 09:14:23 2008 +0000</p>
+
+
+	<pre><code>Mask group write / other all permissions before creating any files.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10228">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10228</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 1f908d3d52e5fd0003787fa498fe9fecaf6bec08<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:56:40 2008 +0000</p>
+
+
+	<pre><code>(enhancement): Improving assertion messages by separating variables check</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10227">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10227</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 7140f4558b9bfc42a5acba83e806dc465c08a223<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:56:30 2008 +0000</p>
+
+
+	<pre><code>Set appropriate umask() before creating failover files.<br />    Additionally set the failover file group writable.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10226">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10226</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e209631acf282f618a0dadf9f3b7b7d35ef8c74a<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:56:21 2008 +0000</p>
+
+
+	<pre><code>Directory creation permissions fixes.</code></pre>
+
+
+	<pre><code>Specify our own umask() before creating any profile with prelude-admin,<br />    so that the created group will always have the correct permissions. Make<br />    the profile backup directory group writable. The profile directory itself<br />    remain group readable.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10225">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10225</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 82d36bbaa70c7b6c0df59f4f92d5efd51c95a34b<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:56:12 2008 +0000</p>
+
+
+	<pre><code>Revert "Mask group write / other all permissions before creating any files."</code></pre>
+
+
+	<pre><code>This reverts commit b0ce0a5e2a7604c9062fd463a37e4999a375994e.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10224">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10224</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit c60ad49214494877d0bb601aa002aeaace4b5924<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:56:07 2008 +0000</p>
+
+
+	<pre><code>Mask group write / other all permissions before creating any files.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10223">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10223</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 559eafb13ac1e1f2eab83d5be4d2c6f15bd6b2cb<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:55:57 2008 +0000</p>
+
+
+	<pre><code>Correctly format "send" command help output.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10222">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10222</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 766913b62ab9f1ca00e89b924e7af56f36b44b01<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:52:43 2008 +0000</p>
+
+
+	<pre><code>(fix): when the analyzer has a white space in its name</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10221">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10221</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 0417cf36fd9a9a4e4121a576ac675c9f8a919061<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:50:09 2008 +0000</p>
+
+
+	<pre><code>Constructor taking the native C type as argument now take an<br />    optional own_data integer (default to FALSE).</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10220">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10220</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 7df8222ee5e4154ca00123c645bf2b6985bbd5f6<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:50:04 2008 +0000</p>
+
+
+	<pre><code>Remove Clone() and Copy() method, that are now handled by<br />    specialized operator. Add the necessary operator for time<br />    comparison.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10219">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10219</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit bf5ce9a85f1d86cdd26df7e82d9f1643e61258ac<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:49:59 2008 +0000</p>
+
+
+	<pre><code>Implement [[ToString]]() method, add std::string operator.<br />    Copy/clone the criteria on object copy.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10218">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10218</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit a100f1dbaad6c7c8469d64a93a126d39078e8073<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Wed Feb 20 08:49:16 2008 +0000</p>
+
+
+	<pre><code>Avoid undefined reference with bindings.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10217">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10217</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit c6f0d771e9c17d5eadeaed936926a96f0df9f5c0<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 16 17:37:56 2008 +0000</p>
+
+
+	<pre><code>More idmef-value to 'data' cast fixes.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10213">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10213</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 40450c24c7f1f893287c6046ce3166aaa7f1ec1f<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 16 14:07:55 2008 +0000</p>
+
+
+	<pre><code>Fix double idmef_time_t free.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10212">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10212</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e61cef469800e50f1e6d369943dc13d6b73a76d2<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 16 13:58:48 2008 +0000</p>
+
+
+	<pre><code>Missing idmef-value update for 'data' type cast.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10211">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10211</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 0f16531bfdcfa910f3c0efe6eaa4f5278b193fd5<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 16 13:58:44 2008 +0000</p>
+
+
+	<pre><code>Move operator definition where they belong, and properly handle<br />    most contained idmef_value_t.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10210">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10210</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 18b14783855ec7c1fa2dcee70faaedf7a296bfbd<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 16 13:58:39 2008 +0000</p>
+
+
+	<pre><code>Implement prelude_except_if_fail(), improve [[PreludeError]] class.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10209">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10209</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 25c9594a8278beebdd746ba96da5b0d0dba16b48<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 16 13:58:04 2008 +0000</p>
+
+
+	<pre><code>Attempt to cast the provided value if it not compatible with the path.</code></pre>
+
+
+	<pre><code>Until now, if an user tried to set a path of a specific type with an<br />    idmef_value_t object containing another type, idmef_path_set() would<br />    return an error.</code></pre>
+
+
+	<pre><code>We now attempt to cast the user provided idmef_value_t to the path<br />    defined value.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10208">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10208</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit bef23efc49d837da13d06694d89693fab59d34be<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Sat Feb 16 13:25:45 2008 +0000</p>
+
+
+	<pre><code>Allow casting idmef_value_t to an idmef_value_t of another type.</code></pre>
+
+
+	<pre><code>This provide a set of enhancements to the idmef-value interface:<br />    - idmef_value_set() function for every idmef-value type.</code></pre>
+
+
+	<pre><code>- _idmef_value_cast() to convert the given idmef_value_t, to the<br />      provided idmef_value_type_id_t argument.</code></pre>
+
+
+	<pre><code>- Refactor some code.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10207">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10207</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 8264ef2b9bd6b977e5be8c6b0de6a7976da9d557<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Feb 15 09:07:21 2008 +0000</p>
+
+
+	<pre><code>Improved error message, in case no compatible data is found.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10206">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10206</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e528bca7469b7b0c32830bdce4cd629fd4532d91<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Feb 15 09:07:13 2008 +0000</p>
+
+
+	<pre><code>Declare optional arguments in the IDMEFPath header.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10205">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10205</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit e2a0ea9ab1054aaaeafce89a10d0c3aa1e2cb59e<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Feb 15 09:07:04 2008 +0000</p>
+
+
+	<pre><code>Ability to set IDMEFTime object.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10204">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10204</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit b1b140076356c3aa708ff3adb607810b5a24a5b1<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Feb 15 09:06:59 2008 +0000</p>
+
+
+	<pre><code>Handle Get() for value of type data.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10203">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10203</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit b1771660acfd3436f0f74a4a6a5e4cc4609d715e<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Fri Feb 15 09:06:52 2008 +0000</p>
+
+
+	<pre><code>Detailled error message in case of unsupported value.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10202">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10202</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 459907eb014bc1678dfd74824ef3724cbfd12d18<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 17:00:31 2008 +0000</p>
+
+
+	<pre><code>Provide the ability to specify our own [[PreludeError]]() message.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10201">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10201</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit dfae951a38633c4efd5925ee0460042dddcd7920<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 17:00:18 2008 +0000</p>
+
+
+	<pre><code>Compile c++ before low-level bindings.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10200">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10200</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit c6f130d24a4446941ffc4744426d6709eef7d949<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 17:00:11 2008 +0000</p>
+
+
+	<pre><code>More detailed error messages, bind IDMEFTime operator.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10199">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10199</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 67ac54e4dd487738026e7ee5d8e29a9976a643db<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 16:58:42 2008 +0000</p>
+
+
+	<pre><code>Implement int, long, double, and std::string operator for IDMEFTime.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10198">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10198</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 03b385ddeebb4cd05083e980aa1d2f0449a4f79c<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 10:00:16 2008 +0000</p>
+
+
+	<pre><code>Handle IDMEFTime * return from Get() method.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10197">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10197</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 896776f2788d09fea9602de86887f3c5777be24b<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 08:54:09 2008 +0000</p>
+
+
+	<pre><code>Return undef/None when required, and handle a Perl specific issue<br />    where returned values would always be undef.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10196">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10196</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit c90879076c4371cbfb2453a7990c57326fbf058e<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 08:49:03 2008 +0000</p>
+
+
+	<pre><code>Continued work on idmef-tree-wrap.hxx auto-generation.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10195">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10195</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit 5fbf3c51a350e0e78e192e665ad3765fcfd9ab97<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 08:16:31 2008 +0000</p>
+
+
+	<pre><code>Map prelude low-level datatype to type understood by Swig.<br />    Additionally, check that IDMEFValue pointer is not NULL in the<br />    IDMEFValue * typemap.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10194">https://svn.prelude-ids.org/libprelude/branches/libprelude-easy-bindings@10194</a> 09c5ec92-17d4-0310-903a-819935f44dba</code></pre>
+
+
+	<p>commit b3b93701d598c8b214e5191e99a611bb6bc11763<br />Author: yoann &lt;yoann@09c5ec92-17d4-0310-903a-819935f44dba&gt;<br />Date:   Thu Feb 14 08:16:27 2008 +0000</p>
+
+
+	<pre><code>Perl headers define a Copy() macro that conflict with our Copy methods,<br />    this should fix the compilation problem.</code></pre>
+
+
+	<pre><code>git-svn-id: <a class="external" href="https://svn.prelude-ids.org/libpre">https://svn.prelude-ids.org/libpre</a></code></pre></div>
+    </div>
+  </div>
+  
+  <div id="change-952" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:04 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Libprelude</i></li>
+       <li><strong>Category</strong> deleted (<del><i>1</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/276.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/276.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #625: Filtering plugin smtp - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="HUGQ19m2E+d0fZGnJdp++1eurJvs6v/sA8h0FlZBJCoObvi4EKIeZP7XmV04kjelK+XdBfbgpqLdRrCG0kEQKQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="PRELUDE SIEM - Bug #625: Filtering plugin smtp" href="http://www.prelude-siem.org/issues/625.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude/issues/report">Summary</a></li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #625</h2>
+
+<div class="issue tracker-1 status-5 priority-6 priority-high2 closed details">
+    <div class="next-prev-links contextual">
+      <a title="#627" accesskey="p" href="/issues/627">« Previous</a> |
+        <span class="position">108 of 362</span> |
+      <a title="#622" accesskey="n" href="/issues/622">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>Filtering plugin smtp</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="09/30/2015 04:11 PM" href="/projects/prelude/activity?from=2015-09-30">about 9 years</a> ago.
+        Updated <a title="05/30/2016 07:05 AM" href="/projects/prelude/activity?from=2016-05-30">over 8 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Urgent</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/309">Antoine LUONG</a></div></div><div class="category attribute"><div class="label">Category:</div><div class="value">-</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value">09/21/2015</div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Hello,</p>
+
+
+	<p>I try to configure prelude-manager to send me one email when a force brute attack has detected.<br />But if i reboot prelude-manager, i have cf (host1.png).And its will be down after a few secondes.<br />My configuration is (cf host.png).</p>
+
+
+	<p>I need your help!!</p>
+
+
+	<p>Thank you.</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/432/host.png">host.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/432/host.png">View</a>
+   - Configuration
+  <span class="size">(14.2 KB)</span>
+    <span class="author">Thierno DIOP, 09/30/2015 04:09 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/433/host1.png">host1.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/433/host1.png">View</a>
+   - Reboot
+  <span class="size">(50.2 KB)</span>
+    <span class="author">Thierno DIOP, 09/30/2015 04:09 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/434/host.png">host.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/434/host.png">View</a>
+   - Configuration
+  <span class="size">(14.2 KB)</span>
+    <span class="author">Thierno DIOP, 09/30/2015 04:41 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/435/host1.png">host1.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/435/host1.png">View</a>
+   - Reboot
+  <span class="size">(50.2 KB)</span>
+    <span class="author">Thierno DIOP, 09/30/2015 04:41 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/436/out2.png">out2.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/436/out2.png">View</a>
+  
+  <span class="size">(16.6 KB)</span>
+    <span class="author">Thierno DIOP, 10/01/2015 12:01 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/437/out1.png">out1.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/437/out1.png">View</a>
+  
+  <span class="size">(78.6 KB)</span>
+    <span class="author">Thierno DIOP, 10/01/2015 12:01 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-2229" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="09/30/2015 04:41 PM" href="/projects/prelude/activity?from=2015-09-30">about 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/434/host.png">host.png</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/434/host.png">View</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/435/host1.png">host1.png</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/435/host1.png">View</a> added</li>
+    </ul>
+    <div id="journal-2229-notes" class="wiki"><p>Thierno DIOP wrote:</p>
+
+
+<blockquote>
+
+	<p>Hello,</p>
+
+
+	<p>I try to configure prelude-manager to send me one email when a force brute attack has detected.<br />But if i reboot prelude-manager, i have cf (host1.png).And its will be down after a few secondes.<br />My configuration is (cf host.png).</p>
+
+
+	<p>I need your help!!</p>
+
+
+	<p>Thanks you.</p>
+
+
+</blockquote></div>
+    </div>
+  </div>
+  
+  <div id="change-2234" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="09/30/2015 05:02 PM" href="/projects/prelude/activity?from=2015-09-30">about 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Category</strong> deleted (<del><i>idmef</i></del>)</li>
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+       <li><strong>Assignee</strong> set to <i>Antoine LUONG</i></li>
+    </ul>
+    <div id="journal-2234-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>Please provide information about the OS you are using and the installation method (from source or packages).</p>
+
+
+	<p>Regards</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2235" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="09/30/2015 05:12 PM" href="/projects/prelude/activity?from=2015-09-30">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2235-notes" class="wiki"><p>I use CentOS 6.7. I installed packages with yum install.<br />So I had no errors during installation.</p>
+
+
+	<p>Regards</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2236" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="09/30/2015 05:23 PM" href="/projects/prelude/activity?from=2015-09-30">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2236-notes" class="wiki"><p>You should then install the <strong>prelude-manager-smtp-plugin</strong> package from the repository.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2237" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/01/2015 09:36 AM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2237-notes" class="wiki"><p>Ok i installed this plugin and i have not the message that was displayed when I rebooted prelude-manager (cf host1.png).<br />Everything seems Ok but after a few secondes prelude-manager, prelude-lml and prelude-correlator will be down . And when i commented the smtp section, it will be ok. You can see my smtp configuration:</p>
+
+
+	<p>[smtp]<br />sender = <a class="email" href="mailto:admin@xxxxx.fr">admin@xxxxx.fr</a><br />smtp-server = smtp.xxxxx.fr<br />subject = Alert: $alert.classification.text<br />template = /etc/prelude-manager/smtp-template/mail.template1</p>
+
+
+	<p>dbtype = mysql<br />dbname = xxxxxx<br />dbuser = xxxxxx<br />dbpass = xxxxxx<br />dbhost = localhost</p>
+
+
+	<p>correlated-alert-template = /etc/prelude-manager/smtp-template/mail.template1</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2238" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/01/2015 09:57 AM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2238-notes" class="wiki"><p>You seem to have forgotten the <strong>recipients</strong> configuration parameter.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2240" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/01/2015 11:12 AM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2240-notes" class="wiki"><p>I configured the recipients parameter but I always have the same.</p>
+
+
+	<p>[smtp]<br />sender = <a class="email" href="mailto:admin@xxxxx.fr">admin@xxxxx.fr</a><br />recipients = <a class="email" href="mailto:recep@gmail.com">recep@gmail.com</a><br />smtp-server = smtp.xxxxx.fr<br />subject = Alert: $alert.classification.text<br />template = /etc/prelude-manager/smtp-template/mail.template1</p>
+
+
+	<p>dbtype = mysql<br />dbname = xxxxxx<br />dbuser = xxxxxx<br />dbpass = xxxxxx<br />dbhost = localhost</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2241" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/01/2015 11:51 AM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2241-notes" class="wiki"><p>Please stop the prelude-manager service and post the output of the command 'prelude-manager --debug'.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2242" class="journal has-notes has-details">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/01/2015 12:01 PM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/437/out1.png">out1.png</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/437/out1.png">View</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/436/out2.png">out2.png</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/436/out2.png">View</a> added</li>
+    </ul>
+    <div id="journal-2242-notes" class="wiki"><p>Please check the joint files out1.png and out2.png</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2243" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/01/2015 12:17 PM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2243-notes" class="wiki"><p>Are you sure you uncommented the [smtp] section in the configuration file?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2244" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/01/2015 01:30 PM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2244-notes" class="wiki"><p>Sorry I thought it was already done. So now i uncommented this and i have</p>
+
+
+	<p>01 Oct 13:25:45 (process:6258) INFO: Subscribing Normalize to active decoding plugins.<br />01 Oct 13:25:45 (process:6258) INFO: server started (listening on 127.0.0.1 port 4690).<br />01 Oct 13:25:45 (process:6258) INFO: Subscribing db[default] to active reporting plugins.<br />01 Oct 13:25:45 (process:6258) INFO: SMTP: connection to smtp-xxxx.fr succeeded.<br />01 Oct 13:25:45 (process:6258) INFO: Subscribing SMTP[test] to active reporting plugins.<br />01 Oct 13:25:45 (process:6258) INFO: Subscribing Debug[default] to active reporting plugins.<br />version: &lt;empty&gt;<br />heartbeat:<br />        analyzer(0): <br />                analyzerid: 2999950199843006<br />                name: prelude-manager<br />                manufacturer: <a class="external" href="http://www.prelude-ids.com">http://www.prelude-ids.com</a><br />                model: Prelude Manager<br />                version: 1.2.6<br />                class: Concentrator<br />                ostype: Linux<br />                osversion: 2.6.32-573.7.1.el6.x86_64<br />                node:<br />                        category: unknown (0)<br />                        location: Le Mans<br />                        name: My IDS Snort<br />                        address(0): <br />                                category: ipv4-addr (7)<br />                                address: 127.0.0.1<br />                process:<br />                        name: prelude-manager<br />                        pid: 6258<br />                        path: /usr/bin/prelude-manager<br />        create_time: 01/10/2015 13:25:45.258706 +02:00<br />        heartbeat_interval: 600<br />        additional_data(0): <br />                meaning: Analyzer status<br />                type: string (0)<br />                data: starting<br />        additional_data(1): <br />                meaning: Analyzer SHA1<br />                type: string (0)<br />                data: 6aecc7d9304249a1d45d15c53e90b9856bf5d98a</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2246" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/01/2015 03:44 PM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2246-notes" class="wiki"><p>So it seems to be working... For further configuration-related questions please use the forum <a class="board" href="/projects/prelude/boards/1">User</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2247" class="journal has-notes">
+    <div id="note-13">
+    <h4><a href="#note-13" class="journal-link">#13</a>
+    
+    Updated by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/01/2015 03:57 PM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2247-notes" class="wiki"><p>it seems to work but it not working because after starting prelude-manager, it will be out of service.<br />Ok no problem, i will use the forum user for further questions.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2248" class="journal has-notes">
+    <div id="note-14">
+    <h4><a href="#note-14" class="journal-link">#14</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/01/2015 05:05 PM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2248-notes" class="wiki"><p>Are you saying the manager in debug mode stopped working immediately after the output <a class="issue tracker-1 status-5 priority-6 priority-high2 closed" title="Bug: Filtering plugin smtp (Closed)" href="/issues/625#note-11">#625-11</a>?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2249" class="journal has-notes">
+    <div id="note-15">
+    <h4><a href="#note-15" class="journal-link">#15</a>
+    
+    Updated by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/01/2015 05:30 PM" href="/projects/prelude/activity?from=2015-10-01">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2249-notes" class="wiki"><p>I meant that when i uncommente the [smtp] section in the configuration file and i start prelude-manager,<br />it seems to work. But after a few secondes it will be down.</p>
+
+
+	<p>Now everything works good. I get an email when there are a brute force attack. but in every 10 minutes, <br />I am obliged to restart the servers prelude-manager, prelude-lml and prelude-correlator.<br />What you thinks about??</p></div>
+    </div>
+  </div>
+  
+  <div id="change-3262" class="journal has-notes has-details">
+    <div id="note-16">
+    <h4><a href="#note-16" class="journal-link">#16</a>
+    
+    Updated by <a class="user active" href="/users/301">Thomas </a> <a title="05/30/2016 07:05 AM" href="/projects/prelude/activity?from=2016-05-30">over 8 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+    </ul>
+    <div id="journal-3262-notes" class="wiki"><p>It should be solved in 3.0 version of libPrelude / prelude-manager.</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/625.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/625.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

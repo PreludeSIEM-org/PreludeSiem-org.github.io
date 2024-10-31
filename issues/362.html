@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Feature #362: java bindings - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="PrtZTNqMZ2LwsVhhCddMYH892Cqd7KMeIbqZdOlGgfQtlDEjE5hq4XobUJsUnwU+A3aptIfm+lD/NF3kbUa19w==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Libprelude - Feature #362: java bindings" href="http://www.prelude-siem.org/issues/362.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-libprelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/libprelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/libprelude/issues/report">Summary</a></li>
+
+<li><a href="/projects/libprelude/issues/calendar">Calendar</a></li>
+<li><a href="/projects/libprelude/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #362</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#9" accesskey="p" href="/issues/9">« Previous</a> |
+        <span class="position">33 of 78</span> |
+      <a title="#231" accesskey="n" href="/issues/231">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>java bindings</h3></div>
+</div>
+        <p class="author">
+        Added by Anonymous <a title="08/23/2009 02:24 AM" href="/projects/libprelude/activity?from=2009-08-23">about 15 years</a> ago.
+        Updated <a title="05/29/2016 04:32 PM" href="/projects/libprelude/activity?from=2016-05-29">over 8 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/301">Thomas </a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value">08/23/2009</div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>So i'm working through this and have it about 50% done and i'm running into trouble, i'm not much of a Java person so maybe someone on this list might be able to shed some light on the subject. I've got the bindings to compile, jar to build, libpreludejava.so to link and load and when I get call:</p>
+
+
+	<p>c= new ClientEasy("prelude-java-agent");<br />c.Start();</p>
+
+
+	<p>I get:</p>
+
+
+	<p>$ java test<br />java.io.IOException: Error importing X509 private key: ASN1 parser: Error in DER parsing. <br />java.io.IOException: Error importing X509 private key: ASN1 parser: Error in DER parsing. <br />   at java.lang.reflect.Constructor.newInstance(libgcj.so.90)<br />   at com.prelude.easy.Client.Start(Client.java:45)<br />   at test.main(test.java:13)</p>
+
+
+	<p>I can verify that the profile "prelude-java-agent" works using the gnutls-cli tool, and can also very that the custom python script's i've built around this work too. Tracing through the various libraries, the only thing I can think of is that the JNI (jvm) is getting tripped up somewhere trying to actually read the key...</p>
+
+
+	<p>I'm attaching a patch of what i've come up with so far, thinking while i bang my head against the wall trying to debug this, maybe someone with some more java I/O exp. could take a look at it and see why the asn1/gnutls init is failing. I've traced it down to the auth_init function in the code. I've traced it down to the auth_init function in the code (tls-auth.c +350 or so)</p>
+
+
+	<p>posting here to get some other eyes on it see what i'm missing (and keep track of the feature as it develops)</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/186/libprelude-0.9.24.1-java.tar.gz">libprelude-0.9.24.1-java.tar.gz</a>   - intial code / configure, etc.
+  <span class="size">(121 KB)</span>
+    <span class="author">Anonymous, 08/23/2009 02:24 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/187/bindings-java.tar.gz">bindings-java.tar.gz</a>   - second run at the patch
+  <span class="size">(203 KB)</span>
+    <span class="author">Anonymous, 08/31/2009 03:33 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/188/patch1.txt">patch1.txt</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/188/patch1.txt">View</a>
+  
+  <span class="size">(2.11 KB)</span>
+    <span class="author">Anonymous, 09/02/2009 05:25 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/189/patch2.txt">patch2.txt</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/189/patch2.txt">View</a>
+  
+  <span class="size">(6.5 KB)</span>
+    <span class="author">Anonymous, 09/02/2009 05:25 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/190/patch3.txt">patch3.txt</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/190/patch3.txt">View</a>
+  
+  <span class="size">(664 Bytes)</span>
+    <span class="author">Anonymous, 09/03/2009 02:51 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/195/0001-imported-initial-files-for-java-bindings.patch">0001-imported-initial-files-for-java-bindings.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/195/0001-imported-initial-files-for-java-bindings.patch">View</a>
+   - initial import of java
+  <span class="size">(8.72 KB)</span>
+    <span class="author">Anonymous, 09/14/2009 06:11 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/196/0002-make-files-don-t-like-spaces.patch">0002-make-files-don-t-like-spaces.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/196/0002-make-files-don-t-like-spaces.patch">View</a>
+   - programmer error -- makefiles don&#39;t like epanded tabs in vi
+  <span class="size">(2.72 KB)</span>
+    <span class="author">Anonymous, 09/14/2009 06:11 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/197/0003-added-placeholder-that-swig-java-needs-for-output.patch">0003-added-placeholder-that-swig-java-needs-for-output.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/197/0003-added-placeholder-that-swig-java-needs-for-output.patch">View</a>
+   - because of the way sig works; you need this directory built before the build;
+  <span class="size">(505 Bytes)</span>
+    <span class="author">Anonymous, 09/14/2009 06:11 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-1352" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/24/2009 11:46 AM" href="/projects/libprelude/activity?from=2009-08-24">about 15 years</a> ago
+    </h4>
+
+    <div id="journal-1352-notes" class="wiki"><p>Hi Wes,</p>
+
+
+	<p>Could you try to run the bindings through another Java VM, to see if the error reproduce? <br />I'm also thinking about possible interaction problem between libgcrypt secure memory and Java.</p>
+
+
+	<p>Note: please try to attach a git patch against the current master branche, this will make it <br />much easy for developers to apply your code.</p>
+
+
+	<p>Thanks!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1353" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by Anonymous <a title="08/31/2009 03:33 PM" href="/projects/libprelude/activity?from=2009-08-31">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/187/bindings-java.tar.gz">bindings-java.tar.gz</a> added</li>
+    </ul>
+    <div id="journal-1353-notes" class="wiki"><p>Here's another go at it:</p>
+
+
+	<p>Apparently there is a bug in SWIG similar to:</p>
+
+
+	<p><a class="external" href="http://sourceforge.net/tracker/index.php?func=detail&#38;aid=1388343&#38;group_id=1645&#38;atid=301645">http://sourceforge.net/tracker/index.php?func=detail&#38;aid=1388343&#38;group_id=1645&#38;atid=301645</a></p>
+
+
+	<p>Where init() isn't properly handled in java so, we had to expose init manually in c++/include/prelude.hxx (see bindings/java/prelude.hxx.patch)</p>
+
+
+	<p>once that was done, things compiled OK and bindings/java/testapp/test.java worked, as long as you call:</p>
+
+
+	<p>com.prelude.easy.PreludeEasy.prelude_init();</p>
+
+
+	<p>in your java code (Start() alone doesn't seem to cut it)</p>
+
+
+	<p>It's still a bit rough, but it appears to work from my dev box. I dunno if you're a bit more familiar with SWIG than I am and can send a patch up-stream to them.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1354" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/31/2009 04:55 PM" href="/projects/libprelude/activity?from=2009-08-31">about 15 years</a> ago
+    </h4>
+
+    <div id="journal-1354-notes" class="wiki"><p>Hello Wes!</p>
+
+
+	<p>Thanks for investigating the issue, this is great work. I recall seeing similar SWIG behavior on others Libprelude bindings, and I will have to have a look at this to see if there is a possible workaround that we can envisage.</p>
+
+
+	<p>In order for me to be able to work on your code, I need you to provide me with a git generated patch. Here are the step on how to produce one:</p>
+
+
+<pre>
+git clone git://git.prelude-ids.com/libprelude
+cd libprelude
+
+[apply your modification to the tree now]
+
+Run "git add" for each files you added and modified, (not on autogenerated files).
+git commit
+git format-patch origin/master
+
+[Attach the resulting patch here]
+</pre>
+
+	<p>Thanks!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1355" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by Anonymous <a title="09/02/2009 05:25 PM" href="/projects/libprelude/activity?from=2009-09-02">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/188/patch1.txt">patch1.txt</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/188/patch1.txt">View</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/189/patch2.txt">patch2.txt</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/189/patch2.txt">View</a> added</li>
+    </ul>
+    <div id="journal-1355-notes" class="wiki"><p>so a bit of a git newbie, but here's a stab at it.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1356" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by Anonymous <a title="09/03/2009 02:51 PM" href="/projects/libprelude/activity?from=2009-09-03">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/190/patch3.txt">patch3.txt</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/190/patch3.txt">View</a> added</li>
+    </ul>
+    <div id="journal-1356-notes" class="wiki"><p>forgot the patch that exposes init() in c++/include/prelude.hxx (the work-around for swig)</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1360" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="09/11/2009 11:37 AM" href="/projects/libprelude/activity?from=2009-09-11">about 15 years</a> ago
+    </h4>
+
+    <div id="journal-1360-notes" class="wiki"><p>Hello Wes, thanks for the update!</p>
+
+
+	<p>Unfortunately, the patch seems to be malformed, and I'm unable to apply it.</p>
+
+
+	<p>In order to generate the patch, could you  use the '''git format-patch''' command, as you did for <a class="issue tracker-2 status-3 priority-3 priority-lowest closed" title="Feature: prelude-correlator: spamhaus drop plugin (Resolved)" href="/issues/363">#363</a>? This should generate a proper patch, and you will additionally get a ChangeLog entry with your own credits in the top header when the patch is applied.</p>
+
+
+	<p>Regards,</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1366" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by Anonymous <a title="09/14/2009 06:11 PM" href="/projects/libprelude/activity?from=2009-09-14">about 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/195/0001-imported-initial-files-for-java-bindings.patch">0001-imported-initial-files-for-java-bindings.patch</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/195/0001-imported-initial-files-for-java-bindings.patch">View</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/196/0002-make-files-don-t-like-spaces.patch">0002-make-files-don-t-like-spaces.patch</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/196/0002-make-files-don-t-like-spaces.patch">View</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/197/0003-added-placeholder-that-swig-java-needs-for-output.patch">0003-added-placeholder-that-swig-java-needs-for-output.patch</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/197/0003-added-placeholder-that-swig-java-needs-for-output.patch">View</a> added</li>
+    </ul>
+    <div id="journal-1366-notes" class="wiki"><p>lets try this again:</p>
+
+
+	<p>you might need to apply these in succession; i started learning how to do the git branch thing and had to fix things along the way; but they should work (and it does build fwiw).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1380" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="01/11/2010 11:52 AM" href="/projects/libprelude/activity?from=2010-01-11">almost 15 years</a> ago
+    </h4>
+
+    <div id="journal-1380-notes" class="wiki"><p>Hello Wes, thanks for the fixed patch!</p>
+
+
+	<p>Here are a few comments/question :</p>
+
+
+	<p>- A test for the presence of Java headers (namely jni.h) should be added to configure.in<br />- Is Ant an absolute requirement to build the generated jar files, or is it possible to use more standard java tools ?<br />- Could you report the %init issue on the SWIG bug tracking system ? Maybe they'll come with a workaround for this issue</p>
+
+
+	<p>Regards,</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1719" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/307">Jean-Charles ROGEZ</a> <a title="09/23/2013 11:19 AM" href="/projects/libprelude/activity?from=2013-09-23">about 11 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Target version</strong> set to <i>124</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-2418" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/301">Thomas </a> <a title="11/08/2015 11:58 AM" href="/projects/libprelude/activity?from=2015-11-08">almost 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Target version</strong> changed from <i>124</i> to <i>Prelude OSS 3.0.0</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-3044" class="journal has-details">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/301">Thomas </a> <a title="04/23/2016 07:51 PM" href="/projects/libprelude/activity?from=2016-04-23">over 8 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Target version</strong> changed from <i>Prelude OSS 3.0.0</i> to <i>Prelude OSS 3.1.0</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-3248" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by <a class="user active" href="/users/301">Thomas </a> <a title="05/29/2016 04:32 PM" href="/projects/libprelude/activity?from=2016-05-29">over 8 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Assignee</strong> set to <i>Thomas </i></li>
+       <li><strong>Target version</strong> deleted (<del><i>Prelude OSS 3.1.0</i></del>)</li>
+    </ul>
+    <div id="journal-3248-notes" class="wiki"><p>No activity since 6 years. I closed this issue. Reopen it if java bindings are needed.</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/362.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/362.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

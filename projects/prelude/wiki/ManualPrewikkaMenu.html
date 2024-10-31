@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>ManualPrewikkaMenu - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="bETIVUP7V/E1SAQezGvvo8lmuyi+U3ZmneL1t2qr9sB/a6A6iu9acr/iDOTRI6b9tS3KtqRZLyhDbDEn7qvCww==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+
+
+
+<div class="wiki wiki-page">
+  <p><strong>Table of Contents</strong></p>
+
+
+	<ul class="toc"><li><a href="#ALERT-menu">ALERT menu</a><ul><li><a href="#Alerts-display">Alerts display</a></li><li><a href="#Alerts-section">Alerts section</a><ul><li><a href="#Alerts-tab">Alerts tab</a></li><li><a href="#Aggregated-alerts-tab">Aggregated alerts tab</a></li></ul>
+</li><li><a href="#Threats-section">Threats section</a></li><li><a href="#Time-filter">Time filter</a></li><li><a href="#Alert-listing-automatic-refresh">Alert listing automatic refresh</a></li><li><a href="#Delete-alerts">Delete alerts</a></li></ul>
+</li><li><a href="#Agents">Agents</a><ul><li><a href="#Agents-tab">Agents tab</a><ul><li><a href="#Interaction-with-the-Name-column">Interaction with the Name column</a></li><li><a href="#Agents-deletion">Agents deletion</a></li></ul>
+</li><li><a href="#Heartbeats-tab">Heartbeats tab</a><ul><li><a href="#Interaction-with-the-Agent-column">Interaction with the Agent column</a></li><li><a href="#Interaction-with-the-node-address-column">Interaction with the node address column</a></li><li><a href="#Interaction-with-the-Node-address-column">Interaction with the Node address column</a></li><li><a href="#Interaction-with-the-Model-column">Interaction with the Model column</a></li><li><a href="#Heartbeats-deletion">Heartbeats deletion</a></li></ul>
+</li><li><a href="#Aggregated-heartbeats">Aggregated heartbeats</a></li></ul>
+</li><li><a href="#ADMIN-menu">ADMIN menu</a><ul><li><a href="#Scheduling-section">Scheduling section</a></li><li><a href="#Preferences-section">Preferences section</a><ul><li><a href="#The-My-account-tab">The My account tab</a></li><li><a href="#The-Filters-tab">The Filters tab</a><ul><li><a href="#Filters-list">Filters list</a></li><li><a href="#Filter-creation-or-edition">Filter creation or edition</a></li><li><a href="#Filter-definition-form-on-a-data-type">Filter definition form on a data type</a></li></ul>
+</li></ul>
+</li></ul>
+</li><li><a href="#-menu">? menu</a><ul><li><a href="#Apps-section">Apps section</a></li><li><a href="#About-section">About section</a></li></ul></li></ul>
+
+
+	<a name="ALERT-menu"></a>
+<h1 >ALERT menu<a href="#ALERT-menu" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The ALERT menu provides a first level of alerts visualization. This is the main page of Prelude SIEM.</p>
+
+
+	<a name="Alerts-display"></a>
+<h2 >Alerts display<a href="#Alerts-display" class="wiki-anchor">&para;</a></h2>
+
+
+Alerts are displayed with four different colors:
+	<ul>
+	<li>Orange is for low severity,</li>
+		<li>Brown is for medium severity,</li>
+		<li>Red is for high severity,</li>
+		<li>Blue is for information.</li>
+	</ul>
+
+
+	<p>Prewikka automatically aggregates alerts according to their origin, destination, and time of occurrence. The aggregated alerts are displayed in a single row preceded by the number of alerts included.</p>
+
+
+<strong>To see the alert details:</strong>
+	<ul>
+	<li>Click the name of the alert</li>
+		<li>In the case of aggregated alerts, expand the list of alerts by clicking the aggregated alert name, then click the alert of which you want the details</li>
+	</ul>
+
+
+	<p><strong>To get more information about an alert</strong>, click on the different links below its name: vendor-specific, cve, bugtraqid, etc.</p>
+
+
+<strong>To get more information about sources and targets:</strong>
+	<ul>
+	<li>Click the url to choose between filter on this url or see the whois</li>
+		<li>Click the port to see the Port Lookup</li>
+	</ul>
+
+
+	<p><strong>To define the number of alerts per page</strong> you can set the <em>Limit</em> parameter in the Control Panel on the bottom left of the screen.</p>
+
+
+	<p><strong>To navigate through pages</strong> use the Alerts Navigation panel on the very bottom of the screen.</p>
+
+
+	<a name="Alerts-section"></a>
+<h2 >Alerts section<a href="#Alerts-section" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>In the <em>Alerts</em> section, there are two tabs by default.</p>
+
+
+	<a name="Alerts-tab"></a>
+<h3  id="alertforensic">Alerts tab<a href="#Alerts-tab" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The Alerts tab is displayed by default when you click on the Alerts section. It displays the alerts listing including all alerts types (simple alerts and correlation alerts).</p>
+
+
+Below a description of the two main types of alerts:
+	<ul>
+	<li>Simple alerts: a unitary alert sent by a Prelude SIEM sensor (Prelude LML, Snort, Ossec, etc), it concerns a single security event;</li>
+		<li>Correlation alerts: a correlation alert is generated by the correlation engine after analyzing one or more alerts. These alerts allow operators to see attack scenarios or to have an additional information about a simple alert (blacklist, target, etc).</li>
+	</ul>
+
+
+	<a name="Aggregated-alerts-tab"></a>
+<h3  id="alertdashboard">Aggregated alerts tab<a href="#Aggregated-alerts-tab" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Displays the list of alerts in an aggregated way.</p>
+
+
+	<a name="Threats-section"></a>
+<h2 >Threats section<a href="#Threats-section" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The Threats section displays correlation alerts in the same way as the Alerts tab.</p>
+
+
+For both tabs (Alerts and Threats), alerts details are displayed in a table containing the following information:
+	<ul>
+	<li>#: The first column is used to display aggregated alerts number;</li>
+		<li>Date: Alert creation date. If more than one alert are displayed in a row (aggregation), a period is displayed;</li>
+		<li>Classification: The name of the alert, or other information allowing the operator to determine its nature. It is a<br />first indication about the alert (example: Remote Login, Brute force attack);</li>
+		<li>Source: IP address or FQDN of the alert source;</li>
+		<li>Target: IP address or FQDN of the alert target;</li>
+		<li>Analyser: Indicators related to analyzers originating the alerts.</li>
+	</ul>
+
+
+	<p>Prelude-Correlator must be installed and  set in order to receive correlation alerts. Learn more about <a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Installing Prelude Correlator</a></p>
+
+
+	<p>In Prewikka all correlation alerts are automatically displayed in the <em>Threats</em> tab.</p>
+
+
+	<p><strong>With the PrewikkaPro version you can create your own customized tabs.</strong> Learn more about this functionnality in the <a class="wiki-page new" href="/projects/prelude/wiki/ManualPrewikkaSettings?parent=ManualPrewikkaMenu#TheViewstabPrewikkaProonly">Views tab chapter on the Settings page</a></p>
+
+
+	<a name="Time-filter"></a>
+<h2 >Time filter<a href="#Time-filter" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>The Time filter :<br />On the upper right of the screen, you will find the Control Panel which will allow you to set the <em>Period</em> parameters.<br />The <em>Period</em> setting allows you to define the time period you want to display from one minute to an unlimited period of time.</li>
+	</ul>
+
+
+	<a name="Alert-listing-automatic-refresh"></a>
+<h2 >Alert listing automatic refresh<a href="#Alert-listing-automatic-refresh" class="wiki-anchor">&para;</a></h2>
+
+
+The Control Panel on the upper right of the screen allows you to set the auto refresh functionality.<br />Just select the refresh period field :
+	<ul>
+	<li>30 secondes</li>
+		<li>1 minutes</li>
+		<li>5 minutes</li>
+		<li>10 minutes</li>
+		<li>Inactive</li>
+	</ul>
+
+
+	<a name="Delete-alerts"></a>
+<h2 >Delete alerts<a href="#Delete-alerts" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>On the bottom right of the alert listing, when you are in <strong>Expert mode</strong> you will find the <em>Delete</em> button. Select the alerts you want to delete by checking the corresponding boxes on the right of the event listing. Or check the box on the right of the <em>Delete</em> button to select all the alerts. Then click <em>Delete</em>.</p>
+
+
+	<a name="Agents"></a>
+<h1 >Agents<a href="#Agents" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The <em>Agents</em> section ables you to manage and monitor your analyzers.</p>
+
+
+	<p>In the <em>Agents</em> section, there are three tabs by default.</p>
+
+
+	<a name="Agents-tab"></a>
+<h2  id="agents">Agents tab<a href="#Agents-tab" class="wiki-anchor">&para;</a></h2>
+
+
+This tab is displayed by default when clicking on the Agents section. It lists all agents registered to Prelude SIEM and<br />monitors their connection status.<br />Agents are grouped by location based on their own configurations. Each location is composed of one or more nodes<br />and one or more agents are listed for each node.
+	<ul>
+	<li>For each location, the number of nodes, agents and agents per status are displayed;</li>
+		<li>For each node, the IP address and OS information are displayed.</li>
+	</ul>
+
+
+	<p>Agents are listed in a table composed of seven columns, each column of this table is explained below:</p>
+
+
+	<table>
+		<tr>
+			<th>Field </th>
+			<th>Functionalities </th>
+			<th>Example </th>
+		</tr>
+		<tr>
+			<td> Delete </td>
+			<td> Checkbox used to select an agent in order to delete its alerts or heartbeats. </td>
+			<td> . </td>
+		</tr>
+		<tr>
+			<td> Name </td>
+			<td> The agent name </td>
+			<td> Prelude-LML </td>
+		</tr>
+		<tr>
+			<td> Model </td>
+			<td> The agent model </td>
+			<td> Prelude LML </td>
+		</tr>
+		<tr>
+			<td> Version </td>
+			<td> The agent version </td>
+			<td> 3.1.0 </td>
+		</tr>
+		<tr>
+			<td> Class </td>
+			<td> The agent class </td>
+			<td> Log Analyzer </td>
+		</tr>
+		<tr>
+			<td> Latest heartbeat </td>
+			<td> The elapsed time since the last heartbeat was received </td>
+			<td> 2 minutes ago </td>
+		</tr>
+		<tr>
+			<td> Status </td>
+			<td> The agent status </td>
+			<td> Online </td>
+		</tr>
+	</table>
+
+
+
+
+	<p>The following color code is used for agents statuses:</p>
+
+
+	<table>
+		<tr>
+			<th>Agent status </th>
+			<th>Color </th>
+			<th>Explanation </th>
+		</tr>
+		<tr>
+			<td> Online </td>
+			<td> Green </td>
+			<td> The agent sent a heartbeat to the manager according to the specified time interval. The agent is working. </td>
+		</tr>
+		<tr>
+			<td> Missing </td>
+			<td> Red </td>
+			<td> The agent didn’t send a heartbeat to the manager in the specified time interval. The sensor is no longer in working condition. </td>
+		</tr>
+		<tr>
+			<td> Offline </td>
+			<td> Grey </td>
+			<td> The agent sent a heartbeat and indicated it was the last. The agent is no longer in working condition. </td>
+		</tr>
+		<tr>
+			<td> Unknown </td>
+			<td> Light salmon </td>
+			<td> The agent is probably not connected to Prelude SIEM. The time interval of heartbeats hasn’t been defined. </td>
+		</tr>
+	</table>
+
+
+
+
+	<p>By clicking on the location name, you get the nodes listing with the node name, its IP address, the OS running on it, the version of the OS and the number and status of its analyzers.</p>
+
+
+	<p>By clicking on the number of analyzers in the nodes listing, you get the analyzers listing.</p>
+
+
+	<a name="Interaction-with-the-Name-column"></a>
+<h3 >Interaction with the Name column<a href="#Interaction-with-the-Name-column" class="wiki-anchor">&para;</a></h3>
+
+
+By clicking on an agent name, a pop-up menu is displayed and allows operators to choose one of three actions:
+	<ul>
+	<li><strong>Alert listing:</strong> clicking on this link displays alerts generated by this agent;</li>
+		<li><strong>Heartbeat listing:</strong> clicking on this link displays this agent’s heartbeats;</li>
+		<li><strong>Heartbeat analysis:</strong> clicking on this link displays more details about the agent and its historic.</li>
+	</ul>
+
+
+	<p>The agent heartbeat analysis contains the following information:</p>
+
+
+	<table>
+		<tr>
+			<th>Column</th>
+			<th>Explanation</th>
+			<th>Example</th>
+		</tr>
+		<tr>
+			<td> Name </td>
+			<td> The agent name </td>
+			<td> Ajaccio-LML </td>
+		</tr>
+		<tr>
+			<td> Model </td>
+			<td> The agent model </td>
+			<td> Prelude LML 4.0.0 </td>
+		</tr>
+		<tr>
+			<td> OS </td>
+			<td> The operating system </td>
+			<td> kernel Linux 2.6.32-573.12.1.el6.x86_64 </td>
+		</tr>
+		<tr>
+			<td> Node name </td>
+			<td> Where the host or the sensor is installed </td>
+			<td> Paris </td>
+		</tr>
+		<tr>
+			<td> Node location </td>
+			<td> The host location </td>
+			<td> France </td>
+		</tr>
+		<tr>
+			<td> Node address </td>
+			<td> The host address </td>
+			<td> 172.25.35.21 </td>
+		</tr>
+		<tr>
+			<td> Latest heartbeat </td>
+			<td> The elapsed time since the last heartbeat was received </td>
+			<td> 8 minutes ago </td>
+		</tr>
+		<tr>
+			<td> Current status </td>
+			<td> The current status of the agent </td>
+			<td> online </td>
+		</tr>
+		<tr>
+			<td> Events </td>
+			<td> Heartbeats historic analysis </td>
+			<td> No anomaly in the last 30 heartbeats (one heartbeat every 9 minutes average) </td>
+		</tr>
+	</table>
+
+
+
+
+	<a name="Agents-deletion"></a>
+<h3 >Agents deletion<a href="#Agents-deletion" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>From the <em>Agents</em> tab, it is possible to select one or more agents by clicking on the checkboxes on the left of each row and delete associated alerts and/or heartbeats information. To do that, you have to select the concerned agents, then select the type of information to delete by checking the corresponding checkbox in the bottom right of the page, then click on the <em>Delete</em> button.</p>
+
+
+<hr />
+
+
+	<p><strong>Note:</strong> When an agent is disconnected, if the heartbeats are deleted, the agent will no more be displayed in the agents list.</p>
+
+
+<hr />
+
+
+	<a name="Heartbeats-tab"></a>
+<h2  id="heartbeatforensic">Heartbeats tab<a href="#Heartbeats-tab" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>A heartbeat is a signal sent periodically by an agent to indicate its status (connected, terminating the connection, etc).<br />The agent monitoring occurs through heartbeats.</p>
+
+
+	<p>The <em>Heartbeats</em> tab displays heartbeats of all known agents (agents which were registered and which connected at least<br />one time).</p>
+
+
+	<p>Heartbeats information are displayed in a table composed of five columns. Each column is explained below:</p>
+
+
+	<table>
+		<tr>
+			<th>Column </th>
+			<th>Explanation </th>
+			<th>Example </th>
+		</tr>
+		<tr>
+			<td> Agent </td>
+			<td> The agent name </td>
+			<td> prelude-lml </td>
+		</tr>
+		<tr>
+			<td> Node address </td>
+			<td> The agent node IP address </td>
+			<td> 192.168.1.30 </td>
+		</tr>
+		<tr>
+			<td> Node name </td>
+			<td> The agent node name </td>
+			<td> Lyon </td>
+		</tr>
+		<tr>
+			<td> Model </td>
+			<td> The agent model </td>
+			<td> Prelude LML </td>
+		</tr>
+		<tr>
+			<td> Date </td>
+			<td> Date and time of the last heartbeat sent by the agent </td>
+			<td> 09/18/2015 11:39 </td>
+		</tr>
+	</table>
+
+
+
+
+	<a name="Interaction-with-the-Agent-column"></a>
+<h3 >Interaction with the Agent column<a href="#Interaction-with-the-Agent-column" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>By clicking on the agent name, a pop-up menu is displayed.</p>
+
+
+	<p>The entry <em>See heartbeat details</em> displays details about the selected heartbeat. This includes details about the agent and its status.<br />The <em>Filter on agent</em> option allows to display only heartbeats concerning this agent.</p>
+
+
+	<a name="Interaction-with-the-node-address-column"></a>
+<h3 >Interaction with the node address column<a href="#Interaction-with-the-node-address-column" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Click on the node address of an agent in the heartbeats list, a pop-up menu providing the possibility to filter on this address is displayed. Clicking on the <em>Filter on address</em> option allows you to display heartbeats of this node’s agents.</p>
+
+
+	<a name="Interaction-with-the-Node-address-column"></a>
+<h3 >Interaction with the Node address column<a href="#Interaction-with-the-Node-address-column" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Clicking on a node name from the heartbeats list allow to display heartbeats of agents hosted in this node.</p>
+
+
+	<a name="Interaction-with-the-Model-column"></a>
+<h3 >Interaction with the Model column<a href="#Interaction-with-the-Model-column" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Clicking on a model allows to show heartbeats of agents of this model (example: heartbeats of all Prelude LML agents).</p>
+
+
+	<a name="Heartbeats-deletion"></a>
+<h3 >Heartbeats deletion<a href="#Heartbeats-deletion" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>It is possible to delete heartbeats from the heartbeats listing. To do that, check all heartbeats to be deleted then click on the <em>Apply</em> button in the bottom right of the page.</p>
+
+
+	<a name="Aggregated-heartbeats"></a>
+<h2  id="heartbeatdashboard">Aggregated heartbeats<a href="#Aggregated-heartbeats" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Like the previous tab, but aggregated.</p>
+
+
+	<a name="ADMIN-menu"></a>
+<h1 >ADMIN menu<a href="#ADMIN-menu" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Scheduling-section"></a>
+<h2  id="scheduling">Scheduling section<a href="#Scheduling-section" class="wiki-anchor">&para;</a></h2>
+
+
+This page lists all tasks that can be scheduled for a periodic execution. These tasks include in particular:
+	<ul>
+	<li>The periodic generation of reports;</li>
+		<li>The management of the replay queue;</li>
+		<li>The fetching of vulnerability data;</li>
+		<li>The fetching of monitoring data;</li>
+		<li>The deletion of old heartbeats of Prelude agents;</li>
+		<li>The deletion of old alerts;</li>
+		<li>The deletion of the search history.</li>
+	</ul>
+
+
+The table has the following columns:
+	<ul>
+	<li>Name: Name of the periodic task;</li>
+		<li>Schedule: Schedule type (daily, monthly, etc.);</li>
+		<li>User: The user responsible for the task, or “SYSTEM” if it is a system task;* Last execution: the time since the task’s last execution, or the error message if need be;</li>
+		<li>Next execution: The time until the task’s next execution.</li>
+	</ul>
+
+
+Each of these tasks can be enabled or disabled thanks to the buttons located below the table.<br />Furthermore, the execution interval of each task can be configured by clicking on the task’s name. This configuration relies on the cron table syntax (Wikipedia - Cron), namely the definition of the five following values:
+	<ul>
+	<li>The minutes;</li>
+		<li>The hours;</li>
+		<li>The day of the month;</li>
+		<li>The number (or the english abbreviation) of the month;</li>
+	</ul>
+
+
+The number (or the english abbreviation) of the week’s day.<br />For each value, possible notations are:
+	<ul>
+	<li>*: every unit (0, 1, 2, 3, 4. . . );</li>
+		<li>5,8: units 5 and 8;</li>
+		<li>2-5: units from 2 to 5 (2, 3, 4, 5);</li>
+		<li>*/3: every 3 units (0, 3, 6, 9. . . );</li>
+		<li>10-20/3: every 3 units, between the tenth and the twentieth (10, 13, 16, 19).</li>
+	</ul>
+
+
+	<p>If the “day of the month” and the “day of the week” are both given, the task will be executed when one of the fields<br />matches.</p>
+
+
+<hr />
+
+
+	<p><strong>Note:</strong> Some of the tasks need to be configured in the Prelude GUI configuration file, besides their activation in the<br />web interface. See the configuration documentation for more information.</p>
+
+
+<hr />
+
+
+	<a name="Preferences-section"></a>
+<h2 >Preferences section<a href="#Preferences-section" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>This section allows to configure user preferences, like language, timezone, views and filters configuration.</p>
+
+
+	<a name="The-My-account-tab"></a>
+<h3  id="myaccount">The <em>My account</em> tab<a href="#The-My-account-tab" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The <em>My account</em> tab allows you to set your preferences and see your permissions.</p>
+
+
+The My account tab allows operators to edit parameters of their own account. All the following elements are configurable<br />(except the first one) and user-specific:
+	<ul>
+	<li>Login: ID of the operator. It is the login used for connection.</li>
+		<li>Name: full name of the operator.</li>
+		<li>Email: email of the operator.</li>
+		<li>Language: language of the GUI.</li>
+		<li>Theme: theme of the GUI.</li>
+		<li>Timezone: timezone of the operator. All displayed data will be in this timezone.</li>
+	</ul>
+
+
+	<a name="The-Filters-tab"></a>
+<h3 >The <em>Filters</em> tab<a href="#The-Filters-tab" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The Filters tab allows operators to create their own advanced filters based on alerts, heartbeats or logs.<br />The interface is organized as a table. The creation or the edition of a filter occurs through a form in a widget.</p>
+
+
+	<a name="Filters-list"></a>
+<h4  id="filters">Filters list<a href="#Filters-list" class="wiki-anchor">&para;</a></h4>
+
+
+Filters of the operator are presented as a table. The columns are the following:
+	<ul>
+	<li>Name: Name of the filter. A click on the name opens the filter’s edition form;</li>
+		<li>Alerts: Indicates whether the filter concerns alerts or not;</li>
+		<li>Heartbeats: Indicates whether the filter concerns heartbeats or not;</li>
+		<li>Description: Description of the filter.</li>
+	</ul>
+
+
+Available actions:
+	<ul>
+	<li><em>Create:</em> Opens the filter’s creation form;</li>
+		<li><em>Duplicate:</em> With a filter selected, the filter form opens with the same content as the filter but without a name for duplicating it;</li>
+		<li><em>Delete:</em> Delete the selected filters.</li>
+	</ul>
+
+
+	<a name="Filter-creation-or-edition"></a>
+<h4 >Filter creation or edition<a href="#Filter-creation-or-edition" class="wiki-anchor">&para;</a></h4>
+
+
+The filter creation or edition form is organized like this:
+	<ul>
+	<li>Name: Name of the filter;</li>
+		<li>Description: Description of the filter;</li>
+		<li>Alerts: Sub-form for defining a filter on alerts;</li>
+		<li>Heartbeats: Sub-form for defining a filter on heartbeats.</li>
+	</ul>
+
+
+	<a name="Filter-definition-form-on-a-data-type"></a>
+<h4 >Filter definition form on a data type<a href="#Filter-definition-form-on-a-data-type" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The form represents a logical expression. At every imbrication level, you can choose between an <em>AND</em> and an <em>OR</em> operator. This corresponds to the blue button with the dropdown list displayed at each level.</p>
+
+
+Inside each imbrication level, it is possible to:
+	<ul>
+	<li>List the logical expressions to match. A logical expression is organized into three blocks: the path on which to validate a value, an operator (from equality to regular expression) and the searched value. The trash icon can be used to delete the unitary logical expression.</li>
+		<li>Button +: Add a new unitary logical expression at the current imbrication level.</li>
+		<li>Button &#38;: Add a new logical imbrication level.</li>
+		<li>Click on the <em>Save</em> button to save the changes made.</li>
+	</ul>
+
+
+	<a name="-menu"></a>
+<h1 >? menu<a href="#-menu" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Apps-section"></a>
+<h2  id="apps">Apps section<a href="#Apps-section" class="wiki-anchor">&para;</a></h2>
+
+
+The Apps tab allows operators to manage Prelude GUI plugins. The following actions can be done from this page:
+	<ul>
+	<li>Enable a plugin;</li>
+		<li>Disable a plugin;</li>
+		<li>Update a plugin.</li>
+	</ul>
+
+
+	<p>When all Prelude GUI plugins are installed and up-to-date, this page shows the list of those plugins and offers the possibility to enable or disable them.</p>
+
+
+	<p>When one or more plugins are not installed or not up-to-date, a notification is displayed in this page. Concerned plugins are grouped and it is possible to update or install them from the GUI.</p>
+
+
+	<a name="About-section"></a>
+<h2  id="about">About section<a href="#About-section" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The <em>About</em> section provides different information about the Prelude SIEM software. That includes the software version, a description of the services provided by the CS company, the company contact details and copyright details.</p>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

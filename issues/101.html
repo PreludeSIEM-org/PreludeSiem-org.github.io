@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #101: rpath issues with libprelude[db] perl bindings - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="jOiiHtcYPlghVUNATZoS+wkGcbb/HIu31lMi0mB25MOfx8pxHgwz26v/S7pQ0luldU0AKOUW0vkI3eZC5HbQwA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Libprelude - Bug #101: rpath issues with libprelude[db] perl bindings" href="http://www.prelude-siem.org/issues/101.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-libprelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/libprelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/libprelude/issues/report">Summary</a></li>
+
+<li><a href="/projects/libprelude/issues/calendar">Calendar</a></li>
+<li><a href="/projects/libprelude/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #101</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+
+  
+
+<div class="subject">
+<div><h3>rpath issues with libprelude[db] perl bindings</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="10/01/2005 06:41 AM" href="/projects/libprelude/activity?from=2005-10-01">about 19 years</a> ago.
+        Updated <a title="04/29/2009 12:26 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="12/13/2005" href="/versions/3">0.9.1</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p><a class="external" href="https://bugs.gentoo.org/show_bug.cgi?id=105759">https://bugs.gentoo.org/show_bug.cgi?id=105759</a></p>
+
+
+	<p>Compiling in a staging directory included the rpath of the staging directory in the perl module library rpath.</p>
+
+
+	<p>Patches available (within 1 day)<br /><a class="external" href="http://www.gentoo.org/cgi-bin/viewcvs.cgi/dev-libs/libpreludedb/files/">http://www.gentoo.org/cgi-bin/viewcvs.cgi/dev-libs/libpreludedb/files/</a><br /><a class="external" href="http://www.gentoo.org/cgi-bin/viewcvs.cgi/dev-libs/libprelude/files/">http://www.gentoo.org/cgi-bin/viewcvs.cgi/dev-libs/libprelude/files/</a></p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/21/libprelude-0.9.0-perlpathfix.patch">libprelude-0.9.0-perlpathfix.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/21/libprelude-0.9.0-perlpathfix.patch">View</a>
+   - libprelude-0.9.0-perlpathfix.patch
+  <span class="size">(980 Bytes)</span>
+    <span class="author">admin admin, 10/01/2005 06:45 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/22/libpreludedb-0.9.0-perlpathfix.patch">libpreludedb-0.9.0-perlpathfix.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/22/libpreludedb-0.9.0-perlpathfix.patch">View</a>
+   - libpreludedb-0.9.0-perlpathfix.patch
+  <span class="size">(894 Bytes)</span>
+    <span class="author">admin admin, 10/01/2005 06:46 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/20/libprelude-0.9.0-perlpathfix.2.patch">libprelude-0.9.0-perlpathfix.2.patch</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/20/libprelude-0.9.0-perlpathfix.2.patch">View</a>
+   - libprelude-0.9.0-perlpathfix.patch
+  <span class="size">(1.89 KB)</span>
+    <span class="author">admin admin, 10/03/2005 01:54 AM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-220" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="10/01/2005 11:33 AM" href="/projects/libprelude/activity?from=2005-10-01">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-220-notes" class="wiki"><p>Unfortunately, these patch will break the Perl bindings:</p>
+
+
+	<p>The problem is that [[MakeMaker]] will remove library it can not find when linking the module. Thus, if you compile the module on a system where libprelude is not yet installed, the module won't be linked to libprelude at all. This is what happen with your patch:</p>
+
+
+<pre>
+cd perl &#38;&#38; LANG="" DESTDIR= LIBDIR=/home/yoann/dev/prelude/bin/lib /usr/bin/perl Makefile.PL
+Note (probably harmless): No library found for -lprelude
+Note (probably harmless): No library found for -lprelude
+Writing Makefile for Prelude
+</pre>
+
+	<p>(...)</p>
+
+
+<pre>
+Running Mkbootstrap for Prelude ()
+chmod 644 Prelude.bs
+rm -f blib/arch/auto/Prelude/Prelude.so
+LD_RUN_PATH="/home/yoann/dev/prelude/bin/lib:/usr/lib64" x86_64-pc-linux-gnu-gcc  -L../..//src/.libs -pthread -shared Prelude.o  -o blib/arch/auto/Prelude/Prelude.so   -L/home/yoann/dev/prelude/bin/lib -L/usr/lib64 -lgnutls -L/usr/lib64 -lgcrypt -L/usr/lib64 -lgpg-error -lz -lrt -ldl
+</pre>
+
+	<p>You can notice that -lprelude is not provided anymore. I know of no workaround for this issue and this is the reason why rpath is set to both the source and library install directory. Comment from [[MakeMaker]] expert would be welcome.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-221" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="10/02/2005 01:23 AM" href="/projects/libprelude/activity?from=2005-10-02">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-221-notes" class="wiki"><p>The same output with the patch for me:</p>
+
+
+	<p>cd perl &#38;&#38; DESTDIR=/var/tmp/portage/libprelude-0.9.0-r1/image/ LANG="" /usr/bin/perl Makefile.PL &#38;&#38; make install<br />Writing Makefile for Prelude<br />maker5: Entering directory @/var/tmp/portage/libprelude-0.9.0-r1/work/libprelude-0.9.0/bindings/perl'<br />Running Mkbootstrap for Prelude ()<br />chmod 644 Prelude.bs<br />rm -f blib/arch/auto/Prelude/Prelude.so<br />LD_RUN_PATH="/usr/lib" i686-pc-linux-gnu-gcc  -L../..//src/.libs -pthread -shared -L/usr/local/lib Prelude.o  -o blib/arch/auto/Prelude/Prelude.so   -lprelude<br />chmod 755 blib/arch/auto/Prelude/Prelude.so</p>
+
+
+	<p>System info:<br />Portage 2.0.52-r1 (hardened/x86/2.6, gcc-3.4.4, glibc-2.3.5-r1, 2.6.12-gentoo-r6 i686)
+=================================================================<br />System uname: 2.6.12-gentoo-r6 i686 AMD Athlon(tm) XP 1900+<br />Gentoo Base System version 1.6.13<br />distcc 2.18.3 i686-pc-linux-gnu (protocols 1 and 2) (default port 3632) [disabled]<br />ccache version 2.3 [disabled]<br />dev-lang/python:     2.3.5-r2<br />sys-apps/sandbox:    1.2.13<br />sys-devel/autoconf:  2.13, 2.59-r6<br />sys-devel/automake:  1.4_p6, 1.5, 1.6.3, 1.7.9-r1, 1.8.5-r3, 1.9.6-r1<br />sys-devel/binutils:  2.16.1<br />sys-devel/libtool:   1.5.18-r1<br />virtual/os-headers:  2.6.11-r2</p>
+
+
+	<p>$ perl -v<br />This is perl, v5.8.6 built for i686-linux<br />(dev-lang/perl-5.8.6-r6  +berkdb -build -debug -doc -gdbm -ithreads -minimal -perlsuid)<br />This version is patched with the following patch may have made the patch for for me.<br /><a class="external" href="http://bugs.gentoo.org/show_bug.cgi?id=105054">http://bugs.gentoo.org/show_bug.cgi?id=105054</a><br /><a class="external" href="http://www.gentoo.org/cgi-bin/viewcvs.cgi/dev-lang/perl/files/?hideattic=1">http://www.gentoo.org/cgi-bin/viewcvs.cgi/dev-lang/perl/files/?hideattic=1</a> ( perl-5.8.7-MakeMaker-RUNPATH.patch)</p>
+
+
+	<p>I'm not even close to a [[MakeMaker]] user let alone expert. So I'm after suggestions too.</p>
+
+
+	<p>My objective of this patch was to remove the LD_RUN_PATH="/var/tmp/portage/libprelude...." that resulted in the rpath from ld.</p>
+
+
+	<p>May be able to inject make LD_RUN_PATH= at some point?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-222" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="10/02/2005 12:07 PM" href="/projects/libprelude/activity?from=2005-10-02">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-222-notes" class="wiki"><p>Wasn't the above done on a system where libprelude.so was already installed ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-223" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by  <a title="10/02/2005 01:58 PM" href="/projects/libprelude/activity?from=2005-10-02">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-223-notes" class="wiki"><p>yes you're right - still looking fir solution</p></div>
+    </div>
+  </div>
+  
+  <div id="change-224" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/1">admin admin</a> <a title="10/03/2005 01:55 AM" href="/projects/libprelude/activity?from=2005-10-03">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-224-notes" class="wiki"><p>Dodgy patch but it works.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-225" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="10/03/2005 11:18 AM" href="/projects/libprelude/activity?from=2005-10-03">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-225-notes" class="wiki"><p>Thanks Daniel, the patch look good and fix the rpath issue!<br />The portion of the patch fixing the rpath issue has been applied.</p>
+
+
+	<p>Could you explain that other part of the patch:<br /><pre>
+-    $attributs{"PREFIX"} = "$ENV{DESTDIR}/@prefix@";
++    $attributs{"PREFIX"} = "@prefix@";
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-226" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/1">admin admin</a> <a title="10/03/2005 10:59 PM" href="/projects/libprelude/activity?from=2005-10-03">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-226-notes" class="wiki"><p>When installing to a staging directory ($DESTDIR) its nice to have the 'make DESTDIR=/stagingdir install' become an overlay of the filesystem. As is currently stands with $attributs{"PREFIX"} = "$ENV{DESTDIR}/<code>prefix</code>"; the Makefile generated from this will have $DESTDIR appended twice. The results of this the perl files installed in:<br />$DESTDIR/$DESTDIR//usr/lib/perl5/site_perl/5.8.6/i686-linux/auto/Prelude/Prelude.so <br />(<a class="external" href="https://bugs.gentoo.org/show_bug.cgi?id=105759#c1">https://bugs.gentoo.org/show_bug.cgi?id=105759#c1</a>) while the rest of the libprelude is installed in $DESTDIR/usr/lib/libprelude.so.</p>
+
+
+	<p>[[MakeMaker]] does generate the right $DESTDIR options without any help.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-227" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/1">admin admin</a> <a title="10/04/2005 10:35 PM" href="/projects/libprelude/activity?from=2005-10-04">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-227-notes" class="wiki"><p>Did that make sense?</p>
+
+
+	<a name="extract-from-compileinstall-from-subversion"></a>
+<h2 >extract from compile/install from subversion<a href="#extract-from-compileinstall-from-subversion" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="autogensh"></a>
+<h2 >autogen.sh<a href="#autogensh" class="wiki-anchor">&para;</a></h2>
+
+
+<pre>
+dan@frog ~/software_projects/libprelude $ ./autogen.sh
+Running gtkdocize...
+Running libtoolize...
+Running autoreconf...
+/usr/share/aclocal/soup.m4:7: warning: underquoted definition of AM_PATH_SOUP
+  run info '(automake)Extending aclocal'
+  or see http://sources.redhat.com/automake/automake.html#Extending-aclocal
+/usr/share/aclocal/progsreiserfs.m4:13: warning: underquoted definition of AC_CHECK_LIBREISERFS
+....
+....
+....
+/usr/share/aclocal/ORBit.m4:4: warning: underquoted definition of AM_PATH_ORBIT
+configure.in: installing @./install-sh'
+configure.in: installing @./missing'
+prelude-adduser/Makefile.am: installing @./depcomp'
+
+You can now run "./configure --enable-developer-mode" and "make" 
+</pre>
+
+	<a name="configure"></a>
+<h2 >configure<a href="#configure" class="wiki-anchor">&para;</a></h2>
+
+
+<pre>
+dan@frog ~/software_projects/libprelude $ ./configure --prefix=/usr --with-perl
+checking build system type... i686-pc-linux-gnu
+checking host system type... i686-pc-linux-gnu
+checking target system type... i686-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... gawk
+....
+....
+....
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+
+*** Dumping configuration ***
+    - Generate documentation : no
+    - Perl binding           : yes
+    - Python binding         : yes
+</pre>
+
+	<a name="make"></a>
+<h2 >make<a href="#make" class="wiki-anchor">&para;</a></h2>
+
+
+<pre>
+dan@frog ~/software_projects/libprelude $ make
+rm -f prelude-config.h
+echo "/* Used from libprelude headers */" &gt;&gt; prelude-config.h
+/bin/grep "HAVE_VARIADIC_MACROS"          &lt; ./config.h &gt;&gt; prelude-config.h
+/bin/grep "TIME_WITH_SYS_TIME"            &lt; ./config.h &gt;&gt; prelude-config.h
+/bin/grep "PRELUDE_ALIGNED_ACCESS"        &lt; ./config.h &gt;&gt; prelude-config.h
+/bin/grep "PRELUDE_WORDS_BIGENDIAN"       &lt; ./config.h &gt;&gt; prelude-config.h
+/bin/grep "+PRELUDE_FUNC+"              &lt; ./config.h &gt;&gt; prelude-config.h
+make  all-recursive
+maker1: Entering directory @/home/dan/software_projects/libprelude'
+Making all in libltdl
+maker2: Entering directory @/home/dan/software_projects/libprelude/libltdl'
+cd . &#38;&#38; /bin/sh /home/dan/software_projects/libprelude/libltdl/missing --run autoheader
+rm -f stamp-h1
+touch config-h.in
+cd . &#38;&#38; /bin/sh ./config.status config.h
+....
+....
+....
+Running Mkbootstrap for Prelude ()
+chmod 644 Prelude.bs
+rm -f blib/arch/auto/Prelude/Prelude.so
+LD_RUN_PATH="" i686-pc-linux-gnu-gcc  -L../..//src/.libs -pthread -shared -L/usr/local/lib Prelude.o  -o blib/arch/auto/Prelude/Prelude.so   -L/home/dan/software_projects/libprelude/bindings/perl/../../src/.libs -lprelude
+chmod 755 blib/arch/auto/Prelude/Prelude.so
+cp Prelude.bs blib/arch/auto/Prelude/Prelude.bs
+chmod 644 blib/arch/auto/Prelude/Prelude.bs
+maker3: Leaving directory @/home/dan/software_projects/libprelude/bindings/perl'
+/usr/bin/swig -I../bindings -I../src/include -I../src/libprelude-error -o python/_prelude.c -python -noproxy -interface _prelude -module _prelude libprelude.i
+cd python &#38;&#38; /usr/bin/python setup.py build
+running build
+running build_py
+creating build
+creating build/lib.linux-i686-2.3
+copying prelude.py -&gt; build/lib.linux-i686-2.3
+running build_ext
+building '_prelude' extension
+creating build/temp.linux-i686-2.3
+i686-pc-linux-gnu-gcc -pthread -fno-strict-aliasing -DNDEBUG -fPIC -I/usr/include/python2.3 -c _prelude.c -o build/temp.linux-i686-2.3/_prelude.o -DHAVE_CONFIG_H -I../../ -I../../src/include -I../..//src/include -I../..//src/libprelude-error -I../../bindings -pthread
+i686-pc-linux-gnu-gcc -pthread -shared build/temp.linux-i686-2.3/_prelude.o -L../..//src/.libs/ -o build/lib.linux-i686-2.3/_prelude.so -lprelude -pthread -L/usr/lib -lgnutls -lgcrypt -lgpg-error -lz -lrt
+maker2: Leaving directory @/home/dan/software_projects/libprelude/bindings'
+Making all in docs
+maker2: Entering directory @/home/dan/software_projects/libprelude/docs'
+Making all in api
+maker3: Entering directory @/home/dan/software_projects/libprelude/docs/api'
+maker3: Nothing to be done for @all'.
+maker3: Leaving directory @/home/dan/software_projects/libprelude/docs/api'
+maker3: Entering directory @/home/dan/software_projects/libprelude/docs'
+maker3: Nothing to be done for @all-am'.
+maker3: Leaving directory @/home/dan/software_projects/libprelude/docs'
+maker2: Leaving directory @/home/dan/software_projects/libprelude/docs'
+maker2: Entering directory @/home/dan/software_projects/libprelude'
+maker2: Nothing to be done for @all-am'.
+maker2: Leaving directory @/home/dan/software_projects/libprelude'
+maker1: Leaving directory @/home/dan/software_projects/libprelude'
+</pre>
+
+	<p>== make install<br /><pre>
+dan@frog ~/software_projects/libprelude $ make DESTDIR=/home/dan/software_projects/install install
+make  install-recursive
+maker1: Entering directory @/home/dan/software_projects/libprelude'
+Making install in libltdl
+maker2: Entering directory @/home/dan/software_projects/libprelude/libltdl'
+maker3: Entering directory @/home/dan/software_projects/libprelude/libltdl'
+test -z "/usr/lib" || mkdir -p -- "/home/dan/software_projects/install/usr/lib" 
+test -z "/usr/include" || mkdir -p -- "/home/dan/software_projects/install/usr/include" 
+maker3: Leaving directory @/home/dan/software_projects/libprelude/libltdl'
+maker2: Leaving directory @/home/dan/software_projects/libprelude/libltdl'
+Making install in libmissing
+maker2: Entering directory @/home/dan/software_projects/libprelude/libmissing'
+make  install-am
+maker3: Entering directory @/home/dan/software_projects/libprelude/libmissing'
+maker4: Entering directory @/home/dan/software_projects/libprelude/libmissing'
+maker4: Nothing to be done for @install-exec-am'.
+maker4: Nothing to be done for @install-data-am'.
+maker4: Leaving directory @/home/dan/software_projects/libprelude/libmissing'
+maker3: Leaving directory @/home/dan/software_projects/libprelude/libmissing'
+maker2: Leaving directory @/home/dan/software_projects/libprelude/libmissing'
+Making install in m4
+maker2: Entering directory @/home/dan/software_projects/libprelude/m4'
+maker3: Entering directory @/home/dan/software_projects/libprelude/m4'
+maker3: Nothing to be done for @install-exec-am'.
+test -z "/usr/share/aclocal" || mkdir -p -- "/home/dan/software_projects/install/usr/share/aclocal" 
+ /usr/bin/install -c -m 644 'libprelude.m4' '/home/dan/software_projects/install/usr/share/aclocal/libprelude.m4'
+maker3: Leaving directory @/home/dan/software_projects/libprelude/m4'
+maker2: Leaving directory @/home/dan/software_projects/libprelude/m4'
+Making install in src
+maker2: Entering directory @/home/dan/software_projects/libprelude/src'
+Making install in libprelude-error
+maker3: Entering directory @/home/dan/software_projects/libprelude/src/libprelude-error'
+make  install-am
+maker4: Entering directory @/home/dan/software_projects/libprelude/src/libprelude-error'
+maker5: Entering directory @/home/dan/software_projects/libprelude/src/libprelude-error'
+maker5: Nothing to be done for @install-exec-am'.
+test -z "/usr/include/libprelude" || mkdir -p -- "/home/dan/software_projects/install/usr/include/libprelude" 
+ /usr/bin/install -c -m 644 'prelude-error.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-error.h'
+maker5: Leaving directory @/home/dan/software_projects/libprelude/src/libprelude-error'
+maker4: Leaving directory @/home/dan/software_projects/libprelude/src/libprelude-error'
+maker3: Leaving directory @/home/dan/software_projects/libprelude/src/libprelude-error'
+Making install in include
+maker3: Entering directory @/home/dan/software_projects/libprelude/src/include'
+maker4: Entering directory @/home/dan/software_projects/libprelude/src/include'
+maker4: Nothing to be done for @install-exec-am'.
+test -z "/usr/include/libprelude" || mkdir -p -- "/home/dan/software_projects/install/usr/include/libprelude" 
+ /usr/bin/install -c -m 644 'common.h' '/home/dan/software_projects/install/usr/include/libprelude/common.h'
+ /usr/bin/install -c -m 644 'daemonize.h' '/home/dan/software_projects/install/usr/include/libprelude/daemonize.h'
+ /usr/bin/install -c -m 644 'variable.h' '/home/dan/software_projects/install/usr/include/libprelude/variable.h'
+ /usr/bin/install -c -m 644 'idmef.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef.h'
+ /usr/bin/install -c -m 644 'idmef-additional-data.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-additional-data.h'
+ /usr/bin/install -c -m 644 'idmef-class.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-class.h'
+ /usr/bin/install -c -m 644 'idmef-criteria.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-criteria.h'
+ /usr/bin/install -c -m 644 'idmef-criterion-value.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-criterion-value.h'
+ /usr/bin/install -c -m 644 'idmef-data.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-data.h'
+ /usr/bin/install -c -m 644 'idmef-message-id.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-message-id.h'
+ /usr/bin/install -c -m 644 'idmef-message-read.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-message-read.h'
+ /usr/bin/install -c -m 644 'idmef-message-print.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-message-print.h'
+ /usr/bin/install -c -m 644 'idmef-message-write.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-message-write.h'
+ /usr/bin/install -c -m 644 'idmef-path.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-path.h'
+ /usr/bin/install -c -m 644 'idmef-time.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-time.h'
+ /usr/bin/install -c -m 644 'idmef-tree-data.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-tree-data.h'
+ /usr/bin/install -c -m 644 'idmef-tree-wrap.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-tree-wrap.h'
+ /usr/bin/install -c -m 644 'idmef-value.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-value.h'
+ /usr/bin/install -c -m 644 'idmef-value-type.h' '/home/dan/software_projects/install/usr/include/libprelude/idmef-value-type.h'
+ /usr/bin/install -c -m 644 'prelude.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude.h'
+ /usr/bin/install -c -m 644 'prelude-async.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-async.h'
+ /usr/bin/install -c -m 644 'prelude-extract.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-extract.h'
+ /usr/bin/install -c -m 644 'prelude-hash.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-hash.h'
+ /usr/bin/install -c -m 644 'prelude-linked-object.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-linked-object.h'
+ /usr/bin/install -c -m 644 'prelude-list.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-list.h'
+ /usr/bin/install -c -m 644 'prelude-log.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-log.h'
+ /usr/bin/install -c -m 644 'prelude-client.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-client.h'
+ /usr/bin/install -c -m 644 'prelude-client-profile.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-client-profile.h'
+ /usr/bin/install -c -m 644 'prelude-connection.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-connection.h'
+ /usr/bin/install -c -m 644 'prelude-connection-pool.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-connection-pool.h'
+ /usr/bin/install -c -m 644 'prelude-failover.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-failover.h'
+ /usr/bin/install -c -m 644 'prelude-ident.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-ident.h'
+ /usr/bin/install -c -m 644 'prelude-io.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-io.h'
+ /usr/bin/install -c -m 644 'prelude-msg.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-msg.h'
+ /usr/bin/install -c -m 644 'prelude-msgbuf.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-msgbuf.h'
+ /usr/bin/install -c -m 644 'prelude-message-id.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-message-id.h'
+ /usr/bin/install -c -m 644 'prelude-option.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-option.h'
+ /usr/bin/install -c -m 644 'prelude-option-wide.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-option-wide.h'
+ /usr/bin/install -c -m 644 'prelude-plugin.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-plugin.h'
+ /usr/bin/install -c -m 644 'prelude-string.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-string.h'
+ /usr/bin/install -c -m 644 'prelude-timer.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-timer.h'
+test -z "/usr/include/libprelude" || mkdir -p -- "/home/dan/software_projects/install/usr/include/libprelude" 
+ /usr/bin/install -c -m 644 'prelude.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude.h'
+ /usr/bin/install -c -m 644 'prelude-inttypes.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-inttypes.h'
+maker4: Leaving directory @/home/dan/software_projects/libprelude/src/include'
+maker3: Leaving directory @/home/dan/software_projects/libprelude/src/include'
+maker3: Entering directory @/home/dan/software_projects/libprelude/src'
+maker4: Entering directory @/home/dan/software_projects/libprelude/src'
+test -z "/usr/lib" || mkdir -p -- "/home/dan/software_projects/install/usr/lib" 
+ /bin/sh ../libtool --mode=install /usr/bin/install -c  'libprelude.la' '/home/dan/software_projects/install/usr/lib/libprelude.la'
+/usr/bin/install -c .libs/libprelude.so.2.0.0 /home/dan/software_projects/install/usr/lib/libprelude.so.2.0.0
+(cd /home/dan/software_projects/install/usr/lib &#38;&#38; rm -f libprelude.so.2 &#38;&#38; ln -s libprelude.so.2.0.0 libprelude.so.2)
+(cd /home/dan/software_projects/install/usr/lib &#38;&#38; rm -f libprelude.so &#38;&#38; ln -s libprelude.so.2.0.0 libprelude.so)
+/usr/bin/install -c .libs/libprelude.lai /home/dan/software_projects/install/usr/lib/libprelude.la
+libtool: install: warning: remember to run @libtool --finish /usr/lib'
+maker4: Nothing to be done for @install-data-am'.
+maker4: Leaving directory @/home/dan/software_projects/libprelude/src'
+maker3: Leaving directory @/home/dan/software_projects/libprelude/src'
+maker2: Leaving directory @/home/dan/software_projects/libprelude/src'
+Making install in prelude-adduser
+maker2: Entering directory @/home/dan/software_projects/libprelude/prelude-adduser'
+maker3: Entering directory @/home/dan/software_projects/libprelude/prelude-adduser'
+test -z "/usr/bin" || mkdir -p -- "/home/dan/software_projects/install/usr/bin" 
+  /bin/sh ../libtool --mode=install /usr/bin/install -c 'prelude-adduser' '/home/dan/software_projects/install/usr/bin/prelude-adduser'
+/usr/bin/install -c .libs/prelude-adduser /home/dan/software_projects/install/usr/bin/prelude-adduser
+maker3: Nothing to be done for @install-data-am'.
+maker3: Leaving directory @/home/dan/software_projects/libprelude/prelude-adduser'
+maker2: Leaving directory @/home/dan/software_projects/libprelude/prelude-adduser'
+Making install in bindings
+maker2: Entering directory @/home/dan/software_projects/libprelude/bindings'
+cd perl &#38;&#38; make LD_RUN_PATH="" 
+maker3: Entering directory @/home/dan/software_projects/libprelude/bindings/perl'
+Running Mkbootstrap for Prelude ()
+chmod 644 Prelude.bs
+rm -f blib/arch/auto/Prelude/Prelude.so
+LD_RUN_PATH="" i686-pc-linux-gnu-gcc  -L../..//src/.libs -pthread -shared -L/usr/local/lib Prelude.o  -o blib/arch/auto/Prelude/Prelude.so   -L/home/dan/software_projects/libprelude/bindings/perl/../../src/.libs -lprelude
+chmod 755 blib/arch/auto/Prelude/Prelude.so
+cp Prelude.bs blib/arch/auto/Prelude/Prelude.bs
+chmod 644 blib/arch/auto/Prelude/Prelude.bs
+maker3: Leaving directory @/home/dan/software_projects/libprelude/bindings/perl'
+cd python &#38;&#38; /usr/bin/python setup.py build
+running build
+running build_py
+running build_ext
+maker3: Entering directory @/home/dan/software_projects/libprelude/bindings'
+make  install-exec-hook
+maker4: Entering directory @/home/dan/software_projects/libprelude/bindings'
+cd perl &#38;&#38; DESTDIR=/home/dan/software_projects/install LANG="" /usr/bin/perl Makefile.PL &#38;&#38; make LD_RUN_PATH="" install
+Warning: -L../..//src/.libs changed to -L/home/dan/software_projects/libprelude/bindings/perl/../..//src/.libs
+Writing Makefile for Prelude
+maker5: Entering directory @/home/dan/software_projects/libprelude/bindings/perl'
+Running Mkbootstrap for Prelude ()
+chmod 644 Prelude.bs
+rm -f blib/arch/auto/Prelude/Prelude.so
+LD_RUN_PATH="" i686-pc-linux-gnu-gcc  -L../..//src/.libs -pthread -shared -L/usr/local/lib Prelude.o  -o blib/arch/auto/Prelude/Prelude.so   -L/home/dan/software_projects/libprelude/bindings/perl/../../src/.libs -lprelude
+chmod 755 blib/arch/auto/Prelude/Prelude.so
+cp Prelude.bs blib/arch/auto/Prelude/Prelude.bs
+chmod 644 blib/arch/auto/Prelude/Prelude.bs
+</pre><br />This is where it goes bad:<br /><pre>
+Installing /home/dan/software_projects/install/home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/auto/Prelude/Prelude.so
+Installing /home/dan/software_projects/install/home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/auto/Prelude/Prelude.bs
+Files found in blib/arch: installing files in blib/lib into architecture dependent library tree
+Installing /home/dan/software_projects/install/home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/Prelude.pm
+Writing /home/dan/software_projects/install/home/dan/software_projects/install//usr/lib/perl5/site_perl/5.8.6/i686-linux/auto/Prelude/.packlist
+Appending installation info to /home/dan/software_projects/install/home/dan/software_projects/install//usr/lib/perl5/5.8.6/i686-linux/perllocal.pod
+maker5: Leaving directory @/home/dan/software_projects/libprelude/bindings/perl'
+</pre><br />And continuing on:<br /><pre>
+cd python &#38;&#38; /usr/bin/python setup.py install @test -n "/home/dan/software_projects/install" &#38;&#38; echo --root /home/dan/software_projects/install@
+running install
+running build
+running build_py
+running build_ext
+running install_lib
+creating /home/dan/software_projects/install/usr/lib/python2.3
+creating /home/dan/software_projects/install/usr/lib/python2.3/site-packages
+copying build/lib.linux-i686-2.3/prelude.py -&gt; /home/dan/software_projects/install/usr/lib/python2.3/site-packages
+copying build/lib.linux-i686-2.3/_prelude.so -&gt; /home/dan/software_projects/install/usr/lib/python2.3/site-packages
+byte-compiling /home/dan/software_projects/install/usr/lib/python2.3/site-packages/prelude.py to prelude.pyc
+maker4: Leaving directory @/home/dan/software_projects/libprelude/bindings'
+maker3: Nothing to be done for @install-data-am'.
+maker3: Leaving directory @/home/dan/software_projects/libprelude/bindings'
+maker2: Leaving directory @/home/dan/software_projects/libprelude/bindings'
+Making install in docs
+maker2: Entering directory @/home/dan/software_projects/libprelude/docs'
+Making install in api
+maker3: Entering directory @/home/dan/software_projects/libprelude/docs/api'
+maker4: Entering directory @/home/dan/software_projects/libprelude/docs/api'
+maker4: Nothing to be done for @install-exec-am'.
+installfiles=@echo ./html/*@; \
+if test "$installfiles" = './html/*'; \
+then echo '-- Nothing to install' ; \
+else \
+  /home/dan/software_projects/libprelude/install-sh -d /home/dan/software_projects/install/usr/share/gtk-doc/html/libprelude; \
+  for i in $installfiles; do \
+    echo '-- Installing '$i ; \
+    /usr/bin/install -c -m 644 $i /home/dan/software_projects/install/usr/share/gtk-doc/html/libprelude; \
+  done; \
+  echo '-- Installing ./html/index.sgml' ; \
+  /usr/bin/install -c -m 644 ./html/index.sgml /home/dan/software_projects/install/usr/share/gtk-doc/html/libprelude || :; \
+fi
+-- Nothing to install
+maker4: Leaving directory @/home/dan/software_projects/libprelude/docs/api'
+maker3: Leaving directory @/home/dan/software_projects/libprelude/docs/api'
+maker3: Entering directory @/home/dan/software_projects/libprelude/docs'
+maker4: Entering directory @/home/dan/software_projects/libprelude/docs'
+maker4: Nothing to be done for @install-exec-am'.
+maker4: Nothing to be done for @install-data-am'.
+maker4: Leaving directory @/home/dan/software_projects/libprelude/docs'
+maker3: Leaving directory @/home/dan/software_projects/libprelude/docs'
+maker2: Leaving directory @/home/dan/software_projects/libprelude/docs'
+maker2: Entering directory @/home/dan/software_projects/libprelude'
+maker3: Entering directory @/home/dan/software_projects/libprelude'
+test -z "/usr/bin" || mkdir -p -- "/home/dan/software_projects/install/usr/bin" 
+ /usr/bin/install -c './libprelude-config' '/home/dan/software_projects/install/usr/bin/libprelude-config'
+/usr/bin/install -c -d -m 755 /home/dan/software_projects/install/usr/var/spool/prelude;
+/usr/bin/install -c -d -m 755 /home/dan/software_projects/install/usr/etc/prelude;
+/usr/bin/install -c -d -m 755 /home/dan/software_projects/install/usr/etc/prelude/default;
+/usr/bin/install -c -d -m 755 /home/dan/software_projects/install/usr/etc/prelude/profile;
+test -z "/usr/include/libprelude" || mkdir -p -- "/home/dan/software_projects/install/usr/include/libprelude" 
+ /usr/bin/install -c -m 644 'prelude-config.h' '/home/dan/software_projects/install/usr/include/libprelude/prelude-config.h'
+maker3: Leaving directory @/home/dan/software_projects/libprelude'
+maker2: Leaving directory @/home/dan/software_projects/libprelude'
+maker1: Leaving directory @/home/dan/software_projects/libprelude'
+</pre></p>
+
+
+	<a name="install-directory"></a>
+<h2 >install directory<a href="#install-directory" class="wiki-anchor">&para;</a></h2>
+
+
+<pre>
+dan@frog ~/software_projects/libprelude $ cd ../install/
+dan@frog ~/software_projects/install $ find .
+.
+./usr
+./usr/lib
+./usr/lib/libprelude.so.2.0.0
+./usr/lib/libprelude.so.2
+./usr/lib/libprelude.so
+./usr/lib/libprelude.la
+./usr/lib/python2.3
+./usr/lib/python2.3/site-packages
+./usr/lib/python2.3/site-packages/prelude.py
+./usr/lib/python2.3/site-packages/_prelude.so
+./usr/lib/python2.3/site-packages/prelude.pyc
+./usr/include
+./usr/include/libprelude
+./usr/include/libprelude/prelude-error.h
+./usr/include/libprelude/common.h
+./usr/include/libprelude/daemonize.h
+./usr/include/libprelude/variable.h
+./usr/include/libprelude/idmef.h
+./usr/include/libprelude/idmef-additional-data.h
+./usr/include/libprelude/idmef-class.h
+./usr/include/libprelude/idmef-criteria.h
+./usr/include/libprelude/idmef-criterion-value.h
+./usr/include/libprelude/idmef-data.h
+./usr/include/libprelude/idmef-message-id.h
+./usr/include/libprelude/idmef-message-read.h
+./usr/include/libprelude/idmef-message-print.h
+./usr/include/libprelude/idmef-message-write.h
+./usr/include/libprelude/idmef-path.h
+./usr/include/libprelude/idmef-time.h
+./usr/include/libprelude/idmef-tree-data.h
+./usr/include/libprelude/idmef-tree-wrap.h
+./usr/include/libprelude/idmef-value.h
+./usr/include/libprelude/idmef-value-type.h
+./usr/include/libprelude/prelude.h
+./usr/include/libprelude/prelude-async.h
+./usr/include/libprelude/prelude-extract.h
+./usr/include/libprelude/prelude-hash.h
+./usr/include/libprelude/prelude-linked-object.h
+./usr/include/libprelude/prelude-list.h
+./usr/include/libprelude/prelude-log.h
+./usr/include/libprelude/prelude-client.h
+./usr/include/libprelude/prelude-client-profile.h
+./usr/include/libprelude/prelude-connection.h
+./usr/include/libprelude/prelude-connection-pool.h
+./usr/include/libprelude/prelude-failover.h
+./usr/include/libprelude/prelude-ident.h
+./usr/include/libprelude/prelude-io.h
+./usr/include/libprelude/prelude-msg.h
+./usr/include/libprelude/prelude-msgbuf.h
+./usr/include/libprelude/prelude-message-id.h
+./usr/include/libprelude/prelude-option.h
+./usr/include/libprelude/prelude-option-wide.h
+./usr/include/libprelude/prelude-plugin.h
+./usr/include/libprelude/prelude-string.h
+./usr/include/libprelude/prelude-timer.h
+./usr/include/libprelude/prelude-inttypes.h
+./usr/include/libprelude/prelude-config.h
+./usr/share
+./usr/share/aclocal
+./usr/share/aclocal/libprelude.m4
+./usr/bin
+./usr/bin/prelude-adduser
+./usr/bin/libprelude-config
+./usr/var
+./usr/var/spool
+./usr/var/spool/prelude
+./usr/etc
+./usr/etc/prelude
+./usr/etc/prelude/default
+./usr/etc/prelude/default/client.conf
+./usr/etc/prelude/default/global.conf
+./usr/etc/prelude/default/idmef-client.conf
+./usr/etc/prelude/default/tls.conf
+./usr/etc/prelude/profile
+</pre><br />This is the install continuing but this time the DESTDIR is created again.<br /><pre>
+./home
+./home/dan
+./home/dan/software_projects
+./home/dan/software_projects/install
+./home/dan/software_projects/install/usr
+./home/dan/software_projects/install/usr/lib
+./home/dan/software_projects/install/usr/lib/perl5
+./home/dan/software_projects/install/usr/lib/perl5/site_perl
+./home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6
+./home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux
+./home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/auto
+./home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/auto/Prelude
+./home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/auto/Prelude/Prelude.so
+./home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/auto/Prelude/Prelude.bs
+./home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/auto/Prelude/.packlist
+./home/dan/software_projects/install/usr/lib/perl5/site_perl/5.8.6/i686-linux/Prelude.pm
+./home/dan/software_projects/install/usr/lib/perl5/5.8.6
+./home/dan/software_projects/install/usr/lib/perl5/5.8.6/i686-linux
+./home/dan/software_projects/install/usr/lib/perl5/5.8.6/i686-linux/perllocal.pod
+dan@frog ~/software_projects/install $ pwd
+/home/dan/software_projects/install
+dan@frog ~/software_projects/install $
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-228" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="10/07/2005 03:54 PM" href="/projects/libprelude/activity?from=2005-10-07">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-228-notes" class="wiki"><p>Thanks Daniel, it look good!</p>
+
+
+	<p>I applied the patch applied in r7360 and r7361.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-229" class="journal has-details">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="10/07/2005 03:55 PM" href="/projects/libprelude/activity?from=2005-10-07">about 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-230" class="journal has-notes has-details">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/1">admin admin</a> <a title="10/08/2005 02:29 AM" href="/projects/libprelude/activity?from=2005-10-08">about 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Closed</i> to <i>Feedback</i></li>
+       <li><strong>Resolution</strong> deleted (<del><i>fixed</i></del>)</li>
+    </ul>
+    <div id="journal-230-notes" class="wiki"><p>The bindings/Makefile.am LD_RUN_PATH patch applies to libprelude(unfixed) in the same way as libpreludedb(fixed).</p>
+
+
+	<p>Thanks Yoann<br />PS also notices that from <a class="external" href="https://trac.prelude-ids.org/changeset/7357">https://trac.prelude-ids.org/changeset/7357</a> following the "Files:" link generated a error: "Trac detected an internal error: Insufficient permission to view this file (mod_authz_svn)"</p></div>
+    </div>
+  </div>
+  
+  <div id="change-231" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="10/08/2005 11:06 AM" href="/projects/libprelude/activity?from=2005-10-08">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-231-notes" class="wiki"><p>Sorry the libpreludedb fix was not merged to the good branche. This is corrected now in r7362.<br />I guess you mixed libprelude/libpreludedb, did you ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-232" class="journal has-notes">
+    <div id="note-13">
+    <h4><a href="#note-13" class="journal-link">#13</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="10/08/2005 11:12 AM" href="/projects/libprelude/activity?from=2005-10-08">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-232-notes" class="wiki"><p>Sorry, all your fix had been applied at first, I reverted 7362 which backed out your fixes. Please check the files directly rather:</p>
+
+
+	<p><a class="external" href="https://trac.prelude-ids.org/file/trunk/libprelude/bindings/Makefile.am">https://trac.prelude-ids.org/file/trunk/libprelude/bindings/Makefile.am</a><br /><a class="external" href="https://trac.prelude-ids.org/file/trunk/libprelude/bindings/perl/Makefile.PL.in">https://trac.prelude-ids.org/file/trunk/libprelude/bindings/perl/Makefile.PL.in</a><br /><a class="external" href="https://trac.prelude-ids.org/file/trunk/libpreludedb/bindings/Makefile.am">https://trac.prelude-ids.org/file/trunk/libpreludedb/bindings/Makefile.am</a><br /><a class="external" href="https://trac.prelude-ids.org/file/trunk/libpreludedb/bindings/perl/Makefile.PL.in">https://trac.prelude-ids.org/file/trunk/libpreludedb/bindings/perl/Makefile.PL.in</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-233" class="journal has-notes has-details">
+    <div id="note-14">
+    <h4><a href="#note-14" class="journal-link">#14</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="10/08/2005 11:14 AM" href="/projects/libprelude/activity?from=2005-10-08">about 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Feedback</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-233-notes" class="wiki"><p>BTW the error you got above is because of a merge to a private libpreludedb branche.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1189" class="journal has-details">
+    <div id="note-15">
+    <h4><a href="#note-15" class="journal-link">#15</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:26 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Libprelude</i></li>
+       <li><strong>Category</strong> deleted (<del><i>1</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.1</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/101.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/101.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

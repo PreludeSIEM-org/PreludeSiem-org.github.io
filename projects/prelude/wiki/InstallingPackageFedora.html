@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>InstallingPackageFedora - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="FdTXyvx1Bq1jRb+ztSExWRWGQBjX81BKGAF8TELeeTQG+7+lNWELLunvt0moaXgHac0xhs35CQTGj7jcxt5NNw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+
+
+
+<div class="wiki wiki-page">
+  <p><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Back to Packages Installation</a></p>
+
+
+	<a name="Installing-on-Fedora-with-packages"></a>
+<h1 >Installing on Fedora with packages<a href="#Installing-on-Fedora-with-packages" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Since Prelude is back in Fedora, this guide is for Fedora 26</p>
+
+
+	<p>First of all, install the packages :<br /><pre>
+[t@pc-93 ~]$ sudo dnf install prelude-manager-db-plugin prelude-lml prelude-lml-rules
+prelude-correlator prewikka libpreludedb prelude-tools preludedb-tools preludedb-mysql mariadb-server
+Last metadata expiration check: 2:35:18 ago on Sun Apr 16 11:06:31 2017 CEST.
+Dependencies resolved.
+================================================================================
+ Package                       Arch      Version                Repository
+                                                                           Size
+================================================================================
+Installing:
+ mariadb-server                x86_64    3:10.1.21-3.fc26       fedora     18 M
+ prelude-correlator            noarch    3.1.0-2.fc26           fedora    175 k
+ prelude-lml                   x86_64    3.1.0-2.fc26           fedora     94 k
+ prelude-lml-rules             x86_64    3.1.0-2.fc26           fedora    113 k
+ prelude-manager-db-plugin     x86_64    3.1.0-2.fc26           fedora     14 k
+ prelude-tools                 x86_64    3.1.0-30.fc26          fedora     44 k
+ preludedb-tools               x86_64    3.1.0-2.fc26           fedora     25 k
+ preludedb-mysql               x86_64    3.1.0-2.fc26           fedora     22 k
+ prewikka                      noarch    3.1.0-2.fc26           fedora    1.4 M
+Installing dependencies:
+ libprelude                    x86_64    3.1.0-30.fc26          fedora    306 k
+ libpreludedb                  x86_64    3.1.0-2.fc26           fedora    106 k
+ prelude-manager               x86_64    3.1.0-2.fc26           fedora    104 k
+ python2-prelude               x86_64    3.1.0-30.fc26          fedora     98 k
+ python2-preludedb             x86_64    3.1.0-2.fc26           fedora     87 k
+ python3-prelude               x86_64    3.1.0-30.fc26          fedora     97 k
+ python3-prelude-correlator    noarch    3.1.0-2.fc26           fedora     45 k
+Installing weak dependencies:
+ mariadb-server-utils          x86_64    3:10.1.21-3.fc26       fedora    2.2 M
+
+Transaction Summary
+================================================================================
+Install  17 Packages
+
+Total download size: 23 M
+Installed size: 105 M
+Is this ok [y/N]:
+</pre></p>
+
+
+	<p>Prelude need a SQL database, this tutorial use MariaDB as an example.</p>
+
+
+	<p>Start the database :<br /><pre>[t@pc-93 ~]$ sudo systemctl start mariadb</pre></p>
+
+
+	<p>Initialize the database :<br /><pre>[t@pc-93 ~]$ sudo mysql_secure_installation</pre></p>
+
+
+	<p>Create two databases, one for IDMEF alerts, one for the Web interface :<br /><pre>
+[t@pc-93 ~]$ sudo mysql -u root
+
+MariaDB [(none)]&gt; CREATE DATABASE prelude;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]&gt; CREATE DATABASE prewikka;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]&gt; CREATE USER 'prelude'@'localhost' IDENTIFIED BY 'prelude';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON prelude.* TO 'prelude'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]&gt; GRANT ALL PRIVILEGES ON prewikka.* TO 'prelude'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+</pre></p>
+
+
+	<p>Initialize the database :<br /><pre>[t@pc-93 ~]$ sudo mysql -u prelude -p prelude &lt; /usr/share/libpreludedb/classic/mysql.sql</pre></p>
+
+
+	<p>Configure the database into web interface configuration :<br /><pre>
+[t@pc-93 ~]$ sudo vim /etc/prewikka/prewikka.conf
+
+# Events DB
+[idmef_database]
+type: mysql
+host: localhost
+user: prelude
+pass: prelude
+name: prelude
+
+# Prewikka DB
+[database]
+type: mysql
+host: localhost
+user: prelude
+pass: prelude
+name: prewikka
+</pre></p>
+
+
+	<p>Configure the database into prelude-manager configuration (for IDMEF alerts):<br /><pre>
+[t@pc-93 ~]$ sudo vim /etc/prelude-manager/prelude-manager.conf
+
+[db]
+type = mysql
+host = localhost
+name = prelude
+user = prelude
+pass = prelude
+</pre></p>
+
+
+	<p>Now, you have to initialize the communication between all prelude modules (prelude-manager, prelude-lml and prelude-correlator) as explained in <a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">InstallingAgentRegistration</a>. Here is a short logs of standard initialization.</p>
+
+
+	<a name="Register-Prelude-Manager"></a>
+<h2 >Register Prelude Manager<a href="#Register-Prelude-Manager" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Registration :<br /><pre>
+[t@pc-93 ~]$ sudo prelude-admin add "prelude-manager" --uid 0 --gid 0
+</pre></p>
+
+
+	<p>Start the service :<br /><pre>
+[t@pc-93 ~]$ sudo systemctl start prelude-manager
+</pre></p>
+
+
+	<p>Check the service :<br /><pre>
+[t@pc-93 ~]$ sudo systemctl status prelude-manager
+● prelude-manager.service - Prelude bus communicator
+   Loaded: loaded (/usr/lib/systemd/system/prelude-manager.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sun 2017-04-16 14:01:27 CEST; 20s ago
+     Docs: man:prelude-manager(1)
+ Main PID: 3469 (prelude-manager)
+    Tasks: 2 (limit: 4915)
+   CGroup: /system.slice/prelude-manager.service
+           └─3469 /usr/sbin/prelude-manager
+
+Apr 16 14:01:27 pc-93.home systemd[1]: Started Prelude bus communicator.
+</pre></p>
+
+
+	<a name="Register-Prelude-Correlator"></a>
+<h2 >Register Prelude Correlator<a href="#Register-Prelude-Correlator" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Registration, prelude-manager side :<br /><pre>
+[t@pc-93 ~]$ sudo prelude-admin registration-server prelude-manager
+The "h6cdm63i" password will be requested by "prelude-admin register" 
+in order to connect. Please remove the quotes before using it.
+
+Generating 1024 bits Diffie-Hellman key for anonymous authentication...
+Waiting for peers install request on 0.0.0.0:5553...
+Waiting for peers install request on :::5553...
+
+Connection from 127.0.0.1:54968...
+Registration request for analyzerID="581192161139905" permission="idmef:rw".
+Approve registration? [y/n]: y
+127.0.0.1:54968 successfully registered.
+</pre></p>
+
+
+	<p>Registration, prelude-correlator side :<br /><pre>
+[t@pc-93 ~]$ sudo prelude-admin register "prelude-correlator" "idmef:rw" 127.0.0.1 --uid 0 --gid 0
+Generating 2048 bits RSA private key... This might take a very long time.
+[Increasing system activity will speed-up the process].
+Generation in progress...
+
+You now need to start "prelude-admin" registration-server on 127.0.0.1:
+example: "prelude-admin registration-server prelude-manager" 
+
+Enter the one-shot password provided on 127.0.0.1:
+Confirm the one-shot password provided on 127.0.0.1:
+
+Connecting to registration server (127.0.0.1:5553)... Authentication succeeded.
+Successful registration to 127.0.0.1:5553.
+</pre></p>
+
+
+	<p>Start the service :<br /><pre>
+[t@pc-93 ~]$ sudo systemctl start prelude-correlator
+</pre></p>
+
+
+	<p>Check the service :<br /><pre>
+[t@pc-93 ~]$ sudo systemctl status prelude-correlator
+● prelude-correlator.service - Correlator of events received by Prelude
+   Loaded: loaded (/usr/lib/systemd/system/prelude-correlator.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sun 2017-04-16 14:10:31 CEST; 6s ago
+ Main PID: 3494 (prelude-correla)
+    Tasks: 1 (limit: 4915)
+   CGroup: /system.slice/prelude-correlator.service
+           └─3494 /usr/libexec/system-python /usr/sbin/prelude-correlator
+
+Apr 16 14:10:31 pc-93.home systemd[1]: Started Correlator of events received by Prelude.
+Apr 16 14:10:32 pc-93.home prelude-correlator[3494]: 16 Apr 14:10:32 preludecorrelator.pluginmanager (pid:3494) INFO: [BusinessHourPlugin]: disabled on user request
+Apr 16 14:10:32 pc-93.home prelude-correlator[3494]: 16 Apr 14:10:32 preludecorrelator.pluginmanager (pid:3494) INFO: [FirewallPlugin]: disabled on user request
+Apr 16 14:10:32 pc-93.home prelude-correlator[3494]: 16 Apr 14:10:32 preludecorrelator.plugins.CIArmyPlugin (pid:3494) INFO: Downloading CIArmy report, this might take some time...
+Apr 16 14:10:33 pc-93.home prelude-correlator[3494]: 16 Apr 14:10:33 preludecorrelator.plugins.CIArmyPlugin (pid:3494) INFO: Downloading CIArmy report done.
+Apr 16 14:10:33 pc-93.home prelude-correlator[3494]: 16 Apr 14:10:33 preludecorrelator.plugins.DshieldPlugin (pid:3494) INFO: Downloading DShield report, this might take some time...
+</pre></p>
+
+
+	<a name="Register-Prelude-LML"></a>
+<h2 >Register Prelude LML<a href="#Register-Prelude-LML" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Registration, prelude-manager side:<br /><pre>
+[t@pc-93 ~]$ sudo prelude-admin registration-server prelude-manager
+The "syikvtdu" password will be requested by "prelude-admin register" 
+in order to connect. Please remove the quotes before using it.
+
+Generating 1024 bits Diffie-Hellman key for anonymous authentication...
+Waiting for peers install request on 0.0.0.0:5553...
+Waiting for peers install request on :::5553...
+
+Connection from 127.0.0.1:54972...
+Registration request for analyzerID="1824705452416373" permission="idmef:w".
+Approve registration? [y/n]: y
+127.0.0.1:54972 successfully registered.
+</pre></p>
+
+
+	<p>Registration, prelude-lml side :<br /><pre>
+[t@pc-93 ~]$ sudo prelude-admin register "prelude-lml" "idmef:w" 127.0.0.1 --uid 0 --gid 0
+Generating 2048 bits RSA private key... This might take a very long time.
+[Increasing system activity will speed-up the process].
+Generation in progress...
+
+You now need to start "prelude-admin" registration-server on 127.0.0.1:
+example: "prelude-admin registration-server prelude-manager" 
+
+Enter the one-shot password provided on 127.0.0.1:
+Confirm the one-shot password provided on 127.0.0.1:
+
+Connecting to registration server (127.0.0.1:5553)... Authentication succeeded.
+Successful registration to 127.0.0.1:5553.
+</pre></p>
+
+
+	<p>Start the service :<br /><pre>
+[t@pc-93 ~]$ sudo systemctl start prelude-lml
+</pre></p>
+
+
+	<p>Check the service :<br /><pre>
+[t@pc-93 ~]$ sudo systemctl status prelude-lml
+● prelude-lml.service - Log analyzer sensor with IDMEF output
+   Loaded: loaded (/usr/lib/systemd/system/prelude-lml.service; disabled; vendor preset: disabled)
+   Active: active (running) since Sun 2017-04-16 14:13:55 CEST; 5s ago
+ Main PID: 3513 (prelude-lml)
+    Tasks: 1 (limit: 4915)
+   CGroup: /system.slice/prelude-lml.service
+           └─3513 /usr/sbin/prelude-lml
+
+Apr 16 14:13:55 pc-93.home systemd[1]: Started Log analyzer sensor with IDMEF output.
+Apr 16 14:13:55 pc-93.home prelude-lml[3513]: 16 Apr 14:13:55 (process:3513) WARNING: /var/log/apache2/error_log does not exist.
+Apr 16 14:13:55 pc-93.home prelude-lml[3513]: 16 Apr 14:13:55 (process:3513) WARNING: /var/log/httpd/error_log does not exist.
+Apr 16 14:13:55 pc-93.home prelude-lml[3513]: 16 Apr 14:13:55 (process:3513) WARNING: /var/log/apache2/access_log does not exist.
+Apr 16 14:13:55 pc-93.home prelude-lml[3513]: 16 Apr 14:13:55 (process:3513) WARNING: /var/log/httpd/access_log does not exist.
+Apr 16 14:13:55 pc-93.home prelude-lml[3513]: 16 Apr 14:13:55 (process:3513) WARNING: /var/log/everything/current does not exist.
+</pre></p>
+
+
+	<a name="Web-interface"></a>
+<h2 >Web interface<a href="#Web-interface" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Configure the local firewall :<br /><pre>
+[t@pc-93 ~]$ sudo firewall-cmd --zone=public --add-service=http
+success
+</pre></p>
+
+
+	<p>Start the web interface :<br /><pre>[t@pc-93 ~]$ sudo prewikka-httpd -p 80</pre></p>
+
+
+	<a name="Tests"></a>
+<h2 >Tests<a href="#Tests" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Generate some logs to test the alerts. For example, try to connect to ssh in localhost and failed the password<br /><pre>
+[t@pc-93 ~]$ ssh localhost
+t@localhost's password:
+Permission denied, please try again.
+t@localhost's password:
+Permission denied, please try again.
+t@localhost's password:
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+
+[t@pc-93 ~]$ ssh localhost
+t@localhost's password:
+Permission denied, please try again.
+t@localhost's password:
+Permission denied, please try again.
+t@localhost's password:
+Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+</pre></p>
+
+
+	<p><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Back to Packages Installation</a></p>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

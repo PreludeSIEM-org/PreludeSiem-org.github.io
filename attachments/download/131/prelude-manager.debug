@@ -1,0 +1,599 @@
+16 Jul 10:06:43 (process:12604) INFO: Subscribing Normalize to active decoding plugins.
+16 Jul 10:06:43 (process:12604) INFO: server started (listening on 127.0.0.1 port 4690).
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 00 4d 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Expected Packet[0] Handshake(22) with length: 1
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Received Packet[0] Handshake(22) with length: 77
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 77 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 77 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 01 00 00 49 03 02 48 7e 1c bb 0f df b3 a0 72 ed 
+16 Jul 10:07:23 (process:12604) INFO: 0001 - 1f da 90 c3 bd e7 98 32 b7 ac 86 fd 32 25 0e 34 
+16 Jul 10:07:23 (process:12604) INFO: 0002 - d1 4a d0 8f 03 81 00 00 18 00 39 00 33 00 16 00 
+16 Jul 10:07:23 (process:12604) INFO: 0003 - 38 00 32 00 13 00 66 00 35 00 2f 00 0a 00 05 00 
+16 Jul 10:07:23 (process:12604) INFO: 0004 - 04 02 01 00 00 07 00 09 00 03 02 00 01 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 77 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 82 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Decrypted Packet[0] Handshake(22) with length: 77
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 77 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 1 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 3 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: CLIENT HELLO was received [77 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 73 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 4 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 73 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: Client's version: 3.2
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_db.c:239
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: Selected Compression Method: DEFLATE
+16 Jul 10:07:23 (process:12604) INFO: EXT[7f2c7000]: Received extension 'CERT_TYPE'
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: Keeping ciphersuite: DHE_RSA_3DES_EDE_CBC_SHA1
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: Keeping ciphersuite: DHE_RSA_AES_128_CBC_SHA1
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: Keeping ciphersuite: DHE_RSA_AES_256_CBC_SHA1
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: Selected cipher suite: DHE_RSA_AES_256_CBC_SHA1
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: SessionID: ac26097a8fca7c611f8c200ba5c861f1419578baa57f9fe654a1b6bdbfdcdb88
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: SERVER HELLO was send [74 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 77 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sending Packet[0] Handshake(22) with length: 74
+16 Jul 10:07:23 (process:12604) INFO: WRITE: Will write 79 bytes to 8.
+16 Jul 10:07:23 (process:12604) INFO: WRITE: wrote 79 bytes to 8. Left 0 bytes. Total 79 bytes.
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 00 4a 02 00 00 46 03 02 48 7e 1c bb 99 
+16 Jul 10:07:23 (process:12604) INFO: 0001 - 2a 89 d1 3c b7 da 95 41 61 b0 6f d6 33 93 36 f6 
+16 Jul 10:07:23 (process:12604) INFO: 0002 - cb 93 42 bb 62 d1 5e 5f d3 86 8b 20 ac 26 09 7a 
+16 Jul 10:07:23 (process:12604) INFO: 0003 - 8f ca 7c 61 1f 8c 20 0b a5 c8 61 f1 41 95 78 ba 
+16 Jul 10:07:23 (process:12604) INFO: 0004 - a5 7f 9f e6 54 a1 b6 bd bf dc db 88 00 39 01 
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sent Packet[1] Handshake(22) with length: 79
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: CERTIFICATE was send [491 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sending Packet[1] Handshake(22) with length: 491
+16 Jul 10:07:23 (process:12604) INFO: WRITE: Will write 496 bytes to 8.
+16 Jul 10:07:23 (process:12604) INFO: WRITE: wrote 496 bytes to 8. Left 0 bytes. Total 496 bytes.
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 01 eb 0b 00 01 e7 00 01 e4 00 01 e1 30 
+16 Jul 10:07:23 (process:12604) INFO: 0001 - 82 01 dd 30 82 01 48 a0 03 02 01 02 02 08 cf fb 
+16 Jul 10:07:23 (process:12604) INFO: 0002 - 7d 48 b5 9f 0e 00 30 0b 06 09 2a 86 48 86 f7 0d 
+16 Jul 10:07:23 (process:12604) INFO: 0003 - 01 01 05 30 1b 31 19 30 17 06 03 55 04 2e 13 10 
+16 Jul 10:07:23 (process:12604) INFO: 0004 - 34 31 31 36 32 35 30 36 32 38 30 36 32 31 35 39 
+16 Jul 10:07:23 (process:12604) INFO: 0005 - 30 1e 17 0d 30 38 30 37 31 36 31 33 34 36 35 36 
+16 Jul 10:07:23 (process:12604) INFO: 0006 - 5a 17 0d 33 38 30 31 31 39 30 33 31 34 30 37 5a 
+16 Jul 10:07:23 (process:12604) INFO: 0007 - 30 1b 31 19 30 17 06 03 55 04 2e 13 10 34 31 31 
+16 Jul 10:07:23 (process:12604) INFO: 0008 - 36 32 35 30 36 32 38 30 36 32 31 35 39 30 81 9c 
+16 Jul 10:07:23 (process:12604) INFO: 0009 - 30 0b 06 09 2a 86 48 86 f7 0d 01 01 01 03 81 8c 
+16 Jul 10:07:23 (process:12604) INFO: 000a - 00 30 81 88 02 81 80 c0 8c 4a 4e 04 fb 89 f0 b2 
+16 Jul 10:07:23 (process:12604) INFO: 000b - bf dd e7 bb d6 e0 b8 d7 a0 f7 5b d2 86 77 55 00 
+16 Jul 10:07:23 (process:12604) INFO: 000c - de a2 ac e1 24 8b ce 93 b7 dd db 91 ca 31 87 06 
+16 Jul 10:07:23 (process:12604) INFO: 000d - fa 1d 09 e7 bf 1a 43 d5 91 6d a0 5a 3b 4d 6d 7f 
+16 Jul 10:07:23 (process:12604) INFO: 000e - bd 6d 7f d9 f7 b2 99 89 ca 80 e7 f7 60 a5 d4 3c 
+16 Jul 10:07:23 (process:12604) INFO: 000f - 81 6a 76 20 37 bc 27 c0 e1 ce 61 a7 ca 9a 1d 73 
+16 Jul 10:07:23 (process:12604) INFO: 0010 - e5 87 51 15 4a f1 d2 11 bb b0 02 d3 28 18 b6 c5 
+16 Jul 10:07:23 (process:12604) INFO: 0011 - 05 4d 31 e0 3f 3e c7 9f e7 e3 62 48 e8 9b cd 20 
+16 Jul 10:07:23 (process:12604) INFO: 0012 - 4f 30 3d b8 06 c1 d7 02 03 01 00 01 a3 31 30 2f 
+16 Jul 10:07:23 (process:12604) INFO: 0013 - 30 0c 06 03 55 1d 13 01 01 ff 04 02 30 00 30 1f 
+16 Jul 10:07:23 (process:12604) INFO: 0014 - 06 03 55 1d 23 04 18 30 16 80 14 f8 f4 68 83 e3 
+16 Jul 10:07:23 (process:12604) INFO: 0015 - 6c f8 41 a2 4d 13 22 f7 a7 6e 60 fb 7e e1 20 30 
+16 Jul 10:07:23 (process:12604) INFO: 0016 - 0b 06 09 2a 86 48 86 f7 0d 01 01 05 03 81 81 00 
+16 Jul 10:07:23 (process:12604) INFO: 0017 - 4c 4a 0d 89 7e 7f 68 bb af fe af d9 54 9c 78 44 
+16 Jul 10:07:23 (process:12604) INFO: 0018 - 02 a6 f4 47 86 94 fd 5e b3 12 4c af 78 25 56 cd 
+16 Jul 10:07:23 (process:12604) INFO: 0019 - 42 11 2f 81 9a 4b 71 d7 82 2d b2 26 57 9a c0 50 
+16 Jul 10:07:23 (process:12604) INFO: 001a - a0 c8 14 ef d9 59 e8 a5 d0 72 ae fb 7a 35 82 c5 
+16 Jul 10:07:23 (process:12604) INFO: 001b - 5d 3a 02 39 07 9f 46 20 ed 21 6a 61 44 03 56 52 
+16 Jul 10:07:23 (process:12604) INFO: 001c - 75 43 ee a3 44 54 ea 31 73 85 1d 77 db e1 c3 fe 
+16 Jul 10:07:23 (process:12604) INFO: 001d - db ec aa e0 74 ef 34 23 a8 33 fd f9 b9 4e 0b f9 
+16 Jul 10:07:23 (process:12604) INFO: 001e - 02 91 76 e6 34 13 d6 80 6b 2c 16 e4 1e dd 31 49 
+16 Jul 10:07:23 (process:12604) INFO: 001f - 
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sent Packet[2] Handshake(22) with length: 496
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: SERVER KEY EXCHANGE was send [397 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sending Packet[2] Handshake(22) with length: 397
+16 Jul 10:07:23 (process:12604) INFO: WRITE: Will write 402 bytes to 8.
+16 Jul 10:07:23 (process:12604) INFO: WRITE: wrote 402 bytes to 8. Left 0 bytes. Total 402 bytes.
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 01 8d 0c 00 01 89 00 80 e9 0b 8a 17 96 
+16 Jul 10:07:23 (process:12604) INFO: 0001 - 11 76 f9 e5 49 ca 22 ef d2 9e 93 de e4 e6 81 02 
+16 Jul 10:07:23 (process:12604) INFO: 0002 - 15 cc e0 01 38 1d 6d 34 f7 ab bf c7 60 ee aa 35 
+16 Jul 10:07:23 (process:12604) INFO: 0003 - 94 9d 06 af 59 b8 f6 c0 9c 3b b6 64 b5 57 0c ab 
+16 Jul 10:07:23 (process:12604) INFO: 0004 - 3c 55 f7 a0 aa 89 89 f8 0d fa b2 8b a4 7c 2b 03 
+16 Jul 10:07:23 (process:12604) INFO: 0005 - 17 fe 2e d2 71 79 ed 6d b5 08 f2 79 b1 2b 76 76 
+16 Jul 10:07:23 (process:12604) INFO: 0006 - 5e 91 1c df e0 9f b4 e9 63 91 32 92 f6 45 f1 ef 
+16 Jul 10:07:23 (process:12604) INFO: 0007 - 58 45 df 27 49 61 f8 36 8d b1 52 ff 03 86 90 00 
+16 Jul 10:07:23 (process:12604) INFO: 0008 - fb 29 4b 97 84 5c d2 18 fe 08 37 00 01 05 00 80 
+16 Jul 10:07:23 (process:12604) INFO: 0009 - 89 ab 69 69 1b bd e4 70 0b d0 28 11 c0 d6 b8 dc 
+16 Jul 10:07:23 (process:12604) INFO: 000a - 69 69 8d 2a cc c1 ef eb e9 f0 e7 52 9a ed b1 f1 
+16 Jul 10:07:23 (process:12604) INFO: 000b - 1a c4 1c 28 31 aa 87 bf 39 61 bf be 02 08 0e fb 
+16 Jul 10:07:23 (process:12604) INFO: 000c - 87 4b 81 98 e6 4b 51 1e 02 5e b9 56 de d2 c3 2a 
+16 Jul 10:07:23 (process:12604) INFO: 000d - fe e0 5c 4f 68 8f 6d ee 81 72 d6 46 b2 27 b2 e9 
+16 Jul 10:07:23 (process:12604) INFO: 000e - 10 37 94 2c 33 fd 6f bc 05 6e 03 58 45 6f 7d 95 
+16 Jul 10:07:23 (process:12604) INFO: 000f - d4 44 79 eb db 4a b2 ab 8c 7b cb 50 cc 80 98 7a 
+16 Jul 10:07:23 (process:12604) INFO: 0010 - 5a 8c 89 df 2e 40 d8 d4 0a 29 e1 d2 70 43 59 17 
+16 Jul 10:07:23 (process:12604) INFO: 0011 - 00 80 10 70 3a 00 e1 b0 ce 2e 35 69 3d 1f c8 69 
+16 Jul 10:07:23 (process:12604) INFO: 0012 - d8 3a 84 6a 31 2c 54 e6 e4 90 ab 26 4c d7 96 d3 
+16 Jul 10:07:23 (process:12604) INFO: 0013 - ce 7f 5e eb 91 db 18 b0 58 a2 2c f1 b8 0c 41 72 
+16 Jul 10:07:23 (process:12604) INFO: 0014 - 6c 71 6b 58 74 5e f6 de 1f db 4b 4e d3 e2 0b 94 
+16 Jul 10:07:23 (process:12604) INFO: 0015 - 39 c6 cf b6 18 7e 8f ce 64 81 24 2e 49 cf 55 ca 
+16 Jul 10:07:23 (process:12604) INFO: 0016 - df 0b 05 ec 4d 3d fa db 5a f7 a7 ff 5e 8d 55 d7 
+16 Jul 10:07:23 (process:12604) INFO: 0017 - a6 7c 61 83 ef e5 db 01 ba c1 db 6a 85 83 7c de 
+16 Jul 10:07:23 (process:12604) INFO: 0018 - db fc 30 aa a4 ca 0d 01 30 75 1e e7 49 65 ec 96 
+16 Jul 10:07:23 (process:12604) INFO: 0019 - 35 27 
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sent Packet[3] Handshake(22) with length: 402
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: CERTIFICATE REQUEST was send [40 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sending Packet[3] Handshake(22) with length: 40
+16 Jul 10:07:23 (process:12604) INFO: WRITE: Will write 45 bytes to 8.
+16 Jul 10:07:23 (process:12604) INFO: WRITE: wrote 45 bytes to 8. Left 0 bytes. Total 45 bytes.
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 00 28 0d 00 00 24 02 01 02 00 1f 00 1d 
+16 Jul 10:07:23 (process:12604) INFO: 0001 - 30 1b 31 19 30 17 06 03 55 04 2e 13 10 34 31 31 
+16 Jul 10:07:23 (process:12604) INFO: 0002 - 36 32 35 30 36 32 38 30 36 32 31 35 39 
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sent Packet[4] Handshake(22) with length: 45
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: SERVER HELLO DONE was send [4 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sending Packet[4] Handshake(22) with length: 4
+16 Jul 10:07:23 (process:12604) INFO: WRITE: Will write 9 bytes to 8.
+16 Jul 10:07:23 (process:12604) INFO: WRITE: wrote 9 bytes to 8. Left 0 bytes. Total 9 bytes.
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 00 04 0e 00 00 00 
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sent Packet[5] Handshake(22) with length: 9
+16 Jul 10:07:23 (process:12604) INFO: READ: -1 returned from 8, errno=35 gerrno=0
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_buffers.c:360
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_buffers.c:1188
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_handshake.c:962
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 01 f7 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Expected Packet[1] Handshake(22) with length: 1
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Received Packet[1] Handshake(22) with length: 503
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 503 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 503 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 0b 00 01 f3 00 01 f0 00 01 ed 30 82 01 e9 30 82 
+16 Jul 10:07:23 (process:12604) INFO: 0001 - 01 54 a0 03 02 01 02 02 08 9c fc 7d 48 8b 85 07 
+16 Jul 10:07:23 (process:12604) INFO: 0002 - 00 30 0b 06 09 2a 86 48 86 f7 0d 01 01 05 30 1b 
+16 Jul 10:07:23 (process:12604) INFO: 0003 - 31 19 30 17 06 03 55 04 2e 13 10 34 31 31 36 32 
+16 Jul 10:07:23 (process:12604) INFO: 0004 - 35 30 36 32 38 30 36 32 31 35 39 30 1e 17 0d 30 
+16 Jul 10:07:23 (process:12604) INFO: 0005 - 38 30 37 31 36 31 33 35 30 33 35 5a 17 0d 33 38 
+16 Jul 10:07:23 (process:12604) INFO: 0006 - 30 31 31 39 30 33 31 34 30 37 5a 30 27 31 0a 30 
+16 Jul 10:07:23 (process:12604) INFO: 0007 - 08 06 03 55 04 03 13 01 34 31 19 30 17 06 03 55 
+16 Jul 10:07:23 (process:12604) INFO: 0008 - 04 2e 13 10 32 31 31 37 31 35 38 31 30 30 31 33 
+16 Jul 10:07:23 (process:12604) INFO: 0009 - 39 31 36 34 30 81 9c 30 0b 06 09 2a 86 48 86 f7 
+16 Jul 10:07:23 (process:12604) INFO: 000a - 0d 01 01 01 03 81 8c 00 30 81 88 02 81 80 c6 07 
+16 Jul 10:07:23 (process:12604) INFO: 000b - a7 84 51 36 53 5d 02 3c c1 8a 83 5c 26 8b 9f f2 
+16 Jul 10:07:23 (process:12604) INFO: 000c - d1 0b d6 c3 d2 60 06 26 38 6b bb ba 39 e9 4d 42 
+16 Jul 10:07:23 (process:12604) INFO: 000d - 36 43 fd 98 e5 95 98 34 44 db f6 d2 c0 ca 98 28 
+16 Jul 10:07:23 (process:12604) INFO: 000e - 2f 7b 6e e4 f0 e3 b5 0c d1 35 e3 a9 3d 79 c4 47 
+16 Jul 10:07:23 (process:12604) INFO: 000f - 36 4e d4 58 8c 29 bb 7b a5 e7 e0 ae fe b3 27 fc 
+16 Jul 10:07:23 (process:12604) INFO: 0010 - dd 8d ce b7 20 7d ea 9f 4c 62 d7 d6 e3 ab c5 26 
+16 Jul 10:07:23 (process:12604) INFO: 0011 - ca 58 78 bf 69 90 82 7f ab b4 32 d7 e5 60 00 f7 
+16 Jul 10:07:23 (process:12604) INFO: 0012 - 59 4d 1a 4b 7b 7b a0 b2 a9 c1 2f 2d 18 25 02 03 
+16 Jul 10:07:23 (process:12604) INFO: 0013 - 01 00 01 a3 31 30 2f 30 0c 06 03 55 1d 13 01 01 
+16 Jul 10:07:23 (process:12604) INFO: 0014 - ff 04 02 30 00 30 1f 06 03 55 1d 23 04 18 30 16 
+16 Jul 10:07:23 (process:12604) INFO: 0015 - 80 14 f8 f4 68 83 e3 6c f8 41 a2 4d 13 22 f7 a7 
+16 Jul 10:07:23 (process:12604) INFO: 0016 - 6e 60 fb 7e e1 20 30 0b 06 09 2a 86 48 86 f7 0d 
+16 Jul 10:07:23 (process:12604) INFO: 0017 - 01 01 05 03 81 81 00 a2 1f 45 39 c5 ef ab 55 89 
+16 Jul 10:07:23 (process:12604) INFO: 0018 - ef 67 4a 7e ad 93 c7 e4 53 5c d8 7a c0 09 44 85 
+16 Jul 10:07:23 (process:12604) INFO: 0019 - 4f 78 b2 30 67 6f 0e 15 17 e3 ef bf 60 e2 5c 6a 
+16 Jul 10:07:23 (process:12604) INFO: 001a - a8 e9 50 51 8d 07 32 aa e0 02 be d7 d4 0e 8a 26 
+16 Jul 10:07:23 (process:12604) INFO: 001b - 3e 75 2f a9 8a 84 59 a2 f2 a9 76 0b 34 a1 25 d3 
+16 Jul 10:07:23 (process:12604) INFO: 001c - e6 94 82 4e 08 14 9a 12 5d 79 72 88 2c f3 c2 20 
+16 Jul 10:07:23 (process:12604) INFO: 001d - f6 fc ca ea f4 71 ab fe 89 f8 d1 87 5d 80 6e 68 
+16 Jul 10:07:23 (process:12604) INFO: 001e - 45 97 87 55 2c 0b f3 93 66 66 b1 46 03 49 45 f1 
+16 Jul 10:07:23 (process:12604) INFO: 001f - 15 89 38 74 6b 59 c6 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 503 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 508 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Decrypted Packet[1] Handshake(22) with length: 503
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 503 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 1 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 3 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: CERTIFICATE was received [503 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 499 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 4 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 499 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: READ: -1 returned from 8, errno=35 gerrno=0
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_buffers.c:360
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_buffers.c:1188
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_handshake.c:962
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 00 86 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Expected Packet[2] Handshake(22) with length: 1
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Received Packet[2] Handshake(22) with length: 134
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 134 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 134 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 10 00 00 82 00 80 97 a5 89 86 d6 57 3b 7e b8 a5 
+16 Jul 10:07:23 (process:12604) INFO: 0001 - 5e e0 2a ee 0e 3b b4 9c 8a 45 47 cb d8 34 63 90 
+16 Jul 10:07:23 (process:12604) INFO: 0002 - 18 b0 38 a8 db 88 01 c0 a5 c0 08 90 f9 b2 8c eb 
+16 Jul 10:07:23 (process:12604) INFO: 0003 - 4d be 69 6b fb df b2 41 f1 33 51 5c f5 ec ff 3d 
+16 Jul 10:07:23 (process:12604) INFO: 0004 - ea 18 1d bd 41 30 5a f9 32 1f 30 ac be 22 09 bd 
+16 Jul 10:07:23 (process:12604) INFO: 0005 - 8b bc 90 58 7c b6 93 04 bd 6c f1 4c 73 1f 57 7e 
+16 Jul 10:07:23 (process:12604) INFO: 0006 - 45 b1 0b 4e 70 0a d0 fa d4 42 69 d4 f3 39 bc 75 
+16 Jul 10:07:23 (process:12604) INFO: 0007 - 15 e6 c5 75 73 6e d0 17 79 30 61 2e 8a a3 20 43 
+16 Jul 10:07:23 (process:12604) INFO: 0008 - 5b e9 e9 73 81 3c 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 134 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 139 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Decrypted Packet[2] Handshake(22) with length: 134
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 134 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 1 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 3 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: CLIENT KEY EXCHANGE was received [134 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 130 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 503 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 4 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 130 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 16 03 02 00 86 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Expected Packet[3] Handshake(22) with length: 1
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Received Packet[3] Handshake(22) with length: 134
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 134 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 134 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 0f 00 00 82 00 80 2d 1a c4 73 dc 4e dd eb e0 8f 
+16 Jul 10:07:23 (process:12604) INFO: 0001 - d9 fa 77 89 a5 ac 38 1c cb fb c3 3a 80 1d 49 f0 
+16 Jul 10:07:23 (process:12604) INFO: 0002 - e8 e8 06 ba 0d dd 1f f6 72 a7 17 42 3b 28 4f 8f 
+16 Jul 10:07:23 (process:12604) INFO: 0003 - 47 c8 56 57 d5 e6 eb 7d 51 2b 07 5f 5d 92 f5 ea 
+16 Jul 10:07:23 (process:12604) INFO: 0004 - 01 74 e1 46 a7 52 ef c8 3c ac eb aa 71 79 e0 c4 
+16 Jul 10:07:23 (process:12604) INFO: 0005 - 29 fc 75 cd 9f b3 f4 49 c2 9f 74 22 b7 86 58 38 
+16 Jul 10:07:23 (process:12604) INFO: 0006 - 1b 0f b8 40 25 88 4e 0e 0c 78 3f ed b5 88 25 6b 
+16 Jul 10:07:23 (process:12604) INFO: 0007 - 37 37 37 9c 43 97 3c 6c e3 66 d0 5b b4 a1 3f 3d 
+16 Jul 10:07:23 (process:12604) INFO: 0008 - 6a cd cd 48 74 0c 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 134 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 139 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Decrypted Packet[3] Handshake(22) with length: 134
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 134 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 1 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 3 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: CERTIFICATE VERIFY was received [134 bytes]
+16 Jul 10:07:23 (process:12604) INFO: BUF[REC][HD]: Read 130 bytes of Data(22)
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Peeked 134 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 4 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Inserted 130 bytes of Data
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 14 03 02 00 01 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Expected Packet[4] Change Cipher Spec(20) with length: 1
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Received Packet[4] Change Cipher Spec(20) with length: 1
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 1 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 1 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 01 
+16 Jul 10:07:23 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 1 bytes.
+16 Jul 10:07:23 (process:12604) INFO: RB: Requested 6 bytes
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: ChangeCipherSpec Packet was received
+16 Jul 10:07:23 (process:12604) INFO: INT: PREMASTER SECRET[128]: a9d2f08f1ca9360c0ef40745b7957a972629795bc6fab4c624fc562de4b6115be75e6fc3c7e8c46257f22b556832d1a1fc8ce58bb2045bebd16d821bd52ad16c1084f22aa75deca18a1df207468cb4b721b108a7a75fc37ce39d8bf163ebd6d5ef5b5a415b63ea48d4ba0d409b06f3a795310ec4456a15a045d9aa37c62489e8
+16 Jul 10:07:23 (process:12604) INFO: INT: CLIENT RANDOM[32]: 487e1cbb0fdfb3a072ed1fda90c3bde79832b7ac86fd32250e34d14ad08f0381
+16 Jul 10:07:23 (process:12604) INFO: INT: SERVER RANDOM[32]: 487e1cbb992a89d13cb7da954161b06fd6339336f6cb9342bb62d15e5fd3868b
+16 Jul 10:07:23 (process:12604) INFO: INT: MASTER SECRET: 0e1de786ad3a6ba54751e75cd56bb001dc3cdc1487a44e76805d207850964d47e34dce503fba1896bb56f4a44a5a6f76
+16 Jul 10:07:23 (process:12604) INFO: INT: KEY BLOCK[136]: 45526dc73146dd39fe4c4083f19d2bd543addfc5eefabe72da2207fb26fae0df
+16 Jul 10:07:23 (process:12604) INFO: INT: CLIENT WRITE KEY [32]: f83be66df6be1fb6d64fbe13e11eaec4196c47a96c8e1f38f176aba0c43c2193
+16 Jul 10:07:23 (process:12604) INFO: INT: SERVER WRITE KEY [32]: c60de635ce9aa238ef71085ad9b73eb95c225a3f7404f250368352f4c4678c71
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: Cipher Suite: DHE_RSA_AES_256_CBC_SHA1
+16 Jul 10:07:23 (process:12604) INFO: HSK[7f2c7000]: Initializing internal [read] cipher sessions
+16 Jul 10:07:23 (process:12604) INFO: READ: Got 0 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: READ: read 0 bytes from 8
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_buffers.c:638
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_record.c:896
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_buffers.c:1188
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_handshake.c:962
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_handshake.c:525
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_handshake.c:2472
+16 Jul 10:07:23 (process:12604) INFO: ASSERT: gnutls_handshake.c:2608
+16 Jul 10:07:23 (process:12604) INFO: BUF[HSK]: Cleared Data from buffer
+16 Jul 10:07:23 (process:12604) INFO: REC: Sending Alert[2|22] - Record overflow
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sending Packet[5] Alert(21) with length: 2
+16 Jul 10:07:23 (process:12604) INFO: WRITE: Will write 7 bytes to 8.
+16 Jul 10:07:23 (process:12604) INFO: WRITE: wrote 7 bytes to 8. Left 0 bytes. Total 7 bytes.
+16 Jul 10:07:23 (process:12604) INFO: 0000 - 15 03 02 00 02 02 16 
+16 Jul 10:07:23 (process:12604) INFO: REC[7f2c7000]: Sent Packet[6] Alert(21) with length: 7
+16 Jul 10:07:23 (process:12604) INFO: [127.0.0.1:40558]: closing connection.
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 00 4d 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Expected Packet[0] Handshake(22) with length: 1
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Received Packet[0] Handshake(22) with length: 77
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 77 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 77 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 01 00 00 49 03 02 48 7e 1c c1 61 6a ce 5a 75 e5 
+16 Jul 10:07:29 (process:12604) INFO: 0001 - 76 1b 24 95 74 ee 9d 40 32 17 04 45 cc 0f 80 85 
+16 Jul 10:07:29 (process:12604) INFO: 0002 - d9 55 35 71 be 7e 00 00 18 00 39 00 33 00 16 00 
+16 Jul 10:07:29 (process:12604) INFO: 0003 - 38 00 32 00 13 00 66 00 35 00 2f 00 0a 00 05 00 
+16 Jul 10:07:29 (process:12604) INFO: 0004 - 04 02 01 00 00 07 00 09 00 03 02 00 01 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 77 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 82 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Decrypted Packet[0] Handshake(22) with length: 77
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 77 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 1 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 3 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: CLIENT HELLO was received [77 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 73 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 4 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 73 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: Client's version: 3.2
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_db.c:239
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: Selected Compression Method: DEFLATE
+16 Jul 10:07:29 (process:12604) INFO: EXT[7f2c7000]: Received extension 'CERT_TYPE'
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: Keeping ciphersuite: DHE_RSA_3DES_EDE_CBC_SHA1
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: Keeping ciphersuite: DHE_RSA_AES_128_CBC_SHA1
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: Keeping ciphersuite: DHE_RSA_AES_256_CBC_SHA1
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: Selected cipher suite: DHE_RSA_AES_256_CBC_SHA1
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: SessionID: d8addb61c4c97881fe5c58a9cd7ed8271da97783b25ec069afe1ab61f501b412
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: SERVER HELLO was send [74 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 77 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sending Packet[0] Handshake(22) with length: 74
+16 Jul 10:07:29 (process:12604) INFO: WRITE: Will write 79 bytes to 8.
+16 Jul 10:07:29 (process:12604) INFO: WRITE: wrote 79 bytes to 8. Left 0 bytes. Total 79 bytes.
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 00 4a 02 00 00 46 03 02 48 7e 1c c1 09 
+16 Jul 10:07:29 (process:12604) INFO: 0001 - ce 98 85 40 47 21 b2 fc 11 8a b6 5a d1 82 84 27 
+16 Jul 10:07:29 (process:12604) INFO: 0002 - b4 be 3e d9 9a 44 ba 90 14 12 2e 20 d8 ad db 61 
+16 Jul 10:07:29 (process:12604) INFO: 0003 - c4 c9 78 81 fe 5c 58 a9 cd 7e d8 27 1d a9 77 83 
+16 Jul 10:07:29 (process:12604) INFO: 0004 - b2 5e c0 69 af e1 ab 61 f5 01 b4 12 00 39 01 
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sent Packet[1] Handshake(22) with length: 79
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: CERTIFICATE was send [491 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sending Packet[1] Handshake(22) with length: 491
+16 Jul 10:07:29 (process:12604) INFO: WRITE: Will write 496 bytes to 8.
+16 Jul 10:07:29 (process:12604) INFO: WRITE: wrote 496 bytes to 8. Left 0 bytes. Total 496 bytes.
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 01 eb 0b 00 01 e7 00 01 e4 00 01 e1 30 
+16 Jul 10:07:29 (process:12604) INFO: 0001 - 82 01 dd 30 82 01 48 a0 03 02 01 02 02 08 cf fb 
+16 Jul 10:07:29 (process:12604) INFO: 0002 - 7d 48 b5 9f 0e 00 30 0b 06 09 2a 86 48 86 f7 0d 
+16 Jul 10:07:29 (process:12604) INFO: 0003 - 01 01 05 30 1b 31 19 30 17 06 03 55 04 2e 13 10 
+16 Jul 10:07:29 (process:12604) INFO: 0004 - 34 31 31 36 32 35 30 36 32 38 30 36 32 31 35 39 
+16 Jul 10:07:29 (process:12604) INFO: 0005 - 30 1e 17 0d 30 38 30 37 31 36 31 33 34 36 35 36 
+16 Jul 10:07:29 (process:12604) INFO: 0006 - 5a 17 0d 33 38 30 31 31 39 30 33 31 34 30 37 5a 
+16 Jul 10:07:29 (process:12604) INFO: 0007 - 30 1b 31 19 30 17 06 03 55 04 2e 13 10 34 31 31 
+16 Jul 10:07:29 (process:12604) INFO: 0008 - 36 32 35 30 36 32 38 30 36 32 31 35 39 30 81 9c 
+16 Jul 10:07:29 (process:12604) INFO: 0009 - 30 0b 06 09 2a 86 48 86 f7 0d 01 01 01 03 81 8c 
+16 Jul 10:07:29 (process:12604) INFO: 000a - 00 30 81 88 02 81 80 c0 8c 4a 4e 04 fb 89 f0 b2 
+16 Jul 10:07:29 (process:12604) INFO: 000b - bf dd e7 bb d6 e0 b8 d7 a0 f7 5b d2 86 77 55 00 
+16 Jul 10:07:29 (process:12604) INFO: 000c - de a2 ac e1 24 8b ce 93 b7 dd db 91 ca 31 87 06 
+16 Jul 10:07:29 (process:12604) INFO: 000d - fa 1d 09 e7 bf 1a 43 d5 91 6d a0 5a 3b 4d 6d 7f 
+16 Jul 10:07:29 (process:12604) INFO: 000e - bd 6d 7f d9 f7 b2 99 89 ca 80 e7 f7 60 a5 d4 3c 
+16 Jul 10:07:29 (process:12604) INFO: 000f - 81 6a 76 20 37 bc 27 c0 e1 ce 61 a7 ca 9a 1d 73 
+16 Jul 10:07:29 (process:12604) INFO: 0010 - e5 87 51 15 4a f1 d2 11 bb b0 02 d3 28 18 b6 c5 
+16 Jul 10:07:29 (process:12604) INFO: 0011 - 05 4d 31 e0 3f 3e c7 9f e7 e3 62 48 e8 9b cd 20 
+16 Jul 10:07:29 (process:12604) INFO: 0012 - 4f 30 3d b8 06 c1 d7 02 03 01 00 01 a3 31 30 2f 
+16 Jul 10:07:29 (process:12604) INFO: 0013 - 30 0c 06 03 55 1d 13 01 01 ff 04 02 30 00 30 1f 
+16 Jul 10:07:29 (process:12604) INFO: 0014 - 06 03 55 1d 23 04 18 30 16 80 14 f8 f4 68 83 e3 
+16 Jul 10:07:29 (process:12604) INFO: 0015 - 6c f8 41 a2 4d 13 22 f7 a7 6e 60 fb 7e e1 20 30 
+16 Jul 10:07:29 (process:12604) INFO: 0016 - 0b 06 09 2a 86 48 86 f7 0d 01 01 05 03 81 81 00 
+16 Jul 10:07:29 (process:12604) INFO: 0017 - 4c 4a 0d 89 7e 7f 68 bb af fe af d9 54 9c 78 44 
+16 Jul 10:07:29 (process:12604) INFO: 0018 - 02 a6 f4 47 86 94 fd 5e b3 12 4c af 78 25 56 cd 
+16 Jul 10:07:29 (process:12604) INFO: 0019 - 42 11 2f 81 9a 4b 71 d7 82 2d b2 26 57 9a c0 50 
+16 Jul 10:07:29 (process:12604) INFO: 001a - a0 c8 14 ef d9 59 e8 a5 d0 72 ae fb 7a 35 82 c5 
+16 Jul 10:07:29 (process:12604) INFO: 001b - 5d 3a 02 39 07 9f 46 20 ed 21 6a 61 44 03 56 52 
+16 Jul 10:07:29 (process:12604) INFO: 001c - 75 43 ee a3 44 54 ea 31 73 85 1d 77 db e1 c3 fe 
+16 Jul 10:07:29 (process:12604) INFO: 001d - db ec aa e0 74 ef 34 23 a8 33 fd f9 b9 4e 0b f9 
+16 Jul 10:07:29 (process:12604) INFO: 001e - 02 91 76 e6 34 13 d6 80 6b 2c 16 e4 1e dd 31 49 
+16 Jul 10:07:29 (process:12604) INFO: 001f - 
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sent Packet[2] Handshake(22) with length: 496
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: SERVER KEY EXCHANGE was send [397 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sending Packet[2] Handshake(22) with length: 397
+16 Jul 10:07:29 (process:12604) INFO: WRITE: Will write 402 bytes to 8.
+16 Jul 10:07:29 (process:12604) INFO: WRITE: wrote 402 bytes to 8. Left 0 bytes. Total 402 bytes.
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 01 8d 0c 00 01 89 00 80 e9 0b 8a 17 96 
+16 Jul 10:07:29 (process:12604) INFO: 0001 - 11 76 f9 e5 49 ca 22 ef d2 9e 93 de e4 e6 81 02 
+16 Jul 10:07:29 (process:12604) INFO: 0002 - 15 cc e0 01 38 1d 6d 34 f7 ab bf c7 60 ee aa 35 
+16 Jul 10:07:29 (process:12604) INFO: 0003 - 94 9d 06 af 59 b8 f6 c0 9c 3b b6 64 b5 57 0c ab 
+16 Jul 10:07:29 (process:12604) INFO: 0004 - 3c 55 f7 a0 aa 89 89 f8 0d fa b2 8b a4 7c 2b 03 
+16 Jul 10:07:29 (process:12604) INFO: 0005 - 17 fe 2e d2 71 79 ed 6d b5 08 f2 79 b1 2b 76 76 
+16 Jul 10:07:29 (process:12604) INFO: 0006 - 5e 91 1c df e0 9f b4 e9 63 91 32 92 f6 45 f1 ef 
+16 Jul 10:07:29 (process:12604) INFO: 0007 - 58 45 df 27 49 61 f8 36 8d b1 52 ff 03 86 90 00 
+16 Jul 10:07:29 (process:12604) INFO: 0008 - fb 29 4b 97 84 5c d2 18 fe 08 37 00 01 05 00 80 
+16 Jul 10:07:29 (process:12604) INFO: 0009 - 51 df 51 b4 fa eb 42 dc a3 29 d8 2a 9a 59 3e 8e 
+16 Jul 10:07:29 (process:12604) INFO: 000a - 05 dc 6f 55 7b 4f 97 dd d0 ef e0 b1 52 78 aa 89 
+16 Jul 10:07:29 (process:12604) INFO: 000b - 68 ca c1 0a 94 a5 bc d8 c9 63 d8 68 10 a5 0b 13 
+16 Jul 10:07:29 (process:12604) INFO: 000c - 3d 92 5d 2c 6f b8 a9 5c 71 4e df 9b 56 cd ff c6 
+16 Jul 10:07:29 (process:12604) INFO: 000d - e2 f4 00 da 94 21 dc a4 07 dd 7c 3b 8d 6c 6c 84 
+16 Jul 10:07:29 (process:12604) INFO: 000e - 81 ae bd de f7 23 99 58 c8 d2 46 c2 3b db 29 37 
+16 Jul 10:07:29 (process:12604) INFO: 000f - e0 91 73 39 72 fb db e1 8d 9d 8a 0f 4b 06 60 d8 
+16 Jul 10:07:29 (process:12604) INFO: 0010 - cb 4f 8e 36 eb d8 06 74 41 44 3c c9 a5 6c ce 17 
+16 Jul 10:07:29 (process:12604) INFO: 0011 - 00 80 62 80 e7 9b 7f 78 e1 8f 44 db d7 d7 03 17 
+16 Jul 10:07:29 (process:12604) INFO: 0012 - 8f b5 2c 50 c2 0d 0a ff a8 21 3d 37 ae 8f 49 01 
+16 Jul 10:07:29 (process:12604) INFO: 0013 - f5 1a e6 56 cd 78 9b 05 73 25 57 2d 21 4b 58 f9 
+16 Jul 10:07:29 (process:12604) INFO: 0014 - c5 a6 0c 12 57 7d 37 c1 f5 c2 91 27 07 12 c0 60 
+16 Jul 10:07:29 (process:12604) INFO: 0015 - 94 3b d8 07 33 9d 84 16 f1 e7 5f ff 8f 42 ac de 
+16 Jul 10:07:29 (process:12604) INFO: 0016 - 91 81 07 a0 47 31 44 df 26 ea 9e 48 a0 aa 0c d4 
+16 Jul 10:07:29 (process:12604) INFO: 0017 - 91 5d ed 82 29 0c cb fc 11 c1 80 5e d2 55 0f 98 
+16 Jul 10:07:29 (process:12604) INFO: 0018 - f3 ca 33 35 83 35 7e 34 f7 d0 7f 2a 90 52 38 a4 
+16 Jul 10:07:29 (process:12604) INFO: 0019 - 5a d9 
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sent Packet[3] Handshake(22) with length: 402
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: CERTIFICATE REQUEST was send [40 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sending Packet[3] Handshake(22) with length: 40
+16 Jul 10:07:29 (process:12604) INFO: WRITE: Will write 45 bytes to 8.
+16 Jul 10:07:29 (process:12604) INFO: WRITE: wrote 45 bytes to 8. Left 0 bytes. Total 45 bytes.
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 00 28 0d 00 00 24 02 01 02 00 1f 00 1d 
+16 Jul 10:07:29 (process:12604) INFO: 0001 - 30 1b 31 19 30 17 06 03 55 04 2e 13 10 34 31 31 
+16 Jul 10:07:29 (process:12604) INFO: 0002 - 36 32 35 30 36 32 38 30 36 32 31 35 39 
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sent Packet[4] Handshake(22) with length: 45
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: SERVER HELLO DONE was send [4 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sending Packet[4] Handshake(22) with length: 4
+16 Jul 10:07:29 (process:12604) INFO: WRITE: Will write 9 bytes to 8.
+16 Jul 10:07:29 (process:12604) INFO: WRITE: wrote 9 bytes to 8. Left 0 bytes. Total 9 bytes.
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 00 04 0e 00 00 00 
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sent Packet[5] Handshake(22) with length: 9
+16 Jul 10:07:29 (process:12604) INFO: READ: -1 returned from 8, errno=35 gerrno=0
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_buffers.c:360
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_buffers.c:1188
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_handshake.c:962
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 01 f7 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Expected Packet[1] Handshake(22) with length: 1
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Received Packet[1] Handshake(22) with length: 503
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 503 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 503 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 0b 00 01 f3 00 01 f0 00 01 ed 30 82 01 e9 30 82 
+16 Jul 10:07:29 (process:12604) INFO: 0001 - 01 54 a0 03 02 01 02 02 08 9c fc 7d 48 8b 85 07 
+16 Jul 10:07:29 (process:12604) INFO: 0002 - 00 30 0b 06 09 2a 86 48 86 f7 0d 01 01 05 30 1b 
+16 Jul 10:07:29 (process:12604) INFO: 0003 - 31 19 30 17 06 03 55 04 2e 13 10 34 31 31 36 32 
+16 Jul 10:07:29 (process:12604) INFO: 0004 - 35 30 36 32 38 30 36 32 31 35 39 30 1e 17 0d 30 
+16 Jul 10:07:29 (process:12604) INFO: 0005 - 38 30 37 31 36 31 33 35 30 33 35 5a 17 0d 33 38 
+16 Jul 10:07:29 (process:12604) INFO: 0006 - 30 31 31 39 30 33 31 34 30 37 5a 30 27 31 0a 30 
+16 Jul 10:07:29 (process:12604) INFO: 0007 - 08 06 03 55 04 03 13 01 34 31 19 30 17 06 03 55 
+16 Jul 10:07:29 (process:12604) INFO: 0008 - 04 2e 13 10 32 31 31 37 31 35 38 31 30 30 31 33 
+16 Jul 10:07:29 (process:12604) INFO: 0009 - 39 31 36 34 30 81 9c 30 0b 06 09 2a 86 48 86 f7 
+16 Jul 10:07:29 (process:12604) INFO: 000a - 0d 01 01 01 03 81 8c 00 30 81 88 02 81 80 c6 07 
+16 Jul 10:07:29 (process:12604) INFO: 000b - a7 84 51 36 53 5d 02 3c c1 8a 83 5c 26 8b 9f f2 
+16 Jul 10:07:29 (process:12604) INFO: 000c - d1 0b d6 c3 d2 60 06 26 38 6b bb ba 39 e9 4d 42 
+16 Jul 10:07:29 (process:12604) INFO: 000d - 36 43 fd 98 e5 95 98 34 44 db f6 d2 c0 ca 98 28 
+16 Jul 10:07:29 (process:12604) INFO: 000e - 2f 7b 6e e4 f0 e3 b5 0c d1 35 e3 a9 3d 79 c4 47 
+16 Jul 10:07:29 (process:12604) INFO: 000f - 36 4e d4 58 8c 29 bb 7b a5 e7 e0 ae fe b3 27 fc 
+16 Jul 10:07:29 (process:12604) INFO: 0010 - dd 8d ce b7 20 7d ea 9f 4c 62 d7 d6 e3 ab c5 26 
+16 Jul 10:07:29 (process:12604) INFO: 0011 - ca 58 78 bf 69 90 82 7f ab b4 32 d7 e5 60 00 f7 
+16 Jul 10:07:29 (process:12604) INFO: 0012 - 59 4d 1a 4b 7b 7b a0 b2 a9 c1 2f 2d 18 25 02 03 
+16 Jul 10:07:29 (process:12604) INFO: 0013 - 01 00 01 a3 31 30 2f 30 0c 06 03 55 1d 13 01 01 
+16 Jul 10:07:29 (process:12604) INFO: 0014 - ff 04 02 30 00 30 1f 06 03 55 1d 23 04 18 30 16 
+16 Jul 10:07:29 (process:12604) INFO: 0015 - 80 14 f8 f4 68 83 e3 6c f8 41 a2 4d 13 22 f7 a7 
+16 Jul 10:07:29 (process:12604) INFO: 0016 - 6e 60 fb 7e e1 20 30 0b 06 09 2a 86 48 86 f7 0d 
+16 Jul 10:07:29 (process:12604) INFO: 0017 - 01 01 05 03 81 81 00 a2 1f 45 39 c5 ef ab 55 89 
+16 Jul 10:07:29 (process:12604) INFO: 0018 - ef 67 4a 7e ad 93 c7 e4 53 5c d8 7a c0 09 44 85 
+16 Jul 10:07:29 (process:12604) INFO: 0019 - 4f 78 b2 30 67 6f 0e 15 17 e3 ef bf 60 e2 5c 6a 
+16 Jul 10:07:29 (process:12604) INFO: 001a - a8 e9 50 51 8d 07 32 aa e0 02 be d7 d4 0e 8a 26 
+16 Jul 10:07:29 (process:12604) INFO: 001b - 3e 75 2f a9 8a 84 59 a2 f2 a9 76 0b 34 a1 25 d3 
+16 Jul 10:07:29 (process:12604) INFO: 001c - e6 94 82 4e 08 14 9a 12 5d 79 72 88 2c f3 c2 20 
+16 Jul 10:07:29 (process:12604) INFO: 001d - f6 fc ca ea f4 71 ab fe 89 f8 d1 87 5d 80 6e 68 
+16 Jul 10:07:29 (process:12604) INFO: 001e - 45 97 87 55 2c 0b f3 93 66 66 b1 46 03 49 45 f1 
+16 Jul 10:07:29 (process:12604) INFO: 001f - 15 89 38 74 6b 59 c6 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 503 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 508 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Decrypted Packet[1] Handshake(22) with length: 503
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 503 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 1 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 3 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: CERTIFICATE was received [503 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 499 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 0 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 4 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 499 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: READ: -1 returned from 8, errno=35 gerrno=0
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_buffers.c:360
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_buffers.c:1188
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_handshake.c:962
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 00 86 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Expected Packet[2] Handshake(22) with length: 1
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Received Packet[2] Handshake(22) with length: 134
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 134 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 134 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 10 00 00 82 00 80 14 56 dd 32 72 a6 97 28 6e cc 
+16 Jul 10:07:29 (process:12604) INFO: 0001 - 9b b9 5e fe 15 b1 2d c2 6a 77 ce 42 87 cc d5 98 
+16 Jul 10:07:29 (process:12604) INFO: 0002 - ce 48 88 52 6e f5 c5 53 23 78 19 1b 58 ef e5 f3 
+16 Jul 10:07:29 (process:12604) INFO: 0003 - 06 a2 19 11 8f 38 3d 12 dc 6c b3 d2 d3 08 63 b2 
+16 Jul 10:07:29 (process:12604) INFO: 0004 - 71 ad dc 15 73 e9 31 b2 93 09 c6 58 b9 14 cb 20 
+16 Jul 10:07:29 (process:12604) INFO: 0005 - a8 6b b3 41 05 1d ae 42 bc 51 81 a4 91 79 c9 d4 
+16 Jul 10:07:29 (process:12604) INFO: 0006 - 67 d1 da a5 c2 6e 4c e3 93 71 da ea 95 47 35 83 
+16 Jul 10:07:29 (process:12604) INFO: 0007 - 59 54 64 29 81 b8 4f 8d a3 7a 55 a7 9e d0 9c 28 
+16 Jul 10:07:29 (process:12604) INFO: 0008 - b6 d1 28 d2 41 b7 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 134 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 139 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Decrypted Packet[2] Handshake(22) with length: 134
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 134 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 1 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 3 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: CLIENT KEY EXCHANGE was received [134 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 130 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 503 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 4 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 130 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 16 03 02 00 86 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Expected Packet[3] Handshake(22) with length: 1
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Received Packet[3] Handshake(22) with length: 134
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 134 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 134 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 0f 00 00 82 00 80 a3 c5 19 69 15 44 21 bc eb 5e 
+16 Jul 10:07:29 (process:12604) INFO: 0001 - 93 f0 8c 3f 68 39 9d 0b 08 3e 7b cb d5 84 2c 03 
+16 Jul 10:07:29 (process:12604) INFO: 0002 - 36 06 2a 25 29 12 fb e3 d3 78 52 fb 94 be 55 fc 
+16 Jul 10:07:29 (process:12604) INFO: 0003 - fa a4 50 d5 ef b0 fd fc 42 4f 61 40 e8 ba b5 81 
+16 Jul 10:07:29 (process:12604) INFO: 0004 - 9f 77 29 bd f3 24 79 49 18 19 5e 8b 71 27 cf cd 
+16 Jul 10:07:29 (process:12604) INFO: 0005 - 00 43 57 f7 6e 92 ce 71 7e 61 3a 73 2f ca d5 0f 
+16 Jul 10:07:29 (process:12604) INFO: 0006 - 2f 07 27 56 f5 f9 8e 32 62 d8 47 ea 5c 57 20 e4 
+16 Jul 10:07:29 (process:12604) INFO: 0007 - 75 4f 74 43 ea 84 b9 6c 26 ab a0 c9 ac a2 d9 39 
+16 Jul 10:07:29 (process:12604) INFO: 0008 - 9a 05 f9 88 e7 33 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 134 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 139 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Decrypted Packet[3] Handshake(22) with length: 134
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 134 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 1 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 3 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: CERTIFICATE VERIFY was received [134 bytes]
+16 Jul 10:07:29 (process:12604) INFO: BUF[REC][HD]: Read 130 bytes of Data(22)
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Peeked 134 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Emptied buffer
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 4 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Inserted 130 bytes of Data
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 5 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 14 03 02 00 01 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 0 bytes into buffer. Adding 5 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 5 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Expected Packet[4] Change Cipher Spec(20) with length: 1
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Received Packet[4] Change Cipher Spec(20) with length: 1
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 1 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 1 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 01 
+16 Jul 10:07:29 (process:12604) INFO: RB: Have 5 bytes into buffer. Adding 1 bytes.
+16 Jul 10:07:29 (process:12604) INFO: RB: Requested 6 bytes
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: ChangeCipherSpec Packet was received
+16 Jul 10:07:29 (process:12604) INFO: INT: PREMASTER SECRET[128]: 37046de59349fac99331d95bc771cd76b6e7a71c0da9ea2dd849946785d69d87ed1563457e866749ee620e227724d5fb03f84bab0706b0262736300a071eaef28050c1ac93c3f51b93e6ddd9ca3c7f2f6411f0277e7ae20e7559e7828d969e8b479e1a2aa5dfb4bc951c18716038996c08bdb62f50ad41e47489fb1237f0795f
+16 Jul 10:07:29 (process:12604) INFO: INT: CLIENT RANDOM[32]: 487e1cc1616ace5a75e5761b249574ee9d4032170445cc0f8085d9553571be7e
+16 Jul 10:07:29 (process:12604) INFO: INT: SERVER RANDOM[32]: 487e1cc109ce9885404721b2fc118ab65ad1828427b4be3ed99a44ba9014122e
+16 Jul 10:07:29 (process:12604) INFO: INT: MASTER SECRET: eea52f7af856bc104a63d179b48d40afa4a2f1829673f374d96235290025872f46371ea794b8aaa986834992b4ee75e5
+16 Jul 10:07:29 (process:12604) INFO: INT: KEY BLOCK[136]: b51ae5250051676f07c79ecc7fb942605dd1fc3571814d3fdc0a08ca9246aa37
+16 Jul 10:07:29 (process:12604) INFO: INT: CLIENT WRITE KEY [32]: 6630c007865624016050b4ad91c93ba86c0ead3434ae07e48900381f6f6f3a96
+16 Jul 10:07:29 (process:12604) INFO: INT: SERVER WRITE KEY [32]: cb08a598fd010e483a52d3f3d0a0a3731b677983b2d73fab6ca2ffb2c153c38b
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: Cipher Suite: DHE_RSA_AES_256_CBC_SHA1
+16 Jul 10:07:29 (process:12604) INFO: HSK[7f2c7000]: Initializing internal [read] cipher sessions
+16 Jul 10:07:29 (process:12604) INFO: READ: Got 0 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: READ: read 0 bytes from 8
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_buffers.c:638
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_record.c:896
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_buffers.c:1188
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_handshake.c:962
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_handshake.c:525
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_handshake.c:2472
+16 Jul 10:07:29 (process:12604) INFO: ASSERT: gnutls_handshake.c:2608
+16 Jul 10:07:29 (process:12604) INFO: BUF[HSK]: Cleared Data from buffer
+16 Jul 10:07:29 (process:12604) INFO: REC: Sending Alert[2|22] - Record overflow
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sending Packet[5] Alert(21) with length: 2
+16 Jul 10:07:29 (process:12604) INFO: WRITE: Will write 7 bytes to 8.
+16 Jul 10:07:29 (process:12604) INFO: WRITE: wrote 7 bytes to 8. Left 0 bytes. Total 7 bytes.
+16 Jul 10:07:29 (process:12604) INFO: 0000 - 15 03 02 00 02 02 16 
+16 Jul 10:07:29 (process:12604) INFO: REC[7f2c7000]: Sent Packet[6] Alert(21) with length: 7
+16 Jul 10:07:29 (process:12604) INFO: [127.0.0.1:24361]: closing connection.
+16 Jul 10:07:46 (process:12604) INFO: Waiting queued message to be processed.

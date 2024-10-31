@@ -1,0 +1,1112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>preludedb-plugin-format</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libpreludedb Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libpreludedb-preludedb.html" title="preludedb">
+<link rel="next" href="libpreludedb-preludedb-version.html" title="preludedb-version">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libpreludedb-preludedb.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libpreludedb Reference Manual</th>
+<td><a accesskey="n" href="libpreludedb-preludedb-version.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libpreludedb-preludedb-plugin-format.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libpreludedb-preludedb-plugin-format.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="preludedb-plugin-format">
+<a name="libpreludedb-preludedb-plugin-format"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libpreludedb-preludedb-plugin-format.top_of_page"></a>preludedb-plugin-format</span></h2>
+<p>preludedb-plugin-format</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libpreludedb-preludedb-plugin-format.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+typedef             preludedb_plugin_format_t;
+int                 (*preludedb_plugin_format_get_values_func_t)
+                                                        (preludedb_t *db,
+                                                         preludedb_path_selection_t *selection,
+                                                         idmef_criteria_t *criteria,
+                                                         int distinct,
+                                                         int limit,
+                                                         int offset,
+                                                         void **res);
+int                 (*preludedb_plugin_format_get_alert_idents_func_t)
+                                                        (preludedb_t *db,
+                                                         idmef_criteria_t *criteria,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_idents_order_t order,
+                                                         void **res);
+int                 (*preludedb_plugin_format_delete_alert_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t ident);
+int                 preludedb_plugin_format_new         (preludedb_plugin_format_t **ret);
+int                 (*preludedb_plugin_format_get_heartbeat_idents_func_t)
+                                                        (preludedb_t *db,
+                                                         idmef_criteria_t *criteria,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_idents_order_t order,
+                                                         void **res);
+size_t              (*preludedb_plugin_format_get_message_ident_count_func_t)
+                                                        (void *res);
+int                 (*preludedb_plugin_format_get_alert_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t ident,
+                                                         idmef_message_t **message);
+int                 (*preludedb_plugin_format_get_heartbeat_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t ident,
+                                                         idmef_message_t **message);
+void                (*preludedb_plugin_format_destroy_values_resource_func_t)
+                                                        (void *res);
+int                 (*preludedb_plugin_format_insert_message_func_t)
+                                                        (preludedb_t *db,
+                                                         idmef_message_t *message);
+int                 (*preludedb_plugin_format_check_schema_version_func_t)
+                                                        (const char *version);
+void                (*preludedb_plugin_format_destroy_message_idents_resource_func_t)
+                                                        (void *res);
+int                 (*preludedb_plugin_format_delete_heartbeat_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t ident);
+ssize_t             (*preludedb_plugin_format_delete_alert_from_list_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t *idents,
+                                                         size_t size);
+ssize_t             (*preludedb_plugin_format_delete_alert_from_result_idents_func_t)
+                                                        (preludedb_t *db,
+                                                         preludedb_result_idents_t *results);
+ssize_t             (*preludedb_plugin_format_delete_heartbeat_from_list_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t *idents,
+                                                         size_t size);
+ssize_t             (*preludedb_plugin_format_delete_heartbeat_from_result_idents_func_t)
+                                                        (preludedb_t *db,
+                                                         preludedb_result_idents_t *results);
+void                preludedb_plugin_format_set_delete_alert_from_list_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_alert_from_list_func_t func);
+void                preludedb_plugin_format_set_delete_alert_from_result_idents_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_alert_from_result_idents_func_t func);
+void                preludedb_plugin_format_set_delete_heartbeat_from_list_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_heartbeat_from_list_func_t func);
+void                preludedb_plugin_format_set_delete_heartbeat_from_result_idents_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_heartbeat_from_result_idents_func_t func);
+void                preludedb_plugin_format_set_check_schema_version_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_check_schema_version_func_t func);
+void                preludedb_plugin_format_set_get_alert_idents_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_alert_idents_func_t func);
+void                preludedb_plugin_format_set_get_heartbeat_idents_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_heartbeat_idents_func_t func);
+void                preludedb_plugin_format_set_get_message_ident_count_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_message_ident_count_func_t func);
+void                preludedb_plugin_format_set_destroy_message_idents_resource_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_destroy_message_idents_resource_func_t func);
+void                preludedb_plugin_format_set_get_alert_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_alert_func_t func);
+void                preludedb_plugin_format_set_get_heartbeat_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_heartbeat_func_t func);
+void                preludedb_plugin_format_set_delete_alert_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_alert_func_t func);
+void                preludedb_plugin_format_set_delete_heartbeat_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_heartbeat_func_t func);
+void                preludedb_plugin_format_set_insert_message_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_insert_message_func_t func);
+void                preludedb_plugin_format_set_get_values_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_values_func_t func);
+void                preludedb_plugin_format_set_destroy_values_resource_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_destroy_values_resource_func_t func);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libpreludedb-preludedb-plugin-format.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libpreludedb-preludedb-plugin-format.details"></a><h2>Details</h2>
+<div class="refsect2" title="preludedb_plugin_format_t">
+<a name="preludedb-plugin-format-t"></a><h3>preludedb_plugin_format_t</h3>
+<pre class="programlisting">typedef struct preludedb_plugin_format preludedb_plugin_format_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_get_values_func_t ()">
+<a name="preludedb-plugin-format-get-values-func-t"></a><h3>preludedb_plugin_format_get_values_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_get_values_func_t)
+                                                        (preludedb_t *db,
+                                                         preludedb_path_selection_t *selection,
+                                                         idmef_criteria_t *criteria,
+                                                         int distinct,
+                                                         int limit,
+                                                         int offset,
+                                                         void **res);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>selection</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>criteria</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>distinct</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_get_alert_idents_func_t ()">
+<a name="preludedb-plugin-format-get-alert-idents-func-t"></a><h3>preludedb_plugin_format_get_alert_idents_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_get_alert_idents_func_t)
+                                                        (preludedb_t *db,
+                                                         idmef_criteria_t *criteria,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_idents_order_t order,
+                                                         void **res);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>criteria</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>order</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_delete_alert_func_t ()">
+<a name="preludedb-plugin-format-delete-alert-func-t"></a><h3>preludedb_plugin_format_delete_alert_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_delete_alert_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t ident);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ident</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_new ()">
+<a name="preludedb-plugin-format-new"></a><h3>preludedb_plugin_format_new ()</h3>
+<pre class="programlisting">int                 preludedb_plugin_format_new         (preludedb_plugin_format_t **ret);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_get_heartbeat_idents_func_t ()">
+<a name="preludedb-plugin-format-get-heartbeat-idents-func-t"></a><h3>preludedb_plugin_format_get_heartbeat_idents_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_get_heartbeat_idents_func_t)
+                                                        (preludedb_t *db,
+                                                         idmef_criteria_t *criteria,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_idents_order_t order,
+                                                         void **res);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>criteria</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>order</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_get_message_ident_count_func_t ()">
+<a name="preludedb-plugin-format-get-message-ident-count-func-t"></a><h3>preludedb_plugin_format_get_message_ident_count_func_t ()</h3>
+<pre class="programlisting">size_t              (*preludedb_plugin_format_get_message_ident_count_func_t)
+                                                        (void *res);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_get_alert_func_t ()">
+<a name="preludedb-plugin-format-get-alert-func-t"></a><h3>preludedb_plugin_format_get_alert_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_get_alert_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t ident,
+                                                         idmef_message_t **message);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ident</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_get_heartbeat_func_t ()">
+<a name="preludedb-plugin-format-get-heartbeat-func-t"></a><h3>preludedb_plugin_format_get_heartbeat_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_get_heartbeat_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t ident,
+                                                         idmef_message_t **message);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ident</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_destroy_values_resource_func_t ()">
+<a name="preludedb-plugin-format-destroy-values-resource-func-t"></a><h3>preludedb_plugin_format_destroy_values_resource_func_t ()</h3>
+<pre class="programlisting">void                (*preludedb_plugin_format_destroy_values_resource_func_t)
+                                                        (void *res);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_insert_message_func_t ()">
+<a name="preludedb-plugin-format-insert-message-func-t"></a><h3>preludedb_plugin_format_insert_message_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_insert_message_func_t)
+                                                        (preludedb_t *db,
+                                                         idmef_message_t *message);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_check_schema_version_func_t ()">
+<a name="preludedb-plugin-format-check-schema-version-func-t"></a><h3>preludedb_plugin_format_check_schema_version_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_check_schema_version_func_t)
+                                                        (const char *version);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>version</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_destroy_message_idents_resource_func_t ()">
+<a name="preludedb-plugin-format-destroy-message-idents-resource-func-t"></a><h3>preludedb_plugin_format_destroy_message_idents_resource_func_t ()</h3>
+<pre class="programlisting">void                (*preludedb_plugin_format_destroy_message_idents_resource_func_t)
+                                                        (void *res);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>res</code></em> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_delete_heartbeat_func_t ()">
+<a name="preludedb-plugin-format-delete-heartbeat-func-t"></a><h3>preludedb_plugin_format_delete_heartbeat_func_t ()</h3>
+<pre class="programlisting">int                 (*preludedb_plugin_format_delete_heartbeat_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t ident);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ident</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_delete_alert_from_list_func_t ()">
+<a name="preludedb-plugin-format-delete-alert-from-list-func-t"></a><h3>preludedb_plugin_format_delete_alert_from_list_func_t ()</h3>
+<pre class="programlisting">ssize_t             (*preludedb_plugin_format_delete_alert_from_list_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t *idents,
+                                                         size_t size);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>idents</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_delete_alert_from_result_idents_func_t ()">
+<a name="preludedb-plugin-format-delete-alert-from-result-idents-func-t"></a><h3>preludedb_plugin_format_delete_alert_from_result_idents_func_t ()</h3>
+<pre class="programlisting">ssize_t             (*preludedb_plugin_format_delete_alert_from_result_idents_func_t)
+                                                        (preludedb_t *db,
+                                                         preludedb_result_idents_t *results);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_delete_heartbeat_from_list_func_t ()">
+<a name="preludedb-plugin-format-delete-heartbeat-from-list-func-t"></a><h3>preludedb_plugin_format_delete_heartbeat_from_list_func_t ()</h3>
+<pre class="programlisting">ssize_t             (*preludedb_plugin_format_delete_heartbeat_from_list_func_t)
+                                                        (preludedb_t *db,
+                                                         uint64_t *idents,
+                                                         size_t size);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>idents</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_delete_heartbeat_from_result_idents_func_t ()">
+<a name="preludedb-plugin-format-delete-heartbeat-from-result-idents-func-t"></a><h3>preludedb_plugin_format_delete_heartbeat_from_result_idents_func_t ()</h3>
+<pre class="programlisting">ssize_t             (*preludedb_plugin_format_delete_heartbeat_from_result_idents_func_t)
+                                                        (preludedb_t *db,
+                                                         preludedb_result_idents_t *results);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>results</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_delete_alert_from_list_func ()">
+<a name="preludedb-plugin-format-set-delete-alert-from-list-func"></a><h3>preludedb_plugin_format_set_delete_alert_from_list_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_delete_alert_from_list_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_alert_from_list_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_delete_alert_from_result_idents_func ()">
+<a name="preludedb-plugin-format-set-delete-alert-from-result-idents-func"></a><h3>preludedb_plugin_format_set_delete_alert_from_result_idents_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_delete_alert_from_result_idents_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_alert_from_result_idents_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_delete_heartbeat_from_list_func ()">
+<a name="preludedb-plugin-format-set-delete-heartbeat-from-list-func"></a><h3>preludedb_plugin_format_set_delete_heartbeat_from_list_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_delete_heartbeat_from_list_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_heartbeat_from_list_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_delete_heartbeat_from_result_idents_func ()">
+<a name="preludedb-plugin-format-set-delete-heartbeat-from-result-idents-func"></a><h3>preludedb_plugin_format_set_delete_heartbeat_from_result_idents_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_delete_heartbeat_from_result_idents_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_heartbeat_from_result_idents_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_check_schema_version_func ()">
+<a name="preludedb-plugin-format-set-check-schema-version-func"></a><h3>preludedb_plugin_format_set_check_schema_version_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_check_schema_version_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_check_schema_version_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_get_alert_idents_func ()">
+<a name="preludedb-plugin-format-set-get-alert-idents-func"></a><h3>preludedb_plugin_format_set_get_alert_idents_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_get_alert_idents_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_alert_idents_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_get_heartbeat_idents_func ()">
+<a name="preludedb-plugin-format-set-get-heartbeat-idents-func"></a><h3>preludedb_plugin_format_set_get_heartbeat_idents_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_get_heartbeat_idents_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_heartbeat_idents_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_get_message_ident_count_func ()">
+<a name="preludedb-plugin-format-set-get-message-ident-count-func"></a><h3>preludedb_plugin_format_set_get_message_ident_count_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_get_message_ident_count_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_message_ident_count_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_destroy_message_idents_resource_func ()">
+<a name="preludedb-plugin-format-set-destroy-message-idents-resource-func"></a><h3>preludedb_plugin_format_set_destroy_message_idents_resource_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_destroy_message_idents_resource_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_destroy_message_idents_resource_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_get_alert_func ()">
+<a name="preludedb-plugin-format-set-get-alert-func"></a><h3>preludedb_plugin_format_set_get_alert_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_get_alert_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_alert_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_get_heartbeat_func ()">
+<a name="preludedb-plugin-format-set-get-heartbeat-func"></a><h3>preludedb_plugin_format_set_get_heartbeat_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_get_heartbeat_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_heartbeat_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_delete_alert_func ()">
+<a name="preludedb-plugin-format-set-delete-alert-func"></a><h3>preludedb_plugin_format_set_delete_alert_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_delete_alert_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_alert_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_delete_heartbeat_func ()">
+<a name="preludedb-plugin-format-set-delete-heartbeat-func"></a><h3>preludedb_plugin_format_set_delete_heartbeat_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_delete_heartbeat_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_delete_heartbeat_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_insert_message_func ()">
+<a name="preludedb-plugin-format-set-insert-message-func"></a><h3>preludedb_plugin_format_set_insert_message_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_insert_message_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_insert_message_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_get_values_func ()">
+<a name="preludedb-plugin-format-set-get-values-func"></a><h3>preludedb_plugin_format_set_get_values_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_get_values_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_get_values_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_plugin_format_set_destroy_values_resource_func ()">
+<a name="preludedb-plugin-format-set-destroy-values-resource-func"></a><h3>preludedb_plugin_format_set_destroy_values_resource_func ()</h3>
+<pre class="programlisting">void                preludedb_plugin_format_set_destroy_values_resource_func
+                                                        (preludedb_plugin_format_t *plugin,
+                                                         preludedb_plugin_format_destroy_values_resource_func_t func);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>plugin</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

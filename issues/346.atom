@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/346.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2009-04-29T12:21:41Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prewikka - Bug #346: Event tab : Prewikka Internal Error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/346"/>
+    <id>http://www.prelude-siem.org/issues/346?journal_id=1057</id>
+    <updated>2009-04-29T12:21:41Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Prewikka&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;5&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #346: Event tab : Prewikka Internal Error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/346"/>
+    <id>http://www.prelude-siem.org/issues/346?journal_id=1320</id>
+    <updated>2009-06-10T12:54:20Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a class="changeset" title="Fix IDMEFDatabase exception on empty criteria string. Providing an empty criteria string as argu..." href="http://www.prelude-siem.org/projects/prewikka/repository/revisions/636fd5f854f30a79f9c3989f33e4bf87b7c603ea"&gt;636fd5f854f30a79f9c3989f33e4bf87b7c603ea&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #346: Event tab : Prewikka Internal Error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/346"/>
+    <id>http://www.prelude-siem.org/issues/346?journal_id=1321</id>
+    <updated>2009-06-10T12:56:17Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Yoann VANDOORSELAERE&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.9.15&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

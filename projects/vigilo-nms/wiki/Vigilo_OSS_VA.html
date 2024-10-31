@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Vigilo OSS VA - VIGILO NMS - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="lYYZYW0c+ckLKeNEcVZOoCr3EU1cAKsJ61KsGQC+SYWGqXEOpAj0SoGD675sHgf+Vrxg00YK8kc13GiJhL59hg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-vigilo-nms controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/vigilo-nms/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/vigilo-nms/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/vigilo-nms/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/vigilo-nms">Overview</a></li><li><a class="activity" href="/projects/vigilo-nms/activity">Activity</a></li><li><a class="roadmap" href="/projects/vigilo-nms/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/vigilo-nms/issues">Issues</a></li><li><a class="MyWiki" href="/projects/vigilo-nms/wiki">Documentation</a></li><li><a class="boards" href="/projects/vigilo-nms/boards">Forums</a></li><li><a class="MyFiles" href="/projects/vigilo-nms/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/vigilo-nms/#1">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/vigilo-nms/wiki">Start page</a></li>
+  <li><a href="/projects/vigilo-nms/wiki/index">Index by title</a></li>
+  <li><a href="/projects/vigilo-nms/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/vigilo-nms/wiki/WikiStart">WikiStart</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <ul class="toc"><li><a href="#Vigilo-OSS-Virtual-Appliance-VA-Installation">Vigilo OSS Virtual Appliance (VA) Installation</a><ul><li><a href="#General-Information">General Information</a></li><li><a href="#Prerequisites">Prerequisites</a></li><li><a href="#Getting-started">Getting started</a><ul><li><a href="#Downloading-the-Virtual-Appliance">Downloading the Virtual Appliance</a></li><li><a href="#Initial-setup">Initial setup</a></li><li><a href="#Using-the-VA">Using the VA</a></li></ul>
+</li><li><a href="#Getting-help">Getting help</a></li></ul></li></ul>
+
+
+	<a name="Vigilo-OSS-Virtual-Appliance-VA-Installation"></a>
+<h1 >Vigilo OSS Virtual Appliance (VA) Installation<a href="#Vigilo-OSS-Virtual-Appliance-VA-Installation" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="General-Information"></a>
+<h2 >General Information<a href="#General-Information" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Vigilo is now available as a virtual appliance for those who want to quickly test it without having to deal with the whole installation process.<br />The appliance is primarily intended for evaluation purposes and can be used to monitor small information systems (< 100 hosts).</p>
+
+
+The virtual appliance contains:
+	<ul>
+	<li>Vigilo (OSS / Community Edition)</li>
+	</ul>
+
+
+Technical information about the VA:
+	<ul>
+	<li>ISO format</li>
+		<li>CentOS 7 64 bits</li>
+		<li>Linux credentials: vigilo/vigilo (allowed to use sudo)</li>
+		<li>GUI credentials: admin/admin</li>
+	</ul>
+
+
+	<a name="Prerequisites"></a>
+<h2 >Prerequisites<a href="#Prerequisites" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>We recommend allocating the following resources for the VA:</p>
+
+
+	<table>
+		<tr>
+			<th>Resource    </th>
+			<th>Minimum     </th>
+			<th>Recommended     </th>
+		</tr>
+		<tr>
+			<td> CPU           </td>
+			<td> dual-core     </td>
+			<td> quad-core         </td>
+		</tr>
+		<tr>
+			<td> RAM           </td>
+			<td> 4 GB          </td>
+			<td> 8 GB              </td>
+		</tr>
+		<tr>
+			<td> Disk storage  </td>
+			<td> 20 GB         </td>
+			<td> 50 GB             </td>
+		</tr>
+	</table>
+
+
+
+
+	<a name="Getting-started"></a>
+<h2 >Getting started<a href="#Getting-started" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Downloading-the-Virtual-Appliance"></a>
+<h3 >Downloading the Virtual Appliance<a href="#Downloading-the-Virtual-Appliance" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>First, you must download the virtual appliance from <a href="https://www.vigilo-nms.org/pkg/va/latest" class="external">this address</a>.</p>
+
+
+	<p>Then, load the ISO file into your virtual machine manager.</p>
+
+
+	<p>Depending on your installation, you may need to change the configuration of the VA's network interface from NAT to bridged inside your virtual machine manager to receive an IP address.</p>
+
+
+	<a name="Initial-setup"></a>
+<h3 >Initial setup<a href="#Initial-setup" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Once the VA is fully booted, log into the VA through your virtual machine manager using the <code>root</code>/<code>vigilo</code> login and password.<br />Now run <code>admin-menu</code>.</p>
+
+
+	<p>The <code>admin-menu</code> command allows you to configure various aspects of the virtual machine, like the default keyboard layout, date/time synchronization, network settings, and so on. It also contains commands to perform various periodic administrative tasks.</p>
+
+
+	<p>By default, the virtual appliance will try to retrieve an IP address using the DHCP protocol. If you'd rather use a static address, navigate to <code>System configuration</code> > <code>Network</code> > <code>Network configuration</code>, then follow the on-screen instructions to reconfigure the network interface.</p>
+
+
+	<p>Once the network is properly configured, you can use the SSH protocol for future remote management, with the <code>vigilo</code>/<code>vigilo</code> regular user account.</p>
+
+
+	<a name="Using-the-VA"></a>
+<h3 >Using the VA<a href="#Using-the-VA" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Once the VA has been properly set up (see previous chapter), you can access the virtual appliance's web applications by directing your web browser at:<br /><pre>http://&lt;VA IP address&gt;/</pre></p>
+
+
+	<p>If problems are detected, they will appear automatically in the Alarms dashboard.</p>
+
+
+	<p>The checks that apply to the information system can then be configured by following the instructions from the <a href="https://www.vigilo-nms.org/docs/latest/en/configuration.html#configuration-du-parc-a-superviser" class="external">configuration manual</a></p>
+
+
+	<a name="Getting-help"></a>
+<h2 >Getting help<a href="#Getting-help" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>This documentation is available by browsing to <a class="external" href="https://www.vigilo-nms.org/docs/latest/en/user-guide.html#introduction">https://www.vigilo-nms.org/docs/latest/en/user-guide.html#introduction</a>, or by clicking on the question mark icon in the web interfaces.</p>
+
+
+	<p>You may also ask others for help on our <a href="https://vigilo-nms.org/projects/vigilo/boards" class="external">community forums</a></p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '2';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

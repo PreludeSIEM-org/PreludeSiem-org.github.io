@@ -1,0 +1,26 @@
+--- ./MessageListing.py.orig	2007-05-29 19:01:49.000000000 -0400
++++ ./MessageListing.py	2007-06-28 20:11:53.036545184 -0400
+@@ -395,6 +395,23 @@
+         write('''"/>
+    </td>
+   </tr>
++  
++  <tr>
++    <th id="auto_apply_label">''')
++        if False:
++            _("Auto Update Time")
++        _v = VFFSL(SL,"_",False)("Auto Apply") # '$_("Limit")' on line 95, col 34
++        if _v is not None: write(_filter(_v, rawExpr='$_("auto_apply")')) # from line 95, col 34.
++        write('''</th>
++
++   <td colspan="4">
++    <input id="autoapply_value" type="text" size="2" name="auto_apply" value="''')
++        _v = VFFSL(SL,"auto_apply",True) # '$limit' on line 98, col 79
++        if _v is not None: write(_filter(_v, rawExpr='$autoapply')) # from line 98, col 79.
++    
++	write('''"/>
++   </td>
++  </tr>
+ 
+   <tr style="text-align: center;">
+       <td colspan=3><input type="submit" name="apply" value="''')

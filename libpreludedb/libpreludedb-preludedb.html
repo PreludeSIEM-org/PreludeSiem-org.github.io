@@ -1,0 +1,948 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>preludedb</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libpreludedb Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="ch01.html" title="[Insert title here]">
+<link rel="next" href="libpreludedb-preludedb-plugin-format.html" title="preludedb-plugin-format">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libpreludedb Reference Manual</th>
+<td><a accesskey="n" href="libpreludedb-preludedb-plugin-format.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libpreludedb-preludedb.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libpreludedb-preludedb.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="preludedb">
+<a name="libpreludedb-preludedb"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libpreludedb-preludedb.top_of_page"></a>preludedb</span></h2>
+<p>preludedb</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libpreludedb-preludedb.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+typedef             preludedb_t;
+typedef             preludedb_result_idents_t;
+typedef             preludedb_result_values_t;
+enum                preludedb_result_idents_order_t;
+#define             PRELUDEDB_ERRBUF_SIZE
+int                 preludedb_init                      (void);
+void                preludedb_deinit                    (void);
+int                 preludedb_new                       (preludedb_t **db,
+                                                         preludedb_sql_t *sql,
+                                                         const char *format_name,
+                                                         char *errbuf,
+                                                         size_t size);
+void                preludedb_destroy                   (preludedb_t *db);
+const char *        preludedb_get_format_name           (preludedb_t *db);
+const char *        preludedb_get_format_version        (preludedb_t *db);
+int                 preludedb_set_format                (preludedb_t *db,
+                                                         const char *format_name);
+preludedb_sql_t *   preludedb_get_sql                   (preludedb_t *db);
+void                preludedb_result_idents_destroy     (preludedb_result_idents_t *result);
+void                preludedb_result_values_destroy     (preludedb_result_values_t *result);
+char *              preludedb_get_error                 (preludedb_t *db,
+                                                         preludedb_error_t error,
+                                                         char *errbuf);
+int                 preludedb_get_alert_idents          (preludedb_t *db,
+                                                         idmef_criteria_t *criteria,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_idents_order_t order,
+                                                         preludedb_result_idents_t **result);
+int                 preludedb_get_heartbeat_idents      (preludedb_t *db,
+                                                         idmef_criteria_t *criteria,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_idents_order_t order,
+                                                         preludedb_result_idents_t **result);
+int                 preludedb_get_alert                 (preludedb_t *db,
+                                                         uint64_t ident,
+                                                         idmef_message_t **message);
+int                 preludedb_get_heartbeat             (preludedb_t *db,
+                                                         uint64_t ident,
+                                                         idmef_message_t **message);
+int                 preludedb_delete_alert              (preludedb_t *db,
+                                                         uint64_t ident);
+int                 preludedb_delete_heartbeat          (preludedb_t *db,
+                                                         uint64_t ident);
+ssize_t             preludedb_delete_alert_from_list    (preludedb_t *db,
+                                                         uint64_t *idents,
+                                                         size_t isize);
+ssize_t             preludedb_delete_alert_from_result_idents
+                                                        (preludedb_t *db,
+                                                         preludedb_result_idents_t *result);
+ssize_t             preludedb_delete_heartbeat_from_list
+                                                        (preludedb_t *db,
+                                                         uint64_t *idents,
+                                                         size_t isize);
+ssize_t             preludedb_delete_heartbeat_from_result_idents
+                                                        (preludedb_t *db,
+                                                         preludedb_result_idents_t *result);
+int                 preludedb_get_values                (preludedb_t *db,
+                                                         preludedb_path_selection_t *path_selection,
+                                                         idmef_criteria_t *criteria,
+                                                         prelude_bool_t distinct,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_values_t **result);
+int                 preludedb_transaction_abort         (preludedb_t *db);
+int                 preludedb_transaction_end           (preludedb_t *db);
+int                 preludedb_transaction_start         (preludedb_t *db);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libpreludedb-preludedb.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libpreludedb-preludedb.details"></a><h2>Details</h2>
+<div class="refsect2" title="preludedb_t">
+<a name="preludedb-t"></a><h3>preludedb_t</h3>
+<pre class="programlisting">typedef struct preludedb preludedb_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_result_idents_t">
+<a name="preludedb-result-idents-t"></a><h3>preludedb_result_idents_t</h3>
+<pre class="programlisting">typedef struct preludedb_result_idents preludedb_result_idents_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_result_values_t">
+<a name="preludedb-result-values-t"></a><h3>preludedb_result_values_t</h3>
+<pre class="programlisting">typedef struct preludedb_result_values preludedb_result_values_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum preludedb_result_idents_order_t">
+<a name="preludedb-result-idents-order-t"></a><h3>enum preludedb_result_idents_order_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDEDB_RESULT_IDENTS_ORDER_BY_NONE = 0,
+        PRELUDEDB_RESULT_IDENTS_ORDER_BY_CREATE_TIME_DESC = 1,
+        PRELUDEDB_RESULT_IDENTS_ORDER_BY_CREATE_TIME_ASC = 2
+} preludedb_result_idents_order_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="PRELUDEDB_ERRBUF_SIZE">
+<a name="PRELUDEDB-ERRBUF-SIZE--CAPS"></a><h3>PRELUDEDB_ERRBUF_SIZE</h3>
+<pre class="programlisting">#define PRELUDEDB_ERRBUF_SIZE 512
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_init ()">
+<a name="preludedb-init"></a><h3>preludedb_init ()</h3>
+<pre class="programlisting">int                 preludedb_init                      (void);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_deinit ()">
+<a name="preludedb-deinit"></a><h3>preludedb_deinit ()</h3>
+<pre class="programlisting">void                preludedb_deinit                    (void);</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_new ()">
+<a name="preludedb-new"></a><h3>preludedb_new ()</h3>
+<pre class="programlisting">int                 preludedb_new                       (preludedb_t **db,
+                                                         preludedb_sql_t *sql,
+                                                         const char *format_name,
+                                                         char *errbuf,
+                                                         size_t size);</pre>
+<p>
+This function initialize the <em class="parameter"><code>db</code></em> object and detect the format of the underlying database if no format name
+is given.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object to initialize.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format_name</code></em> :</span></p></td>
+<td> Format name of the underlying database, if NULL the format will be automatically detected
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>errbuf</code></em> :</span></p></td>
+<td> Buffer that will be set to an error message if an error occur.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td> size of <em class="parameter"><code>errbuf</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_destroy ()">
+<a name="preludedb-destroy"></a><h3>preludedb_destroy ()</h3>
+<pre class="programlisting">void                preludedb_destroy                   (preludedb_t *db);</pre>
+<p>
+Destroy <em class="parameter"><code>db</code></em> object and the underlying <em class="parameter"><code>sql</code></em> object given as argument to preludedb_new.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_format_name ()">
+<a name="preludedb-get-format-name"></a><h3>preludedb_get_format_name ()</h3>
+<pre class="programlisting">const char *        preludedb_get_format_name           (preludedb_t *db);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the format name currently used by the <em class="parameter"><code>db</code></em> object.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_format_version ()">
+<a name="preludedb-get-format-version"></a><h3>preludedb_get_format_version ()</h3>
+<pre class="programlisting">const char *        preludedb_get_format_version        (preludedb_t *db);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the format version currently used by the <em class="parameter"><code>db</code></em> object.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_set_format ()">
+<a name="preludedb-set-format"></a><h3>preludedb_set_format ()</h3>
+<pre class="programlisting">int                 preludedb_set_format                (preludedb_t *db,
+                                                         const char *format_name);</pre>
+<p>
+Change the current format plugin.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format_name</code></em> :</span></p></td>
+<td> New format to use.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_sql ()">
+<a name="preludedb-get-sql"></a><h3>preludedb_get_sql ()</h3>
+<pre class="programlisting">preludedb_sql_t *   preludedb_get_sql                   (preludedb_t *db);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to the underlying sql object.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_result_idents_destroy ()">
+<a name="preludedb-result-idents-destroy"></a><h3>preludedb_result_idents_destroy ()</h3>
+<pre class="programlisting">void                preludedb_result_idents_destroy     (preludedb_result_idents_t *result);</pre>
+<p>
+Destroy the <em class="parameter"><code>result</code></em> object.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td> Pointer to an idents result object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_result_values_destroy ()">
+<a name="preludedb-result-values-destroy"></a><h3>preludedb_result_values_destroy ()</h3>
+<pre class="programlisting">void                preludedb_result_values_destroy     (preludedb_result_values_t *result);</pre>
+<p>
+Destroy the <em class="parameter"><code>result</code></em> object.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td> Pointer to a result values object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_error ()">
+<a name="preludedb-get-error"></a><h3>preludedb_get_error ()</h3>
+<pre class="programlisting">char *              preludedb_get_error                 (preludedb_t *db,
+                                                         preludedb_error_t error,
+                                                         char *errbuf);</pre>
+<p>
+Build an error message from the error code given as argument and from
+the sql plugin error string (if any) if the error code is db related.
+</p>
+<p>
+FIXME: deprecated.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td> Error code to build the error string from.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>errbuf</code></em> :</span></p></td>
+<td> Buffer where the error message will be stored,
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a pointer to the error string or NULL if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_alert_idents ()">
+<a name="preludedb-get-alert-idents"></a><h3>preludedb_get_alert_idents ()</h3>
+<pre class="programlisting">int                 preludedb_get_alert_idents          (preludedb_t *db,
+                                                         idmef_criteria_t *criteria,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_idents_order_t order,
+                                                         preludedb_result_idents_t **result);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>criteria</code></em> :</span></p></td>
+<td> Pointer to an idmef criteria.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td> Limit of results or -1 if no limit.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td> Offset in results or -1 if no offset.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>order</code></em> :</span></p></td>
+<td> Result order.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td> Idents result.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of result or a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_heartbeat_idents ()">
+<a name="preludedb-get-heartbeat-idents"></a><h3>preludedb_get_heartbeat_idents ()</h3>
+<pre class="programlisting">int                 preludedb_get_heartbeat_idents      (preludedb_t *db,
+                                                         idmef_criteria_t *criteria,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_idents_order_t order,
+                                                         preludedb_result_idents_t **result);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>criteria</code></em> :</span></p></td>
+<td> Pointer to an idmef criteria.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td> Limit of results or -1 if no limit.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td> Offset in results or -1 if no offset.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>order</code></em> :</span></p></td>
+<td> Result order.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td> Idents result.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of result or a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_alert ()">
+<a name="preludedb-get-alert"></a><h3>preludedb_get_alert ()</h3>
+<pre class="programlisting">int                 preludedb_get_alert                 (preludedb_t *db,
+                                                         uint64_t ident,
+                                                         idmef_message_t **message);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ident</code></em> :</span></p></td>
+<td> Internal database ident of the alert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> Pointer to an idmef message object where the retrieved message will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_heartbeat ()">
+<a name="preludedb-get-heartbeat"></a><h3>preludedb_get_heartbeat ()</h3>
+<pre class="programlisting">int                 preludedb_get_heartbeat             (preludedb_t *db,
+                                                         uint64_t ident,
+                                                         idmef_message_t **message);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ident</code></em> :</span></p></td>
+<td> Internal database ident of the heartbeat.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> Pointer to an idmef message object where the retrieved message will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_delete_alert ()">
+<a name="preludedb-delete-alert"></a><h3>preludedb_delete_alert ()</h3>
+<pre class="programlisting">int                 preludedb_delete_alert              (preludedb_t *db,
+                                                         uint64_t ident);</pre>
+<p>
+Delete an alert.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ident</code></em> :</span></p></td>
+<td> Internal database ident of the alert.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_delete_heartbeat ()">
+<a name="preludedb-delete-heartbeat"></a><h3>preludedb_delete_heartbeat ()</h3>
+<pre class="programlisting">int                 preludedb_delete_heartbeat          (preludedb_t *db,
+                                                         uint64_t ident);</pre>
+<p>
+Delete an heartbeat.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ident</code></em> :</span></p></td>
+<td> Internal database ident of the heartbeat.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_delete_alert_from_list ()">
+<a name="preludedb-delete-alert-from-list"></a><h3>preludedb_delete_alert_from_list ()</h3>
+<pre class="programlisting">ssize_t             preludedb_delete_alert_from_list    (preludedb_t *db,
+                                                         uint64_t *idents,
+                                                         size_t isize);</pre>
+<p>
+Delete all alerts from ident stored within <em class="parameter"><code>idents</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>idents</code></em> :</span></p></td>
+<td> Pointer to an array of idents.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>isize</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of alert deleted on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_delete_alert_from_result_idents ()">
+<a name="preludedb-delete-alert-from-result-idents"></a><h3>preludedb_delete_alert_from_result_idents ()</h3>
+<pre class="programlisting">ssize_t             preludedb_delete_alert_from_result_idents
+                                                        (preludedb_t *db,
+                                                         preludedb_result_idents_t *result);</pre>
+<p>
+Delete all alert from ident stored within <em class="parameter"><code>result</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td> Pointer to an idents result object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of alert deleted on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_delete_heartbeat_from_list ()">
+<a name="preludedb-delete-heartbeat-from-list"></a><h3>preludedb_delete_heartbeat_from_list ()</h3>
+<pre class="programlisting">ssize_t             preludedb_delete_heartbeat_from_list
+                                                        (preludedb_t *db,
+                                                         uint64_t *idents,
+                                                         size_t isize);</pre>
+<p>
+Delete all heartbeat from ident stored within <em class="parameter"><code>idents</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>idents</code></em> :</span></p></td>
+<td> Pointer to an array of idents.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>isize</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of heartbeat deleted on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_delete_heartbeat_from_result_idents ()">
+<a name="preludedb-delete-heartbeat-from-result-idents"></a><h3>preludedb_delete_heartbeat_from_result_idents ()</h3>
+<pre class="programlisting">ssize_t             preludedb_delete_heartbeat_from_result_idents
+                                                        (preludedb_t *db,
+                                                         preludedb_result_idents_t *result);</pre>
+<p>
+Delete all heartbeat from ident stored within <em class="parameter"><code>result</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td> Pointer to an idents result object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of heartbeat deleted on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_get_values ()">
+<a name="preludedb-get-values"></a><h3>preludedb_get_values ()</h3>
+<pre class="programlisting">int                 preludedb_get_values                (preludedb_t *db,
+                                                         preludedb_path_selection_t *path_selection,
+                                                         idmef_criteria_t *criteria,
+                                                         prelude_bool_t distinct,
+                                                         int limit,
+                                                         int offset,
+                                                         preludedb_result_values_t **result);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a db object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path_selection</code></em> :</span></p></td>
+<td> Pointer to a path selection.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>criteria</code></em> :</span></p></td>
+<td> Pointer to a criteria object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>distinct</code></em> :</span></p></td>
+<td> Get distinct or not distinct result rows.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td> Limit of results or -1 if no limit.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td> Offset in results or -1 if no offset.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>result</code></em> :</span></p></td>
+<td> Values result.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 1 if there are result, 0 if there are none, or a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_transaction_abort ()">
+<a name="preludedb-transaction-abort"></a><h3>preludedb_transaction_abort ()</h3>
+<pre class="programlisting">int                 preludedb_transaction_abort         (preludedb_t *db);</pre>
+<p>
+Abort a sql transaction (SQL ROLLBACK command) initiated
+with <code class="function">preludedb_transaction_start()</code>. Internal transaction
+handling will be enabled again once this function return.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">preludedb_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_transaction_end ()">
+<a name="preludedb-transaction-end"></a><h3>preludedb_transaction_end ()</h3>
+<pre class="programlisting">int                 preludedb_transaction_end           (preludedb_t *db);</pre>
+<p>
+Terminate a sql transaction (SQL COMMIT command) initiated
+with <code class="function">preludedb_transaction_start()</code>. Internal transaction
+handling will be enabled again once this function return.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">preludedb_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_transaction_start ()">
+<a name="preludedb-transaction-start"></a><h3>preludedb_transaction_start ()</h3>
+<pre class="programlisting">int                 preludedb_transaction_start         (preludedb_t *db);</pre>
+<p>
+Begin a transaction using <em class="parameter"><code>db</code></em> object. Internal transaction
+handling will be disabled until <code class="function">preludedb_transaction_end()</code>
+or <code class="function">preludedb_transaction_abort()</code> is called.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>db</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">preludedb_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

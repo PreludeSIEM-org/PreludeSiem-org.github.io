@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/901.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2017-09-06T10:26:48Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>PRELUDE SIEM - Bug #901: Problem with prelude-release-3.0.0-1.el6.noarch.rpm</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/901"/>
+    <id>http://www.prelude-siem.org/issues/901?journal_id=4159</id>
+    <updated>2017-09-06T10:26:48Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Antoine LUONG&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;Thank you for reporting this problem, we will fix it soon.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>PRELUDE SIEM - Bug #901: Problem with prelude-release-3.0.0-1.el6.noarch.rpm</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/901"/>
+    <id>http://www.prelude-siem.org/issues/901?journal_id=4164</id>
+    <updated>2017-09-08T17:00:46Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Please see prelude-release-4.0.0.&lt;/p&gt;    </content>
+  </entry>
+</feed>

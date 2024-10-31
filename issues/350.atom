@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/350.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2009-06-04T11:56:14Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1301</id>
+    <updated>2009-06-04T11:56:14Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Could you please enable SQL query logging, and report the error logs here ?&lt;/p&gt;
+
+
+	&lt;p&gt;You can do this by editing the &lt;strong&gt;[idmef_database]&lt;/strong&gt; section in the prewikka.conf configuration file, adding:&lt;br /&gt;&lt;pre&gt;
+log: /tmp/prewikka.log
+&lt;/pre&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1302</id>
+    <updated>2009-06-04T11:56:53Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Feedback&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Yoann VANDOORSELAERE&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;0.9.15&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1304</id>
+    <updated>2009-06-05T12:28:03Z</updated>
+    <author>
+      <name>Vitaly Tskhovrebov</name>
+      <email>vtskhovrebov@exigenservices.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/180/pre.tar.bz2"&gt;pre.tar.bz2&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Here it is.&lt;/p&gt;
+
+
+	&lt;p&gt;Explanation - log turned on, then i've gone to the prewikka's homepage, then Agents.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1307</id>
+    <updated>2009-06-09T11:15:53Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/181/prewikka-debug.diff"&gt;prewikka-debug.diff&lt;/a&gt; &lt;a class="icon-only icon-magnifier" title="View" href="/attachments/181/prewikka-debug.diff"&gt;View&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;For one reason or another, there seem to be an analyzer with an empty ID.&lt;br /&gt;In order to confirm this, could you please apply the attached patch, and report the prewikka-httpd output when going to the agent view?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1308</id>
+    <updated>2009-06-09T12:13:39Z</updated>
+    <author>
+      <name>Vitaly Tskhovrebov</name>
+      <email>vtskhovrebov@exigenservices.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;I believe you're right, because there was one agent incorrectly added. But there's no option anywere to remove agents, and i didn't find any solutions to remove it directly.&lt;/p&gt;
+
+
+	&lt;p&gt;The traceback now is the same:&lt;br /&gt;Traceback (most recent call last):&lt;br /&gt;  File "/usr/lib/python2.6/site-packages/prewikka/Core.py", line 333, in process&lt;br /&gt;    getattr(view_object, view["handler"])()&lt;br /&gt;  File "/usr/lib/python2.6/site-packages/prewikka/views/sensor.py", line 115, in render&lt;br /&gt;    analyzerid = analyzer_path[-1]&lt;br /&gt;IndexError: list index out of range&lt;/p&gt;
+
+
+	&lt;p&gt;I have an access to pgsql directly, so please tell me the right place to look for misconfigured agent?&lt;/p&gt;
+
+
+	&lt;p&gt;Anyway, prewikka should not lock up on this issue. :-)&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1309</id>
+    <updated>2009-06-09T12:40:20Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/182/prewikka.diff"&gt;prewikka.diff&lt;/a&gt; &lt;a class="icon-only icon-magnifier" title="View" href="/attachments/182/prewikka.diff"&gt;View&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The attached patch should fixes the problem, as well as making the agents view load a little faster.&lt;/p&gt;
+
+
+Once the patch is applied, please let me know:
+	&lt;ul&gt;
+	&lt;li&gt;Whether you can see the offending analyzer in the generated agent list.&lt;/li&gt;
+		&lt;li&gt;Whether deleting this analyzer succeed.&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1310</id>
+    <updated>2009-06-09T13:12:16Z</updated>
+    <author>
+      <name>Vitaly Tskhovrebov</name>
+      <email>vtskhovrebov@exigenservices.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;The Show Must go on, Yoann.&lt;/p&gt;
+
+
+	&lt;p&gt;Traceback (most recent call last):&lt;br /&gt;  File "/usr/lib/python2.6/site-packages/prewikka/Core.py", line 333, in process&lt;br /&gt;    getattr(view_object, view["handler"])()&lt;br /&gt;  File "/usr/lib/python2.6/site-packages/prewikka/views/sensor.py", line 114, in render&lt;br /&gt;    analyzer = self.env.idmef_db.getAnalyzer(analyzerid)&lt;br /&gt;  File "/usr/lib/python2.6/site-packages/prewikka/IDMEFDatabase.py", line 539, in getAnalyzer&lt;br /&gt;    analyzerd[column] = analyzer[column]&lt;br /&gt;TypeError: 'NoneType' object is unsubscriptable&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1311</id>
+    <updated>2009-06-09T13:58:20Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Thanks for the quick feedback,&lt;/p&gt;
+
+
+	&lt;p&gt;On line 526, immediately after:&lt;br /&gt;&lt;pre&gt;
+        for analyzer in heartbeat["analyzer"]:
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Could you please insert:&lt;br /&gt;&lt;pre&gt;
+            print "A=", analyzer
+            print "N=", analyzer["name"]
+            print "I=", analyzer["analyzerid"]
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;And provides the prewikka-httpd output?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1312</id>
+    <updated>2009-06-09T13:59:31Z</updated>
+    <author>
+      <name>Vitaly Tskhovrebov</name>
+      <email>vtskhovrebov@exigenservices.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;We will continue tomorrow, Yoann. Thanks for your support!&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1313</id>
+    <updated>2009-06-10T08:19:45Z</updated>
+    <author>
+      <name>Vitaly Tskhovrebov</name>
+      <email>vtskhovrebov@exigenservices.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;&lt;code&gt;&lt;br /&gt;Traceback (most recent call last):&lt;br /&gt;  File "/usr/lib/python2.6/site-packages/prewikka/Core.py", line 333, in process&lt;br /&gt;    getattr(view_object, view["handler"])()&lt;br /&gt;  File "/usr/lib/python2.6/site-packages/prewikka/views/sensor.py", line 114, in render&lt;br /&gt;    analyzer = self.env.idmef_db.getAnalyzer(analyzerid)&lt;br /&gt;  File "/usr/lib/python2.6/site-packages/prewikka/IDMEFDatabase.py", line 542, in getAnalyzer&lt;br /&gt;    analyzerd[column] = analyzer[column]&lt;br /&gt;TypeError: 'NoneType' object is unsubscriptable&lt;/code&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1314</id>
+    <updated>2009-06-10T11:08:35Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/183/prewikka.diff"&gt;prewikka.diff&lt;/a&gt; &lt;a class="icon-only icon-magnifier" title="View" href="/attachments/183/prewikka.diff"&gt;View&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Updated patch attached. This should at least allow you to get a working agent view (although deleting an Agent with an empty ID will require manual database operation at the moment).&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1315</id>
+    <updated>2009-06-10T11:19:31Z</updated>
+    <author>
+      <name>Vitaly Tskhovrebov</name>
+      <email>vtskhovrebov@exigenservices.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;I haven't any *.tmpl files. Cannot apply patch correctly.&lt;/p&gt;
+
+
+&lt;pre&gt;
+spbsec02 templates # pwd
+/usr/lib/python2.6/site-packages/prewikka/templates
+spbsec02 templates # ls -l
+total 364
+-rw-r--r-- 1 root root 17386 May 15 17:33 About.py
+-rw-r--r-- 1 root root 69668 May 15 17:33 AlertListing.py
+-rw-r--r-- 1 root root 15392 May 15 17:33 ClassicLayout.py
+-rw-r--r-- 1 root root  5314 May 15 17:33 Command.py
+-rw-r--r-- 1 root root 11105 May 15 17:33 ErrorTemplate.py
+-rw-r--r-- 1 root root 15985 May 15 17:33 FilterEdition.py
+-rw-r--r-- 1 root root  6703 May 15 17:33 HTMLDocument.py
+-rw-r--r-- 1 root root  9888 May 15 17:33 HeartbeatAnalyze.py
+-rw-r--r-- 1 root root 13817 May 15 17:33 HeartbeatListing.py
+-rw-r--r-- 1 root root  7908 May 15 17:33 LoginPasswordForm.py
+-rw-r--r-- 1 root root  8503 May 15 17:33 MessageDetails.py
+-rw-r--r-- 1 root root 37675 May 15 17:33 MessageListing.py
+-rw-r--r-- 1 root root 15901 May 15 17:33 MessageSummary.py
+-rw-r--r-- 1 root root  7879 May 15 17:33 PropertiesChangeForm.py
+-rw-r--r-- 1 root root  5478 May 15 17:33 SensorAlertListing.py
+-rw-r--r-- 1 root root  5504 May 15 17:33 SensorHeartbeatListing.py
+-rw-r--r-- 1 root root 30105 May 15 17:33 SensorListing.py
+-rw-r--r-- 1 root root  7182 May 15 17:33 TopLayout.py
+-rw-r--r-- 1 root root  9337 May 15 17:33 UserListing.py
+-rw-r--r-- 1 root root 16593 May 15 17:33 UserSettings.py
+-rw-r--r-- 1 root root     0 Mar  4  2008 __init__.py
+-rw-r--r-- 1 root root  7891 May 15 17:33 utils.py
+
+&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1316</id>
+    <updated>2009-06-10T11:21:49Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Vitaly Tskhovrebov wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;I haven't any *.tmpl files. Cannot apply patch correctly.&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+	&lt;p&gt;You should apply the patch on top of a Prewikka-0.9.14 source tree, then run:&lt;br /&gt;&lt;pre&gt;
+python setup.py install
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;So that the patched source base is installed.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1317</id>
+    <updated>2009-06-10T12:18:45Z</updated>
+    <author>
+      <name>Vitaly Tskhovrebov</name>
+      <email>vtskhovrebov@exigenservices.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/184/prewikka.PNG"&gt;prewikka.PNG&lt;/a&gt; &lt;a class="icon-only icon-magnifier" title="View" href="/attachments/184/prewikka.PNG"&gt;View&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Ok, i've got a picture of some misconfigured analyzers. How to remove them?&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1318</id>
+    <updated>2009-06-10T12:50:05Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Vitaly Tskhovrebov wrote:&lt;/p&gt;
+
+
+&lt;blockquote&gt;
+
+	&lt;p&gt;Ok, i've got a picture of some misconfigured analyzers. How to remove them?&lt;/p&gt;
+
+
+&lt;/blockquote&gt;
+
+&lt;pre&gt;
+preludedb-admin delete heartbeat "type=mysql user=prelude pass=prelude name=prelude" --criteria '! heartbeat.analyzer.analyzerid'
+&lt;/pre&gt;
+
+	&lt;p&gt;Note: do this only for heartbeat. Doing it for alert will delete LML events. &lt;br /&gt;Note&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #350: Agents tab: list index out of range</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/350"/>
+    <id>http://www.prelude-siem.org/issues/350?journal_id=1319</id>
+    <updated>2009-06-10T12:54:20Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Feedback&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Applied in changeset &lt;a class="changeset" title="Analyzer retrieval fixes and speedup. Make the database requests used to generate the agents vie..." href="http://www.prelude-siem.org/projects/prewikka/repository/revisions/78826d2f202eed44ee222353ead7d13ec5b9ef0b"&gt;78826d2f202eed44ee222353ead7d13ec5b9ef0b&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+</feed>

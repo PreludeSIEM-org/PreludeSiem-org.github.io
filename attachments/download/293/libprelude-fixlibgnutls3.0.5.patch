@@ -1,0 +1,24 @@
+--- libprelude-1.0.1-old/prelude-admin/prelude-admin.c	2012-06-01 12:12:22.000000000 -0300
++++ libprelude-1.0.1/prelude-admin/prelude-admin.c	2012-08-03 19:23:29.998711311 -0300
+@@ -57,7 +57,9 @@
+ #include <errno.h>
+ #include <gnutls/gnutls.h>
+ #include <gnutls/x509.h>
++#if GNUTLS_VERSION_NUMBER < 0x030005
+ #include <gnutls/extra.h>
++#endif
+ 
+ #include "common.h"
+ #include "config-engine.h"
+--- libprelude-1.0.1-old/prelude-admin/server.c	2012-06-01 12:12:22.000000000 -0300
++++ libprelude-1.0.1/prelude-admin/server.c	2012-08-03 19:23:02.195712002 -0300
+@@ -39,7 +39,9 @@
+ 
+ #include <gcrypt.h>
+ #include <gnutls/gnutls.h>
++#if GNUTLS_VERSION_NUMBER < 0x030005
+ #include <gnutls/extra.h>
++#endif
+ 
+ #include "prelude-client.h"
+ #include "prelude-error.h"

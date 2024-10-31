@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>InstallingPreludeDbLibrary - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="4aCAPdZD9yMCm7I0gwJ2TFjh9CejjDgZH0aOk98DY3Pyj+hSH1f6oIgxus6eSj8SJKqFubmGYVfByEoDWwNXcA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/prelude/wiki/ManualUser">ManualUser</a> » <a href="/projects/prelude/wiki/InstallingPrelude">InstallingPrelude</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Installing-the-PreludeDB-Library"></a>
+<h1 >Installing the <a class="wiki-page new" href="/projects/prelude/wiki/PreludeDB?parent=InstallingPreludeDbLibrary">PreludeDB</a> Library<a href="#Installing-the-PreludeDB-Library" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>This section explains how to install the <a class="wiki-page new" href="/projects/prelude/wiki/PreludeDB?parent=InstallingPreludeDbLibrary">PreludeDB</a> library libpreludedb from the tarball available from the Prelude website. However, libpreludedb might be included with your distribution as a package and it would be easier to install it this way.</p>
+
+
+	<p><strong>Table of Contents</strong></p>
+
+
+	<ul class="toc"><li><a href="#Installing-the-PreludeDB-Library">Installing the PreludeDB Library</a><ul><li><a href="#Install-Dependencies">Install Dependencies</a></li><li><a href="#Get-the-sources">Get the sources</a></li><li><a href="#Configuration">Configuration</a><ul><li><a href="#Installation-directories">Installation directories</a></li><li><a href="#Path-to-dependencies">Path to dependencies</a></li><li><a href="#Optional-Features">Optional Features</a></li></ul>
+</li><li><a href="#Build">Build</a></li><li><a href="#Regression-Tests">Regression Tests</a></li><li><a href="#Install">Install</a></li><li><a href="#Post-Installation-Setup">Post-Installation Setup</a></li><li><a href="#Create-Database">Create Database</a><ul><li><a href="#MySQL">MySQL</a></li><li><a href="#PostgreSQL">PostgreSQL</a></li><li><a href="#SQLite3">SQLite3</a></li></ul></li></ul></li></ul>
+
+
+	<a name="Install-Dependencies"></a>
+<h2 >Install Dependencies<a href="#Install-Dependencies" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Ensure that you have libprelude installed. Instructions on installing libprelude can be found on the <a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Prelude Library Installation Page</a>.<br />Additionally, install any of the database software you would like the <a class="wiki-page new" href="/projects/prelude/wiki/PreludeDB?parent=InstallingPreludeDbLibrary">PreludeDB</a> Library to support: <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=InstallingPreludeDbLibrary">MySQL</a>, <a class="wiki-page new" href="/projects/prelude/wiki/PostgreSQL?parent=InstallingPreludeDbLibrary">PostgreSQL</a>, SQLite3.</p>
+
+
+	<a name="Get-the-sources"></a>
+<h2 >Get the sources<a href="#Get-the-sources" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Download the latest <a href="/projects/prelude/files">PreludeDB library</a></p>
+
+
+	<a name="Configuration"></a>
+<h2 >Configuration<a href="#Configuration" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The first step of the installation procedure is to configure the source tree for your system and choose the options you would like. This is done by running the configure script. For a default installation simply enter</p>
+
+
+<pre>
+./configure
+</pre>
+
+	<p>This script will run a number of tests to guess values for various system dependent variables and detect some quirks of your operating system, and finally will create several files in the build tree to record what it found. (You can also run configure in a directory outside the source tree if you want to keep the build directory separate.)</p>
+
+
+	<p>You can customize the build and installation process by supplying one or more of the following command line options to configure:</p>
+
+
+	<a name="Installation-directories"></a>
+<h3 >Installation directories<a href="#Installation-directories" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li><strong>--prefix</strong>=<em>PREFIX</em><br />    Install all files under the directory PREFIX instead of /usr/local. The actual files will be installed into various subdirectories; no files will ever be installed directly into the PREFIX directory.
+
+	<p>If you have special needs, you can also customize the individual subdirectories with the following options.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--exec-prefix</strong>=<em>EXEC-PREFIX</em>
+
+	<p>You can install architecture-dependent files under a different prefix, EXEC-PREFIX, than what PREFIX was set to. This can be useful to share architecture-independent files between hosts. If you omit this, then EXEC-PREFIX is set equal to PREFIX and both architecture-dependent and independent files will be installed under the same tree, which is probably what you want.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--bindir</strong>=<em>DIRECTORY</em>
+
+	<p>Specifies the directory for executable programs. The default is EXEC-PREFIX/bin, which normally means /usr/local/bin.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--datadir</strong>=<em>DIRECTORY</em>
+
+	<p>Sets the directory for read-only data files used by the installed programs. The default is PREFIX/share.</p></li>
+	</ul>
+
+
+	<ul>
+	<li> <strong>--sysconfdir</strong>=<em>DIRECTORY</em>
+
+	<p>The directory for various configuration files, PREFIX/etc by default.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--libdir</strong>=<em>DIRECTORY</em>
+
+	<p>The location to install libraries and dynamically loadable modules. The default is EXEC-PREFIX/lib.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--includedir</strong>=<em>DIRECTORY</em>
+
+	<p>The directory for installing C and C++ header files. The default is PREFIX/include.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--mandir</strong>=<em>DIRECTORY</em>
+
+	<p>The man pages that come with the <a class="wiki-page new" href="/projects/prelude/wiki/PreludeDB?parent=InstallingPreludeDbLibrary">PreludeDB</a> Library will be installed under this directory, in their respective man_N_ subdirectories. The default is PREFIX/man.</p></li>
+	</ul>
+
+
+	<a name="Path-to-dependencies"></a>
+<h3 >Path to dependencies<a href="#Path-to-dependencies" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li><strong>--with-libprelude-prefix</strong>=<em>PFX</em>
+
+	<p>The <a class="wiki-page new" href="/projects/prelude/wiki/PreludeDB?parent=InstallingPreludeDbLibrary">PreludeDB</a> Library require libprelude in order to build. Using this option you can tell the configure script in which prefix the Prelude Library has been installed.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--with-mysql-prefix</strong>=<em>PFX</em>
+
+	<p>The <a class="wiki-page new" href="/projects/prelude/wiki/PreludeDB?parent=InstallingPreludeDbLibrary">PreludeDB</a> Library can interoperate with <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=InstallingPreludeDbLibrary">MySQL</a> database. Using this option you can tell the configure script in which prefix <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=InstallingPreludeDbLibrary">MySQL</a> has been installed.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--with-pgsql-prefix</strong>=<em>PATH</em>
+
+	<p>The <a class="wiki-page new" href="/projects/prelude/wiki/PreludeDB?parent=InstallingPreludeDbLibrary">PreludeDB</a> Library can interoperate with <a class="wiki-page new" href="/projects/prelude/wiki/PostgreSQL?parent=InstallingPreludeDbLibrary">PostgreSQL</a> database. Using this option you can tell the configure script in which prefix <a class="wiki-page new" href="/projects/prelude/wiki/PostgreSQL?parent=InstallingPreludeDbLibrary">PostgreSQL</a> has been installed.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--with-sqlite3-prefix</strong>=<em>PATH</em>
+
+	<p>The <a class="wiki-page new" href="/projects/prelude/wiki/PreludeDB?parent=InstallingPreludeDbLibrary">PreludeDB</a> Library can interoperate with SQLite database. Using this option you can tell the configure script in which prefix SQLite has been installed.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--with-perl</strong>=<em>PATH</em>
+
+	<p>The <em>Perl</em> interpreter is necessary to enable support for <em>Perl</em> language bindings and is normally automatically detected. Using this option you can specify a specific path to <em>Perl</em> or disable its support using <strong>--without-perl</strong>.</p></li>
+	</ul>
+
+
+	<ul>
+	<li><strong>--with-python</strong>=<em>PATH</em>   
+
+	<p>The <em>Python</em> interpreter is necessary to enable support for <em>Python</em> language bindings and is normally automatically detected. Using this option you can specify a specific path to <em>Python</em> or disable its support using <strong>--without-python</strong>.</p></li>
+	</ul>
+
+
+	<a name="Optional-Features"></a>
+<h3 >Optional Features<a href="#Optional-Features" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li><strong>--enable-gtk-doc</strong> 
+
+	<p>Generate code documentation (note that distribution come with documentation generated).</p></li>
+	</ul>
+
+
+	<p>Once finished, the <em>configure</em> script will dump a summary of the enabled features: <br /><pre>
+*** Dumping configuration ***
+    - Generate documentation      : no
+    - Enable [[MySQL]] plugin         : yes
+    - Enable [[PostgreSQL]] plugin    : yes
+    - Enable SQLite3 plugin       : yes
+    - Perl binding                : yes
+    - Python binding              : yes
+</pre></p>
+
+
+	<p>If no languages bindings are activated, you will be unable to run agent using <a class="wiki-page new" href="/projects/prelude/wiki/LibpreludeDB?parent=InstallingPreludeDbLibrary">LibpreludeDB</a> from the specified language.</p>
+
+
+	<p><strong>Note:</strong> Prewikka require Python bindings to be available.</p>
+
+
+	<p><strong>Note:</strong> You should always have one of the <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=InstallingPreludeDbLibrary">MySQL</a>, <a class="wiki-page new" href="/projects/prelude/wiki/PostgreSQL?parent=InstallingPreludeDbLibrary">PostgreSQL</a>, or SQLite3 plugin enabled.</p>
+
+
+	<a name="Build"></a>
+<h2 >Build<a href="#Build" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>To start the build, type</p>
+
+
+<pre>
+make
+</pre>
+
+	<p>The build will take a few minutes depending on your hardware.</p>
+
+
+	<a name="Regression-Tests"></a>
+<h2 >Regression Tests<a href="#Regression-Tests" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>If you want to test the newly built library before you install it, you can run the regression tests at this point. The regression tests are a test suite to verify that libpreludedb runs on your machine in the way the developers expected it to. Type</p>
+
+
+<pre>
+make check
+</pre>
+
+	<a name="Install"></a>
+<h2 >Install<a href="#Install" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>To install Libpreludedb enter</p>
+
+
+<pre>
+make install
+</pre>
+
+	<p>This will install files into the directories that were specified in step 1. Make sure that you have appropriate permissions to write into that area. Normally you need to do this step as root. Alternatively, you could create the target directories in advance and arrange for appropriate permissions to be granted.</p>
+
+
+	<p>You can use <em>make install-strip</em> instead of <em>make</em> install to strip the executable files and libraries as they are installed. This will save some space. If you built with debugging support, stripping will effectively remove the debugging support, so it should only be done if debugging is no longer needed. install-strip tries to do a reasonable job saving space, but it does not have perfect knowledge of how to strip every unneeded byte from an executable file, so if you want to save all the disk space you possibly can, you will have to do manual work.</p>
+
+
+	<p>The standard installation provides all the header files needed for Prelude application development, such as custom functions or data types written in C.</p>
+
+
+	<a name="Post-Installation-Setup"></a>
+<h2 >Post-Installation Setup<a href="#Post-Installation-Setup" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>On systems that have shared libraries (which most systems do) you need to tell your system how to find the newly installed shared libraries. The systems on which this is not necessary include BSD/OS, <a class="wiki-page new" href="/projects/prelude/wiki/FreeBSD?parent=InstallingPreludeDbLibrary">FreeBSD</a>, HP-UX, IRIX, Linux, <a class="wiki-page new" href="/projects/prelude/wiki/NetBSD?parent=InstallingPreludeDbLibrary">NetBSD</a>, <a class="wiki-page new" href="/projects/prelude/wiki/OpenBSD?parent=InstallingPreludeDbLibrary">OpenBSD</a>, Tru64 UNIX (formerly Digital UNIX), and Solaris.</p>
+
+
+	<p>The following step are necessary if you get the above message while running a program using libprelude:<br /><pre>
+preludedb-admin: error in loading shared libraries
+libpreludedb.so.2.1: cannot open shared object file: No such file or directory
+</pre></p>
+
+
+	<p>If you are on BSD/OS, Linux, or <a class="wiki-page new" href="/projects/prelude/wiki/SunOS?parent=InstallingPreludeDbLibrary">SunOS</a> 4 and you have root access you can run the following command after installation to enable the run-time linker to find the shared libraries faster. Refer to the manual page of ldconfig for more information:<br /><pre>
+/sbin/ldconfig /usr/local/lib
+</pre></p>
+
+
+	<p>On <a class="wiki-page new" href="/projects/prelude/wiki/FreeBSD?parent=InstallingPreludeDbLibrary">FreeBSD</a>, <a class="wiki-page new" href="/projects/prelude/wiki/NetBSD?parent=InstallingPreludeDbLibrary">NetBSD</a>, and <a class="wiki-page new" href="/projects/prelude/wiki/OpenBSD?parent=InstallingPreludeDbLibrary">OpenBSD</a> the command is:<br /><pre>
+/sbin/ldconfig -m /usr/local/lib
+</pre></p>
+
+
+	<p>The method to set the shared library search path varies between platforms, but the most widely usable method is to set the environment variable LD_LIBRARY_PATH like so: In Bourne shells (sh, ksh, bash, zsh):</p>
+
+
+<pre>
+LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH
+</pre>
+
+	<p>Or in csh or tcsh:<br /><pre>
+setenv LD_LIBRARY_PATH /usr/local/lib
+</pre></p>
+
+
+	<p><strong>Note</strong>: Replace /usr/local/lib with whatever you set --libdir to in step 1. On some systems it might be preferable to set the environment variable LD_RUN_PATH before building. If in doubt, refer to the manual pages of your system (perhaps ld.so or rld).</p>
+
+
+	<a name="Create-Database"></a>
+<h2 >Create Database<a href="#Create-Database" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Once you have installed libpreludedb, the next step is to create a database that will be used by prelude-manager to store the IDMEF alerts gathered from your sensors. Three databases are currently supported by libpreludedb: <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=InstallingPreludeDbLibrary">MySQL</a>, <a class="wiki-page new" href="/projects/prelude/wiki/PostgreSQL?parent=InstallingPreludeDbLibrary">PostgreSQL</a> and SQLite:</p>
+
+
+	<p><a class="wiki-page" href="#MySQL">MySQL</a><br /><a class="wiki-page" href="#PostgreSQL">PostgreSQL</a><br /><a class="wiki-page" href="#SQLite3">Sqlite</a></p>
+
+
+	<a name="MySQL"></a>
+<h3 ><a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=InstallingPreludeDbLibrary">MySQL</a><a href="#MySQL" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Note : MySQL >= 4.0.18 is required.</p>
+
+
+	<p><strong>Database creation</strong></p>
+
+
+	<p>Connect to your database server using the mysql client like this:</p>
+
+
+<pre>
+$ mysql -u root -p
+Enter password:
+</pre>
+
+	<p>where "root" is the name of the database administrator (this is the default account on mysql) and -p will prompt you for a password (by default the root account has no password on mysql and is only accessible from localhost).</p>
+
+
+	<p>Then, if everything is ok, you should see something like this:</p>
+
+
+<pre>
+Welcome to the [[MySQL]] monitor.  Commands end with ; or \g.
+Your [[MySQL]] connection id is 303 to server version: 4.0.22-log
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+mysql&gt;
+</pre>
+
+	<p>To create a new database named 'prelude' (for example):</p>
+
+
+<pre>
+mysql&gt; CREATE database prelude;
+Query OK, 1 row affected (0.05 sec)
+
+</pre>
+
+	<p><strong>Create a dedicated user to access the database (optional)</strong></p>
+
+
+	<p>You might want to access your database through a dedicated user (if you don't have already one).<br />If you want to create a new user called 'prelude' with the password 'passwd' that will have full access on a database called 'prelude' but only from localhost, use the following query:</p>
+
+
+<pre>
+GRANT ALL PRIVILEGES ON prelude.* TO prelude@'localhost' IDENTIFIED BY 'passwd';
+</pre>
+
+	<p><strong>Tables creation</strong></p>
+
+
+	<p>The final step (supposing you have libpreludedb installed in /usr):</p>
+
+
+<pre>
+$ mysql -u prelude prelude -p &lt; /usr/local/share/libpreludedb/classic/mysql.sql
+Enter password:
+</pre>
+
+	<p>Enter your password, and the tables will be created.</p>
+
+
+	<p>For more details about <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=InstallingPreludeDbLibrary">MySQL</a> databases/tables/users creation, please refer to <a class="external" href="http://dev.mysql.com/doc/mysql/en/tutorial.html">http://dev.mysql.com/doc/mysql/en/tutorial.html</a>.</p>
+
+
+	<p><strong>Updating tables</strong></p>
+
+
+	<p>If you already have created your tables but that a new libpreludedb version comes with an updated schema, you must update your schema this way, supposing that your current version of schema is 14 and the new one is 14.1:<br /><pre>
+$ mysql -u prelude prelude -p &lt; /usr/share/libpreludedb/classic/mysql-update-14-1.sql
+Enter password:
+</pre></p>
+
+
+	<a name="PostgreSQL"></a>
+<h3 ><a class="wiki-page new" href="/projects/prelude/wiki/PostgreSQL?parent=InstallingPreludeDbLibrary">PostgreSQL</a><a href="#PostgreSQL" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><strong>Database creation</strong></p>
+
+
+	<p>Connect to your database server using the psql client like this:</p>
+
+
+<pre>
+$ PGPASSWORD=your_password psql -U postgres
+</pre>
+
+	<p>where "postgres" is the name of the database administrator (this is the default account on postgresql) and the PGPASSWORD environnement variable is set to the correct password.</p>
+
+
+	<p>Then, if everything is ok, you should see something like this:</p>
+
+
+<pre>
+psql (9.6.10)
+Type "help" for help.
+
+postgres=# 
+</pre>
+
+	<p>To create a new database named 'prelude' (for example):</p>
+
+
+<pre>
+postgres=# CREATE database prelude;
+CREATE DATABASE
+</pre>
+
+	<p><strong>Create a dedicated user to access the database (optional)</strong></p>
+
+
+	<p>You might want to access your database through a dedicated user (if you don't have already one).<br />If you want to create a new user called 'prelude' with the password 'prelude' that will have full access on a database called 'prelude', use the following query:</p>
+
+
+<pre>
+CREATE USER prelude WITH ENCRYPTED PASSWORD 'prelude';
+</pre>
+
+	<p><strong>Tables creation</strong></p>
+
+
+	<p>The final step (supposing you have libpreludedb installed in /usr):</p>
+
+
+<pre>
+$ psql -U prelude -d prelude &lt; /usr/share/libpreludedb/classic/pgsql.sql
+</pre>
+
+	<p>For more details about <a class="wiki-page new" href="/projects/prelude/wiki/PostgreSQL?parent=InstallingPreludeDbLibrary">PostgreSQL</a> databases/tables/users creation, please refer to <a class="external" href="https://www.postgresql.org/docs/9.6/index.html">https://www.postgresql.org/docs/9.6/index.html</a>.</p>
+
+
+	<p><strong>Updating tables</strong></p>
+
+
+	<p>If you already have created your tables but that a new libpreludedb version comes with an updated schema, you must update your schema this way, supposing that your current version of schema is 14 and the new one is 14.1:<br /><pre>
+$ PGPASSWORD=prelude psql -U prelude -d prelude &lt; /usr/share/libpreludedb/classic/pgsql-update-14-1.sql
+Enter password:
+</pre></p>
+
+
+	<p><strong>PostgreSQL 9 compatibility</strong></p>
+
+
+	<p>Beginning with PostgreSQL 9, bytea are returned in hex format by default (see <a class="external" href="http://www.postgresql.org/docs/devel/static/release-9-0.html">http://www.postgresql.org/docs/devel/static/release-9-0.html</a>).<br />To work with Prelude, the following parameter must be specified in postgresql.conf.</p>
+
+
+<pre>
+bytea_output='escape'
+</pre>
+
+	<a name="SQLite3"></a>
+<h3 >SQLite3<a href="#SQLite3" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>SQLite is a very good choice if you don't expect lots of data to store. It is a convenient format that doesn't imply database user/password access, since it is a simple file in your system. You have to make sure no unprivileged users have read access to this file.</p>
+
+
+	<p><strong>Database and tables creation</strong></p>
+
+
+	<p>Once you have installed libpreludedb, simply create the SQLite3 database using the following:</p>
+
+
+<pre>
+$ sqlite3 /path/to/your/sqlite-prelude.db &lt; /usr/share/libpreludedb/classic/sqlite.sql
+</pre>
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

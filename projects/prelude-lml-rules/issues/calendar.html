@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Calendar - Prelude-LML-Rules - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="hDEd8kupesGs4jOQ2vikypqRlhKaioobqyKUDHdpjseXHnWdgr13QiZIO2rHsO2U5trnjICA01V1rFCc82m6xA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+<script>
+//<![CDATA[
+var datepickerOptions={dateFormat: 'yy-mm-dd', firstDay: 0, showOn: 'button', buttonImageOnly: true, buttonImage: '/images/calendar.png', showButtonPanel: true, showWeek: true, showOtherMonths: true, selectOtherMonths: true, changeMonth: true, changeYear: true, beforeShow: beforeShowDatePicker};
+//]]>
+</script></head>
+<body class="theme-Prelude project-prelude-lml-rules controller-calendars action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-lml-rules/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-lml-rules/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-lml-rules/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-lml-rules">Overview</a></li><li><a class="activity" href="/projects/prelude-lml-rules/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-lml-rules/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude-lml-rules/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude-lml-rules/wiki">Documentation</a></li><li><a class="gantt" href="/projects/prelude-lml-rules/issues/gantt">Gantt</a></li><li><a class="calendar selected" href="/projects/prelude-lml-rules/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-lml-rules/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-lml-rules/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-lml-rules/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-lml-rules/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-lml-rules/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>Calendar</h2>
+
+<form id="query_form" action="/projects/prelude-lml-rules/issues/calendar" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<input type="hidden" name="set_filter" id="set_filter" value="1" />
+<fieldset id="filters" class="collapsible ">
+  <legend onclick="toggleFieldset(this);">Filters</legend>
+  <div style="">
+    <script>
+//<![CDATA[
+
+var operatorLabels = {"=":"is","!":"is not","o":"open","c":"closed","!*":"none","*":"any","\u003e=":"\u003e=","\u003c=":"\u003c=","\u003e\u003c":"between","\u003ct+":"in less than","\u003et+":"in more than","\u003e\u003ct+":"in the next","t+":"in","t":"today","ld":"yesterday","w":"this week","lw":"last week","l2w":"last 2 weeks","m":"this month","lm":"last month","y":"this year","\u003et-":"less than days ago","\u003ct-":"more than days ago","\u003e\u003ct-":"in the past","t-":"days ago","~":"contains","!~":"doesn't contain","=p":"any issues in project","=!p":"any issues not in project","!p":"no issues in project","*o":"any open issues","!o":"no open issues"};
+var operatorByType = {"list":["=","!"],"list_status":["o","=","!","c","*"],"list_optional":["=","!","!*","*"],"list_subprojects":["*","!*","="],"date":["=","\u003e=","\u003c=","\u003e\u003c","\u003ct+","\u003et+","\u003e\u003ct+","t+","t","ld","w","lw","l2w","m","lm","y","\u003et-","\u003ct-","\u003e\u003ct-","t-","!*","*"],"date_past":["=","\u003e=","\u003c=","\u003e\u003c","\u003et-","\u003ct-","\u003e\u003ct-","t-","t","ld","w","lw","l2w","m","lm","y","!*","*"],"string":["=","~","!","!~","!*","*"],"text":["~","!~","!*","*"],"integer":["=","\u003e=","\u003c=","\u003e\u003c","!*","*"],"float":["=","\u003e=","\u003c=","\u003e\u003c","!*","*"],"relation":["=","=p","=!p","!p","*o","!o","!*","*"],"tree":["=","~","!*","*"]};
+var availableFilters = {"status_id":{"type":"list_status","name":"Status","values":[["New","1"],["Assigned","2"],["Resolved","3"],["Feedback","4"],["Closed","5"],["Rejected","6"]]},"tracker_id":{"type":"list","name":"Tracker","values":[["Bug","1"],["Feature","2"]]},"priority_id":{"type":"list","name":"Priority","values":[["Low","3"],["Normal","4"],["High","5"],["Urgent","6"],["Immediate","7"]]},"author_id":{"type":"list","name":"Author","values":[["Abdeljalil RAJOUL","1232"],["Anthony MICHEL","2220"],["Antoine LUONG","309"],["Camille GARDET","397"],["Francois ","297"],["Gilles ","299"],["julian CHAMBRIER","2219"],["Song TRAN","335"],["Yoann VANDOORSELAERE","6"]]},"assigned_to_id":{"type":"list_optional","name":"Assignee","values":[["Abdeljalil RAJOUL","1232"],["Anthony MICHEL","2220"],["Antoine LUONG","309"],["Camille GARDET","397"],["Francois ","297"],["Gilles ","299"],["julian CHAMBRIER","2219"],["Song TRAN","335"],["Yoann VANDOORSELAERE","6"]]},"member_of_group":{"type":"list_optional","name":"Assignee's group","values":[["CS","305"]]},"assigned_to_role":{"type":"list_optional","name":"Assignee's role","values":[["Manager","3"],["Developer","4"],["Reporter","5"],["Reader","6"]]},"fixed_version_id":{"type":"list_optional","name":"Target version","values":[["PRELUDE SIEM - Prelude OSS 1.0.1","128"],["PRELUDE SIEM - Prelude OSS 1.1.0","132"],["PRELUDE SIEM - Prelude OSS 1.2.5","133"],["PRELUDE SIEM - Prelude OSS 1.2.6","134"],["PRELUDE SIEM - Prelude OSS 3.0.0","129"],["PRELUDE SIEM - Prelude OSS 3.1.0","135"],["PRELUDE SIEM - Prelude OSS 4.0.0","136"],["PRELUDE SIEM - Prelude OSS 4.1.0","137"],["PRELUDE SIEM - Prelude OSS 5.0.0","138"],["PRELUDE SIEM - Prelude OSS 5.1.0","139"],["PRELUDE SIEM - Prelude OSS 5.2.0","141"],["PRELUDE SIEM - Prelude OSS 1.0.0","131"],["PRELUDE SIEM - Prelude OSS 1.0.2","130"]]},"category_id":{"type":"list_optional","name":"Category","values":[]},"subject":{"type":"text","name":"Subject"},"description":{"type":"text","name":"Description"},"created_on":{"type":"date_past","name":"Created"},"updated_on":{"type":"date_past","name":"Updated"},"closed_on":{"type":"date_past","name":"Closed"},"start_date":{"type":"date","name":"Start date"},"due_date":{"type":"date","name":"Due date"},"estimated_hours":{"type":"float","name":"Estimated time"},"done_ratio":{"type":"integer","name":"% Done"},"cf_1":{"type":"list_optional","name":"Resolution","values":["fixed","invalid","wontfix","duplicate","worksforme"]},"relates":{"type":"relation","name":"Related to"},"duplicates":{"type":"relation","name":"Duplicates"},"duplicated":{"type":"relation","name":"Duplicated by"},"blocks":{"type":"relation","name":"Blocks"},"blocked":{"type":"relation","name":"Blocked by"},"precedes":{"type":"relation","name":"Precedes"},"follows":{"type":"relation","name":"Follows"},"copied_to":{"type":"relation","name":"Copied to"},"copied_from":{"type":"relation","name":"Copied from"},"parent_id":{"type":"tree","name":"Parent task"},"child_id":{"type":"tree","name":"Subtasks"},"issue_id":{"type":"integer","name":"Issue"}};
+var labelDayPlural = "days";
+var allProjects = [["PRELUDE SIEM","1"],["-- IDMEF Draft","16"],["-- Libprelude","2"],["-- LibpreludeDB","4"],["-- Prelude Correlator","7"],["-- Prelude Correlator rules","84"],["-- Prelude Handbook","20"],["-- Prelude-LML","6"],["-- Prelude Manager","5"],["-- Prelude-LML-Rules","35"],["-- Prewikka","3"],["VIGILO NMS","109"],["-- Buildenv","111"],["-- Collector","112"],["-- Common","113"],["-- Connector","114"],["-- Connector Metro","115"],["-- Connector Nagios","116"],["-- Connector syncevents","117"],["-- GLPI","118"],["-- Models","119"],["-- Nagios plugins","120"],["-- Perfdata2vigilo","121"],["-- Setup","122"],["-- Themes (default)","123"],["-- TurboGears","124"],["-- Vigiboard","125"],["-- Vigiconf","126"],["-- Vigiconf Local","127"],["-- Vigigraph","128"],["-- VigiRRD","129"],["-- Vigirules","130"]];
+$(document).ready(function(){
+  initFilters();
+  addFilter("status_id", "o", [""]);
+});
+
+//]]>
+</script>
+<table id="filters-table">
+</table>
+
+<div class="add-filter">
+<label for="add_filter_select">Add filter</label>
+<select id="add_filter_select"><option value="">&nbsp;</option>
+<option value="status_id">Status</option>
+<option value="tracker_id">Tracker</option>
+<option value="priority_id">Priority</option>
+<option value="author_id">Author</option>
+<option value="assigned_to_id">Assignee</option>
+<option value="fixed_version_id">Target version</option>
+<option value="category_id">Category</option>
+<option value="subject">Subject</option>
+<option value="description">Description</option>
+<option value="estimated_hours">Estimated time</option>
+<option value="done_ratio">% Done</option>
+<option value="cf_1">Resolution</option>
+<option value="issue_id">Issue</option><optgroup label="Assignee"><option value="member_of_group">Assignee&#39;s group</option>
+<option value="assigned_to_role">Assignee&#39;s role</option></optgroup><optgroup label="Date"><option value="created_on">Created</option>
+<option value="updated_on">Updated</option>
+<option value="closed_on">Closed</option>
+<option value="start_date">Start date</option>
+<option value="due_date">Due date</option></optgroup><optgroup label="Relations"><option value="relates">Related to</option>
+<option value="duplicates">Duplicates</option>
+<option value="duplicated">Duplicated by</option>
+<option value="blocks">Blocks</option>
+<option value="blocked">Blocked by</option>
+<option value="precedes">Precedes</option>
+<option value="follows">Follows</option>
+<option value="copied_to">Copied to</option>
+<option value="copied_from">Copied from</option>
+<option value="parent_id">Parent task</option>
+<option value="child_id">Subtasks</option></optgroup></select>
+</div>
+
+<input type="hidden" name="f[]" id="f_" value="" />
+
+  </div>
+</fieldset>
+
+<p style="float:right;">
+  <a accesskey="p" href="/projects/prelude-lml-rules/issues/calendar?month=9&amp;year=2024">« September</a> | <a accesskey="n" href="/projects/prelude-lml-rules/issues/calendar?month=11&amp;year=2024">November »</a>
+</p>
+
+<p class="buttons">
+<label for="month">Month</label>
+<select id="month" name="month">
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10" selected="selected">October</option>
+<option value="11">November</option>
+<option value="12">December</option>
+</select>
+
+<label for="year">Year</label>
+<select id="year" name="year">
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024" selected="selected">2024</option>
+<option value="2025">2025</option>
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028</option>
+<option value="2029">2029</option>
+</select>
+
+
+<a href="#" onclick="$(&quot;#query_form&quot;).submit(); return false;" class="icon icon-checked">Apply</a>
+<a class="icon icon-reload" href="/projects/prelude-lml-rules/issues/calendar?set_filter=1">Clear</a>
+</p>
+</form>
+
+<table class="cal">
+<thead>
+<tr><th scope="col" title="Week" class="week-number"></th><th scope="col">Sunday</th><th scope="col">Monday</th><th scope="col">Tuesday</th><th scope="col">Wednesday</th><th scope="col">Thursday</th><th scope="col">Friday</th><th scope="col">Saturday</th></tr>
+</thead>
+<tbody>
+<tr>
+<td class='week-number' title='Week'>40</td>
+<td class="odd">
+<p class="day-num">29</p>
+</td>
+
+
+<td class="odd">
+<p class="day-num">30</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">1</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">2</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">3</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">4</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">5</p>
+</td>
+</tr><tr>
+<td class='week-number' title='Week'>41</td>
+<td class="even">
+<p class="day-num">6</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">7</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">8</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">9</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">10</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">11</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">12</p>
+</td>
+</tr><tr>
+<td class='week-number' title='Week'>42</td>
+<td class="even">
+<p class="day-num">13</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">14</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">15</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">16</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">17</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">18</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">19</p>
+</td>
+</tr><tr>
+<td class='week-number' title='Week'>43</td>
+<td class="even">
+<p class="day-num">20</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">21</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">22</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">23</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">24</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">25</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">26</p>
+</td>
+</tr><tr>
+<td class='week-number' title='Week'>44</td>
+<td class="even">
+<p class="day-num">27</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">28</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">29</p>
+</td>
+
+
+<td class="even today">
+<p class="day-num">30</p>
+</td>
+
+
+<td class="even">
+<p class="day-num">31</p>
+</td>
+
+
+<td class="odd">
+<p class="day-num">1</p>
+</td>
+
+
+<td class="odd">
+<p class="day-num">2</p>
+</td>
+
+</tr>
+</tbody>
+</table>
+
+
+
+
+<p class="legend cal">
+  <span class="starting">issue beginning this day</span>
+  <span class="ending">issue ending this day</span>
+  <span class="starting ending">issue beginning and ending this day</span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

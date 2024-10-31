@@ -1,0 +1,38 @@
+--- libprelude-0.9.12.2.old/Makefile.am	2006-12-15 10:49:01.000000000 +0100
++++ libprelude-0.9.12.2/Makefile.am	2007-02-07 19:00:14.000000000 +0100
+@@ -1,7 +1,10 @@
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
+ 
+ ACLOCAL_AMFLAGS = -I m4 -I libmissing/m4
+-SUBDIRS = libltdl libmissing m4 src prelude-adduser bindings docs
++SUBDIRS = libmissing m4 src prelude-adduser bindings docs
++if NEED_LIBTOOL_DL
++SUBDIRS += libltdl
++endif
+ 
+ EXTRA_DIST = HACKING.README LICENSE.README client.conf global.conf idmef-client.conf tls.conf
+ 
+--- libprelude-0.9.12.2.old/configure.in	2007-01-08 13:51:42.000000000 +0100
++++ libprelude-0.9.12.2/configure.in	2007-02-07 18:59:05.000000000 +0100
+@@ -52,8 +52,14 @@
+ 
+ 
+ dnl setup libltdl
++AC_CHECK_LIB([ltdl], [lt_dlopen], libtool_dl=no, libtool_dl=yes, [-L/usr/local/lib])
++if test x$libtool_dl = xyes; then
++    AC_CONFIG_SUBDIRS(libltdl)
++else
++    AC_CHECK_HEADERS(ltdl.h,,AC_MSG_ERROR([*** ltdl library is present but headers are missing]))
++fi
++AM_CONDITIONAL(NEED_LIBTOOL_DL, test x$libtool_dl = xyes)
+ 
+-AC_CONFIG_SUBDIRS(libltdl)
+ AC_LIBTOOL_DLOPEN
+ AC_LTDL_DLLIB
+ AC_LIBLTDL_CONVENIENCE
+@@ -710,3 +716,5 @@
+ echo "    - Generate documentation : $enable_gtk_doc"
+ echo "    - Perl binding           : $with_perl"
+ echo "    - Python binding         : $with_python"
++echo "    - Libtool dl             : $libtool_dl"
++

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/504.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2012-09-04T17:47:52Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Libprelude - Bug #504: Libprelude compilation error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/504"/>
+    <id>http://www.prelude-siem.org/issues/504?journal_id=1673</id>
+    <updated>2012-09-04T17:47:52Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;File&lt;/strong&gt; &lt;a href="/attachments/download/298/libprelude-gcc-swig.diff"&gt;libprelude-gcc-swig.diff&lt;/a&gt; &lt;a class="icon-only icon-magnifier" title="View" href="/attachments/298/libprelude-gcc-swig.diff"&gt;View&lt;/a&gt; added&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Or patch the libpreludecpp-python.i with the attached file (it works fine with GCC 4.4).&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #504: Libprelude compilation error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/504"/>
+    <id>http://www.prelude-siem.org/issues/504?journal_id=1716</id>
+    <updated>2013-09-23T11:18:12Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;124&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #504: Libprelude compilation error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/504"/>
+    <id>http://www.prelude-siem.org/issues/504?journal_id=2435</id>
+    <updated>2015-11-08T12:05:57Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;124&lt;/i&gt; to &lt;i&gt;Prelude OSS 3.0.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #504: Libprelude compilation error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/504"/>
+    <id>http://www.prelude-siem.org/issues/504?journal_id=3036</id>
+    <updated>2016-04-23T19:49:12Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;Prelude OSS 3.0.0&lt;/i&gt; to &lt;i&gt;Prelude OSS 3.1.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Bug #504: Libprelude compilation error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/504"/>
+    <id>http://www.prelude-siem.org/issues/504?journal_id=3164</id>
+    <updated>2016-05-19T10:50:59Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The problem does not occur with recent SWIG versions.&lt;/p&gt;    </content>
+  </entry>
+</feed>

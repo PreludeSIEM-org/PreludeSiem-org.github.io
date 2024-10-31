@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Prelude carriage return with XmlMod - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="/yXaN40AfE/dMlj68aPvq3rZ462Fi4dnK//9b10mI/TsCrJYRBRxzFeYUADs66b1BpKSM5+B3in1cTn/2SYX9w==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>Prelude carriage return with XmlMod</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/1256">Pierre R</a> <a title="05/31/2020 04:35 PM" href="/projects/prelude/activity?from=2020-05-31">over 4 years</a> ago</span></p>
+<div class="wiki">
+<p>Hello,</p>
+
+
+	<p>I have installed SIEM Prelude and I’m sending log using [xmlMod] in a prelude-xml.log file. On the other hand, I’m using Filebeat to read logs from this file and send it to an ELK server. The problem is that the logs aren’t sent. It is caused by the fact that Prelude send alert on the same line, but Filebeat wait a carriage return (\n). Is Prelude has an option which enable carriage return when sending logs ?</p>
+
+
+	<p>Thanks for your help <img src="/plugin_assets/redmine_wiki_extensions/images/biggrin.png" alt=":D"> !</p>
+
+
+	<p>Regards,</p>
+
+
+	<p>Pierre</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (5)</h3>
+  <div class="message reply" id="message-257">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/255?r=257#message-257">RE: Prelude carriage return with XmlMod</a>
+    -
+    Added by <a class="user active" href="/users/1282">Noé Nguyen</a> <a title="06/02/2020 07:30 PM" href="/projects/prelude/activity?from=2020-06-02">over 4 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>I have the same problem.</p>
+
+
+	<p>Anyone has an idea ?</p>
+
+
+	<p>Best Regards,</p>
+
+
+	<p>Noé</p></div>
+  
+  </div>
+  <div class="message reply" id="message-258">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/255?r=258#message-258">RE: Prelude carriage return with XmlMod</a>
+    -
+    Added by <a class="user active" href="/users/301">Thomas </a> <a title="06/02/2020 10:00 PM" href="/projects/prelude/activity?from=2020-06-02">over 4 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello</p>
+
+
+	<p>You can enable "format" in XMLMode section. I think this will works with what you needs.</p>
+
+
+	<p>Can you explain us more why you want/need to forward IDMEF alerts to ELK ?</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-259">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/255?r=259#message-259">RE: Prelude carriage return with XmlMod</a>
+    -
+    Added by <a class="user active" href="/users/1256">Pierre R</a> <a title="06/03/2020 11:14 AM" href="/projects/prelude/activity?from=2020-06-03">over 4 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hi,</p>
+
+
+	<p>Thanks, it works :wink: ! I though that I have already tried this "format" parameter, but it did not works. Surely I have forgotten to restart "prelude-manager" service.</p>
+
+
+	<p>We use ELK suite in order to visualize alerts on Kibana and we use Filebeat to send logs to Logstash. But Filebeat need a carriage return like "\n" to understand when it needs to read the xml file and send logs.<br />So, by default Prelude send all logs on the same line without specific carriage return.</p>
+
+
+	<p>We found other solutions to resolve this issue, but they are not easy to setup and it is simpler to use Prelude this way.</p>
+
+
+	<p>Regards,</p>
+
+
+	<p>Pierre</p></div>
+  
+  </div>
+  <div class="message reply" id="message-260">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/255?r=260#message-260">RE: Prelude carriage return with XmlMod</a>
+    -
+    Added by <a class="user active" href="/users/301">Thomas </a> <a title="06/03/2020 09:32 PM" href="/projects/prelude/activity?from=2020-06-03">over 4 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello</p>
+
+
+	<p>Glad to hear you get your way to what you want to do.</p>
+
+
+	<p>You are using kibana because the interface of Prelude is not enough ? can you explain us what is missing in our interfaces ?</p>
+
+
+	<p>Thanks</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-261">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/255?r=261#message-261">RE: Prelude carriage return with XmlMod</a>
+    -
+    Added by <a class="user active" href="/users/1256">Pierre R</a> <a title="06/05/2020 12:21 PM" href="/projects/prelude/activity?from=2020-06-05">over 4 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>Firstly we use Kibana because it's a constraint of our student project. Indeed, our project consist in set up a SOCaaS using Prelude, a sensor (Suricata and/or OSSEC, Snort) and the ELK suite.</p>
+
+
+	<p>Prewikka have many useful features but some feature available on Kibana are not on Prelude OSS. Pro version is certainly more provided.<br />For example, Kibana is able to make more complex dashboards, parsing multiple type of logs and by default and the interface is user-friendly.</p>
+
+
+	<p>I'm not an expert but it's my feeling on Prewikka. Moreover, ELK suite is free and open source, so ... why don't use it ? ^^</p>
+
+
+	<p>Thanks <img src="/plugin_assets/redmine_wiki_extensions/images/biggrin.png" alt=":D"> .</p>
+
+
+	<p>Regards,</p>
+
+
+	<p>Pierre</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-5/5)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

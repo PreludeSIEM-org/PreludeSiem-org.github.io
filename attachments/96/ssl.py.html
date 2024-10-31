@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>ssl.py - Prewikka - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Bu46FbcofQLLCYnBpyNEBj/8uj2DWespi85ibTuZ4mQVwVJ6fjxwgUGjgTu6aw1YQ7fLo5lTsmdVQKb9v5nWZw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-prewikka controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prewikka/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prewikka">Overview</a></li><li><a class="activity" href="/projects/prewikka/activity">Activity</a></li><li><a class="roadmap" href="/projects/prewikka/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prewikka/issues">Issues</a></li><li><a class="gantt" href="/projects/prewikka/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prewikka/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prewikka/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>ssl.py</h2>
+
+<div class="attachments">
+<p>SSL Patch - 
+   <span class="author"><a class="user active" href="/users/1">admin admin</a>, 06/18/2007 04:58 PM</span></p>
+<p><a href="/attachments/download/96/ssl.py">Download</a>   <span class="size">(1.59 KB)</span></p>
+</div>
+
+  &nbsp;
+  <div class="autoscroll">
+<table class="filecontent syntaxhl">
+<tbody>
+  <tr id="L1">
+    <th class="line-num">
+      <a href="#L1">1</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># Copyright (C) 2006 PreludeIDS Technologies. All Rights Reserved.</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L2">
+    <th class="line-num">
+      <a href="#L2">2</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># Author: Francois Harvey &lt;fharvey+prelude at securiweb dot net&gt;</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L3">
+    <th class="line-num">
+      <a href="#L3">3</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment">#</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L4">
+    <th class="line-num">
+      <a href="#L4">4</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># This file is part of the Prewikka program.</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L5">
+    <th class="line-num">
+      <a href="#L5">5</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment">#</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L6">
+    <th class="line-num">
+      <a href="#L6">6</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># This program is free software; you can redistribute it and/or modify</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L7">
+    <th class="line-num">
+      <a href="#L7">7</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># it under the terms of the GNU General Public License as published by</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L8">
+    <th class="line-num">
+      <a href="#L8">8</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># the Free Software Foundation; either version 2, or (at your option)</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L9">
+    <th class="line-num">
+      <a href="#L9">9</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># any later version.</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L10">
+    <th class="line-num">
+      <a href="#L10">10</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment">#</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L11">
+    <th class="line-num">
+      <a href="#L11">11</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># This program is distributed in the hope that it will be useful,</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L12">
+    <th class="line-num">
+      <a href="#L12">12</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L13">
+    <th class="line-num">
+      <a href="#L13">13</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L14">
+    <th class="line-num">
+      <a href="#L14">14</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># GNU General Public License for more details.</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L15">
+    <th class="line-num">
+      <a href="#L15">15</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment">#</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L16">
+    <th class="line-num">
+      <a href="#L16">16</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># You should have received a copy of the GNU General Public License</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L17">
+    <th class="line-num">
+      <a href="#L17">17</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># along with this program; see the file COPYING.  If not, write to</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L18">
+    <th class="line-num">
+      <a href="#L18">18</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L19">
+    <th class="line-num">
+      <a href="#L19">19</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L20">
+    <th class="line-num">
+      <a href="#L20">20</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">import</span> <span class="include">os</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L21">
+    <th class="line-num">
+      <a href="#L21">21</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L22">
+    <th class="line-num">
+      <a href="#L22">22</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">from</span> <span class="include">prewikka</span> <span class="keyword">import</span> <span class="include">Auth</span>, <span class="include">User</span>, <span class="include">Database</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L23">
+    <th class="line-num">
+      <a href="#L23">23</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L24">
+    <th class="line-num">
+      <a href="#L24">24</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="comment"># Use the SSL_CLIENT_S_DN_CN from a SSL x509 Certificate to map the user</span>
+</pre>
+    </td>
+  </tr>
+  <tr id="L25">
+    <th class="line-num">
+      <a href="#L25">25</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">class</span> <span class="class">SSLAuth</span>(Auth.Auth):
+</pre>
+    </td>
+  </tr>
+  <tr id="L26">
+    <th class="line-num">
+      <a href="#L26">26</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="keyword">def</span> <span class="function">getUser</span>(<span class="predefined-constant">self</span>, request):
+</pre>
+    </td>
+  </tr>
+  <tr id="L27">
+    <th class="line-num">
+      <a href="#L27">27</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="keyword">if</span> <span class="keyword">not</span> request._req.subprocess_env[<span class="string"><span class="delimiter">'</span><span class="content">HTTPS</span><span class="delimiter">'</span></span>]:
+</pre>
+    </td>
+  </tr>
+  <tr id="L28">
+    <th class="line-num">
+      <a href="#L28">28</a>
+    </th>
+    <td class="line-code">
+      <pre>                <span class="keyword">raise</span> Auth.AuthError(message=_(<span class="string"><span class="delimiter">&quot;</span><span class="content">SSL Authentication failed: Not in a SSL session.</span><span class="delimiter">&quot;</span></span>))
+</pre>
+    </td>
+  </tr>
+  <tr id="L29">
+    <th class="line-num">
+      <a href="#L29">29</a>
+    </th>
+    <td class="line-code">
+      <pre>        user = request._req.subprocess_env[<span class="string"><span class="delimiter">'</span><span class="content">SSL_CLIENT_S_DN_CN</span><span class="delimiter">'</span></span>]
+</pre>
+    </td>
+  </tr>
+  <tr id="L30">
+    <th class="line-num">
+      <a href="#L30">30</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="keyword">if</span> <span class="keyword">not</span> user:
+</pre>
+    </td>
+  </tr>
+  <tr id="L31">
+    <th class="line-num">
+      <a href="#L31">31</a>
+    </th>
+    <td class="line-code">
+      <pre>            <span class="keyword">raise</span> Auth.AuthError(message=_(<span class="string"><span class="delimiter">&quot;</span><span class="content">SSL Authentication failed: no user specified (hint: look at the certificate CN).</span><span class="delimiter">&quot;</span></span>))
+</pre>
+    </td>
+  </tr>
+  <tr id="L32">
+    <th class="line-num">
+      <a href="#L32">32</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L33">
+    <th class="line-num">
+      <a href="#L33">33</a>
+    </th>
+    <td class="line-code">
+      <pre>        <span class="keyword">return</span> User.User(<span class="predefined-constant">self</span>.db, user, <span class="predefined-constant">self</span>.db.getLanguage(user), User.ALL_PERMISSIONS, <span class="predefined-constant">self</span>.db.getConfiguration(user))
+</pre>
+    </td>
+  </tr>
+  <tr id="L34">
+    <th class="line-num">
+      <a href="#L34">34</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L35">
+    <th class="line-num">
+      <a href="#L35">35</a>
+    </th>
+    <td class="line-code">
+      <pre><span class="keyword">def</span> <span class="function">load</span>(env, config):
+</pre>
+    </td>
+  </tr>
+  <tr id="L36">
+    <th class="line-num">
+      <a href="#L36">36</a>
+    </th>
+    <td class="line-code">
+      <pre>    <span class="keyword">return</span> SSLAuth(env)
+</pre>
+    </td>
+  </tr>
+  <tr id="L37">
+    <th class="line-num">
+      <a href="#L37">37</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+  <tr id="L38">
+    <th class="line-num">
+      <a href="#L38">38</a>
+    </th>
+    <td class="line-code">
+      <pre>
+</pre>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

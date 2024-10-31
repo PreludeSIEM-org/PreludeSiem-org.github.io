@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #627: Issue compile libprelude with freebsd 10.1 - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ZhVsdXAwgSZewc2ijHj6cOER4QMgHh9Rs7bE5Ke+quN1OgQauSSMpdRrxViRMLMunVqQnToURh9tOAB0I76e4A==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="PRELUDE SIEM - Bug #627: Issue compile libprelude with freebsd 10.1" href="http://www.prelude-siem.org/issues/627.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude/issues/report">Summary</a></li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #627</h2>
+
+<div class="issue tracker-1 status-3 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#646" accesskey="p" href="/issues/646">« Previous</a> |
+        <span class="position">278 of 362</span> |
+      <a title="#622" accesskey="n" href="/issues/622">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>Issue compile libprelude with freebsd 10.1</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="/users/460">patrick moulin</a> <a title="10/04/2015 01:05 PM" href="/projects/prelude/activity?from=2015-10-04">about 9 years</a> ago.
+        Updated <a title="10/28/2015 09:40 AM" href="/projects/prelude/activity?from=2015-10-28">about 9 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Resolved</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/309">Antoine LUONG</a></div></div><div class="category attribute"><div class="label">Category:</div><div class="value">-</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value">10/04/2015</div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>I try to compil libprelude from the sources . I installed the following packages</p>
+
+
+<pre>
+pkg install wget python27 gmake gnutls pkgconf libgcrypt
+</pre>
+
+	<p>In the end, i must have the following librairie in "/usr/local/lib" <br /><pre>
+libpreludecpp.so.3
+libpreludecpp.so
+libpreludecpp.la
+libprelude.so.22
+libprelude.so
+libprelude.la
+
+</pre><br />With freebsd 9.3, it works but not with 10.1 and i have this error message in the log<br /><pre>
+configure:16116: checking if libtool supports shared libraries
+configure:16118: result: no
+configure:16121: checking whether to build shared libraries
+configure:16142: result: no
+</pre></p>
+
+
+	<p>This post refers to an issue with "libtool" <br /><a class="external" href="http://lists.freebsd.org/pipermail/freebsd-current/2013-March/040460.html">http://lists.freebsd.org/pipermail/freebsd-current/2013-March/040460.html</a></p>
+
+
+	<p>I don't understand why in the same conditions it works with Freebsd 9.3 and it doesn't with Freebsd 10.1 and 10.2</p>
+
+
+	<p>Could you help me ?</p>
+
+
+	<p>Many thanks</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/440/config-9.3.log">config-9.3.log</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/440/config-9.3.log">View</a>
+  
+  <span class="size">(1.39 MB)</span>
+    <span class="author">patrick moulin, 10/06/2015 08:22 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/441/config-10-with-clang.log">config-10-with-clang.log</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/441/config-10-with-clang.log">View</a>
+  
+  <span class="size">(1.11 MB)</span>
+    <span class="author">patrick moulin, 10/06/2015 08:22 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/442/config10-with-gcc.log">config10-with-gcc.log</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/442/config10-with-gcc.log">View</a>
+  
+  <span class="size">(1.06 MB)</span>
+    <span class="author">patrick moulin, 10/06/2015 08:23 AM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-2251" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/05/2015 09:35 AM" href="/projects/prelude/activity?from=2015-10-05">about 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+       <li><strong>Assignee</strong> set to <i>Antoine LUONG</i></li>
+    </ul>
+    <div id="journal-2251-notes" class="wiki"><p>As stated in the link, the <strong>configure</strong> script interprets "FreeBSD 10" as "FreeBSD 1".</p>
+
+
+	<p>If you edit the file and remove the following lines (or similar)</p>
+
+
+<pre>
+freebsd1*)
+  ld_shlibs=no
+;;
+</pre>
+
+	<p>you will enable the shared library support.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2252" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="10/05/2015 01:14 PM" href="/projects/prelude/activity?from=2015-10-05">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2252-notes" class="wiki"><p>Thnanks for your reply</p>
+
+
+	<p>As you say, i remove the lines with freebsd1*) and now i have :<br /><pre>
+configure:16116: checking if libtool supports shared libraries
+configure:16118: result: yes
+configure:16121: checking whether to build shared libraries
+configure:16142: result: yes
+</pre><br />I have one last error in the config.log<br /><pre>
+configure:18184: checking whether the c++ linker (/usr/bin/ld) supports shared libraries
+configure:18210: result: no
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-2253" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/05/2015 01:44 PM" href="/projects/prelude/activity?from=2015-10-05">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2253-notes" class="wiki"><p>Are you sure you deleted all the blocks containing "freebsd1*" in <strong>configure</strong>?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2254" class="journal has-notes has-details">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="10/06/2015 08:25 AM" href="/projects/prelude/activity?from=2015-10-06">about 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>File</strong> <a href="/attachments/download/440/config-9.3.log">config-9.3.log</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/440/config-9.3.log">View</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/441/config-10-with-clang.log">config-10-with-clang.log</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/441/config-10-with-clang.log">View</a> added</li>
+       <li><strong>File</strong> <a href="/attachments/download/442/config10-with-gcc.log">config10-with-gcc.log</a> <a class="icon-only icon-magnifier" title="View" href="/attachments/442/config10-with-gcc.log">View</a> added</li>
+    </ul>
+    <div id="journal-2254-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>Yes i deleted all the blocks containing "freebsd1*" in configure<br />It seems that FreeBSD 10 uses clang as compiler whereas FreeBSD 9.3 uses GCC 4.21. I attach herewith the 3 config.log files so that you will see the problem.</p>
+
+
+	<p>I install gcc49 to test but i've always the same result 'checking whether the c++ linker (/usr/bin/ld) supports shared libraries...no' and with 'make' i have the following files now in /usr/local/lib</p>
+
+
+	<p>libpreludecpp.so.8.0<br />libpreludecpp.la<br />libprelude.so.24.0<br />libprelude.la</p>
+
+
+	<p>But it missed<br />libpreludecpp.so<br />libprelude.so</p>
+
+
+	<p>Thanks</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2256" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="10/10/2015 08:53 AM" href="/projects/prelude/activity?from=2015-10-10">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2256-notes" class="wiki"><p>Bonjour,<br />Désolé d'écrire en francais sur un tracker anglais, cela devient compliqué pour moi, d'autant que ma traductrice est absente <img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"></p>
+
+
+	<p>Contrairement à ce que j'ai pu vous dire auparavant la librairie monte bien dans l'arborescence.</p>
+
+
+	<p>Je vais prendre l'exemple de prelude-lml et notamment le plugin "debug" mais c'est le même problème avec toutes les autres lirairies.</p>
+
+
+	<p>Je précise que les fichiers sources sont ds le dossier "tmp" et lorsque je compile, j'obtiens bien un fichier "libdebug.so.0.0" dans le dossier "/tmp/prelude-lml-1.2.6/plugins/debug/.libs" mais normalement je devrais avoir le fichier "debug.so" et par ailleurs dans le dossier "/usr/local/lib/prelude-lml/" je devrais aussi avoir le fichier "debug.so" alors que j'ai également le fichier "libdebug.so.0.0"</p>
+
+
+	<p>Voila, il semble qu'au moment de la compilation, une étape n'est pas fonctionné.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2257" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/10/2015 10:26 PM" href="/projects/prelude/activity?from=2015-10-10">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2257-notes" class="wiki"><p>Bonjour,</p>
+
+
+	<p>Il vous faut rechercher et supprimer d'autres blocs du <strong>configure</strong> qui interprètent "FreeBSD 10" comme "FreeBSD 1".<br />Par exemple :</p>
+
+
+<pre>
+freebsd[12]*)
+</pre>
+
+	<p>ou :</p>
+
+
+<pre>
+freebsd[123]*)
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-2259" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="10/11/2015 07:36 PM" href="/projects/prelude/activity?from=2015-10-11">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2259-notes" class="wiki"><p>Merci beaucoup,</p>
+
+
+	<p>Grace à votre aide et à vos consignes, j'y suis enfin parvenu. J'ai effacé tous les blocs "freebsd<sup><a href="#fn12">12</a></sup>*)" et "freebsd<sup><a href="#fn123">123</a></sup>*)" et cela fonctionne. J'ai réussi à créer les sondes et tout semble fonctionner. Merci infiniment de votre patience. Dernière question:<br />Y a t'il des fichiers de démarrage prévu pour freebsd. Que me conseillez vous?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2260" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/12/2015 10:01 AM" href="/projects/prelude/activity?from=2015-10-12">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2260-notes" class="wiki"><p>Bonjour,</p>
+
+
+	<p>Nous ne fournissons pas de script de démarrage pour FreeBSD, mais vous devriez pouvoir adapter ceux existants dans les ports.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2330" class="journal has-details">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/28/2015 09:40 AM" href="/projects/prelude/activity?from=2015-10-28">about 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Resolved</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/627.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/627.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/113.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2005-12-03T01:39:22Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prewikka - Feature #113: Refactor the Log.py class to use the logging pyton (2.3)  module</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/113"/>
+    <id>http://www.prelude-siem.org/issues/113?journal_id=263</id>
+    <updated>2005-12-03T01:39:22Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;This sound like a good idea, and the described implementation would be welcome.&lt;/p&gt;
+
+
+	&lt;p&gt;However, it would seem redondant to analyze Prewikka output through Prelude-LML since Prewikka already depend on the prelude library. Thus it already got the necessary functionality to emit alert back to the Prelude system.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Feature #113: Refactor the Log.py class to use the logging pyton (2.3)  module</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/113"/>
+    <id>http://www.prelude-siem.org/issues/113?journal_id=264</id>
+    <updated>2006-11-16T17:24:38Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;fixed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Fixed in r8582.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Feature #113: Refactor the Log.py class to use the logging pyton (2.3)  module</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/113"/>
+    <id>http://www.prelude-siem.org/issues/113?journal_id=1083</id>
+    <updated>2009-04-29T12:24:24Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Prewikka&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;5&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;0.9.8&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

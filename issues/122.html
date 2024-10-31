@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #122: prewikka internal error (connection error) - Prewikka - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="qE7kdKCbCV3+Y8mjzwjp8MPqb+y60WyJehve8SE1GPG7YYwbaY8E3nTJwVnSQKCuv6EecqDbNceklRphpTUs8g==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prewikka - Bug #122: prewikka internal error (connection error)" href="http://www.prelude-siem.org/issues/122.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prewikka controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prewikka/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prewikka">Overview</a></li><li><a class="activity" href="/projects/prewikka/activity">Activity</a></li><li><a class="roadmap" href="/projects/prewikka/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prewikka/issues">Issues</a></li><li><a class="gantt" href="/projects/prewikka/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prewikka/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prewikka/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prewikka/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prewikka/issues/report">Summary</a></li>
+
+<li><a href="/projects/prewikka/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prewikka/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #122</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#123" accesskey="p" href="/issues/123">« Previous</a> |
+        <span class="position">2 of 5</span> |
+      <a title="#121" accesskey="n" href="/issues/121">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>prewikka internal error (connection error)</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="01/06/2006 11:15 AM" href="/projects/prewikka/activity?from=2006-01-06">almost 19 years</a> ago.
+        Updated <a title="04/29/2009 12:24 PM" href="/projects/prewikka/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="01/10/2006" href="/versions/9">0.9.3</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">invalid</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Hi there,</p>
+
+
+	<p>I am using prewikka 0.9.2 with Cheetah-2.0b1, prelude-manager-0.9.1, libpreludedb-0.9.2, libprelude-0.9.1 and mysql 5.0.17 under [[SuSE]] Linux 10.</p>
+
+
+	<p>I got the following error message this morning when I tried to login to prewikka. Also, the failed query _login=&lt;user&gt;&#38;_password=&lt;mypassword&gt; showed up in plaintext (?!?).</p>
+
+
+	<p>Browser-Refresh of the login window did'nt solve the problem.<br />After clicking  "Retry"-button, login was executed and the management overview appeared.<br />I got this strange behaviour twice now.<br />Any ideas?<br />Thanks for helping!</p>
+
+
+<hr />
+
+
+	<p><em>Traceback (most recent call last):<br />  File "/usr/lib/python2.4/site-packages/prewikka/Core.py", line 268, in process<br />    user = self.checkAuth(request)<br />  File "/usr/lib/python2.4/site-packages/prewikka/Core.py", line 255, in checkAuth<br />    return self._env.auth.getUser(request)<br />  File "/usr/lib/python2.4/site-packages/prewikka/Auth.py", line 139, in getUser<br />    self.checkPassword(login, password)<br />  File "/usr/lib/python2.4/site-packages/prewikka/modules/auth/loginpassword/loginpassword.py", line 39, in checkPassword<br />    real_password = self.db.getPassword(login)<br />  File "/usr/lib/python2.4/site-packages/prewikka/Database.py", line 191, in getPassword<br />    rows = self.query("SELECT login, password FROM Prewikka_User WHERE login = %s" % (self.escape(login)))<br />  File "/usr/lib/python2.4/site-packages/prewikka/Database.py", line 122, in query<br />    raise [[PreludeDBError]](e.errno, preludedb_sql_get_plugin_error(self._sql))<br />[[PreludeDBError]]: Connection error</em></p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-296" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="01/06/2006 12:30 PM" href="/projects/prewikka/activity?from=2006-01-06">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-296-notes" class="wiki"><p>The error seem to indicate that your [[MySQL]] server has gone away. <br />You could also see the _login and _password variable in the exception since it happened on login.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-297" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="01/06/2006 01:32 PM" href="/projects/prewikka/activity?from=2006-01-06">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-297-notes" class="wiki"><p>I checked the [[MySQL]] process as well as login to [[MySQL]] via mysql-u &lt;user&gt; -p right after the error occured. Everything was fine, [[MySQL]] is up and running.</p>
+
+
+	<p>After clicking on "Retry", then logging out and logging in again, everything seems normal. <br />I had the error after a "session expired" message (I left the management window in browser open overnight).</p>
+
+
+	<p>Is there a separate logfile of prewikka/ libpreludedb that may have logged these events so that I can post it here?</p>
+
+
+	<p>Thanks and Regards.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-298" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="01/06/2006 01:42 PM" href="/projects/prewikka/activity?from=2006-01-06">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-298-notes" class="wiki"><p>The connection might has been broken for any reason, including network or local problem. Or you might have hit an instance of the following [[MySQL]] bug:<br /><a class="external" href="http://bugs.mysql.com/bug.php?id=14747">http://bugs.mysql.com/bug.php?id=14747</a></p>
+
+
+	<p>When clicking "Retry" after getting the Connection error problem, Prewikka attempted to reconnect the [[MySQL]] server and sorted out the issue since the reconnection was successful.</p>
+
+
+	<p>If you got the "log" configuration option in your configuration file, then the query might be found in this place. But I doubt it will permit to learn anything about this specific issue.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-299" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by  <a title="01/06/2006 01:55 PM" href="/projects/prewikka/activity?from=2006-01-06">almost 19 years</a> ago
+    </h4>
+
+    <div id="journal-299-notes" class="wiki"><p>Ok, although the patch to fix that bug should have been applied to the version I am currently using (5.0.17), there's a new one available for download. I'll check this out. If the problem occurs again, I'll post it on this thread.</p>
+
+
+	<pre><code>Thanks and regards.</code></pre></div>
+    </div>
+  </div>
+  
+  <div id="change-300" class="journal has-notes has-details">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="01/06/2006 02:04 PM" href="/projects/prewikka/activity?from=2006-01-06">almost 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>invalid</i></li>
+    </ul>
+    <div id="journal-300-notes" class="wiki"><p>Marking as invalid. Connection Error problem are out of the scope of Prewikka. <br />Please re-open if needed.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-301" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="01/09/2006 10:57 AM" href="/projects/prewikka/activity?from=2006-01-09">almost 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Closed</i> to <i>Feedback</i></li>
+       <li><strong>Resolution</strong> deleted (<del><i>invalid</i></del>)</li>
+    </ul>
+    <div id="journal-301-notes" class="wiki"><p>Hi there,</p>
+
+
+	<p>same problem with [[MySQL]]-5.0.18. [[MySQL]] is up and running.</p>
+
+
+	<p>There's a new error message (because the first "Retry"-Action failed).</p>
+
+
+<hr />
+
+
+	<p>_login=&lt;user&gt;&#38;_password=&lt;password&gt;&#38;_error_back=%7B%27analyzerid<br />%27%3A+%5B%272462743973851376%27%5D%2C+%27view%27%3A+%5B%27<br />heartbeat_analyze%27%5D%7D</p>
+
+
+	<p>Traceback (most recent call last):<br />  File "/usr/lib/python2.4/site-packages/prewikka/Core.py", line 277, in process<br />    getattr(view[[object"] view["handler]])()<br />  File "/usr/lib/python2.4/site-packages/prewikka/views/messagelisting.py", line 1125, in render<br />    total = self._setMessages(criteria)<br />  File "/usr/lib/python2.4/site-packages/prewikka/views/messagelisting.py", line 1072, in _setMessages<br />    return self._setAggregatedMessagesNoValues(criteria, aggregated_on)<br />  File "/usr/lib/python2.4/site-packages/prewikka/views/messagelisting.py", line 864, in _setAggregatedMessagesNoValues<br />    for values in results[self.parameters[[offset"]selfparameters["offset"]+selfparameters["limit]]:<br />[[PreludeDBError]]: Connection error</p></div>
+    </div>
+  </div>
+  
+  <div id="change-302" class="journal has-notes has-details">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="01/09/2006 12:10 PM" href="/projects/prewikka/activity?from=2006-01-09">almost 19 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Feedback</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>invalid</i></li>
+    </ul>
+    <div id="journal-302-notes" class="wiki"><p>As stated previously, I don't think this is a Prelude issue. The connection might has been broken for any reason, including network problem, or a [[MySQL]] crash/restart. I'd suggest running [[MySQL]] under GDB to see if there is any problem with it.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1089" class="journal has-details">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:24 PM" href="/projects/prewikka/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prewikka</i></li>
+       <li><strong>Category</strong> deleted (<del><i>5</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.3</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/122.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/122.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

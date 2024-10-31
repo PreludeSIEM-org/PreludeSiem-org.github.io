@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #305: Unable to delete huge amount of heartbeats with single preludedb-admin query - LibpreludeDB - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="kB8VrYTOKRtkk/u5PzA9qLFxftSoxNvy46SGKt03K6qDMH3CTdokmO4580MieHT2zToPSrLOgrw9KkK6WTcfqQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="LibpreludeDB - Bug #305: Unable to delete huge amount of heartbeats with single preludedb-admin query" href="http://www.prelude-siem.org/issues/305.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-libpreludedb controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libpreludedb/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libpreludedb/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/libpreludedb/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libpreludedb">Overview</a></li><li><a class="activity" href="/projects/libpreludedb/activity">Activity</a></li><li><a class="roadmap" href="/projects/libpreludedb/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/libpreludedb/issues">Issues</a></li><li><a class="gantt" href="/projects/libpreludedb/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libpreludedb/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libpreludedb/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/libpreludedb/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/libpreludedb/issues/report">Summary</a></li>
+
+<li><a href="/projects/libpreludedb/issues/calendar">Calendar</a></li>
+<li><a href="/projects/libpreludedb/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #305</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#220" accesskey="p" href="/issues/220">« Previous</a> |
+        <span class="position">4 of 4</span> |
+      Next »
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>Unable to delete huge amount of heartbeats with single preludedb-admin query</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="08/13/2008 05:05 PM" href="/projects/libpreludedb/activity?from=2008-08-13">about 16 years</a> ago.
+        Updated <a title="04/29/2009 12:23 PM" href="/projects/libpreludedb/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value">-</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="08/27/2008" href="/versions/75">0.9.15</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">duplicate</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>By now my db contains ~870K heartbeat events. I was supposed to clean up db every our by running in crontab the following script:</p>
+
+
+<pre>
+15 * * * * preludedb-admin delete heartbeat --criteria "heartbeat.create_time &lt; @date '+%Y-%m-%d' -d '1 week ago'@" "type=mysql name=prelude user=prelude pass=xxx" 
+</pre>
+
+	<p>Unfortunately, when I set up more than 200+ sensors they began to submit a lot of heartbeats so the script silently ends. Running it manually I've got the following error:</p>
+
+
+<pre>
+retrieving alert ident failed: Got a packet bigger than 'max_allowed_packet' bytes.
+Error at transaction 0. Use --offset 0 to resume operation.
+</pre>
+
+	<p>I was able to clean up database by adding --count=100000 option to line above and running it several times.</p>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="issue-changesets">
+<h3>Associated revisions</h3>
+    <div class="changeset odd">
+    <p><a title="Revision 50f9becc" href="/projects/libpreludedb/repository/revisions/50f9becca2ba9c256f120d08af48296dde665707">Revision 50f9becc</a>
+        (<a href="/projects/libpreludedb/repository/revisions/50f9becca2ba9c256f120d08af48296dde665707/diff">diff</a>)
+        <br />
+        <span class="author">Added by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/19/2008 04:41 PM" href="/projects/libpreludedb/activity?from=2008-08-19">about 16 years</a> ago</span></p>
+    <div class="wiki">
+        <p>Add a count command, printing the result of a <abbr title="">COUNT</abbr> on the database.</p>
+
+
+	<p>Do not fetch more than 'events-per-transaction' idents at once, work<br />in a loop (fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: preludedb-admin fails to retrieve alert ident (Closed)" href="/issues/220">#220</a>, refs <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: Unable to delete huge amount of heartbeats with single preludedb-admin query (Closed)" href="/issues/305">#305</a>).</p>
+
+
+	<p>Code cleanup, improved handling of interrupted transaction.</p>
+    </div>
+    </div>
+
+</div>
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-849" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/19/2008 04:38 PM" href="/projects/libpreludedb/activity?from=2008-08-19">about 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>duplicate</i></li>
+    </ul>
+    <div id="journal-849-notes" class="wiki"><p>This is a duplicate of <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: preludedb-admin fails to retrieve alert ident (Closed)" href="/issues/220">#220</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-850" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/19/2008 04:41 PM" href="/projects/libpreludedb/activity?from=2008-08-19">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-850-notes" class="wiki"><p>(In r10879) Add a count command, printing the result of a <abbr title="">COUNT</abbr> on the database.</p>
+
+
+	<p>Do not fetch more than 'events-per-transaction' idents at once, work<br />in a loop (fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: preludedb-admin fails to retrieve alert ident (Closed)" href="/issues/220">#220</a>, refs <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: Unable to delete huge amount of heartbeats with single preludedb-admin query (Closed)" href="/issues/305">#305</a>).</p>
+
+
+	<p>Code cleanup, improved handling of interrupted transaction.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1080" class="journal has-details">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:23 PM" href="/projects/libpreludedb/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>LibpreludeDB</i></li>
+       <li><strong>Category</strong> deleted (<del><i>2</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.15</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/305.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/305.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

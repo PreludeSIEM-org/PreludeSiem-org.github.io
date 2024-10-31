@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>prelude-option.diff - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="UmC3oebmc0h9spg6s2zggZIdDfCH2D/yqsCTdwcsgJZBT9/OL/J+y/cYkMCuJKnf7lZ8bp3SZrx0Tlfngyy0lQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-libprelude controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>prelude-option.diff</h2>
+
+<div class="attachments">
+<p>Experimental patch: avoid unhandled arguments deletion, handle special &quot;--&quot; option code - 
+   <span class="author"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a>, 01/02/2006 10:30 PM</span></p>
+<p><a href="/attachments/download/25/prelude-option.diff">Download</a>   <span class="size">(6.32 KB)</span></p>
+</div>
+
+  <form action="/attachments/25/prelude-option.diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      src/prelude-option.c	(local)
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">201</th>
+  <th class="line-num">201</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">202</th>
+  <th class="line-num">202</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">203</th>
+  <th class="line-num">203</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">204</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>static void reorder_argv(int *argc, char **argv, int removed, int *argv_index)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">205</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">206</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        int i;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">207</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">208</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        for ( i = removed; (i + 1) &lt; *argc; i++ ) </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">209</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                argv[i] = argv[i + 1];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">210</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">211</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        (*argc)--;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">212</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        (*argv_index)--;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">213</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">214</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">215</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">216</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">217</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">218</th>
+  <th class="line-num">204</th>
+  <td class="line-code ">
+    <pre>static int check_option_optarg(const char **outptr, const char *option, const char *arg)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">219</th>
+  <th class="line-num">205</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">220</th>
+  <th class="line-num">206</th>
+  <td class="line-code ">
+    <pre>        if ( arg &amp;&amp; is_an_argument(arg) )</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">234</th>
+  <th class="line-num">220</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">235</th>
+  <th class="line-num">221</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">236</th>
+  <th class="line-num">222</th>
+  <td class="line-code ">
+    <pre>        *outptr = arg;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">237</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">223</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">238</th>
+  <th class="line-num">224</th>
+  <td class="line-code ">
+    <pre>        return 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">239</th>
+  <th class="line-num">225</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">240</th>
+  <th class="line-num">226</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">516</th>
+  <th class="line-num">502</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">517</th>
+  <th class="line-num">503</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">518</th>
+  <th class="line-num">504</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">505</th>
+  <td class="line-code diff_in">
+    <pre>static void remove_argv(int argc, char **argv, char **unhandled, int *unhandled_index, int removed)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">506</th>
+  <td class="line-code diff_in">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">507</th>
+  <td class="line-code diff_in">
+    <pre>        int i;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">508</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">509</th>
+  <td class="line-code diff_in">
+    <pre>        unhandled[(*unhandled_index)++] = argv[removed];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">510</th>
+  <td class="line-code diff_in">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">511</th>
+  <td class="line-code diff_in">
+    <pre>        for ( i = removed; (i + 1) &lt; argc; i++ ) </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">512</th>
+  <td class="line-code diff_in">
+    <pre>                argv[i] = argv[i + 1];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">513</th>
+  <td class="line-code diff_in">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">519</th>
+  <th class="line-num">514</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">520</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>static int parse_argument(void *context, prelude_list_t *cb_list, prelude_option_t *optlist,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">521</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                          int *argc, char **argv, int *argv_index, int depth, prelude_string_t *err)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">515</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">516</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">517</th>
+  <td class="line-code diff_in">
+    <pre>static int parse_argument(void *context, prelude_list_t *cb_list,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">518</th>
+  <td class="line-code diff_in">
+    <pre>                          prelude_option_t *root_optlist, prelude_option_t *optlist,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">519</th>
+  <td class="line-code diff_in">
+    <pre>                          int *argc, char **argv, int *argv_index,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">520</th>
+  <td class="line-code diff_in">
+    <pre>                          char **unhandled, int *unhandled_index,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">521</th>
+  <td class="line-code diff_in">
+    <pre>                          int depth, prelude_string_t *err, prelude_bool_t ignore)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">522</th>
+  <th class="line-num">522</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">523</th>
+  <th class="line-num">523</th>
+  <td class="line-code ">
+    <pre>        int ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">524</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        prelude_option_t *opt<span></span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">524</th>
+  <td class="line-code diff_in">
+    <pre>        prelude_option_t *opt<span>, *tmp</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">525</th>
+  <th class="line-num">525</th>
+  <td class="line-code ">
+    <pre>        struct cb_list *cbitem;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">526</th>
+  <th class="line-num">526</th>
+  <td class="line-code ">
+    <pre>        const char *arg, *old, *argptr;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">527</th>
+  <th class="line-num">527</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">528</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        while ( *argv_index &lt; <span>*argc</span> ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">529</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">528</th>
+  <td class="line-code diff_in">
+    <pre>        while ( *argv_index &lt; <span>(*argc - *unhandled_index)</span> ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">529</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">530</th>
+  <th class="line-num">530</th>
+  <td class="line-code ">
+    <pre>                old = arg = argv[(*argv_index)++];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">531</th>
+  <td class="line-code diff_in">
+    <pre>                if ( *arg != &#39;-&#39; ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">532</th>
+  <td class="line-code diff_in">
+    <pre>                        remove_argv(*argc, argv, unhandled, unhandled_index, --(*argv_index));</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">533</th>
+  <td class="line-code diff_in">
+    <pre>                        continue;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">534</th>
+  <td class="line-code diff_in">
+    <pre>                }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">531</th>
+  <th class="line-num">535</th>
+  <td class="line-code ">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">532</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                if ( <span>*arg != &#39;-&#39;</span> )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">533</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                        <span>continue</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">534</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">536</th>
+  <td class="line-code diff_in">
+    <pre>                if ( <span>strcmp(arg, &quot;--&quot;) == 0</span> )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">537</th>
+  <td class="line-code diff_in">
+    <pre>                        <span>return 0</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">538</th>
+  <td class="line-code diff_in">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">535</th>
+  <th class="line-num">539</th>
+  <td class="line-code ">
+    <pre>                while ( *arg == &#39;-&#39; ) arg++;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">536</th>
+  <th class="line-num">540</th>
+  <td class="line-code ">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">537</th>
+  <th class="line-num">541</th>
+  <td class="line-code ">
+    <pre>                if ( ! isalnum((int) *arg) )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">538</th>
+  <th class="line-num">542</th>
+  <td class="line-code ">
+    <pre>                        continue;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">539</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>  </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">543</th>
+  <td class="line-code diff_in">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">540</th>
+  <th class="line-num">544</th>
+  <td class="line-code ">
+    <pre>                opt = search_option(optlist, arg, PRELUDE_OPTION_TYPE_CLI, 0);                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">541</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                if ( ! opt ) {                        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">545</th>
+  <td class="line-code diff_in">
+    <pre>                if ( root_optlist != _prelude_generic_optlist &amp;&amp; (tmp = search_option(_prelude_generic_optlist, arg, ~0, TRUE)) ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">546</th>
+  <td class="line-code diff_in">
+    <pre>                        opt = tmp;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">547</th>
+  <td class="line-code diff_in">
+    <pre>                        ignore = TRUE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">548</th>
+  <td class="line-code diff_in">
+    <pre>                }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">549</th>
+  <td class="line-code diff_in">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">550</th>
+  <td class="line-code diff_in">
+    <pre>                if ( ! opt ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">551</th>
+  <td class="line-code diff_in">
+    <pre>                         </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">542</th>
+  <th class="line-num">552</th>
+  <td class="line-code ">
+    <pre>                        if ( depth ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">543</th>
+  <th class="line-num">553</th>
+  <td class="line-code ">
+    <pre>                                (*argv_index)--;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">544</th>
+  <th class="line-num">554</th>
+  <td class="line-code ">
+    <pre>                                return 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">545</th>
+  <th class="line-num">555</th>
+  <td class="line-code ">
+    <pre>                        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">546</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">556</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">557</th>
+  <td class="line-code diff_in">
+    <pre>                        remove_argv(*argc, argv, unhandled, unhandled_index, --(*argv_index));</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">547</th>
+  <th class="line-num">558</th>
+  <td class="line-code ">
+    <pre>                        option_err(PRELUDE_OPTION_WARNING_OPTION, &quot;invalid option -- \&quot;%s\&quot; (%d).\n&quot;, arg, depth);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">548</th>
+  <th class="line-num">559</th>
+  <td class="line-code ">
+    <pre>                        continue;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">549</th>
+  <th class="line-num">560</th>
+  <td class="line-code ">
+    <pre>                }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">550</th>
+  <th class="line-num">561</th>
+  <td class="line-code ">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">551</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                reorder_argv(argc, argv, *argv_index - 1, argv_index);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">552</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">553</th>
+  <th class="line-num">562</th>
+  <td class="line-code ">
+    <pre>                ret = check_option(opt, &amp;argptr, (*argv_index &lt; *argc) ? argv[*argv_index] : NULL);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">554</th>
+  <th class="line-num">563</th>
+  <td class="line-code ">
+    <pre>                if ( ret &lt; 0 ) </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">555</th>
+  <th class="line-num">564</th>
+  <td class="line-code ">
+    <pre>                        return -1;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">556</th>
+  <th class="line-num">565</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">557</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                if ( argptr )<span></span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">558</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                        <span>reorder_argv(argc, argv, *argv_index, argv_index)</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">566</th>
+  <td class="line-code diff_in">
+    <pre>                if ( argptr )<span> </span></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">567</th>
+  <td class="line-code diff_in">
+    <pre>                        <span>(*argv_index)++</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">559</th>
+  <th class="line-num">568</th>
+  <td class="line-code ">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">560</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                ret = call_option_cb(context, &amp;cbitem, cb_list, opt, argptr, err, SET_FROM_CLI);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">561</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">562</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                        return ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">569</th>
+  <td class="line-code diff_in">
+    <pre>                if ( ! ignore ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">570</th>
+  <td class="line-code diff_in">
+    <pre>                        ret = call_option_cb(context, &amp;cbitem, cb_list, opt, argptr, err, SET_FROM_CLI);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">571</th>
+  <td class="line-code diff_in">
+    <pre>                        if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">572</th>
+  <td class="line-code diff_in">
+    <pre>                                return ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">573</th>
+  <td class="line-code diff_in">
+    <pre>                }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">563</th>
+  <th class="line-num">574</th>
+  <td class="line-code ">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">564</th>
+  <th class="line-num">575</th>
+  <td class="line-code ">
+    <pre>                /*</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">565</th>
+  <th class="line-num">576</th>
+  <td class="line-code ">
+    <pre>                 * If the option we just found have sub-option.</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">567</th>
+  <th class="line-num">578</th>
+  <td class="line-code ">
+    <pre>                 */</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">568</th>
+  <th class="line-num">579</th>
+  <td class="line-code ">
+    <pre>                if ( ! prelude_list_is_empty(&amp;opt-&gt;optlist) ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">569</th>
+  <th class="line-num">580</th>
+  <td class="line-code ">
+    <pre>                        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">570</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                        ret = parse_argument(context, &amp;cbitem-&gt;children, <span></span>opt,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">571</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                                             argc, argv, argv_index, <span>depth + 1, err</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">581</th>
+  <td class="line-code diff_in">
+    <pre>                        ret = parse_argument(context, &amp;cbitem-&gt;children, <span>root_optlist, </span>opt,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">582</th>
+  <td class="line-code diff_in">
+    <pre>                                             argc, argv, argv_index, <span>unhandled, unhandled_index, depth + 1, err, ignore</span>);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">572</th>
+  <th class="line-num">583</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">573</th>
+  <th class="line-num">584</th>
+  <td class="line-code ">
+    <pre>                        if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">574</th>
+  <th class="line-num">585</th>
+  <td class="line-code ">
+    <pre>                                return ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">575</th>
+  <th class="line-num">586</th>
+  <td class="line-code ">
+    <pre>                }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">587</th>
+  <td class="line-code diff_in">
+    <pre>                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">588</th>
+  <td class="line-code diff_in">
+    <pre>                ignore = FALSE;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">576</th>
+  <th class="line-num">589</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">577</th>
+  <th class="line-num">590</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">578</th>
+  <th class="line-num">591</th>
+  <td class="line-code ">
+    <pre>        return 0;</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">585</th>
+  <th class="line-num">598</th>
+  <td class="line-code ">
+    <pre>                                   const char **filename, int *argc, char **argv, prelude_string_t **err)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">586</th>
+  <th class="line-num">599</th>
+  <td class="line-code ">
+    <pre>{</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">587</th>
+  <th class="line-num">600</th>
+  <td class="line-code ">
+    <pre>        prelude_list_t cblist;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">588</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        int argv_index = 1, ret = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">601</th>
+  <td class="line-code diff_in">
+    <pre>        char *unhandled[*argc];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">602</th>
+  <td class="line-code diff_in">
+    <pre>        int i, unhandled_index = 0, argv_index = 1, ret = 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">589</th>
+  <th class="line-num">603</th>
+  <td class="line-code ">
+    <pre>                  </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">590</th>
+  <th class="line-num">604</th>
+  <td class="line-code ">
+    <pre>        prelude_list_init(&amp;cblist);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">591</th>
+  <th class="line-num">605</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">592</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        if ( argc ) {                </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">593</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                ret = parse_argument(context, &amp;cblist, optlist, argc, argv, &amp;argv_index, 0, *err);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">606</th>
+  <td class="line-code diff_in">
+    <pre>        if ( argc ) {</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">607</th>
+  <td class="line-code diff_in">
+    <pre>                ret = parse_argument(context, &amp;cblist, optlist, optlist, argc, argv, &amp;argv_index,</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">608</th>
+  <td class="line-code diff_in">
+    <pre>                                     unhandled, &amp;unhandled_index, 0, *err, FALSE);</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">594</th>
+  <th class="line-num">609</th>
+  <td class="line-code ">
+    <pre>                if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">595</th>
+  <th class="line-num">610</th>
+  <td class="line-code ">
+    <pre>                        return ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">611</th>
+  <td class="line-code diff_in">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">612</th>
+  <td class="line-code diff_in">
+    <pre>                for ( i = 0; i &lt; unhandled_index; i++)</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">613</th>
+  <td class="line-code diff_in">
+    <pre>                        argv[*argc - unhandled_index + i] = unhandled[i];</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">596</th>
+  <th class="line-num">614</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">597</th>
+  <th class="line-num">615</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">598</th>
+  <th class="line-num">616</th>
+  <td class="line-code ">
+    <pre>        if ( filename &amp;&amp; *filename ) {                     </pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">605</th>
+  <th class="line-num">623</th>
+  <td class="line-code ">
+    <pre>        if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">606</th>
+  <th class="line-num">624</th>
+  <td class="line-code ">
+    <pre>                return ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">607</th>
+  <th class="line-num">625</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">608</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        return <span>ret</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">626</th>
+  <td class="line-code diff_in">
+    <pre>        return <span>*argc - unhandled_index</span>;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">609</th>
+  <th class="line-num">627</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">610</th>
+  <th class="line-num">628</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">611</th>
+  <th class="line-num">629</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">658</th>
+  <th class="line-num">676</th>
+  <td class="line-code ">
+    <pre>                *err = NULL;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">659</th>
+  <th class="line-num">677</th>
+  <td class="line-code ">
+    <pre>        }</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">660</th>
+  <th class="line-num">678</th>
+  <td class="line-code ">
+    <pre>        </pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">661</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        if ( ret &lt; 0 )</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">662</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>                return ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">663</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">664</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>        return 0;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">679</th>
+  <td class="line-code diff_in">
+    <pre>        return ret;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">665</th>
+  <th class="line-num">680</th>
+  <td class="line-code ">
+    <pre>}</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">666</th>
+  <th class="line-num">681</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">667</th>
+  <th class="line-num">682</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

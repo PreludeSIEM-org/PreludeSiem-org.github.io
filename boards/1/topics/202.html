@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>[prewikka] Multiple options not avaibale after installing prewikka - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="bn3xQuQ4rL6fzbiIPOYTQHLTdWZkleBlCW46H7fVUtV9UpktLSyhPRVnsHIhrloeDpgE+H6fuSvX4P6PM9Vm1g==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>[prewikka] Multiple options not avaibale after installing prewikka</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="02/26/2019 09:25 AM" href="/projects/prelude/activity?from=2019-02-26">over 5 years</a> ago</span></p>
+<div class="wiki">
+<p>I have finally installed a clean prelude infrastructure (libprelude, libpreludedb, prelude-manager and prelude-correlator). The basic use cases are working, all the alerts being generated by my sensors are correctly forked to the prelude-manager and consequently to the prelude-correlator.</p>
+
+
+	<p>The next step was to install prewikka to be able to see the alerts and monitoring the actives. After installing prewikka (with no visible errors) and accesing to the web interface (no password requested) I can't barely do nothing in prewika, all the options seems to be blocked (as shown in the image attached). I just can access to ADMIN -> Preferences and "?" sections. At the ADMIN->Preferences sections it says that my Login is "anonymous" but I don't know how to change that if it doesn't requested me the password. Furthermore, if I go to the Apps section, all the apps seems to be enabled but I cannot access to any prewikka option.</p>
+
+
+	<p>Anybody knows what is the problem/missing?</p>
+
+
+	<p>Thank you</p>
+
+
+	<p>Steven</p>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/1068/prewikka_1.png">prewikka_1.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/1068/prewikka_1.png">View</a>
+  
+  <span class="size">(59.3 KB)</span>
+  </p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (6)</h3>
+  <div class="message reply" id="message-203">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/202?r=203#message-203">RE: [prewikka] Multiple options not avaibale after installing prewikka</a>
+    -
+    Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="02/26/2019 02:46 PM" href="/projects/prelude/activity?from=2019-02-26">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>I've already solved the exclamation symbols that can bee seen in the image attached for the IDMEF Alert Plugin and IDMEF Heartbeat Plugin Apps. But I still have the same problems.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-204">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/202?r=204#message-204">RE: [prewikka] Multiple options not avaibale after installing prewikka</a>
+    -
+    Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="02/26/2019 02:56 PM" href="/projects/prelude/activity?from=2019-02-26">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>I've been taking a look at the data base that prewikka uses:<br /><pre>
+
+mysql&gt; show tables;
++-----------------------------+
+| Tables_in_prewikka          |
++-----------------------------+
+| Prewikka_Crontab            |
+| Prewikka_Filter             |
+| Prewikka_Filter_Criterion   |
+| Prewikka_History_Query      |
+| Prewikka_Module_Changed     |
+| Prewikka_Module_Registry    |
+| Prewikka_Permission         |
+| Prewikka_Session            |
+| Prewikka_User               |
+| Prewikka_User_Configuration |
+| Prewikka_Version            |
++-----------------------------+
+</pre></p>
+
+
+	<p>In the Permission table, only the admin user has rights to do things:</p>
+
+
+<pre>
++-------+-------------------+
+| login | permission        |
++-------+-------------------+
+| admin | IDMEF_VIEW        |
+| admin | IDMEF_ALTER       |
+| admin | USER_MANAGEMENT   |
+| admin | COMMAND           |
+| admin | INTRUSIVE_COMMAND |
++-------+-------------------+
+</pre>
+
+	<p>I tried also to allow permission to anonymous users, but doesn't work:</p>
+
+
+<pre>
++-----------+-------------------+
+| login     | permission        |
++-----------+-------------------+
+| admin     | IDMEF_VIEW        |
+| admin     | IDMEF_ALTER       |
+| admin     | USER_MANAGEMENT   |
+| admin     | COMMAND           |
+| admin     | INTRUSIVE_COMMAND |
+| anonymous | IDMEF_VIEW        |
+| anonymous | IDMEF_ALTER       |
+| anonymous | USER_MANAGEMENT   |
+| anonymous | COMMAND           |
+| anonymous | INTRUSIVE_COMMAND |
++-----------+-------------------+
+</pre>
+
+	<p>At the module_registry table I tried to unable the AnonymousSession to check if then prewikka asks me to introduce an user and password, but it doesn't (see the attached image).</p>
+
+
+<pre>
++----------------------------------------------------------+---------+--------+---------+
+| module                                                   | enabled | branch | version |
++----------------------------------------------------------+---------+--------+---------+
+| prewikka                                                 |       1 | 5.0    | 0       |
+| prewikka.dataprovider.idmef:IDMEFAlertProvider           |       1 | NULL   | NULL    |
+| prewikka.dataprovider.idmef:IDMEFHeartbeatProvider       |       1 | NULL   | NULL    |
+| prewikka.dataprovider.plugins.idmef:IDMEFAlertPlugin     |       1 | NULL   | NULL    |
+| prewikka.dataprovider.plugins.idmef:IDMEFHeartbeatPlugin |       1 | NULL   | NULL    |
+| prewikka.plugins.warning:Warning                         |       1 | NULL   | NULL    |
+| prewikka.renderer.chartjs.bar:ChartJSBarPlugin           |       1 | NULL   | NULL    |
+| prewikka.renderer.chartjs.timeline:ChartJSTimebarPlugin  |       1 | NULL   | NULL    |
+| prewikka.renderer.chartjs:ChartJSPlugin                  |       1 | NULL   | NULL    |
+| prewikka.session.anonymous.anonymous:AnonymousSession    |       0 | NULL   | NULL    |
+| prewikka.views.about:About                               |       1 | NULL   | NULL    |
+| prewikka.views.aboutplugin:AboutPlugin                   |       1 | NULL   | NULL    |
+| prewikka.views.agents:AgentPlugin                        |       1 | NULL   | NULL    |
+| prewikka.views.crontab:CrontabView                       |       1 | NULL   | NULL    |
+| prewikka.views.filter.filter:FilterView                  |       1 | 5.0    | 0       |
+| prewikka.views.idmefnav:IDMEFNav                         |       1 | NULL   | NULL    |
+| prewikka.views.messagesummary:MessageSummary             |       1 | NULL   | NULL    |
+| prewikka.views.usermanagement:UserManagement             |       1 | NULL   | NULL    |
++----------------------------------------------------------+---------+--------+---------+
+</pre>
+
+	<p>I've checked that the prewikka user has right to access all the needed tables in mysql, but still, nothing.</p></div>
+  <div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/1069/prewikka_anonymous.PNG">prewikka_anonymous.PNG</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/1069/prewikka_anonymous.PNG">View</a>
+   - no requests for login data
+  <span class="size">(17.7 KB)</span>
+  </p>
+</div>
+
+  </div>
+  <div class="message reply" id="message-205">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/202?r=205#message-205">RE: [prewikka] Multiple options not avaibale after installing prewikka</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="02/26/2019 03:51 PM" href="/projects/prelude/activity?from=2019-02-26">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>You seem to be using a very old Prewikka database schema.<br />Please try again from an empty database.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-206">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/202?r=206#message-206">RE: [prewikka] Multiple options not avaibale after installing prewikka</a>
+    -
+    Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="02/26/2019 04:04 PM" href="/projects/prelude/activity?from=2019-02-26">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Same problem.</p>
+
+
+	<p>It creates the following tables:<br /><pre>
+
++-----------------------------+
+| Tables_in_prewikka          |
++-----------------------------+
+| Prewikka_Crontab            |
+| Prewikka_Filter             |
+| Prewikka_History_Query      |
+| Prewikka_Module_Changed     |
+| Prewikka_Module_Registry    |
+| Prewikka_Session            |
+| Prewikka_User_Configuration |
++-----------------------------+
+</pre></p>
+
+
+	<p>But still not asking for password</p></div>
+  
+  </div>
+  <div class="message reply" id="message-207">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/202?r=207#message-207">RE: [prewikka] Multiple options not avaibale after installing prewikka</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="02/26/2019 05:32 PM" href="/projects/prelude/activity?from=2019-02-26">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>The current OSS version does not include an authentication module, though we may add it in the future.<br />For the time being, configuring a basic authentication with Apache could do the job.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-211">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/202?r=211#message-211">RE: [prewikka] Multiple options not avaibale after installing prewikka</a>
+    -
+    Added by <a class="user active" href="/users/1117">Steven Shawn</a> <a title="03/04/2019 01:04 PM" href="/projects/prelude/activity?from=2019-03-04">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello Antoine,</p>
+
+
+	<p>I configured a basic authentication with apache, but despite it asks for the user and passw before leting me access the prewikka interface, I'm still appearing as "anonymous". Can you specify how to do this process? or any other workaround to solve this issue?</p>
+
+
+	<p>Thank you!</p>
+
+
+	<p>Steven</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-6/6)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

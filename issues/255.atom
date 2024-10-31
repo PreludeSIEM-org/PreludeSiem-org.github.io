@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/255.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2008-02-28T15:03:20Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Libprelude - Feature #255: Profiles should work with chrooted environments</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/255"/>
+    <id>http://www.prelude-siem.org/issues/255?journal_id=667</id>
+    <updated>2008-02-28T15:03:20Z</updated>
+    <author>
+      <name>Pierre Chifflier</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;On a more general way, having a config option for the profile dir would be really nice ! Actually, this is configured at build time, which is not convenient.&lt;/p&gt;
+
+
+	&lt;p&gt;On runtime, it would be nice to configure the location at runtime using, for ex, one of:&lt;br /&gt;- command line option&lt;br /&gt;- config (?) option&lt;br /&gt;- environment variable&lt;/p&gt;
+
+
+	&lt;p&gt;Pierre&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Feature #255: Profiles should work with chrooted environments</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/255"/>
+    <id>http://www.prelude-siem.org/issues/255?journal_id=668</id>
+    <updated>2008-09-15T12:31:48Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;fixed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;(In r10995) Implement prelude_client_profile_get_default_config_dirname(), and&lt;br /&gt;prelude_client_profile_set_prefix().&lt;/p&gt;
+
+
+	&lt;p&gt;Modify prelude-admin so that it always use prelude-client-profile&lt;br /&gt;function in order to retrieve libprelude specific path.&lt;/p&gt;
+
+
+	&lt;p&gt;Use the relocatable module from prelude-client-profile in order to&lt;br /&gt;relocate path when needed.&lt;/p&gt;
+
+
+	&lt;p&gt;This fix &lt;a class="issue tracker-2 status-5 priority-5 priority-high3 closed" title="Feature: Profiles should work with chrooted environments (Closed)" href="http://www.prelude-siem.org/issues/255"&gt;#255&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Libprelude - Feature #255: Profiles should work with chrooted environments</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/255"/>
+    <id>http://www.prelude-siem.org/issues/255?journal_id=1162</id>
+    <updated>2009-04-29T12:25:57Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;Libprelude&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Category&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;1&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;0.9.21&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

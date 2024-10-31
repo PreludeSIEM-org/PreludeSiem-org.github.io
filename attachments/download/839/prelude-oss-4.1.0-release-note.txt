@@ -1,0 +1,182 @@
+Prelude OSS 4.1.0
+=================
+
+* 2017-07-21, libprelude-4.1.0
+------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Update GnuLib code
+- Copy prelude-client analyzer object instead of referencing it
+- Prevent sending TLS alert on fatal error
+
+Author: Thomas 
+
+- Manpage spelling check
+
+- Correct the format of the year in date error message
+
+* 2017-07-21, libpreludedb-4.1.0
+--------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Update GnuLib code
+- Reconnect to the database automatically
+- Fix crash with tuple object as input
+- Fetching server version might require connection
+
+* 2017-10-19, prelude-correlator-4.1.1
+--------------------------------------
+
+Author: Antoine Luong
+
+- Fix context destruction while iterating
+- Avoid displaying a traceback
+- Allow passing prelude-specific options in configuration
+
+Author: Thomas 
+
+- Add support for key:value out of a config section
+
+* 2017-07-21, prelude-lml-4.1.0
+-------------------------------
+
+Author: Thomas 
+
+- Fix missing end condition
+- Add info about milliseconds in Apache time-format
+- Fix lines with only include directives
+
+Author: Yoann Vandoorselaere
+
+- Update GnuLib code
+- Fix LML exit status
+
+* 2017-07-21, prelude-lml-rules-4.1.0
+-------------------------------------
+
+Author: Thomas 
+
+- Update apache2/httpd rules
+- Add ID range for local rules
+
+Author: Enguerrand de Mauduit
+
+- Add #DESCRIPTION to rules
+- Add #CATEGORY to rules
+
+Author: Antoine Luong
+
+- Fix duplicate IDs in openhostapd.rules and zyxel.rules
+
+* 2017-08-01, prelude-manager-4.1.1
+-----------------------------------
+
+Author: Antoine Luong
+
+- Do not return negative value on db_run success
+
+Author: Yoann Vandoorselaere
+
+- Update GnuLib code
+- Fix possible crash when tls-options is set to NONE
+- SMTP plugin is now asynchronous
+
+    This prevent locking Manager main worker thread.
+    However, SMTP plugin failover is not supported anymore.
+
+- Migrate IDMEF message scheduler to libev
+
+- Release lock while executing timer
+
+    Prevent server thread stall in the boggus case
+    where timer execution is itself stalled.
+
+* 2017-11-02, prewikka-4.1.5
+----------------------------
+
+Author: Antoine Luong
+
+- Escape grid values
+- Revert modifications to SQL install
+- Fix SQL migration sequence
+- Avoid error when HTMLNode has a null child
+- Hide dropdown menus when scrolling in a modal
+- Add canHandleGroups method
+- Fix typo in cronjob numbering
+- Implement a custom JSON conversion
+- Add automatic deletion cron tasks
+- Add a method to get named config sections
+- Minor graphical changes
+- Allow empty value in HOOK_MESSAGE_EXTRA_LINK
+- Fix potential IndexError in CorrelationAlert detail
+- Fix wrong diagnostic in HeartbeatAnalyze
+- Make mainmenu more customizable in non-inline mode
+- Better handle return key in modals
+- Fix post_load multiple calls
+- Improve link generation, add datatype argument to @route
+- Fix typo with AlertListing expand link
+- Various timezone-related bugfixes
+- MessageSummary optimization and fixes
+- Split delete queries in agents
+- Drop Python 2.6 support
+- Add DatetimePicker function
+- Allow communication between multiple modals
+- Reload grids after deleting rows
+- Wrap grid content instead of truncating it
+
+Author: Camille Gardet
+
+- Delete tasks linked to a removed user
+- Fix the SQL mapping of the queries history
+- Add query history
+- Fix color rotation when a color map exists
+- Change wrong HTML tag in the alert table header
+- Ajax call does not always return a value
+- Resizing fixes in commonlisting.js
+- Fix FontAwesome link in menu.yml
+- Add HTML tooltips
+
+Author: Yoann Vandoorselaere
+
+- Rework user configuration storage
+- Rework mainmenu start/end time handling
+- Proper datetime truncate function
+- Invalid timeline link generated
+- Handle deferred errors
+- Spinner option for prewikka_ajax(), disable spinner on tooltip / hostinfos
+- Add type attribute to returned PathInfo object
+- Make IDMEF dataprovider.query() work without path or criterion
+- Dataprovider is now able to pass backend specific options
+- Make sure we escape non HTMLNode element
+- Fix invalid return for sensor with "exiting" status
+- Set default umask, and create temporary directory on initialization
+- Fix rule -> view mapping
+- Fix exception when database object is unavailable
+- Implement HOOK_PLUGINS_RELOAD
+- Implement Prewikka help framework
+- Fix Prewikka OSS warning
+- CommonListing API improvement
+- Dataprovider API improvement
+- Route API improvements
+- Prewikka AJAX framework improvement, new download system
+- Implement a Crontab system
+- Implement a generic delayed registration system
+- Implement resource.HTMLNode helper class
+- MainMenu is now embeddable in configuration forms
+- HTTP reason should be encoded as ISO-8859-1
+- Updated values in AttrObj() were not available in the generated json
+- Minor upsert fixes
+- Properly handle datetime with milliseconds
+- JSON object serialization fixes
+- Normalize data before soundex()
+
+Author: Thomas 
+
+- Change default max_aggregated_* for better display
+- Update mailing list archives link in README
+- Crontab: Active button is a success button
+- Fix prewikka_autocomplete and empty input
+- Fix main_menu using id instead of class
+- Add "eq" operator for AttrObj

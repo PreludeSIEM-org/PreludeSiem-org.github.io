@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>/ - Repository - Vigirules - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="GIDJzZM8XSzCEAwM8zccsm0Edd6hsIhXI8sTjRknSo0Lr6GiWihQr0i6BPbuf1XsEU8EQLu60Rn9RdcdnSd+jg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+  <script src="/javascripts/repository_navigation.js"></script>
+  <script src="/javascripts/raphael.js"></script>
+  <script src="/javascripts/revision_graph.js"></script>
+      <link rel="alternate" type="application/atom+xml" title="ATOM" href="http://www.prelude-siem.org/projects/vigirules/repository/revisions.atom" />
+  <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" />
+</head>
+<body class="theme-Prelude project-vigirules controller-repositories action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/vigirules/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="changesets" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/vigirules/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="changesets" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/vigirules/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/vigirules">Overview</a></li><li><a class="activity" href="/projects/vigirules/activity">Activity</a></li><li><a class="repository selected" href="/projects/vigirules/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+<div class="contextual">
+  
+<a class="icon icon-stats" href="/projects/vigirules/repository/statistics">Statistics</a>
+
+<form id="revision_selector" action="/projects/vigirules/repository" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />  <!-- Branches Dropdown -->
+    | Branch: 
+    <select name="branch" id="branch"><option value="">&nbsp;</option>
+<option selected="selected" value="master">master</option>
+<option value="release-4.0">release-4.0</option>
+<option value="release-5.0">release-5.0</option>
+<option value="release-5.1">release-5.1</option>
+<option value="release-5.2">release-5.2</option>
+<option value="support/v3.5">support/v3.5</option></select>
+
+    | Tag: 
+    <select name="tag" id="tag"><option value="">&nbsp;</option>
+<option value="v3.5">v3.5</option>
+<option value="v3.5.1">v3.5.1</option>
+<option value="v3.6.0">v3.6.0</option>
+<option value="v3.6.0RC1">v3.6.0RC1</option>
+<option value="v3.6.0RC2">v3.6.0RC2</option>
+<option value="v3.6.0RC3">v3.6.0RC3</option>
+<option value="v3.6.0RC4">v3.6.0RC4</option>
+<option value="v4.0">v4.0</option>
+<option value="v4.0.1">v4.0.1</option>
+<option value="v4.0.1rc1">v4.0.1rc1</option>
+<option value="v4.0.2">v4.0.2</option>
+<option value="v4.0rc1">v4.0rc1</option>
+<option value="v4.0rc2">v4.0rc2</option>
+<option value="v4.0rc3">v4.0rc3</option>
+<option value="v4.1.0">v4.1.0</option>
+<option value="v4.1.0rc1">v4.1.0rc1</option>
+<option value="v4.1.0rc2">v4.1.0rc2</option>
+<option value="v4.1.0rc3">v4.1.0rc3</option>
+<option value="v5.0.0">v5.0.0</option>
+<option value="v5.0.0rc1">v5.0.0rc1</option>
+<option value="v5.0.0rc2">v5.0.0rc2</option>
+<option value="v5.0.1">v5.0.1</option>
+<option value="v5.0.2">v5.0.2</option>
+<option value="v5.1.0">v5.1.0</option>
+<option value="v5.1.0a1">v5.1.0a1</option>
+<option value="v5.1.0a2">v5.1.0a2</option>
+<option value="v5.1.0b1">v5.1.0b1</option>
+<option value="v5.1.1">v5.1.1</option>
+<option value="v5.1.2">v5.1.2</option>
+<option value="v5.2.0">v5.2.0</option>
+<option value="v5.2.0b1">v5.2.0b1</option>
+<option value="v5.2.0b2">v5.2.0b2</option>
+<option value="v5.2.0rc1">v5.2.0rc1</option></select>
+
+    | Revision: 
+    <input type="text" name="rev" id="rev" value="master" size="8" />
+</form>
+</div>
+
+<h2><a href="/projects/vigirules/repository/revisions/master/show">correlator</a>
+@ master
+
+</h2>
+
+  <div class="autoscroll">
+<table class="list entries" id="browser">
+<thead>
+<tr id="root">
+<th>Name</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr id="db85c0ea4d2e69c8abaefa875ba77c51" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('db85c0ea4d2e69c8abaefa875ba77c51', '/projects/vigirules/repository/revisions/master/show/i18n?depth=1&amp;parent_id=db85c0ea4d2e69c8abaefa875ba77c51');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirules/repository/revisions/master/show/i18n">i18n</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a46a1bce0b67c45bec8f435bd5390a54" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('a46a1bce0b67c45bec8f435bd5390a54', '/projects/vigirules/repository/revisions/master/show/pkg?depth=1&amp;parent_id=a46a1bce0b67c45bec8f435bd5390a54');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirules/repository/revisions/master/show/pkg">pkg</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="25d902c24283ab8cfbac54dfa101ad31" class=" entry dir">
+<td style="padding-left: 0px;" class="filename_no_report">
+<span class="expander" onclick="scmEntryClick('25d902c24283ab8cfbac54dfa101ad31', '/projects/vigirules/repository/revisions/master/show/src?depth=1&amp;parent_id=25d902c24283ab8cfbac54dfa101ad31');">&nbsp;</span>
+<a class="icon icon-folder" href="/projects/vigirules/repository/revisions/master/show/src">src</a>
+</td>
+<td class="size"></td>
+</tr>
+<tr id="a084b794bc0759e7a6b77810e01874f2" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirules/repository/changes/.gitignore?rev=master">.gitignore</a>
+</td>
+<td class="size">328 Bytes</td>
+</tr>
+<tr id="21c55fa400e4d25aed3a755371e32151" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirules/repository/changes/COPYING.txt?rev=master">COPYING.txt</a>
+</td>
+<td class="size">17.7 KB</td>
+</tr>
+<tr id="97c91a104c431d0c365565d3ac03ac13" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirules/repository/changes/MANIFEST.in?rev=master">MANIFEST.in</a>
+</td>
+<td class="size">237 Bytes</td>
+</tr>
+<tr id="b67911656ef5d18c4ae36cb6741b7965" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirules/repository/changes/Makefile?rev=master">Makefile</a>
+</td>
+<td class="size">2.19 KB</td>
+</tr>
+<tr id="26fd799ea07494916e9da9b91b2aac64" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirules/repository/changes/README.txt?rev=master">README.txt</a>
+</td>
+<td class="size">1.26 KB</td>
+</tr>
+<tr id="a91efb528777d13c9f105798a9c5673b" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirules/repository/changes/buildenv?rev=master">buildenv</a>
+</td>
+<td class="size">11 Bytes</td>
+</tr>
+<tr id="a55fc4e553af13234f26342646b88e19" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirules/repository/changes/buildout.cfg?rev=master">buildout.cfg</a>
+</td>
+<td class="size">101 Bytes</td>
+</tr>
+<tr id="0c89a7a8d68709f76b53b680895bcb35" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirules/repository/changes/settings.ini.in?rev=master">settings.ini.in</a>
+</td>
+<td class="size">5.04 KB</td>
+</tr>
+<tr id="ef837a71e980bb23dd22743fa3012057" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-plain" href="/projects/vigirules/repository/changes/settings_tests.ini?rev=master">settings_tests.ini</a>
+</td>
+<td class="size">1.06 KB</td>
+</tr>
+<tr id="380c6a8ebbbce17d55d50ef17d3cf906" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file " href="/projects/vigirules/repository/changes/setup.cfg?rev=master">setup.cfg</a>
+</td>
+<td class="size">662 Bytes</td>
+</tr>
+<tr id="2eeaed663bd0d25b7e608891384b7298" class=" entry file">
+<td style="padding-left: 0px;" class="filename_no_report">
+<a class="icon icon-file text-x-python" href="/projects/vigirules/repository/changes/setup.py?rev=master">setup.py</a>
+</td>
+<td class="size">2.82 KB</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+
+
+
+    <h3>Latest revisions</h3>
+    <div class="autoscroll">
+<script>
+//<![CDATA[
+
+function revisionGraphHandler(){
+  drawRevisionGraph(
+    document.getElementById('holder'),
+    {"8aa571ac5c7be2566bcd760aae73ce88057c1b3b":{"parent_scmids":["16fe8527011138facd8510e6cafd7ee224992431"],"rdmid":0,"refs":null,"scmid":"8aa571ac5c7be2566bcd760aae73ce88057c1b3b","href":"/projects/vigirules/repository/revisions/8aa571ac5c7be2566bcd760aae73ce88057c1b3b","space":0},"7277f74563217ceb08b5fdb2ac09e4a79c9abe50":{"parent_scmids":["8aa571ac5c7be2566bcd760aae73ce88057c1b3b"],"rdmid":1,"refs":null,"scmid":"7277f74563217ceb08b5fdb2ac09e4a79c9abe50","href":"/projects/vigirules/repository/revisions/7277f74563217ceb08b5fdb2ac09e4a79c9abe50","space":0},"ff5ebd2159343e1a2de5def2b9482d69374fa4ac":{"parent_scmids":["7277f74563217ceb08b5fdb2ac09e4a79c9abe50"],"rdmid":2,"refs":null,"scmid":"ff5ebd2159343e1a2de5def2b9482d69374fa4ac","href":"/projects/vigirules/repository/revisions/ff5ebd2159343e1a2de5def2b9482d69374fa4ac","space":0},"a22e28918b3fa8b95f2ed209f30f53d3208782e3":{"parent_scmids":["ff5ebd2159343e1a2de5def2b9482d69374fa4ac"],"rdmid":3,"refs":null,"scmid":"a22e28918b3fa8b95f2ed209f30f53d3208782e3","href":"/projects/vigirules/repository/revisions/a22e28918b3fa8b95f2ed209f30f53d3208782e3","space":0},"a9c6656813f0668d1124f4b3bf90b163b7fd0717":{"parent_scmids":["a22e28918b3fa8b95f2ed209f30f53d3208782e3"],"rdmid":4,"refs":null,"scmid":"a9c6656813f0668d1124f4b3bf90b163b7fd0717","href":"/projects/vigirules/repository/revisions/a9c6656813f0668d1124f4b3bf90b163b7fd0717","space":0},"a581b7727c00eb529b7b0d7430964005edbb1e85":{"parent_scmids":["a9c6656813f0668d1124f4b3bf90b163b7fd0717"],"rdmid":5,"refs":null,"scmid":"a581b7727c00eb529b7b0d7430964005edbb1e85","href":"/projects/vigirules/repository/revisions/a581b7727c00eb529b7b0d7430964005edbb1e85","space":0},"6997bf79e40c7e88dd7e8c41e17e0a0c4fcf8456":{"parent_scmids":["7dcef33c70f0f4d074e8437cd15f292893c89bf0"],"rdmid":6,"refs":null,"scmid":"6997bf79e40c7e88dd7e8c41e17e0a0c4fcf8456","href":"/projects/vigirules/repository/revisions/6997bf79e40c7e88dd7e8c41e17e0a0c4fcf8456","space":1},"f1fc4c7cf4386c3b35115c96adb94fdd3248023d":{"parent_scmids":["a581b7727c00eb529b7b0d7430964005edbb1e85","6997bf79e40c7e88dd7e8c41e17e0a0c4fcf8456"],"rdmid":7,"refs":null,"scmid":"f1fc4c7cf4386c3b35115c96adb94fdd3248023d","href":"/projects/vigirules/repository/revisions/f1fc4c7cf4386c3b35115c96adb94fdd3248023d","space":0},"bc49a7cce39b4b3649b3627dcc62d031e6740cfa":{"parent_scmids":["f1fc4c7cf4386c3b35115c96adb94fdd3248023d"],"rdmid":8,"refs":null,"scmid":"bc49a7cce39b4b3649b3627dcc62d031e6740cfa","href":"/projects/vigirules/repository/revisions/bc49a7cce39b4b3649b3627dcc62d031e6740cfa","space":0},"d0a7961feef4f45e188d4d39d550c66fae34b98d":{"parent_scmids":["bc49a7cce39b4b3649b3627dcc62d031e6740cfa"],"rdmid":9,"refs":"master release-5.2","scmid":"d0a7961feef4f45e188d4d39d550c66fae34b98d","href":"/projects/vigirules/repository/revisions/d0a7961feef4f45e188d4d39d550c66fae34b98d","space":0}},
+    2
+  );
+}
+$(document).ready(revisionGraphHandler);
+$(window).resize(revisionGraphHandler);
+
+//]]>
+</script>
+<div id="holder" class="revision-graph"></div>
+
+
+<form action="/projects/vigirules/repository/diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<table class="list changesets">
+<thead><tr>
+<th>#</th>
+<th></th>
+<th></th>
+<th>Date</th>
+<th>Author</th>
+<th>Comment</th>
+</tr></thead>
+<tbody>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision d0a7961f" href="/projects/vigirules/repository/revisions/d0a7961feef4f45e188d4d39d550c66fae34b98d">d0a7961f</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-1" value="d0a7961feef4f45e188d4d39d550c66fae34b98d" onclick="$(&#39;#cbto-2&#39;).prop(&#39;checked&#39;,true);" checked="checked" /></td>
+<td class="checkbox"></td>
+<td class="committed_on">09/10/2020 01:37 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0</p>
+
+
+	<p>Change-Id: I77e1d5497fc486fe893e6db7357419bb2bf152a8</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision bc49a7cc" href="/projects/vigirules/repository/revisions/bc49a7cce39b4b3649b3627dcc62d031e6740cfa">bc49a7cc</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-2" value="bc49a7cce39b4b3649b3627dcc62d031e6740cfa" onclick="$(&#39;#cbto-3&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-2" value="bc49a7cce39b4b3649b3627dcc62d031e6740cfa" onclick="if ($(&#39;#cb-2&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-1&#39;).prop(&#39;checked&#39;,true);}" checked="checked" /></td>
+<td class="committed_on">08/03/2020 08:52 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0rc1</p>
+
+
+	<p>Change-Id: I18cb2bf590ee95cfd663fa4ef602c463f72906f8</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision f1fc4c7c" href="/projects/vigirules/repository/revisions/f1fc4c7cf4386c3b35115c96adb94fdd3248023d">f1fc4c7c</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-3" value="f1fc4c7cf4386c3b35115c96adb94fdd3248023d" onclick="$(&#39;#cbto-4&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-3" value="f1fc4c7cf4386c3b35115c96adb94fdd3248023d" onclick="if ($(&#39;#cb-3&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-2&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/09/2020 03:23 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Merge commit '6997bf79'</p>
+
+
+	<p>Change-Id: I84f04af4517fb8d7e399b3f4d670e1e9c881a10a</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 6997bf79" href="/projects/vigirules/repository/revisions/6997bf79e40c7e88dd7e8c41e17e0a0c4fcf8456">6997bf79</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-4" value="6997bf79e40c7e88dd7e8c41e17e0a0c4fcf8456" onclick="$(&#39;#cbto-5&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-4" value="6997bf79e40c7e88dd7e8c41e17e0a0c4fcf8456" onclick="if ($(&#39;#cb-4&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-3&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/09/2020 09:56 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Messages plus clairs en cas de doublons d'IDs</p>
+
+
+	<p>Change-Id: Ibcee766a27ccb19992e4f177babb92c2d62398fb</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision a581b772" href="/projects/vigirules/repository/revisions/a581b7727c00eb529b7b0d7430964005edbb1e85">a581b772</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-5" value="a581b7727c00eb529b7b0d7430964005edbb1e85" onclick="$(&#39;#cbto-6&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-5" value="a581b7727c00eb529b7b0d7430964005edbb1e85" onclick="if ($(&#39;#cb-5&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-4&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">07/03/2020 01:54 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b2</p>
+
+
+	<p>Change-Id: I3646010d45934e22771b421ed31124a462173e90</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision a9c66568" href="/projects/vigirules/repository/revisions/a9c6656813f0668d1124f4b3bf90b163b7fd0717">a9c66568</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-6" value="a9c6656813f0668d1124f4b3bf90b163b7fd0717" onclick="$(&#39;#cbto-7&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-6" value="a9c6656813f0668d1124f4b3bf90b163b7fd0717" onclick="if ($(&#39;#cb-6&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-5&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 03:08 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2026] Changement de dénomination sociale</p>
+
+
+	<p>Change-Id: I40c85e76097c1b7cc3ded0a3c89a3a28e534b663</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision a22e2891" href="/projects/vigirules/repository/revisions/a22e28918b3fa8b95f2ed209f30f53d3208782e3">a22e2891</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-7" value="a22e28918b3fa8b95f2ed209f30f53d3208782e3" onclick="$(&#39;#cbto-8&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-7" value="a22e28918b3fa8b95f2ed209f30f53d3208782e3" onclick="if ($(&#39;#cb-7&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-6&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/30/2020 09:14 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>[#2026] Changement de dénomination sociale</p>
+
+
+	<p>Change-Id: I3ac66aab4d1e4ebc65633c5f03f6f3390b05bc0b<br />Refs: #2026</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision ff5ebd21" href="/projects/vigirules/repository/revisions/ff5ebd2159343e1a2de5def2b9482d69374fa4ac">ff5ebd21</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-8" value="ff5ebd2159343e1a2de5def2b9482d69374fa4ac" onclick="$(&#39;#cbto-9&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-8" value="ff5ebd2159343e1a2de5def2b9482d69374fa4ac" onclick="if ($(&#39;#cb-8&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-7&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/26/2020 05:32 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Mise à jour settings.ini pour l'auto-supervision</p>
+
+
+	<p>Change-Id: I95b4e51dc1600dfe02939ec07ecc91c461ea3800</p></td>
+</tr>
+<tr class="changeset odd">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 7277f745" href="/projects/vigirules/repository/revisions/7277f74563217ceb08b5fdb2ac09e4a79c9abe50">7277f745</a>
+</td><td class="checkbox"><input type="radio" name="rev" id="cb-9" value="7277f74563217ceb08b5fdb2ac09e4a79c9abe50" onclick="$(&#39;#cbto-10&#39;).prop(&#39;checked&#39;,true);" /></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-9" value="7277f74563217ceb08b5fdb2ac09e4a79c9abe50" onclick="if ($(&#39;#cb-9&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-8&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/26/2020 05:28 PM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Envoi des stats uniquement pour la 1è instance</p>
+
+
+	<p>Change-Id: I9541870d885e7cb8b435b57573fd713eeb85f438</p></td>
+</tr>
+<tr class="changeset even">
+<td class="id" style="padding-left:60px">
+  <a title="Revision 8aa571ac" href="/projects/vigirules/repository/revisions/8aa571ac5c7be2566bcd760aae73ce88057c1b3b">8aa571ac</a>
+</td><td class="checkbox"></td>
+<td class="checkbox"><input type="radio" name="rev_to" id="cbto-10" value="8aa571ac5c7be2566bcd760aae73ce88057c1b3b" onclick="if ($(&#39;#cb-10&#39;).prop(&#39;checked&#39;)) {$(&#39;#cb-9&#39;).prop(&#39;checked&#39;,true);}" /></td>
+<td class="committed_on">06/23/2020 09:50 AM</td>
+<td class="author">Francois </td>
+<td class="comments"><p>Bump v5.2.0b1</p>
+
+
+	<p>Change-Id: Ifd1b8679b6ddefbf98f15c6ef762026752a1569e</p></td>
+</tr>
+</tbody>
+</table>
+<input type="submit" value="View differences" />
+</form></div>
+
+  <p>
+    <a href="/projects/vigirules/repository/revisions">View all revisions</a>
+    |
+    <a href="/projects/vigirules/repository/changes?rev=master">View revisions</a>
+  </p>
+
+<p class="other-formats">Also available in:    <span><a class="atom" rel="nofollow" href="/projects/vigirules/repository/revisions.atom">Atom</a></span>
+</p>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #299: TLS error with OSSEC - Libprelude - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="PBfa0w1/vFMTm+ArbcGJnq3SeqX0pU7N9DYsx//LVWgvOLK8xGux0Jkx6NFwicDA0ZkLO+6vF4MquOhXe8thaw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Libprelude - Bug #299: TLS error with OSSEC" href="http://www.prelude-siem.org/issues/299.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-libprelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/libprelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/libprelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/libprelude">Overview</a></li><li><a class="activity" href="/projects/libprelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/libprelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/libprelude/issues">Issues</a></li><li><a class="gantt" href="/projects/libprelude/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/libprelude/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/libprelude/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/libprelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/libprelude/issues/report">Summary</a></li>
+
+<li><a href="/projects/libprelude/issues/calendar">Calendar</a></li>
+<li><a href="/projects/libprelude/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #299</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#300" accesskey="p" href="/issues/300">« Previous</a> |
+        <span class="position">2 of 4</span> |
+      <a title="#290" accesskey="n" href="/issues/290">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>TLS error with OSSEC</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="07/10/2008 01:58 PM" href="/projects/libprelude/activity?from=2008-07-10">over 16 years</a> ago.
+        Updated <a title="04/29/2009 12:04 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="07/18/2008" href="/versions/83">0.9.18</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Hello,</p>
+
+
+	<p>I installed prelude on [[OpenBSD]] 4.3 &#38; registered 2 sensors, snort &#38; prelude-lml successfully.</p>
+
+
+	<p>I have a problem with getting OSSEC to work with prelude. after registering the OSSEC sensor and running OSSEC i get the following error from prelude-manager:  "TLS error: A TLS packet with unexpected length was received" and then prelude-manager closes the connection.</p>
+
+
+	<p>gnutls version is 2.0.4, OSSEC versions i tried : 1.4,1.5,1.51.<br />using prelude from [[OpenBSD]] package, versions : <br />libprelude - 0.9.15<br />prelude-manager - 0.9.9 (also tried compiling 0.9.13 from source - got the same error)</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/129/manager.diff">manager.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/129/manager.diff">View</a>
+   - Workaround for GnuTLS compression priority issue
+  <span class="size">(1.12 KB)</span>
+    <span class="author">Yoann VANDOORSELAERE, 07/16/2008 02:22 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/130/ossec.debug">ossec.debug</a>   - ossec with LIBPRELUDE_TLS_DEBUG=10
+  <span class="size">(27.1 KB)</span>
+    <span class="author">, 07/16/2008 03:19 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/131/prelude-manager.debug">prelude-manager.debug</a>   - prelude-manager with LIBPRELUDE_TLS_DEBUG=10
+  <span class="size">(50.3 KB)</span>
+    <span class="author">, 07/16/2008 03:20 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/128/libprelude.diff">libprelude.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/128/libprelude.diff">View</a>
+   - Set default compression priority.
+  <span class="size">(961 Bytes)</span>
+    <span class="author">Yoann VANDOORSELAERE, 07/16/2008 05:56 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-810" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by  <a title="07/10/2008 04:53 PM" href="/projects/libprelude/activity?from=2008-07-10">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-810-notes" class="wiki"><p>I tried removing the [[OpenBSD]] prelude packages and compile prelude + ossec from source.<br />now I get the following error from prelude when ossec tries to connect to prelude-manager :<br />"Ohhhh jeeee: operation is not possible without initialized secure memory"</p></div>
+    </div>
+  </div>
+  
+  <div id="change-811" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="07/10/2008 07:41 PM" href="/projects/libprelude/activity?from=2008-07-10">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-811-notes" class="wiki"><p>after installing from source I now get the "Ohhhh jeeee: operation is not possible without initialized secure memory"  with other sensors too (prelude-lml, snort).</p>
+
+
+	<p>I tried doing a clean installation but got the same error.</p>
+
+
+	<p>versions are :</p>
+
+
+	<p>gnutls - 2.5.2<br />libgcrypt - 1.4.1<br />libgpg-error - 1.6<br />libprelude - 0.9.17.2<br />prelude-manager - 0.9.13</p></div>
+    </div>
+  </div>
+  
+  <div id="change-812" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/11/2008 01:30 PM" href="/projects/libprelude/activity?from=2008-07-11">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-812-notes" class="wiki"><p>Hi,</p>
+
+
+	<p>Prior to getting the<br /><pre>
+Ohhhh jeeee: operation is not possible without initialized secure memory
+</pre></p>
+
+
+	<p>error message, what software versions where you using?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-813" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by  <a title="07/11/2008 05:47 PM" href="/projects/libprelude/activity?from=2008-07-11">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-813-notes" class="wiki"><p>Replying to [comment:3 yoann]:</p>
+
+
+<blockquote>
+
+	<p>Hi,</p>
+
+
+	<p>Prior to getting the</p>
+
+
+</blockquote>
+
+<pre>
+&gt; Ohhhh jeeee: operation is not possible without initialized secure memory
+</pre>
+
+<blockquote>
+
+	<p>error message, what software versions where you using?</p>
+
+
+</blockquote>
+
+	<p>Hello Yoann,</p>
+
+
+	<p>I was first using the 4.3 [[OpenBSD]] packages : libprelude-0.9.15,prelude-manager-0.9.9,gnutls 2.0.4<br />and had no problem with snort/prelude-lml sensors. problem started with OSSEC (TLS ERROR), so i <br />tried reinstalling and since it did not work I downloaded prelude source, installed it and since then i always<br />get the "secure memory" error when a sensor tries to connect to prelude-manager (registration works fine).</p>
+
+
+	<p>Thanks</p></div>
+    </div>
+  </div>
+  
+  <div id="change-814" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by  <a title="07/11/2008 06:04 PM" href="/projects/libprelude/activity?from=2008-07-11">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-814-notes" class="wiki"><p>I reinstalled openbsd 4.3 from scratch, first thing after the installation i compiled latest gnutls 2.52,libgcrypt - 1.41 libgpg-error - 1.6<br />and then installed libprelude-0.9.17.2, prelude-manager-0.9.13 from source.</p>
+
+
+	<p>I still get the "secure memory" error when a sensor connects with prelude-manager...</p></div>
+    </div>
+  </div>
+  
+  <div id="change-815" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="07/11/2008 08:20 PM" href="/projects/libprelude/activity?from=2008-07-11">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-815-notes" class="wiki"><p>created another 4.3 clean installation under vmware server, compiled current versions from source , this time using gnutls 2.0.4 from openbsd 4.3 package - error is again "TLS error: A TLS packet with unexpected length was received".</p></div>
+    </div>
+  </div>
+  
+  <div id="change-816" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/12/2008 12:21 AM" href="/projects/libprelude/activity?from=2008-07-12">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-816-notes" class="wiki"><p>[[GnuTLS]] 2.5.x is development version: you probably should avoid it. I'd suggest sticking to [[GnuTLS]] 2.0.4.<br />To summarize, can you confirm that you are back to the following issue:</p>
+
+
+	<ul>
+	<li>Starting OSSEC lead to <em>unexpected length</em> error on the Prelude-Manager side 
+	<ul>
+	<li>What about the OSSEC side, what does it tell?</li>
+	</ul>
+	</li>
+		<li>Prelude-LML and Snort, located on the same machine as OSSEC, are working.</li>
+	</ul>
+
+
+	<p>Can you confirm this?</p>
+
+
+	<p>Additionally, please provide the output from the following command, both on the OSSEC and Prelude-Manager machine:</p>
+
+
+<pre>
+prelude-admin list -l
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-817" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by  <a title="07/12/2008 05:45 PM" href="/projects/libprelude/activity?from=2008-07-12">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-817-notes" class="wiki"><p>just to make clear : I run all sensors (ossec server,snort,prelude-lml) on the same machine as prelude.</p>
+
+
+	<p>summary of behavior with gnutls 2.0.4 &#38; default openbsd 4.3 packages of prelude.</p>
+
+
+	<p>1. ossec reponse when communicating with prelude-manager is "ossec-analysisd :prelude-client: Unable to initialize prelude client: TLS handshake failed: Could not negotiate a supported compression method.."</p>
+
+
+	<p>2. prelude-manager side says: "TLS error: A TLS packet with unexpected length was received" and then prelude-manager closes the connection.</p>
+
+
+	<p>3. i can confirm prelude-lml &#38; snort working, both were installed prior to ossec.</p>
+
+
+	<p>I will run the prelude-admin command tomorrow (when ill be in front of the computer) and provide the input.</p>
+
+
+	<p>Thanks for your help!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-818" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by  <a title="07/13/2008 01:29 PM" href="/projects/libprelude/activity?from=2008-07-13">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-818-notes" class="wiki"><p>prelude-admin list -l output:</p>
+
+
+	<p>Profile         UID   GID   [[AnalyzerID]]       Permission Issuer [[AnalyzerID]]<br />---------------------------------------------------------------------<br />prelude-manager root  wheel 556568847730105  n/a     n/a<br />OSSEC           ossec ossec 3784451519039096 idmef:w 556568847730105<br />prelude-lml     root  wheel 2102602455468194 idmef:w 556568847730105</p></div>
+    </div>
+  </div>
+  
+  <div id="change-819" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by  <a title="07/13/2008 02:57 PM" href="/projects/libprelude/activity?from=2008-07-13">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-819-notes" class="wiki"><p>tried even again just to make sure :<br />installed openbsd 4.3, prelude from openbsd port, ossec from source. TLS error (unexpected length) again...<br />prelude-lml works fine though.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-820" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/16/2008 11:21 AM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-820-notes" class="wiki"><p>Could you try starting OSSEC using either of the working Snort / Prelude-LML profile (you will have to use prelude-admin chown to make sure the profile fit OSSEC permissions).</p>
+
+
+	<p>Edit ossec.conf, and set:<br /><pre>
+&lt;prelude_profile&gt;your profile&lt;/prelude_profile&gt;
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-821" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by  <a title="07/16/2008 01:05 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-821-notes" class="wiki"><p>Hi Yoann,</p>
+
+
+	<p>1. I still get the same error after replacing OSSEC profile to prelude-lml.<br />2. I successfully installed latest prelude (from source, not openbsd package) + latest ossec on the same machine with gnutls-2.4.0.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-822" class="journal has-notes">
+    <div id="note-13">
+    <h4><a href="#note-13" class="journal-link">#13</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/16/2008 01:38 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-822-notes" class="wiki"><p>Thanks for the feedback! I'm suspecting a potential conflict problem between [[GnuTLS]] (which depend on libz), and OSSEC which seems to make use of it to.</p>
+
+
+	<p>One more things you can do to debug the problem, is to start both OSSEC and Prelude-Manager in the foreground with the following environment variable set:</p>
+
+
+<pre>
+LIBPRELUDE_TLS_DEBUG=10 prelude-manager &gt;&#38; /tmp/prelude-manager.debug
+</pre>
+
+<pre>
+LIBPRELUDE_TLS_DEBUG=10 ossec &gt;&#38; /tmp/ossec.debug
+</pre>
+
+	<p>Then provide us with both generated file (I'd advise to regenerate all your sensor profile once you'll be doing that, since the debug log might contain sensitive certificate information - or you can send me the log by mail privately).</p>
+
+
+	<p>Additionally, is the Prelude-Manager side [[GnuTLS]] version 2.0.4 too?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-823" class="journal has-notes has-details">
+    <div id="note-14">
+    <h4><a href="#note-14" class="journal-link">#14</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/16/2008 02:29 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    <div id="journal-823-notes" class="wiki"><p>You might want to apply <a class="attachment" href="/attachments/download/129/manager.diff">manager.diff</a> patch to Prelude-Manager and let us know whether this correct your problem. From my testing, it appear that [[GnuTLS]] set DEFLATE as the default compression protocol, although the documentation state that:</p>
+
+
+<pre>
+The Record protocol offers symmetric encryption, data authenticity, and optionally compression. 
+</pre>
+
+	<p>So compression should be optional, but apparently client are not able to connect with no compression. As a result, if one end (client / Prelude-Manager) [[GnuTLS]] version is compiled without zlib support, the connection fail.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-824" class="journal has-notes">
+    <div id="note-15">
+    <h4><a href="#note-15" class="journal-link">#15</a>
+    
+    Updated by  <a title="07/16/2008 04:21 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-824-notes" class="wiki"><p>Hey Yoann,</p>
+
+
+	<p>1. I attached the 2 debug files from ossec+prelude-manager.<br />2. prelude-manager + ossec server both installed on same machine so both use gnutls 2.0.4<br />3. Applying the patch to manager-auth.c did not help solve the problem (still the same error), but I could not find<br />the error message you added to manager-auth.c in the diff file...</p></div>
+    </div>
+  </div>
+  
+  <div id="change-825" class="journal has-notes">
+    <div id="note-16">
+    <h4><a href="#note-16" class="journal-link">#16</a>
+    
+    Updated by  <a title="07/16/2008 05:52 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-825-notes" class="wiki"><p>i checked the value of ret after the line : ret = gnutls_init(&#38;session, GNUTLS_SERVER);<br />value is 0 (=GNUTLS_E_SUCCESS) so initialization of the TLS session is successful.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-826" class="journal has-notes">
+    <div id="note-17">
+    <h4><a href="#note-17" class="journal-link">#17</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/16/2008 05:58 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-826-notes" class="wiki"><p>Thanks for the feedback.<br />Attached another patch for libprelude : <a class="attachment" href="/attachments/download/128/libprelude.diff">libprelude.diff</a>, please apply and restart both Prelude-Manager then OSSEC.</p>
+
+
+	<p>Additionally, could you please provide the "ldd" output for libgnutls.so, and check whether zlib is linked, on both the client and server side?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-827" class="journal has-notes">
+    <div id="note-18">
+    <h4><a href="#note-18" class="journal-link">#18</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/16/2008 06:13 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-827-notes" class="wiki"><p>Replying to [comment:16 anonymous]:</p>
+
+
+<blockquote>
+
+	<p>i checked the value of ret after the line : ret = gnutls_init(&#38;session, GNUTLS_SERVER);<br />value is 0 (=GNUTLS_E_SUCCESS) so initialization of the TLS session is successful.</p>
+
+
+</blockquote>
+
+	<p>Yes, that is expected: the problem occur within gnutls_handshake(), where both client and server are not able to negotiate a compatible compression scheme (or no compression scheme at all. Which should obviously work).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-828" class="journal has-notes">
+    <div id="note-19">
+    <h4><a href="#note-19" class="journal-link">#19</a>
+    
+    Updated by  <a title="07/16/2008 06:29 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-828-notes" class="wiki"><p>1. ldd /usr/local/lib/libgnutls.so.13.0 : linked with libz.so.4.1 (same machine)</p>
+
+
+	<p>2. applying the libprelude patch solved the problem.</p>
+
+
+	<p>thanks for all the help!</p>
+
+
+	<p>(BTW, dont know if you saw the message but i got it working yesterday with gnutls 2.4.0. so it works without the patch with 2.4.0 but patch is required for 2.0.4 &#38; 2.5.2 - these are the versions i tested)</p></div>
+    </div>
+  </div>
+  
+  <div id="change-829" class="journal has-notes">
+    <div id="note-20">
+    <h4><a href="#note-20" class="journal-link">#20</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/16/2008 06:33 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-829-notes" class="wiki"><p>Look like we're finally getting somewhere! There is one more clarification that we need in order to fixes the problem directly from the Prelude sources: does <a class="attachment" href="/attachments/download/128/libprelude.diff">libprelude.diff</a> fixes the problem with <strong>and</strong> without <a class="attachment" href="/attachments/download/129/manager.diff">manager.diff</a> applied?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-830" class="journal has-notes">
+    <div id="note-21">
+    <h4><a href="#note-21" class="journal-link">#21</a>
+    
+    Updated by  <a title="07/16/2008 06:47 PM" href="/projects/libprelude/activity?from=2008-07-16">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-830-notes" class="wiki"><p>I uninstalled prelude-manager &#38; installed the version from source again (without the patch) - authentication with ossec succeeded.<br />so the fix in libprelude module is sufficient to solve this problem.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-831" class="journal has-notes">
+    <div id="note-22">
+    <h4><a href="#note-22" class="journal-link">#22</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/17/2008 03:33 PM" href="/projects/libprelude/activity?from=2008-07-17">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-831-notes" class="wiki"><p>Thanks! In the modified libprelude source, could you locate the following line:</p>
+
+
+<pre>
+        const int c_prio[] = { GNUTLS_COMP_NULL, GNUTLS_COMP_DEFLATE, 0 }; 
+</pre>
+
+	<p>And change it to:</p>
+
+
+<pre>
+        const int c_prio[] = { GNUTLS_COMP_NULL, 0 }; 
+</pre>
+
+	<p>And tell me whether everything still work correctly?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-832" class="journal has-notes">
+    <div id="note-23">
+    <h4><a href="#note-23" class="journal-link">#23</a>
+    
+    Updated by  <a title="07/17/2008 04:42 PM" href="/projects/libprelude/activity?from=2008-07-17">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-832-notes" class="wiki"><p>works fine after the change. <br />so you basically disable protocol compression or fallback to no compression if handshake fails?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-833" class="journal has-notes">
+    <div id="note-24">
+    <h4><a href="#note-24" class="journal-link">#24</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/18/2008 11:11 AM" href="/projects/libprelude/activity?from=2008-07-18">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-833-notes" class="wiki"><p>The workaround explicitly disable TLS deflate compression in the client. [[GnuTLS]] default settings is that deflate is not used, but for some reason, in your case, it seems to be marked as the default compression method, leading to a failure since Prelude-Manager is not configured to support it. I guess this probably have to do with the OSSEC zlib dependency.</p>
+
+
+	<p>By any chance, are you able to reproduce <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: error when making libprelude (Closed)" href="/issues/300">#300</a> on your [[OpenBSD]] platform?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-834" class="journal has-notes has-details">
+    <div id="note-25">
+    <h4><a href="#note-25" class="journal-link">#25</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/18/2008 05:13 PM" href="/projects/libprelude/activity?from=2008-07-18">over 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-834-notes" class="wiki"><p>(In r10682) Add support for newer [[GnuTLS]] 2.2.0 session priority functions. When<br />the option is available, the user might specify TLS settings through<br />the "tls-options" configuration entry.</p>
+
+
+	<p>This additionally fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: TLS error with OSSEC (Closed)" href="/issues/299">#299</a> (problem negotiating compression method<br />when connecting to Prelude-Manager).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-835" class="journal has-notes">
+    <div id="note-26">
+    <h4><a href="#note-26" class="journal-link">#26</a>
+    
+    Updated by  <a title="07/20/2008 11:56 AM" href="/projects/libprelude/activity?from=2008-07-20">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-835-notes" class="wiki"><p>Replying to [comment:24 yoann]:</p>
+
+
+<blockquote>
+
+	<p>The workaround explicitly disable TLS deflate compression in the client. [[GnuTLS]] default settings is that deflate is not used, but for some reason, in your case, it seems to be marked as the default compression method, leading to a failure since Prelude-Manager is not configured to support it. I guess this probably have to do with the OSSEC zlib dependency.</p>
+
+
+	<p>By any chance, are you able to reproduce <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: error when making libprelude (Closed)" href="/issues/300">#300</a> on your [[OpenBSD]] platform?</p>
+
+
+</blockquote>
+
+	<p>yes, it was me who opened it...sorry i didn't have the time to upload the files requested, I was busy with <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: TLS error with OSSEC (Closed)" href="/issues/299">#299</a> :)<br />I will add the files soon.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-958" class="journal has-details">
+    <div id="note-27">
+    <h4><a href="#note-27" class="journal-link">#27</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:04 PM" href="/projects/libprelude/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Libprelude</i></li>
+       <li><strong>Category</strong> deleted (<del><i>1</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.18</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/299.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/299.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

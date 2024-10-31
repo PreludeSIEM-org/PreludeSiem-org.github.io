@@ -1,0 +1,15 @@
+From eb342543b6e29ca74a42a27a90a79985e6401065 Mon Sep 17 00:00:00 2001
+From: Wes Young <wes@barely3am.com>
+Date: Mon, 14 Sep 2009 14:38:38 +0000
+Subject: [PATCH] added placeholder that swig -java needs for output
+
+---
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 bindings/java/com/prelude/easy/.scm_placeholder
+
+diff --git a/bindings/java/com/prelude/easy/.scm_placeholder b/bindings/java/com/prelude/easy/.scm_placeholder
+new file mode 100644
+index 0000000..e69de29
+-- 
+1.5.6.5
+

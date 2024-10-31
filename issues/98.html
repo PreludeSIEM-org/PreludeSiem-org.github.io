@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Feature #98: SHADOW (NIDS) sensor - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="2VFIKoQAny6APHWKohdpqp5itQhvYcoESUFPlBfCrU7KfiBFTRSSrQqWfXC/XyD04inElnVrk0qXz4sEk8KZTQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="PRELUDE SIEM - Feature #98: SHADOW (NIDS) sensor" href="http://www.prelude-siem.org/issues/98.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude/issues/report">Summary</a></li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #98</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#72" accesskey="p" href="/issues/72">« Previous</a> |
+        <span class="position">48 of 78</span> |
+      <a title="#107" accesskey="n" href="/issues/107">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>SHADOW (NIDS) sensor</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="09/05/2005 10:50 AM" href="/projects/prelude/activity?from=2005-09-05">about 19 years</a> ago.
+        Updated <a title="05/15/2008 01:03 PM" href="/projects/prelude/activity?from=2008-05-15">over 16 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="category attribute"><div class="label">Category:</div><div class="value">generic</div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Create an interface/plugin to port the SHADOW output to Prelude system.</p>
+
+
+	<p>SHADOW is the result of a project that was originally called the Cooperative Intrusion Detection Evaluation and Response (CIDER) project. It was an effort of NSWC Dahlgren, NFR, NSA, the SANS community and other interested parties to locate, document, and improve security software.</p>
+
+
+	<p>URL: <a class="external" href="http://www.nswc.navy.mil/ISSEC/CID/">http://www.nswc.navy.mil/ISSEC/CID/</a></p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/19/shadow-prelude.tar.gz">shadow-prelude.tar.gz</a>   - SHA(shadow-prelude.tar.gz)= 777b8923933c5290e25cc6aac8303e09755fdd93
+  <span class="size">(7.97 KB)</span>
+    <span class="author">, 09/06/2005 09:31 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/18/shadow-prelude.tar.2.gz">shadow-prelude.tar.2.gz</a>   - New update.
+  <span class="size">(8.34 KB)</span>
+    <span class="author">, 09/07/2005 12:02 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-210" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by  <a title="09/06/2005 09:50 AM" href="/projects/prelude/activity?from=2005-09-06">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-210-notes" class="wiki"><p>Here is the first release of the SHADOW sensor for the Prelude system. The archive contains 4 (=four) files: README, fetchem.pl, odict.py and shadow_prelude.py</p>
+
+
+	<p>shadow_prelude.py:<br />This is main program for sending SHADOW information to Prelude Manager. To use this, you will need to install libpcap (<a class="external" href="http://sourceforge.net/projects/pylibpcap/">http://sourceforge.net/projects/pylibpcap/</a>).</p>
+
+
+	<p>The odict.py:<br />This dictionary class extends <a class="wiki-page new" href="/projects/prelude/wiki/UserDict">UserDict</a> to record the order in which items are added. Calling keys(), values(), items(), etc. will return results in this order. This works similarly to the array type in PHP.<br /><a class="external" href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/107747">http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/107747</a></p>
+
+
+	<p>Maybe you will wondering why not write it in Perl? (due that SHADOW is written mainly in Perl)<br />Due to a fact that I had quite a lot of problems to get the pcap modules compiled an work on our systems. (Even one time coredumped on me... :/)</p>
+
+
+	<p>To add the SHADOW output to Prelude system, you will need to do a few things<br />first:<br />- Extract the archive in the SHADOW work directory (e.g. /usr/local/SHADOW)<br />- Add the following line to shadow.conf file (normally located<br />  /etc/shadow.conf)<br />  our $PRELUDE_CMD = "$SHADOW_PATH/prelude/shadow_prelude.py";<br />- Register SHADOW to your Prelude Manager:
+  # prelude-adduser register shadow "idmef:w" &lt;manager address&gt; \<br />     --uid &lt;shadow uid&gt; --gid &lt;shadow gid&gt;<br />- Add $SHADOW_PATH/prelude/fetchem.pl to the shadow user crontab. You can<br />  use the prelude fetchem.pl the same way as the default fetchem.pl from<br />  SHADOW.<br />  Basicly, the prelude fetchem.pl is a stripped down version of the default<br />  SHADOW fetchem.pl. This version doesn't generate the HTML output.</p>
+
+
+	<pre><code>e.g.<br />  [crontab]<br />   SHADOW_PATH=/usr/local/SHADOW<br />   $SHADOW_PATH/prelude/fetchem.pl -l dmz<br />  [end crontab]</code></pre>
+
+
+	<p>To download the archive: <a class="external" href="https://trac.prelude-ids.org/ticket/98">https://trac.prelude-ids.org/ticket/98</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-211" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="09/06/2005 11:20 AM" href="/projects/prelude/activity?from=2005-09-06">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-211-notes" class="wiki"><p>Sample alert:</p>
+
+
+<pre>
+alert:
+        messageid: 5420964139
+        analyzer(0): 
+                analyzerid: 3433123102790297
+                name: IDS
+                manufacturer: http://www.prelude-ids.com
+                model: Prelude Manager
+                version: 0.9.0-rc8
+                class: Concentrator
+                ostype: [[FreeBSD]]
+                osversion: 5.3-RELEASE
+                node:
+                        category: unknown (0)
+                        location: ids
+                        name: ids
+                        address(0): 
+                                category: unknown (0)
+                                address: 10.20.30.40
+                                netmask: 255.255.255.255
+                process:
+                        name: prelude-manager
+                        pid: 78349
+                        path: /usr/local/bin/prelude-manager
+        analyzer(1): 
+                analyzerid: 3059495309421489
+                name: SHADOW
+                model: Shadow
+                version: 1.8
+                class: NIDS
+                ostype: [[FreeBSD]]
+                osversion: 5.3-RELEASE
+                node:
+                        category: unknown (0)
+                        location: ids
+                        name: ids
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 10.20.30.40
+                process:
+                        name: shadow_prelude.py
+                        pid: 78369
+                        path: /usr/local/SHADOW/prelude/shadow_prelude.py
+        create_time: 06/09/2005 10:54:03.473155 +02:00
+        classification:
+                text: Anomaly Intrusion detected
+        detect_time: 05/09/2005 08:01:11.0 +02:00
+        analyzer_time: 06/09/2005 10:54:03.475415 +02:00
+        source(0): 
+                spoofed: unknown (0)
+                node:
+                        category: unknown (0)
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 172.16.1.4
+                service:
+                        ip_version: 4
+                        iana_protocol_number: 17
+                        iana_protocol_name: udp
+                        port: 61952
+                        protocol: udp
+        target(0): 
+                decoy: unknown (0)
+                node:
+                        category: unknown (0)
+                        address(0): 
+                                category: ipv4-addr (7)
+                                address: 172.16.2.3
+                service:
+                        ip_version: 4
+                        iana_protocol_number: 17
+                        iana_protocol_name: udp
+                        port: 51201
+                        protocol: udp
+        assessment:
+                impact:
+                        severity: medium (3)
+                        type: recon (4)
+        additional_data(0): 
+                type: integer (4)
+                meaning: ip_hlen
+                data: 5
+        additional_data(1): 
+                type: integer (4)
+                meaning: ip_tos
+                data: 0
+        additional_data(2): 
+                type: integer (4)
+                meaning: ip_len
+                data: 32
+        additional_data(3): 
+                type: integer (4)
+                meaning: ip_id
+                data: 29225
+        additional_data(4): 
+                type: integer (4)
+                meaning: ip_flags
+                data: 0
+        additional_data(5): 
+                type: integer (4)
+                meaning: ip_frag
+                data: 0
+        additional_data(6): 
+                type: integer (4)
+                meaning: ip_ttl
+                data: 63
+        additional_data(7): 
+                type: integer (4)
+                meaning: ip_proto
+                data: 17
+        additional_data(8): 
+                type: integer (4)
+                meaning: ip_csum
+                data: 44668
+        additional_data(9): 
+                type: integer (4)
+                meaning: ip_df
+                data: 1
+        additional_data(10): 
+                type: integer (4)
+                meaning: udp_len
+                data: 12
+        additional_data(11): 
+                type: integer (4)
+                meaning: udp_csum
+                data: 60071
+        additional_data(12): 
+                type: byte-string (9)
+                meaning: payload
+                data: \x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x\x%02x
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-212" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by  <a title="09/07/2005 12:05 PM" href="/projects/prelude/activity?from=2005-09-07">about 19 years</a> ago
+    </h4>
+
+    <div id="journal-212-notes" class="wiki"><p>New update. Now it is possible to set a custom profile name in the /etc/shadow.conf or by using --profile &lt;profile name&gt; with fetchem.pl.</p>
+
+
+	<p><a class="external" href="https://trac.prelude-ids.org/attachment/ticket/98/shadow-prelude.tar.2.gz">https://trac.prelude-ids.org/attachment/ticket/98/shadow-prelude.tar.2.gz</a></p></div>
+    </div>
+  </div>
+  
+  <div id="change-213" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="05/02/2007 02:50 PM" href="/projects/prelude/activity?from=2007-05-02">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-213-notes" class="wiki"><p>What about creating a project page for the SHADOW->Prelude project, and closing this ticket?<br />Additionally, you might host the SHADOW project page on the trac.prelude-ids.org wiki if you wish.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-214" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by  <a title="05/03/2007 03:59 PM" href="/projects/prelude/activity?from=2007-05-03">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-214-notes" class="wiki"><p>Replying to [comment:5 yoann]:</p>
+
+
+<blockquote>
+
+	<p>What about creating a project page for the SHADOW->Prelude project, and closing this ticket?<br />Additionally, you might host the SHADOW project page on the trac.prelude-ids.org wiki if you wish.</p>
+
+
+</blockquote>
+
+	<p>After a long think and debate with myself about this 'feature' , I don't see the point to keep this active for Prelude. I rather see a connection between session data (e.g. sancp, Argus (raplude)) and full content data (tcpdump, snort (in dump mode) or daemonlogger).<br />Also the current 'support/contribution' for SHADOW is already long gone and very outdated.</p>
+
+
+	<p>I'm already looking for possibilities to use the session data with full content in Prewikka. Although at the moment I need to finish my project first.</p>
+
+
+	<p>I will (as I said before) come back to you on this, to see what the possibilities are to include this in Prewikka.</p>
+
+
+	<p>In the mean time, you can close this ticket. Unless you think otherwise to keep this going...</p>
+
+
+	<p>Regards,</p>
+
+
+	<p>Robin</p></div>
+    </div>
+  </div>
+  
+  <div id="change-215" class="journal has-notes has-details">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="05/10/2007 03:13 PM" href="/projects/prelude/activity?from=2007-05-10">over 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-215-notes" class="wiki"><p>I'm thus closing this ticket. Also, if that is of any interest, <a class="wiki-page new" href="/projects/prelude/wiki/SanCP">SanCP</a> Prelude support need some love.</p></div>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/98.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/98.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

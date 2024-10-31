@@ -1,0 +1,12 @@
+diff -urp libprelude-1.0.0.orig/bindings/c++/include/prelude.hxx libprelude-1.0.0/bindings/c++/include/prelude.hxx
+--- libprelude-1.0.0.orig/bindings/c++/include/prelude.hxx	2011-06-24 12:58:29.000000000 -0400
++++ libprelude-1.0.0/bindings/c++/include/prelude.hxx	2011-06-24 12:59:01.000000000 -0400
+@@ -26,6 +26,8 @@
+ #ifndef _LIBPRELUDE_PRELUDE_HXX
+ #define _LIBPRELUDE_PRELUDE_HXX
+ 
++#include <stddef.h>
++
+ #include "prelude-client.hxx"
+ #include "prelude-client-easy.hxx"
+ #include "prelude-connection.hxx"

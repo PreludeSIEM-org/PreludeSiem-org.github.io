@@ -1,0 +1,151 @@
+Prelude OSS 1.0.1
+=================
+
+
+2012-06-04, libprelude-1.0.1
+----------------------------
+
+- Fixed typo in setup.py.in
+
+- Added packaging for rhel6
+
+- Changed copyright
+
+- Prevent freeing IDMEF message value on idmef_message_get_string()
+  idmef_message_get_string() used to free the value within the IDMEF
+  message, because prelude_string_get_string_released() was used. As
+  a result, further idmef_message_get_string() on the same IDMEF path
+  where returning null value.
+
+- C++ compilation fixes
+  Include idmef-data.h, required for idmef_data_t declaration.
+
+
+2012-06-01, libpreludedb-1.0.1
+------------------------------
+
+- Changed copyright
+
+- Added packaging for rhel6
+
+- Call prelude_transaction_abort() on empty IDMEF message.
+    
+  When trying to insert a message containing no alert/heartbeat,
+  the database would remain locked since preludedb_transaction_abort()
+  was not called.
+
+- Whitespace police
+
+- C++ compilation fixes
+    
+  Include required dependencies, and add missing cast to preludedb-error.h
+
+- Fixed some compile errors with g++
+
+
+2012-06-01, prelude-correlator-1.0.1
+------------------------------------
+
+- Fixed #494 : Prelude Correlator not stopping
+
+- Changed Copyright
+
+- Added packaging for rhel6
+
+- Ability to specify an input IDMEF criteria
+
+  There is now a [general] configuration section in prelude-correlator.conf
+  allowing to specify a criteria option that use an IDMEF criteria parameter
+  as an argument.
+    
+  Using this option, it is possible to specify an input filter for events
+  to be processed by the correlator.
+    
+  Additionally, always use an IDMEFCriteria to check whether the input
+  event is an alert, in place of manually retrieving alert.create_time.
+
+- Fixed some typo
+
+- Implement Context time merging capability
+    
+  Introduced time merging capability within Prelude-Correlator:
+  as of now, correlation contexts are associated with the time of the
+  triggering IDMEF event.
+    
+  When searching for a matching context, an existing context will only be
+  returned in case the specified search time match the time windows of an
+  existing context.
+    
+  This mean that when receiving a burst of events, the time carried with
+  events is directly taken into account : separate instances exists for
+  the same Context associated with events received at a different time.
+    
+  Additionally, context can be merged if more than one context time windows
+  overlap.
+
+
+2012-06-05, prelude-lml-1.0.1
+-----------------------------
+
+- Changed copyrights
+
+- Added packaging for rhel6
+
+- Contributed rules by <operador@sesabe.mooo.com>
+  
+  Added rules for Cisco ips 4200, Juniper SSLVPN, Symantec SEP 12.1 AV, Freeradius
+  Updated rules for Cisco ASA
+
+
+2012-06-05, prelude-manager-1.0.2
+---------------------------------
+
+- Changed copyrights
+
+- Added packaging for rhel6
+
+- Relaying functions have been transfered to the Enterprise Edition
+
+
+2012-06-04, prelude-notify-0.9.2
+--------------------------------
+
+- Changed copyrights
+
+- Added packaging for rhel6
+
+- Improved configuration and themes management
+    
+  Configuration now relies by default on a system-wide config file.
+  Added a full themes support to easily customize prelude-notify
+
+
+2012-06-04, prewikka-1.0.1
+--------------------------
+
+- Updated french, german and italian translations
+
+- Added missing translations msgid
+
+- The login page uses now the default language defined in prewikka.conf
+
+- Added packaging for rhel6
+
+- Changed copyrights
+
+- Updated About and SensorListing views
+
+- CSS enhancements, texts more readable
+
+- New  parameters (#471) : enable_details, host_details_url, port_details_url, reference_details_url
+
+- Fixed #482 : TypeError in alertlisting view
+
+- Fixed UnicodeDecodeError in prepareError
+
+- Fixed #469 : Heartbeat analyser failed
+
+- Fixed #475 : Filtering on sensors status hides all sensors
+
+- Fixed #381 : exception with CGI authentication
+

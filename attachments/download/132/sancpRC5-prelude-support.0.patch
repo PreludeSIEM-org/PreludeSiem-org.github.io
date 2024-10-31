@@ -1,0 +1,23 @@
+diff -Nrudb sancp-1.6.2-candidate.C.5.origin/build_acl.cc sancp-1.6.2-candidate.C.5/build_acl.cc
+--- sancp-1.6.2-candidate.C.5.origin/build_acl.cc	2008-08-06 11:45:00.000000000 +0200
++++ sancp-1.6.2-candidate.C.5/build_acl.cc	2008-08-06 11:45:14.000000000 +0200
+@@ -1637,7 +1637,7 @@
+ 			free(rule);
+ 			return;
+ 		}
+-		gVars.profile = strdup(tmp);
++		gVars.prelude_profile = strdup(tmp);
+ 		free(rule);
+ 		return;
+ 	}
+diff -Nrudb sancp-1.6.2-candidate.C.5.origin/sancp.h sancp-1.6.2-candidate.C.5/sancp.h
+--- sancp-1.6.2-candidate.C.5.origin/sancp.h	2008-08-06 11:45:00.000000000 +0200
++++ sancp-1.6.2-candidate.C.5/sancp.h	2008-08-06 11:46:06.000000000 +0200
+@@ -322,6 +322,7 @@
+     u_int16_t node;
+     u_int16_t zone;
+ #ifdef ENABLE_PRELUDE_SUPPORT
++    char *prelude_profile;
+     char *prelude_impact_severity;
+     char *prelude_impact_completion;
+     char *prelude_impact_type;

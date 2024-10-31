@@ -1,0 +1,1488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>preludedb-sql</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libpreludedb Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libpreludedb-preludedb-error.html" title="preludedb-error">
+<link rel="next" href="libpreludedb-preludedb-plugin-sql.html" title="preludedb-plugin-sql">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libpreludedb-preludedb-error.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libpreludedb Reference Manual</th>
+<td><a accesskey="n" href="libpreludedb-preludedb-plugin-sql.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libpreludedb-preludedb-sql.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libpreludedb-preludedb-sql.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="preludedb-sql">
+<a name="libpreludedb-preludedb-sql"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libpreludedb-preludedb-sql.top_of_page"></a>preludedb-sql</span></h2>
+<p>preludedb-sql</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libpreludedb-preludedb-sql.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             PRELUDEDB_SQL_TIMESTAMP_STRING_SIZE
+enum                preludedb_sql_time_constraint_type_t;
+typedef             preludedb_sql_t;
+typedef             preludedb_sql_table_t;
+typedef             preludedb_sql_row_t;
+typedef             preludedb_sql_field_t;
+int                 preludedb_sql_new                   (preludedb_sql_t **newdb,
+                                                         const char *type,
+                                                         preludedb_sql_settings_t *settings);
+void                preludedb_sql_destroy               (preludedb_sql_t *sql);
+int                 preludedb_sql_enable_query_logging  (preludedb_sql_t *sql,
+                                                         const char *filename);
+void                preludedb_sql_disable_query_logging (preludedb_sql_t *sql);
+const char *        preludedb_sql_get_plugin_error      (preludedb_sql_t *sql);
+int                 preludedb_sql_query                 (preludedb_sql_t *sql,
+                                                         const char *query,
+                                                         preludedb_sql_table_t **table);
+int                 preludedb_sql_query_sprintf         (preludedb_sql_t *sql,
+                                                         preludedb_sql_table_t **table,
+                                                         const char *format,
+                                                         ...);
+int                 preludedb_sql_insert                (preludedb_sql_t *sql,
+                                                         const char *table,
+                                                         const char *fields,
+                                                         const char *format,
+                                                         ...);
+int                 preludedb_sql_build_limit_offset_string
+                                                        (preludedb_sql_t *sql,
+                                                         int limit,
+                                                         int offset,
+                                                         prelude_string_t *output);
+int                 preludedb_sql_transaction_start     (preludedb_sql_t *sql);
+int                 preludedb_sql_transaction_end       (preludedb_sql_t *sql);
+int                 preludedb_sql_transaction_abort     (preludedb_sql_t *sql);
+int                 preludedb_sql_escape_fast           (preludedb_sql_t *sql,
+                                                         const char *input,
+                                                         size_t input_size,
+                                                         char **output);
+int                 preludedb_sql_escape                (preludedb_sql_t *sql,
+                                                         const char *input,
+                                                         char **output);
+int                 preludedb_sql_escape_binary         (preludedb_sql_t *sql,
+                                                         unsigned char *input,
+                                                         size_t input_size,
+                                                         char **output);
+int                 preludedb_sql_unescape_binary       (preludedb_sql_t *sql,
+                                                         const char *input,
+                                                         size_t input_size,
+                                                         unsigned char **output,
+                                                         size_t *output_size);
+void                preludedb_sql_table_destroy         (preludedb_sql_table_t *table);
+const char *        preludedb_sql_table_get_column_name (preludedb_sql_table_t *table,
+                                                         unsigned int column_num);
+int                 preludedb_sql_table_get_column_num  (preludedb_sql_table_t *table,
+                                                         const char *column_name);
+unsigned int        preludedb_sql_table_get_column_count
+                                                        (preludedb_sql_table_t *table);
+unsigned int        preludedb_sql_table_get_row_count   (preludedb_sql_table_t *table);
+int                 preludedb_sql_table_fetch_row       (preludedb_sql_table_t *table,
+                                                         preludedb_sql_row_t **row);
+int                 preludedb_sql_row_fetch_field       (preludedb_sql_row_t *row,
+                                                         int column_num);
+int                 preludedb_sql_row_fetch_field_by_name
+                                                        (preludedb_sql_row_t *row,
+                                                         const char *column_name);
+size_t              preludedb_sql_field_get_len         (preludedb_sql_field_t *field);
+int                 preludedb_sql_field_to_int8         (preludedb_sql_field_t *field,
+                                                         int8_t *value);
+int                 preludedb_sql_field_to_uint8        (preludedb_sql_field_t *field,
+                                                         uint8_t *value);
+int                 preludedb_sql_field_to_int16        (preludedb_sql_field_t *field,
+                                                         int16_t *value);
+int                 preludedb_sql_field_to_uint16       (preludedb_sql_field_t *field,
+                                                         uint16_t *value);
+int                 preludedb_sql_field_to_int32        (preludedb_sql_field_t *field,
+                                                         int32_t *value);
+int                 preludedb_sql_field_to_uint32       (preludedb_sql_field_t *field,
+                                                         uint32_t *value);
+int                 preludedb_sql_field_to_int64        (preludedb_sql_field_t *field,
+                                                         int64_t *value);
+int                 preludedb_sql_field_to_uint64       (preludedb_sql_field_t *field,
+                                                         uint64_t *value);
+int                 preludedb_sql_field_to_float        (preludedb_sql_field_t *field,
+                                                         float *value);
+int                 preludedb_sql_field_to_double       (preludedb_sql_field_t *field,
+                                                         double *value);
+int                 preludedb_sql_field_to_string       (preludedb_sql_field_t *field,
+                                                         prelude_string_t *output);
+int                 preludedb_sql_build_criterion_string
+                                                        (preludedb_sql_t *sql,
+                                                         prelude_string_t *output,
+                                                         const char *field,
+                                                         idmef_criterion_operator_t idmef_operator,
+                                                         idmef_criterion_value_t *value);
+int                 preludedb_sql_time_from_timestamp   (idmef_time_t *time,
+                                                         const char *time_buf,
+                                                         int32_t gmtoff,
+                                                         uint32_t usec);
+int                 preludedb_sql_time_to_timestamp     (preludedb_sql_t *sql,
+                                                         const idmef_time_t *time,
+                                                         char *time_buf,
+                                                         size_t time_buf_size,
+                                                         char *gmtoff_buf,
+                                                         size_t gmtoff_buf_size,
+                                                         char *usec_buf,
+                                                         size_t usec_buf_size);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libpreludedb-preludedb-sql.description"></a><h2>Description</h2>
+<p>
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libpreludedb-preludedb-sql.details"></a><h2>Details</h2>
+<div class="refsect2" title="PRELUDEDB_SQL_TIMESTAMP_STRING_SIZE">
+<a name="PRELUDEDB-SQL-TIMESTAMP-STRING-SIZE--CAPS"></a><h3>PRELUDEDB_SQL_TIMESTAMP_STRING_SIZE</h3>
+<pre class="programlisting">#define PRELUDEDB_SQL_TIMESTAMP_STRING_SIZE 128
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum preludedb_sql_time_constraint_type_t">
+<a name="preludedb-sql-time-constraint-type-t"></a><h3>enum preludedb_sql_time_constraint_type_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDEDB_SQL_TIME_CONSTRAINT_YEAR  = 8,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_MONTH = 1,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_YDAY  = 2,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_MDAY  = 3,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_WDAY  = 4,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_HOUR  = 5,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_MIN   = 6,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_SEC   = 7,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_MSEC  = 9,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_USEC  = 10,
+        PRELUDEDB_SQL_TIME_CONSTRAINT_QUARTER = 11
+} preludedb_sql_time_constraint_type_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_t">
+<a name="preludedb-sql-t"></a><h3>preludedb_sql_t</h3>
+<pre class="programlisting">typedef struct preludedb_sql preludedb_sql_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_table_t">
+<a name="preludedb-sql-table-t"></a><h3>preludedb_sql_table_t</h3>
+<pre class="programlisting">typedef struct preludedb_sql_table preludedb_sql_table_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_row_t">
+<a name="preludedb-sql-row-t"></a><h3>preludedb_sql_row_t</h3>
+<pre class="programlisting">typedef struct preludedb_sql_row preludedb_sql_row_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_t">
+<a name="preludedb-sql-field-t"></a><h3>preludedb_sql_field_t</h3>
+<pre class="programlisting">typedef struct preludedb_sql_field preludedb_sql_field_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_new ()">
+<a name="preludedb-sql-new"></a><h3>preludedb_sql_new ()</h3>
+<pre class="programlisting">int                 preludedb_sql_new                   (preludedb_sql_t **newdb,
+                                                         const char *type,
+                                                         preludedb_sql_settings_t *settings);</pre>
+<p>
+This function initialize the <em class="parameter"><code>new</code></em> object, load and setup the plugin that
+handle the database named <em class="parameter"><code>type</code></em> with the configuration stored in <em class="parameter"><code>settings</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>newdb</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em> :</span></p></td>
+<td> Type of the database.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>settings</code></em> :</span></p></td>
+<td> Settings for the choosen database.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_destroy ()">
+<a name="preludedb-sql-destroy"></a><h3>preludedb_sql_destroy ()</h3>
+<pre class="programlisting">void                preludedb_sql_destroy               (preludedb_sql_t *sql);</pre>
+<p>
+Destroy <em class="parameter"><code>sql</code></em> and the underlying plugin.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_enable_query_logging ()">
+<a name="preludedb-sql-enable-query-logging"></a><h3>preludedb_sql_enable_query_logging ()</h3>
+<pre class="programlisting">int                 preludedb_sql_enable_query_logging  (preludedb_sql_t *sql,
+                                                         const char *filename);</pre>
+<p>
+Log all queries in the specified file.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>filename</code></em> :</span></p></td>
+<td> Where the logs will be written.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_disable_query_logging ()">
+<a name="preludedb-sql-disable-query-logging"></a><h3>preludedb_sql_disable_query_logging ()</h3>
+<pre class="programlisting">void                preludedb_sql_disable_query_logging (preludedb_sql_t *sql);</pre>
+<p>
+Disable query logging.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_get_plugin_error ()">
+<a name="preludedb-sql-get-plugin-error"></a><h3>preludedb_sql_get_plugin_error ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_get_plugin_error      (preludedb_sql_t *sql);</pre>
+<div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p><code class="literal">preludedb_sql_get_plugin_error</code> is deprecated and should not be used in newly-written code. Use <code class="function">preludedb_strerror()</code>.</p>
+</div>
+<p>
+Get sql plugin specific error message.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> a non NULL pointer or a NULL pointer if no error is available.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_query ()">
+<a name="preludedb-sql-query"></a><h3>preludedb_sql_query ()</h3>
+<pre class="programlisting">int                 preludedb_sql_query                 (preludedb_sql_t *sql,
+                                                         const char *query,
+                                                         preludedb_sql_table_t **table);</pre>
+<p>
+Execute a SQL query.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>query</code></em> :</span></p></td>
+<td> The SQL query to execute.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> Pointer to a table where the query result will be stored if the type of query return
+results (i.e a SELECT can results, but an INSERT never results) and if the query is sucessfull.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 1 if result are available, 0 for no result, -1 if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_query_sprintf ()">
+<a name="preludedb-sql-query-sprintf"></a><h3>preludedb_sql_query_sprintf ()</h3>
+<pre class="programlisting">int                 preludedb_sql_query_sprintf         (preludedb_sql_t *sql,
+                                                         preludedb_sql_table_t **table,
+                                                         const char *format,
+                                                         ...);</pre>
+<p>
+Execute a SQL query.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> Pointer to a table where the query result will be stored if the type of query return
+results (i.e a SELECT can results, but an INSERT never results) and if the query is sucessfull.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td> The SQL query to execute in a printf format string.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td> Arguments referenced in <em class="parameter"><code>format</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 1 if the query returns results, 0 if it does not, or negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_insert ()">
+<a name="preludedb-sql-insert"></a><h3>preludedb_sql_insert ()</h3>
+<pre class="programlisting">int                 preludedb_sql_insert                (preludedb_sql_t *sql,
+                                                         const char *table,
+                                                         const char *fields,
+                                                         const char *format,
+                                                         ...);</pre>
+<p>
+Insert values in a table.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> the name of the table where to insert values.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fields</code></em> :</span></p></td>
+<td> a list of comma separated field names where the values will be inserted.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td> The values to insert in a printf format string.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>...</code></em> :</span></p></td>
+<td> Argument referenced throught <em class="parameter"><code>format</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_build_limit_offset_string ()">
+<a name="preludedb-sql-build-limit-offset-string"></a><h3>preludedb_sql_build_limit_offset_string ()</h3>
+<pre class="programlisting">int                 preludedb_sql_build_limit_offset_string
+                                                        (preludedb_sql_t *sql,
+                                                         int limit,
+                                                         int offset,
+                                                         prelude_string_t *output);</pre>
+<p>
+Build a limit/offset string for a SQL query, depending on the underlying type of database.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>limit</code></em> :</span></p></td>
+<td> The limit value, a value inferior to zero will disable the limit.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>offset</code></em> :</span></p></td>
+<td> The offset value, a value inferior to zero will disable the offset.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> Where the limit/offset built string will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_transaction_start ()">
+<a name="preludedb-sql-transaction-start"></a><h3>preludedb_sql_transaction_start ()</h3>
+<pre class="programlisting">int                 preludedb_sql_transaction_start     (preludedb_sql_t *sql);</pre>
+<p>
+Begin a sql transaction.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_transaction_end ()">
+<a name="preludedb-sql-transaction-end"></a><h3>preludedb_sql_transaction_end ()</h3>
+<pre class="programlisting">int                 preludedb_sql_transaction_end       (preludedb_sql_t *sql);</pre>
+<p>
+Finish a sql transaction (SQL COMMIT command).</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_transaction_abort ()">
+<a name="preludedb-sql-transaction-abort"></a><h3>preludedb_sql_transaction_abort ()</h3>
+<pre class="programlisting">int                 preludedb_sql_transaction_abort     (preludedb_sql_t *sql);</pre>
+<p>
+Abort a sql transaction (SQL ROLLBACK command).</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_escape_fast ()">
+<a name="preludedb-sql-escape-fast"></a><h3>preludedb_sql_escape_fast ()</h3>
+<pre class="programlisting">int                 preludedb_sql_escape_fast           (preludedb_sql_t *sql,
+                                                         const char *input,
+                                                         size_t input_size,
+                                                         char **output);</pre>
+<p>
+Escape a string buffer.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td> Buffer to escape
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input_size</code></em> :</span></p></td>
+<td> Buffer size.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> Where the new escaped buffer will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_escape ()">
+<a name="preludedb-sql-escape"></a><h3>preludedb_sql_escape ()</h3>
+<pre class="programlisting">int                 preludedb_sql_escape                (preludedb_sql_t *sql,
+                                                         const char *input,
+                                                         char **output);</pre>
+<p>
+Escape a string buffer.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td> Buffer to escape.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> Where the new escaped buffer will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_escape_binary ()">
+<a name="preludedb-sql-escape-binary"></a><h3>preludedb_sql_escape_binary ()</h3>
+<pre class="programlisting">int                 preludedb_sql_escape_binary         (preludedb_sql_t *sql,
+                                                         unsigned char *input,
+                                                         size_t input_size,
+                                                         char **output);</pre>
+<p>
+Escape a binary buffer.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td> Buffer to escape.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input_size</code></em> :</span></p></td>
+<td> Buffer size.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> Where the new escaped buffer will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_unescape_binary ()">
+<a name="preludedb-sql-unescape-binary"></a><h3>preludedb_sql_unescape_binary ()</h3>
+<pre class="programlisting">int                 preludedb_sql_unescape_binary       (preludedb_sql_t *sql,
+                                                         const char *input,
+                                                         size_t input_size,
+                                                         unsigned char **output,
+                                                         size_t *output_size);</pre>
+<p>
+Unescape to a binary buffer.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td> Buffer to unescape.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input_size</code></em> :</span></p></td>
+<td> Buffer size.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> Where the new unescaped buffer will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output_size</code></em> :</span></p></td>
+<td> Size of the new unescape buffer.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_table_destroy ()">
+<a name="preludedb-sql-table-destroy"></a><h3>preludedb_sql_table_destroy ()</h3>
+<pre class="programlisting">void                preludedb_sql_table_destroy         (preludedb_sql_table_t *table);</pre>
+<p>
+Destroy the <em class="parameter"><code>table</code></em> object.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> Pointer to a table object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_table_get_column_name ()">
+<a name="preludedb-sql-table-get-column-name"></a><h3>preludedb_sql_table_get_column_name ()</h3>
+<pre class="programlisting">const char *        preludedb_sql_table_get_column_name (preludedb_sql_table_t *table,
+                                                         unsigned int column_num);</pre>
+<p>
+Get the name of the column number <em class="parameter"><code>column_num</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> Pointer to a table object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column_num</code></em> :</span></p></td>
+<td> Column number.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the name of the column or NULL if the column <em class="parameter"><code>column_num</code></em> could not be found.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_table_get_column_num ()">
+<a name="preludedb-sql-table-get-column-num"></a><h3>preludedb_sql_table_get_column_num ()</h3>
+<pre class="programlisting">int                 preludedb_sql_table_get_column_num  (preludedb_sql_table_t *table,
+                                                         const char *column_name);</pre>
+<p>
+Get the number of the column named <em class="parameter"><code>column_name</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> Pointer to a table object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column_name</code></em> :</span></p></td>
+<td> Column name.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of the column or -1 if the column <em class="parameter"><code>column_name</code></em> could not be found.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_table_get_column_count ()">
+<a name="preludedb-sql-table-get-column-count"></a><h3>preludedb_sql_table_get_column_count ()</h3>
+<pre class="programlisting">unsigned int        preludedb_sql_table_get_column_count
+                                                        (preludedb_sql_table_t *table);</pre>
+<p>
+Get the the number of columns.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> Pointer to a table object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of columns.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_table_get_row_count ()">
+<a name="preludedb-sql-table-get-row-count"></a><h3>preludedb_sql_table_get_row_count ()</h3>
+<pre class="programlisting">unsigned int        preludedb_sql_table_get_row_count   (preludedb_sql_table_t *table);</pre>
+<p>
+Get the the number of row in the table.
+Depending on the database backend, this might require retrieving all rows.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> Pointer to a table object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the number of columns.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_table_fetch_row ()">
+<a name="preludedb-sql-table-fetch-row"></a><h3>preludedb_sql_table_fetch_row ()</h3>
+<pre class="programlisting">int                 preludedb_sql_table_fetch_row       (preludedb_sql_table_t *table,
+                                                         preludedb_sql_row_t **row);</pre>
+<p>
+Fetch the next table's row.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>table</code></em> :</span></p></td>
+<td> Pointer to a table object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td> Pointer to the row object where the result will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 1 if the table returns a new row, 0 if there is no more rows to fetch or
+a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_row_fetch_field ()">
+<a name="preludedb-sql-row-fetch-field"></a><h3>preludedb_sql_row_fetch_field ()</h3>
+<pre class="programlisting">int                 preludedb_sql_row_fetch_field       (preludedb_sql_row_t *row,
+                                                         int column_num);</pre>
+<div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p><code class="literal">preludedb_sql_row_fetch_field</code> is deprecated and should not be used in newly-written code. use <code class="function">preludedb_sql_row_get_field()</code> instead.
+Fetch the field of column <em class="parameter"><code>column_num</code></em></p>
+</div>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td> Pointer to a row object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column_num</code></em> :</span></p></td>
+<td> The column number of the field to be fetched.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 1 if the row returns a non-empty field, 0 if it returns an empty field, or
+a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_row_fetch_field_by_name ()">
+<a name="preludedb-sql-row-fetch-field-by-name"></a><h3>preludedb_sql_row_fetch_field_by_name ()</h3>
+<pre class="programlisting">int                 preludedb_sql_row_fetch_field_by_name
+                                                        (preludedb_sql_row_t *row,
+                                                         const char *column_name);</pre>
+<div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p><code class="literal">preludedb_sql_row_fetch_field_by_name</code> is deprecated and should not be used in newly-written code. use <code class="function">preludedb_sql_row_get_field_by_name()</code> instead.
+Fetch the field of column <em class="parameter"><code>column_name</code></em></p>
+</div>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>row</code></em> :</span></p></td>
+<td> Pointer to a row object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>column_name</code></em> :</span></p></td>
+<td> The column name of the field to be fetched.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 1 if the row returns a non-empty field, 0 if it returns an empty field, or
+a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_get_len ()">
+<a name="preludedb-sql-field-get-len"></a><h3>preludedb_sql_field_get_len ()</h3>
+<pre class="programlisting">size_t              preludedb_sql_field_get_len         (preludedb_sql_field_t *field);</pre>
+<p>
+Get the field value length.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td> Pointer to a field object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> field value length.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_int8 ()">
+<a name="preludedb-sql-field-to-int8"></a><h3>preludedb_sql_field_to_int8 ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_int8         (preludedb_sql_field_t *field,
+                                                         int8_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_uint8 ()">
+<a name="preludedb-sql-field-to-uint8"></a><h3>preludedb_sql_field_to_uint8 ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_uint8        (preludedb_sql_field_t *field,
+                                                         uint8_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_int16 ()">
+<a name="preludedb-sql-field-to-int16"></a><h3>preludedb_sql_field_to_int16 ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_int16        (preludedb_sql_field_t *field,
+                                                         int16_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_uint16 ()">
+<a name="preludedb-sql-field-to-uint16"></a><h3>preludedb_sql_field_to_uint16 ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_uint16       (preludedb_sql_field_t *field,
+                                                         uint16_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_int32 ()">
+<a name="preludedb-sql-field-to-int32"></a><h3>preludedb_sql_field_to_int32 ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_int32        (preludedb_sql_field_t *field,
+                                                         int32_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_uint32 ()">
+<a name="preludedb-sql-field-to-uint32"></a><h3>preludedb_sql_field_to_uint32 ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_uint32       (preludedb_sql_field_t *field,
+                                                         uint32_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_int64 ()">
+<a name="preludedb-sql-field-to-int64"></a><h3>preludedb_sql_field_to_int64 ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_int64        (preludedb_sql_field_t *field,
+                                                         int64_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_uint64 ()">
+<a name="preludedb-sql-field-to-uint64"></a><h3>preludedb_sql_field_to_uint64 ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_uint64       (preludedb_sql_field_t *field,
+                                                         uint64_t *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_float ()">
+<a name="preludedb-sql-field-to-float"></a><h3>preludedb_sql_field_to_float ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_float        (preludedb_sql_field_t *field,
+                                                         float *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_double ()">
+<a name="preludedb-sql-field-to-double"></a><h3>preludedb_sql_field_to_double ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_double       (preludedb_sql_field_t *field,
+                                                         double *value);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_field_to_string ()">
+<a name="preludedb-sql-field-to-string"></a><h3>preludedb_sql_field_to_string ()</h3>
+<pre class="programlisting">int                 preludedb_sql_field_to_string       (preludedb_sql_field_t *field,
+                                                         prelude_string_t *output);</pre>
+<p>
+Get the string value of <em class="parameter"><code>field</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td> Pointer to a field type.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> Pointer to a string object where the field value will be added.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_build_criterion_string ()">
+<a name="preludedb-sql-build-criterion-string"></a><h3>preludedb_sql_build_criterion_string ()</h3>
+<pre class="programlisting">int                 preludedb_sql_build_criterion_string
+                                                        (preludedb_sql_t *sql,
+                                                         prelude_string_t *output,
+                                                         const char *field,
+                                                         idmef_criterion_operator_t idmef_operator,
+                                                         idmef_criterion_value_t *value);</pre>
+<p>
+Build a sql "field operator value" string.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td> Pointer to a sql object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td> Pointer to a string object, where the result content will be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>field</code></em> :</span></p></td>
+<td> The sql field name.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>idmef_operator</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> The criterion value.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_time_from_timestamp ()">
+<a name="preludedb-sql-time-from-timestamp"></a><h3>preludedb_sql_time_from_timestamp ()</h3>
+<pre class="programlisting">int                 preludedb_sql_time_from_timestamp   (idmef_time_t *time,
+                                                         const char *time_buf,
+                                                         int32_t gmtoff,
+                                                         uint32_t usec);</pre>
+<p>
+Set an idmef time using the timestamp, GMT offset and microseconds given in input.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time</code></em> :</span></p></td>
+<td> Pointer to a time object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time_buf</code></em> :</span></p></td>
+<td> SQL timestamp.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gmtoff</code></em> :</span></p></td>
+<td> GMT offset.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>usec</code></em> :</span></p></td>
+<td> Microseconds.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="preludedb_sql_time_to_timestamp ()">
+<a name="preludedb-sql-time-to-timestamp"></a><h3>preludedb_sql_time_to_timestamp ()</h3>
+<pre class="programlisting">int                 preludedb_sql_time_to_timestamp     (preludedb_sql_t *sql,
+                                                         const idmef_time_t *time,
+                                                         char *time_buf,
+                                                         size_t time_buf_size,
+                                                         char *gmtoff_buf,
+                                                         size_t gmtoff_buf_size,
+                                                         char *usec_buf,
+                                                         size_t usec_buf_size);</pre>
+<p>
+Set timestamp, GMT offset, and microseconds buffers with the idmef time object
+given in input.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sql</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time</code></em> :</span></p></td>
+<td> Pointer to a time object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time_buf</code></em> :</span></p></td>
+<td> SQL timestamp.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>time_buf_size</code></em> :</span></p></td>
+<td> SQL timestamp buffer size.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gmtoff_buf</code></em> :</span></p></td>
+<td> GMT offset buffer.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gmtoff_buf_size</code></em> :</span></p></td>
+<td> GMT offset buffer size.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>usec_buf</code></em> :</span></p></td>
+<td> Microseconds buffer.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>usec_buf_size</code></em> :</span></p></td>
+<td> Microseconds buffer size.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, or a negative value if an error occur.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

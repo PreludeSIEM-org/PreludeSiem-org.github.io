@@ -1,0 +1,12 @@
+# Ignore cron jobs
+
+#LOG:Apr 20 11:55:01 piche CRON[23295]: (pam_unix) session opened for user root by (uid=0)
+regex=CRON\[\d+\]: \(pam_unix\) session opened for user; \
+ silent; \
+ last
+
+#LOG:Apr 20 11:55:01 piche CRON[23293]: (pam_unix) session closed for user root
+regex=CRON\[\d+\]: \(pam_unix\) session closed for user; \
+ silent; \
+ last
+

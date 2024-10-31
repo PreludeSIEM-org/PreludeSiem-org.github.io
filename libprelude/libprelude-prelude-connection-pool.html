@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>prelude-connection-pool</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libprelude Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libprelude-prelude-failover.html" title="prelude-failover">
+<link rel="next" href="libprelude-prelude-async.html" title="prelude-async">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libprelude-prelude-failover.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libprelude Reference Manual</th>
+<td><a accesskey="n" href="libprelude-prelude-async.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libprelude-prelude-connection-pool.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libprelude-prelude-connection-pool.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="prelude-connection-pool">
+<a name="libprelude-prelude-connection-pool"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libprelude-prelude-connection-pool.top_of_page"></a>prelude-connection-pool</span></h2>
+<p>prelude-connection-pool — Pool of connection handling</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libprelude-prelude-connection-pool.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                prelude_connection_pool_flags_t;
+enum                prelude_connection_pool_event_t;
+typedef             prelude_connection_pool_t;
+void                prelude_connection_pool_broadcast   (prelude_connection_pool_t *pool,
+                                                         prelude_msg_t *msg);
+void                prelude_connection_pool_broadcast_async
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_msg_t *msg);
+int                 prelude_connection_pool_init        (prelude_connection_pool_t *pool);
+int                 prelude_connection_pool_new         (prelude_connection_pool_t **ret,
+                                                         prelude_client_profile_t *cp,
+                                                         prelude_connection_permission_t permission);
+prelude_connection_pool_t * prelude_connection_pool_ref (prelude_connection_pool_t *pool);
+prelude_list_t *    prelude_connection_pool_get_connection_list
+                                                        (prelude_connection_pool_t *pool);
+int                 prelude_connection_pool_add_connection
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_t *cnx);
+int                 prelude_connection_pool_del_connection
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_t *cnx);
+int                 prelude_connection_pool_set_connection_dead
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_t *cnx);
+int                 prelude_connection_pool_set_connection_alive
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_t *cnx);
+int                 prelude_connection_pool_set_connection_string
+                                                        (prelude_connection_pool_t *pool,
+                                                         const char *cfgstr);
+const char *        prelude_connection_pool_get_connection_string
+                                                        (prelude_connection_pool_t *pool);
+void                prelude_connection_pool_destroy     (prelude_connection_pool_t *pool);
+prelude_connection_pool_flags_t  prelude_connection_pool_get_flags
+                                                        (prelude_connection_pool_t *pool);
+void                prelude_connection_pool_set_flags   (prelude_connection_pool_t *pool,
+                                                         prelude_connection_pool_flags_t flags);
+void                prelude_connection_pool_set_required_permission
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_permission_t req_perm);
+void                prelude_connection_pool_set_data    (prelude_connection_pool_t *pool,
+                                                         void *data);
+void *              prelude_connection_pool_get_data    (prelude_connection_pool_t *pool);
+int                 prelude_connection_pool_recv        (prelude_connection_pool_t *pool,
+                                                         int timeout,
+                                                         prelude_connection_t **outcon,
+                                                         prelude_msg_t **outmsg);
+int                 prelude_connection_pool_check_event (prelude_connection_pool_t *pool,
+                                                         int timeout,
+                                                         int (event_cbprelude_connection_pool_t *pool,prelude_connection_pool_event_t event,prelude_connection_t *cnx, void *extra) (),
+                                                         void *extra);
+void                prelude_connection_pool_set_global_event_handler
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_pool_event_t wanted_events,
+                                                         int (callbackprelude_connection_pool_t *pool,prelude_connection_pool_event_t events) ());
+void                prelude_connection_pool_set_event_handler
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_pool_event_t wanted_events,
+                                                         int (callbackprelude_connection_pool_t *pool,prelude_connection_pool_event_t events,prelude_connection_t *cnx) ());
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libprelude-prelude-connection-pool.description"></a><h2>Description</h2>
+<p>
+This API handle pool of connection, allowing to address a set of connection using only one object.
+</p>
+<p>
+AND &amp; OR of connection are supported, so that it is possible to
+address several connection at once, or to only address a set of connection
+if another connection went down.
+</p>
+<p>
+Additionally it provide failover in case one of the connection in
+the pool goes down, and automatic reconnection and flushing of the
+information that could not be sent due to the connection status.
+</p>
+<p>
+It is usually not necessary to access this API directly, however if
+you are looking at how to read events from a pool of connection, you're most
+probably looking for the <code class="function">prelude_connection_pool_check_event()</code> function.
+</p>
+<p>
+If this is the case, use <code class="function">prelude_connection_pool_check_event()</code> for polling the
+pool or <code class="function">prelude_connection_set_event_handler()</code> / <code class="function">prelude_connection_set_global_event_handler()</code>
+if you want asynchronous notification of event.
+</p>
+<p>
+Note that <code class="function">prelude_connection_set_event_handler()</code> and <code class="function">prelude_connection_set_global_event_handler()</code>
+are only asynchronous if timer are running in asynchronous mode. Otherwise, the callback for theses
+function might be called when you call the <code class="function">prelude_timer_wake_up()</code> function.
+</p>
+<p>
+In the provided callback, you might use <code class="function">prelude_connection_recv()</code> to retrieve an event of type
+<span class="type">PRELUDE_CONNECTION_POOL_EVENT_INPUT</span>. And, you could, for example, if the retrieved message has
+the <span class="type">PRELUDE_MSG_ID_IDMEF</span> tag, provide the returned <span class="type">prelude_msg_t</span> object to <code class="function">idmef_message_read()</code>
+in order to convert the received message to a <span class="type">idmef_message_t</span> object.
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libprelude-prelude-connection-pool.details"></a><h2>Details</h2>
+<div class="refsect2" title="enum prelude_connection_pool_flags_t">
+<a name="prelude-connection-pool-flags-t"></a><h3>enum prelude_connection_pool_flags_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_CONNECTION_POOL_FLAGS_RECONNECT        = 0x01,
+        PRELUDE_CONNECTION_POOL_FLAGS_FAILOVER         = 0x02
+} prelude_connection_pool_flags_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="enum prelude_connection_pool_event_t">
+<a name="prelude-connection-pool-event-t"></a><h3>enum prelude_connection_pool_event_t</h3>
+<pre class="programlisting">typedef enum {
+        PRELUDE_CONNECTION_POOL_EVENT_INPUT            = 0x01,
+        PRELUDE_CONNECTION_POOL_EVENT_DEAD             = 0x02,
+        PRELUDE_CONNECTION_POOL_EVENT_ALIVE            = 0x04
+} prelude_connection_pool_event_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_t">
+<a name="prelude-connection-pool-t"></a><h3>prelude_connection_pool_t</h3>
+<pre class="programlisting">typedef struct prelude_connection_pool prelude_connection_pool_t;
+</pre>
+<p>
+</p>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_broadcast ()">
+<a name="prelude-connection-pool-broadcast"></a><h3>prelude_connection_pool_broadcast ()</h3>
+<pre class="programlisting">void                prelude_connection_pool_broadcast   (prelude_connection_pool_t *pool,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Sends the message contained in <em class="parameter"><code>msg</code></em> to all the connection in <em class="parameter"><code>pool</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer on a <span class="type">prelude_msg_t</span> object.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_broadcast_async ()">
+<a name="prelude-connection-pool-broadcast-async"></a><h3>prelude_connection_pool_broadcast_async ()</h3>
+<pre class="programlisting">void                prelude_connection_pool_broadcast_async
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Sends the message contained in <em class="parameter"><code>msg</code></em> to all connections
+in <em class="parameter"><code>pool</code></em> asynchronously. After the request is processed,
+the <em class="parameter"><code>msg</code></em> message will be freed.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer on a <span class="type">prelude_msg_t</span> object.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_init ()">
+<a name="prelude-connection-pool-init"></a><h3>prelude_connection_pool_init ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_init        (prelude_connection_pool_t *pool);</pre>
+<p>
+Initializes <em class="parameter"><code>pool</code></em>. This means that connection associated with <em class="parameter"><code>pool</code></em>
+using <code class="function">prelude_connection_pool_set_connection_string()</code> will be
+established.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value on error.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_new ()">
+<a name="prelude-connection-pool-new"></a><h3>prelude_connection_pool_new ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_new         (prelude_connection_pool_t **ret,
+                                                         prelude_client_profile_t *cp,
+                                                         prelude_connection_permission_t permission);</pre>
+<p>
+<code class="function">prelude_connection_pool_new()</code> initializes a new Connection Manager object.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ret</code></em> :</span></p></td>
+<td> Pointer to an address where to store the created <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cp</code></em> :</span></p></td>
+<td> The <span class="type">prelude_client_profile_t</span> to use for connection.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>permission</code></em> :</span></p></td>
+<td> Permission the connection in this connection-pool will require.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success or a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_ref ()">
+<a name="prelude-connection-pool-ref"></a><h3>prelude_connection_pool_ref ()</h3>
+<pre class="programlisting">prelude_connection_pool_t * prelude_connection_pool_ref (prelude_connection_pool_t *pool);</pre>
+<p>
+Increases <em class="parameter"><code>pool</code></em> reference count.
+</p>
+<p>
+<code class="function">prelude_connection_pool_destroy()</code> will decrease the refcount until
+it reaches 0, at which point the <em class="parameter"><code>pool</code></em> will be destroyed.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The provided <em class="parameter"><code>pool</code></em> is returned.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_get_connection_list ()">
+<a name="prelude-connection-pool-get-connection-list"></a><h3>prelude_connection_pool_get_connection_list ()</h3>
+<pre class="programlisting">prelude_list_t *    prelude_connection_pool_get_connection_list
+                                                        (prelude_connection_pool_t *pool);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The list of connections handled by <em class="parameter"><code>pool</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_add_connection ()">
+<a name="prelude-connection-pool-add-connection"></a><h3>prelude_connection_pool_add_connection ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_add_connection
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_t *cnx);</pre>
+<p>
+Adds <em class="parameter"><code>cnx</code></em> to <em class="parameter"><code>pool</code></em> set of connections.
+</p>
+<p>
+If <em class="parameter"><code>pool</code></em> is already initialized (<code class="function">prelude_connection_pool_init()</code> called)
+and <em class="parameter"><code>cnx</code></em> is not alive, it will attempt a reconnection.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cnx</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_t</span> object to add to <em class="parameter"><code>pool</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_del_connection ()">
+<a name="prelude-connection-pool-del-connection"></a><h3>prelude_connection_pool_del_connection ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_del_connection
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_t *cnx);</pre>
+<p>
+Remove <em class="parameter"><code>cnx</code></em> from <em class="parameter"><code>pool</code></em> of connections.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cnx</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_t</span> object to remove from <em class="parameter"><code>pool</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_set_connection_dead ()">
+<a name="prelude-connection-pool-set-connection-dead"></a><h3>prelude_connection_pool_set_connection_dead ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_set_connection_dead
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_t *cnx);</pre>
+<p>
+Notifies <em class="parameter"><code>pool</code></em> that the connection identified by <em class="parameter"><code>cnx</code></em> is dead.
+</p>
+<p>
+Usually, this function should not be used since <em class="parameter"><code>pool</code></em> is
+self sufficient, and handles connections issues internally. However,
+it is sometime useful when the user has several mechanisms using the
+connection, and that its own mechanism detects a connection problem
+before <em class="parameter"><code>pool</code></em> notice.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cnx</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_t</span> object used within <em class="parameter"><code>pool</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_set_connection_alive ()">
+<a name="prelude-connection-pool-set-connection-alive"></a><h3>prelude_connection_pool_set_connection_alive ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_set_connection_alive
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_t *cnx);</pre>
+<p>
+Notifies <em class="parameter"><code>pool</code></em> that the connection identified by <em class="parameter"><code>cnx</code></em> went back alive.
+</p>
+<p>
+Usually, this function should not be used since <em class="parameter"><code>pool</code></em> is
+self sufficient, and handles connection issues internally. However,
+it is sometime useful when the user has several mechanisms using the
+connection, and that its own mechanism detects a connection problem
+before <em class="parameter"><code>pool</code></em> notice.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cnx</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_t</span> object used within <em class="parameter"><code>pool</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_set_connection_string ()">
+<a name="prelude-connection-pool-set-connection-string"></a><h3>prelude_connection_pool_set_connection_string ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_set_connection_string
+                                                        (prelude_connection_pool_t *pool,
+                                                         const char *cfgstr);</pre>
+<p>
+Sets the connection string for <em class="parameter"><code>pool</code></em>. The connection string should be
+in the form of : "address". Special operand like || (OR) and &amp;&amp; (AND),
+are also accepted: "address &amp;&amp; address".
+</p>
+<p>
+Where &amp;&amp; means that alert sent using <em class="parameter"><code>pool</code></em> will go to both configured
+addresses, and || means that if the left address fails, the right address
+will be used.
+</p>
+<p>
+<code class="function">prelude_connection_pool_init()</code> should be used to initiates the connection.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>cfgstr</code></em> :</span></p></td>
+<td> Connection string.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_get_connection_string ()">
+<a name="prelude-connection-pool-get-connection-string"></a><h3>prelude_connection_pool_get_connection_string ()</h3>
+<pre class="programlisting">const char *        prelude_connection_pool_get_connection_string
+                                                        (prelude_connection_pool_t *pool);</pre>
+<p>
+Used to query the connection string used by <em class="parameter"><code>pool</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The connection string.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_destroy ()">
+<a name="prelude-connection-pool-destroy"></a><h3>prelude_connection_pool_destroy ()</h3>
+<pre class="programlisting">void                prelude_connection_pool_destroy     (prelude_connection_pool_t *pool);</pre>
+<p>
+Destroys <em class="parameter"><code>pool</code></em> and all connections handled.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_get_flags ()">
+<a name="prelude-connection-pool-get-flags"></a><h3>prelude_connection_pool_get_flags ()</h3>
+<pre class="programlisting">prelude_connection_pool_flags_t  prelude_connection_pool_get_flags
+                                                        (prelude_connection_pool_t *pool);</pre>
+<p>
+</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the <span class="type">prelude_connection_pool_flags_t</span> used in <em class="parameter"><code>pool</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_set_flags ()">
+<a name="prelude-connection-pool-set-flags"></a><h3>prelude_connection_pool_set_flags ()</h3>
+<pre class="programlisting">void                prelude_connection_pool_set_flags   (prelude_connection_pool_t *pool,
+                                                         prelude_connection_pool_flags_t flags);</pre>
+<p>
+Sets <em class="parameter"><code>flags</code></em> within <em class="parameter"><code>pools</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td> Flags to use for <em class="parameter"><code>pool</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_set_required_permission ()">
+<a name="prelude-connection-pool-set-required-permission"></a><h3>prelude_connection_pool_set_required_permission ()</h3>
+<pre class="programlisting">void                prelude_connection_pool_set_required_permission
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_permission_t req_perm);</pre>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>req_perm</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_set_data ()">
+<a name="prelude-connection-pool-set-data"></a><h3>prelude_connection_pool_set_data ()</h3>
+<pre class="programlisting">void                prelude_connection_pool_set_data    (prelude_connection_pool_t *pool,
+                                                         void *data);</pre>
+<p>
+The user might use this function to associate data with <em class="parameter"><code>pool</code></em>.
+The data associated might be retrieved using <code class="function">prelude_connection_pool_get_data()</code>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td> Pointer to user specific data.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_get_data ()">
+<a name="prelude-connection-pool-get-data"></a><h3>prelude_connection_pool_get_data ()</h3>
+<pre class="programlisting">void *              prelude_connection_pool_get_data    (prelude_connection_pool_t *pool);</pre>
+<p>
+The user might use this function to query data associated with
+<em class="parameter"><code>pool</code></em> using <code class="function">prelude_connection_pool_set_data()</code>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> the user data associated to <em class="parameter"><code>pool</code></em>.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_recv ()">
+<a name="prelude-connection-pool-recv"></a><h3>prelude_connection_pool_recv ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_recv        (prelude_connection_pool_t *pool,
+                                                         int timeout,
+                                                         prelude_connection_t **outcon,
+                                                         prelude_msg_t **outmsg);</pre>
+<p>
+This function queries the set of connections available in <em class="parameter"><code>pool</code></em> to see if
+events are waiting to be handled. If timeout is zero, then this function
+will return immediatly in case there is no event to be handled.
+</p>
+<p>
+If timeout is -1, this function won't return until an event is available.
+Otherwise this function will return if there is no event after the specified
+number of second.
+</p>
+<p>
+If an event is available, it will be read and store the <span class="type">prelude_connection_t</span>
+object in the <em class="parameter"><code>outcon</code></em> pointer. If <em class="parameter"><code>outmsg</code></em> was specified, the message will be
+read and stored in there.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>timeout</code></em> :</span></p></td>
+<td> Time to wait for an event.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>outcon</code></em> :</span></p></td>
+<td> Pointer where the connection where an event happened should be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>outmsg</code></em> :</span></p></td>
+<td> Pointer where the next message that will be read should be stored.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The number of handled events (0 or 1) or a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_check_event ()">
+<a name="prelude-connection-pool-check-event"></a><h3>prelude_connection_pool_check_event ()</h3>
+<pre class="programlisting">int                 prelude_connection_pool_check_event (prelude_connection_pool_t *pool,
+                                                         int timeout,
+                                                         int (event_cbprelude_connection_pool_t *pool,prelude_connection_pool_event_t event,prelude_connection_t *cnx, void *extra) (),
+                                                         void *extra);</pre>
+<p>
+This function queries the set of connections available in <em class="parameter"><code>pool</code></em> to see if
+events are waiting to be handled. If timeout is zero, then this function
+will return immediatly in case there is no event to be handled.
+</p>
+<p>
+If timeout is -1, this function won't return until an event is available.
+Otherwise this function will return if there is no event after the specified
+number of second.
+</p>
+<p>
+For each event, <em class="parameter"><code>event_cb</code></em> is called with the concerned <em class="parameter"><code>pool</code></em>, the provided
+<em class="parameter"><code>extra</code></em> data, and the <em class="parameter"><code>cnx</code></em> where an event has occured.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>timeout</code></em> :</span></p></td>
+<td> Time to wait for an event.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>event_cb</code></em> :</span></p></td>
+<td> User provided callback function to call on received events.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>extra</code></em> :</span></p></td>
+<td> Pointer to user specific data provided to <em class="parameter"><code>event_cb</code></em>.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> The number of handled events, or a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_set_global_event_handler ()">
+<a name="prelude-connection-pool-set-global-event-handler"></a><h3>prelude_connection_pool_set_global_event_handler ()</h3>
+<pre class="programlisting">void                prelude_connection_pool_set_global_event_handler
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_pool_event_t wanted_events,
+                                                         int (callbackprelude_connection_pool_t *pool,prelude_connection_pool_event_t events) ());</pre>
+<p>
+<em class="parameter"><code>callback</code></em> will be called each time one of the event specified in
+<em class="parameter"><code>wanted_events</code></em> happen to <em class="parameter"><code>pool</code></em>. However, contrary to
+<code class="function">prelude_connection_pool_set_event_handler()</code>, the callback will be called
+only once per set of event.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>wanted_events</code></em> :</span></p></td>
+<td> Event the user want to be notified about.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td> User specific callback to call when an event is available.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="prelude_connection_pool_set_event_handler ()">
+<a name="prelude-connection-pool-set-event-handler"></a><h3>prelude_connection_pool_set_event_handler ()</h3>
+<pre class="programlisting">void                prelude_connection_pool_set_event_handler
+                                                        (prelude_connection_pool_t *pool,
+                                                         prelude_connection_pool_event_t wanted_events,
+                                                         int (callbackprelude_connection_pool_t *pool,prelude_connection_pool_event_t events,prelude_connection_t *cnx) ());</pre>
+<p>
+<em class="parameter"><code>callback</code></em> will be called each time one of the event specified in
+<em class="parameter"><code>wanted_events</code></em> happens to <em class="parameter"><code>pool</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pool</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_connection_pool_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>wanted_events</code></em> :</span></p></td>
+<td> Event the user want to be notified about.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>callback</code></em> :</span></p></td>
+<td> User specific callback to call when an event is available.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" title="See Also">
+<a name="libprelude-prelude-connection-pool.see-also"></a><h2>See Also</h2>
+<p>
+<span class="type">prelude_connection_t</span>
+<code class="function">idmef_message_read()</code>
+</p>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

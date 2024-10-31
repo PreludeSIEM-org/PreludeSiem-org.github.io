@@ -1,0 +1,13 @@
+diff --git a/plugins/pcre/ruleset/cisco-vpn.rules b/plugins/pcre/ruleset/cisco-vpn.rules
+index 5d7a4b8..0b8fe42 100644
+--- a/plugins/pcre/ruleset/cisco-vpn.rules
++++ b/plugins/pcre/ruleset/cisco-vpn.rules
+@@ -68,7 +68,7 @@ regex=([\d\.]+)  User \[(\S+)\], Group \[(\S+)\] disconnected:  Duration: (\S+)
+  last
+ 
+ #LOG:Oct 29 19:18:20 vpn 1793 10/29/2003 19:18:20.190 SEV=3 AUTH/5 RPT=6 12.34.56.78  Authentication rejected: Reason = Invalid password handle = 66, server = Internal, user = gene.gomez, domain = <not specified>
+-regex=([\d\.]+)  Authentication rejected: Reason = (.+) handle = \d+, server = (\w+), user = (\S+), domain = (.+); \
++regex=([\d\.]+)  Authentication rejected: Reason = (.+) handle = \d+, server = (\S+), user = (\S+), domain = (.+); \
+  classification.text=VPN user authentication; \
+  classification.reference(0).origin=vendor-specific; \
+  classification.reference(0).meaning=vpn_id; \

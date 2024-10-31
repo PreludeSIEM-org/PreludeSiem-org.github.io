@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #278: Compiling prelude-manager-0.9.11.1 on Solaris fails - Prelude Manager - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="fEpYVU2FGTvKGQt+xUZIBoojsqf7/lw2N74Au6WxJktvZTA6hJEUuECzA4TYDgFY9mjDOeH0BXjpMMQrIbESSA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude Manager - Bug #278: Compiling prelude-manager-0.9.11.1 on Solaris fails" href="http://www.prelude-siem.org/issues/278.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-manager controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-manager/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-manager/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-manager/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-manager">Overview</a></li><li><a class="activity" href="/projects/prelude-manager/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-manager/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-manager/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-manager/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-manager/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-manager/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-manager/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-manager/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-manager/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-manager/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #278</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+
+  
+
+<div class="subject">
+<div><h3>Compiling prelude-manager-0.9.11.1 on Solaris fails</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="02/07/2008 11:12 AM" href="/projects/prelude-manager/activity?from=2008-02-07">over 16 years</a> ago.
+        Updated <a title="04/29/2009 02:49 PM" href="/projects/prelude-manager/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="02/07/2008" href="/versions/77">0.9.11.2</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>I'm using GNU make and compiling with gcc 3.4.6 ends up with the following error:</p>
+
+
+<pre>
+gmaker3: Entering directory @/data/dummy/prelude-manager-0.9.11.1/src'
+if gcc -DHAVE_CONFIG_H -I. -I. -I..  -I./include/ -I../libmissing -I/usr/local/include -I/usr/local/include -I/usr/local/include -D_REENTRANT -pthreads -I/usr/local/include -DPRELUDE_CONFIG_DIR=\"/usr/local/etc/prelude\" -DCONFIG_DIR=\"/usr/local/etc/prelude-manager\" -DREPORT_PLUGIN_DIR=\"/usr/local/lib/prelude-manager/reports\" -DDECODE_PLUGIN_DIR=\"/usr/local/lib/prelude-manager/decodes\" -DFILTER_PLUGIN_DIR=\"/usr/local/lib/prelude-manager/filters\" -DMANAGER_SCHEDULER_DIR=\"/usr/local/var/spool/prelude-manager/scheduler\" -DMANAGER_FAILOVER_DIR=\"/usr/local/var/spool/prelude-manager/failover\" -DMANAGER_RUN_DIR=\"/usr/local/var/run/prelude-manager\"   -g -O2 -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -Wformat -Wformat-security -MT bufpool.o -MD -MP -MF ".deps/bufpool.Tpo" -c -o bufpool.o bufpool.c; \
+then mv -f ".deps/bufpool.Tpo" ".deps/bufpool.Po"; else rm -f ".deps/bufpool.Tpo"; exit 1; fi
+In file included from bufpool.c:24:
+../libmissing/string.h:304: error: syntax error before "+stringp" 
+../libmissing/string.h:304: warning: function declaration isn't a prototype
+gmaker3: *** [bufpool.o] Error 1
+gmaker3: Leaving directory @/data/dummy/prelude-manager-0.9.11.1/src'
+gmaker2: *** [all-recursive] Error 1
+gmaker2: Leaving directory @/data/dummy/prelude-manager-0.9.11.1/src'
+gmaker1: *** [all-recursive] Error 1
+gmaker1: Leaving directory @/data/dummy/prelude-manager-0.9.11.1'
+gmake: *** [all] Error 2
+
+</pre>
+  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-724" class="journal has-notes has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="02/07/2008 11:49 AM" href="/projects/prelude-manager/activity?from=2008-02-07">over 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-724-notes" class="wiki"><p>(In r10151) Include libmissing and config.h, should fix compilation issue (fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: Compiling prelude-manager-0.9.11.1 on Solaris fails (Closed)" href="/issues/278">#278</a>).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-725" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="02/07/2008 11:51 AM" href="/projects/prelude-manager/activity?from=2008-02-07">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-725-notes" class="wiki"><p>Could you try the fix checked in r10151, and let us know whether it solve your problem?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-726" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by  <a title="02/07/2008 01:44 PM" href="/projects/prelude-manager/activity?from=2008-02-07">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-726-notes" class="wiki"><p>Compiling finished und prelude-manager seems to work properly.</p>
+
+
+	<p>I checked out prelude-manger/trunk revison 10151, but there was no configure script. So I copied the files to prelude-manager-0.9.11.1 folder.<br />Is this the default procedure?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-727" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="02/07/2008 01:58 PM" href="/projects/prelude-manager/activity?from=2008-02-07">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-727-notes" class="wiki"><p>Not really, trac let you download the diff, which you can apply using the patch command:</p>
+
+
+<pre>
+cd prelude-manager
+patch -p1 &lt; ~/downloaded-patch.diff
+</pre>
+
+	<p>Prelude-Manager 0.9.11.2 will be released shortly.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1249" class="journal has-details">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 02:49 PM" href="/projects/prelude-manager/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prelude Manager</i></li>
+       <li><strong>Category</strong> deleted (<del><i>generic</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.11.2</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/278.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/278.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

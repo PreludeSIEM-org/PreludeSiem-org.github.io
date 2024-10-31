@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>ConfigurationVigiloGeneral - VIGILO NMS - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="c4g30G2XxaKjeJpyBytp57U+pSTTls7VhjDTbCJg//pgp1+/pIPIISnSkogaYyC5yXXUusmcl5tYvhf8pmDL+Q==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-vigilo-nms controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/vigilo-nms/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/vigilo-nms/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/vigilo-nms/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/vigilo-nms">Overview</a></li><li><a class="activity" href="/projects/vigilo-nms/activity">Activity</a></li><li><a class="roadmap" href="/projects/vigilo-nms/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/vigilo-nms/issues">Issues</a></li><li><a class="MyWiki" href="/projects/vigilo-nms/wiki">Documentation</a></li><li><a class="boards" href="/projects/vigilo-nms/boards">Forums</a></li><li><a class="MyFiles" href="/projects/vigilo-nms/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/vigilo-nms/#1">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/vigilo-nms/wiki">Start page</a></li>
+  <li><a href="/projects/vigilo-nms/wiki/index">Index by title</a></li>
+  <li><a href="/projects/vigilo-nms/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/vigilo-nms/wiki/WikiStart">WikiStart</a> » <a href="/projects/vigilo-nms/wiki/ManualUser">ManualUser</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Configuration-of-the-fleet-to-be-supervised"></a>
+<h1 >Configuration of the fleet to be supervised<a href="#Configuration-of-the-fleet-to-be-supervised" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The configuration of the fleet to be monitored is done through XML files. These files are stored in the directory pointed to by the " confdir " in " vigiconf " in the configuration file VigiConf . Sample files are installed when VigiConf is installed .</p>
+
+
+	<p>This chapter presents the configuration structure and the content of the different files.</p>
+
+
+	<p>For this chapter, all the file or folder locations indicated relate to the fleet configuration folder (by default, / etc / vigilo / vigiconf / conf.d / ).</p>
+
+
+	<a name="Host-Configuration"></a>
+<h2 >Host Configuration<a href="#Host-Configuration" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The “ hosts ” folder contains the definition files for the park's supervised hosts. All XML files in this folder are analyzed and must contain the definition of one or more hosts.</p>
+
+
+	<p>The tag at the root of this document is called “ hosts ” and can contain one or more “ host ” blocks , each corresponding to the definition of a host.</p>
+
+
+	<p>The following code fragment recalls the general structure of the file:<br /><pre>
+&lt;? xml version = "1.0"?&gt;
+&lt;hosts&gt;
+  &lt;host name = "host1" attr1 = "..." attr2 = "..." attrN = "..." &gt;
+    ...
+  &lt;/host&gt;
+  &lt;host name = "host2" attr1 = "..." attr2 = "..." attrN = "..." &gt;
+    ...
+  &lt;/host&gt;
+  ...
+&lt;/hosts&gt;
+</pre></p>
+
+
+	<a name="Definition-of-a-host"></a>
+<h2 >Definition of a host<a href="#Definition-of-a-host" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>A host is defined using a host tag having the following form :  <br /><pre>
+&lt;host name = "localhost" address = "127.0.0.1" ventilation = "PF" &gt;
+  ...
+&lt;/host&gt;
+</pre></p>
+
+
+	<a name="Host-attributs"></a>
+<h3 >Host attributs<a href="#Host-attributs" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>A host data block has the following attributes:</p>
+
+
+	<ul>
+	<li>name
+
+	<p>[ required ] Host name. It can be a fully qualified name (FQDN) or simply a short name used to identify the equipment within the fleet.</p></li>
+	</ul>
+
+
+	<ul>
+	<li>address
+
+	<p>[ optional ] Address to communicate with the host. It can be an IP address (v4 or v6) or a fully qualified domain name (FQDN). If this attribute is omitted, the value of the name attribute is used.</p></li>
+	</ul>
+
+
+	<ul>
+	<li>ventilation
+
+	<p>[ optional ] Name of the supervision group in which this host must be placed (broken down).</p></li>
+	</ul>
+
+
+	<p>In general, it is not necessary to specify this attribute. VigiConf tries to deduce it automatically from the names of the groups to which the host is attached. This attribute is primarily used to resolve conflicts between groups. It can also be used to assign the host to a management group that has no relation to business groups.</p>
+
+
+	<a name="Host-tags"></a>
+<h3 >Host tags<a href="#Host-tags" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The host tag can contain the following tags</p>
+
+
+	<a name="-Class-tag"></a>
+<h4 >“ Class ” tag<a href="#-Class-tag" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>Syntax:<br /><pre>
+&lt; class &gt; class name &lt;/class&gt;
+</pre></p>
+
+
+	<p>Indicates the class or classes of equipment to which the host belongs. Depending on these classes, specific tests may be available in order to obtain more precise information on the condition of the equipment.</p>
+
+
+	<a name="-Template-tag"></a>
+<h4 >“ Template ” tag<a href="#-Template-tag" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>Syntax:<br /><pre>
+&lt; template &gt; name of the model &lt;/ template &gt;
+</pre></p>
+
+
+	<p>Specifies the name of the host model from which this host inherits some of its properties. The use of inheritance is practical when your fleet is composed of homogeneous elements (servers, routers, etc.). You can then define a template for each type of equipment with all the associated tests and then simply create a host definition for each equipment.</p>
+
+
+	<p>This tag can be used repeatedly. The parameters of the last loaded model overwrite those of the previous models. Values ​​defined at a host level always overwrite values ​​defined at a legacy model (in particular, test parameters).</p>
+
+
+	<a name="-Test-tag"></a>
+<h4 >“ Test ” tag<a href="#-Test-tag" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>Syntax:</p>
+
+
+<pre>
+&lt; test name = "test name" &gt;
+  &lt; arg name = "nom_argument_1" &gt; value argument 1 &lt;/arg&gt;
+  &lt; arg name = "nom_argument_2" &gt; value argument 2 &lt;/arg&gt;
+  ...
+  &lt; arg name = " nom_argument_n " &gt; value argument n &lt;/arg&gt;
+  &lt; nagios &gt;
+    &lt; directive name = "nom_directive_1" &gt; value directive 1 &lt;/directive&gt;
+    ...
+    &lt; directive name = " nom_directive_n " &gt; value directive n &lt;/directive&gt;
+  &lt;/ nagios &gt;
+&lt;/test&gt;
+</pre>
+
+	<p>The test tag allows you to add a supervision test to the host. It has a mandatory name attribute which designates the supervision test to be applied (for example: “ CPU ” to supervise the processor state of an equipment).</p>
+
+
+	<p>A test accepts zero, one or more arguments, which must be passed in order when declaring the test, using the arg tag . Each argument has a name ( name attribute ) and a value (or list of values). To specify a list of values ​​for an argument, the item subtag must be used, as in the following extract:</p>
+
+
+<pre>
+&lt;test name = "ACL" &gt;
+    &lt; arg name = "policy" &gt; whitelist &lt;/ arg &gt;
+    &lt;! -
+        The " addresses " argument is a list of IP addresses,
+        under -networks or hostnames.
+    -&gt;
+    &lt; arg name = "addresses" &gt;
+        &lt;item&gt; 127.0.0.1 &lt;/item&gt;
+        &lt;item&gt; localhost &lt;/item&gt;
+        &lt;item&gt; 192.168.0.0/24 &lt;/item&gt;
+    &lt;/arg&gt;
+&lt;/test&gt;
+</pre>
+
+	<p>Each argument has a type (specified in the test documentation). The recognized types are:</p>
+
+
+	<ul>
+	<li>the strings;</li>
+		<li>the integers;</li>
+		<li>the relative numbers (floating);</li>
+		<li>the Boolean (use the value 1 , true , one or yes to the value True or 0 , false , off or no for the value False ).</li>
+	</ul>
+
+
+	<p>You can also, optionally, define specific parameters for supervision using the nagios tag , which will contain one or more directives addressed to the Nagios supervision engine. See the section below for more information.</p>
+
+
+	<a name="Remarks"></a>
+<h3 >Remarks<a href="#Remarks" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Each host implicitly inherits a model called “ default ”. All the directives defined in the “ default ” model are therefore applied to the configuration of the different hosts, even if these hosts do not explicitly indicate that they are using this model, via the < template > tag . See the chapter Host Configuration for more information.</p>
+
+
+	<a name="Host-template-configuration"></a>
+<h2 >Host template configuration<a href="#Host-template-configuration" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The “ hosttemplates ” folder contains the definition files for host models. A host model is used to group a set of configuration elements common to several hosts. Hosts can then be declared as inheriting from this pattern. All XML files in this folder are analyzed and must contain the definition of one or more models.</p>
+
+
+	<p>The tag at the root of this document is called “ hosttemplates ” and can contain one or more “ hosttemplate ” blocks , each corresponding to the definition of a host.</p>
+
+
+	<p>The following code fragment recalls the general structure of the file:</p>
+
+
+<pre>
+&lt;? xml version = "1.0"?&gt;
+&lt; hosttemplates &gt;
+    &lt; hosttemplate attr1 = "..." attr2 = "..." attrN = "..." &gt; ... &lt;/ hosttemplate &gt;
+    &lt; hosttemplate attr1 = "..." attr2 = "..." attrN = "..." &gt; ... &lt;/ hosttemplate &gt;
+...
+&lt;/ hosttemplates &gt;
+</pre>
+
+	<p>A hosttemplate data block has the following attributes:</p>
+
+
+	<ul>
+	<li>name : Name of the model.</li>
+	</ul>
+
+
+	<p>A hosttemplate data block contains the following blocks</p>
+
+
+	<a name="-Parent-tag"></a>
+<h3 >“ Parent ” tag<a href="#-Parent-tag" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>A parent data block contains a simple character string, the name of the template from which this template inherits. It is possible to create as many levels of template inheritance as desired and each template can inherit from one or more templates (multiple inheritance).</p>
+
+
+	<p>Example:<br /><pre>
+&lt; parent &gt; generic &lt;/parent&gt;
+</pre></p>
+
+
+	<a name="-Class-tag-2"></a>
+<h3 >“ Class ” tag<a href="#-Class-tag-2" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>A class data block contains a single character string.</p>
+
+
+	<p>Example :<br /><pre>
+&lt;class&gt; aix &lt;/class&gt;
+</pre></p>
+
+
+	<a name="-Test-tag-2"></a>
+<h3 >“ Test ” tag<a href="#-Test-tag-2" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>A test data block has the following attribute:</p>
+
+
+	<ul>
+	<li>name (exactly 1)</li>
+	</ul>
+
+
+	<p>A test data block contains the following blocks, in order:</p>
+
+
+	<ul>
+	<li>arg (0 or more) </li>
+		<li>nagios (0 or 1)</li>
+	</ul>
+
+
+	<p>Refer to the documentation on configuring the tests of a host for more information on the attributes and blocks accepted by this tag.</p>
+
+
+	<p>Example :</p>
+
+
+<pre>
+&lt;test name = "Proc" &gt;
+  &lt; arg name = "label" &gt; aixmibd &lt;/ arg &gt;
+  &lt; arg name = " processname " &gt; . * aixmibd . * &lt;/ arg &gt;
+  &lt; nagios &gt; ... &lt;/ nagios &gt;
+&lt;/test&gt;
+</pre>
+
+	<a name="Using-SNMPv3"></a>
+<h2 >Using SNMPv3<a href="#Using-SNMPv3" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Using SNMP version 3 requires a little more configuration than for SNMP version 1 or 2c. Indeed, in addition to the definition of the equipment community, it is necessary to specify the security elements making it possible to authenticate the connection to the equipment and / or to ensure the confidentiality of SNMP exchanges with the equipment. .</p>
+
+
+	<p>No special test is to be applied to use SNMPv3 in Vigilo. However, additional attributes must be defined in the configuration of the equipment working with SNMPv3.</p>
+
+
+	<p>The following listing shows an example configuration of a host to be queried using SNMPv 3:</p>
+
+
+<pre>
+&lt; attribute name = " snmpVersion " &gt; 3 &lt;/ attribute &gt;
+&lt; attribute name = " snmpSeclevel " &gt; authPriv &lt;/ attribute &gt;
+&lt; attribute name = " snmpAuthproto " &gt; MD5 &lt;/ attribute &gt;
+&lt; attribute name = " snmpPrivproto " &gt; DES &lt;/ attribute &gt;
+&lt; attribute name = " snmpSecname " &gt; snmpuser1 &lt;/ attribute &gt;
+&lt;attribute name = " snmpAuthpass " &gt; 12345678 &lt;/attribute&gt;
+&lt;attribute name = " snmpPrivpass " &gt; 12345678 &lt;/attribute&gt;
+</pre>
+
+	<p>Attribute names follow standard SNMPv3 terminology, except for the prefix “ snmp ” which is used only to prevent possible naming conflicts with other similar attributes.</p>
+
+
+	<p>The role of each of these attributes is explained below :</p>
+
+
+	<ul>
+	<li>The attribute “ snmpVersion ” indicates that it is version 3 of the SNMP protocol which must be used to interrogate the equipment.</li>
+	</ul>
+
+
+	<ul>
+	<li>The “ snmpSeclevel ” attribute indicates the security constraints to be applied to communications with the equipment. The possible values ​​are : 
+
+	<ul>
+	<li>“ NoAuthNoPriv ” (no authentication / no privacy ) : no authentication takes place and exchanges are not encrypted. This value corresponds to what is provided by SNMPv1 and SNMPv2c and does not offer any security . It is therefore recommended not to use this value (except in exceptional cases).</li>
+	</ul>
+
+
+	<ul>
+	<li>“ AuthNoPriv ” ( authentication / no privacy ) : Vigilo will authenticate with the device with a dedicated username and password. Exchanges with the equipment will not be encrypted and communications can therefore be listened to by anyone with physical access to the network.</li>
+	</ul>
+
+
+	<ul>
+	<li>“ AuthPriv ” ( authentication / privacy ) : Vigilo will authenticate with the device with a dedicated username and password. In addition, all exchanges will be encrypted. This value is the one offering the most security and is therefore recommended.</li>
+	</ul></li>
+	</ul>
+
+
+	<ul>
+	<li>The “ snmpAuthproto ” attribute is mandatory when “ snmpSeclevel ” is equal to “ authNoPriv ” or “ authPriv ” and specifies the algorithm used to mask the password during transmissions with the equipment. The possible values ​​are “ MD5 ” and “ SHA1 ”.</li>
+	</ul>
+
+
+	<ul>
+	<li>The “ snmpPrivproto ” attribute is mandatory when “ snmpSeclevel ” is “ authPriv ” and specifies the encryption algorithm used for exchanges with the equipment. The possible values ​​are “ DES ” and “ AES ”.</li>
+	</ul>
+
+
+	<ul>
+	<li>The attribute “ snmpSecname ” is mandatory when “ snmpSeclevel ” equals “ authNoPriv ” or “ authPriv ” and indicates the user name with which Vigilo will authenticate with the device.</li>
+	</ul>
+
+
+	<ul>
+	<li>The attribute “ snmpAuthpass ” is mandatory when “ snmpSeclevel ” equals “ authNoPriv ” or “ authPriv ” and indicates the password to be used to authenticate with the device. It can be given in text form (as in the example above) or in the form of a hexadecimal character string by prefixing the value with “ 0x ”.</li>
+	</ul>
+
+
+	<ul>
+	<li>The “ snmpPrivpass ” attribute is mandatory when “ snmpSeclevel ” is equal to “ authPriv ” and specifies the encryption key used for exchanges with the equipment. It can be given in text form (as in the example above) or in the form of a hexadecimal character string by prefixing the value with “ 0x ”.</li>
+	</ul>
+
+
+	<a name="Display-of-known-tests"></a>
+<h2 >Display of known tests<a href="#Display-of-known-tests" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>VigiConf's known tests can be displayed with the “ vigiconf list -tests  ” command .</p>
+
+
+	<p>The output displays two types of information, the available host classes, and the tests for each host class:</p>
+
+
+<pre>
+Host classes available :
+    aix , alcatel , all, apc , as400, bigip , bigip_v11, bluecoat, cisco,
+    cisco_ios , cisco_sensors , dell_openmanage , dell_openmanage_snmp ,
+    dictao , eaton , expand, extremenetworks , liebert , linux , lmsensors ,
+    netapp , netasq , netdata , netflow , netware , nokia , nortel470,
+    nortel5510, nortel8310, nsclient , overland, packeteer , paloalto ,
+    rapidcity , spectracom_netclock , spectracom_securesync , toip , ucd ,
+    vmware , windows , xmperf .
+
+Tests for the host class ' aix ':
+    CPU, Errpt , Fans, Load, Power, Process, RAM, Temperature.
+
+Tests for the host class ' alcatel ':
+    CPU, Fans, RAM, Temperature .
+</pre>
+
+	<p>The output of this command supports two formats, the text format, by default, is that of the example above, and the JSON format . This formatting can be changed by completing the command with “ --format = json ”.</p>
+
+
+	<a name="Configuration-deployment"></a>
+<h2 >Configuration deployment<a href="#Configuration-deployment" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Once the configuration of the various elements of the fleet is complete, you can deploy it on the various supervision machines using the “ vigiconf deploy  ” command .</p>
+
+
+	<p>You can pass in argument the list of names of the supervision servers for which a new version of the configuration must be deployed.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '2';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

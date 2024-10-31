@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #216: mod_security cleanup, and compatibility with version 2.0 - Prelude-LML - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="6dBUTtj0ufwVxKys97Un44KD9DMgyoNeN/0za6m5LEb6/zwhEeC0f59upFbq/W69/siFrTrA2hDpc/f7LbkYRQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude-LML - Bug #216: mod_security cleanup, and compatibility with version 2.0" href="http://www.prelude-siem.org/issues/216.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-lml controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-lml/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-lml">Overview</a></li><li><a class="activity" href="/projects/prelude-lml/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-lml/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-lml/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-lml/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-lml/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-lml/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-lml/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-lml/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-lml/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-lml/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #216</h2>
+
+<div class="issue tracker-1 status-5 priority-4 priority-default closed details">
+
+  
+
+<div class="subject">
+<div><h3>mod_security cleanup, and compatibility with version 2.0</h3></div>
+</div>
+        <p class="author">
+        Added by  <a title="04/03/2007 05:56 PM" href="/projects/prelude-lml/activity?from=2007-04-03">over 17 years</a> ago.
+        Updated <a title="04/29/2009 12:21 PM" href="/projects/prelude-lml/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/1">admin admin</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="08/21/2008" href="/versions/82">0.9.13</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Correct the following:</p>
+
+
+	<ul>
+	<li>Place the unique_id data in the correct field (remove classification.ident, most likely belongs in additional_data).</li>
+	</ul>
+
+
+	<ul>
+	<li>Correct classification.text where action taken is included (this should be in the action field); remove the action taken to improve correlation capabilities based on classification.text independent of action taken.</li>
+	</ul>
+
+
+	<ul>
+	<li>Audit ruleset for mod_security 2.0</li>
+	</ul>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/58/modsecurity.rules">modsecurity.rules</a>   - Ruleset for ModSecurity 2.x
+  <span class="size">(4.31 KB)</span>
+    <span class="author">, 07/31/2008 05:09 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/53/modsecurity.2.rules">modsecurity.2.rules</a>   - Updated rules for ModSecurity 2.x (including log sample)
+  <span class="size">(6.76 KB)</span>
+    <span class="author">, 08/01/2008 03:37 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/54/modsecurity.3.rules">modsecurity.3.rules</a>   - Updated ruleset; Changed LOG: samples
+  <span class="size">(7 KB)</span>
+    <span class="author">, 08/11/2008 10:42 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/55/modsecurity.4.rules">modsecurity.4.rules</a>   - Updated ruleset. Changed ids to 31xx range
+  <span class="size">(7 KB)</span>
+    <span class="author">, 08/12/2008 01:19 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/56/modsecurity.5.rules">modsecurity.5.rules</a>   - Updated ruleset. Added reference.name and reference.url.
+  <span class="size">(7.12 KB)</span>
+    <span class="author">, 08/12/2008 02:47 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/57/modsecurity.6.rules">modsecurity.6.rules</a>   - Updated ruleset. Tested with ModSecurity 2.1.7 and 2.5.6.
+  <span class="size">(12 KB)</span>
+    <span class="author">, 10/09/2008 11:01 PM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-540" class="journal has-details">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by  <a title="04/03/2007 05:56 PM" href="/projects/prelude-lml/activity?from=2007-04-03">over 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+  <div id="change-541" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by  <a title="06/06/2007 01:26 PM" href="/projects/prelude-lml/activity?from=2007-06-06">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-541-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>Here is my rule when using [[ModSecurity]](2)</p>
+
+
+<pre>
+#LOG:May 31 11:51:09 server httpdr10634: [error] [client 10.8.0.128] [[ModSecurity]]: Access denied with code 400 (phase 2). Pattern match "^[\\\\d\\\\.]+$" at REQUEST_HEADERS:Host. [id "960017"] [msg "Host header is a numeric IP address"] [severity "CRITICAL"] [hostname "10.8.0.127"] [uri "/blah"] [unique_id "CcdHJFKU22EAACmK5AcAAAAF"]
+regex=\[client ([\d\.]+)\] [[ModSecurity]]: Access denied with code (\d+) \(phase (\d+)\)\. Pattern match "(\S+)" (.+)\. \[id "(\d+)"\] \[msg "(.+)"\] \[severity "(\S+)"\] \[hostname "([\S.]+)"\] \[uri "(.+)"\] \[unique_id "(\S+)"\]; \
+ id=3108; \
+ revision=1; \
+ classification.ident = $11; \
+ classification.text=HTTP $5 ($4) Blocked; \
+ analyzer(0).name=ModSecurity; \
+ analyzer(0).manufacturer=www.modsecurity.org; \
+ analyzer(0).class=HIDS; \
+ assessment.impact.severity=$8; \
+ assessment.impact.completion=failed; \
+ assessment.impact.description=mod_security encountered an error: $7.; \
+ assessment.action(0).category = block-installed; \
+ assessment.impact.description=Access was blocked with HTTP response code $2; \
+ source(0).service.iana_protocol_name=tcp; \
+ source(0).service.iana_protocol_number=6; \
+ source(0).node.address(0).category=ipv4-addr; \
+ source(0).node.address(0).address=$1; \
+ target(0).node.name=$9; \
+ target(0).service.iana_protocol_name=tcp; \
+ target(0).service.iana_protocol_number=6; \
+ target(0).service.name=http; \
+ target(0).service.web_service.url = $10; \
+ additional_data(0).type=integer; \
+ additional_data(0).meaning=HTTP code returned; \
+ additional_data(0).data=$2; \
+ additional_data(1).type=integer; \
+ additional_data(1).meaning=id; \
+ additional_data(1).data=$6; \
+ additional_data(2).type=integer; \
+ additional_data(2).meaning=phase; \
+ additional_data(2).data=$3; \
+ last
+</pre>
+
+	<p>Regards,</p>
+
+
+	<p>Robin</p></div>
+    </div>
+  </div>
+  
+  <div id="change-542" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by  <a title="07/07/2008 01:10 PM" href="/projects/prelude-lml/activity?from=2008-07-07">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-542-notes" class="wiki"><p>Hi Robin,<br /> could you please send us some more logs from modsecurity (or put it somewhere so we can download it)?<br />We need some input for audit of the ruleset.</p>
+
+
+	<p>Thanks,<br />Dan</p>
+
+
+	<p>Replying to [comment:2 anonymous]:</p>
+
+
+<blockquote>
+
+	<p>Hello,</p>
+
+
+	<p>Here is my rule when using [[ModSecurity]](2)<br />....<br />....<br />Regards,</p>
+
+
+	<p>Robin</p>
+
+
+</blockquote></div>
+    </div>
+  </div>
+  
+  <div id="change-543" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/17/2008 04:28 PM" href="/projects/prelude-lml/activity?from=2008-07-17">over 16 years</a> ago
+    </h4>
+
+    <div id="journal-543-notes" class="wiki"><p>Robin apparently changed mail address. Adding the new one to the list.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-544" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by  <a title="07/31/2008 05:15 PM" href="/projects/prelude-lml/activity?from=2008-07-31">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-544-notes" class="wiki"><p>we appreciate any feedback on our mod_security 2.0 ruleset  attached by <a class="email" href="mailto:dkopecek@redhat.com">dkopecek@redhat.com</a>.<br />thnx.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-545" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="07/31/2008 06:07 PM" href="/projects/prelude-lml/activity?from=2008-07-31">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-545-notes" class="wiki"><p>I haven't found a reference manual for the prelude-lml ruleset keywords like chained, silent, min-opt-goto. Is it somewhere available?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-546" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/01/2008 01:07 PM" href="/projects/prelude-lml/activity?from=2008-08-01">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-546-notes" class="wiki"><p>I have just added some documentation concerning rule flow control at the end of the wiki:PreludeLML page. <br />Please let me know if you have any other question!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-547" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/01/2008 01:12 PM" href="/projects/prelude-lml/activity?from=2008-08-01">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-547-notes" class="wiki"><p>Replying to [comment:7 <a class="email" href="mailto:pvrabec@redhat.com">pvrabec@redhat.com</a>]:</p>
+
+
+<blockquote>
+
+	<p>we appreciate any feedback on our mod_security 2.0 ruleset  attached by <a class="email" href="mailto:dkopecek@redhat.com">dkopecek@redhat.com</a>.</p>
+
+
+</blockquote>
+
+	<p>Thanks! could you update the ruleset to include some log sample, using the following syntax:<br /><pre>
+#LOG:May 10 15:19:28 mail clamdr14292: /usr/share/doc/clamav-0.70/test/test2.badext: [[ClamAV]]-Test-Signature FOUND
+</pre></p>
+
+
+	<p>This is used for regression testing and reviewing generated alerts:<br /><pre>
+  cd prelude-lml/tests
+  ./loggrep.py ../plugins/pcre/ruleset/&lt;name of your ruleset&gt;.rules | ../src/prelude-lml --dry-run --metadata=nowrite,head --batch-mode --no-resolve --pcre --dump-unmatched --config ./prelude-lml.conf --text-output
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-548" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by  <a title="08/01/2008 03:51 PM" href="/projects/prelude-lml/activity?from=2008-08-01">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-548-notes" class="wiki"><p>Replying to [comment:10 yoann]:</p>
+
+
+<blockquote>
+
+	<p>Replying to [comment:7 <a class="email" href="mailto:pvrabec@redhat.com">pvrabec@redhat.com</a>]:</p>
+
+
+<blockquote>
+
+	<p>we appreciate any feedback on our mod_security 2.0 ruleset  attached by <a class="email" href="mailto:dkopecek@redhat.com">dkopecek@redhat.com</a>.</p>
+
+
+</blockquote>
+
+	<p>Thanks! could you update the ruleset to include some log sample, using the following syntax:</p>
+
+
+</blockquote>
+
+	<p>Yeah, I forgot. Fixed.</p>
+
+
+<blockquote>
+
+	<p>This is used for regression testing and reviewing generated alerts:</p>
+
+
+</blockquote>
+
+<pre>
+&gt;   cd prelude-lml/tests
+&gt;   ./loggrep.py ../plugins/pcre/ruleset/&lt;name of your ruleset&gt;.rules | ../src/prelude-lml --dry-run --metadata=nowrite,head --batch-mode --no-resolve --pcre --dump-unmatched --config ./prelude-lml.conf --text-output
+</pre>
+
+	<p>I tested the ruleset "in action" (apache with modsec, prelude, prewikka) and it worked fine. However, I tried to test the ruleset using command you mentioned but it ends up with this error messages:</p>
+
+
+<pre>
+$ ./loggrep.py modsecurity.rules | ../src/prelude-lml --dry-run --metadata=nowrite,head --batch-mode --no-resolve --pcre --dump-unmatched --config ./prelude-lml.conf --text-output
+Invalid option -- "pcre" (0).
+Invalid option -- "dump-unmatched" (0).
+./prelude-lml.conf:52: invalid section : "Pcre".
+./prelude-lml.conf:53: invalid option "ruleset" in "global" section.
+01 Aug 15:44:51 (process:27226) ERROR: couldn't open config file /usr/local/etc/prelude-lml/plugins.rules. (regex.c:168 get_regex_table)
+01 Aug 15:44:51 (process:27226) WARNING: error while setting option 'file': No such file or directory.
+Traceback (most recent call last):
+  File "./loggrep.py", line 29, in &lt;module&gt;
+    print i[:-1]
+IOError: [Errno 32] Broken pipe
+</pre>
+
+	<p>Version of prelude-lml is 0.9.12.2</p>
+
+
+<pre>
+$ pwd
+/home/dkopecek/devel/prelude-lml/F-9/prelude-lml-0.9.12.2/tests
+$ make tests
+./loggrep.py ../plugins/pcre/ruleset/*.rules | ../src/prelude-lml --quiet --dry-run --metadata=nowrite,head --batch-mode --no-resolve --pcre --dump-unmatched --config ./prelude-lml.conf 2&gt;&#38;1 | /bin/grep -Fvf ignored
+grep: ignored: No such file or directory
+Traceback (most recent call last):
+  File "./loggrep.py", line 29, in &lt;module&gt;
+    print i[:-1]
+IOError: [Errno 32] Broken pipe
+make: *** [tests] Error 2
+</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-549" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/01/2008 04:18 PM" href="/projects/prelude-lml/activity?from=2008-08-01">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-549-notes" class="wiki"><p>Replying to [comment:11 <a class="email" href="mailto:dkopecek@redhat.com">dkopecek@redhat.com</a>]:</p>
+
+
+<blockquote>
+
+	<p>Replying to [comment:10 yoann]:</p>
+
+
+<blockquote>
+
+	<p>Replying to [comment:7 <a class="email" href="mailto:pvrabec@redhat.com">pvrabec@redhat.com</a>]:<br />This is used for regression testing and reviewing generated alerts:</p>
+
+
+</blockquote></blockquote>
+
+<pre>
+&gt; &gt;   cd prelude-lml/tests
+&gt; &gt;   ./loggrep.py ../plugins/pcre/ruleset/&lt;name of your ruleset&gt;.rules | ../src/prelude-lml --dry-run --metadata=nowrite,head --batch-mode --no-resolve --pcre --dump-unmatched --config ./prelude-lml.conf --text-output
+</pre>
+
+<blockquote>
+
+	<p>I tested the ruleset "in action" (apache with modsec, prelude, prewikka) and it worked fine. However, I tried to test the ruleset using command you mentioned but it ends up with this error messages:</p>
+
+
+</blockquote>
+
+<pre>
+&gt; $ ./loggrep.py modsecurity.rules | ../src/prelude-lml --dry-run --metadata=nowrite,head --batch-mode --no-resolve --pcre --dump-unmatched --config ./prelude-lml.conf --text-output
+&gt; 01 Aug 15:44:51 (process:27226) ERROR: couldn't open config file /usr/local/etc/prelude-lml/plugins.rules. (regex.c:168 get_regex_table)
+
+The previous error are most probably due to the absence of plugin.rules: make sure prelude-lml is installed before running the tests.
+
+&lt;pre&gt;
+&gt; $ pwd
+&gt; /home/dkopecek/devel/prelude-lml/F-9/prelude-lml-0.9.12.2/tests
+&gt; $ make tests
+&gt; ./loggrep.py ../plugins/pcre/ruleset/*.rules | ../src/prelude-lml --quiet --dry-run --metadata=nowrite,head --batch-mode --no-resolve --pcre --dump-unmatched --config ./prelude-lml.conf 2&gt;&#38;1 | /bin/grep -Fvf ignored
+&gt; grep: ignored: No such file or directory
+&gt; Traceback (most recent call last):
+&gt;   File "./loggrep.py", line 29, in &lt;module&gt;
+&gt;     print i[:-1]
+&gt; IOError: [Errno 32] Broken pipe
+&gt; make: *** [tests] Error 2
+&lt;/pre&gt;
+
+The file is missing, you can just _touch ignored_ in order to fixes this problem.</pre></div>
+    </div>
+  </div>
+  
+  <div id="change-550" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by  <a title="08/11/2008 10:53 PM" href="/projects/prelude-lml/activity?from=2008-08-11">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-550-notes" class="wiki"><p>Replying to [comment:12 yoann]:</p>
+
+
+<blockquote>
+
+	<p>Replying to [comment:11 <a class="email" href="mailto:dkopecek@redhat.com">dkopecek@redhat.com</a>]:</p>
+
+
+<blockquote>
+
+	<p>Replying to [comment:10 yoann]:</p>
+
+
+<blockquote>
+
+	<p>Replying to [comment:7 <a class="email" href="mailto:pvrabec@redhat.com">pvrabec@redhat.com</a>]:<br />This is used for regression testing and reviewing generated alerts:</p>
+
+
+</blockquote></blockquote></blockquote>
+
+<pre>
+&gt; &gt; &gt;   cd prelude-lml/tests
+&gt; &gt; &gt;   ./loggrep.py ../plugins/pcre/ruleset/&lt;name of your ruleset&gt;.rules | ../src/prelude-lml --dry-run --metadata=nowrite,head --batch-mode --no-resolve --pcre --dump-unmatched --config ./prelude-lml.conf --text-output
+</pre>
+
+	<p>Hi,<br /> I get this warning if I run your test: "WARNING: No alert emited for log entry" (for all LOG: entries). But I'm sure that this ruleset generates alerts, because I tested it in "normal" mode and it worked for each LOG: entry. So, what can be wrong?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-551" class="journal has-notes">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/12/2008 12:53 PM" href="/projects/prelude-lml/activity?from=2008-08-12">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-551-notes" class="wiki"><p>Replying to [comment:13 dkopecek@</p></div>
+    </div>
+  </div>
+  
+  <div id="change-552" class="journal has-notes">
+    <div id="note-13">
+    <h4><a href="#note-13" class="journal-link">#13</a>
+    
+    Updated by  <a title="08/12/2008 01:23 PM" href="/projects/prelude-lml/activity?from=2008-08-12">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-552-notes" class="wiki"><blockquote>
+
+	<p>After looking at the issue, it only happen when the mod_security ruleset is used along with others ruleset: the problem is that the [[ModSecurity]] rules ID conflict with other ruleset ID. If running the mod_security ruleset by itself:</p>
+
+
+</blockquote>
+
+<pre>
+&gt; 12 Aug 12:49:07 (process:30577) WARNING: 7 line processed in 0.02 seconds (358.42 EPS), 7 alert emited.
+</pre>
+
+<blockquote>
+
+	<p>So the mod_security rules ID need to be given an unique range (You can use the old assigned range: 31XX).</p>
+
+
+</blockquote>
+
+	<p>Thanks! Now it's working.</p>
+
+
+	<p>12 Aug 13:20:37 (process:5970) WARNING: 7 line processed in 0.00 seconds (3396.41 EPS), 7 alert emited.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-553" class="journal has-notes">
+    <div id="note-14">
+    <h4><a href="#note-14" class="journal-link">#14</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/12/2008 01:39 PM" href="/projects/prelude-lml/activity?from=2008-08-12">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-553-notes" class="wiki"><p>Overall, the generated alert look good! Here are some feedback &#38; questions:</p>
+
+
+	<ul>
+	<li>IDMEF require the Reference name and url to not be empty.</li>
+		<li>What is [[ModSec]] Rule ID?</li>
+		<li>What is [[UniqueID]]?</li>
+		<li>What exactly is the log format used in the ruleset log sample (doesn't look like raw log entry, there is no timestamp)?</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-554" class="journal has-notes">
+    <div id="note-15">
+    <h4><a href="#note-15" class="journal-link">#15</a>
+    
+    Updated by  <a title="08/12/2008 02:48 PM" href="/projects/prelude-lml/activity?from=2008-08-12">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-554-notes" class="wiki"><p>Replying to [comment:16 yoann]:</p>
+
+
+<blockquote>
+
+	<p>Overall, the generated alert look good! Here are some feedback &#38; questions:</p>
+
+
+	<ul>
+	<li>IDMEF require the Reference name and url to not be empty.</li>
+	</ul>
+
+
+</blockquote>
+
+	<p>See last attachment.</p>
+
+
+<blockquote>
+
+	<ul>
+	<li>What is [[ModSec]] Rule ID?</li>
+	</ul>
+
+
+</blockquote>
+
+	<p>This is the ID of the mod_security rule that generated the log entry.</p>
+
+
+<blockquote>
+
+	<ul>
+	<li>What is [[UniqueID]]?</li>
+	</ul>
+
+
+</blockquote>
+
+	<p>I don't know what this is exactly, but I think that apache identifies sessions with this. mod_unique_id is a separate apache module and mod_security requires it.</p>
+
+
+<blockquote>
+
+	<ul>
+	<li>What exactly is the log format used in the ruleset log sample (doesn't look like raw log entry, there is no timestamp)?</li>
+	</ul>
+
+
+</blockquote>
+
+	<p>I changed the format back to the version with timestamp (apache error_log). See last attachment.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-555" class="journal has-notes">
+    <div id="note-16">
+    <h4><a href="#note-16" class="journal-link">#16</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/12/2008 03:20 PM" href="/projects/prelude-lml/activity?from=2008-08-12">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-555-notes" class="wiki"><p>Replying to [comment:17 dkopecek@</p></div>
+    </div>
+  </div>
+  
+  <div id="change-556" class="journal has-notes">
+    <div id="note-17">
+    <h4><a href="#note-17" class="journal-link">#17</a>
+    
+    Updated by  <a title="08/12/2008 04:16 PM" href="/projects/prelude-lml/activity?from=2008-08-12">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-556-notes" class="wiki"><p>Replying to [comment:18 yoann]:</p>
+
+
+<blockquote><blockquote><blockquote>
+
+	<ul>
+	<li>What is [[ModSec]] Rule ID?</li>
+	</ul>
+
+
+</blockquote>
+
+	<p>This is the ID of the mod_security rule that generated the log entry.</p>
+
+
+</blockquote>
+
+	<p>Is the [[RuleID]] tied to the "msg" part of the log (aka: one ID per msg)?</p>
+
+
+</blockquote>
+
+	<p>Yes.</p>
+
+
+<blockquote>
+
+	<p>I am wondering whether we should use the "msg" part directly within classification.text. <br />...<br />Do you have any opinion on the matter?</p>
+
+
+</blockquote>
+
+	<p>The msg part can be very long and very specific. For example:</p>
+
+
+	<p>"Injection of Undocumented [[ColdFusion]] Tags. Matched signature <%{TX.0}>"</p>
+
+
+	<p>In error_log %{TX.0} is substituted with data from the session that triggered this alert. I thought that the classification.text should contain the 2 main alerts that modsecurity generates: warning and access denied. Should it be more specific?</p>
+
+
+<blockquote>
+
+	<p>How many different msg are there in current [[ModSecurity]] rules?</p>
+
+
+</blockquote>
+
+	<ol>
+	<li>sed -n "s/.*msg:'\([^']*\)'.*/\1/p" /etc/httpd/modsecurity.d/*.conf | sort | uniq | wc -l</li>
+	</ol>
+
+
+	<p>64</p>
+
+
+	<p>...and probably more in the latest version.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-557" class="journal has-notes">
+    <div id="note-18">
+    <h4><a href="#note-18" class="journal-link">#18</a>
+    
+    Updated by  <a title="08/12/2008 04:25 PM" href="/projects/prelude-lml/activity?from=2008-08-12">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-557-notes" class="wiki"><p>Replying to [comment:19 dkopecek@</p></div>
+    </div>
+  </div>
+  
+  <div id="change-558" class="journal has-notes">
+    <div id="note-19">
+    <h4><a href="#note-19" class="journal-link">#19</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/14/2008 06:20 PM" href="/projects/prelude-lml/activity?from=2008-08-14">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-558-notes" class="wiki"><p>Replying to [comment:19 dkopecek@</p></div>
+    </div>
+  </div>
+  
+  <div id="change-559" class="journal has-notes">
+    <div id="note-20">
+    <h4><a href="#note-20" class="journal-link">#20</a>
+    
+    Updated by  <a title="08/15/2008 01:12 PM" href="/projects/prelude-lml/activity?from=2008-08-15">about 16 years</a> ago
+    </h4>
+
+    <div id="journal-559-notes" class="wiki"><p>Replying to [comment:21 yoann]:</p>
+
+
+<blockquote>
+
+	<p>The ruleset now look ready to be included in the Prelude-LML repository, should I process with it now, or would you like to perform other modification before this is done?</p>
+
+
+</blockquote>
+
+	<p>Yes, you can use this version. I plan to add more rules, but don't have time to do it now. I'll let you now if a new ruleset is available or I simply open a new ticket.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-560" class="journal has-notes has-details">
+    <div id="note-21">
+    <h4><a href="#note-21" class="journal-link">#21</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/18/2008 12:21 PM" href="/projects/prelude-lml/activity?from=2008-08-18">about 16 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-560-notes" class="wiki"><p>(In r10869) [[ModSecurity]] ruleset rewrite, by Peter Vrabec &lt;<a class="email" href="mailto:pvrabec@redhat.com">pvrabec@redhat.com</a>&gt; and<br />Dan Kopecek &lt;<a class="email" href="mailto:dkopecek@redhat.com">dkopecek@redhat.com</a>&gt;. This ruleset handle [[ModSecurity]] 2.0<br />output. Thanks for the contribution! Fix <a class="issue tracker-1 status-5 priority-4 priority-default closed" title="Bug: mod_security cleanup, and compatibility with version 2.0 (Closed)" href="/issues/216">#216</a>.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1008" class="journal has-details">
+    <div id="note-22">
+    <h4><a href="#note-22" class="journal-link">#22</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:21 PM" href="/projects/prelude-lml/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prelude-LML</i></li>
+       <li><strong>Category</strong> deleted (<del><i>4</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.13</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/216.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/216.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

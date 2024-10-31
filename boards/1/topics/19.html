@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>[Solved] barnyard compilation for prelude - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="8NXqzy6Awce9w9bkUoanTYvb4QPU9634WpQTGQ7Q0abj+oKg55TMRDdp3h5Pzu4T95CQnc799LaEGteJitDlpQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>[Solved] barnyard compilation for prelude</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/05/2015 05:00 PM" href="/projects/prelude/activity?from=2015-10-05">about 9 years</a> ago</span></p>
+<div class="wiki">
+<p>I tried to compile barnyard2-1.9 and I got this message:</p>
+
+
+checking for libprelude - version >= 0.9.6... no
+	<ul>
+	<li>Could not run libprelude test program, checking why...</li>
+		<li>The test program failed to compile or link. See the file config.log for the</li>
+		<li>exact error that occured. This usually means LIBPRELUDE was incorrectly installed</li>
+		<li>or that you have moved LIBPRELUDE since it was installed. In the latter case, you</li>
+		<li>may want to edit the libprelude-config script: /usr/bin/libprelude-config<br />checking for linuxthreads... no<br />configure: creating ./config.status</li>
+	</ul>
+
+
+	<p>So I installed the last version of libprelude and libprelude-devel correctly with yum install.<br />Please how to solve this problem??</p>
+
+
+	<p>Regards</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (5)</h3>
+  <div class="message reply" id="message-20">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/19?r=20#message-20">RE: barnyard compilation for prelude</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/08/2015 11:28 AM" href="/projects/prelude/activity?from=2015-10-08">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>Did you install the <strong>libtool-ltdl-devel</strong> package?</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-21">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/19?r=21#message-21">RE: barnyard compilation for prelude</a>
+    -
+    Added by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/09/2015 09:42 AM" href="/projects/prelude/activity?from=2015-10-09">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>Antoine,thanks for answering me.<br />Finally i reconfigured all my config and now snort and barnyard2 start well.<br />So my problem is snort can't capture the traffic. Please following my output <br />files after starting. I believe that there is no error.</p>
+
+
+	<p>Regards</p></div>
+  <div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/443/snort.png">snort.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/443/snort.png">View</a>
+  
+  <span class="size">(114 KB)</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/444/barnyard2.png">barnyard2.png</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/444/barnyard2.png">View</a>
+  
+  <span class="size">(58.7 KB)</span>
+  </p>
+</div>
+
+  </div>
+  <div class="message reply" id="message-22">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/19?r=22#message-22">RE: barnyard compilation for prelude</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="10/12/2015 11:23 AM" href="/projects/prelude/activity?from=2015-10-12">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Did you follow the <a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdpartySnort">wiki</a> instructions?<br />If the problem remains, please contact Snort support.</p></div>
+  
+  </div>
+  <div class="message reply" id="message-23">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/19?r=23#message-23">RE: barnyard compilation for prelude</a>
+    -
+    Added by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/14/2015 10:34 AM" href="/projects/prelude/activity?from=2015-10-14">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Yes I followed the wiki instructions. Now I can capture snort traffic in /var/log/snort/alert. <br />Also I connected snort and barnyard2. On prewikka, I see snort connected. <br />So I ask how I can do to see snort alerts on my prewikka interface?</p></div>
+  
+  </div>
+  <div class="message reply" id="message-24">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/19?r=24#message-24">RE: barnyard compilation for prelude</a>
+    -
+    Added by <a class="user active" href="/users/461">Thierno DIOP</a> <a title="10/21/2015 02:08 PM" href="/projects/prelude/activity?from=2015-10-21">about 9 years</a> ago
+  </h4>
+  <div class="wiki"><p>Problem solved!!</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-5/5)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

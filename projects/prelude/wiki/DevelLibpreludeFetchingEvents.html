@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>DevelLibpreludeFetchingEvents - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ROigstvhR3w5iqoJpAyMho2HhtWolokKIkN2reYgoX1Xx8jdEvVK/7MgovO5RMXY8cz3S7Kc0ET8zbI9YiCVfg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/prelude/wiki/ManualDevel">ManualDevel</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Developing-an-Application-Using-Prelude-Fetching-Events-Feature"></a>
+<h1 >Developing an Application Using Prelude Fetching Events Feature<a href="#Developing-an-Application-Using-Prelude-Fetching-Events-Feature" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The goal of this page is to help you to develop and understand the libprelude fetching events feature. First, raw code is shown, compilable and usable. Each function is explained latter.</p>
+
+
+	<a name="Code"></a>
+<h2 >Code<a href="#Code" class="wiki-anchor">&para;</a></h2>
+
+
+<pre>
+<code class="c syntaxhl"><span class="CodeRay"><span class="preprocessor">#include</span> <span class="include">&lt;libprelude/prelude.h&gt;</span>
+<span class="preprocessor">#include</span> <span class="include">&lt;libprelude/prelude-message-id.h&gt;</span>
+<span class="preprocessor">#include</span> <span class="include">&lt;libprelude/idmef-message-print.h&gt;</span>
+
+<span class="preprocessor">#define</span> CLIENT_PROFILE <span class="string"><span class="delimiter">&quot;</span><span class="content">PoolingTest</span><span class="delimiter">&quot;</span></span> 
+<span class="preprocessor">#define</span> MANAGER_ADDRESS <span class="string"><span class="delimiter">&quot;</span><span class="content">127.0.0.1</span><span class="delimiter">&quot;</span></span> 
+<span class="preprocessor">#define</span> POOL_TIMEOUT <span class="integer">2</span>        <span class="comment">/* set the alert pooling check at two seconds */</span>
+
+<span class="directive">static</span> prelude_client_t *client;
+
+<span class="directive">static</span> <span class="predefined-type">int</span>
+initialize_prelude(<span class="directive">void</span>)
+{
+        <span class="predefined-type">int</span> ret;
+        <span class="predefined-type">char</span> *buffer;
+
+        ret = prelude_init(<span class="predefined-constant">NULL</span>, <span class="predefined-constant">NULL</span>);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                prelude_perror(ret, <span class="string"><span class="delimiter">&quot;</span><span class="content">error initializing the prelude library</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> ret;
+        }
+
+        ret = prelude_client_new(&#38;client, CLIENT_PROFILE);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                prelude_perror(ret, <span class="string"><span class="delimiter">&quot;</span><span class="content">error creating the prelude client</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> ret;
+        }
+
+        prelude_client_set_required_permission(client, PRELUDE_CONNECTION_PERMISSION_IDMEF_READ);
+
+    ret = prelude_client_init(client);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                prelude_perror(ret, <span class="string"><span class="delimiter">&quot;</span><span class="content">error initializing the prelude client</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> ret;
+        }
+
+        <span class="keyword">return</span> <span class="integer">0</span>;
+}
+
+<span class="directive">static</span> <span class="directive">const</span> <span class="predefined-type">char</span> *
+pooling_get_classification(idmef_alert_t *alert)
+{
+        <span class="predefined-type">int</span> ret;
+
+        idmef_classification_t *classification;
+        prelude_string_t *pstr;
+        <span class="directive">const</span> <span class="predefined-type">char</span> *buffer;
+
+        classification = idmef_alert_get_classification(alert);
+        <span class="keyword">if</span> ( ! classification ) {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot get classification from alert</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> <span class="predefined-constant">NULL</span>;
+        }
+        pstr = idmef_classification_get_text(classification);
+        <span class="keyword">if</span> ( ! pstr ) {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot get text from classification</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> <span class="predefined-constant">NULL</span>;
+        }
+
+        buffer = prelude_string_get_string(pstr);
+
+        <span class="keyword">return</span> buffer;
+
+}
+
+<span class="directive">static</span> idmef_impact_t *
+pooling_get_impact(idmef_alert_t *alert)
+{
+
+        <span class="predefined-type">int</span> ret;
+
+        idmef_assessment_t *assessment;
+        idmef_impact_t *impact;
+
+        assessment = idmef_alert_get_assessment(alert);
+        <span class="keyword">if</span> ( ! assessment ) {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot get assessment from alert</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> <span class="predefined-constant">NULL</span>;
+        }
+        impact = idmef_assessment_get_impact (assessment);
+        <span class="keyword">if</span> ( ! impact ) {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot get impact from assessment</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> <span class="predefined-constant">NULL</span>;
+        }
+
+        <span class="keyword">return</span> impact;
+
+}
+
+<span class="directive">static</span> <span class="directive">const</span> <span class="predefined-type">char</span> *
+pooling_get_impact_description(idmef_impact_t *impact)
+{
+
+        prelude_string_t *pstr;
+        <span class="directive">const</span> <span class="predefined-type">char</span> *buffer;
+
+        pstr = idmef_impact_get_description(impact);
+        <span class="keyword">if</span> ( ! impact ) {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot get description from impact</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> <span class="predefined-constant">NULL</span>;
+        }
+
+        buffer = prelude_string_get_string(pstr);
+
+        <span class="keyword">return</span> buffer;
+
+}
+
+<span class="directive">static</span> <span class="directive">void</span>
+pooling_get_target_infos(idmef_alert_t *alert, <span class="directive">const</span> <span class="predefined-type">char</span> **node_name, <span class="directive">const</span> <span class="predefined-type">char</span> **node_addr)
+{
+        idmef_target_t *target = <span class="predefined-constant">NULL</span>;
+        idmef_address_t *address = <span class="predefined-constant">NULL</span>;
+        idmef_node_t   *node;
+
+        prelude_string_t *pstr;
+        <span class="directive">const</span> <span class="predefined-type">char</span> *buffer;
+
+        <span class="keyword">while</span> ( (target = idmef_alert_get_next_target(alert, target)) ) {
+                node = idmef_target_get_node(target);
+
+                pstr = idmef_node_get_name(node);
+                buffer = prelude_string_get_string(pstr);
+                *node_name = buffer;
+
+                <span class="keyword">while</span> ( (address = idmef_node_get_next_address(node, address)) ) {
+
+                        pstr = idmef_address_get_address(address);
+                        buffer = prelude_string_get_string(pstr);
+                        *node_addr = buffer;
+                }
+        }
+}
+
+<span class="directive">static</span> <span class="predefined-type">int</span>
+process_idmef_message(prelude_msg_t *msg)
+{
+
+        <span class="predefined-type">int</span> ret;
+
+        idmef_message_t         *idmef;
+        idmef_message_type_t     msg_type;
+        idmef_alert_t           *alert;
+        idmef_impact_t          *impact;
+        idmef_impact_severity_t *severity;
+        idmef_target_t          *target;
+
+        <span class="directive">const</span> <span class="predefined-type">char</span> *classbuf;
+        <span class="directive">const</span> <span class="predefined-type">char</span> *descrbuf;
+        <span class="directive">const</span> <span class="predefined-type">char</span> *target_name;
+        <span class="directive">const</span> <span class="predefined-type">char</span> *target_addr;
+
+        ret = idmef_message_new(&#38;idmef);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> )
+                <span class="keyword">return</span> ret;
+
+        ret = idmef_message_read(idmef, msg);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                prelude_perror(ret, <span class="string"><span class="delimiter">&quot;</span><span class="content">error reading IDMEF message</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> ret;
+        }
+
+        <span class="comment">/* We only process the Alert class */</span>
+        msg_type = idmef_message_get_type(idmef);
+        <span class="keyword">if</span> ( msg_type != IDMEF_MESSAGE_TYPE_ALERT )
+        <span class="keyword">return</span> <span class="integer">0</span>;
+
+        <span class="keyword">if</span> ( idmef ) {
+                alert = idmef_message_get_alert(idmef);
+                <span class="keyword">if</span> ( ! alert ) {
+                        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot get alert from message</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+                        <span class="keyword">return</span> -<span class="integer">1</span>;
+                }
+        } <span class="keyword">else</span> {
+                <span class="keyword">return</span> -<span class="integer">1</span>;
+        }
+
+        pooling_get_target_infos(alert, &#38;target_name, &#38;target_addr);
+
+        classbuf = pooling_get_classification(alert);
+        <span class="keyword">if</span> ( ! classbuf ) classbuf=<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+
+        impact   = pooling_get_impact(alert);
+        <span class="keyword">if</span> ( impact ) {
+                descrbuf = pooling_get_impact_description(impact);
+                <span class="keyword">if</span> ( ! descrbuf ) descrbuf=<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+                severity = idmef_impact_get_severity(impact);
+                <span class="keyword">if</span> ( ! severity ) <span class="keyword">return</span> -<span class="integer">1</span>;
+
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Classbuf=[%s],descrbuf=[%s], target_name=[%s], targer_addr=[%s]</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, 
+               classbuf, descrbuf, target_name, target_addr);
+        } <span class="keyword">else</span> {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot get impact!</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+        }
+
+        idmef_message_destroy(idmef);
+
+        <span class="keyword">return</span> <span class="integer">0</span>;
+
+}
+
+<span class="directive">extern</span> <span class="predefined-type">int</span> event_cb(prelude_connection_pool_t *pool, prelude_connection_pool_event_t event,
+                    prelude_connection_t *conn, <span class="directive">void</span> *extra)
+{
+        <span class="predefined-type">int</span> ret;
+        prelude_msg_t *msg = <span class="predefined-constant">NULL</span>;
+
+        ret = prelude_connection_recv(conn, &#38;msg);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                prelude_perror(ret, <span class="string"><span class="delimiter">&quot;</span><span class="content">couldn't read message</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> ret;
+        }
+
+        <span class="keyword">if</span> ( prelude_msg_get_tag(msg) != PRELUDE_MSG_IDMEF )
+                <span class="keyword">return</span> <span class="integer">0</span>;
+
+        <span class="keyword">return</span> process_idmef_message(msg);
+}
+
+<span class="directive">extern</span> <span class="predefined-type">int</span>
+check_for_event(prelude_connection_pool_t *pool)
+{
+        <span class="predefined-type">int</span> ret;
+
+        <span class="keyword">if</span> ( ! pool ) {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot get data from the pool</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> -<span class="integer">1</span>;
+        }
+
+        ret = prelude_connection_pool_check_event(pool, <span class="integer">0</span>, event_cb, <span class="predefined-constant">NULL</span>);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                prelude_perror(ret, <span class="string"><span class="delimiter">&quot;</span><span class="content">error setting callback</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> -<span class="integer">1</span>;
+        }
+
+}
+
+<span class="directive">extern</span> <span class="predefined-type">int</span>
+connect_prelude(<span class="directive">const</span> <span class="predefined-type">char</span> *manager_addr)
+{
+        <span class="predefined-type">int</span> ret;
+        prelude_connection_pool_t *pool = <span class="predefined-constant">NULL</span>;
+
+        prelude_connection_pool_new(&#38;pool,
+                                    prelude_client_get_profile(client),
+                                    prelude_client_get_required_permission(client));
+
+    ret = prelude_connection_pool_set_connection_string(pool, manager_addr);
+    <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                prelude_perror(ret, <span class="string"><span class="delimiter">&quot;</span><span class="content">error setting new prelude connection string</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> -<span class="integer">1</span>;
+        }
+
+    prelude_client_set_connection_pool(client, pool);
+
+        ret = prelude_connection_pool_init(pool);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                prelude_perror(ret, <span class="string"><span class="delimiter">&quot;</span><span class="content">error initializing connection pool</span><span class="delimiter">&quot;</span></span>);
+                <span class="keyword">return</span> -<span class="integer">1</span>;
+        }
+
+        <span class="keyword">while</span> (<span class="integer">1</span>) {
+                sleep(POOL_TIMEOUT);
+                check_for_event(pool);
+        }
+
+        prelude_client_destroy(client, PRELUDE_CLIENT_EXIT_STATUS_SUCCESS);
+
+        <span class="keyword">return</span> <span class="integer">0</span>;
+}
+
+<span class="predefined-type">int</span> main(<span class="directive">void</span>)
+{
+    <span class="predefined-type">int</span> ret;
+
+    ret = initialize_prelude();
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot initialize prelude</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+        }
+
+    ret = connect_prelude(MANAGER_ADDRESS);
+        <span class="keyword">if</span> ( ret &lt; <span class="integer">0</span> ) {
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Cannot connecting prelude</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
+        }
+
+    <span class="keyword">return</span> <span class="integer">0</span>;
+}
+</span></code></pre>
+
+	<a name="Compile"></a>
+<h3 >Compile<a href="#Compile" class="wiki-anchor">&para;</a></h3>
+
+
+<pre>
+gcc pooling.c -o pooling `libprelude-config --pthread-cflags --libs`
+</code></pre>
+
+	<a name="Register"></a>
+<h3 >Register<a href="#Register" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>If the pooling user as UID 1000 and GID 1000:<br /><pre>
+sudo prelude-admin register [[PoolingTest]] "idmef:r" localhost --uid 1000 --gid 1000
+</code></pre></p>
+
+
+	<a name="Use"></a>
+<h3 >Use<a href="#Use" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>On one side we run prelude-lml, on the other, the manager. Everything is localhost.</p>
+
+
+	<p>Now we can connect the pooling to the manager:<br /><pre>
+$ ./pooling
+Classbuf=[SUDO Command Executed],descrbuf=[User toady successfully executed the command '/bin/ls /' as root.], target_name=[myhost], targer_addr=[127.0.1.1]
+</code></pre></p>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

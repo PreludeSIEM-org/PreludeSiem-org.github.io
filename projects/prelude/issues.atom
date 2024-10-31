@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>PRELUDE SIEM: Issues</title>
+  <link rel="self" href="http://www.prelude-siem.org/projects/prelude/issues.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/projects/prelude/issues"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2019-08-01T09:21:33Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <generator uri="https://www.redmine.org/">
+Redmine  </generator>
+  <entry>
+    <title>Bug #1134 (Assigned): prewikka install on raspbian</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1134"/>
+    <id>http://www.prelude-siem.org/issues/1134</id>
+    <updated>2019-08-01T09:21:33Z</updated>
+    <author>
+      <name>Marc-Antoine delannoy</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello, &lt;br /&gt;I'm trying to set up the latest version of prelude OSS on raspbian. With some effort I installed almost everything. &lt;br /&gt;However, I have a problem with prewikka whose installation doesn't work. I have installed all the dependencies.&lt;br /&gt;But I'm getting some errors when I run this command -&gt; python setup.py install&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="text syntaxhl"&gt;&lt;span class="CodeRay"&gt;root@raspberrypi:/home/prelude/prewikka-5.0.2# python setup.py install
+running install
+running build
+running compile_catalog
+error: prewikka/locale/de/LC_MESSAGES/prewikka.po:1560: placeholders are incompatible
+compiling catalog prewikka/locale/de/LC_MESSAGES/prewikka.po to prewikka/locale/de/LC_MESSAGES/prewikka.mo
+error: prewikka/locale/ru/LC_MESSAGES/prewikka.po:47: unknown named placeholder u'value'
+error: prewikka/locale/ru/LC_MESSAGES/prewikka.po:162: unknown named placeholder u'version'
+error: prewikka/locale/ru/LC_MESSAGES/prewikka.po:1593: placeholders are incompatible
+compiling catalog prewikka/locale/ru/LC_MESSAGES/prewikka.po to prewikka/locale/ru/LC_MESSAGES/prewikka.mo
+error: prewikka/locale/pl/LC_MESSAGES/prewikka.po:1587: placeholders are incompatible
+error: prewikka/locale/pl/LC_MESSAGES/prewikka.po:1870: placeholders are incompatible
+compiling catalog prewikka/locale/pl/LC_MESSAGES/prewikka.po to prewikka/locale/pl/LC_MESSAGES/prewikka.mo
+error: prewikka/locale/es/LC_MESSAGES/prewikka.po:1554: placeholders are incompatible
+error: prewikka/locale/es/LC_MESSAGES/prewikka.po:2126: placeholders are incompatible
+error: prewikka/locale/es/LC_MESSAGES/prewikka.po:2226: placeholders are incompatible
+error: prewikka/locale/es/LC_MESSAGES/prewikka.po:2231: placeholders are incompatible
+compiling catalog prewikka/locale/es/LC_MESSAGES/prewikka.po to prewikka/locale/es/LC_MESSAGES/prewikka.mo
+error: prewikka/locale/pt_BR/LC_MESSAGES/prewikka.po:1546: placeholders are incompatible
+error: prewikka/locale/pt_BR/LC_MESSAGES/prewikka.po:2119: placeholders are incompatible
+compiling catalog prewikka/locale/pt_BR/LC_MESSAGES/prewikka.po to prewikka/locale/pt_BR/LC_MESSAGES/prewikka.mo
+compiling catalog prewikka/locale/fr/LC_MESSAGES/prewikka.po to prewikka/locale/fr/LC_MESSAGES/prewikka.mo
+error: prewikka/locale/it/LC_MESSAGES/prewikka.po:43: unknown named placeholder u'value'
+error: prewikka/locale/it/LC_MESSAGES/prewikka.po:1550: placeholders are incompatible
+compiling catalog prewikka/locale/it/LC_MESSAGES/prewikka.po to prewikka/locale/it/LC_MESSAGES/prewikka.mo
+compiling catalog prewikka/locale/en/LC_MESSAGES/prewikka.po to prewikka/locale/en/LC_MESSAGES/prewikka.mo
+running build_custom
+compiling ['themes/dark.less', 'prewikka/htdocs/css/style.less'] -&amp;gt; prewikka/htdocs/css/themes/dark.css
+error: [Errno 2] No such file or directory
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;there is a problem with languages. The second problem I guess it is: prewikka/htdocs/css/themes/dark.css that is not found.&lt;br /&gt;Package installation does not seem possible in version 5 for a debian-based distribution (4 is the last version i found).&lt;/p&gt;
+
+
+	&lt;p&gt;Do you have any idea how to solve this?&lt;br /&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #1093 (Assigned): prelude-admin Segmentation Fault raspbian</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1093"/>
+    <id>http://www.prelude-siem.org/issues/1093</id>
+    <updated>2019-05-06T12:16:55Z</updated>
+    <author>
+      <name>Marc-Antoine delannoy</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hello,&lt;br /&gt;I am trying to run the libprelude on a raspberry pi to use suricata with the prelude alert format.&lt;br /&gt;I download the libprelude-5.0.0.tar.gz and decompress the archive.&lt;br /&gt;then:&lt;br /&gt;&lt;code&gt;&lt;br /&gt;./configure&lt;br /&gt;make&lt;br /&gt;make install&lt;br /&gt;LD_LIBRARY_PATH=/usr/local/lib&lt;br /&gt;export LD_LIBRARY_PATH&lt;br /&gt;&lt;/code&gt;&lt;br /&gt;and when i try to use prelude-admin without argument it works and displays the help message.&lt;br /&gt;But if for example i try prelude-admin list it returns a segmentation fault.&lt;br /&gt;Same for any argument.&lt;/p&gt;
+
+
+	&lt;p&gt;And if i run make check&lt;br /&gt;I have 4 errors.&lt;br /&gt;the end of the output is:&lt;br /&gt;&lt;pre&gt;
+
+make  check-TESTS check-local
+make[3]: Entering directory '/home/suricata/libprelude-5.0.0/tests'
+make[4]: Entering directory '/home/suricata/libprelude-5.0.0/tests'
+../test-driver: line 95: 26741 Segmentation fault      "$@" &amp;gt; $log_file 2&amp;gt;&amp;#38;1
+FAIL: async-timer
+PASS: idmef
+../test-driver: line 95: 26789 Aborted                 "$@" &amp;gt; $log_file 2&amp;gt;&amp;#38;1
+FAIL: idmef-criteria
+PASS: idmef-message-helper
+PASS: idmef-path
+PASS: idmef-value
+../test-driver: line 95: 26885 Segmentation fault      "$@" &amp;gt; $log_file 2&amp;gt;&amp;#38;1
+FAIL: prelude-client
+PASS: prelude-string
+../test-driver: line 95: 26933 Segmentation fault      "$@" &amp;gt; $log_file 2&amp;gt;&amp;#38;1
+FAIL: prelude-timer
+make[5]: Entering directory '/home/suricata/libprelude-5.0.0/tests'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/home/suricata/libprelude-5.0.0/tests'
+============================================================================
+Testsuite summary for libprelude 5.0.0
+============================================================================
+# TOTAL: 9
+# PASS:  5
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  4
+# XPASS: 0
+# ERROR: 0
+============================================================================
+See tests/test-suite.log
+============================================================================
+Makefile:1881: recipe for target 'test-suite.log' failed
+make[4]: *** [test-suite.log] Error 1
+make[4]: Leaving directory '/home/suricata/libprelude-5.0.0/tests'
+Makefile:1987: recipe for target 'check-TESTS' failed
+make[3]: *** [check-TESTS] Error 2
+make[3]: Leaving directory '/home/suricata/libprelude-5.0.0/tests'
+Makefile:2117: recipe for target 'check-am' failed
+make[2]: *** [check-am] Error 2
+make[2]: Leaving directory '/home/suricata/libprelude-5.0.0/tests'
+Makefile:1669: recipe for target 'check-recursive' failed
+make[1]: *** [check-recursive] Error 1
+make[1]: Leaving directory '/home/suricata/libprelude-5.0.0'
+Makefile:1954: recipe for target 'check' failed
+make: *** [check] Error 2
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Do you have any idea how to solve this?&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #1082 (Assigned): Problem to register my  IDS (Suricata) on Prelude OSS</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1082"/>
+    <id>http://www.prelude-siem.org/issues/1082</id>
+    <updated>2019-04-12T08:13:59Z</updated>
+    <author>
+      <name>Marc-Antoine delannoy</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Hi,&lt;br /&gt;I have a problem to register my  IDS (Suricata) on Prelude OSS. My IDS is on the same network but in a different CentOs VM. The prelude address is 192.168.0.2 and the IDS address is 192.168.0.3&lt;br /&gt;I already installed from source : prelude-manager, prelude lml (not used), prelude-admin and libpreludedb. I configured the /usr/local/etc/prelude/default/client.conf&lt;br /&gt; to change the server-addr=127.0.0.1 to server-addr=192.168.0.2&lt;br /&gt;Same for prelude-manager.conf with listen = 192.168.0.2:5553&lt;br /&gt;I verify the connection between my IDS and my Prelude with a ping.&lt;br /&gt;Then I enter the command line on the prelude machine :&lt;br /&gt;       prelude-admin registration-server prelude-manager&lt;br /&gt;and on the IDS :&lt;/p&gt;
+
+
+	&lt;p&gt;prelude-admin register suricata "idmef:w admin:r" 192.168.0.2 –uid 1000 –gid 1500&lt;/p&gt;
+
+
+	&lt;p&gt;I copy the one shot password but get this error message on my IDS :&lt;br /&gt;Connecting to registration server (192.168.0.2 :5553)&lt;br /&gt;Could not connect to 192.168.0.2 port 5553 : No route to host&lt;br /&gt;So I scan my  port and the number 5553 remains closed throughout all the process. &lt;br /&gt;I may have missed a command line or configuration, so i reread the whole doc but I didn’t found anything about it.&lt;/p&gt;
+
+
+	&lt;p&gt;Do you have any suggestions?&lt;/p&gt;
+
+
+	&lt;p&gt;Thanks.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #915 (New): Text spelling issue</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/915"/>
+    <id>http://www.prelude-siem.org/issues/915</id>
+    <updated>2017-10-16T21:51:10Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+Two issues :
+	&lt;ul&gt;
+	&lt;li&gt;supressed =&gt; suppressed&lt;/li&gt;
+		&lt;li&gt;authentification =&gt; authentication&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #867 (New): libpreludedb : missing -lpreludecpp when linking</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/867"/>
+    <id>http://www.prelude-siem.org/issues/867</id>
+    <updated>2017-01-11T08:24:33Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;With rpmlint, I got this :&lt;br /&gt;&lt;pre&gt;
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 typeinfo for Prelude::PreludeError
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::PreludeError::what() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::isNull() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::~IDMEFValue()
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::operator idmef_value*() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::toString[abi:cxx11]() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEF::operator idmef_object*() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::IDMEFValue(idmef_value*)
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::PreludeError::PreludeError()
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 vtable for Prelude::PreludeError
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFValue::getType() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFPath::operator idmef_path*() const
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEF::IDMEF(idmef_object*)
+libpreludedb.x86_64: W: undefined-non-weak-symbol /usr/lib64/libpreludedbcpp.so.2.1.0 Prelude::IDMEFCriteria::operator idmef_criteria*() const
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;This is because, in bindings/c++/Makefile, the variable "libpreludedbcpp_la_LDFLAGS" is missing "-lpreludecpp"&lt;/p&gt;
+
+
+	&lt;p&gt;Also, it seems that libprelude-config never provide -lpreludecpp&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #866 (New): libpreludedb : manpages warning</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/866"/>
+    <id>http://www.prelude-siem.org/issues/866</id>
+    <updated>2017-01-11T08:22:05Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;When running rpmlint, I got this :&lt;br /&gt;&lt;pre&gt;
+libpreludedb-devel.x86_64: W: manual-page-warning /usr/share/man/man1/libpreludedb-config.1.gz 23: a special character is not allowed in a name
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;Patch :&lt;br /&gt;&lt;pre&gt;
+--- ./docs/manpages/libpreludedb-config.1       2016-09-15 08:49:14.234000884 +0200
++++ ./docs/manpages/libpreludedb-config.1       2017-01-10 08:22:39.280448484 +0100
+@@ -20,7 +20,7 @@
+ .B \-\-libs
+ options.
+ This option must be specified before any
+-.B\-\-libs
++.B \-\-libs
+ or
+ .B \-\-cflags
+ options. This
+&lt;/pre&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #860 (Assigned): Fedora : ruby sitearchdir need to be vendorarchdir</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/860"/>
+    <id>http://www.prelude-siem.org/issues/860</id>
+    <updated>2016-10-31T21:33:18Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;p&gt;On Fedora, sitearchdir is not defined, so ruby "so" file go to /usr/local.&lt;/p&gt;
+
+
+	&lt;p&gt;On Fedora it is vendorarchdir&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Feature #238 (New): manpage</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/238"/>
+    <id>http://www.prelude-siem.org/issues/238</id>
+    <updated>2007-06-09T00:32:30Z</updated>
+    <content type="html">
+&lt;p&gt;Here is a manpage for prelude-lml, mostly taken from --help command line and the wiki. Please review for integration.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #215 (New): ntsyslog.rules does not detect domain login events</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/215"/>
+    <id>http://www.prelude-siem.org/issues/215</id>
+    <updated>2007-04-03T17:44:11Z</updated>
+    <content type="html">
+&lt;p&gt;The ruleset appears to detect only host-based login attempts rather than login attempts against a domain.&lt;/p&gt;
+
+
+	&lt;p&gt;event id 675: (bad password)&lt;/p&gt;
+
+
+	&lt;p&gt;security[failure] 675 NT AUTHORITY\SYSTEM Pre-authentication failed: User Name:mike User ID: %{x-x-x-xx-xxxxxxxxxx-xxxxxxxxxx-xxxxxxxxx-xxx} Service Name:krbtgt/HQ Pre-Authentication Type:0x2 Failure Code:0x18 Client&lt;br /&gt;Address:10.120.120.152&lt;/p&gt;
+
+
+	&lt;p&gt;more info: &lt;a class="external" href="http://www.ultimatewindowssecurity.com/events/com298.html"&gt;http://www.ultimatewindowssecurity.com/events/com298.html&lt;/a&gt;&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #214 (New): Invalid classification reference in several LML rulesets</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/214"/>
+    <id>http://www.prelude-siem.org/issues/214</id>
+    <updated>2007-04-03T17:37:44Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Some LML rulesets are missing an "url" field for the Classification Reference. IDMEF specify that the "url" member of a Reference has to be specified.&lt;/p&gt;
+
+
+Example of such rulesets are:
+	&lt;ul&gt;
+	&lt;li&gt;cisco-vpn.rules&lt;/li&gt;
+		&lt;li&gt;cisco-css.rules&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Bug #213 (New): LML rulesets should be updated to use IDMEF Action</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/213"/>
+    <id>http://www.prelude-siem.org/issues/213</id>
+    <updated>2007-04-03T17:31:44Z</updated>
+    <author>
+      <name>Yoann VANDOORSELAERE</name>
+    </author>
+    <content type="html">
+&lt;p&gt;Current rulesets (except modsecurity) does not make use of the IDMEF Action class.&lt;/p&gt;
+
+
+&lt;pre&gt;
+4.2.6.2.  The Action Class
+
+   The Action class is used to describe any actions taken by the
+   analyzer in response to the event. 
+   category
+
+      The type of action taken.  The permitted values are shown below.
+      The default value is "other".  (See also Section 10.)
+
+   +------+-------------------+----------------------------------------+
+   | Rank | Keyword           | Description                            |
+   +------+-------------------+----------------------------------------+
+   |    0 | block-installed   | A block of some sort was installed to  |
+   |      |                   | prevent an attack from reaching its    |
+   |      |                   | destination.  The block could be a     |
+   |      |                   | port block, address block, etc., or    |
+   |      |                   | disabling a user account.              |
+   |      |                   |                                        |
+   |    1 | notification-sent | A notification message of some sort    |
+   |      |                   | was sent out-of-band (via pager,       |
+   |      |                   | e-mail, etc.).  Does not include the   |
+   |      |                   | transmission of this alert.            |
+   |      |                   |                                        |
+   |    2 | taken-offline     | A system, computer, or user was taken  |
+   |      |                   | offline, as when the computer is shut  |
+   |      |                   | down or a user is logged off.          |
+   |      |                   |                                        |
+   |    3 | other             | Anything not in one of the above       |
+   |      |                   | categories.                            |
+   +------+-------------------+----------------------------------------+
+
+      The element itself may be empty, or may contain a textual
+      description of the action, if the analyzer is able to provide
+      additional details.
+&lt;/pre&gt;    </content>
+  </entry>
+</feed>

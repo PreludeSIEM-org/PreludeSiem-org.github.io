@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>ManualPrewikka - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="1t+7A2g+oyO4MH/w/XgQh0gp3N2Jaez5P5p5R8Jr8cvF8NNsoSquoDKadwrgMFnZNGKtQ5NjtbfhFL3XRmvFyA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/prelude/wiki/ManualUser">ManualUser</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Prewikka-Manual"></a>
+<h1 >Prewikka Manual<a href="#Prewikka-Manual" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><strong>Table of Contents</strong></p>
+
+
+	<ul class="toc"><li><a href="#Prewikka-Manual">Prewikka Manual</a><ul><li><a href="#Overview">Overview</a></li><li><a href="#Core-Features">Core Features</a><ul><li><a href="#Prewikka-functionality">Prewikka functionality</a></li><li><a href="#PrewikkaPro-functionality">PrewikkaPro functionality</a></li></ul>
+</li><li><a href="#Getting-Started">Getting Started</a><ul><li><a href="#Technical-Requirements">Technical Requirements</a></li><li><a href="#Accessing-Prewikka">Accessing Prewikka</a></li><li><a href="#Control-menu">Control menu</a></li><li><a href="#Prewikka-menu">Prewikka menu</a></li><li><a href="#Setting-Your-Preferences">Setting Your Preferences</a></li><li><a href="#Session-Timeout">Session Timeout</a></li></ul>
+</li><li><a href="#Using-Prewikka">Using Prewikka</a><ul><li><a href="#ALERT-menu">ALERT menu</a><ul><li><a href="#Alerts-section">Alerts section</a></li><li><a href="#Threats-section">Threats section</a></li><li><a href="#Agents-section">Agents section</a></li></ul>
+</li><li><a href="#ADMIN-menu">ADMIN menu</a><ul><li><a href="#Configuration-section">Configuration section</a></li><li><a href="#Preferences-section">Preferences section</a></li></ul>
+</li><li><a href="#-menu">? menu</a><ul><li><a href="#Apps-section">Apps section</a></li><li><a href="#About-section">About section</a></li></ul></li></ul></li></ul></li></ul>
+
+
+	<a name="Overview"></a>
+<h2 >Overview<a href="#Overview" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><strong>Prewikka is the official Prelude User Interface.</strong> The Prewikka interface is a web GUI compatible with IE >= 9, Firefox >= 18, Chrome >= 26.<br /><strong>Prewikka is open source</strong> and is released under GPLv2 license. Prewikka has been developped in <strong>Python language</strong>.<br /><strong>Prelude supports real-time visualization of data</strong> thanks to Prewikka which provides automatic reloading of the alert listing.<br />PrewikkaPro, the commercial version of Prewikka provides additional functionalities. It is available through the <a href="http://www.prelude-siem.com/en/home-page-2/products/introduction/" class="external">Prelude SIEM</a> website.</p>
+
+
+	<p><ins>Caution: All Prewikka and PrewikkaPro functionalities are listed in this manual. So if you don't see all these functionalities on your own system, this is because either you use Prewikka and you are reading about a PrewikkaPro functionality, or you don't have the necessary permissions in Prewikka to see / use it.</ins></p>
+
+
+	<a name="Core-Features"></a>
+<h2 >Core Features<a href="#Core-Features" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Below are listed the Prewikka and PrewikkaPro main functionalities. More details and pictures are available on the <a href="http://www.prelude-siem.com/en/home-page-2/products/introduction/" class="external">Prelude SIEM</a> website.</p>
+
+
+	<a name="Prewikka-functionality"></a>
+<h3 >Prewikka functionality<a href="#Prewikka-functionality" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>Advanced Aggregation System</li>
+		<li>Filter creation</li>
+		<li>Sensor monitoring</li>
+		<li>Alert listing automatic refresh</li>
+		<li>Plugins architecture</li>
+		<li>Themes</li>
+	</ul>
+
+
+	<a name="PrewikkaPro-functionality"></a>
+<h3 >PrewikkaPro functionality<a href="#PrewikkaPro-functionality" class="wiki-anchor">&para;</a></h3>
+
+
+<em>PrewikkaPro is the commercial version of Prewikka.</em>
+	<ul>
+	<li>Permission management</li>
+		<li>Advanced Ticket System</li>
+		<li>Graphical Fully Interactive Statistics</li>
+		<li>Graphical Fully Interactive Forensic</li>
+		<li>Reporting (PCI DSS, vulnerabilities, ...)</li>
+		<li>Ability to Create Virtual Alert "Views" </li>
+		<li>Expert alert listing</li>
+		<li>Alert Listing PDF Export</li>
+		<li>Users and groups management</li>
+		<li>Secured Authentication from LDAP server</li>
+		<li>System command</li>
+		<li>Graphical LML and Correlator edition</li>
+	</ul>
+
+
+	<a name="Getting-Started"></a>
+<h2 >Getting Started<a href="#Getting-Started" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Technical-Requirements"></a>
+<h3 >Technical Requirements<a href="#Technical-Requirements" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Before you begin using the Prewikka interface, ensure that you have the required software installed and configured on your system as follows:</p>
+
+
+	<pre><code>1. <strong>A current Web browser on your computer</strong></code></pre>
+
+
+Prewikka is compatible with: 
+	<ul>
+	<li><strong>Microsoft IE</strong> - <a class="external" href="http://www.microsoft.com/ie">www.microsoft.com/ie</a> </li>
+		<li><strong>Firefox</strong> - <a class="external" href="http://www.mozilla.org/firefox">www.mozilla.org/firefox</a> </li>
+		<li><strong>Google Chrome</strong> - <a class="external" href="http://www.google.com/chrome">www.google.com/chrome</a></li>
+	</ul>
+
+
+	<p>You may encounter problems if you try to access Prewikka using old Web browser versions.</p>
+
+
+	<pre><code>2. <strong>Enable Java Script and cookie support on your Web browser</strong></code></pre>
+
+
+Both Java Script and cookie support must be enabled in the security settings of your browser and is usually turned on by default. If you encounter problems accessing the system, check your browser configuration to ensure both Java Script support and cookie support are enabled as follows:
+	<ul>
+	<li><strong>IE:</strong> Click <em>Tools</em> > <em>Internet Options</em> > <em>Privacy</em> and <em>Security</em> tabs</li>
+		<li><strong>Firefox:</strong> Click <em>Tools</em> > <em>Options</em> > <em>Privacy</em> and <em>Web Features</em> tabs</li>
+	</ul>
+
+
+	<pre><code>3. <strong>Network access to a server that is running the Prewikka software</strong><br />Your system or network administrator can provide you with a Web address (URL) from which the system can be accessed.</code></pre>
+
+
+	<a name="Accessing-Prewikka"></a>
+<h3 >Accessing Prewikka<a href="#Accessing-Prewikka" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Prewikka is a web application and can be accessed using a Web browser. Refer to the Prelude Installation Guide for the access procedure according to the used HTTP server.</p>
+
+
+The first step to access the GUI is the authentication with the URL <a class="external" href="http://IP-of-your-Prelude/">http://IP-of-your-Prelude/</a>.<br />The default administrator credentials are the following:
+	<ul>
+	<li>Login: admin;</li>
+		<li>Password: admin.</li>
+	</ul>
+
+
+Once authenticated, the dashboard general page appears. There are several sections on this interface:
+	<ul>
+	<li>The navigation menu;</li>
+		<li>The control menu;</li>
+		<li>Page tabs;</li>
+		<li>The page content.<br />All Prelude GUI pages will be described more precisely below.</li>
+	</ul>
+
+
+	<a name="Control-menu"></a>
+<h3 >Control menu<a href="#Control-menu" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The control menu is used to change view parameters and to apply or save configurations.</p>
+
+
+	<p>Each control menu field is explained in the following table.</p>
+
+
+	<table>
+		<tr>
+			<th>Field </th>
+			<th>Features </th>
+		</tr>
+		<tr>
+			<td> Filter </td>
+			<td> Allows you to select an IDMEF filter that was previously defined. The selected filter can be applied to the current view by clicking on the Apply button. Filter creation is described in Filters tab section. </td>
+		</tr>
+		<tr>
+			<td> Refresh </td>
+			<td> Configures the refresh interval for every pages where this menu is visible: enter the interval (minutes or seconds) and click on the Apply button to configure the refresh. </td>
+		</tr>
+		<tr>
+			<td> Period </td>
+			<td> Selects a period to show only information on alerts that were generated during the corresponding time interval. The time interval can be defined by minutes, hours, days, months or years. Example: if you select “n” months, data from the last “n” months will be displayed (including the current month). </td>
+		</tr>
+		<tr>
+			<td> Time information </td>
+			<td> Information about the current time interval. </td>
+		</tr>
+		<tr>
+			<td> Search </td>
+			<td> You can click on the search button representing a magnifying glass to apply your configuration. </td>
+		</tr>
+	</table>
+
+
+
+
+	<p>By clicking on the search button, the new parameters are automatically saved for the current user, so that they can be retrieved when accessing the same page later.</p>
+
+
+<hr />
+
+
+	<p><strong>Note:</strong> The time parameters are saved globally, allowing to browse between pages while keeping the same time period.</p>
+
+
+<hr />
+
+
+At the control menu’s left, two buttons are available:
+	<ul>
+	<li>The cog: this button corresponds to the view parameters. By clicking on it, additional view-specific options can be configured. This button is not clickable when the view has no specific option.</li>
+		<li>The question mark: this button corresponds to the online help. By clicking on it, an external window containing the contextual help of the current page opens.</li>
+	</ul>
+
+
+<hr />
+
+
+	<p><strong>Note:</strong> The online help is also available in the menu “?” -> “Help”</p>
+
+
+<hr />
+
+
+	<a name="Prewikka-menu"></a>
+<h3 >Prewikka menu<a href="#Prewikka-menu" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The navigation menu is displayed on the upper left part of the GUI. The order in which sections are displayed can be specified in the configuration file (/etc/prewikka/menu.yml). Navigation menu sections are grouped in three entries by default (ALERT, ADMIN and “?”). Clicking on one of these menus shows the associated sections.</p>
+
+
+	<a name="Setting-Your-Preferences"></a>
+<h3 >Setting Your Preferences<a href="#Setting-Your-Preferences" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>On your <em>My Account</em> page (click on the user on the top right side of the screen), you can view the settings. <br />As a user, you can edit some of these settings, such as your preferred language and your theme.</p>
+
+
+	<p><strong>To set your language, click your User Name link located at the top right side of the page.</strong>
+
+	<p>1. Language setting</p>
+</p>
+
+
+	<p>Choose the appropriate language:</p>
+
+
+	<p>German, English, Spanish, French, Italian, Polish, Portuguese (Brazilian), Russian</p>
+
+
+	<a name="Session-Timeout"></a>
+<h3 >Session Timeout<a href="#Session-Timeout" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>For security reasons, the system automatically logs you out of the interface if you don't perform any tasks during one hour (default configuration).</p>
+
+
+	<p>This doesn't happen if the alert listing automatic refresh is activated and the refresh time is less than one hour.</p>
+
+
+	<a name="Using-Prewikka"></a>
+<h2 >Using Prewikka<a href="#Using-Prewikka" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The navigation menu is displayed on the upper left part of the GUI. The order in which sections are displayed can<br />be specified in the configuration file (/etc/prewikka/menu.yml). Navigation menu sections are<br />grouped in three entries by default (ALERT, ADMIN and “?”). Clicking on one of these menus<br />shows the associated sections.</p>
+
+
+	<a name="ALERT-menu"></a>
+<h3 >ALERT menu<a href="#ALERT-menu" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The ALERT menu is composed of three sections. Each section tab will be detailed below.</p>
+
+
+	<a name="Alerts-section"></a>
+<h4 >Alerts section<a href="#Alerts-section" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The <em>Alerts</em> section allows you to see and manage your security alerts.</p>
+
+
+	<p>There are two tabs by default:</p>
+
+
+	<a name="Alert-tab"></a>
+<h5 >Alert tab<a href="#Alert-tab" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Displays the alerts listing. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Alerts-tab">Detailed <em>alert</em> tab page</a></strong></li>
+	</ul>
+
+
+	<a name="Aggregated-alerts"></a>
+<h5 >Aggregated alerts<a href="#Aggregated-alerts" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Displays the list of alerts in an aggregated way. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Aggregated-alerts-tab">Detailed <em>aggregated alerts</em> tab page</a></strong></li>
+	</ul>
+
+
+	<p>In order to learn how to use the <em>Alerts</em> section, <strong>see the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Alerts-section">Detailed <em>Alerts</em> section page</a></strong></p>
+
+
+	<a name="Threats-section"></a>
+<h4 >Threats section<a href="#Threats-section" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The <em>Threats</em> section allows you to see and manage your security threats.</p>
+
+
+	<p>There are two tabs by default:</p>
+
+
+	<a name="Threats-tab"></a>
+<h5 >Threats tab<a href="#Threats-tab" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Displays the threats listing. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Threats-section">Detailed <em>Threats</em> tab page</a></strong></li>
+	</ul>
+
+
+	<a name="Aggregated-threats"></a>
+<h5 >Aggregated threats<a href="#Aggregated-threats" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Displays the list of threats in an aggregated way. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Threats-section">Detailed <em>Threats</em> tab page</a></strong></li>
+	</ul>
+
+
+	<a name="Agents-section"></a>
+<h4 >Agents section<a href="#Agents-section" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The <em>Agents</em> section allows you to manage and monitor your agents.</p>
+
+
+	<p>There are three tabs by default:</p>
+
+
+	<a name="Agents-tab"></a>
+<h5 >Agents tab<a href="#Agents-tab" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Displays the agents listing. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Agents-tab">Detailed <em>Agents</em> tab page</a></strong></li>
+	</ul>
+
+
+	<a name="Heartbeats-tab"></a>
+<h5 >Heartbeats tab<a href="#Heartbeats-tab" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Displays the heartbeats listing. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Heartbeats-tab">Detailed <em>Heartbeats</em> tab page</a></strong></li>
+	</ul>
+
+
+	<a name="Aggregated-heartbeats"></a>
+<h5 >Aggregated heartbeats<a href="#Aggregated-heartbeats" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Displays the list of heartbeats in an aggregated way. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Aggregated-heartbeats">Detailed <em>Aggregated heartbeats</em> tab page</a></strong></li>
+	</ul>
+
+
+	<a name="ADMIN-menu"></a>
+<h3 >ADMIN menu<a href="#ADMIN-menu" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The ADMIN menu regroups Prelude SIEM administration and configuration features. The ADMIN menu contains two sections:</p>
+
+
+	<a name="Configuration-section"></a>
+<h4 >Configuration section<a href="#Configuration-section" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The <em>Configuration</em> section allows you to manage automatic task.</p>
+
+
+	<p>There are one tab by default:</p>
+
+
+	<a name="Scheduling-tab"></a>
+<h5 >Scheduling tab<a href="#Scheduling-tab" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Lists all tasks that can be scheduled for a periodic execution. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Scheduling-section">Detailed <em>Scheduling</em> section page</a></strong></li>
+	</ul>
+
+
+	<p>In order to learn how to use the <em>Configuration</em> section, <strong>see the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#ADMIN-menu">Detailed ADMIN menu page</a></strong></p>
+
+
+	<a name="Preferences-section"></a>
+<h4 >Preferences section<a href="#Preferences-section" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>The <em>Preferences</em> section allows you to manage, your filters and your account.</p>
+
+
+	<p>There are two tabs by default:</p>
+
+
+	<a name="My-account-tab"></a>
+<h5 >My account tab<a href="#My-account-tab" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Allows you to set your preferences and see your permissions. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#The-My-account-tab">Detailed <em>My account</em> tab page</a></strong></li>
+	</ul>
+
+
+	<a name="Filters-tab"></a>
+<h5 >Filters tab<a href="#Filters-tab" class="wiki-anchor">&para;</a></h5>
+
+
+	<ul>
+	<li>Allows operators to create their own advanced filters based on alerts, heartbeats or logs.</li>
+	</ul>
+
+
+	<p>In order to learn how to use the <em>Preferences</em> section, <strong>see the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#The-Filters-tab">Detailed <em>Filters</em> tab page</a></strong></p>
+
+
+	<a name="-menu"></a>
+<h3 >? menu<a href="#-menu" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>This menu gives access to Apps and About sections.</p>
+
+
+	<a name="Apps-section"></a>
+<h4 >Apps section<a href="#Apps-section" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>In the <em>Apps</em> section, you will find the installed apps list. <strong>See the <a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikkaMenu#Apps-section">Detailed <em>Apps</em> section page</a></strong></p>
+
+
+	<a name="About-section"></a>
+<h4 >About section<a href="#About-section" class="wiki-anchor">&para;</a></h4>
+
+
+	<p>In the <em>About</em> section, you will find the version of your Prewikka software, a description of the services provided by the <b>CS</b> company, and the company contact details.</p>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

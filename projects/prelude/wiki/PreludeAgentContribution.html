@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>PreludeAgentContribution - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="2M5t/dyosVfz9RqDpBHRGlMyQQjmjitT65ZRRNMJvPPL4QWSFby81HlfEnm5WZhEL3kwlvyEch01GJXUVwmI8A==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/prelude/wiki/ManualDevel">ManualDevel</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Prelude-Agent-Contribution-program"></a>
+<h1 >Prelude Agent Contribution program<a href="#Prelude-Agent-Contribution-program" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Object"></a>
+<h2 >Object<a href="#Object" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The Prelude team is currently launching a campaign for the development of new security agents that "speak" IDMEF, on the occasion of the <br />adoption of IDMEF and IODEF by the French "General Interoperability Framework" (RGI) :</p>
+
+
+	<ul>
+	<li><a href="http://www.secef.net/idmef-et-iodef-dans-le-rgi-v2/" class="external">IDMEF and IODEF in General Interoperability Framework v2</a>  (French)</li>
+		<li><a href="https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rentiel_g%C3%A9n%C3%A9ral_d&#039;interop%C3%A9rabilit%C3%A9" class="external">General Interoperability Framework</a> (French)</li>
+	</ul>
+
+
+	<p>This campaign aims to encourage new software to be "IDMEF compatible" through Prelude. This page explains how to participate to this campaign.</p>
+
+
+Quick getting started :
+	<ul>
+	<li><a href="https://www.prelude-siem.org/projects/prelude/wiki/PreludeLml#Creating-and-contributing-rules" class="external">BASIC Agent</a></li>
+		<li><a href="https://www.prelude-siem.org/projects/prelude/wiki/DevelAgentBuilding" class="external">EXPERT Agent</a></li>
+	</ul>
+
+
+	<a name="What-is-a-Prelude-agent-"></a>
+<h2 >What is a Prelude agent ?<a href="#What-is-a-Prelude-agent-" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Any program/device logging potential security events can be a Prelude agent.</p>
+
+
+	<p>We distinguish between two types of Prelude agents.</p>
+
+
+	<ul>
+	<li>BASIC AGENT : The agent is producing log files and Prelude LML selects and normalize some of these logs into IDMEF Alerts to send them to the Prelude manager </li>
+		<li>EXPERT AGENT : The agent is linked against the LibPrelude library with one of it's bindings and is generating and sending alerts to Prelude directly</li>
+	</ul>
+
+
+	<p><ins>Nota:</ins> A "security event" can be as simple as "Someone authenticate successfully on my software" unless your software has absolutely no security role, no sensible data, etc.</p>
+
+
+	<p>Example of existing Prelude agents :</p>
+
+
+	<ul>
+	<li>BASIC : OpenLDAP, Postgres, Apache, Cisco Router, selinux, ssh, etc.</li>
+		<li>EXPERT : NIDS (Snort, Suricata), HIDS (Samhain, OSSEC), Auditd, Pam, etc.</li>
+	</ul>
+
+
+	<a name="Should-I-have-the-copyright-on-the-agent-"></a>
+<h2 >Should I have the copyright on the agent ?<a href="#Should-I-have-the-copyright-on-the-agent-" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>No if the software is open-source. This is the magic of open-source.</p>
+
+
+	<p>For BASIC agent you just have to have access to the log format, for EXPERT agent you can develop the connexion and propose it to the original software community (this is the way the Prelude Team is working)</p>
+
+
+	<p>For proprietary software, the BASIC agent is the same as open-source, for EXPERT agent you need to have access to the software code and contact Prelude to have access to a proprietary version of LibPrelude.</p>
+
+
+	<a name="Where-can-I-find-informations-about-IDMEF-"></a>
+<h2 >Where can I find informations about IDMEF ?<a href="#Where-can-I-find-informations-about-IDMEF-" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Please visit :</p>
+
+
+	<ul>
+	<li>The SECEF (SECurity Exchange Format) website : <a class="external" href="http://www.secef.net/">http://www.secef.net/</a></li>
+		<li>The SECEF Redmine, with few tutorials : <a class="external" href="http://redmine.secef.net/">http://redmine.secef.net/</a></li>
+		<li>The SECEF IDMEF RFC Browser : <a class="external" href="http://www.secef.net/idmef_parser/IDMEF/">http://www.secef.net/idmef_parser/IDMEF/</a></li>
+	</ul>
+
+
+	<a name="What-are-the-constraints-"></a>
+<h2 >What are the constraints ?<a href="#What-are-the-constraints-" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>No constraints for basic agent.</p>
+
+
+	<p>To be an expert agent, your program's licence must be compatible with the <a href="https://www.gnu.org/licenses/gpl-2.0.html" class="external">GPLv2 licence</a></p>
+
+
+	<p><ins>Nota :</ins> For proprietary softwares, please contact the prelude team : <a class="email" href="mailto:contact.prelude@c-s.fr">contact.prelude@c-s.fr</a></p>
+
+
+	<a name="What-is-the-difference-between-Basic-and-Expert-Agent-"></a>
+<h2 >What is the difference between Basic and Expert Agent ?<a href="#What-is-the-difference-between-Basic-and-Expert-Agent-" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Basic-Prelude-Log-Parser-reads-your-log-files-selects-the-important-event-transform-them-in-IDMEF-and-send-them-to-Prelude-manager"></a>
+<h3 >Basic : Prelude Log Parser reads your log files, selects the "important" event, transform them in IDMEF and send them to Prelude manager<a href="#Basic-Prelude-Log-Parser-reads-your-log-files-selects-the-important-event-transform-them-in-IDMEF-and-send-them-to-Prelude-manager" class="wiki-anchor">&para;</a></h3>
+
+
+Advantages :
+	<ul>
+	<li>No real coding</li>
+		<li>No linking with LibPrelude</li>
+		<li>Writting a parser file is quite easy (specially with Prelude Team help)</li>
+	</ul>
+
+
+Inconvenients :
+	<ul>
+	<li>IDMEF can contain only information from the log</li>
+		<li>Heartbeats can't be sent so the agent can't be monitored in the manager</li>
+	</ul>
+
+
+	<a name="Expert-The-software-is-linked-to-LibPrelude-and-can-use-the-IDMEF-API-to-connect-to-the-manager-and-send-IDMEF-object"></a>
+<h3 >Expert : The software is linked to LibPrelude and can use the IDMEF API to connect to the manager and send IDMEF object<a href="#Expert-The-software-is-linked-to-LibPrelude-and-can-use-the-IDMEF-API-to-connect-to-the-manager-and-send-IDMEF-object" class="wiki-anchor">&para;</a></h3>
+
+
+Advantages :
+	<ul>
+	<li>The agent is fully connected to the manager through a secured channel (SSL), </li>
+		<li>Heartbeats can be sent through this channel and the agent can be monitored in the manager GUI</li>
+		<li>It is sometime possible to send more information than what is contained in the log</li>
+		<li>No need for Prelude LML in the middle</li>
+	</ul>
+
+
+Inconvenients
+	<ul>
+	<li>LibPrelude must be linked to the software</li>
+		<li>The software must be GPL V2 compliant</li>
+		<li>There is some coding to be done</li>
+	</ul>
+
+
+	<p><ins>Nota:</ins> You can start with basic level and move to expert later</p>
+
+
+	<a name="Shall-I-send-all-my-logs-through-IDMEF-"></a>
+<h2 >Shall I send all my logs through IDMEF ?<a href="#Shall-I-send-all-my-logs-through-IDMEF-" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>No !</p>
+
+
+	<p>That's the tricky part.</p>
+
+
+	<p>Only security relevant logs should be transformed to IDMEF. The difference between "normal logs" and "IDMEF logs" is not allways easy to fix. It depends on many factors starting by the nature of your program. The best thing to do about that is to ask in the <a href="https://www.prelude-siem.org/projects/prelude/boards/2" class="external">Prelude Dev Forum</a> and we will help you decide what should be sent as IDMEF alerts.</p>
+
+
+	<a name="Where-should-I-start-"></a>
+<h2 >Where should I start ?<a href="#Where-should-I-start-" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>If you want to develop an agent and your program is an open-source software, the best first step is to contact the prelude team through our <a href="https://www.prelude-siem.org/projects/prelude/boards/2" class="external">Prelude Dev Forum</a> so we can advice you on the relevancy of your choice, what best level would be (basic or expert) and how we can help you.</p>
+
+
+	<p>You can also install Prelude OSS and :</p>
+
+
+	<ul>
+	<li>Look how we work with famous software as BASIC agents like OpenLDAP, Apache, etc.</li>
+		<li>Try to connect an EXPERT agent like Suricata to your Prelude installation</li>
+		<li>You can also take a look at IDMEF implementation in Prelude compliants software like Suricata for example (the suricata agent is coded in C but other API are availables)</li>
+	</ul>
+
+
+	<a name="Some-questions-you-should-think-about"></a>
+<h2 >Some questions you should think about<a href="#Some-questions-you-should-think-about" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="What-does-your-software-do-"></a>
+<h3 >What does your software do ?<a href="#What-does-your-software-do-" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>Is it a security software ?</li>
+		<li>Is is "not" a security software but still producing few security informations ? Most of the software produce some security information like authentification logs for example.</li>
+	</ul>
+
+
+	<a name="What-kind-of-security-information-is-produced-in-your-logs"></a>
+<h3 >What kind of security information is produced (in your logs)<a href="#What-kind-of-security-information-is-produced-in-your-logs" class="wiki-anchor">&para;</a></h3>
+
+
+Examples :
+	<ul>
+	<li>authentication failed</li>
+		<li>Authentication successfull</li>
+		<li>Right granting</li>
+		<li>Attempt to access to a forbiden ressource</li>
+		<li>etc.</li>
+	</ul>
+
+
+	<a name="What-is-the-format-of-those-informations-"></a>
+<h3 >What is the format of those informations ?<a href="#What-is-the-format-of-those-informations-" class="wiki-anchor">&para;</a></h3>
+
+
+Examples :
+	<ul>
+	<li>syslog logs</li>
+		<li>xml logs</li>
+		<li>IDMEF files (some do !)</li>
+		<li>specific log format (do you have documentation on this format ?)</li>
+	</ul>
+
+
+	<a name="Example-of-logs"></a>
+<h3 >Example of logs<a href="#Example-of-logs" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Try to produce few examples of logs with what you think should be considered as security events and post it in the forum.</p>
+
+
+	<a name="Should-I-go-for-BASIC-or-EXPERT-"></a>
+<h3 >Should I go for BASIC or EXPERT ?<a href="#Should-I-go-for-BASIC-or-EXPERT-" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>BASIC is good for nearly all sofware.</p>
+
+
+	<p>EXPERT should be more dedicated to software "specialised" in security.</p>
+
+
+	<p>A simple rule of the thumb is : The more your software generates "security related events" the more it should be an EXPERT agent.</p>
+
+
+	<p><ins>Nota:</ins> You can start with BASIC and move to EXPERT later. BASIC will help you to understand and experiment what kind of information you should send as IDMEF without heavy coding. When you will have a good idea it will be easier to code the agent.</p>
+
+
+	<a name="How-to-get-help-"></a>
+<h2 >How to get help ?<a href="#How-to-get-help-" class="wiki-anchor">&para;</a></h2>
+
+
+Technical informations :
+	<ul>
+	<li><a href="https://www.prelude-siem.org/projects/prelude/wiki/PreludeLml" class="external">BASIC AGENT</a> </li>
+		<li><a href="https://www.prelude-siem.org/projects/prelude/wiki/DevelAgentQuickly" class="external">EXPERT AGENT</a></li>
+	</ul>
+
+
+	<p>For both level of implementation, don't hesitate to use the <a href="https://www.prelude-siem.org/projects/prelude/boards/2" class="external">Prelude Dev Forum</a></p>
+
+
+	<a name="List-of-existing-agents"></a>
+<h2 >List of existing agents<a href="#List-of-existing-agents" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>BASIC AGENT : See Prelude LML rule files in the rules repository : <a href="https://github.com/Prelude-SIEM/prelude-lml-rules/tree/master/ruleset" class="external">Prelude LML Ruleset</a></li>
+		<li>EXPERT AGENT : See this <a href="https://www.prelude-siem.org/projects/prelude/wiki/InstallingAgentThirdparty" class="external">Third party agents</a></li>
+	</ul>
+
+
+	<a name="What-about-Copyright-"></a>
+<h2 >What about Copyright ?<a href="#What-about-Copyright-" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>A BASIC agent is a ruleset file included in Prelude LML ruleset package. So even if you are the one scripting it we will ask you (like any other Prelude contribution) to leave us the copyright so we can include it in the commercial edition of Prelude.</p>
+
+
+	<p>An EXPERT agent is code in the software agent. We won't need to keep the copyright on it, specially if you are ready to support the agent in time.</p>
+
+
+	<a name="Any-other-question-"></a>
+<h2 >Any other question ?<a href="#Any-other-question-" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Please use the <a href="https://www.prelude-siem.org/projects/prelude/boards/2" class="external">Prelude Dev Forum</a></p>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

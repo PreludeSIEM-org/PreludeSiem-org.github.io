@@ -1,0 +1,1071 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>idmef-message-read</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="libprelude Reference Manual">
+<link rel="up" href="ch01.html" title="[Insert title here]">
+<link rel="prev" href="libprelude-prelude-async.html" title="prelude-async">
+<link rel="next" href="libprelude-prelude-list.html" title="prelude-list">
+<meta name="generator" content="GTK-Doc V1.11 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="[Insert title here]">
+<link rel="chapter" href="object-tree.html" title="Object Hierarchy">
+<link rel="index" href="api-index-full.html" title="API Index">
+<link rel="index" href="deprecated-api-index.html" title="Index of deprecated API">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libprelude-prelude-async.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libprelude Reference Manual</th>
+<td><a accesskey="n" href="libprelude-prelude-list.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libprelude-idmef-message-read.synopsis" class="shortcut">Top</a>
+                 | 
+                <a href="#libprelude-idmef-message-read.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry" title="idmef-message-read">
+<a name="libprelude-idmef-message-read"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libprelude-idmef-message-read.top_of_page"></a>idmef-message-read</span></h2>
+<p>idmef-message-read — Reading a message from a <span class="type">prelude_msg_t</span> buffer</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv" title="Synopsis">
+<a name="libprelude-idmef-message-read.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+int                 idmef_additional_data_read          (idmef_additional_data_t *additional_data,
+                                                         prelude_msg_t *msg);
+int                 idmef_reference_read                (idmef_reference_t *reference,
+                                                         prelude_msg_t *msg);
+int                 idmef_classification_read           (idmef_classification_t *classification,
+                                                         prelude_msg_t *msg);
+int                 idmef_user_id_read                  (idmef_user_id_t *user_id,
+                                                         prelude_msg_t *msg);
+int                 idmef_user_read                     (idmef_user_t *user,
+                                                         prelude_msg_t *msg);
+int                 idmef_address_read                  (idmef_address_t *address,
+                                                         prelude_msg_t *msg);
+int                 idmef_process_read                  (idmef_process_t *process,
+                                                         prelude_msg_t *msg);
+int                 idmef_web_service_read              (idmef_web_service_t *web_service,
+                                                         prelude_msg_t *msg);
+int                 idmef_snmp_service_read             (idmef_snmp_service_t *snmp_service,
+                                                         prelude_msg_t *msg);
+int                 idmef_service_read                  (idmef_service_t *service,
+                                                         prelude_msg_t *msg);
+int                 idmef_node_read                     (idmef_node_t *node,
+                                                         prelude_msg_t *msg);
+int                 idmef_source_read                   (idmef_source_t *source,
+                                                         prelude_msg_t *msg);
+int                 idmef_file_access_read              (idmef_file_access_t *file_access,
+                                                         prelude_msg_t *msg);
+int                 idmef_inode_read                    (idmef_inode_t *inode,
+                                                         prelude_msg_t *msg);
+int                 idmef_checksum_read                 (idmef_checksum_t *checksum,
+                                                         prelude_msg_t *msg);
+int                 idmef_file_read                     (idmef_file_t *file,
+                                                         prelude_msg_t *msg);
+int                 idmef_linkage_read                  (idmef_linkage_t *linkage,
+                                                         prelude_msg_t *msg);
+int                 idmef_target_read                   (idmef_target_t *target,
+                                                         prelude_msg_t *msg);
+int                 idmef_analyzer_read                 (idmef_analyzer_t *analyzer,
+                                                         prelude_msg_t *msg);
+int                 idmef_alertident_read               (idmef_alertident_t *alertident,
+                                                         prelude_msg_t *msg);
+int                 idmef_impact_read                   (idmef_impact_t *impact,
+                                                         prelude_msg_t *msg);
+int                 idmef_action_read                   (idmef_action_t *action,
+                                                         prelude_msg_t *msg);
+int                 idmef_confidence_read               (idmef_confidence_t *confidence,
+                                                         prelude_msg_t *msg);
+int                 idmef_assessment_read               (idmef_assessment_t *assessment,
+                                                         prelude_msg_t *msg);
+int                 idmef_tool_alert_read               (idmef_tool_alert_t *tool_alert,
+                                                         prelude_msg_t *msg);
+int                 idmef_correlation_alert_read        (idmef_correlation_alert_t *correlation_alert,
+                                                         prelude_msg_t *msg);
+int                 idmef_overflow_alert_read           (idmef_overflow_alert_t *overflow_alert,
+                                                         prelude_msg_t *msg);
+int                 idmef_alert_read                    (idmef_alert_t *alert,
+                                                         prelude_msg_t *msg);
+int                 idmef_heartbeat_read                (idmef_heartbeat_t *heartbeat,
+                                                         prelude_msg_t *msg);
+int                 idmef_message_read                  (idmef_message_t *message,
+                                                         prelude_msg_t *msg);
+</pre>
+</div>
+<div class="refsect1" title="Description">
+<a name="libprelude-idmef-message-read.description"></a><h2>Description</h2>
+<p>
+Once you read a <span class="type">prelude_msg_t</span> object, you need to decode this message.
+In case this is an IDMEF style message, the following API allow to read
+the relevant IDMEF fields from the <span class="type">prelude_msg_t</span> object, and create the
+IDMEF object from it's content.
+</p>
+<p>
+The function you're most probably looking to use is <code class="function">idmef_message_read()</code>, and here
+is an example on how to use it:
+</p>
+<pre class="programlisting">
+int ret;
+prelude_msg_t *pmsg;
+idmef_message_t *message;
+pmsg = whatever_method_to_get_a_prelude_msg();
+ret = idmef_message_new(&amp;message);
+if ( ret &lt; 0 )
+        return ret;
+ret = idmef_message_read(message, pmsg);
+</pre>
+<p>
+This will decode the full IDMEF message stored within pmsg into the <span class="type">idmef_message_t</span>
+IDMEF object and it's childrens.
+</p>
+</div>
+<div class="refsect1" title="Details">
+<a name="libprelude-idmef-message-read.details"></a><h2>Details</h2>
+<div class="refsect2" title="idmef_additional_data_read ()">
+<a name="idmef-additional-data-read"></a><h3>idmef_additional_data_read ()</h3>
+<pre class="programlisting">int                 idmef_additional_data_read          (idmef_additional_data_t *additional_data,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_additional_data from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>additional_data</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>additional_data</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_additional_data_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_reference_read ()">
+<a name="idmef-reference-read"></a><h3>idmef_reference_read ()</h3>
+<pre class="programlisting">int                 idmef_reference_read                (idmef_reference_t *reference,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_reference from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>reference</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>reference</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_reference_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_classification_read ()">
+<a name="idmef-classification-read"></a><h3>idmef_classification_read ()</h3>
+<pre class="programlisting">int                 idmef_classification_read           (idmef_classification_t *classification,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_classification from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>classification</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>classification</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_classification_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_user_id_read ()">
+<a name="idmef-user-id-read"></a><h3>idmef_user_id_read ()</h3>
+<pre class="programlisting">int                 idmef_user_id_read                  (idmef_user_id_t *user_id,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_user_id from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>user_id</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_id</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_user_id_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_user_read ()">
+<a name="idmef-user-read"></a><h3>idmef_user_read ()</h3>
+<pre class="programlisting">int                 idmef_user_read                     (idmef_user_t *user,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_user from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>user</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_user_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_address_read ()">
+<a name="idmef-address-read"></a><h3>idmef_address_read ()</h3>
+<pre class="programlisting">int                 idmef_address_read                  (idmef_address_t *address,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_address from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>address</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>address</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_address_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_process_read ()">
+<a name="idmef-process-read"></a><h3>idmef_process_read ()</h3>
+<pre class="programlisting">int                 idmef_process_read                  (idmef_process_t *process,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_process from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>process</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>process</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_process_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_web_service_read ()">
+<a name="idmef-web-service-read"></a><h3>idmef_web_service_read ()</h3>
+<pre class="programlisting">int                 idmef_web_service_read              (idmef_web_service_t *web_service,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_web_service from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>web_service</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>web_service</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_web_service_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_snmp_service_read ()">
+<a name="idmef-snmp-service-read"></a><h3>idmef_snmp_service_read ()</h3>
+<pre class="programlisting">int                 idmef_snmp_service_read             (idmef_snmp_service_t *snmp_service,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_snmp_service from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>snmp_service</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>snmp_service</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_snmp_service_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_service_read ()">
+<a name="idmef-service-read"></a><h3>idmef_service_read ()</h3>
+<pre class="programlisting">int                 idmef_service_read                  (idmef_service_t *service,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_service from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>service</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>service</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_service_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_node_read ()">
+<a name="idmef-node-read"></a><h3>idmef_node_read ()</h3>
+<pre class="programlisting">int                 idmef_node_read                     (idmef_node_t *node,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_node from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>node</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>node</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_node_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_source_read ()">
+<a name="idmef-source-read"></a><h3>idmef_source_read ()</h3>
+<pre class="programlisting">int                 idmef_source_read                   (idmef_source_t *source,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_source from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>source</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_source_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_file_access_read ()">
+<a name="idmef-file-access-read"></a><h3>idmef_file_access_read ()</h3>
+<pre class="programlisting">int                 idmef_file_access_read              (idmef_file_access_t *file_access,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_file_access from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>file_access</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file_access</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_file_access_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_inode_read ()">
+<a name="idmef-inode-read"></a><h3>idmef_inode_read ()</h3>
+<pre class="programlisting">int                 idmef_inode_read                    (idmef_inode_t *inode,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_inode from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>inode</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>inode</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_inode_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_checksum_read ()">
+<a name="idmef-checksum-read"></a><h3>idmef_checksum_read ()</h3>
+<pre class="programlisting">int                 idmef_checksum_read                 (idmef_checksum_t *checksum,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_checksum from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>checksum</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>checksum</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_checksum_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_file_read ()">
+<a name="idmef-file-read"></a><h3>idmef_file_read ()</h3>
+<pre class="programlisting">int                 idmef_file_read                     (idmef_file_t *file,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_file from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>file</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>file</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_file_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_linkage_read ()">
+<a name="idmef-linkage-read"></a><h3>idmef_linkage_read ()</h3>
+<pre class="programlisting">int                 idmef_linkage_read                  (idmef_linkage_t *linkage,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_linkage from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>linkage</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>linkage</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_linkage_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_target_read ()">
+<a name="idmef-target-read"></a><h3>idmef_target_read ()</h3>
+<pre class="programlisting">int                 idmef_target_read                   (idmef_target_t *target,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_target from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>target</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>target</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_target_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_analyzer_read ()">
+<a name="idmef-analyzer-read"></a><h3>idmef_analyzer_read ()</h3>
+<pre class="programlisting">int                 idmef_analyzer_read                 (idmef_analyzer_t *analyzer,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_analyzer from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>analyzer</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>analyzer</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_analyzer_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_alertident_read ()">
+<a name="idmef-alertident-read"></a><h3>idmef_alertident_read ()</h3>
+<pre class="programlisting">int                 idmef_alertident_read               (idmef_alertident_t *alertident,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_alertident from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>alertident</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alertident</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_alertident_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_impact_read ()">
+<a name="idmef-impact-read"></a><h3>idmef_impact_read ()</h3>
+<pre class="programlisting">int                 idmef_impact_read                   (idmef_impact_t *impact,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_impact from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>impact</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>impact</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_impact_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_action_read ()">
+<a name="idmef-action-read"></a><h3>idmef_action_read ()</h3>
+<pre class="programlisting">int                 idmef_action_read                   (idmef_action_t *action,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_action from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>action</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>action</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_action_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_confidence_read ()">
+<a name="idmef-confidence-read"></a><h3>idmef_confidence_read ()</h3>
+<pre class="programlisting">int                 idmef_confidence_read               (idmef_confidence_t *confidence,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_confidence from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>confidence</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>confidence</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_confidence_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_assessment_read ()">
+<a name="idmef-assessment-read"></a><h3>idmef_assessment_read ()</h3>
+<pre class="programlisting">int                 idmef_assessment_read               (idmef_assessment_t *assessment,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_assessment from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>assessment</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>assessment</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_assessment_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_tool_alert_read ()">
+<a name="idmef-tool-alert-read"></a><h3>idmef_tool_alert_read ()</h3>
+<pre class="programlisting">int                 idmef_tool_alert_read               (idmef_tool_alert_t *tool_alert,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_tool_alert from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>tool_alert</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tool_alert</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_tool_alert_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_correlation_alert_read ()">
+<a name="idmef-correlation-alert-read"></a><h3>idmef_correlation_alert_read ()</h3>
+<pre class="programlisting">int                 idmef_correlation_alert_read        (idmef_correlation_alert_t *correlation_alert,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_correlation_alert from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>correlation_alert</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>correlation_alert</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_correlation_alert_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_overflow_alert_read ()">
+<a name="idmef-overflow-alert-read"></a><h3>idmef_overflow_alert_read ()</h3>
+<pre class="programlisting">int                 idmef_overflow_alert_read           (idmef_overflow_alert_t *overflow_alert,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_overflow_alert from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>overflow_alert</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>overflow_alert</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_overflow_alert_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_alert_read ()">
+<a name="idmef-alert-read"></a><h3>idmef_alert_read ()</h3>
+<pre class="programlisting">int                 idmef_alert_read                    (idmef_alert_t *alert,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_alert from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>alert</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>alert</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_alert_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_heartbeat_read ()">
+<a name="idmef-heartbeat-read"></a><h3>idmef_heartbeat_read ()</h3>
+<pre class="programlisting">int                 idmef_heartbeat_read                (idmef_heartbeat_t *heartbeat,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_heartbeat from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>heartbeat</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>heartbeat</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_heartbeat_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" title="idmef_message_read ()">
+<a name="idmef-message-read"></a><h3>idmef_message_read ()</h3>
+<pre class="programlisting">int                 idmef_message_read                  (idmef_message_t *message,
+                                                         prelude_msg_t *msg);</pre>
+<p>
+Read an idmef_message from the <em class="parameter"><code>msg</code></em> message, and
+store it into <em class="parameter"><code>message</code></em>.</p>
+<p>
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>message</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">idmef_message_t</span> object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>msg</code></em> :</span></p></td>
+<td> Pointer to a <span class="type">prelude_msg_t</span> object, containing a message.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> 0 on success, a negative value if an error occured.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.11</div>
+</body>
+</html>

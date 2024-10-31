@@ -1,0 +1,69 @@
+From 473a35bc8b94935116be3ee13a323b6893a53d60 Mon Sep 17 00:00:00 2001
+From: Wes Young <wes@barely3am.com>
+Date: Mon, 14 Sep 2009 14:37:20 +0000
+Subject: [PATCH] make files don't like spaces;
+
+---
+ bindings/java/Makefile.am |   32 ++++++++++++++++----------------
+ 1 files changed, 16 insertions(+), 16 deletions(-)
+
+diff --git a/bindings/java/Makefile.am b/bindings/java/Makefile.am
+index 6fb53af..84861bb 100644
+--- a/bindings/java/Makefile.am
++++ b/bindings/java/Makefile.am
+@@ -6,36 +6,36 @@ EXTRA_DIST = libpreludecpp-java.i PreludeEasy.cxx
+ all-am: java-build
+ 
+ java-build: PreludeEasy.cxx  PreludeEasy.o
+-    $(JAVAC) com/prelude/easy/*.java
+-    ant compile && ant jar
++	$(JAVAC) com/prelude/easy/*.java
++	ant compile && ant jar
+ 
+ install-exec-hook:
+-    cp libpreludejava.so /usr/local/lib
+-    ldconfig
+-    cp build/jar/PreludeEasy.jar /usr/share/java
++	cp libpreludejava.so /usr/local/lib
++	ldconfig
++	cp build/jar/PreludeEasy.jar /usr/share/java
+ 
+ uninstall-hook:
+-    rm -f /usr/local/lib/libpreludejava.so
+-    ldconfig
+-    rm -f /usr/share/java/PreludeEasy.jar
++	rm -f /usr/local/lib/libpreludejava.so
++	ldconfig
++	rm -f /usr/share/java/PreludeEasy.jar
+ 
+ 
+ PreludeEasy.o: PreludeEasy.cxx
+-    $(CXX) -I $(top_srcdir)/bindings/c++/include -c -I $(top_srcdir)/src/include/ -I $(top_srcdir)/src/libprelude-error/ -I$(top_srcdir) -I $(top_srcdir)/libmissing/ -fPIC PreludeEasy.cxx
+-    $(CXX) -shared PreludeEasy.o $(top_srcdir)/bindings/c++/.libs/libpreludecpp.so -o libpreludejava.so
++	$(CXX) -I $(top_srcdir)/bindings/c++/include -c -I $(top_srcdir)/src/include/ -I $(top_srcdir)/src/libprelude-error/ -I$(top_srcdir) -I $(top_srcdir)/libmissing/ -fPIC PreludeEasy.cxx
++	$(CXX) -shared PreludeEasy.o $(top_srcdir)/bindings/c++/.libs/libpreludecpp.so -o libpreludejava.so
+ 
+ PreludeEasy.cxx: $(top_srcdir)/bindings/c++/include/*.hxx $(top_srcdir)/bindings/libpreludecpp.i libpreludecpp-java.i
+ if HAVE_SWIG
+-    $(SWIG) -c++ -I$(top_srcdir)/bindings -I$(top_srcdir)/bindings/c++/include -I$(top_srcdir)/src/include -I$(top_srcdir)/src/libprelude-error -java -package com.prelude.easy -outdir com/prelude/easy -o $@ ../libpreludecpp.i
++	$(SWIG) -c++ -I$(top_srcdir)/bindings -I$(top_srcdir)/bindings/c++/include -I$(top_srcdir)/src/include -I$(top_srcdir)/src/libprelude-error -java -package com.prelude.easy -outdir com/prelude/easy -o $@ ../libpreludecpp.i
+ endif
+ 
+ 
+ clean-local:
+-    rm -f com/prelude/easy/*.class com/prelude/easy/*.java
+-    rm -f PreludeEasy.o libpreludejava.so PreludeEasy.cxx
+-    rm -f Makefile.old
+-    ant clean
+-    rm -f testapp/*.class
++	rm -f com/prelude/easy/*.class com/prelude/easy/*.java
++	rm -f PreludeEasy.o libpreludejava.so PreludeEasy.cxx
++	rm -f Makefile.old
++	ant clean
++	rm -f testapp/*.class
+ endif
+ endif
+ 
+-- 
+1.5.6.5
+

@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>sshrules.diff - Prelude-LML - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="YcZTgjUUEz9AyjQy2b6YHCYkq2v2d0Zqjo/YygRy+sVy6Tvt/AAevMpgPMjE9tFCWm/a9ex9HyRQARxagHLOxg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="stylesheet" media="screen" href="/stylesheets/scm.css" /></head>
+<body class="theme-Prelude project-prelude-lml controller-attachments action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-lml/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-lml">Overview</a></li><li><a class="activity" href="/projects/prelude-lml/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-lml/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude-lml/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-lml/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-lml/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-lml/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <h2>sshrules.diff</h2>
+
+<div class="attachments">
+<p>ssh rules diff - 
+   <span class="author"><a class="user active" href="/users/93">prmarino1-gmail-com -</a>, 06/05/2007 08:42 PM</span></p>
+<p><a href="/attachments/download/83/sshrules.diff">Download</a>   <span class="size">(7.37 KB)</span></p>
+</div>
+
+  <form action="/attachments/83/sshrules.diff" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <p>
+      View differences:
+      <label><input type="radio" name="type" id="type_inline" value="inline" onchange="this.form.submit()" checked="checked" /> inline</label>
+      <label><input type="radio" name="type" id="type_sbs" value="sbs" onchange="this.form.submit()" /> side by side</label>
+    </p>
+</form>  
+<div class="autoscroll">
+<table class="filecontent">
+<thead>
+  <tr>
+    <th colspan="3" class="filename">
+      ./ssh.rules	2007-06-05 14:25:12.689882400 -0400
+    </th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th class="line-num">24</th>
+  <th class="line-num">24</th>
+  <td class="line-code ">
+    <pre>###################</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">25</th>
+  <th class="line-num">25</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">26</th>
+  <th class="line-num">26</th>
+  <td class="line-code ">
+    <pre>#LOG:Dec  8 14:45:17 itguxweb1 sshd[32112]: Accepted publickey for root from 12.34.56.78 port 56634 ssh2</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">27</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>regex=Accepted (\S+) for root from ([\d\.]+) port (\d+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">27</th>
+  <td class="line-code diff_in">
+    <pre>#LOG:Dec  8 14:45:17 itguxweb1 sshd[32112]: Accepted publickey for root from ::ffff:12.34.56.78 port 56634 ssh2</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">28</th>
+  <td class="line-code diff_in">
+    <pre>regex=Accepted (\S+) for root from (::[fF]{4}:)?([\d\.]+) port (\d+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">28</th>
+  <th class="line-num">29</th>
+  <td class="line-code ">
+    <pre> classification.text=Admin login successful; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">29</th>
+  <th class="line-num">30</th>
+  <td class="line-code ">
+    <pre> id=1900; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">30</th>
+  <th class="line-num">31</th>
+  <td class="line-code ">
+    <pre> revision=2; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">34</th>
+  <th class="line-num">35</th>
+  <td class="line-code ">
+    <pre> assessment.impact.severity=low; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">35</th>
+  <th class="line-num">36</th>
+  <td class="line-code ">
+    <pre> assessment.impact.completion=succeeded; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">36</th>
+  <th class="line-num">37</th>
+  <td class="line-code ">
+    <pre> assessment.impact.type=admin; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">37</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> assessment.impact.description=Root logged in from $<span>2:$3</span> using the $1 method; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">38</th>
+  <td class="line-code diff_in">
+    <pre> assessment.impact.description=Root logged in from $<span>3:$4</span> using the $1 method; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">38</th>
+  <th class="line-num">39</th>
+  <td class="line-code ">
+    <pre> source(0).node.address(0).category=ipv4-addr; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">39</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).node.address(0).address=$<span>2</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">40</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).service.port=$<span>3</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">40</th>
+  <td class="line-code diff_in">
+    <pre> source(0).node.address(0).address=$<span>3</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">41</th>
+  <td class="line-code diff_in">
+    <pre> source(0).service.port=$<span>4</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">41</th>
+  <th class="line-num">42</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_name=tcp; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">42</th>
+  <th class="line-num">43</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_number=6; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">43</th>
+  <th class="line-num">44</th>
+  <td class="line-code ">
+    <pre> target(0).service.port=22; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">53</th>
+  <th class="line-num">54</th>
+  <td class="line-code ">
+    <pre> last;</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">54</th>
+  <th class="line-num">55</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">55</th>
+  <th class="line-num">56</th>
+  <td class="line-code ">
+    <pre>#LOG:Dec 10 10:33:19 itguxweb2 sshd[29738]: Accepted password for ekwong from 12.34.56.78 port 39852 ssh2</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">56</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>regex=Accepted (\S+) for (?!root)(\S+) from ([\d\.]+) port (\d+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">57</th>
+  <td class="line-code diff_in">
+    <pre>#LOG:Jun 5 15:50:35 somehost sshd[17740]: Accepted publickey for someuser from ::ffff:192.168.0.22 port 59610 ssh2</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">58</th>
+  <td class="line-code diff_in">
+    <pre>regex=Accepted (\S+) for (?!root)(\S+) from (::[fF]{4}:)?([\d\.]+) port (\d+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">57</th>
+  <th class="line-num">59</th>
+  <td class="line-code ">
+    <pre> classification.text=User login successful; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">58</th>
+  <th class="line-num">60</th>
+  <td class="line-code ">
+    <pre> id=1901; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">59</th>
+  <th class="line-num">61</th>
+  <td class="line-code ">
+    <pre> revision=2; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">65</th>
+  <th class="line-num">67</th>
+  <td class="line-code ">
+    <pre> assessment.impact.type=user; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">66</th>
+  <th class="line-num">68</th>
+  <td class="line-code ">
+    <pre> assessment.impact.description=User $2 logged in from $3:$4 using the $1 method; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">67</th>
+  <th class="line-num">69</th>
+  <td class="line-code ">
+    <pre> source(0).node.address(0).category=ipv4-addr; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">68</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).node.address(0).address=$<span>3</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">69</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).service.port=$<span>4</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">70</th>
+  <td class="line-code diff_in">
+    <pre> source(0).node.address(0).address=$<span>4</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">71</th>
+  <td class="line-code diff_in">
+    <pre> source(0).service.port=$<span>5</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">70</th>
+  <th class="line-num">72</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_name=tcp; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">71</th>
+  <th class="line-num">73</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_number=6; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">72</th>
+  <th class="line-num">74</th>
+  <td class="line-code ">
+    <pre> target(0).service.port=22; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">86</th>
+  <th class="line-num">88</th>
+  <td class="line-code ">
+    <pre>################</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">87</th>
+  <th class="line-num">89</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">88</th>
+  <th class="line-num">90</th>
+  <td class="line-code ">
+    <pre>#LOG:Dec  9 16:00:35 itguxweb2 sshd[24541]: Failed password for root from 12.34.56.78 port 1806</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">89</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>regex=Failed (\S+) for root from ([\d\.]+) port (\d+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">91</th>
+  <td class="line-code diff_in">
+    <pre>#LOG:Dec  9 16:00:35 itguxweb2 sshd[24541]: Failed password for root from ::ffff:12.34.56.78 port 1806</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">92</th>
+  <td class="line-code diff_in">
+    <pre>regex=Failed (\S+) for root from (::[fF]{4}:)?([\d\.]+) port (\d+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">90</th>
+  <th class="line-num">93</th>
+  <td class="line-code ">
+    <pre> classification.text=Admin login failed; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">91</th>
+  <th class="line-num">94</th>
+  <td class="line-code ">
+    <pre> id=1902; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">92</th>
+  <th class="line-num">95</th>
+  <td class="line-code ">
+    <pre> revision=2; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">96</th>
+  <th class="line-num">99</th>
+  <td class="line-code ">
+    <pre> assessment.impact.severity=medium; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">97</th>
+  <th class="line-num">100</th>
+  <td class="line-code ">
+    <pre> assessment.impact.completion=failed; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">98</th>
+  <th class="line-num">101</th>
+  <td class="line-code ">
+    <pre> assessment.impact.type=admin; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">99</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> assessment.impact.description=Someone tried to login as root from $<span>2:$3</span> using the $1 method; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">102</th>
+  <td class="line-code diff_in">
+    <pre> assessment.impact.description=Someone tried to login as root from $<span>3:$4</span> using the $1 method; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">100</th>
+  <th class="line-num">103</th>
+  <td class="line-code ">
+    <pre> source(0).node.address(0).category=ipv4-addr; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">101</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).node.address(0).address=$<span>2</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">102</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).service.port=$<span>3</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">104</th>
+  <td class="line-code diff_in">
+    <pre> source(0).node.address(0).address=$<span>3</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">105</th>
+  <td class="line-code diff_in">
+    <pre> source(0).service.port=$<span>4</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">103</th>
+  <th class="line-num">106</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_name=tcp; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">104</th>
+  <th class="line-num">107</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_number=6; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">105</th>
+  <th class="line-num">108</th>
+  <td class="line-code ">
+    <pre> target(0).service.port=22; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">115</th>
+  <th class="line-num">118</th>
+  <td class="line-code ">
+    <pre> last</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">116</th>
+  <th class="line-num">119</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">117</th>
+  <th class="line-num">120</th>
+  <td class="line-code ">
+    <pre>#LOG:Dec  9 21:29:56 devel5 sshd[17554]: Failed password for akarade from 12.34.56.78 port 4214</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">118</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>regex=Failed (\S+) for (?!root)(\S+) from ([\d\.]+) port (\d+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">121</th>
+  <td class="line-code diff_in">
+    <pre>#LOG:Dec  9 21:29:56 devel5 sshd[17554]: Failed password for akarade from ::ffff:12.34.56.78 port 4214</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">122</th>
+  <td class="line-code diff_in">
+    <pre>regex=Failed (\S+) for (?!root)(\S+) from (::[fF]{4}:)?([\d\.]+) port (\d+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">119</th>
+  <th class="line-num">123</th>
+  <td class="line-code ">
+    <pre> classification.text=User login failed; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">120</th>
+  <th class="line-num">124</th>
+  <td class="line-code ">
+    <pre> id=1903; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">121</th>
+  <th class="line-num">125</th>
+  <td class="line-code ">
+    <pre> revision=2; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">125</th>
+  <th class="line-num">129</th>
+  <td class="line-code ">
+    <pre> assessment.impact.severity=medium; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">126</th>
+  <th class="line-num">130</th>
+  <td class="line-code ">
+    <pre> assessment.impact.completion=failed; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">127</th>
+  <th class="line-num">131</th>
+  <td class="line-code ">
+    <pre> assessment.impact.type=user; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">128</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> assessment.impact.description=Someone tried to login as $2 from $<span>3:$4</span> using the $1 method; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">132</th>
+  <td class="line-code diff_in">
+    <pre> assessment.impact.description=Someone tried to login as $2 from $<span>4:$5</span> using the $1 method; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">129</th>
+  <th class="line-num">133</th>
+  <td class="line-code ">
+    <pre> source(0).node.address(0).category=ipv4-addr; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">130</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).node.address(0).address=$<span>3</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">131</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).service.port=$<span>4</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">134</th>
+  <td class="line-code diff_in">
+    <pre> source(0).node.address(0).address=$<span>4</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">135</th>
+  <td class="line-code diff_in">
+    <pre> source(0).service.port=$<span>5</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">132</th>
+  <th class="line-num">136</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_name=tcp; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">133</th>
+  <th class="line-num">137</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_number=6; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">134</th>
+  <th class="line-num">138</th>
+  <td class="line-code ">
+    <pre> target(0).service.port=22; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">148</th>
+  <th class="line-num">152</th>
+  <td class="line-code ">
+    <pre>##############################################</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">149</th>
+  <th class="line-num">153</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">150</th>
+  <th class="line-num">154</th>
+  <td class="line-code ">
+    <pre>#LOG:Jan 20 14:10:02 blah sshd[25443]: Invalid user admin from 213.201.222.134</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">155</th>
+  <td class="line-code diff_in">
+    <pre>#LOG:Jan 20 14:10:02 blah sshd[25443]: Invalid user admin from ::ffff:213.201.222.134</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">151</th>
+  <th class="line-num">156</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">152</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>regex=(Illegal|Invalid) user (\S+) from (<span></span>[\d\.]+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">157</th>
+  <td class="line-code diff_in">
+    <pre>regex=(Illegal|Invalid) user (\S+) from (<span>::[fF]{4}:)?(</span>[\d\.]+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">153</th>
+  <th class="line-num">158</th>
+  <td class="line-code ">
+    <pre> classification.text=User login failed with an invalid user; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">154</th>
+  <th class="line-num">159</th>
+  <td class="line-code ">
+    <pre> id=1904; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">155</th>
+  <th class="line-num">160</th>
+  <td class="line-code ">
+    <pre> revision=1; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">159</th>
+  <th class="line-num">164</th>
+  <td class="line-code ">
+    <pre> assessment.impact.severity=medium; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">160</th>
+  <th class="line-num">165</th>
+  <td class="line-code ">
+    <pre> assessment.impact.completion=failed; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">161</th>
+  <th class="line-num">166</th>
+  <td class="line-code ">
+    <pre> assessment.impact.type=user; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">162</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> assessment.impact.description=Someone tried to login with the invalid user &quot;$2&quot; from $<span>3</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">167</th>
+  <td class="line-code diff_in">
+    <pre> assessment.impact.description=Someone tried to login with the invalid user &quot;$2&quot; from $<span>4</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">163</th>
+  <th class="line-num">168</th>
+  <td class="line-code ">
+    <pre> source(0).node.address(0).category=ipv4-addr; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">164</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).node.address(0).address=$<span>3</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">169</th>
+  <td class="line-code diff_in">
+    <pre> source(0).node.address(0).address=$<span>4</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">165</th>
+  <th class="line-num">170</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_name=tcp; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">166</th>
+  <th class="line-num">171</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_number=6; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">167</th>
+  <th class="line-num">172</th>
+  <td class="line-code ">
+    <pre> target(0).service.port=22; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">212</th>
+  <th class="line-num">217</th>
+  <td class="line-code ">
+    <pre>##################################################################</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">213</th>
+  <th class="line-num">218</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">214</th>
+  <th class="line-num">219</th>
+  <td class="line-code ">
+    <pre># LOG:Jun 10 09:51:57 server sshd[9100]: Did not receive identification string from 1.2.3.4</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">220</th>
+  <td class="line-code diff_in">
+    <pre># LOG:Jun 10 09:51:57 server sshd[9100]: Did not receive identification string from ::ffff:1.2.3.4</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">215</th>
+  <th class="line-num">221</th>
+  <td class="line-code ">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">216</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>regex=Did not receive identification string from (<span></span>[\d\.]+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">222</th>
+  <td class="line-code diff_in">
+    <pre>regex=Did not receive identification string from (<span>::[fF]{4}:)?(</span>[\d\.]+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">217</th>
+  <th class="line-num">223</th>
+  <td class="line-code ">
+    <pre> classification.text=Server recognition; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">218</th>
+  <th class="line-num">224</th>
+  <td class="line-code ">
+    <pre> id=1906; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">219</th>
+  <th class="line-num">225</th>
+  <td class="line-code ">
+    <pre> revision=2; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">223</th>
+  <th class="line-num">229</th>
+  <td class="line-code ">
+    <pre> assessment.impact.severity=medium; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">224</th>
+  <th class="line-num">230</th>
+  <td class="line-code ">
+    <pre> assessment.impact.completion=failed; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">225</th>
+  <th class="line-num">231</th>
+  <td class="line-code ">
+    <pre> assessment.impact.type=recon; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">226</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> assessment.impact.description=$<span>1</span> is probably making a server recognition; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">232</th>
+  <td class="line-code diff_in">
+    <pre> assessment.impact.description=$<span>2</span> is probably making a server recognition; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">227</th>
+  <th class="line-num">233</th>
+  <td class="line-code ">
+    <pre> source(0).node.address(0).category=ipv4-addr; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">228</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).node.address(0).address=$<span>1</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">234</th>
+  <td class="line-code diff_in">
+    <pre> source(0).node.address(0).address=$<span>2</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">229</th>
+  <th class="line-num">235</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_name=tcp; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">230</th>
+  <th class="line-num">236</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_number=6; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">231</th>
+  <th class="line-num">237</th>
+  <td class="line-code ">
+    <pre> target(0).service.port=22; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">244</th>
+  <th class="line-num">250</th>
+  <td class="line-code ">
+    <pre>#########################################################################</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">245</th>
+  <th class="line-num">251</th>
+  <td class="line-code ">
+    <pre></pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">246</th>
+  <th class="line-num">252</th>
+  <td class="line-code ">
+    <pre># LOG:Jan  5 01:31:41 www sshd[1643]: ROOT LOGIN REFUSED FROM 1.2.3.4</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">253</th>
+  <td class="line-code diff_in">
+    <pre># LOG:Jan  5 01:31:41 www sshd[1643]: ROOT LOGIN REFUSED FROM ::ffff:1.2.3.4</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">247</th>
+  <th class="line-num">254</th>
+  <td class="line-code ">
+    <pre>#</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">248</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre>regex=ROOT LOGIN REFUSED FROM (<span></span>[\d\.]+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">255</th>
+  <td class="line-code diff_in">
+    <pre>regex=ROOT LOGIN REFUSED FROM (<span>::[fF]{4}:)?(</span>[\d\.]+); \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">249</th>
+  <th class="line-num">256</th>
+  <td class="line-code ">
+    <pre> classification.text=Admin login forbidden; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">250</th>
+  <th class="line-num">257</th>
+  <td class="line-code ">
+    <pre> id=1907; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">251</th>
+  <th class="line-num">258</th>
+  <td class="line-code ">
+    <pre> revision=1; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">257</th>
+  <th class="line-num">264</th>
+  <td class="line-code ">
+    <pre> assessment.impact.type=admin; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">258</th>
+  <th class="line-num">265</th>
+  <td class="line-code ">
+    <pre> assessment.impact.description=Root tried to login while it is forbidden; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">259</th>
+  <th class="line-num">266</th>
+  <td class="line-code ">
+    <pre> source(0).node.address(0).category=ipv4-addr; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">260</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> source(0).node.address(0).address=$<span>1</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">267</th>
+  <td class="line-code diff_in">
+    <pre> source(0).node.address(0).address=$<span>2</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">261</th>
+  <th class="line-num">268</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_name=tcp; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">262</th>
+  <th class="line-num">269</th>
+  <td class="line-code ">
+    <pre> source(0).service.iana_protocol_number=6; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">263</th>
+  <th class="line-num">270</th>
+  <td class="line-code ">
+    <pre> target(0).service.port=22; \</pre>
+  </td>
+</tr>
+<tr class="spacing">
+  <th class="line-num">...</th><th class="line-num">...</th><td></td>
+</tr>
+<tr>
+  <th class="line-num">327</th>
+  <th class="line-num">334</th>
+  <td class="line-code ">
+    <pre> target(0).service.iana_protocol_number=6; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">328</th>
+  <th class="line-num">335</th>
+  <td class="line-code ">
+    <pre> target(0).user.category=os-device; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">329</th>
+  <th class="line-num">336</th>
+  <td class="line-code ">
+    <pre> target(0).user.user_id(0).type=target-user; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">330</th>
+  <th class="line-num"></th>
+  <td class="line-code diff_out">
+    <pre> target(0).user.user_id(0).name=<span>root</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num"></th>
+  <th class="line-num">337</th>
+  <td class="line-code diff_in">
+    <pre> target(0).user.user_id(0).name=<span>$2</span>; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">331</th>
+  <th class="line-num">338</th>
+  <td class="line-code ">
+    <pre> additional_data(0).type=string; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">332</th>
+  <th class="line-num">339</th>
+  <td class="line-code ">
+    <pre> additional_data(0).meaning=Authentication method; \</pre>
+  </td>
+</tr>
+<tr>
+  <th class="line-num">333</th>
+  <th class="line-num">340</th>
+  <td class="line-code ">
+    <pre> additional_data(0).data=$1; \</pre>
+  </td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

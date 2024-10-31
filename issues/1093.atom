@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/1093.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2019-05-07T23:30:31Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>PRELUDE SIEM - Bug #1093: prelude-admin Segmentation Fault raspbian</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1093"/>
+    <id>http://www.prelude-siem.org/issues/1093?journal_id=5466</id>
+    <updated>2019-05-07T23:30:31Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Priority&lt;/strong&gt; changed from &lt;i&gt;High&lt;/i&gt; to &lt;i&gt;Normal&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Hello&lt;/p&gt;
+
+
+	&lt;p&gt;Can you give us a full backtrace from gdb when segmentation fault appears ?&lt;/p&gt;
+
+
+	&lt;p&gt;It should works as under debian : &lt;a class="external" href="https://buildd.debian.org/status/package.php?p=libprelude"&gt;https://buildd.debian.org/status/package.php?p=libprelude&lt;/a&gt;&lt;br /&gt;Is it possible for you to use these deb files ?&lt;/p&gt;
+
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>PRELUDE SIEM - Bug #1093: prelude-admin Segmentation Fault raspbian</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/1093"/>
+    <id>http://www.prelude-siem.org/issues/1093?journal_id=5467</id>
+    <updated>2019-05-09T07:14:05Z</updated>
+    <author>
+      <name>Marc-Antoine delannoy</name>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Yes that's what I did and it works with &lt;code&gt;apt-get install libprelude-dev&lt;/code&gt;&lt;br /&gt;Thank you for your help and excuse me for the inconvenience.&lt;/p&gt;    </content>
+  </entry>
+</feed>

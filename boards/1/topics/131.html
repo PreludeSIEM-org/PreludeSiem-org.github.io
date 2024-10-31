@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>[PRELUDE_LML] How to export all entries from log file? - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="XCPOPGYiAsFSZhW/e88us2OIxxZMO+8A30RafQuucSVPDKZTrzYPQtjMHUVmh2ftH8O2iFYxtk4Byp7tj65FJg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>[PRELUDE_LML] How to export all entries from log file?</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/1065">Sebastian K</a> <a title="03/19/2018 09:41 AM" href="/projects/prelude/activity?from=2018-03-19">over 6 years</a> ago</span></p>
+<div class="wiki">
+<p>Hello,</p>
+
+
+	<p>I'm trying to monitor all entries written into <code>/var/log/messages</code>, but no messages written in there show up in Prewikka. <br />The generated messages look like this:<br /><code>Mar 19 10:12:59 iProc kern.notice root: System test message</code></p>
+
+
+	<p>The configuration file of prelude-lml looks like this (minus all comments):<br /><pre><code class="text syntaxhl"><span class="CodeRay">include = /etc/prelude/default/idmef-client.conf
+
+[prelude]
+server-addr = 192.168.0.10
+
+[format=syslog]
+time-format = &quot;%b %d %H:%M:%S&quot; 
+file = /var/log/messages
+
+[Pcre]
+ruleset=/etc/prelude-lml/ruleset/pcre.rules
+</span></code></pre></p>
+
+
+	<p>What am I doing wrong?</p>
+
+
+	<p>Thanks in advance.</p>
+
+
+	<p>Best regards,</p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (7)</h3>
+  <div class="message reply" id="message-132">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/131?r=132#message-132">RE: [PRELUDE_LML] How to export all entries from log file?</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="03/19/2018 02:29 PM" href="/projects/prelude/activity?from=2018-03-19">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>If you want specific logs (not handled by the predefined LML rules) to be converted into alerts and shown in Prewikka, you need to create your own LML rules.</p>
+
+
+	<p>See the <a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">documentation</a>.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-133">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/131?r=133#message-133">RE: [PRELUDE_LML] How to export all entries from log file?</a>
+    -
+    Added by <a class="user active" href="/users/1065">Sebastian K</a> <a title="03/20/2018 10:02 AM" href="/projects/prelude/activity?from=2018-03-20">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>thank you for the quick reply. I modified the <code>single.rules</code> file by adding the following piece of code as first rule:</p>
+
+
+<pre><code class="text syntaxhl"><span class="CodeRay">#LOG:Mar 19 10:12:59 iProc kern.notice root: System test message
+regex=iProc kern.notice root: System (\S+) message; \
+ classification.text=Message manually added; \
+ id=555; \
+ analyzer(0).name=logd; \
+ analyzer(0).class=Log analyzer; \
+ assessment.impact.severity=medium; \
+ assessment.impact.completion=succeeded; \
+ assessment.impact.type=other; \
+ assessment.impact.description=tested alarms; \
+ source(0).node.address(0).address=192.168.0.1; \
+ last;
+</span></code></pre><br />After that I restarted prelude-lml. Unfortunately, after generating the message via <code>logger -s "System test message"</code>, no alarm is shown in Prewikka.
+
+	<p>Thanks again!</p></div>
+  
+  </div>
+  <div class="message reply" id="message-134">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/131?r=134#message-134">RE: [PRELUDE_LML] How to export all entries from log file?</a>
+    -
+    Added by <a class="user active" href="/users/1065">Sebastian K</a> <a title="03/20/2018 02:01 PM" href="/projects/prelude/activity?from=2018-03-20">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>UPDATE: Prewikka showed me the alarm now, but between generating the log entry and displaying it, 3 or 4 hours have passed. Is this supposed to work this way? I would like to check the alarms immediately.</p>
+
+
+	<p>Regards,</p></div>
+  
+  </div>
+  <div class="message reply" id="message-135">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/131?r=135#message-135">RE: [PRELUDE_LML] How to export all entries from log file?</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="03/20/2018 02:42 PM" href="/projects/prelude/activity?from=2018-03-20">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>What time period did you choose in Prewikka? What is your current timezone?</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-136">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/131?r=136#message-136">RE: [PRELUDE_LML] How to export all entries from log file?</a>
+    -
+    Added by <a class="user active" href="/users/1065">Sebastian K</a> <a title="03/20/2018 03:02 PM" href="/projects/prelude/activity?from=2018-03-20">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>I used the default of 1 hour. I followed your hint with the timezones. Actually, the server machine uses CET while the sensor machine has a EDT timebase. Could this be the problem of the delay? Furthermore, do you know the approximate time it takes Prewikka to update its events?</p></div>
+  
+  </div>
+  <div class="message reply" id="message-137">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/131?r=137#message-137">RE: [PRELUDE_LML] How to export all entries from log file?</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="03/21/2018 09:23 AM" href="/projects/prelude/activity?from=2018-03-21">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>Make sure also to set the appropriate timezone in the user preferences (ADMIN > Preferences > My account), the alerts should be seen immediately.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+  <div class="message reply" id="message-138">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/131?r=138#message-138">RE: [PRELUDE_LML] How to export all entries from log file?</a>
+    -
+    Added by <a class="user active" href="/users/1065">Sebastian K</a> <a title="03/21/2018 12:20 PM" href="/projects/prelude/activity?from=2018-03-21">over 6 years</a> ago
+  </h4>
+  <div class="wiki"><p>I finally got it to work. I'm reporting what I found, so maybe somebody else can save time. The fix took some time because the sensor machine is an embedded system which lacks things like /etc/localtime.</p>
+
+
+	<p>There were 2 issues that prevented Prewikka from showing the alerts.</p>
+
+
+	<p>1.) The time format wasn't the same on both machines. One of the machines used the US-time format while the other used the German formatting. I changed this by adding the line <strong><code>LC_TIME="en_US.UTF-8"</code></strong> to <code>/etc/default/locale</code>.</p>
+
+
+	<p>2.) Next I had to adjust the timezones. The server got the right timezone from the internet. On the embedded device I had to export the TZ-Variable. It seems to replace <code>/etc/localtime</code> on embedded Linux devices. Command Line on embedded device: <code>export TZ=UTC-1</code>. Also, I tried to use CET as timebase, but it didn't work for some reason. It may be a better solution to use just UTC.</p>
+
+
+	<p>Antoine LUONG wrote:</p>
+
+
+<blockquote>
+
+	<p>Make sure also to set the appropriate timezone in the user preferences (ADMIN > Preferences > My account), the alerts should be seen immediately.</p>
+
+
+	<p>Regards</p>
+
+
+</blockquote>
+
+	<p>I'm not really sure which user preferences you mean. Could you elaborate on this please?</p>
+
+
+	<p>Thank you for the support!</p>
+
+
+	<p>Regards,</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-7/7)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

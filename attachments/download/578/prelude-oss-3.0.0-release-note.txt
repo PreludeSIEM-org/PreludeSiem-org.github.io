@@ -1,0 +1,542 @@
+Prelude OSS 3.0.0
+=================
+
+
+* 2016-04-15, libprelude-3.0.0
+------------------------------
+
+Author: Antoine Luong
+
+- Fix make distcheck with LUA and Ruby bindings
+
+- Fix depth comparison in IDMEFClass()
+
+Author: Yoann Vandoorselaere
+
+- Fix idmef-criteria valgrind unit test (memory leak)
+
+- Fix assertions / wrong object matching behavior on list
+
+- Broken-down time comparison worked only once
+
+- Fix multiple idmef-path cloning issue
+
+- Properly set top class when using idmef_path_new_from_root_fast()
+
+- Implement utility functions for IDMEF union
+    - idmef_class_is_child_union_member()
+    - idmef_class_get_child_union_id()
+
+- Implement idmef_object_get_class()
+
+- Improve string allocation algorithm
+
+- Fix crash on listed value retrieval
+
+- Fix IDMEF object copy
+
+- Improve error reporting
+
+- Remove IDMEF SNMP community field
+
+Author: Louis-David Gabet
+
+- Update README
+
+Author: Thomas 
+
+- Change c-s.fr to prelude-siem.com
+
+Author: Abdel Elmili
+
+- Fix typos
+
+
+* 2016-04-22, libpreludedb-3.0.0
+--------------------------------
+
+Author: Yoann Vandoorselaere
+
+- Update SWIG bindings
+
+- Missing increment when adding static field
+
+- Standardize day of week extraction (monday=0, sunday=6)
+
+- Implement the SQL timezone() function
+
+- preludedb_sql_field_t conversion performance improvement
+
+- Missing config.h inclusion
+
+- Performance improvements
+    - Support for format plugin initialization, optimize function
+    - MySQL support for multiple statement
+    - Use UNIX database connection by default
+    - New get_last_insert_ident() API
+
+- Implement missing preludedb_sql_get_settings()
+
+- Implement preludedb_path_selection_set_column_count()
+    Change to preludedb_path_selection_add_selected() so that the column count
+    is retrieved only if it has not been manually set.
+
+- getValues() improvement
+    Allow support for more complex request, with different level of code:
+    max(extract(alert.create_time, "hour"))
+    New public preludedb_sql_select_t API, deprecating classic_sql_select_t.
+
+- Improve error reporting
+
+Author: Louis-David Gabet
+
+- Document the "optimize" command
+
+Author: Abdel Elmili
+
+- Fix URL and spelling mistakes
+
+
+* 2016-04-22, prelude-manager-3.0.0
+-----------------------------------
+
+Author: Antoine Luong
+
+- Prevent a segfault in write_connection_cb()
+
+- [#640] Fix libpreludedb compatibility issue in SMTP plugin
+
+- Update Prewikka path in SMTP template
+
+Author: Song Tran
+
+- Add SELinux policy
+
+Author: Camille Gardet
+
+- Add info about geolocation support
+
+Author: Louis-David Gabet
+
+- Replace stderr by /dev/stdout in configuration
+
+Author: François 
+
+- Add a default threshold to handle bursts
+
+Author: Yoann Vandoorselaere
+
+- Event geo-location support through normalisation
+    Implement support for libmaxminddb, allowing to set per-event geolocation
+    information within events AdditionalData.
+
+Author: Thomas 
+
+- Change prelude-ids.com to prelude-siem.com
+
+
+* 2016-04-22, prelude-lml-3.0.0
+-------------------------------
+
+Author: Song Tran
+
+- Add SELinux policy
+
+Author: Thomas 
+
+- Change 'Equipe Prelude' to 'Prelude Team'
+  Update from prelude-ids.org to prelude-siem.org
+  Change mailing lists to forums.
+
+Author: Antoine Luong
+
+- [#641] Fix crash when no authmode is defined in TLS configuration
+
+
+* 2016-04-15, prelude-lml-rules-3.0.0
+-------------------------------------
+
+Author: Louis-David Gabet
+
+- Update Cisco ASA rules
+
+- Fix rule in single.rules
+
+- Fix ID duplicates
+
+- Regular expression fixes
+
+- Add information header for each ruleset
+
+- Rules for userdel and groupdel
+
+- Update rules for yum
+
+- Sanitization of rulesets
+
+Author: Antoine Luong
+
+- Add the fortigate ruleset (operador@seguridadx.com)
+
+- Update from prelude-ids.org to prelude-siem.org
+
+Author: Sélim Menouar
+
+- Add group sudo for admin group in shadow-utils
+
+- Ignore case for UID and GID in shadow-utils.rules
+
+Author: Thomas 
+
+- Fix GRSecurity and Snare rules
+
+- Fix Arbor and CISCO ASA rules
+
+- Sanitization for #LOG
+
+* 2016-04-22, libprelude-3.0.0:
+
+Author: Antoine Luong
+
+- Fix make distcheck with LUA and Ruby bindings
+
+Author: Yoann Vandoorselaere
+
+- Fix idmef-criteria valgrind unit test (memory leak)
+
+
+* 2016-04-22, prelude-correlator-3.0.0
+--------------------------------------
+
+Author: François 
+
+- Re-enable SpamHaus plugin & add warning
+
+- Single alert for hosts with multiple IPs
+
+Author: Thomas 
+
+- Disable flatten when getting alert.source(*) in BruteForce
+
+- Missing import in prelude-correlator plugin manager
+
+- Add CIArmy blacklist like DShield or Spamhaus
+
+- Fix download() with text/plain files
+
+- Fix wrong access to entrypoint name
+
+- Load plugins from entrypoints and directories
+
+- The README in conf.d was not the right file
+
+- Change prelude-ids.com to prelude-siem.com
+
+Author: Yoann Vandoorselaere
+
+- Fix incorrect aggregation in some corner case
+
+- Pickle compatibility for IDMEF object
+
+Author: Louis-David Gabet
+
+- Comment python_rules section by default
+
+- Fix 'python_rules' section error
+
+- Add include section to configuration file
+  to allow independent configuration files for plugins
+
+Author: Song Tran
+
+- Add SELinux policies
+
+Author: Antoine Luong
+
+- Correct download address parameter in conf
+
+
+* 2016-04-22, prewikka-3.0.0
+----------------------------
+
+Author: Francois 
+
+- Traceback on timelines when start == end
+
+- Hide irrelevant filters
+
+- Fix CSS class for node header in sensors
+
+- Avoid tracebacks in prewikka.utils.misc
+
+- Fix navigation bar display on IE 9
+
+- Improve the help message about filters
+
+- Skip AJAX request for the logout link
+
+- Get rid of browser sniffing
+
+- Return timeline_absolute in get_parameters
+
+- Prevent filters from being applied twice
+
+- Add support for reverse proxies
+
+- Support generic paths in selection
+
+- Fallback for the default view
+
+- Fix a plugin update failure
+
+- Fix several issues in AddressResolve
+
+- Default view after a successful login
+
+Author: Antoine Luong
+
+- Fix a parenthesis problem when applying filters
+
+- Preserve the grid width when adding/removing columns
+
+- Reinitialize env.threadlocal.menu
+
+- Correct behavior of severity checkboxes
+
+- Fix KeyError when no host URL are configured
+
+- Rework the loading mechanism of head content
+
+- Use Cheetah comments in IE conditional comments
+
+- Global translation work
+
+- Fix UserSettings template
+
+- Handle parameters without filename in multipart
+
+- Re-add missing fields in AlertListing search
+
+- Fix a jQuery UI / Bootstrap compatibility problem
+
+- Prevent users from disabling certain plugins
+
+- Remove enumeration fields from AlertListing basic search
+
+- Fix wrong computation of number of pages in grid
+
+- Scroll to top when loading a page via AJAX
+
+- Correctly delete rows from jqGrid
+
+- Load views before auth/session modules
+
+- Support for prewikka-updatedb entry point
+
+- Various theme-related tweaks
+
+- Better handling of sections in the menubar
+
+- Bugfixes
+    - Filters were not applied when deleting alerts
+    - Prevent empty message when the session cookie expires
+    - Catch errors when database scripts are missing
+    - Fix normalization problems in Agents and Heartbeats views
+    - Avoid MessageSummary NoneType exception
+    - Take timezone into account in message summary
+
+- Prewikka dialog adjustments
+
+- Standardize grid library usage with free-jqGrid
+
+- Remove the ToolAlertListing view
+
+- Display hearbeat details in a widget
+
+- Bugfixes
+    - Fix issue with jEditable input fields' dimensions
+    - Fix possible injection in error dialog
+    - Fix inconsistency in the handling of substring operators
+    - Operator tooltips were not displayed in AlertListing filters
+    - Do not create a topmenu tab for section delimiters
+
+Author: Yoann Vandoorselaere
+
+- Localize custom mainmenu date format
+
+- Implement the parse_datetime() method
+
+- Navigation fixes, helper method for time argument generation
+
+- Correct handling of absolute time
+
+- get_criteria() now only return generic criteria (dataprovider compatibility)
+
+- Improve timezone support
+    - The sensor_localtime option has been removed since it is not efficient,
+      and have a number of problem.
+    - User can now select the timezone to be used in his profile.
+    - The default is now to format timezone in the user selected timezone, not
+      the frontend timezone.
+
+- in-transaction initialisation for version attribute
+
+- Remove deprecated
+
+- Fix duplicated parameters exception
+
+- Disable multithreading support since it is known to cause deadlock
+
+- prewikka-httpd server now supports multiprocessing
+
+- Add missing path type for criteria to url mapping
+
+- Multiple time navigation fixes
+
+- Fix exception when using sensor localtime mode
+
+Author: Camille Gardet
+
+- Fix Chosen select order
+
+- HTML and JS are now separated in Renderer
+
+- Don't save invalid parameters in alert view
+
+- Fix columns titles in users/groups listing
+
+- Fix Update button in Apps view
+
+- Fix enable_details URLs
+
+- Pretty output for prewikka-httpd help
+
+- Document the multiprocess option in prewikka-httpd
+
+- Add missing MIME types
+
+- Add index to IDMEF paths of Source/Target port
+
+- Bugfixes
+    - Fix order in jquery-chosen-sortable.js
+    - Fix renderer-elem height
+    - Fix view extra settings
+        Remove excessive containers, causing data duplication
+        Add a z-index to prewikka-view-config to display it above
+        graphics present in the page.
+
+- Add parameters to chosen encapsulation
+    The new parameters are used to tweak the rendering of the <select>:
+    - max_paths=int, to choose how many parameters are permitted
+    - all_paths=bool, whether to display all the IDMEF paths in the <select> or not
+
+- Update underscore.js to 1.8.3
+
+- Keep the order of "Data paths" in the view settings
+
+Author: Louis-David Gabet
+
+- Control buttons with jqGrid
+
+- Fix placeholder on Filter's view
+
+- Add hasUserName function
+
+- Fix missing boolean value in configuration file
+
+- Fix wrong filter in alert listing
+
+- Show details during plugin updates
+
+- Fix filter's popup behavior
+
+- Increase font size
+
+- Change 'Prewikka' labels to 'Prelude'
+
+- Load conf files in alphabetical order
+
+Author: Thomas 
+
+- Hack to change on the fly alert.analyzer(0) to alert.analyzer(-1)
+
+- Remove completion in alertlisting query
+
+- Fix error management permission
+
+- Add method in renderer to check if a backend is loaded
+
+Author: Abdel Elmili
+
+- API to query different data sources
+
+- Remove unused parameter in RendererPluginManager
+
+Author: Sélim Menouar
+
+- Prevent button's text in MainMenu to overflow
+
+- Update buttons state on rows suppression
+
+- Check dataprovider type before loading dataprovider backend
+
+- Hook to dynamically add link in alert's popup menu
+
+- Prevent an empty column from appearing in AlertListing
+
+- Fix simple filter in AlertListing
+
+- Gray out the mainmenu's inputs when they are disabled
+
+- AlertListing fixes
+    - Don't add column if the HOOK returns None
+    - Add node.name in simple search
+    - Fix time_asc sorting
+
+- Force the mainmenu end date to be greater than the start date
+
+- Add section to the menumanager when adding a view
+
+- Check uniqueness of filter name
+
+- Move the hook declaration to FilterDatabase
+
+- Handle permissions in dataprovider
+
+- Correctly delete events on confirm button
+
+- Add a footer-buttons css class
+
+- Change buttons' colors and icons
+
+- Look-and-feel:
+    - Add tooltip for host and classification
+    - Reponsive element for extra small device (<= 768px)
+    - Ask for confirmation when performing a dangerous action
+    - Always open a popup menu when filtering on alert listing
+    - Change the ajax spinner
+    - Automatically close the filter menu when we click outside
+
+- MainMenu fixes
+
+- Change the permissions' mechanism
+
+- Deprecate "place" option in the configuration file
+
+- Major look-and-feel overhaul
+    - Bootstrap migration
+    - MainMenu reworking
+        - Add jquery-ui-datetimepicker for calendars
+        - Temporarily remove timezone selection
+        - No more "Save" button, the settings are always saved
+        - Add an option for parameters which need to be shared between views
+    - Add FontAwesome icons in navbar
+    - Change prewikka's logo
+    - Change the popup_menu
+    - Update filter menu in alert listing
+
+- Allow multiple plugins in the same file
+
+- Add a default mimetype to the WSGI script
+
+- Preserve configuration section ordering on merge

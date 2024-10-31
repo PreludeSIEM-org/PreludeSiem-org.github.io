@@ -1,0 +1,35 @@
+--- ./messagelisting.py.orig	2007-06-07 04:28:49.000000000 -0400
++++ ./messagelisting.py	2007-06-28 15:27:18.515523684 -0400
+@@ -108,8 +108,9 @@
+         self.optional("timezone", str, "frontend_localtime", save=True)
+         self.optional("delete", list, [ ])
+         self.optional("apply", str)
++	self.optional("auto_apply", str,default="0:00", save=True)
+         
+-        # submit with an image passes the x and y coordinate values
++	# submit with an image passes the x and y coordinate values
+         # where the image was clicked
+         self.optional("x", int)
+         self.optional("y", int)
+@@ -212,11 +213,21 @@
+         self.dataset["hidden_parameters"] = [ [ "view", self.view_name ] ]
+         if self.parameters.has_key("timeline_end"):
+             self.dataset["hidden_parameters"].append(("timeline_end", self.parameters["timeline_end"]))
++	if self.parameters.has_key("yaxis"):
++	    self.dataset["hidden_parameters"].append(("yaxis", self.parameters["yaxis"]))
++	else:
++	    self.dataset["hidden_parameters"].append(("yaxis", 0))
+ 
+     def _setTimelineNext(self, next):
+         parameters = self.parameters - [ "offset" ] + { "timeline_end": int(next) }
+         self.dataset["timeline.next"] = utils.create_link(self.view_name, parameters)
+ 
++    def _autoapply(self):
++	if self.parameters.has_key("autoapply"):
++	    self.dataset["auto.apply"] = [ [ "auto_apply", self.parameters["auto_apply"] ] ]
++	else:
++	    self.dataset["auto.apply"] = [ [ "auto_apply", "0:00" ] ]
++
+     def _setTimelinePrev(self, prev):
+         parameters = self.parameters - [ "offset" ] + { "timeline_end": int(prev) }
+         self.dataset["timeline.prev"] = utils.create_link(self.view_name, parameters)

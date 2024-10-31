@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Libpreludedb build problem - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="znXl2NHk5V1IxwuUpI34WyaD5bBsuLq093LhycMmlaXdWo23GPDo3sJtA265xbEFWsiULnay4/op/CVZRyahpg==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>Libpreludedb build problem</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/555">Ilmar Habibulin</a> <a title="08/26/2016 09:04 PM" href="/projects/prelude/activity?from=2016-08-26">about 8 years</a> ago</span></p>
+<div class="wiki">
+<p>Hello.</p>
+
+
+	<p>I was trying to check Prelude in my home environment, but found out, that freebsd package is old (and without maintainer). So i decided to build the new (3.0.0) version from source. The problem is that it stops with error while linking python bindings, if i understand it correctlly. I've tryed to google solusion for such case, but didn't find the answer. Do someone have a clue how can i try to solve this problem? Here is the error:</p>
+
+
+<pre>
+building '_preludedb' extension
+c++ -fno-strict-aliasing -O2 -pipe -fstack-protector -fno-strict-aliasing -DNDEBUG -fPIC -I/usr/local/include/python2.7 -c _preludedb.cxx -o build/temp.freebsd-10.3-STABLE-amd64-2.7/_preludedb.o -I/usr/local/include -I../.. -I../../src/include -I../../src/include -I../../bindings/c++/include
+c++ -shared -lpthread -Wl,-rpath=/usr/lib:/usr/local/lib -fstack-protector build/temp.freebsd-10.3-STABLE-amd64-2.7/_preludedb.o -L../../src/.libs/ -L../../bindings/c++/.libs/ -L/usr/local/lib -lpython2.7 -o build/lib.freebsd-10.3-STABLE-amd64-2.7/_preludedb.so -lpreludedbcpp -lpreludecpp -lpreludedb -L/usr/local/lib -lprelude -L/usr/local/lib -lgnutls -L/usr/local/lib -lgcrypt -lgpg-error
+/usr/local/lib/libprelude.a(idmef-criteria-string.yac.o): In function `yyparse':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.yac.c:1285: multiple definition of `yyparse'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.yac.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.yac.c:1154: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yy_create_buffer':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1617: multiple definition of `yy_create_buffer'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1572: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yy_delete_buffer':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1645: multiple definition of `yy_delete_buffer'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1600: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yy_flush_buffer':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1692: multiple definition of `yy_flush_buffer'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1649: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yy_scan_buffer':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1819: multiple definition of `yy_scan_buffer'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1780: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yy_scan_bytes':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1869: multiple definition of `yy_scan_bytes'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1830: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yy_scan_string':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1856: multiple definition of `yy_scan_string'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1817: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yy_switch_to_buffer':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1572: multiple definition of `yy_switch_to_buffer'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1525: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyalloc':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2125: multiple definition of `yyalloc'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:2196: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyfree':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2142: multiple definition of `yyfree'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:2213: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyget_debug':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2033: multiple definition of `yyget_debug'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:2019: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyget_in':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1977: multiple definition of `yyget_in'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1927: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyget_leng':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1993: multiple definition of `yyget_leng'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1945: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyget_lineno':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1968: multiple definition of `yyget_lineno'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1901: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyget_out':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1985: multiple definition of `yyget_out'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1936: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyget_text':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2002: multiple definition of `yyget_text'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1955: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yylex':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:792: multiple definition of `yylex'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:783: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yylex_destroy':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2076: multiple definition of `yylex_destroy'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:2143: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yypop_buffer_state':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1751: multiple definition of `yypop_buffer_state'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1710: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yypush_buffer_state':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1721: multiple definition of `yypush_buffer_state'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1679: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyrealloc':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2130: multiple definition of `yyrealloc'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:2201: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyrestart':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:1555: multiple definition of `yyrestart'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1507: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyset_debug':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2038: multiple definition of `yyset_debug'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:2025: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyset_in':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2023: multiple definition of `yyset_in'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:2007: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyset_lineno':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2011: multiple definition of `yyset_lineno'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:1975: first defined here
+/usr/local/lib/libprelude.a(idmef-criteria-string.lex.o): In function `yyset_out':
+/root/prelude/libprelude-3.0.0/src/idmef-criteria-string.lex.c:2028: multiple definition of `yyset_out'
+../../src/.libs//libpreludedb.so(preludedb-path-selection-parser.lex.o):/root/prelude/libpreludedb-3.0.0/src/preludedb-path-selection-parser.lex.c:2013: first defined here
+c++: error: linker command failed with exit code 1 (use -v to see invocation)
+error: command 'c++' failed with exit status 1
+*** Error code 1
+</pre>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (2)</h3>
+  <div class="message reply" id="message-80">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/79?r=80#message-80">RE: Libpreludedb build problem</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="08/30/2016 04:36 PM" href="/projects/prelude/activity?from=2016-08-30">about 8 years</a> ago
+  </h4>
+  <div class="wiki"><p>Hello,</p>
+
+
+	<p>Could you please try building the libpreludedb using the attached tarball?</p>
+
+
+	<p>Regards</p></div>
+  <div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/712/libpreludedb-3.0.0.tar.gz">libpreludedb-3.0.0.tar.gz</a>  
+  <span class="size">(1.28 MB)</span>
+  </p>
+</div>
+
+  </div>
+  <div class="message reply" id="message-81">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/79?r=81#message-81">RE: Libpreludedb build problem</a>
+    -
+    Added by <a class="user active" href="/users/555">Ilmar Habibulin</a> <a title="08/30/2016 06:57 PM" href="/projects/prelude/activity?from=2016-08-30">about 8 years</a> ago
+  </h4>
+  <div class="wiki">Yes, that tarball compiles and links. I've made some corrections to original one, changing yy* function names to be unique for libpreludedb and libprelude.<br />Also I've got the same problems with prelude-lml tsl_auth_init() function, which dupes libprelude:<br />libtool: link: gcc -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wbad-function-cast -Wcast-qual -Wcast-align -Wnested-externs -Wunused -Wformat -Wformat-security -g -O2 .libs/prelude-lmlS.o -z relro -z now -o prelude-lml prelude-lml.o tcp-server.o tcp-server-tls.o udp-server.o regex.o log-entry.o log-source.o log-plugins.o lml-options.o file-server.o lml-alert.o lml-charset.o -Wl,-R/usr/local/lib -Wl,--export-dynamic  ../plugins/debug/.libs/libdebug.a ../plugins/pcre/.libs/libpcre.a -L/usr/local/lib /usr/local/lib/libprelude.a -lgnutls -lgcrypt -lgpg-error -lpcre -licui18n -licuuc -licudata ../libev/.libs/libev.a ../libmissing/.libs/libmissing.a -liconv -lm -lpthread -Wl,-rpath -Wl,/usr/local/lib<br />/usr/local/lib/libprelude.a(tls-auth.o): In function `tls_auth_init':<br />/root/prelude/libprelude-3.0.0/src/tls-auth.c:343: multiple definition of `tls_auth_init'<br />tcp-server-tls.o:/root/prelude/prelude-lml-3.0.0/src/tcp-server-tls.c:562: first defined here<br />collect2: error: ld returned 1 exit status<br />libtool: link: rm -f ".libs/prelude-lmlS.o" 
+	<ul>
+	<li>Error code 1</li>
+	</ul>
+
+
+	<p>Finally i managed to compile and link it all, but it is not running. Will try to make it with new source and let you know. Thanks for your reply</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-2/2)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/640.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2015-11-06T11:17:33Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prelude Manager - Bug #640: SMTP plugin error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/640"/>
+    <id>http://www.prelude-siem.org/issues/640?journal_id=2410</id>
+    <updated>2015-11-06T11:17:33Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;Could you please attach here the [smtp] section of the /etc/prelude-manager/prelude-manager.conf file, and the corresponding e-mail template if you use one?&lt;/p&gt;
+
+
+	&lt;p&gt;Thank you.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #640: SMTP plugin error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/640"/>
+    <id>http://www.prelude-siem.org/issues/640?journal_id=2412</id>
+    <updated>2015-11-06T15:47:54Z</updated>
+    <author>
+      <name>Thierno DIOP</name>
+      <email>diopthier5@yahoo.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;[smtp=test]&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;sender = &lt;a class="email" href="mailto:xxxxxxx@yyyy.fr"&gt;xxxxxxx@yyyy.fr&lt;/a&gt;&lt;br /&gt; recipients = &lt;a class="email" href="mailto:xxxxxxx@rrrrr.fr"&gt;xxxxxxx@rrrrr.fr&lt;/a&gt;&lt;br /&gt; smtp-server = smtp.xxxxxx.fr&lt;br /&gt; subject = Alert: $alert.classification.text&lt;br /&gt; template = /etc/prelude-manager/smtp-template/mail.template1&lt;/code&gt;&lt;/pre&gt;
+
+
+	&lt;pre&gt;&lt;code&gt;dbtype = mysql&lt;br /&gt;  dbname = prelude&lt;br /&gt;  dbuser = xxxxx&lt;br /&gt;  dbpass = *&lt;strong&gt;**&lt;/strong&gt;&lt;br /&gt;  dbhost = localhost&lt;br /&gt;  correlated-alert-template = /etc/prelude-manager/smtp-template/mail.template1&lt;/code&gt;&lt;/pre&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #640: SMTP plugin error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/640"/>
+    <id>http://www.prelude-siem.org/issues/640?journal_id=2413</id>
+    <updated>2015-11-06T18:14:45Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Please attach the /etc/prelude-manager/smtp-template/mail.template1 file too to help us reproduce the error.&lt;/p&gt;
+
+
+	&lt;p&gt;Thank you.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #640: SMTP plugin error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/640"/>
+    <id>http://www.prelude-siem.org/issues/640?journal_id=2461</id>
+    <updated>2015-11-09T08:52:05Z</updated>
+    <author>
+      <name>Thierno DIOP</name>
+      <email>diopthier5@yahoo.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;hr /&gt;
+	&lt;ul&gt;
+	&lt;li&gt;&lt;a class="external" href="http://127.0.0.1:8000/?view=alert_summary&amp;#38;origin=alert_listing&amp;#38;analyzerid=$alert.analyzer(-1).analyzerid&amp;#38;messageid=$alert.messageid"&gt;http://127.0.0.1:8000/?view=alert_summary&amp;#38;origin=alert_listing&amp;#38;analyzerid=$alert.analyzer(-1).analyzerid&amp;#38;messageid=$alert.messageid&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;$alert.classification.text : $alert.source(0).node.address(0).address -&gt; $alert.target(0).node.address(0).address
+*&lt;/li&gt;
+		&lt;li&gt;Create Time: $alert.create_time&lt;/li&gt;
+		&lt;li&gt;Sensor: $alert.analyzer(-1).name - $alert.analyzer(-1).node.name - $alert.analyzer(-1).node.address(0).address
+*&lt;br /&gt;#if $alert.correlation_alert.name&lt;/li&gt;
+		&lt;li&gt;CorrelationAlert name: $alert.correlation_alert.name&lt;br /&gt;#end if
+***&lt;/li&gt;
+	&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #640: SMTP plugin error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/640"/>
+    <id>http://www.prelude-siem.org/issues/640?journal_id=2472</id>
+    <updated>2015-11-09T17:31:12Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;/ul&gt;&lt;p&gt;Hello,&lt;/p&gt;
+
+
+	&lt;p&gt;Please consider applying this patch to the prelude-manager source tree:&lt;/p&gt;
+
+
+&lt;pre&gt;&lt;code class="diff syntaxhl"&gt;&lt;span class="CodeRay"&gt;&lt;span class="line comment"&gt;diff --git a/plugins/reports/smtp/smtp.c b/plugins/reports/smtp/smtp.c&lt;/span&gt;
+&lt;span class="line comment"&gt;index 5710ffb..c72c641 100644&lt;/span&gt;
+&lt;span class="line head"&gt;&lt;span class="head"&gt;--- &lt;/span&gt;&lt;span class="filename"&gt;a/plugins/reports/smtp/smtp.c&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line head"&gt;&lt;span class="head"&gt;+++ &lt;/span&gt;&lt;span class="filename"&gt;b/plugins/reports/smtp/smtp.c&lt;/span&gt;&lt;/span&gt;
+&lt;span class="change"&gt;&lt;span class="change"&gt;@@&lt;/span&gt; -462,6 +462,7 &lt;span class="change"&gt;@@&lt;/span&gt;&lt;/span&gt; &lt;span class="directive"&gt;static&lt;/span&gt; &lt;span class="predefined-type"&gt;int&lt;/span&gt; retrieve_from_db(smtp_plugin_t *plugin, &lt;span class="directive"&gt;const&lt;/span&gt; &lt;span class="predefined-type"&gt;char&lt;/span&gt; *criteria_str)
+         prelude_string_t *str;
+         preludedb_result_idents_t *results;
+         prelude_list_t clist, *tmp, *bkp;
+&lt;span class="line insert"&gt;&lt;span class="insert"&gt;+&lt;/span&gt;        &lt;span class="predefined-type"&gt;unsigned&lt;/span&gt; &lt;span class="predefined-type"&gt;int&lt;/span&gt; ident_idx = &lt;span class="integer"&gt;0&lt;/span&gt;;&lt;/span&gt;
+
+         ret = idmef_criteria_new_from_string(&amp;#38;criteria, criteria_str);
+         &lt;span class="keyword"&gt;if&lt;/span&gt; ( ret &amp;lt; &lt;span class="integer"&gt;0&lt;/span&gt; ) {
+&lt;span class="change"&gt;&lt;span class="change"&gt;@@&lt;/span&gt; -482,7 +483,7 &lt;span class="change"&gt;@@&lt;/span&gt;&lt;/span&gt; &lt;span class="directive"&gt;static&lt;/span&gt; &lt;span class="predefined-type"&gt;int&lt;/span&gt; retrieve_from_db(smtp_plugin_t *plugin, &lt;span class="directive"&gt;const&lt;/span&gt; &lt;span class="predefined-type"&gt;char&lt;/span&gt; *criteria_str)
+         send_correlation_alert_notice(plugin, ret);
+         prelude_list_init(&amp;#38;clist);
+
+&lt;span class="line delete"&gt;&lt;span class="delete"&gt;-&lt;/span&gt;        &lt;span class="keyword"&gt;while&lt;/span&gt; ( preludedb_result_idents_get&lt;span class="eyecatcher"&gt;_next(results&lt;/span&gt;, &amp;#38;dbident) ) {&lt;/span&gt;
+&lt;span class="line insert"&gt;&lt;span class="insert"&gt;+&lt;/span&gt;        &lt;span class="keyword"&gt;while&lt;/span&gt; ( preludedb_result_idents_get&lt;span class="eyecatcher"&gt;(results, ident_idx++&lt;/span&gt;, &amp;#38;dbident) ) {&lt;/span&gt;
+                 ret = preludedb_get_alert(plugin-&amp;gt;db, dbident, &amp;#38;idmef);
+                 &lt;span class="keyword"&gt;if&lt;/span&gt; ( ret &amp;lt; &lt;span class="integer"&gt;0&lt;/span&gt; ) {
+                         prelude_log(PRELUDE_LOG_ERR, &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;failure retrieving message ident %&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt; PRELUDE_PRIu64 &lt;span class="string"&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;span class="content"&gt;.&lt;/span&gt;&lt;span class="char"&gt;\n&lt;/span&gt;&lt;span class="delimiter"&gt;&amp;quot;&lt;/span&gt;&lt;/span&gt;, dbident);
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+
+	&lt;p&gt;Regards&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prelude Manager - Bug #640: SMTP plugin error</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/640"/>
+    <id>http://www.prelude-siem.org/issues/640?journal_id=2754</id>
+    <updated>2016-01-28T00:49:55Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;Prelude OSS 3.0.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Fixed in next release&lt;/p&gt;    </content>
+  </entry>
+</feed>

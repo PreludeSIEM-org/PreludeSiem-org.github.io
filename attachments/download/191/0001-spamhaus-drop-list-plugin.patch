@@ -1,0 +1,144 @@
+From 0f80f8eebe8389a0dd30aa8c8a1e577a996dfeb4 Mon Sep 17 00:00:00 2001
+From: wes <wes@barely3am.com>
+Date: Thu, 10 Sep 2009 09:32:53 -0400
+Subject: [PATCH] spamhaus drop list plugin
+
+---
+ PreludeCorrelator/plugins/spamhaus.py        |   84 ++++++++++++++++++++++++++
+ prelude-correlator.conf                      |    2 +
+ prelude_correlator.egg-info/entry_points.txt |    1 +
+ setup.py                                     |    2 +-
+ 4 files changed, 88 insertions(+), 1 deletions(-)
+ create mode 100644 PreludeCorrelator/plugins/spamhaus.py
+
+diff --git a/PreludeCorrelator/plugins/spamhaus.py b/PreludeCorrelator/plugins/spamhaus.py
+new file mode 100644
+index 0000000..70e7925
+--- /dev/null
++++ b/PreludeCorrelator/plugins/spamhaus.py
+@@ -0,0 +1,84 @@
++import os, httplib, time
++from PreludeCorrelator import require
++from PreludeCorrelator.idmef import IDMEF
++from PreludeCorrelator.pluginmanager import Plugin
++from PreludeCorrelator.context import Context, Timer
++from netcidr import CIDR, Networks
++
++class SpamhausDropPlugin(Plugin):
++    RELOAD = 7 * 24 * 60 * 60
++    SERVER = "www.spamhaus.org"
++    URI = "/drop/drop.lasso"
++    TIMEOUT = 10
++    FILENAME = require.get_data_filename(__name__, "spamhaus_drop.dat")
++
++    def __ipNormalize(self, ip):
++        return ".".join([ i.lstrip("0") for i in ip.split(".") ])
++
++    def __loadData(self, age=0):
++        for line in open(self.__filename, "r"):
++            if line[0] == ';':
++                continue
++
++            ip, sbl = line.split(';')
++            ip = CIDR(ip.strip())
++            self.__mynets.append(ip)
++
++        self.__mynets = Networks(self.__mynets)
++        if self.__reload > 0:
++            Timer(self.__reload - age, self.__retrieveData).start()
++
++    def __downloadData(self):
++        self.info("Downloading host list, this might take some time...")
++
++        try:
++            con = httplib.HTTPConnection(self.__server, timeout=self.__timeout)
++        except TypeError:
++            con = httplib.HTTPConnection(self.__server)
++
++        con.request("GET", self.__uri)
++        r = con.getresponse()
++        if r.status != 200:
++            raise Exception, "Could not download spamhaus DROP list, error %d" % r.status
++
++        fd = open(self.__filename, "w")
++        fd.write(r.read())
++        fd.close()
++
++        self.info("Downloading done, processing data.")
++
++    def __retrieveData(self, timer=None):
++        try:
++            st = os.stat(self.__filename)
++            if self.__reload <= 0 or time.time() - st.st_mtime < self.__reload:
++                return self.__loadData(time.time() - st.st_mtime)
++        except OSError:
++            pass
++
++        self.__downloadData()
++        self.__loadData()
++
++
++    def __init__(self, env):
++        Plugin.__init__(self, env)
++
++        self.__mynets = []
++        self.__reload = self.getConfigValue("reload", self.RELOAD, type=int)
++        self.__filename = self.getConfigValue("filename", self.FILENAME)
++        self.__server = self.getConfigValue("server", self.SERVER)
++        self.__uri = self.getConfigValue("uri", self.URI)
++        self.__timeout = self.getConfigValue("timeout", self.TIMEOUT, type=float)
++        self.__retrieveData()
++
++    def run(self, idmef):
++        for source in idmef.Get("alert.source(*).node.address(*).address"):
++            src = CIDR(source)
++            if src in self.__mynets:
++                ca = IDMEF()
++                ca.addAlertReference(idmef)
++                ca.Set("alert.classification.text", "IP source matching Spamhaus DROP dataset")
++                ca.Set("alert.correlation_alert.name", "IP source matching Spamhaus DROP dataset")
++                ca.Set("alert.assessment.impact.description", "Spamhaus gathered this IP address in their DROP list - %s" % (source))
++                ca.Set("alert.assessment.impact.severity", "medium")
++                ca.alert()
++
+diff --git a/prelude-correlator.conf b/prelude-correlator.conf
+index 60cb13c..110ac32 100644
+--- a/prelude-correlator.conf
++++ b/prelude-correlator.conf
+@@ -41,6 +41,8 @@
+ [FirewallPlugin]
+ disable = True
+ 
++[SpamhausDropPlugin]
++disable = True
+ 
+ ##
+ # Logging configuration might also be defined in this file:
+diff --git a/prelude_correlator.egg-info/entry_points.txt b/prelude_correlator.egg-info/entry_points.txt
+index c1f83c7..26c5e59 100644
+--- a/prelude_correlator.egg-info/entry_points.txt
++++ b/prelude_correlator.egg-info/entry_points.txt
+@@ -8,6 +8,7 @@ BruteForcePlugin = PreludeCorrelator.plugins.bruteforce:BruteForcePlugin
+ EventStormPlugin = PreludeCorrelator.plugins.scan:EventStormPlugin
+ DshieldPlugin = PreludeCorrelator.plugins.dshield:DshieldPlugin
+ EventScanPlugin = PreludeCorrelator.plugins.scan:EventScanPlugin
++SpamhausDropPlugin = PreludeCorrelator.plugins.spamhaus:SpamhausDropPlugin
+ 
+ [console_scripts]
+ prelude-correlator = PreludeCorrelator.main:main
+diff --git a/setup.py b/setup.py
+index 614e920..46edeed 100644
+--- a/setup.py
++++ b/setup.py
+@@ -85,7 +85,7 @@ if is_egg:
+ else:
+         package_data = {}
+         data_files = [ ("etc/prelude-correlator", ["prelude-correlator.conf"]),
+-                       ("var/lib/prelude-correlator", ["PreludeCorrelator/plugins/dshield.dat"]) ]
++                       ("var/lib/prelude-correlator", ["PreludeCorrelator/plugins/dshield.dat","PreludeCorrelator/plugins/spamhaus_drop.dat"]) ]
+ 
+ setup(
+         name="prelude-correlator",
+-- 
+1.6.3.3
+

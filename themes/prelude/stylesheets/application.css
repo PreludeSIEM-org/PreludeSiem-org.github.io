@@ -1,0 +1,192 @@
+/* load the default Redmine stylesheet */
+@import url(../../../stylesheets/application.css);
+
+#main-menu li a.new-object {
+    background-color: white;
+}
+#header {
+    color: #7AAD20;
+/*    background: #ECECEC url(../img/logo_.jpg) no-repeat 2px; */
+    background-color: white;
+}
+
+div#header h1 {
+	margin: 0 10px;
+	width:*; 
+	float: left;
+	font-size:25pt;
+	font-variant: small-caps;
+	text-shadow: 1px 1px 1px black;
+}
+@media screen and (max-width: 899px) {
+
+  #header {
+    color: white;
+  }
+
+  :target:before {
+    content: "";
+    display: block;
+    height: 80px;
+    margin: -80px 0 0;
+  }
+
+  :target {
+    padding-top: 0;
+  }
+
+}
+
+
+#main.nosidebar #content {
+	overflow: visible;
+}
+
+#content {
+	font-size: 9pt;
+/*	background-color: #ECECEC; */
+	background-color: white;
+	padding-top: 30px; 
+}
+
+#main {
+	background-color: #FAFAFA;
+}
+
+#main-menu li {
+	margin-right: 0.5em;
+}
+
+#top-menu {
+        padding-top: 6px;
+}
+
+#sidebar {
+	padding-top: 1em;
+}
+
+#main-menu {
+/*	position:static; */
+	margin-top: 60px;
+	margin-left: 10px;
+	top: 4px;
+/*	float: left; */
+}
+
+
+#main-menu li a {
+	color: #3B3A3A;
+	border: 1px solid #AAAAAA;
+	border-radius: 10px 0 10px 0;
+}
+
+#main-menu li a.selected, #main-menu li a.selected:hover {
+	border: 1px solid #AAAAAA;
+	background:none;
+	color:#8DC200;
+}
+
+#main-menu li a:hover {
+	background:none;
+	color:#8DC200;
+}
+
+table.list {
+	border-collapse: separate;
+}
+
+.box {
+	border-radius: 5px;
+	margin: 1em 0;
+}
+
+a:hover, a:active {
+	color:#7AAD20;
+	text-decoration:underline;
+}
+
+a:link, a:visited {
+	color:#7AAD20;
+}
+
+a {
+	cursor:pointer;
+	text-decoration:none;
+}
+
+body {
+	color:#3B3A3A;
+/*	font-family:Arial,Helvetica,sans-serif; */
+	font-size:9pt;
+}
+
+#header a {
+	color: #7AAD20;
+}
+
+#footer {
+	background:#000000 url(../img/fond_pied_page_1_20.jpg) repeat-x scroll center top;
+	border:0 none;
+	color:#FFFFFF;
+	font-size:8pt;
+/*	height:25px;*/
+}
+
+body {
+	background: none;
+}
+
+#content ul li {
+	background:transparent none repeat scroll 0 0;
+	margin:0;
+	padding: 0;
+	font-size: 9pt;
+	margin-top:2px;
+	list-style-image:url(../img/bullet.gif);
+	list-style-type:none;
+	margin-left:15px;
+}
+
+
+dl, dt, dd, ul, li {
+	margin:0;
+	padding:0;
+}
+
+ul {
+	margin:0;
+	/*overflow:auto;*/
+	padding:0;
+	margin-left:15px;
+	overflow:visible;
+}
+
+div.wiki ul {
+	margin-left: 10px;
+}
+
+div.wiki h2, div.wiki h3 {
+	margin-top:20px;
+}
+
+div#search-results-counts ul li {
+	list-style-image: none;
+}
+
+#content .tabs ul li {
+	margin: 0;
+	padding: ;
+	list-style-image: none;
+}
+
+#context-menu ul li {
+        margin: 0;
+        padding: ;
+        list-style-image: none;
+}
+
+
+#login-form table, .nodata, .warning {
+	background-color:#F6F6F6;
+	border:1px solid #E4E4E4;
+}

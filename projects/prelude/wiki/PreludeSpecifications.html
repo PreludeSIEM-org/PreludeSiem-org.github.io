@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>PreludeSpecifications - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="CtlTdKq3UY7zyPS3/mKuf0X3kWRif9R6i7LJ2A9s32kZ9jsbY6NcDXli/E3jKuchObzg+nh1jTRVPA1Ii2zrag==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+            <div class="wiki">
+    <ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualUser">Table Of Contents</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeForeword">Foreword</a></li>
+		<li><strong>Introduction</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeGlossary">Glossary</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeComponents">Prelude Components</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeArchitecture">Prelude Architecture</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeStandards">Prelude Standards</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCompatibility">Prelude Compatibility</a></li>
+	</ol>
+	</li>
+		<li><strong>Installation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeRequirement">Installation Requirements</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPrelude">Installation from sources</a>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLibrary">Libprelude</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeDbLibrary">LibpreludeDB</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeManager">Prelude Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeCorrelator">Prelude Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludeLml">Prelude LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPreludePrewikka">Prewikka</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingPackage">Installation from packages</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingVA">Installation from VA</a></li>
+		<li>Agents Installation
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentRegistration">Agents Registration</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/InstallingAgentThirdparty">3rd Party Agents Installation</a> </li>
+	</ol>
+	</li>
+	</ol>
+	</li>
+		<li><strong>Configuration</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ConfigurationGeneral">General Configuration</a></li>
+		<li>Prelude Components Configuration
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeManager">Prelude-Manager</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeCorrelator">Prelude-Correlator</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeLml">Prelude-LML</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeImport">Prelude-Import</a></li>
+	</ol>
+	</li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/HowtoHACentralServices">Howto Configure High Availability Central Services</a></li>
+	</ol>
+	</li>
+		<li><strong>Optimisation</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DatabaseOptimisation">Database Optimisation</a></li>
+	</ol>
+	</li>
+		<li><strong>User Manuals</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPrewikka">Prewikka Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeAdmin">Prelude-Admin Manual</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ManualPreludeDbAdmin">PreludeDB-Admin Manual</a></li>
+	</ol>
+	</li>
+		<li><strong>Development</strong>
+	<ol>
+	<li><a class="wiki-page" href="/projects/prelude/wiki/DevelopmentGuidelines">Development guidelines</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/SourceOrganization">Source organization</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PrewikkaApps">Prewikka Apps</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/DevelAgentQuickly">Prelude Agent</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/PreludeAgentContribution">Prelude Agent contribution program</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludeAPI">Libprelude API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/LibpreludedbAPI">Libpreludedb API</a></li>
+		<li><a class="wiki-page" href="/projects/prelude/wiki/ContinuousIntegration">Prelude CI</a></li>
+	</ol></li>
+	</ol>
+  </div>
+
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/prelude/wiki">Start page</a></li>
+  <li><a href="/projects/prelude/wiki/index">Index by title</a></li>
+  <li><a href="/projects/prelude/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Prelude-Specifications"></a>
+<h1 >Prelude Specifications<a href="#Prelude-Specifications" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><strong>Table of Contents</strong></p>
+
+
+	<ul class="toc"><li><a href="#Prelude-Specifications">Prelude Specifications</a><ul><li><a href="#General-Overview">General Overview</a></li><li><a href="#Architecture">Architecture</a></li><li><a href="#Data-Processing">Data Processing</a><ul><li><a href="#Data-Collection-and-Normalization">Data Collection and Normalization</a></li><li><a href="#Data-Classification-and-Filtering">Data Classification and Filtering</a></li><li><a href="#Data-Transport">Data Transport</a></li><li><a href="#Data-Retention">Data Retention</a></li></ul>
+</li><li><a href="#Monitoring">Monitoring</a></li><li><a href="#Correlation">Correlation</a></li><li><a href="#Reporting">Reporting</a></li><li><a href="#Visualization">Visualization</a></li><li><a href="#Maintenance">Maintenance</a></li><li><a href="#Operational-Aspects">Operational Aspects</a></li></ul></li></ul>
+
+
+	<a name="General-Overview"></a>
+<h2 >General Overview<a href="#General-Overview" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><strong>Prelude is a Universal SIM system:</strong> it collects, normalizes, sorts, aggregates, correlates and reports all security-related events independently of the product brand or license giving rise to such events; Prelude is "agentless".</li>
+	</ul>
+
+
+	<p><strong>Prelude is a SIM (Security Information Management) system:</strong> it performs reporting on historic data</p>
+
+
+	<p><strong>Prelude is a SEM (Security Event Management) system:</strong> it performs real time monitoring</p>
+
+
+	<p><strong>Prelude is a SIEM (Security Event and Information Management) system:</strong> it performs reporting on historical data as well as real-time monitoring</p>
+
+
+	<p><strong>Prelude is a Network and System Management solution (Hybrid IDS):</strong> it monitors both network-based and host-based security systems</p>
+
+
+	<p><strong>Prelude is a Multi-sensor system:</strong> it collects data from an unlimited number of heterogeneous sensors deployed on the whole infrastructure</p>
+
+
+	<ul>
+	<li><strong>Prelude is software based</strong></li>
+	</ul>
+
+
+	<p><strong>Operating Systems supported by Prelude:</strong> Linux, <a class="wiki-page new" href="/projects/prelude/wiki/OpenBSD?parent=PreludeSpecifications">OpenBSD</a>, <a class="wiki-page new" href="/projects/prelude/wiki/FreeBSD?parent=PreludeSpecifications">FreeBSD</a>, <a class="wiki-page new" href="/projects/prelude/wiki/NetBSD?parent=PreludeSpecifications">NetBSD</a>, Sun/Solaris, <a class="wiki-page new" href="/projects/prelude/wiki/MacOSX?parent=PreludeSpecifications">MacOSX</a>, Tru64, and more generally most UNIXes systems</p>
+
+
+	<p><a href="http://www.prelude-siem.com/en/home-page-2/community/download/" class="external">OS - Hardware Compatibility</a></p>
+
+
+	<ul>
+	<li><strong>Prelude is open source:</strong> it is released under GPL License<br />Prelude has been developed using <strong>C</strong></li>
+	</ul>
+
+
+	<p>Prelude Web Interface  has been developed using <strong>Python</strong></p>
+
+
+	<p>Prelude correlation engine rules  has been developed using <strong>Lua</strong></p>
+
+
+	<ul>
+	<li><a href="http://www.prelude-siem.com/en/home-page-2/products/introduction/" class="external">Prelude functionality</a></li>
+	</ul>
+
+
+	<a name="Architecture"></a>
+<h2 >Architecture<a href="#Architecture" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><a href="http://www.prelude-siem.com/index.php/uk/products/oss-pro-enterprise" class="external">Prelude components</a></p>
+
+
+	<ul>
+	<li><strong>Prelude is a distributed solution:</strong> it supports hierarchical deployments in distributed environments</li>
+	</ul>
+
+
+	<p><strong>Prelude permits alert collection to WAN scale</strong>, whether its scope covers a city, a country, a continent or the world</p>
+
+
+	<p><strong>There is no limitation on the number of locations</strong> Prelude can collect data from</p>
+
+
+	<p><strong>Prelude incorporates the notion of authority.</strong> This makes possible to configure the system so that, for example, a NOC can collect all the alerts transmitted by subsidiaries located at lower authority levels</p>
+
+
+	<ul>
+	<li><strong>Prelude is a high availability system:</strong> it ensures operational continuity (Failover system, Redundant Networks support)</li>
+	</ul>
+
+
+	<ul>
+	<li>Prelude is able to handle more than 10.000 eps (events per second)</li>
+	</ul>
+
+
+	<a name="Data-Processing"></a>
+<h2 >Data Processing<a href="#Data-Processing" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Data-Collection-and-Normalization"></a>
+<h3 >Data Collection and Normalization<a href="#Data-Collection-and-Normalization" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li><strong>Data Sources</strong></li>
+	</ul>
+
+
+	<p><strong>Prelude is "agentless":</strong> it depends on no single brand or format and is capable of analyzing any type of log (system logs, syslog, flat files, etc.)</p>
+
+
+	<p><strong>Prelude also benefits from a native support with a number of systems:</strong> Snort, Samhain, OSSEC, AuditD, Nepenthes, <a class="wiki-page new" href="/projects/prelude/wiki/NuFW?parent=PreludeSpecifications">NuFW</a>, Linux-PAM, <a class="wiki-page new" href="/projects/prelude/wiki/SanCP?parent=PreludeSpecifications">SanCP</a>, etc.</p>
+
+
+	<p><a href="http://www.prelude-siem.com/index.php/uk/community/download" class="external">Prelude compatibility</a></p>
+
+
+	<ul>
+	<li><strong>Normalization</strong></li>
+	</ul>
+
+
+	<p><strong>Data collected by various sensors are normalized to Intrusion Detection Message Exchange Format</strong> (IDMEF)</p>
+
+
+	<p><a href="https://tools.ietf.org/rfc/rfc4765.txt" class="external">IDMEF RFC</a></p>
+
+
+	<p><strong>Raw data are kept when possible</strong> (The Prelude-LML log analyzer keeps the original data - The Snort NIDS keeps the raw packet data that triggered a rule, etc.)</p>
+
+
+	<a name="Data-Classification-and-Filtering"></a>
+<h3 >Data Classification and Filtering<a href="#Data-Classification-and-Filtering" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li><strong>Data Classification</strong></li>
+	</ul>
+
+
+	<p><strong>Data are enriched with some specifics information.</strong> Example: classification of addresses in either IPv4 or IPv6</p>
+
+
+	<ul>
+	<li><strong>Data filtering</strong></li>
+	</ul>
+
+
+	<p><strong>Data are filtered through different types of filters:</strong> limitation, thresholding, IDMEF events fields (<a class="wiki-page" href="/projects/prelude/wiki/IDMEFCriteria">Creation of filters based on IDMEF fields</a>)</p>
+
+
+	<p><strong>Data can be filtered at different levels:</strong> collection, processing and visualization</p>
+
+
+	<a name="Data-Transport"></a>
+<h3 >Data Transport<a href="#Data-Transport" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><strong>Data transport is encrypted (SLL), authenticated (X509 certificate), and reliable</strong></p>
+
+
+	<p><strong>Data transport occurs over a single defined port which can be changed</strong></p>
+
+
+	<p><strong>Caching is available to protect against network outages:</strong> failover system</p>
+
+
+	<p><strong>All alerts are always transmitted</strong> as they are generated. The concentrator will schedule processing of the received events depending on their severity and their source agent, which is very useful in case of events burst.</p>
+
+
+	<p><strong>Reverse Relaying allows "best practice" communication in DMZs:</strong>  A concentrator is able to take the initiative and to communicate with another concentrator in order to fetch the data held by it.</p>
+
+
+	<a name="Data-Retention"></a>
+<h3 >Data Retention<a href="#Data-Retention" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><strong>Collected data are stored in a central place.</strong> Three databases are supported: <a class="wiki-page new" href="/projects/prelude/wiki/MySQL?parent=PreludeSpecifications">MySQL</a>, <a class="wiki-page new" href="/projects/prelude/wiki/PosgreSQL?parent=PreludeSpecifications">PosgreSQL</a>, SQLlite (depending on the database backend, data could be stored on a SAN)</p>
+
+
+	<p><strong>Using scheduled crontab jobs, it is possible to define retention policies</strong> for how long data should be online as well as archived for later re-activation</p>
+
+
+	<a name="Monitoring"></a>
+<h2 >Monitoring<a href="#Monitoring" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><strong>Prioritization</strong></li>
+	</ul>
+
+
+	<p><strong>Collected events are prioritized through different factors:</strong> The severity of the events, the agent sending the information</p>
+
+
+	<p><strong>The prioritisation process is customizable</strong></p>
+
+
+	<ul>
+	<li><strong>Asset Model</strong></li>
+	</ul>
+
+
+	<p><strong>Prelude supports the modelling of Assets</strong><br /><strong>Assets defined through the interface contain values that can be associated with any IDMEF fields.</strong> Example: you can define an asset with the name DMZ, containing the value IP1 ||  IP2 ||  IP3 ||  IP4. (This DMZ asset can be used as a filter)</p>
+
+
+	<a name="Correlation"></a>
+<h2 >Correlation<a href="#Correlation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><strong>Rule based correlation</strong></li>
+	</ul>
+
+
+	<p><strong>Prelude supports rule-based correlation in real-time.</strong> It comes with rules for correlation out of the box which can be customized</p>
+
+
+	<p><strong>Correlation rules are fully customizable</strong><br /><strong>Prelude permits to create alerts based on:</strong> one or several similar events ; events from different data sources ; events coming into Prelude over a longer time frame</p>
+
+
+	<p><strong>It is possible to include into the correlation:</strong> information about session history and geographical information</p>
+
+
+	<p><strong>Prelude offers data discovery functionality based on historical data</strong></p>
+
+
+	<ul>
+	<li><strong>Statistical correlation</strong></li>
+	</ul>
+
+
+	<p><strong>Prelude support statistical correlation in real time</strong></p>
+
+
+	<p><strong>Statistical correlation is fully customizable</strong></p>
+
+
+	<ul>
+	<li><strong>Actions</strong></li>
+	</ul>
+
+
+	<p><strong>Prelude is able to send out alerts based on the result of correlation.</strong> Correlation Alerts are sent to the concentrator</p>
+
+
+	<p><strong>Any notification scheme supported by the concentrator can be used.</strong> Example: Email, Database, XML IDMEF output, flag log file, etc.</p>
+
+
+	<p><strong>Prelude is able to call external applications/scripts based on the result of a correlation</strong></p>
+
+
+	<a name="Reporting"></a>
+<h2 >Reporting<a href="#Reporting" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><strong>Prelude offers reporting based on data in the data store</strong></p>
+
+
+	<p><strong>Prelude comes with reports out of the box</strong> which can be customizable</p>
+
+
+	<p><strong>Prelude supports different output formats:</strong> Email, Database, IDMEF XML, Flat logfile</p>
+
+
+	<a name="Visualization"></a>
+<h2 >Visualization<a href="#Visualization" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><strong>General</strong></li>
+	</ul>
+
+
+	<p><strong>Prelude supports real-time visualization of data.</strong> The Prelude web GUI provides automatic reloading of the event listing</p>
+
+
+	<p><strong>The Prelude web GUI supports a number of browsers:</strong> IE, Firefox, Opera, Konqueror, Safari, webkit based browser</p>
+
+
+	<p><strong>Prelude comes with visualization views out of the box</strong> which can be customizable</p>
+
+
+	<ul>
+	<li><strong>User Interface</strong></li>
+	</ul>
+
+
+	<p><strong>Prelude comes with a per user permission functionality</strong></p>
+
+
+	<p><strong>Prelude support strong authentication</strong> A compl�ter</p>
+
+
+	<p><strong>Prelude support the integration into LDAP for authentication</strong></p>
+
+
+	<ul>
+	<li><strong>Administration</strong></li>
+	</ul>
+
+
+	<p><strong>It is possible to administer, maintain and partially configure Prelude from the web GUI</strong></p>
+
+
+	<p><strong>Sensor monitoring and Remote sensor management</strong> are available on the Prelude Web GUI</p>
+
+
+	<a name="Maintenance"></a>
+<h2 >Maintenance<a href="#Maintenance" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><strong>Upgrade/Update of the central components and data repository is possible in an easy documented way</strong></p>
+
+
+	<a name="Operational-Aspects"></a>
+<h2 >Operational Aspects<a href="#Operational-Aspects" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><strong>Agent development tool:</strong> the "Libprelude" library offers a programming interface (API) that facilitates the development of new sensors</li>
+	</ul>
+
+
+	<ul>
+	<li><strong>Advanced Ticketing System</strong> integrated into the Prelude web GUI</li>
+	</ul>
+
+
+	<ul>
+	<li><strong>Countermeasures</strong> through use of installed sensors (Snort Inline, OSSEC, etc.)</li>
+	</ul>
+
+
+	<ul>
+	<li><strong>Legal enquiry tools:</strong> Storage of events, Whois, Traceroute</li>
+	</ul>
+
+
+	<ul>
+	<li><strong>Services:</strong> Customization, deployment, technical support, user training...</li>
+	</ul>
+
+
+	<p></p>
+
+
+<div id="wiki_extentions_footer">
+
+	<p><em>© <a href="http://www.c-s.fr" class="external">CS GROUP</a> 2012-2020</em></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

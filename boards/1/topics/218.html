@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>[prelude-correlator] preludecorrelator context resets timer (expire) for each match - PRELUDE SIEM - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="7pVkcpAoLuMU/6jII5kqCnvrpY4+EEYbjLl5ZfCDcHT9ugwdWTwjYJ5VoDI+0WNUB6DUECQaH1VSN731dINEdw==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-prelude controller-messages action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="messages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="messages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude">Overview</a></li><li><a class="activity" href="/projects/prelude/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/prelude/issues">Issues</a></li><li><a class="MyWiki" href="/projects/prelude/wiki">Documentation</a></li><li><a class="boards selected" href="/projects/prelude/boards">Forums</a></li><li><a class="MyFiles" href="/projects/prelude/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/prelude-siem/#alerter">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="nosidebar">
+    <div id="sidebar">
+        
+        
+    </div>
+
+    <div id="content">
+        
+        <p class="breadcrumb"><a href="/projects/prelude/boards">Forums</a> » <a href="/projects/prelude/boards/1">User</a> » </p>
+
+<div class="contextual">
+    
+    
+    
+    
+</div>
+
+<h2>[prelude-correlator] preludecorrelator context resets timer (expire) for each match</h2>
+
+<div class="message">
+<p><span class="author">Added by <a class="user active" href="/users/1116">Marcus Smith</a> <a title="03/27/2019 12:43 PM" href="/projects/prelude/activity?from=2019-03-27">over 5 years</a> ago</span></p>
+<div class="wiki">
+<p>Hello,</p>
+
+
+	<p>I noticed that the context class of preludecorrelator package resets the timer every time that a match is detected. Let me explain it with some examples using the predefined rule EventStormPlugin.py (<a class="external" href="https://github.com/Prelude-SIEM/prelude-correlator/blob/master/rules/EventStormPlugin.py">https://github.com/Prelude-SIEM/prelude-correlator/blob/master/rules/EventStormPlugin.py</a>)</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">
+<span class="keyword">class</span> <span class="class">EventStormPlugin</span>(Plugin):
+    <span class="keyword">def</span> <span class="function">run</span>(<span class="predefined-constant">self</span>, idmef):
+        source = idmef.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.source(*).node.address(*).address</span><span class="delimiter">&quot;</span></span>)
+        <span class="keyword">if</span> <span class="keyword">not</span> source:
+            <span class="keyword">return</span>
+
+        <span class="keyword">for</span> saddr <span class="keyword">in</span> source:
+            ctx = Context((<span class="string"><span class="delimiter">&quot;</span><span class="content">SCAN EVENTSTORM</span><span class="delimiter">&quot;</span></span>, saddr), {<span class="string"><span class="delimiter">&quot;</span><span class="content">expire</span><span class="delimiter">&quot;</span></span>: <span class="integer">120</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">threshold</span><span class="delimiter">&quot;</span></span>: <span class="integer">150</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">alert_on_expire</span><span class="delimiter">&quot;</span></span>: <span class="predefined-constant">True</span>},
+                          update=<span class="predefined-constant">True</span>, idmef=idmef, ruleid=<span class="predefined-constant">self</span>.name)
+            <span class="keyword">if</span> ctx.getUpdateCount() == <span class="integer">0</span>:
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.correlation_alert.name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">A single host is producing an unusual amount of events</span><span class="delimiter">&quot;</span></span>)
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Eventstorm</span><span class="delimiter">&quot;</span></span>)
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.assessment.impact.severity</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">high</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>For each idmef, It retrieves all the source addresses and then loops over them creating/updating the contexts ("SCAN EVENTSTORM", saddr). The timer (expire) is set to 120 seconds. The threshold is set to 150.</p>
+
+
+	<p>I modified the code of the class adding the following call:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">print(<span class="string"><span class="delimiter">&quot;</span><span class="content">*** %s</span><span class="delimiter">&quot;</span></span> % context.stats())
+</span></code></pre>
+
+	<p>So that I'm able to see the satus of the context. The output generated is:</p>
+
+
+<pre>
+27 Mar 12:11:33 preludecorrelator.context (pid:22123) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=12:09:33 tmax=12:13:33 update=0 threshold=1/150 expire=0/120
+
+27 Mar 12:11:37 preludecorrelator.context (pid:22123) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=12:09:33 tmax=12:13:37 update=1 threshold=2/150 expire=0/120
+
+27 Mar 12:11:37 preludecorrelator.context (pid:22123) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=12:09:33 tmax=12:13:37 update=2 threshold=3/150 expire=0/120
+
+27 Mar 12:11:39 preludecorrelator.context (pid:22123) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=12:09:33 tmax=12:13:39 update=3 threshold=4/150 expire=0/120
+
+27 Mar 12:11:41 preludecorrelator.context (pid:22123) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=12:09:33 tmax=12:13:41 update=4 threshold=5/150 expire=0/120
+</pre>
+
+	<p>For each update, the threshold and the update counter is increased by one but the timer is being reset.</p>
+
+
+	<p>Every time we call the "ctx = Context(("SCAN EVENTSTORM", saddr),...." a call to <i>new</i> is performed and according to the <i>new</i> method, if update is set to true, it calls the ctx.update, as you can see in the next chunk:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">    <span class="keyword">def</span> <span class="function">__new__</span>(cls, name, options={}, overwrite=<span class="predefined-constant">True</span>, update=<span class="predefined-constant">False</span>, idmef=<span class="predefined-constant">None</span>, ruleid=<span class="predefined-constant">None</span>):
+        <span class="keyword">if</span> update <span class="keyword">or</span> (overwrite <span class="keyword">is</span> <span class="predefined-constant">False</span>):
+            ctx = search(name, idmef, update=<span class="predefined-constant">True</span>)
+            <span class="keyword">if</span> ctx:
+                <span class="keyword">if</span> update:
+                    ctx.update(options, idmef)
+
+                    <span class="comment"># If a context was updated, check intersection</span>
+                    ctx._mergeIntersect()
+                    <span class="keyword">return</span> ctx
+
+                <span class="keyword">if</span> overwrite <span class="keyword">is</span> <span class="predefined-constant">False</span>:
+                    <span class="keyword">return</span> ctx
+        <span class="keyword">else</span>:
+            ctx = search(name, idmef, update=<span class="predefined-constant">False</span>)
+            <span class="keyword">if</span> ctx:
+                ctx.destroy()
+
+        <span class="keyword">return</span> <span class="predefined">super</span>(Context, cls).__new__(cls)
+</span></code></pre>
+
+	<p>The update method has timer_rst set to True as default, so that's the reason of the reset.</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">    <span class="keyword">def</span> <span class="function">update</span>(<span class="predefined-constant">self</span>, options={}, idmef=<span class="predefined-constant">None</span>, timer_rst=<span class="predefined-constant">True</span>):
+        <span class="predefined-constant">self</span>._update_count += <span class="integer">1</span>
+
+        <span class="keyword">if</span> idmef:
+            <span class="predefined-constant">self</span>.addAlertReference(idmef)
+
+        <span class="keyword">if</span> timer_rst <span class="keyword">and</span> <span class="predefined-constant">self</span>.running():
+            <span class="predefined-constant">self</span>.reset()
+
+        <span class="predefined-constant">self</span>._options.update(options)
+        <span class="predefined-constant">self</span>.setOptions(<span class="predefined-constant">self</span>._options)
+        logger.debug(<span class="string"><span class="delimiter">&quot;</span><span class="content">[update]%s</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">self</span>.getStat(), level=<span class="integer">3</span>)
+</span></code></pre>
+
+	<p>Taking that into account I did a workaround to the code. As you can see in the next chunk:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">class</span> <span class="class">EventStormPlugin</span>(Plugin):
+    <span class="keyword">def</span> <span class="function">run</span>(<span class="predefined-constant">self</span>, idmef):
+        print(<span class="string"><span class="delimiter">&quot;</span><span class="content">*** %s</span><span class="delimiter">&quot;</span></span> % context.stats())
+        source = idmef.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.source(*).node.address(*).address</span><span class="delimiter">&quot;</span></span>)
+        <span class="keyword">if</span> <span class="keyword">not</span> source:
+            <span class="keyword">return</span>
+
+        <span class="keyword">for</span> saddr <span class="keyword">in</span> source:
+            ctx = context.Context((<span class="string"><span class="delimiter">&quot;</span><span class="content">SCAN EVENTSTORM</span><span class="delimiter">&quot;</span></span>, saddr), {<span class="string"><span class="delimiter">&quot;</span><span class="content">expire</span><span class="delimiter">&quot;</span></span>: <span class="integer">120</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">threshold</span><span class="delimiter">&quot;</span></span>: <span class="integer">150</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">alert_on_expire</span><span class="delimiter">&quot;</span></span>: <span class="predefined-constant">True</span>}, overwrite=<span class="predefined-constant">False</span>, update=<span class="predefined-constant">False</span>, idmef=idmef, ruleid=<span class="predefined-constant">self</span>.name)
+            <span class="keyword">if</span> ctx.getUpdateCount() == <span class="integer">0</span>:
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.correlation_alert.name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">A single host is producing an unusual amount of events</span><span class="delimiter">&quot;</span></span>)
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Eventstorm</span><span class="delimiter">&quot;</span></span>)
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.assessment.impact.severity</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">high</span><span class="delimiter">&quot;</span></span>)
+                ctx.update(timer_rst = <span class="predefined-constant">False</span>)
+            <span class="keyword">else</span>:
+                ctx.update(idmef = idmef, timer_rst = <span class="predefined-constant">False</span>)
+</span></code></pre>
+
+	<p>I set update to false and also overwrite to false, so then, when the _<em>new</em>_method is called, it will enter to the</p>
+
+
+<pre>
+if update or (overwrite is False):
+</pre>
+
+	<p>But instead of calling the ctx.update, it will just return the current ctx<br /><pre><code class="python syntaxhl"><span class="CodeRay">
+                <span class="keyword">if</span> overwrite <span class="keyword">is</span> <span class="predefined-constant">False</span>:
+                    <span class="keyword">return</span> ctx
+</span></code></pre></p>
+
+
+	<p>And finally, I'm performing the update manually, specifying timer_rst = False. But again, the obtained result is not the expected one...</p>
+
+
+<pre>
+27 Mar 13:06:30 preludecorrelator.context (pid:22859) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=13:04:26 tmax=13:08:26 update=1 threshold=2/150 expire=4/120
+
+27 Mar 13:06:36 preludecorrelator.context (pid:22859) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=13:04:26 tmax=13:08:30 update=2 threshold=3/150 expire=5/120
+
+27 Mar 13:06:40 preludecorrelator.context (pid:22859) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=13:04:26 tmax=13:08:36 update=3 threshold=4/150 expire=4/120
+
+27 Mar 13:06:42 preludecorrelator.context (pid:22859) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=13:04:26 tmax=13:08:40 update=4 threshold=5/150 expire=2/120
+
+27 Mar 13:06:44 preludecorrelator.context (pid:22859) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=13:04:26 tmax=13:08:42 update=5 threshold=6/150 expire=2/120
+
+27 Mar 13:06:58 preludecorrelator.context (pid:22859) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=13:04:26 tmax=13:08:44 update=6 threshold=7/150 expire=14/120
+
+27 Mar 13:07:00 preludecorrelator.context (pid:22859) INFO: [SCAN EVENTSTORM_192.168.1.1]: tmin=13:04:26 tmax=13:08:58 update=7 threshold=8/150 expire=1/120
+</pre>
+
+	<p>The expire is also being reset, but I cannot find in the source code where this reset is taking place. Is there any error in the way I'm calling ctx.update?<br />For further help I attach you the rule file</p>
+
+
+	<p>Thank you</p>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/1079/EventStormPlugin.py">EventStormPlugin.py</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/1079/EventStormPlugin.py">View</a>
+  
+  <span class="size">(1.92 KB)</span>
+  </p>
+</div>
+
+</div>
+<br />
+
+<h3 class="comments">Replies (3)</h3>
+  <div class="message reply" id="message-221">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/218?r=221#message-221">RE: [prelude-correlator] preludecorrelator context resets timer (expire) for each match</a>
+    -
+    Added by <a class="user active" href="/users/1116">Marcus Smith</a> <a title="03/28/2019 10:11 AM" href="/projects/prelude/activity?from=2019-03-28">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>I think that the reset is taking place at the search function, due to the update=True</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">def</span> <span class="function">__new__</span>(cls, name, options={}, overwrite=<span class="predefined-constant">True</span>, update=<span class="predefined-constant">False</span>, idmef=<span class="predefined-constant">None</span>, ruleid=<span class="predefined-constant">None</span>):
+        <span class="keyword">if</span> update <span class="keyword">or</span> (overwrite <span class="keyword">is</span> <span class="predefined-constant">False</span>):
+            ctx = search(name, idmef, update=<span class="predefined-constant">True</span>)
+            <span class="keyword">if</span> ctx:
+                <span class="keyword">if</span> update:
+                    ctx.update(options, idmef)
+
+                    <span class="comment"># If a context was updated, check intersection</span>
+                    ctx._mergeIntersect()
+                    <span class="keyword">return</span> ctx
+
+                <span class="keyword">if</span> overwrite <span class="keyword">is</span> <span class="predefined-constant">False</span>:
+                    <span class="keyword">return</span> ctx
+</span></code></pre>
+
+	<p>The search function calls checkTimeWindow</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">def</span> <span class="function">search</span>(name, idmef=<span class="predefined-constant">None</span>, update=<span class="predefined-constant">False</span>):
+    name = getName(name)
+    <span class="keyword">for</span> ctx <span class="keyword">in</span> _CONTEXT_TABLE.get(name, ()):
+        ctime = ctx.checkTimeWindow(idmef, update)
+        <span class="keyword">if</span> ctime:
+            <span class="keyword">return</span> ctx
+
+    <span class="keyword">return</span> <span class="predefined-constant">None</span>
+</span></code></pre>
+
+	<p>Which in case that update=True it updates the value of time_min and time_max</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay">    <span class="keyword">def</span> <span class="function">checkTimeWindow</span>(<span class="predefined-constant">self</span>, idmef, update=<span class="predefined-constant">True</span>):
+        i = <span class="predefined-constant">self</span>._intersect(idmef)
+        <span class="keyword">if</span> <span class="keyword">not</span> i:
+            <span class="keyword">return</span> <span class="predefined-constant">False</span>
+
+        <span class="keyword">if</span> update:
+            <span class="predefined-constant">self</span>._time_min = i[<span class="integer">0</span>]
+            <span class="keyword">if</span> <span class="predefined-constant">self</span>._time_max != -<span class="integer">1</span>:
+                <span class="predefined-constant">self</span>._time_max = i[<span class="integer">1</span>]
+</span></code></pre>
+
+	<p>reseting its value...</p>
+
+
+	<p>So, apparently, indisctintly of the options (overwrite and update) you choose when creating a context, each time the context is updated, the timer is reset.</p>
+
+
+	<p>¿Why does this functionality bothers me?</p>
+
+
+	<p>Because it seems that in order to raise an alert, two conditions must be fullfiled:</p>
+
+
+	<p>1. the expire (time) of the context ran out<br />2. the threshold reaches the limit value</p>
+
+
+	<p>So, in a use case when I'm receiving continuous logs, despite the threshold is reached, the timer would be reset continuosly and the alert will not be triggered until we stop receiving logs (I tested it). And that supposes that I won't notice that I'm receiving an EventStorm for example until it ended.</p>
+
+
+	<p>So there are two options to solve this issue:</p>
+
+
+	<p>1. Avoid the timer reset each time a new context is called/updated</p>
+
+
+	<p>Changing ctx = search(name, idmef, <strong>update=True</strong>) to ctx = search(name, idmef, <strong>update=False</strong>) at the <i>new</i> function</p>
+
+
+	<p>2. Trigger an alert when a context reaches the threshold value, regardless the expire value. (I  didn't analyze where this process takes place)</p></div>
+  
+  </div>
+  <div class="message reply" id="message-223">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/218?r=223#message-223">RE: [prelude-correlator] preludecorrelator context resets timer (expire) for each match</a>
+    -
+    Added by <a class="user active" href="/users/1116">Marcus Smith</a> <a title="03/28/2019 11:36 AM" href="/projects/prelude/activity?from=2019-03-28">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>Workaround:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="keyword">class</span> <span class="class">EventStormPlugin</span>(Plugin):
+    <span class="keyword">def</span> <span class="function">run</span>(<span class="predefined-constant">self</span>, idmef):
+        source = idmef.get(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.source(*).node.address(*).address</span><span class="delimiter">&quot;</span></span>)
+        <span class="keyword">if</span> <span class="keyword">not</span> source:
+            <span class="keyword">return</span>
+
+        <span class="keyword">for</span> saddr <span class="keyword">in</span> source:
+            ctx = context.Context((<span class="string"><span class="delimiter">&quot;</span><span class="content">SCAN EVENTSTORM</span><span class="delimiter">&quot;</span></span>, saddr), {<span class="string"><span class="delimiter">&quot;</span><span class="content">expire</span><span class="delimiter">&quot;</span></span>: <span class="integer">120</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">threshold</span><span class="delimiter">&quot;</span></span>: <span class="integer">150</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">alert_on_expire</span><span class="delimiter">&quot;</span></span>: <span class="predefined-constant">True</span>}, update=<span class="predefined-constant">True</span>, idmef=idmef, ruleid=<span class="predefined-constant">self</span>.name)
+            update_counter = ctx.getUpdateCount()
+            <span class="keyword">if</span> update_counter == <span class="integer">0</span>:
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.correlation_alert.name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">A single host is producing an unusual amount of events</span><span class="delimiter">&quot;</span></span>)
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.classification.text</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Eventstorm</span><span class="delimiter">&quot;</span></span>)
+                ctx.set(<span class="string"><span class="delimiter">&quot;</span><span class="content">alert.assessment.impact.severity</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">high</span><span class="delimiter">&quot;</span></span>)
+            context_options = ctx.getOptions();
+            <span class="keyword">if</span> update_counter == context_options[<span class="string"><span class="delimiter">&quot;</span><span class="content">threshold</span><span class="delimiter">&quot;</span></span>]:
+                ctx.alert()
+                ctx.destoy()
+</span></code></pre></div>
+  
+  </div>
+  <div class="message reply" id="message-228">
+    <div class="contextual">
+      
+      
+      
+    </div>
+  <h4>
+    
+    <a href="/boards/1/topics/218?r=228#message-228">RE: [prelude-correlator] preludecorrelator context resets timer (expire) for each match</a>
+    -
+    Added by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="07/12/2019 09:22 AM" href="/projects/prelude/activity?from=2019-07-12">over 5 years</a> ago
+  </h4>
+  <div class="wiki"><p>This behavior will change in 5.1.</p>
+
+
+	<p>Regards</p></div>
+  
+  </div>
+<span class="pagination"><ul class="pages"></ul><span><span class="items">(1-3/3)</span> </span></span>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

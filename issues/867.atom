@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/867.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2017-09-19T11:16:21Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>LibpreludeDB - Bug #867: libpreludedb : missing -lpreludecpp when linking</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/867"/>
+    <id>http://www.prelude-siem.org/issues/867?journal_id=4166</id>
+    <updated>2017-09-19T11:16:21Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;PRELUDE SIEM&lt;/i&gt; to &lt;i&gt;LibpreludeDB&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;Prelude OSS 4.0.0&lt;/i&gt; to &lt;i&gt;Prelude OSS 4.1.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>LibpreludeDB - Bug #867: libpreludedb : missing -lpreludecpp when linking</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/867"/>
+    <id>http://www.prelude-siem.org/issues/867?journal_id=5107</id>
+    <updated>2018-12-23T23:12:37Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;Prelude OSS 4.1.0&lt;/i&gt; to &lt;i&gt;Prelude OSS 5.0.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>LibpreludeDB - Bug #867: libpreludedb : missing -lpreludecpp when linking</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/867"/>
+    <id>http://www.prelude-siem.org/issues/867?journal_id=5117</id>
+    <updated>2018-12-23T23:38:14Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;Prelude OSS 5.0.0&lt;/i&gt; to &lt;i&gt;Prelude OSS 5.1.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

@@ -1,0 +1,76 @@
+=== prewikka/modules/auth/cgi/cgi.py
+==================================================================
+--- prewikka/modules/auth/cgi/cgi.py	(revision 8576)
++++ prewikka/modules/auth/cgi/cgi.py	(local)
+@@ -27,14 +27,13 @@
+ 	# Need to call Auth.Auth's init because the init of 
+ 	# our superclass Auth.AnonymousAuth does not set env.
+         Auth.Auth.__init__(self, env)
+-	self.config = config
+ 
+     def getUser(self, request):
+-	user = os.environ.get("REMOTE_USER", None)        
++	user = request.getRemoteUser()        
+     	if not user:
+ 	    raise Auth.AuthError(message="CGI Authentication failed: no user specified.")
+         
+-        return User.User(self.db, user, User.ALL_PERMISSIONS, self.config)
++        return User.User(self.db, user, User.ALL_PERMISSIONS, self.db.getConfiguration(user))
+ 
+ 
+ 
+=== prewikka/Request.py
+==================================================================
+--- prewikka/Request.py	(revision 8576)
++++ prewikka/Request.py	(local)
+@@ -81,6 +81,9 @@
+     def getQueryString(self):
+         pass
+ 
++    def getRemoteUser(self):
++        pass
++    
+     def getClientAddr(self):
+         pass
+ 
+=== prewikka/ModPythonHandler.py
+==================================================================
+--- prewikka/ModPythonHandler.py	(revision 8576)
++++ prewikka/ModPythonHandler.py	(local)
+@@ -44,7 +44,16 @@
+     def addCookie(self, param, value, expires):
+     	c = Cookie.Cookie(param, value)
+ 	Cookie.add_cookie(self._req, c, expires)
+-        
++
++    def getRemoteUser(self):
++        self._req.get_basic_auth_pw()
++
++        user = self._req.user
++        if user:
++            user.strip()
++
++        return user
++    
+     def getQueryString(self):
+     	return self._req.unparsed_uri
+ 
+=== cgi-bin/prewikka.cgi
+==================================================================
+--- cgi-bin/prewikka.cgi	(revision 8576)
++++ cgi-bin/prewikka.cgi	(local)
+@@ -73,7 +73,14 @@
+     def getReferer(self):
+         return os.environ.get("HTTP_REFERER", "").strip()
+ 
++    def getRemoteUser(self):
++        user = os.environ.get("REMOTE_USER", None)
++        if user:
++            user.strip()
++            
++        return user
+ 
++
+ request = CGIRequest()
+ request.init()
+ 

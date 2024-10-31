@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Feature #231: java script refresh - Prewikka - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="MRGCvMIztiIRyBLejYaiwRZ4o2GFbwh9KL8WNobJDq8iPurTCye7oZtiGiSQzuufajPS/59lUTP2MdKmAsk6rA==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prewikka - Feature #231: java script refresh" href="http://www.prelude-siem.org/issues/231.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prewikka controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prewikka/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prewikka/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prewikka">Overview</a></li><li><a class="activity" href="/projects/prewikka/activity">Activity</a></li><li><a class="roadmap" href="/projects/prewikka/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prewikka/issues">Issues</a></li><li><a class="gantt" href="/projects/prewikka/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prewikka/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prewikka/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prewikka/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prewikka/issues/report">Summary</a></li>
+
+<li><a href="/projects/prewikka/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prewikka/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Feature #231</h2>
+
+<div class="issue tracker-2 status-5 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#241" accesskey="p" href="/issues/241">« Previous</a> |
+        <span class="position">3 of 4</span> |
+      <a title="#228" accesskey="n" href="/issues/228">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>java script refresh</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="06/05/2007 05:51 PM" href="/projects/prewikka/activity?from=2007-06-05">over 17 years</a> ago.
+        Updated <a title="04/29/2009 12:21 PM" href="/projects/prewikka/activity?from=2009-04-29">over 15 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Closed</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/6">Yoann VANDOORSELAERE</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value"><a title="08/01/2007" href="/versions/61">0.9.12</a></div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value"></div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value">fixed</div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>A java script based auto refresh would be a very usefull thing.<br />the script is easy i was able to find an example of a java script auto refresh script and insert it into functions.js easily but 3 problem arrose when i did that.</p>
+
+
+	<p>1) if a user clicked on a link if it took longer for the page to load than the remaining time in the counter it would refresh the users current page rather than load the one they clicked on. as a side effech the queries against the database would keep going.</p>
+
+
+	<p>2) there was now way for the user to enable, disable or adjust the timeing of the auto refersh on the page.</p>
+
+
+	<p>3) this applies the auto refresh to all pages even the ones where it is not usefull.</p>
+
+
+	<p>if we can add two variables readable by java script this could allow the use of such an auto refresh.</p>
+
+
+	<p>1) a simple refresh=(TRUE|FALSE)<br />a variable to enable or disable the autorefresh. this could be turned of when a link is clicked, when a page should not use an auto refresh, of when the user has the option disabled</p>
+
+
+	<p>2) refreshtime=111111<br />a refresh time in seconds for the timer to count down</p>
+
+
+	<p>this would requier some changes which could be roled in to the prewikka pages slowly over time also it would requier two new field added to the users preferences in the prewikka database</p>
+
+
+	<p>in addition the javascript should also send a paramiter back to prewikka indicating not to update the user activity time so the time outs still work. this would also have a side effect of automaticaly redirecting the user to the logout page when their activity timer runs out rather than leaving the last viewed page vissible in the users browser.</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/69/MessageListing.py.autoapply.diff">MessageListing.py.autoapply.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/69/MessageListing.py.autoapply.diff">View</a>
+   - auto apply
+  <span class="size">(912 Bytes)</span>
+    <span class="author">prmarino1-gmail-com -, 06/29/2007 04:09 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/70/MessageListing.tmpl.autoapply.diff">MessageListing.tmpl.autoapply.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/70/MessageListing.tmpl.autoapply.diff">View</a>
+   - auto apply patch
+  <span class="size">(857 Bytes)</span>
+    <span class="author">prmarino1-gmail-com -, 06/29/2007 04:10 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/71/TopLayout.py.autoapply.diff">TopLayout.py.autoapply.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/71/TopLayout.py.autoapply.diff">View</a>
+   - auto apply patch
+  <span class="size">(517 Bytes)</span>
+    <span class="author">prmarino1-gmail-com -, 06/29/2007 04:10 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/72/TopLayout.tmplautoapply.diff">TopLayout.tmplautoapply.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/72/TopLayout.tmplautoapply.diff">View</a>
+   - auto apply patch
+  <span class="size">(358 Bytes)</span>
+    <span class="author">prmarino1-gmail-com -, 06/29/2007 04:11 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/73/alertlisting.py.autoapply.diff">alertlisting.py.autoapply.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/73/alertlisting.py.autoapply.diff">View</a>
+   - auto apply patch
+  <span class="size">(517 Bytes)</span>
+    <span class="author">prmarino1-gmail-com -, 06/29/2007 04:12 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/77/functions.js.autoapply.diff">functions.js.autoapply.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/77/functions.js.autoapply.diff">View</a>
+   - auto apply patch
+  <span class="size">(2.08 KB)</span>
+    <span class="author">prmarino1-gmail-com -, 06/29/2007 04:12 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/78/messagelisting.py.autoapply.diff">messagelisting.py.autoapply.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/78/messagelisting.py.autoapply.diff">View</a>
+   - auto apply patch
+  <span class="size">(1.67 KB)</span>
+    <span class="author">prmarino1-gmail-com -, 06/29/2007 05:44 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/74/autoupdate.full.diff">autoupdate.full.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/74/autoupdate.full.diff">View</a>
+   - full patch against svn version of prewikka
+  <span class="size">(6.17 KB)</span>
+    <span class="author">, 07/04/2007 02:13 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/76/autoupdate.full.withcheckbox.diff">autoupdate.full.withcheckbox.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/76/autoupdate.full.withcheckbox.diff">View</a>
+   - full copy of the patch against the svn version with the check box added
+  <span class="size">(7.64 KB)</span>
+    <span class="author">prmarino1-gmail-com -, 07/07/2007 01:15 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/75/autoupdate.full.withcheckbox.2.diff">autoupdate.full.withcheckbox.2.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/75/autoupdate.full.withcheckbox.2.diff">View</a>
+   - full copy of the patch against the svn version with the check box added
+  <span class="size">(7.64 KB)</span>
+    <span class="author">prmarino1-gmail-com -, 07/07/2007 01:22 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/80/prewikka-refresh.diff">prewikka-refresh.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/80/prewikka-refresh.diff">View</a>
+   - Second version of the modified Prewikka refresh patch
+  <span class="size">(10.4 KB)</span>
+    <span class="author">Yoann VANDOORSELAERE, 07/16/2007 01:36 PM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/79/prewikka-refresh-improved-compatability.diff">prewikka-refresh-improved-compatability.diff</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/79/prewikka-refresh-improved-compatability.diff">View</a>
+   - revised version of the patch debuged on konqueror, Opera, and IE7
+  <span class="size">(9.29 KB)</span>
+    <span class="author">prmarino1-gmail-com -, 07/24/2007 06:18 AM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-599" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by  <a title="06/15/2007 06:40 PM" href="/projects/prewikka/activity?from=2007-06-15">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-599-notes" class="wiki"><p>Just curious, do you get the same behavior if using a pure HTML auto-refresh:<br /><pre>
+&lt;meta http-equiv="refresh" content="3600"&gt;
+</pre></p></div>
+    </div>
+  </div>
+  
+  <div id="change-600" class="journal has-notes">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="06/15/2007 09:14 PM" href="/projects/prewikka/activity?from=2007-06-15">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-600-notes" class="wiki"><p>that was the first thing i tried and i imediatly relized that the problem with a html refersh is it does not repost the user selections so any frontend selections such as filters, groupings, and time ranges revert the users saved defaults every time it refreshes.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-601" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by  <a title="06/29/2007 05:56 AM" href="/projects/prewikka/activity?from=2007-06-29">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-601-notes" class="wiki"><p>I changed my idea a little to a auto apply because of several issues due to some differences between how java script handle refreshes of a page which was posted. I found the refresh had different results on different browsers so instead I added an auto submit apply. i also added a field on in the menu on the left side which specifies how often to apply, I named it "Auto Update Time" in the menu. the new field takes seconds however it can also take 1:10 for one minute and ten  seconds or 1:20:10 for one hour twenty minutes and ten seconds, and 0 disables the timer. <br />there are still two more things to be done these are nice to haves but it is fully functional and very useful as it is now</p>
+
+
+	<p>1) a check box should to enable/disable the timer<br />if some one could do the python coding i already have the java script code to make it work i just had some trouble figuring out how to make the check box work correctly in the form. it does not have to have any meaning to the python its self i just had trouble getting the check box to keep state after an apply. my patches should point out where this code change would have to happen.</p>
+
+
+	<p>2) stop auto apply from updating the session expiration time<br />i still haven,t added a method to stop it from updating the session timeout so if it is enabled  the session will never time out<br />this is actually a good thing it the console is being used by a 24x7 operations staff working out of a secure operations center however it is not necessarily ideal for a non secure desktop environment so while this is not a show stopper in my opinion it is some thing that should be changed in the future. this will also require an additional hidden field to be added to to the form as with the first one if some one would write the python code i can quickly add the java script to use the field</p>
+
+
+	<p>these changes shouldn't take to long it just I have several other projects to work on and I have already expended the time my employer will allow me to spend on it right now. most of the work has already been done its just the last two minor details that have to be finished.</p>
+
+
+	<p>I have attached all of the patches necessary to make this work to the ticket</p></div>
+    </div>
+  </div>
+  
+  <div id="change-602" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="06/29/2007 07:37 AM" href="/projects/prewikka/activity?from=2007-06-29">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-602-notes" class="wiki"><p>one more thing that should be changed latter but isn't urgent. I used window.status to display the count down until the next update unfortunitly Firefox has this disabled by default in its java script preferences. Its an easy setting to change in the advance options for java script but it is inconvenient for Firefox users, and probably at some time latter time this should be moved into the page rather than the status bar in the browser. As far as I know Firefox and Opera are the only browsers that have an issue with this Konqueror,IE,and links had no problem with it in my tests.<br />yes I'm crazy enough to test links <img src="/plugin_assets/redmine_wiki_extensions/images/smile.png" alt=":)"></p>
+
+
+	<p>Opera issue is strange by default in opera the status bar can be updated by java script by default but the status bar is not displayed at all by default again this can be corrected easily by the user enabling the status bar in view->toolbars in the drop down menubut again it is inconvenient</p></div>
+    </div>
+  </div>
+  
+  <div id="change-603" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/02/2007 01:17 PM" href="/projects/prewikka/activity?from=2007-07-02">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-603-notes" class="wiki"><p>Hello Paul, and thanks for working on this great contribution!</p>
+
+
+	<p>Rather than having this new setting in the Prewikka left tab, I'd like to suggest that you move the auto-apply preference in the user setting page (accessible when clicking on your user login, in the top right of the Prewikka screen).</p>
+
+
+	<p>The preference shall be available below the <em>Language</em> option, as an HTML form, allowing the user to specify the amount of time between screen refresh. There might also be a checkbox to completely disable the setting (and then "freeze" the form entry so that the user can not edit it).</p>
+
+
+	<p>What do you think?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-604" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by  <a title="07/04/2007 02:18 AM" href="/projects/prewikka/activity?from=2007-07-04">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-604-notes" class="wiki"><p>I have attached a full version of the patch against the SVN version named autoupdate.full.diff<br />this patch this diff covers all of the files which were changed</p></div>
+    </div>
+  </div>
+  
+  <div id="change-605" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="07/07/2007 01:42 AM" href="/projects/prewikka/activity?from=2007-07-07">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-605-notes" class="wiki"><p>I have attached the patch with the check box named autoupdate.full.withcheckbox.2.diff<br />please ignore autoupdate.full.withcheckbox.diff it has a typo which I noticed right after I uploaded it</p>
+
+
+	<p>In responce to moving the time to the preferences I think it would be a good idea to have a global default there but i still think its a good idea to have it where it is. the reason is that durring an event the user may want to adjust the setting for a particular view temporaraly. however there could be two check boxes in the preferences one to allow the user to change the setting and one to make the global setting over ride the view setting. we can also make the field dissapear from the page if the user doesn't have the privledge to save the setting</p></div>
+    </div>
+  </div>
+  
+  <div id="change-606" class="journal has-notes has-details">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/13/2007 03:04 PM" href="/projects/prewikka/activity?from=2007-07-13">over 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+    </ul>
+    <div id="journal-606-notes" class="wiki"><p>Attached is an update to your patch. It does the following:</p>
+
+
+	<ul>
+	<li>Clean various things, factor the code.</li>
+		<li>Improve HTML rendering.</li>
+		<li>Implement notification of the remaining time within the Prewikka left tabs.</li>
+		<li>Pause the timer while the user focus the input widget.</li>
+		<li>Make it work with the heartbeat listing.</li>
+	</ul>
+
+
+	<p>From the testing we did here, the patch seems to work great. However, a timer "auto pause/stop" should be implemented to stop the timer while the user edit a filter, or click a link.</p>
+
+
+	<p>Feedbacks welcome,</p></div>
+    </div>
+  </div>
+  
+  <div id="change-607" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/16/2007 01:35 PM" href="/projects/prewikka/activity?from=2007-07-16">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-607-notes" class="wiki"><p>Another update, attached.</p>
+
+
+	<ul>
+	<li>Pause the timer when a link is clicked, and the page is loading.</li>
+		<li>Pause the timer when a CSS popup is triggered, activate it again when it is hidden.</li>
+		<li>Don't activate the timer on page load, if the checkbox is not checked.</li>
+	</ul>
+
+
+	<p>This has been tested successfully under firefox, but would need to be tested on IE6/7, Opera, and Konqueror:</p>
+
+
+	<ul>
+	<li>Check that the counter stop updating if the timer box is unchecked.</li>
+		<li>Check that the counter stop updating when you click on a CSS popup (example: classification under the alert tabs), and that it start updating again when you click it again (hide it).</li>
+		<li>Check that the counter stop when you edit the timer time, and that it start updating again when you leave that field.</li>
+	</ul></div>
+    </div>
+  </div>
+  
+  <div id="change-608" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/93">prmarino1-gmail-com -</a> <a title="07/24/2007 06:37 AM" href="/projects/prewikka/activity?from=2007-07-24">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-608-notes" class="wiki"><p>I found two issues with the patch both of which i corrected and put into prewikka-refresh-improved-compatability.diff</p>
+
+
+	<p>1) a quoting issue in the checkbox resulted in "checked="checked"" Firefox detects and fixes this without complaint but other browsers had issues with it.</p>
+
+
+	<p>2)with some of the browsers i tested <br /><pre>
+
+status = document.getElementById("auto_apply_current")
+status.innerHTML = Math.floor(second_count / 60) + ":" + pad((second_count % 60))
+
+</pre><br />didn't work  so i changed it to <br /><pre>
+
+document.getElementById("auto_apply_current").innerHTML = Math.floor(second_count / 60) + ":" + pad((second_count % 60))
+
+</pre><br />this worked with all of the browsers I tested</p>
+
+
+	<p>I successfully tested this version of the patch with the following browsers.<br />on Linux konqueror, Firefox, Opera<br />on Windows IE7</p></div>
+    </div>
+  </div>
+  
+  <div id="change-609" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="07/27/2007 01:08 PM" href="/projects/prewikka/activity?from=2007-07-27">over 17 years</a> ago
+    </h4>
+
+    <div id="journal-609-notes" class="wiki"><p>Initial implementation checked in r9715, although the IE7 timer issue still remain.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-610" class="journal has-notes has-details">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="08/01/2007 01:02 PM" href="/projects/prewikka/activity?from=2007-08-01">about 17 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Closed</i></li>
+       <li><strong>Resolution</strong> set to <i>fixed</i></li>
+    </ul>
+    <div id="journal-610-notes" class="wiki"><p>Integration is finished, the IE7 timer issue remain, but less frequently with the updated cache headers: marking as closed.</p>
+
+
+	<p>Thanks for the contribution!</p></div>
+    </div>
+  </div>
+  
+  <div id="change-1042" class="journal has-details">
+    <div id="note-13">
+    <h4><a href="#note-13" class="journal-link">#13</a>
+    
+    Updated by <a class="user active" href="/users/6">Yoann VANDOORSELAERE</a> <a title="04/29/2009 12:21 PM" href="/projects/prewikka/activity?from=2009-04-29">over 15 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Project</strong> changed from <i>PRELUDE SIEM</i> to <i>Prewikka</i></li>
+       <li><strong>Category</strong> deleted (<del><i>5</i></del>)</li>
+       <li><strong>Target version</strong> deleted (<del><i>0.9.12</i></del>)</li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/231.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/231.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

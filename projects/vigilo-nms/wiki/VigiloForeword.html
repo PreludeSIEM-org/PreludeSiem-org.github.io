@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>VigiloForeword - VIGILO NMS - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="lqTfBDyXkKR2Nb+q0HJDcpjzEIyjxy5zJ0hlvVCzHiaFi7dr9YOdJ/yft1DNOgos5LhhErnNdz35xqEt1LMqJQ==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+
+
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" media="screen" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" />
+  <link rel="stylesheet" media="print" href="/plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions_print.css" />
+  <script src="/plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js"></script>
+
+<!-- page specific tags -->
+</head>
+<body class="theme-Prelude project-vigilo-nms controller-wiki action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/vigilo-nms/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="wiki_pages" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/vigilo-nms/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="wiki_pages" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/vigilo-nms/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/vigilo-nms">Overview</a></li><li><a class="activity" href="/projects/vigilo-nms/activity">Activity</a></li><li><a class="roadmap" href="/projects/vigilo-nms/roadmap">Roadmap</a></li><li><a class="issues" href="/projects/vigilo-nms/issues">Issues</a></li><li><a class="MyWiki" href="/projects/vigilo-nms/wiki">Documentation</a></li><li><a class="boards" href="/projects/vigilo-nms/boards">Forums</a></li><li><a class="MyFiles" href="/projects/vigilo-nms/files">Downloads</a></li><li><a target="_blank" class="screenshot" href="https://www.prelude-siem.com/vigilo-nms/#1">Screenshot</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          
+<h3>Wiki</h3>
+<ul>
+  <li><a href="/projects/vigilo-nms/wiki">Start page</a></li>
+  <li><a href="/projects/vigilo-nms/wiki/index">Index by title</a></li>
+  <li><a href="/projects/vigilo-nms/wiki/date_index">Index by date</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  
+  
+  
+  
+  
+  
+
+</div>
+
+<p class="breadcrumb"><a href="/projects/vigilo-nms/wiki/WikiStart">WikiStart</a> » <a href="/projects/vigilo-nms/wiki/ManualUser">ManualUser</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="Foreword"></a>
+<h1 >Foreword<a href="#Foreword" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Vigilo NMS is based on several open source components recognized for his performance monitoring. Based on these unit components, Vigilo NMS offers a complete solution for the most demanding staffs.</p>
+
+
+Features:
+	<ul>
+	<li>real time monitoring the health of your information system (network, equipment, systems and applications)</li>
+		<li>quickly and effectively analyze the cause of an incident in order to act accordingly</li>
+		<li>research, investigate, compare, correlate in order to identify the causes of a dysfunction or anticipate it</li>
+		<li>store and index metrology data for trend analysis and reporting</li>
+		<li>organize your operating teams according to their scope of action thanks to a fine management of access rights</li>
+		<li>deploy your monitoring system on distributed and/or hierarchical architectures around the Vigilo bus</li>
+		<li>design and publish multiple technical or functional report formats</li>
+	</ul>
+
+
+	<a name="Alarm"></a>
+<h2 >Alarm<a href="#Alarm" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Vigilo NMS presents the performance status of your information system in the form of an alert tray and mapping. Thanks to its correlator, it allows intelligent data processing to facilitate understanding and use. Vigilo NMS alerts you in real time whenever a problem occurs on your network.</p>
+
+
+	<a name="Analyze"></a>
+<h2 >Analyze<a href="#Analyze" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>In the form of graphs or reports, this module allows you to analyze and compare all the data. It is possible to perform trend analysis, capacity planning and SLA calculation. The reports can be exported in office automation format for distribution. Thanks to Vigilo NMS, you can anticipate and investigate availability problems.</p>
+
+
+	<a name="Archive"></a>
+<h2 >Archive<a href="#Archive" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>All Vigilo NMS data is stored centrally over a configurable period of time. You can access the root causes of an incident but also monitor the evolution of your performance over time. This history also allows you to understand recurring incidents and correct their causes.</p>
+
+
+	<a name="Network-system-and-application"></a>
+<h2 >Network, system and application<a href="#Network-system-and-application" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Vigilo NMS offers, in addition to SNMP monitoring, specific agents available for the majority of system and application environments. This monitoring is equivalent to SNMP supervision. It is the supervision center that interrogates remote objects. The flows pass through secure connexion and execute scripts on the remote machine.</p>
+
+
+	<a name="Business-services-monitoring"></a>
+<h2 >Business services monitoring<a href="#Business-services-monitoring" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>A module dedicated to business service management is available within the Vigilo NMS correlator. A business service is defined as a complex combination of low-level indicators with associated weighting elements. Thus, instead of tracking the evolution of a CPU, network card, etc., the operator can track the availability of the messaging service. Business services can be monitored within the event tray and on the map. It is an essential business complement to the monitoring of raw indicators.</p>
+
+
+	<a name="Passive-monitoring"></a>
+<h2 >"Passive" monitoring<a href="#Passive-monitoring" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Vigilo supports a passive supervision mode that allows remote objects to send information to the monitoring center at their convenience.</p>
+
+
+	<a name="Remote-monitoring-end-user-experience"></a>
+<h2 >Remote monitoring : end user experience<a href="#Remote-monitoring-end-user-experience" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Vigilo NMS offers a remote monitoring mechanism on the protocols that allow it. Thus, we will regularly query a remote Web server (by an HTTP request) to check its proper functioning. A process can run "correctly" on a server without giving a proper service to the users. This mechanism allows you to measure the "user experience" when it connects to the application.</p>
+
+
+	<a name="Supervision-and-traps-SNMP"></a>
+<h2 >Supervision and traps SNMP<a href="#Supervision-and-traps-SNMP" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Vigilo NMS allows you to supervise equipment, systems and applications that communicate natively in SNMP (V1, V2 and V3). For example: Cisco routers, UNIX systems (Solaris, HP-UX, AIX, BSD), Linux, Windows, AS400, Nokia equipment, etc. Vigilo NMS generates optimized SNMP polling by aggregating several queries in order to limit the number of requests and therefore the network impact.</p>
+
+
+	<a name="Nagios-migration-to-Vigilo-NMS"></a>
+<h2 >Nagios migration to Vigilo NMS<a href="#Nagios-migration-to-Vigilo-NMS" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Vigilo NMS is compatible with Nagios and Nagios forks. Designed to deal with largest system, it's possible to migrate from Nagios to Vigilo NMS without loosing all the investments made in this type of solution.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '2';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+
+
+    <script type="text/javascript">
+
+
+    </script>
+    <script>
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+
+
+</body>
+</html>

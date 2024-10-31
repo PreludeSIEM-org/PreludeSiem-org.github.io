@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title/>
+  <link rel="self" href="http://www.prelude-siem.org/issues/468.atom"/>
+  <link rel="alternate" href="http://www.prelude-siem.org/"/>
+  <id>http://www.prelude-siem.org/</id>
+  <icon>http://www.prelude-siem.org/welcome/themes/prelude/favicon/Prelude-icon.png</icon>
+  <updated>2012-04-30T16:57:58Z</updated>
+  <author>
+    <name>UNITY 360</name>
+  </author>
+  <entry>
+    <title>Prewikka - Bug #468: Division by zero in stats</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/468"/>
+    <id>http://www.prelude-siem.org/issues/468?journal_id=1584</id>
+    <updated>2012-04-30T16:57:58Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;New&lt;/i&gt; to &lt;i&gt;Assigned&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; set to &lt;i&gt;Jean-Charles ROGEZ&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Priority&lt;/strong&gt; changed from &lt;i&gt;Normal&lt;/i&gt; to &lt;i&gt;High&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;1.0.1&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Estimated time&lt;/strong&gt; set to &lt;i&gt;4.00 h&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #468: Division by zero in stats</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/468"/>
+    <id>http://www.prelude-siem.org/issues/468?journal_id=1618</id>
+    <updated>2012-06-22T15:14:28Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;1.0.1&lt;/i&gt; to &lt;i&gt;1.0.2&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;It's a cairoplot issue similar to &lt;a class="external" href="https://bugs.launchpad.net/cairoplot/+bug/285029"&gt;https://bugs.launchpad.net/cairoplot/+bug/285029&lt;/a&gt;.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #468: Division by zero in stats</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/468"/>
+    <id>http://www.prelude-siem.org/issues/468?journal_id=1619</id>
+    <updated>2012-06-22T15:15:23Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Project&lt;/strong&gt; changed from &lt;i&gt;Prewikka Pro&lt;/i&gt; to &lt;i&gt;Prewikka&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; deleted (&lt;del&gt;&lt;i&gt;1.0.2&lt;/i&gt;&lt;/del&gt;)&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #468: Division by zero in stats</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/468"/>
+    <id>http://www.prelude-siem.org/issues/468?journal_id=1684</id>
+    <updated>2013-02-08T13:46:30Z</updated>
+    <author>
+      <name>Antoine LUONG</name>
+      <email>antoine.luong@csnovidys.com</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Assignee&lt;/strong&gt; changed from &lt;i&gt;Jean-Charles ROGEZ&lt;/i&gt; to &lt;i&gt;Antoine LUONG&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;0&lt;/i&gt; to &lt;i&gt;90&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;This bug happens when Cairoplot receives a single value (in the &lt;em&gt;x_labels&lt;/em&gt; variable) from Prewikka.&lt;/p&gt;
+
+
+	&lt;p&gt;Because of these lines in Chart.py :&lt;br /&gt;&lt;pre&gt;
+if not self._got_value and empty:
+    # do not add 0 only values at the beginning of the chart
+    return
+&lt;/pre&gt;&lt;/p&gt;
+
+
+	&lt;p&gt;when the only non-null value is at the end of the chart, the bug occurs.&lt;/p&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #468: Division by zero in stats</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/468"/>
+    <id>http://www.prelude-siem.org/issues/468?journal_id=1704</id>
+    <updated>2013-09-23T10:55:25Z</updated>
+    <author>
+      <name>Jean-Charles ROGEZ</name>
+      <email>jean-charles.rogez@c-s.fr</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Assigned&lt;/i&gt; to &lt;i&gt;Resolved&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; set to &lt;i&gt;113&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;% Done&lt;/strong&gt; changed from &lt;i&gt;90&lt;/i&gt; to &lt;i&gt;100&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Resolution&lt;/strong&gt; set to &lt;i&gt;fixed&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+  <entry>
+    <title>Prewikka - Bug #468: Division by zero in stats</title>
+    <link rel="alternate" href="http://www.prelude-siem.org/issues/468"/>
+    <id>http://www.prelude-siem.org/issues/468?journal_id=2447</id>
+    <updated>2015-11-08T12:10:26Z</updated>
+    <author>
+      <name>Thomas </name>
+      <email>thomas.@csgroup.eu</email>
+    </author>
+    <content type="html">
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt; changed from &lt;i&gt;Resolved&lt;/i&gt; to &lt;i&gt;Closed&lt;/i&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Target version&lt;/strong&gt; changed from &lt;i&gt;113&lt;/i&gt; to &lt;i&gt;Prelude OSS 1.1.0&lt;/i&gt;&lt;/li&gt;&lt;/ul&gt;    </content>
+  </entry>
+</feed>

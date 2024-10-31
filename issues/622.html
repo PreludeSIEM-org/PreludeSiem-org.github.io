@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Bug #622: compile libprelude à partir des souces avec freebsd - Prelude-LML - UNITY 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="MMZ21wYZEHiGP1nDRTisi8u+hP+Qm6vHTwTbJl9K2Noj6R64zw0d+wyVUTlYcOXVt/X1YYqR8omRih+220rs2Q==" />
+<link rel='shortcut icon' href='/themes/prelude/favicon/Prelude-icon.png' />
+<link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css" />
+<link rel="stylesheet" media="all" href="/themes/prelude/stylesheets/application.css" />
+<link rel="stylesheet" media="all" href="/stylesheets/responsive.css" />
+
+<script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js"></script>
+<script src="/javascripts/application.js"></script>
+<script src="/javascripts/responsive.js"></script>
+<script>
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+<!-- page specific tags -->
+    <link rel="alternate" type="application/atom+xml" title="Prelude-LML - Bug #622: compile libprelude à partir des souces avec freebsd" href="http://www.prelude-siem.org/issues/622.atom" />
+<script src="/javascripts/context_menu.js"></script><link rel="stylesheet" media="screen" href="/stylesheets/context_menu.css" /></head>
+<body class="theme-Prelude project-prelude-lml controller-issues action-show">
+
+<div id="wrapper">
+
+<div class="flyout-menu js-flyout-menu">
+
+
+        <div class="flyout-menu__search">
+            <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+            <input type="hidden" name="issues" value="1" />
+            <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+            <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+</form>        </div>
+
+
+        <h3>Project</h3>
+        <span class="js-project-menu"></span>
+
+    <h3>General</h3>
+    <span class="js-general-menu"></span>
+
+    <span class="js-sidebar flyout-menu__sidebar"></span>
+
+    <h3>Profile</h3>
+    <span class="js-profile-menu"></span>
+
+</div>
+
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a class="login" href="/login">Sign in</a></li><li><a class="register" href="/account/register">Register</a></li></ul>    </div>
+    
+    <ul><li><a class="PreludeOSS" href="/projects/prelude">Prelude OSS</a></li><li><a target="_blank" class="SIEMVersion" href="http://www.prelude-siem.com">Prelude SIEM</a></li><li><a class="VigiloOSS" href="/projects/vigilo-nms">Vigilo OSS</a></li><li><a target="_blank" class="NMSVersion" href="http://www.vigilo-nms.com">Vigilo NMS</a></li><li><a class="|" href="#">|</a></li><li><a class="Projects" href="/projects">Projects</a></li></ul></div>
+
+<div id="header">
+
+    <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+    <div id="quick-search">
+        <form action="/projects/prelude-lml/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <input type="hidden" name="issues" value="1" />
+        <label for='q'>
+          <a accesskey="4" href="/projects/prelude-lml/search">Search</a>:
+        </label>
+        <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+</form>        
+    </div>
+
+    <h1>
+        <img src="/themes/prelude/img/prelude-logo.png" style="height: 55px"/>
+        <a href="https://www.ow2.org/bin/view/Press_Releases/OW2_Open_Source_Community_announces_OW2con_16_Best_Project_Awards" target="_blank"><img src="/themes/prelude/img/ow2-logo.png" style="margin-top: -10px; height: 55px"/></a>
+    </h1>
+
+    
+    <div id="main-menu" class="tabs">
+        <ul><li><a class="overview" href="/projects/prelude-lml">Overview</a></li><li><a class="activity" href="/projects/prelude-lml/activity">Activity</a></li><li><a class="roadmap" href="/projects/prelude-lml/roadmap">Roadmap</a></li><li><a class="issues selected" href="/projects/prelude-lml/issues">Issues</a></li><li><a class="gantt" href="/projects/prelude-lml/issues/gantt">Gantt</a></li><li><a class="calendar" href="/projects/prelude-lml/issues/calendar">Calendar</a></li><li><a class="repository" href="/projects/prelude-lml/repository">Repository</a></li><li><a target="_blank" class="IDMEFProbe" href="https://www.prelude-siem.com/en/technological-partners/">IDMEF Probes</a></li><li><a target="_blank" class="PrewikkaApps" href="https://github.com/Prelude-SIEM-Contrib">SIEM Apps</a></li></ul>
+        <div class="tabs-buttons" style="display:none;">
+            <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+            <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+        </div>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          <h3>Issues</h3>
+
+<ul>
+<li><a href="/projects/prelude-lml/issues?set_filter=1">View all issues</a></li>
+<li><a href="/projects/prelude-lml/issues/report">Summary</a></li>
+
+<li><a href="/projects/prelude-lml/issues/calendar">Calendar</a></li>
+<li><a href="/projects/prelude-lml/issues/gantt">Gantt</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+
+
+
+
+
+</div>
+
+
+<h2>Bug #622</h2>
+
+<div class="issue tracker-1 status-3 priority-4 priority-default closed details">
+    <div class="next-prev-links contextual">
+      <a title="#627" accesskey="p" href="/issues/627">« Previous</a> |
+        <span class="position">82 of 362</span> |
+      <a title="#613" accesskey="n" href="/issues/613">Next »</a>
+    </div>
+
+  
+
+<div class="subject">
+<div><h3>compile libprelude à partir des souces avec freebsd</h3></div>
+</div>
+        <p class="author">
+        Added by <a class="user active" href="/users/460">patrick moulin</a> <a title="09/16/2015 08:26 AM" href="/projects/prelude-lml/activity?from=2015-09-16">about 9 years</a> ago.
+        Updated <a title="09/30/2015 04:53 PM" href="/projects/prelude-lml/activity?from=2015-09-30">about 9 years</a> ago.
+        </p>
+
+<div class="attributes">
+<div class="splitcontent"><div class="splitcontentleft"><div class="status attribute"><div class="label">Status:</div><div class="value">Resolved</div></div><div class="priority attribute"><div class="label">Priority:</div><div class="value">Normal</div></div><div class="assigned-to attribute"><div class="label">Assignee:</div><div class="value"><a class="user active" href="/users/309">Antoine LUONG</a></div></div><div class="fixed-version attribute"><div class="label">Target version:</div><div class="value">-</div></div></div><div class="splitcontentleft"><div class="start-date attribute"><div class="label">Start date:</div><div class="value">09/16/2015</div></div><div class="due-date attribute"><div class="label">Due date:</div><div class="value"></div></div><div class="progress attribute"><div class="label">% Done:</div><div class="value"><table class="progress progress-0"><tr><td style="width: 100%;" class="todo"></td></tr></table><p class="percent">0%</p></div></div></div></div>
+<div class="splitcontent"><div class="splitcontentleft"><div class="cf_1 attribute"><div class="label"><span>Resolution</span>:</div><div class="value"></div></div></div><div class="splitcontentleft"></div></div>
+
+</div>
+
+<hr />
+<div class="description">
+  <div class="contextual">
+  
+  </div>
+
+  <p><strong>Description</strong></p>
+  <div class="wiki">
+  <p>Bonjour,</p>
+
+
+	<p>J'essaye de compiler libprelude 1.2.5 à partir des sources et j'obtiens une erreur au moment de la compilation de libpreludedb. Voici comment j'ai procédé :</p>
+
+
+	<p><ins>Installation des packages suivant :</ins>**</p>
+
+
+	<p>gnutls, pkgconf, libgcrypt, wget, perl 5.18 python27, mysql55-server et création du fichier `/usr/local/bin/libgnutls-config` :</p>
+
+
+	<p>Téléchargement des sources puis<br />./configure</p>
+
+
+j'obtiens
+	<ul>
+	<li>Dumping configuration ***<br />    - Generate documentation   : no<br />    - LUA binding              : no<br />    - Perl binding             : yes<br />    - Python2.x binding        : yes<br />    - Python3.x binding        : no<br />    - Ruby binding             : no<br />    - Easy bindings            : yes</li>
+	</ul>
+
+
+	<p>Je fais make puis make install, et tout se passe bien, aucune erreur de compil</p>
+
+
+	<p>j'ai également verifié que le fichier /usr/local/bin/libprelude-config était présent (c'est le cas) et j'ai bien déclaré les variables environnement avec la commande setenv LD_LIBRARY_PATH /usr/local/lib</p>
+
+
+	<pre><code>Les fichiers `libprelude.a`, `libprelude.la`, `libpreludecpp.a` et `libpreludecpp.la` on été crées dans `/usr/local/lib`, et les headers ont bien été placés dans `/usr/local/include`</code></pre>
+
+
+	<p>lorsque je tente l'installation de libpreludedb ou prelude-LML, j'ai systématiquement ce même message d'erreur</p>
+
+
+checking for libprelude-config... /usr/local/bin/libprelude-config<br />checking for libprelude - version >= 1.2.5... no
+	<ul>
+	<li>Could not run libprelude test program, checking why...</li>
+		<li>The test program failed to compile or link. See the file config.log for the</li>
+		<li>exact error that occured. This usually means LIBPRELUDE was incorrectly installed</li>
+		<li>or that you have moved LIBPRELUDE since it was installed. In the latter case, you</li>
+		<li>may want to edit the libprelude-config script: /usr/local/bin/libprelude-config<br />configure: error: Cannot find libprelude: Is libprelude-config in the path?</li>
+	</ul>
+
+
+	<p>Si je compile à partir des ports via la commande portmaster, cela fonctionne mais je n'ai que la version 1.0.1 et j'aimerais profité des dernières mises à jour.</p>
+
+
+	<p>Merci</p>
+  </div>
+</div>
+<div class="attachments">
+<div class="contextual">
+  
+</div>
+<p><a class="icon icon-attachment" href="/attachments/download/430/libprelude-config.log">libprelude-config.log</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/430/libprelude-config.log">View</a>
+   - libprelude.log
+  <span class="size">(1.33 MB)</span>
+    <span class="author">patrick moulin, 09/16/2015 08:21 AM</span>
+  </p>
+<p><a class="icon icon-attachment" href="/attachments/download/431/libpreludedb-config.log">libpreludedb-config.log</a>    <a class="icon-only icon-magnifier" title="View" href="/attachments/431/libpreludedb-config.log">View</a>
+   - libpreludedb.log
+  <span class="size">(47.2 KB)</span>
+    <span class="author">patrick moulin, 09/16/2015 08:21 AM</span>
+  </p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="history">
+<h3>History</h3>
+  <div id="change-2214" class="journal has-notes">
+    <div id="note-1">
+    <h4><a href="#note-1" class="journal-link">#1</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="09/18/2015 02:23 PM" href="/projects/prelude-lml/activity?from=2015-09-18">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2214-notes" class="wiki"><p>Problème réglé. Pour ceux qui rencontreraient le même problème, il suffit d'éditer le fichier libprelude-config et remplacer "thread_set=no" par "thread_set=yes" <br />Par contre je rencontre un autre soucis quand à l'installation de prewikka qui par ailleurs se deroule parfaitement bien sauf que lorsque je lance<br /><pre>
+/usr/local/bin/prewikka-httpd
+</pre><br />J'obtiens<br /><pre>
+18 Sep 11:16:15 (process:9371) WARNING: /usr/local/lib/libpreludedb/plugins/formats/classic: file not found.
+18 Sep 11:16:15 (process:9371) WARNING: /usr/local/lib/libpreludedb/plugins/formats/libclassic: file not found.
+18 Sep 11:16:15 (process:9371) WARNING: /usr/local/lib/libpreludedb/plugins/sql/libmysql: file not found.
+18 Sep 11:16:15 (process:9371) WARNING: /usr/local/lib/libpreludedb/plugins/sql/mysql: file not found.
+Traceback (most recent call last):
+  File "/usr/local/bin/prewikka-httpd", line 162, in &lt;module&gt;
+    core = Core.get_core_from_config(config)
+  File "/usr/local/lib/python2.7/site-packages/prewikka/Core.py", line 70, in get_core_from_config
+    _core_cache[path] = Core(path)
+  File "/usr/local/lib/python2.7/site-packages/prewikka/Core.py", line 125, in __init__
+    self._initDatabase()
+  File "/usr/local/lib/python2.7/site-packages/prewikka/Core.py", line 143, in _initDatabase
+    self._env.db = Database.Database(config)
+  File "/usr/local/lib/python2.7/site-packages/prewikka/Database.py", line 86, in __init__
+    self._sql = preludedb_sql_new(db_type.encode("utf8"), settings)
+preludedb.PreludeDBError: Could not load sql plugin 'mysql'
+</pre><br />J'ai bien déclaré les varibles :<br /><pre>
+setenv PYTHONPATH /usr/local/lib/python2.7/site-packages:/usr/local/bin/prewikka-httpd
+</pre><br />Dans "/usr/local/lib/libpreludedb/plugins/formats/" j'ai bien les librairies suivantes :<br />-classic.la<br />-libclassic.so<br />Et dans "/usr/local/lib/libpreludedb/plugins/sql" <br />-mysql.la<br />-libmysql.so<br />Merci</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2215" class="journal has-notes has-details">
+    <div id="note-2">
+    <h4><a href="#note-2" class="journal-link">#2</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="09/18/2015 02:54 PM" href="/projects/prelude-lml/activity?from=2015-09-18">about 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>New</i> to <i>Assigned</i></li>
+       <li><strong>Assignee</strong> set to <i>Antoine LUONG</i></li>
+    </ul>
+    <div id="journal-2215-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>-- Nous répondons en anglais car il s'agit d'un tracker international. --</p>
+
+
+	<p>Thanks for reporting this error. Could you try using ldd on the .so file?<br />Please note that the latest Prelude version is 1.2.6.</p>
+
+
+	<p>Regards</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2218" class="journal has-notes">
+    <div id="note-3">
+    <h4><a href="#note-3" class="journal-link">#3</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="09/18/2015 08:09 PM" href="/projects/prelude-lml/activity?from=2015-09-18">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2218-notes" class="wiki"><p>Merci pour votre réponse,</p>
+
+
+	<p>Pourriez vous être plus précis concernant cette procédure "Could you try using ldd on the .so file" ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2219" class="journal has-notes">
+    <div id="note-4">
+    <h4><a href="#note-4" class="journal-link">#4</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="09/21/2015 08:11 AM" href="/projects/prelude-lml/activity?from=2015-09-21">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2219-notes" class="wiki"><p>Bonjour,</p>
+
+
+	<p>Je suis désolé de ne pouvoir vous répondre en anglais, celui ci étant très pauvre. Je pense avoir compris ce message d'erreur tout simplement parce que j'ai le fichier linmysql.so dans "/usr/local/lib/libpreludedb/plugins/sql" alors que je devrai avoir le fichier "mysql.so".<br />Au moment de la configuration de libpreludedb j'ai bien</p>
+
+
+	<p>Enable MySQL plugin         : yes</p>
+
+
+	<p>Il doit me manquer un package mais lequel?</p>
+
+
+	<p>Merci</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2220" class="journal has-notes">
+    <div id="note-5">
+    <h4><a href="#note-5" class="journal-link">#5</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="09/21/2015 08:16 AM" href="/projects/prelude-lml/activity?from=2015-09-21">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2220-notes" class="wiki"><p>Edit :<br />root@patrick:/ # ldd /usr/local/lib/libpreludedb/plugins/sql/libmysql.so<br />ldd: /usr/local/lib/libpreludedb/plugins/sql/libmysql.so: not a dynamic executable</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2221" class="journal has-notes">
+    <div id="note-6">
+    <h4><a href="#note-6" class="journal-link">#6</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="09/21/2015 10:56 AM" href="/projects/prelude-lml/activity?from=2015-09-21">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2221-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>Please try to change execution permissions on the file(s).</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2222" class="journal has-notes">
+    <div id="note-7">
+    <h4><a href="#note-7" class="journal-link">#7</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="09/25/2015 08:17 AM" href="/projects/prelude-lml/activity?from=2015-09-25">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2222-notes" class="wiki"><p>hello,</p>
+
+
+	<p>J'ai repris l'installation depuis le début considérant que le soucis provenait de libprelude. J'obtiens bien les lignes suivantes :</p>
+
+
+	<ul>
+	<li>Dumping configuration ***<br />    - Generate documentation   : no<br />    - LUA binding              : no<br />    - Perl binding             : yes<br />    - Python binding           : yes<br />    - Ruby binding             : no<br />    - Easy bindings            : yes</li>
+	</ul>
+
+
+	<p>make puis make install, tout se passe bien sans aucune erreur. Ensuite "/sbin/ldconfig -m /usr/local/lib" puis "setenv LD_LIBRARY_PATH /usr/local/lib"</p>
+
+
+	<p>Je vais ensuite regarder mon dossier /usr/local/lib et là je constate que seuls les 4 fichiers suivant sont présents :</p>
+
+
+	<p>libpreludecpp.la<br />libpreludecpp.a<br />libprelude.la<br />libprelude.a</p>
+
+
+	<p>Je décide par ailleurs de faire une autre install mais cette fois avec les ports de freebsd et avec la commande "portmaster" sauf que la version installée est la 1.0.1. .Encore une fois tout se passe bien mais cette fois en vérifiant mon dossier /usr/local/lib j'obtient les fichiers suivants:</p>
+
+
+	<p>libpreludecpp.la<br />libpreludecpp.a<br />libprelude.la<br />libprelude.a<br />libpreludecpp.so<br />libpreludecpp.so.0<br />libprelude.so<br />libprelude.so.2<br />libprelude.so.2.19.1</p>
+
+
+	<p>Voila à mon avis ou se situe l'erreur, visiblement la librairie ne s'est pas compilée correctement avec les sources 1.2.6. Si vous avec une idée... Dans l'eventualité ou il s'agirait d'une impossibilité d'installer les dernières sources, est ce que la version 1.0.1 reste encore aujourd'hui suffisamment "actuelle" pour etre installé sur un serveur?</p>
+
+
+	<p>Merci</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2223" class="journal has-notes">
+    <div id="note-8">
+    <h4><a href="#note-8" class="journal-link">#8</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="09/25/2015 10:11 AM" href="/projects/prelude-lml/activity?from=2015-09-25">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2223-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>Les fichiers .so ont-ils été créés dans l'arborescence de sources ? Si non, pouvez-vous fournir la sortie de la commande make ?</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2224" class="journal has-notes">
+    <div id="note-9">
+    <h4><a href="#note-9" class="journal-link">#9</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="09/26/2015 10:13 AM" href="/projects/prelude-lml/activity?from=2015-09-26">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2224-notes" class="wiki"><p>Hello,</p>
+
+
+	<p>Non les fichiers .so n'ont pas été créés et voici ce que me donne le retour de la commande make</p>
+
+
+<pre>
+root@apache:/tmp/libprelude-1.2.6 # make
+make  all-recursive
+Making all in libltdl
+make  all-am
+Making all in libmissing
+make  all-recursive
+Making all in tests
+make  all-recursive
+Making all in .
+Making all in m4
+Making all in src
+make  all-recursive
+Making all in libprelude-error
+make  all-am
+Making all in include
+Making all in prelude-admin
+Making all in bindings
+Making all in c++
+Making all in include
+Making all in lua
+Making all in python
+CC="c++" /usr/local/bin/python2.7 setup.py build
+running build
+running build_py
+running build_ext
+Making all in ruby
+Making all in docs
+Making all in api
+Making all in manpages
+Making all in tests
+root@apache:/tmp/libprelude-1.2.6 #
+</pre>
+
+	<p>Merci</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2225" class="journal has-notes">
+    <div id="note-10">
+    <h4><a href="#note-10" class="journal-link">#10</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="09/28/2015 10:11 AM" href="/projects/prelude-lml/activity?from=2015-09-28">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2225-notes" class="wiki"><p>Le problème semble venir de ces lignes du configure :</p>
+
+
+<pre>
+configure:16116: checking if libtool supports shared libraries
+configure:16118: result: no
+configure:16121: checking whether to build shared libraries
+configure:16142: result: no
+</pre>
+
+	<p>Voir par exemple <a class="external" href="http://lists.freebsd.org/pipermail/freebsd-current/2013-March/040460.html">http://lists.freebsd.org/pipermail/freebsd-current/2013-March/040460.html</a> pour un problème similaire.</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2226" class="journal has-notes">
+    <div id="note-11">
+    <h4><a href="#note-11" class="journal-link">#11</a>
+    
+    Updated by <a class="user active" href="/users/460">patrick moulin</a> <a title="09/28/2015 08:35 PM" href="/projects/prelude-lml/activity?from=2015-09-28">about 9 years</a> ago
+    </h4>
+
+    <div id="journal-2226-notes" class="wiki"><p>En suivant l'idée et le lien que vous m'avez donné, il semblerait que cela pourrait effectivement venir du configure qui ne prendrait pas en compte la version 10 de freebsd. J'ai donc essayé sur la version 9.3 de freebsd.<br />./configure<br />par contre au moment de taper make, j'ai l'erreur suivante :<br /><pre>
+"Makefile", line 2306: Need an operator
+make: fatal errors encountered -- cannot continue
+</pre></p>
+
+
+	<p>En regardant le fichier Makefile, je constate que c'est la ligne "-include $(top_srcdir)/git.mk" qui pose probleme</p>
+
+
+	<p>J'installe alors gmake puis gmake install cela fonctionne et j'ai enfin ma librairie de fichiers <br /><pre>
+libpreludecpp.so.3
+libpreludecpp.so
+libpreludecpp.la
+libprelude.so.22
+libprelude.so
+libprelude.la
+</pre><br />Je compile egalement libprelude db et j'ai enfinfin mon plugin "mysql.so" dans "/usr/local/lib/libpreludedb/plugins/sql/"</p>
+
+
+	<p>Enfin lorsque je tape :<br /><pre>
+root@prelude:/ # ldd /usr/local/lib/libpreludedb/plugins/sql/mysql.so
+/usr/local/lib/libpreludedb/plugins/sql/mysql.so:
+        libpreludedb.so.4 =&gt; /usr/local/lib/libpreludedb.so.4 (0x801204000)
+        libprelude.so.22 =&gt; /usr/local/lib/libprelude.so.22 (0x801414000)
+        libthr.so.3 =&gt; /lib/libthr.so.3 (0x8017ec000)
+        libgnutls.so.28 =&gt; /usr/local/lib/libgnutls.so.28 (0x801a0f000)
+        libgcrypt.so.20 =&gt; /usr/local/lib/libgcrypt.so.20 (0x801d2c000)
+        libgpg-error.so.0 =&gt; /usr/local/lib/libgpg-error.so.0 (0x801fd9000)
+        libmysqlclient.so.18 =&gt; /usr/local/lib/mysql/libmysqlclient.so.18 (0x8021ea000)
+        libz.so.6 =&gt; /lib/libz.so.6 (0x802729000)
+        libm.so.5 =&gt; /lib/libm.so.5 (0x80293d000)
+        libc.so.7 =&gt; /lib/libc.so.7 (0x80081b000)
+        libiconv.so.2 =&gt; /usr/local/lib/libiconv.so.2 (0x802b5e000)
+        libp11-kit.so.0 =&gt; /usr/local/lib/libp11-kit.so.0 (0x802e5a000)
+        libtspi.so.1 =&gt; /usr/local/lib/libtspi.so.1 (0x8030ab000)
+        libtasn1.so.6 =&gt; /usr/local/lib/libtasn1.so.6 (0x80331b000)
+        libnettle.so.4 =&gt; /usr/local/lib/libnettle.so.4 (0x80352d000)
+        libhogweed.so.2 =&gt; /usr/local/lib/libhogweed.so.2 (0x80375a000)
+        libgmp.so.10 =&gt; /usr/local/lib/libgmp.so.10 (0x803988000)
+        libintl.so.8 =&gt; /usr/local/lib/libintl.so.8 (0x803bfd000)
+        libstdc++.so.6 =&gt; /usr/lib/libstdc++.so.6 (0x803e08000)
+        libgcc_s.so.1 =&gt; /lib/libgcc_s.so.1 (0x80410f000)
+        libffi.so.6 =&gt; /usr/local/lib/libffi.so.6 (0x80431d000)
+        libcrypto.so.6 =&gt; /lib/libcrypto.so.6 (0x804524000)
+</pre></p>
+
+
+	<p>En résumé cela fonctionne avec freebsd 9.3 et gmake et cela ne fonctionne pas avec freebsd 10.1 même avec gmake</p>
+
+
+	<p>Merci</p></div>
+    </div>
+  </div>
+  
+  <div id="change-2231" class="journal has-details">
+    <div id="note-12">
+    <h4><a href="#note-12" class="journal-link">#12</a>
+    
+    Updated by <a class="user active" href="/users/309">Antoine LUONG</a> <a title="09/30/2015 04:53 PM" href="/projects/prelude-lml/activity?from=2015-09-30">about 9 years</a> ago
+    </h4>
+
+    <ul class="details">
+       <li><strong>Status</strong> changed from <i>Assigned</i> to <i>Resolved</i></li>
+    </ul>
+    
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+<div class="contextual">
+
+
+
+
+
+</div>
+
+
+<div style="clear: both;"></div>
+
+<p class="other-formats">Also available in:  <span><a class="atom" rel="nofollow" href="/issues/622.atom">Atom</a></span>
+  <span><a class="pdf" rel="nofollow" href="/issues/622.pdf">PDF</a></span>
+</p>
+
+
+
+<script>
+//<![CDATA[
+contextMenuInit('/issues/context_menu')
+//]]>
+</script>
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+<!-- Piwik -->
+<noscript><p><img src="//www.prelude-siem.org/piwik/piwik.php?idsite=3" style="border:0;" alt="" /></p></noscript>
+<script type="text/javascript">
+  var piwik_site_id = '3';
+
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dev.prelude-ids.com"]);
+  _paq.push(["setDomains", ["*.dev.prelude-ids.com","*.prelude-ids.org","*.prelude-siem.org","*.www.prelude-ids.org","*.www.prelude-siem.org", "*.vigilo-nms.org", "*.www.vigilo-nms.org"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//www.prelude-siem.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', piwik_site_id]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111535491-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111535491-5');
+</script>
+ 
+</body>
+</html>

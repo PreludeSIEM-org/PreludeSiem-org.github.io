@@ -1,0 +1,135 @@
+# strace -f prelude-admin list
+execve("/usr/local/bin/prelude-admin", ["prelude-admin", "list"], [/* 22 vars */]) = 0
+uname({sys="Linux", node="hids1.i", ...}) = 0
+brk(0)                                  = 0x805a000
+open("/etc/ld.so.preload", O_RDONLY)    = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY)      = 3
+fstat64(3, {st_mode=S_IFREG|0644, st_size=54317, ...}) = 0
+old_mmap(NULL, 54317, PROT_READ, MAP_PRIVATE, 3, 0) = 0xb7f3a000
+close(3)                                = 0
+open("/usr/local/lib/libprelude.so.2", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\244\357"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=2325277, ...}) = 0
+old_mmap(NULL, 617176, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0xb7ea3000
+old_mmap(0xb7f33000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x90000) = 0xb7f33000
+old_mmap(0xb7f37000, 10968, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xb7f37000
+close(3)                                = 0
+open("/lib/tls/libc.so.6", O_RDONLY)    = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\300;(A"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1459344, ...}) = 0
+old_mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7ea2000
+old_mmap(0x4126f000, 1162188, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x4126f000
+old_mmap(0x41385000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x116000) = 0x41385000
+old_mmap(0x41389000, 7116, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x41389000
+close(3)                                = 0
+open("/usr/local/lib/libgnutls.so.26", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0x/\1\000"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=3407119, ...}) = 0
+old_mmap(NULL, 466020, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0xb7e30000
+old_mmap(0xb7e9c000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x6b000) = 0xb7e9c000
+close(3)                                = 0
+open("/usr/local/lib/libgcrypt.so.11", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\200A\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=1722417, ...}) = 0
+old_mmap(NULL, 407488, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0xb7dcc000
+old_mmap(0xb7e2a000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x5d000) = 0xb7e2a000
+close(3)                                = 0
+open("/usr/local/lib/libgpg-error.so.0", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\210\6\0"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=58965, ...}) = 0
+old_mmap(NULL, 14496, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0xb7dc8000
+old_mmap(0xb7dcb000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x2000) = 0xb7dcb000
+close(3)                                = 0
+open("/usr/lib/libltdl.so.3", O_RDONLY) = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\360\21"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=24628, ...}) = 0
+old_mmap(NULL, 27608, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0xb7dc1000
+old_mmap(0xb7dc7000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x5000) = 0xb7dc7000
+close(3)                                = 0
+open("/lib/libdl.so.2", O_RDONLY)       = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\300\350"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=16708, ...}) = 0
+old_mmap(0x4138d000, 12412, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x4138d000
+old_mmap(0x4138f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0x1000) = 0x4138f000
+close(3)                                = 0
+open("/usr/lib/libz.so.1", O_RDONLY)    = 3
+read(3, "\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\340\225"..., 512) = 512
+fstat64(3, {st_mode=S_IFREG|0755, st_size=65548, ...}) = 0
+old_mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7dc0000
+old_mmap(0x413b8000, 67048, PROT_READ|PROT_EXEC, MAP_PRIVATE, 3, 0) = 0x413b8000
+old_mmap(0x413c8000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 0xf000) = 0x413c8000
+close(3)                                = 0
+old_mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xb7dbf000
+mprotect(0x4138f000, 4096, PROT_READ)   = 0
+mprotect(0x41385000, 4096, PROT_READ)   = 0
+mprotect(0x8057000, 4096, PROT_READ)    = 0
+mprotect(0x4126b000, 4096, PROT_READ)   = 0
+set_thread_area({entry_number:-1 -> 6, base_addr:0xb7dbf080, limit:1048575, seg_32bit:1, contents:0, read_exec_only:0, limit_in_pages:1, seg_not_present:0, useable:1}) = 0
+munmap(0xb7f3a000, 54317)               = 0
+brk(0)                                  = 0x805a000
+brk(0x807b000)                          = 0x807b000
+getcwd("/home/afonyashin/libprelude-0.9.21.1", 4096) = 37
+access("/dev/random", R_OK)             = 0
+access("/dev/urandom", R_OK)            = 0
+getpid()                                = 14687
+open("/dev/urandom", O_RDONLY)          = 3
+fcntl64(3, F_GETFD)                     = 0
+fcntl64(3, F_SETFD, FD_CLOEXEC)         = 0
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\214\275:\310t\321\341\7\211\221\0314g\f\vv\201\223.\260"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "O\22\325d\253]O;q\372\211C\351\356=\372\332V\327K:/\255"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "&\340\316\260\25\200\350\214?\v4\301\t]r)_\202/\353\316"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\376+\216\26\325\226)\330\r*\302\25u%u\205\331\306\373"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\1W1\215\313q\25t5\251\320\327\211?Sf\351\365y\24N\314"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\342\200\0O\20\371\307\232\2\'\303\30444\211\f\246=\327"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\250\177\'jd\355:\342\222\277\350(\330\345\240/\234q\311"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\276!j\330<\237\r\345\367\4SlS}\245\204\32\3652J\323\360"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\361\264\2363\365\27\312\240\306pAS}1\6\31u<\334:3w\0\250"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\271$\16Kb\31&5\341\316\316Hc\362\304\324tR$\313\0H8?\304"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\204\312\235T|\254\217\217\305T\2452Kk\320\213\27\n\25"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\346\307\371\2\'\322\2226\210\4\1\272\347`\22\266\217K"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\265\223\360Y>0DwZ\250\245\\:\361(\366\353\267\302\331"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\261\301\312A\313\264fA:\311y\16\"\305<\2413jR\353\302"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\235\333+\226\362\300?\373B\247%NZr\16\330\320\362\241"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "cCa\304\246_\304\355\240\351\202\275\200\270\331B\320\344"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\353\301\t\301\214\271\347g8\215\21\224\267pY\232\5\260"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\237\307\236\332\t\225\2140n\25\335qt\202\tl-\325\203\275"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\271\215\tV\200\217\366\265\20\310\26I\271\227\271a\263"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\16\214\261\16\3624\315\234\260\353\7f\25e\335(\rT|\270"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "-\37\\\25:\372\2658\276\340D\344c\"DG\31\275\274\307\243"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\0L\202o\340$\327\225\343`\225_\265\372\371\177\332\30"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, ";d\266\326%.9E\214\357\'\201\312\213\3206\360\26WvR\330"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "L\0\210\215\177mG\37%(\275\302\356\345csZ\364\n\204diJ"..., 120) = 120
+select(4, [3], NULL, NULL, {3, 0})      = 1 (in [3], left {3, 0})
+read(3, "\244\332\306\34\336\257\270L\342\300=\3128\257\204\314"..., 120) = 120
+gettimeofday({1223384339, 698828}, NULL) = 0
+getrusage(RUSAGE_SELF, {ru_utime={0, 4000}, ru_stime={0, 8000}, ...}) = 0
+time(NULL)                              = 1223384339
+times({tms_utime=0, tms_stime=0, tms_cutime=0, tms_cstime=0}) = 2081925310
+rt_sigaction(SIGPIPE, {SIG_IGN}, {SIG_DFL}, 8) = 0
+umask(07)                               = 022
+--- SIGSEGV (Segmentation fault) @ 0 (0) ---
++++ killed by SIGSEGV +++
